@@ -9,6 +9,9 @@ reaches a stable 1.0, minor version bumps mean "something was added or changed".
 ## [Unreleased]
 
 ### Added
+- `pyproject.toml` (PEP 621) describing the project and dependencies: core
+  (`duckdb`, `numpy`, `pandas`, `scipy`, `PyYAML`) plus `phylogeny`
+  (`biopython`) and `alt-ordinations` (`scikit-learn`, `umap-learn`) extras.
 - Initial release of the generalized `BFD_dashboard` framework (port of the
   one-off `Rhodotorula/Novelty/dashboard`).
 
