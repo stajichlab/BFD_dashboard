@@ -1,8 +1,7 @@
-# BFD_dashboard
+# BFD Dashboard
 
 A generic, self-contained comparative-genomics dashboard builder for any
-`BFD.duckdb` produced by the [BFD nextflow pipeline](https://github.com/stajichlab/BFD)
-(Fungi_BFD). Reads the database and emits a single browsable `explorer.html` (no
+`BFD.duckdb` produced by the [BFD nextflow pipeline](https://github.com/stajichlab/BFD) and [Fungi BFD nextflow pipeline](https://github.com/stajichlab/Fungi_BFD). Reads the database and emits a single browsable `explorer.html` (no
 server, no CDN) with per-genome overview tiles, ordination + PERMANOVA for a set of
 feature matrices, composition bars, and per-species differential domain-family tables.
 
@@ -101,9 +100,7 @@ that excludes the outgroup simply falls back to taxonomic order.
 
 ## Notes on large databases
 
-The full BFD database (`/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/db/BFD.duckdb`,
-~23k species) currently has assembly/BUSCO data for most genomes but functional
-annotation for only a handful. The builder:
+The builder:
 
 - skips any feature set whose matrix is empty/all-zero for the chosen subset, with a
   per-feature-set "no data" notice, instead of crashing;
