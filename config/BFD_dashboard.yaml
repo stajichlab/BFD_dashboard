@@ -1,0 +1,75 @@
+# BFD_dashboard build configuration.
+#
+# This file drives ONE dashboard build. It is the only per-dataset thing you need
+# to edit: everything that used to be a hardcoded constant (db path, outgroup
+# genus, treefile, title) is here. CLI flags on bin/make_dashboard.py override
+# these values; unset values (null) fall back to sensible defaults.
+#
+#   bin/make_dashboard.py --config config/BFD_dashboard.yaml
+#
+# Point `db` at any BFD.duckdb produced by the BFD nextflow pipeline. The default
+# below is the full ~23k-genome database; use the `subset` block to build a
+# dashboard for just part of it (taxonomy ranks and/or subsampling).
+
+# ── data sources ────────────────────────────────────────────────────────────────
+db: /bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/db/BFD.duckdb
+
+# Optional; globbed for "*/*.BUSCO_summary.*.txt". Absent/None -> BUSCO shown as n/a.
+busco_dir: null
+
+# Optional base dir that is globbed for a phyling FastTree treefile
+# (phyling_pep/protein/buildtree/*/fasttree/*.fasttree.support.treefile).
+# Absent/None -> no phylogeny panel (falls back to taxonomic ordering).
+results_dir: null
+
+# Optional explicit phyling treefile; if set, overrides the results_dir glob.
+# A provided tree is pruned to whatever subset is selected, so one full-cohort
+# treefile can back many subset dashboards.
+tree: null
+
+# Optional MEROPS family-lookup file (merops_lib.families.tab from the MEROPS
+# database build). Required for the `merops` feature set; if absent, merops is
+# skipped with a warning rather than failing the build.
+merops_families_path: null
+
+# ── analysis ────────────────────────────────────────────────────────────────────
+# GENUS value used to root the tree (e.g. "Cystobasidium"). null -> no reroot.
+outgroup_genus: null
+
+# Restrict which feature sets are computed/displayed. null -> all available
+# (assembly, codon, amino_acid, pfam, cazy, merops, localization).
+feature_sets: null
+
+# Add NMDS / t-SNE / UMAP alongside the default PCoA/CA for every feature set
+# (slower, larger HTML). Default false.
+alt_ordinations: false
+
+# Per-species PERMANOVA ("this genome vs rest") is auto-on up to ~40 genomes and
+# skipped above that. Force with true / false to override.
+per_species_permanova: null
+
+# ── display ─────────────────────────────────────────────────────────────────────
+title: "BFD Comparative Explorer"
+subtitle: null   # null -> "<N> genomes" is used automatically
+
+# ── subset ──────────────────────────────────────────────────────────────────────
+# Leave the whole block commented/empty for the full database. Any combination of
+# ranks (case-insensitive substring match on the species table), plus subsampling.
+subset:
+  phylum: null
+  subphylum: null
+  class: null
+  order: null
+  family: null
+  genus: null
+  species: null
+  # restrict to genomes present in at least one functional-annotation table
+  # (important against a large BFD db where those tables may only be populated
+  # for genomes that have finished the pipeline).
+  only_with_functional: false
+  # at most N strains per species (1 = one representative per species); picks the
+  # best-assembled strain (gene_count, then N50) deterministically.
+  max_per_species: null
+  # seeded random cap on total genomes.
+  max_genomes: null
+  seed: 42

@@ -1,0 +1,13 @@
+# Focused 19-genome Rhodotorula/Cystobasidium build (the dataset behind the
+# original dashboard's duckdb) -- a fully-functional small BFD run with a phyling
+# tree, used to validate the generic framework.
+db: /bigdata/stajichlab/shared/projects/Rhodotorula/Novelty/db/BFD.duckdb
+busco_dir: /bigdata/stajichlab/shared/projects/Rhodotorula/Novelty/results/genome_stats/BUSCO_protein
+results_dir: /bigdata/stajichlab/shared/projects/Rhodotorula/Novelty/results
+outgroup_genus: Cystobasidium
+title: "BFD Comparative Explorer — Rhodotorula (19 genomes)"
+
+subset:
+  genus: Rhodotorula
+  max_per_species: 1
+  seed: 42

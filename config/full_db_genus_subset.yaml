@@ -1,0 +1,15 @@
+# Genus subset of the FULL 23k-genome BFD database. Assembly/BUSCO data covers all
+# genomes; functional tables (pfam/codon/...) currently only cover the handful of
+# genomes that have finished the BFD pipeline -- so this build demonstrates the
+# sparsity handling: assembly/overview views render, data-less feature sets are
+# skipped with a notice, and --only-with-functional narrows to screened genomes.
+db: /bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/db/BFD.duckdb
+title: "BFD Comparative Explorer — Fusarium genus subset"
+
+subset:
+  genus: Fusarium
+  # uncomment to restrict to genomes with functional annotation:
+  # only_with_functional: true
+  # subsample to at most 30 genomes (seeded, reproducible):
+  max_genomes: 30
+  seed: 7

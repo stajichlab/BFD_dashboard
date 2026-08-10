@@ -1,0 +1,7 @@
+# Full 19-genome Rhodotorula/Cystobasidium build -- validates the phylogeny path
+# (tree glob + outgroup rooting) on the complete dataset.
+db: /bigdata/stajichlab/shared/projects/Rhodotorula/Novelty/db/BFD.duckdb
+busco_dir: /bigdata/stajichlab/shared/projects/Rhodotorula/Novelty/results/genome_stats/BUSCO_protein
+results_dir: /bigdata/stajichlab/shared/projects/Rhodotorula/Novelty/results
+outgroup_genus: Cystobasidium
+title: "BFD Comparative Explorer — Rhodotorula (19 genomes)"

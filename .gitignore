@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+
+# generated build outputs (reproducible via bin/make_dashboard.py)
+cache/
+explorer.html
