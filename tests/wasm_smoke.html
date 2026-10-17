@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BFD WASM Smoke Test</title>
+<style>
+  body { font: 14px/1.4 system-ui, sans-serif; margin: 16px; max-width: 960px; }
+  table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+  th, td { border: 1px solid #bbb; padding: 4px 8px; text-align: left; vertical-align: top; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  code { font-size: 12px; }
+  .err { color: #b00020; }
+</style>
+</head>
+<body>
+<h1>BFD DuckDB-WASM smoke test</h1>
+<p>Queries run against parquet files served from <code id="base"></code>. Add <code>?base=URL/</code> to point elsewhere and <code>?auto=1</code> to run on load.</p>
+<button id="run">Run all queries</button>
+<span id="status"></span>
+<table id="out"><thead><tr><th>Query</th><th>Rows</th><th>Seconds</th><th>Result (first row)</th></tr></thead><tbody></tbody></table>
+
+<script type="module">
+import * as duckdb from 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.0/+esm';
+
+const params = new URLSearchParams(location.search);
+const base = params.get('base') || new URL('.', location.href).href;
+document.getElementById('base').textContent = base;
+
+const TABLES = ['genome', 'genome_features', 'genome_pfam_counts', 'pfam_by_genome',
+                'pfam_by_domain', 'protein', 'intergenic_by_genome', 'pfam_dict'];
+
+const QUERIES = [
+  ['One genome, pfam_by_genome',
+   `SELECT count(*) n, count(DISTINCT pfam_acc) n_acc FROM pfam_by_genome WHERE species_prefix = 'F2D1C788'`],
+  ['PF02364 across genomes (pfam_by_domain)',
+   `SELECT species_prefix, count(DISTINCT protein_id) n FROM pfam_by_domain WHERE pfam_acc LIKE 'PF02364%' GROUP BY 1 ORDER BY n DESC LIMIT 5`],
+  ['PF02364 by phylum (summary join)',
+   `SELECT g.PHYLUM, count(*) n FROM genome_pfam_counts p JOIN genome g USING (species_prefix) WHERE p.pfam_acc LIKE 'PF02364%' GROUP BY 1 ORDER BY n DESC`],
+  ['Median intergenic distance vs median protein length',
+   `SELECT corr(median_dist, median_len) r, count(*) n FROM genome_features WHERE median_len IS NOT NULL AND median_dist IS NOT NULL`],
+  ['One genome, intergenic_by_genome',
+   `SELECT median(distance) m FROM intergenic_by_genome WHERE species_prefix = 'F1147BD0'`],
+  ['Full column scan, distinct pfam_acc',
+   `SELECT count(DISTINCT pfam_acc) n FROM pfam_by_genome`],
+  ['Join: one genome pfam x protein length',
+   `SELECT avg(p.length_aa) mean_len, count(*) n FROM pfam_by_genome d JOIN protein p USING (species_prefix, protein_id) WHERE d.species_prefix = 'F2D1C788'`],
+  ['Stress: all pfam x protein, mean length per domain',
+   `SELECT d.pfam_acc, avg(p.length_aa) m FROM pfam_by_genome d JOIN protein p USING (species_prefix, protein_id) GROUP BY 1 ORDER BY 2 DESC LIMIT 3`],
+];
+
+let db, conn;
+
+async function init() {
+  const bundle = await duckdb.selectBundle(duckdb.getJsDelivrBundles());
+  const workerUrl = URL.createObjectURL(
+    new Blob([`importScripts("${bundle.mainWorker}");`], { type: 'text/javascript' }));
+  const worker = new Worker(workerUrl);
+  db = new duckdb.AsyncDuckDB(new duckdb.VoidLogger(), worker);
+  await db.instantiate(bundle.mainModule, bundle.pthreadWorker);
+  URL.revokeObjectURL(workerUrl);
+  for (const t of TABLES) {
+    await db.registerFileURL(`${t}.parquet`, `${base}${t}.parquet`, duckdb.DuckDBDataProtocol.HTTP, false);
+  }
+  conn = await db.connect();
+  for (const t of TABLES) {
+    await conn.query(`CREATE VIEW ${t} AS SELECT * FROM read_parquet('${t}.parquet')`);
+  }
+}
+
+async function runQuery(i) {
+  const [name, sql] = QUERIES[i];
+  const t0 = performance.now();
+  try {
+    const res = await conn.query(sql);
+    const rows = res.toArray().map(r => JSON.parse(JSON.stringify(r, (_, v) => typeof v === 'bigint' ? Number(v) : v)));
+    return { i, name, ok: true, rows: rows.length, seconds: (performance.now() - t0) / 1000, first: rows[0] };
+  } catch (e) {
+    return { i, name, ok: false, seconds: (performance.now() - t0) / 1000, error: String(e.message || e) };
+  }
+}
+
+function addRow(r) {
+  const tr = document.createElement('tr');
+  const cells = [r.name, r.ok ? r.rows : '', r.seconds.toFixed(2),
+                 r.ok ? JSON.stringify(r.first) : r.error];
+  cells.forEach((c, k) => {
+    const td = document.createElement('td');
+    td.textContent = c;
+    if (k === 1 || k === 2) td.className = 'num';
+    if (!r.ok && k === 3) td.className = 'err';
+    tr.appendChild(td);
+  });
+  document.querySelector('#out tbody').appendChild(tr);
+}
+
+async function runAll() {
+  const status = document.getElementById('status');
+  window.__results = [];
+  status.textContent = ' running...';
+  for (let i = 0; i < QUERIES.length; i++) {
+    const r = await runQuery(i);
+    window.__results.push(r);
+    addRow(r);
+  }
+  status.textContent = ' done';
+  window.__done = true;
+}
+
+window.__ready = init().then(() => { window.__initialized = true; });
+window.__runQuery = runQuery;
+window.__queryNames = QUERIES.map(q => q[0]);
+document.getElementById('run').addEventListener('click', async () => { await window.__ready; await runAll(); });
+if (params.get('auto')) window.__ready.then(runAll);
+</script>
+</body>
+</html>
