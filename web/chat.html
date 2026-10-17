@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BFD Chat Explorer</title>
+<style>
+  :root { --bg:#fff; --fg:#1b1f23; --muted:#5b6570; --line:#cfd6dd; --accent:#1f6feb; --err:#b00020; --panel:#f5f7f9; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14181d; --fg:#e6eaee; --muted:#9aa5b1; --line:#35404b; --accent:#58a6ff; --err:#ff7b8a; --panel:#1c232b; }
+  }
+  body { font: 14px/1.45 system-ui, sans-serif; margin: 0; padding: 16px; background: var(--bg); color: var(--fg); max-width: 1000px; margin-inline: auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  fieldset { border: 1px solid var(--line); border-radius: 6px; margin: 12px 0; padding: 8px 12px; }
+  legend { color: var(--muted); padding: 0 4px; }
+  label { display: inline-block; margin: 4px 12px 4px 0; }
+  input, select, textarea, button { font: inherit; color: inherit; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 4px 8px; }
+  input[type=password], input[type=text] { width: 260px; }
+  textarea { width: 100%; box-sizing: border-box; font-family: ui-monospace, monospace; font-size: 12px; }
+  button { cursor: pointer; } button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  button:disabled { opacity: .5; cursor: default; }
+  .muted { color: var(--muted); } .err { color: var(--err); white-space: pre-wrap; }
+  table { border-collapse: collapse; width: 100%; font-size: 12px; } th, td { border: 1px solid var(--line); padding: 3px 6px; text-align: left; }
+  .scroll { max-height: 320px; overflow: auto; }
+  #chartwrap { position: relative; height: 340px; margin-top: 8px; }
+  .turn { border-top: 2px solid var(--line); margin-top: 20px; padding-top: 8px; }
+  .q { font-weight: 600; }
+</style>
+</head>
+<body>
+<h1>BFD Chat Explorer</h1>
+<p class="muted">Ask a question about the BFD genomes. A language model writes SQL. DuckDB runs it in your browser against public parquet files. Your key stays in this browser and goes only to the provider you pick.</p>
+
+<fieldset>
+  <legend>Model</legend>
+  <label>Provider
+    <select id="provider">
+      <option value="claude">Claude (Anthropic)</option>
+      <option value="openai">OpenAI-compatible (e.g. nrp.ai)</option>
+    </select>
+  </label>
+  <label>API key <input id="key" type="password" autocomplete="off"></label>
+  <label><input id="remember" type="checkbox"> remember in this browser</label><br>
+  <label>Model <input id="model" type="text"></label>
+  <label id="baseLabel">Base URL <input id="base" type="text"></label>
+  <div class="muted" id="providerNote"></div>
+</fieldset>
+
+<fieldset>
+  <legend>Question</legend>
+  <textarea id="question" rows="3" placeholder="e.g. How many genomes per phylum have a Glucan_synthase (PF02364) protein?"></textarea>
+  <p><button id="ask" class="primary" disabled>Ask</button> <span id="status" class="muted">Loading DuckDB...</span></p>
+</fieldset>
+
+<div id="turns"></div>
+
+<script type="module">
+import * as duckdb from 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.0/+esm';
+
+const params = new URLSearchParams(location.search);
+const DATA_BASE = params.get('base') || new URL('.', location.href).href;
+const MOCK = params.get('mock') === '1';
+const MAX_ROWS = 5000;
+const QUERY_TIMEOUT_MS = 60000;
+
+const TABLES = ['genome', 'genome_features', 'genome_pfam_counts', 'pfam_by_genome', 'pfam_by_domain',
+                'protein', 'intergenic_by_genome', 'pfam_dict', 'genome_protein_len', 'genome_intergenic'];
+
+// ---------------------------------------------------------------- schema prompt
+const SCHEMA_RULES = `You write DuckDB SQL over public parquet views for fungal genome data (BFD).
+
+JOIN RULES
+- The genome key is species_prefix (8 hex characters, for example 'F2D1C788'). It equals genome.species_prefix.
+- protein_id looks like 'F2D1C788_000724-T1'. The genome is the part before the first underscore.
+- Tables with a protein_id column also have species_prefix. Join on species_prefix and protein_id together.
+- Taxonomy columns live only in genome: PHYLUM, SUBPHYLUM, CLASS, SUBCLASS, ORDER_, FAMILY, GENUS, SPECIES, STRAIN. The column ORDER_ has a trailing underscore.
+- pfam_acc values carry a version suffix (for example 'PF02364.18'). Use pfam_acc LIKE 'PF02364%' to match any version. pfam_id is the domain name.
+
+WHICH TABLE TO USE
+- Questions about one domain across genomes: pfam_by_domain (sorted by pfam_acc, so filters on pfam_acc are cheap).
+- Questions about one genome or a few genomes: pfam_by_genome or intergenic_by_genome (sorted by species_prefix).
+- Counts of domains per genome: genome_pfam_counts (small). Prefer it over counting pfam_by_genome.
+- Per-genome scalars (genome size, GC, BUSCO, protein length quantiles, intergenic distance): genome_features (small).
+- Protein length per protein: protein.length_aa.
+- Always prefer the small tables. Avoid scanning pfam_by_genome, pfam_by_domain, or intergenic_by_genome without a filter on their sort key.
+
+COVERAGE (important for honest answers)
+- genome covers all genomes. pfam tables cover about 745 genomes. protein (length) covers about 770 genomes. Intergenic data covers about 7,800 genomes.
+- Gene tables for introns, exons, and sequences are NOT available. If the question needs introns or sequences, say so in "explanation" and return an empty "sql".
+- Columns with NULL mean the genome has no data for that table. Mention the sample size in the explanation when it is small.
+
+SQL RULES
+- Return one SELECT statement (WITH is allowed). No semicolons, no DDL, no file or URL functions.
+- Use only the tables and columns listed below.
+- Quote reserved words if you must use them as names.
+- Add a LIMIT when the result could have more than a few thousand rows.
+
+OUTPUT: a JSON object with keys:
+  "explanation": one or two plain sentences on what the query does and any caveat,
+  "sql": the SQL string, or "" if the question cannot be answered,
+  "chart": null, or {"type":"bar"|"line"|"scatter","x":"<column>","y":"<column>"} using column names from the SQL result.`;
+
+const EXAMPLES = `VERIFIED EXAMPLES
+Q: Genomes per phylum with a Glucan_synthase (PF02364) protein.
+SQL: SELECT g.PHYLUM, count(DISTINCT p.species_prefix) AS n_genomes FROM genome_pfam_counts p JOIN genome g USING (species_prefix) WHERE p.pfam_acc LIKE 'PF02364%' GROUP BY 1 ORDER BY 2 DESC
+Q: Does median intergenic distance relate to median protein length?
+SQL: SELECT median_dist, median_len, GENUS FROM genome_features WHERE median_dist IS NOT NULL AND median_len IS NOT NULL
+CHART: scatter x=median_dist y=median_len
+Q: Top 10 domains by number of proteins.
+SQL: SELECT pfam_acc, pfam_id, n_proteins, n_genomes FROM pfam_dict ORDER BY n_proteins DESC LIMIT 10
+Q: Which domains with 'zinc' in the name are found in the most genomes?
+SQL: SELECT pfam_acc, pfam_id, n_genomes FROM pfam_dict WHERE lower(pfam_id) LIKE '%zn%' OR lower(pfam_id) LIKE '%zinc%' ORDER BY n_genomes DESC LIMIT 20`;
+
+let schemaText = '';
+let db, conn;
+const history = [];
+
+// ---------------------------------------------------------------- duckdb
+async function initDb() {
+  const bundle = await duckdb.selectBundle(duckdb.getJsDelivrBundles());
+  const workerUrl = URL.createObjectURL(new Blob([`importScripts("${bundle.mainWorker}");`], { type: 'text/javascript' }));
+  db = new duckdb.AsyncDuckDB(new duckdb.VoidLogger(), new Worker(workerUrl));
+  await db.instantiate(bundle.mainModule, bundle.pthreadWorker);
+  URL.revokeObjectURL(workerUrl);
+  for (const t of TABLES) {
+    await db.registerFileURL(`${t}.parquet`, `${DATA_BASE}${t}.parquet`, duckdb.DuckDBDataProtocol.HTTP, false);
+  }
+  conn = await db.connect();
+  const parts = [];
+  for (const t of TABLES) {
+    await conn.query(`CREATE VIEW ${t} AS SELECT * FROM read_parquet('${t}.parquet')`);
+    const d = (await conn.query(`DESCRIBE ${t}`)).toArray();
+    parts.push(`TABLE ${t}(${d.map(r => `${r.column_name} ${r.column_type}`).join(', ')})`);
+  }
+  schemaText = `${SCHEMA_RULES}\n\nTABLES (read from the live files)\n${parts.join('\n')}\n\n${EXAMPLES}`;
+}
+
+// ---------------------------------------------------------------- SQL validation
+const FORBIDDEN = /\b(copy|attach|detach|install|load|pragma|create|drop|alter|insert|update|delete|set|reset|export|import|call|checkpoint|vacuum|begin|commit|rollback|use)\b/i;
+const FORBIDDEN_FN = /\b(read_\w+|glob|parquet_\w+|http\w*|from_\w*file|sniff_csv|duckdb_\w+|pragma_\w+)\s*\(/i;
+
+function validateSql(sql) {
+  let s = String(sql || '').trim();
+  s = s.replace(/;+\s*$/, '');
+  const noStrings = s.replace(/'(?:[^']|'')*'/g, "''").replace(/"(?:[^"]|"")*"/g, '""');
+  const noComments = noStrings.replace(/--[^\n]*/g, ' ').replace(/\/\*[\s\S]*?\*\//g, ' ');
+  if (!s) return { ok: false, error: 'Empty SQL.' };
+  if (noComments.includes(';')) return { ok: false, error: 'Only one statement is allowed.' };
+  if (!/^\s*(select|with)\b/i.test(noComments)) return { ok: false, error: 'Only SELECT or WITH queries are allowed.' };
+  if (FORBIDDEN.test(noComments)) return { ok: false, error: 'The query uses a keyword that is not allowed.' };
+  if (FORBIDDEN_FN.test(noComments)) return { ok: false, error: 'The query uses a function that is not allowed.' };
+  return { ok: true, sql: s };
+}
+
+async function precheck(sql) {
+  const v = validateSql(sql);
+  if (!v.ok) throw new Error(v.error);
+  await conn.query(`EXPLAIN ${v.sql}`);                       // parse + bind check, no data read
+  return v;
+}
+
+async function runSql(sql) {
+  const v = await precheck(sql);
+  const timer = setTimeout(() => conn.cancelSent().catch(() => {}), QUERY_TIMEOUT_MS);
+  try {
+    const t0 = performance.now();
+    const res = await conn.query(`SELECT * FROM (${v.sql}) LIMIT ${MAX_ROWS + 1}`);
+    const cols = res.schema.fields.map(f => f.name);
+    const rows = res.toArray().map(r => cols.map(c => {
+      const x = r[c]; return typeof x === 'bigint' ? Number(x) : x;
+    }));
+    return { cols, rows: rows.slice(0, MAX_ROWS), truncated: rows.length > MAX_ROWS, seconds: (performance.now() - t0) / 1000 };
+  } finally { clearTimeout(timer); }
+}
+
+// ---------------------------------------------------------------- providers
+function parseModelJson(text) {
+  let t = String(text || '').trim();
+  const fence = t.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (fence) t = fence[1].trim();
+  const a = t.indexOf('{'), b = t.lastIndexOf('}');
+  if (a < 0 || b < a) throw new Error('The model did not return JSON.');
+  const o = JSON.parse(t.slice(a, b + 1));
+  return { explanation: String(o.explanation || ''), sql: String(o.sql || ''), chart: o.chart || null };
+}
+
+function buildMessages(question, repair) {
+  const msgs = [];
+  for (const h of history.slice(-3)) {
+    msgs.push({ role: 'user', content: h.question });
+    msgs.push({ role: 'assistant', content: JSON.stringify({ explanation: h.explanation, sql: h.sql, chart: h.chart }) });
+  }
+  msgs.push({ role: 'user', content: question });
+  if (repair) {
+    msgs.push({ role: 'assistant', content: JSON.stringify({ explanation: '', sql: repair.sql, chart: null }) });
+    msgs.push({ role: 'user', content: `That SQL failed with this error: ${repair.error}\nReturn corrected JSON in the same format.` });
+  }
+  return msgs;
+}
+
+const SCHEMA_JSON = {
+  type: 'object', additionalProperties: false, required: ['explanation', 'sql', 'chart'],
+  properties: {
+    explanation: { type: 'string' }, sql: { type: 'string' },
+    chart: { anyOf: [{ type: 'null' }, { type: 'object', additionalProperties: false, required: ['type', 'x', 'y'],
+      properties: { type: { type: 'string', enum: ['bar', 'line', 'scatter'] }, x: { type: 'string' }, y: { type: 'string' } } }] },
+  },
+};
+
+async function askClaude(msgs, cfg) {
+  const { default: Anthropic } = await import('https://cdn.jsdelivr.net/npm/@anthropic-ai/sdk@0.65.0/+esm');
+  const client = new Anthropic({ apiKey: cfg.key, dangerouslyAllowBrowser: true });
+  const res = await client.messages.create({
+    model: cfg.model, max_tokens: 4000, system: schemaText, messages: msgs,
+    output_config: { format: { type: 'json_schema', schema: SCHEMA_JSON } },
+  });
+  if (res.stop_reason === 'refusal') throw new Error('The model declined this request.');
+  return parseModelJson((res.content.find(b => b.type === 'text') || {}).text);
+}
+
+async function askOpenAI(msgs, cfg) {
+  const url = cfg.base.replace(/\/+$/, '') + '/chat/completions';
+  let r;
+  try {
+    r = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${cfg.key}` },
+      body: JSON.stringify({ model: cfg.model, temperature: 0, max_tokens: 4000,
+        messages: [{ role: 'system', content: schemaText }, ...msgs] }),
+    });
+  } catch (e) {
+    throw new Error('The browser could not read the response from ' + url + '. Check the key first: ' +
+      'a rejected key (403) comes back without CORS headers, so the browser hides it. ' +
+      'If the key is valid, the endpoint may not allow browser requests from this site.');
+  }
+  if (!r.ok) throw new Error(`Provider returned ${r.status}: ${(await r.text()).slice(0, 300)}`);
+  const j = await r.json();
+  return parseModelJson(j.choices?.[0]?.message?.content);
+}
+
+// Test-only provider: the question text after "SQL:" is returned as if the model wrote it.
+async function askMock(msgs) {
+  const last = msgs[msgs.length - 1].content;
+  if (last.startsWith('That SQL failed')) return { explanation: 'mock repair', sql: 'SELECT 1 AS repaired', chart: null };
+  const q = msgs.filter(m => m.role === 'user').pop().content;
+  const m = q.match(/SQL:\s*([\s\S]*?)(?:\s*CHART:\s*(\w+)\s+(\w+)\s+(\w+))?$/);
+  return { explanation: 'mock', sql: m ? m[1] : '',
+    chart: m && m[2] ? { type: m[2], x: m[3], y: m[4] } : null };
+}
+
+async function askModel(question, cfg, repair) {
+  const msgs = buildMessages(question, repair);
+  if (cfg.provider === 'mock') return askMock(msgs);
+  return cfg.provider === 'claude' ? askClaude(msgs, cfg) : askOpenAI(msgs, cfg);
+}
+
+// ---------------------------------------------------------------- UI
+const $ = id => document.getElementById(id);
+const DEFAULTS = {
+  claude: { model: 'claude-opus-5-5', base: '', note: 'Calls the Anthropic API directly from this page. The key is sent only to api.anthropic.com.' },
+  openai: { model: 'qwen3', base: 'https://ellm.nrp-nautilus.io/v1',
+    note: 'nrp.ai default base URL and model names come from the NRP docs. Browser (CORS) access to this endpoint is not confirmed.' },
+};
+if (MOCK) { $('provider').insertAdjacentHTML('beforeend', '<option value="mock">Mock (testing)</option>'); }
+
+function store(get, key, val) {
+  try { const s = get ? localStorage : sessionStorage; if (val === undefined) return s.getItem(key); s.setItem(key, val); } catch { return null; }
+}
+function loadCfg() {
+  const p = $('provider').value;
+  $('model').value = store(true, `bfd.${p}.model`) || DEFAULTS[p]?.model || '';
+  $('base').value = store(true, `bfd.${p}.base`) || DEFAULTS[p]?.base || '';
+  $('key').value = store(false, `bfd.${p}.key`) || store(true, `bfd.${p}.key`) || '';
+  $('baseLabel').style.display = p === 'openai' ? '' : 'none';
+  $('providerNote').textContent = DEFAULTS[p]?.note || '';
+}
+function saveCfg() {
+  const p = $('provider').value;
+  store(true, `bfd.${p}.model`, $('model').value); store(true, `bfd.${p}.base`, $('base').value);
+  store(false, `bfd.${p}.key`, $('key').value);
+  if ($('remember').checked) store(true, `bfd.${p}.key`, $('key').value);
+}
+$('provider').addEventListener('change', loadCfg);
+loadCfg();
+
+function el(tag, props = {}, ...kids) {
+  const e = Object.assign(document.createElement(tag), props);
+  kids.forEach(k => e.append(k)); return e;
+}
+
+function renderTable(res) {
+  const t = el('table');
+  t.append(el('thead', {}, el('tr', {}, ...res.cols.map(c => el('th', { textContent: c })))));
+  const tb = el('tbody');
+  res.rows.slice(0, 500).forEach(r => tb.append(el('tr', {}, ...r.map(v => el('td', { textContent: v === null ? '' : String(v) })))));
+  t.append(tb);
+  return el('div', { className: 'scroll' }, t);
+}
+
+async function drawChart(spec, res, host) {
+  if (!spec) return;
+  const xi = res.cols.indexOf(spec.x), yi = res.cols.indexOf(spec.y);
+  if (xi < 0 || yi < 0) { host.append(el('p', { className: 'muted', textContent: `Chart columns not found: ${spec.x}, ${spec.y}` })); return; }
+  const { Chart, registerables } = await import('https://cdn.jsdelivr.net/npm/chart.js@4.4.1/+esm');
+  Chart.register(...registerables);
+  const wrap = el('div', { id: 'chartwrap' }); const canvas = el('canvas'); wrap.append(canvas); host.append(wrap);
+  const rows = res.rows.slice(0, 2000);
+  const data = spec.type === 'scatter'
+    ? { datasets: [{ label: `${spec.y} vs ${spec.x}`, data: rows.map(r => ({ x: r[xi], y: r[yi] })), pointRadius: 2 }] }
+    : { labels: rows.map(r => r[xi]), datasets: [{ label: spec.y, data: rows.map(r => r[yi]) }] };
+  new Chart(canvas, { type: spec.type, data, options: { maintainAspectRatio: false, responsive: true,
+    scales: spec.type === 'scatter' ? { x: { title: { display: true, text: spec.x } }, y: { title: { display: true, text: spec.y } } } : {} } });
+}
+
+async function showTurn(question, out) {
+  const turn = el('div', { className: 'turn' });
+  turn.append(el('div', { className: 'q', textContent: question }));
+  if (out.explanation) turn.append(el('p', { textContent: out.explanation }));
+  if (out.sql) {
+    const ta = el('textarea', { rows: Math.min(12, out.sql.split('\n').length + 1), value: out.sql });
+    const rerun = el('button', { textContent: 'Run edited SQL' });
+    const resultHost = el('div');
+    rerun.onclick = () => execute(ta.value, out.chart, resultHost);
+    turn.append(ta, el('p', {}, rerun), resultHost);
+    await execute(out.sql, out.chart, resultHost, out);
+  }
+  $('turns').prepend(turn);
+  window.__lastTurn = out;
+}
+
+async function execute(sql, chart, host, out) {
+  host.replaceChildren(el('p', { className: 'muted', textContent: 'Running...' }));
+  try {
+    const res = await runSql(sql);
+    host.replaceChildren(el('p', { className: 'muted',
+      textContent: `${res.rows.length}${res.truncated ? '+' : ''} rows in ${res.seconds.toFixed(2)} s` + (res.truncated ? ` (limited to ${MAX_ROWS})` : '') }));
+    host.append(renderTable(res));
+    await drawChart(chart, res, host);
+    if (out) { out.result = { cols: res.cols, nrows: res.rows.length, first: res.rows[0] }; }
+  } catch (e) {
+    host.replaceChildren(el('p', { className: 'err', textContent: String(e.message || e) }));
+    if (out) out.error = String(e.message || e);
+  }
+}
+
+async function ask() {
+  const question = $('question').value.trim();
+  if (!question) return;
+  const cfg = { provider: $('provider').value, key: $('key').value.trim(), model: $('model').value.trim(), base: $('base').value.trim() };
+  if (cfg.provider !== 'mock' && !cfg.key) { $('status').textContent = 'Enter an API key.'; return; }
+  saveCfg();
+  $('ask').disabled = true; $('status').textContent = 'Asking the model...';
+  try {
+    let out = await askModel(question, cfg);
+    if (out.sql) {                                   // one automatic repair attempt on SQL errors
+      try { await precheck(out.sql); } catch (e) {
+        $('status').textContent = 'Fixing SQL...';
+        out = await askModel(question, cfg, { sql: out.sql, error: String(e.message || e) });
+      }
+    }
+    history.push({ question, ...out });
+    $('status').textContent = '';
+    await showTurn(question, out);
+  } catch (e) {
+    $('status').replaceChildren(el('span', { className: 'err', textContent: String(e.message || e) }));
+  } finally { $('ask').disabled = false; }
+}
+$('ask').addEventListener('click', ask);
+
+window.__validateSql = validateSql;
+window.__ask = ask;
+initDb().then(() => { $('status').textContent = ''; $('ask').disabled = false; window.__ready = true; })
+        .catch(e => { $('status').textContent = 'Failed to start DuckDB: ' + e.message; });
+</script>
+</body>
+</html>
