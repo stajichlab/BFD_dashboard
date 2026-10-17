@@ -25,6 +25,8 @@
   #chartwrap { position: relative; height: 340px; margin-top: 8px; }
   .turn { border-top: 2px solid var(--line); margin-top: 20px; padding-top: 8px; }
   .q { font-weight: 600; }
+  pre#log { background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 6px 8px; font-size: 11px; white-space: pre-wrap; word-break: break-word; margin: 0; }
+  summary { cursor: pointer; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -51,6 +53,15 @@
   <textarea id="question" rows="3" placeholder="e.g. How many genomes per phylum have a Glucan_synthase (PF02364) protein?"></textarea>
   <p><button id="ask" class="primary" disabled>Ask</button> <span id="status" class="muted">Loading DuckDB...</span></p>
 </fieldset>
+
+<details id="debugwrap" open>
+  <summary>Debug log</summary>
+  <p>
+    <button id="logclear">Clear</button> <button id="logcopy">Copy</button>
+    <label><input id="logverbose" type="checkbox"> include DuckDB engine log</label>
+  </p>
+  <pre id="log" class="scroll"></pre>
+</details>
 
 <div id="turns"></div>
 
@@ -112,6 +123,17 @@ Q: Which domains with 'zinc' in the name are found in the most genomes?
 SQL: SELECT pfam_acc, pfam_id, n_genomes FROM pfam_dict WHERE lower(pfam_id) LIKE '%zn%' OR lower(pfam_id) LIKE '%zinc%' ORDER BY n_genomes DESC LIMIT 20`;
 
 let schemaText = '';
+let askStart = performance.now();
+let verboseEngine = false;
+const logEl = () => document.getElementById('log');
+function dbg(msg) {
+  const t = ((performance.now() - askStart) / 1000).toFixed(2).padStart(6);
+  const line = `[+${t}s] ${msg}`;
+  console.log(line);
+  const el = logEl(); if (!el) return;
+  el.append(line + '\n'); el.scrollTop = el.scrollHeight;
+}
+const engineLogger = { log(e) { if (verboseEngine) dbg(`duckdb ${e.topic}/${e.event}: ${String(e.value).slice(0, 200)}`); } };
 let db, conn;
 const history = [];
 
@@ -119,7 +141,7 @@ const history = [];
 async function initDb() {
   const bundle = await duckdb.selectBundle(duckdb.getJsDelivrBundles());
   const workerUrl = URL.createObjectURL(new Blob([`importScripts("${bundle.mainWorker}");`], { type: 'text/javascript' }));
-  db = new duckdb.AsyncDuckDB(new duckdb.VoidLogger(), new Worker(workerUrl));
+  db = new duckdb.AsyncDuckDB(engineLogger, new Worker(workerUrl));
   await db.instantiate(bundle.mainModule, bundle.pthreadWorker);
   URL.revokeObjectURL(workerUrl);
   for (const t of TABLES) {
@@ -155,12 +177,16 @@ function validateSql(sql) {
 async function precheck(sql) {
   const v = validateSql(sql);
   if (!v.ok) throw new Error(v.error);
+  const t0 = performance.now();
   await conn.query(`EXPLAIN ${v.sql}`);                       // parse + bind check, no data read
+  dbg(`EXPLAIN ok (${((performance.now() - t0) / 1000).toFixed(2)} s)`);
   return v;
 }
 
 async function runSql(sql) {
+  dbg('validating SQL');
   const v = await precheck(sql);
+  dbg(`running query (row cap ${MAX_ROWS}, timeout ${QUERY_TIMEOUT_MS / 1000} s)`);
   const timer = setTimeout(() => conn.cancelSent().catch(() => {}), QUERY_TIMEOUT_MS);
   try {
     const t0 = performance.now();
@@ -169,12 +195,14 @@ async function runSql(sql) {
     const rows = res.toArray().map(r => cols.map(c => {
       const x = r[c]; return typeof x === 'bigint' ? Number(x) : x;
     }));
+    dbg(`query done: ${Math.min(rows.length, MAX_ROWS)}${rows.length > MAX_ROWS ? '+' : ''} rows x ${cols.length} cols in ${((performance.now() - t0) / 1000).toFixed(2)} s`);
     return { cols, rows: rows.slice(0, MAX_ROWS), truncated: rows.length > MAX_ROWS, seconds: (performance.now() - t0) / 1000 };
   } finally { clearTimeout(timer); }
 }
 
 // ---------------------------------------------------------------- providers
 function parseModelJson(text) {
+  dbg(`raw model reply (${String(text || '').length} chars):\n${String(text || '').slice(0, 3000)}`);
   let t = String(text || '').trim();
   const fence = t.match(/```(?:json)?\s*([\s\S]*?)```/);
   if (fence) t = fence[1].trim();
@@ -214,6 +242,7 @@ async function askClaude(msgs, cfg) {
     model: cfg.model, max_tokens: 4000, system: schemaText, messages: msgs,
     output_config: { format: { type: 'json_schema', schema: SCHEMA_JSON } },
   });
+  dbg(`claude stop_reason=${res.stop_reason} usage in=${res.usage?.input_tokens} out=${res.usage?.output_tokens} id=${res._request_id || ''}`);
   if (res.stop_reason === 'refusal') throw new Error('The model declined this request.');
   return parseModelJson((res.content.find(b => b.type === 'text') || {}).text);
 }
@@ -233,6 +262,7 @@ async function askOpenAI(msgs, cfg) {
       'a rejected key (403) comes back without CORS headers, so the browser hides it. ' +
       'If the key is valid, the endpoint may not allow browser requests from this site.');
   }
+  dbg(`http ${r.status} from provider`);
   if (!r.ok) throw new Error(`Provider returned ${r.status}: ${(await r.text()).slice(0, 300)}`);
   const j = await r.json();
   return parseModelJson(j.choices?.[0]?.message?.content);
@@ -250,6 +280,9 @@ async function askMock(msgs) {
 
 async function askModel(question, cfg, repair) {
   const msgs = buildMessages(question, repair);
+  dbg(`${repair ? 'repair ' : ''}request -> ${cfg.provider} model=${cfg.model}` +
+      `${cfg.provider === 'openai' ? ' url=' + cfg.base : ''}; system prompt ${schemaText.length} chars, ${msgs.length} messages`);
+  if (repair) dbg(`repair reason: ${repair.error}`);
   if (cfg.provider === 'mock') return askMock(msgs);
   return cfg.provider === 'claude' ? askClaude(msgs, cfg) : askOpenAI(msgs, cfg);
 }
@@ -329,6 +362,7 @@ async function showTurn(question, out) {
 }
 
 async function execute(sql, chart, host, out) {
+  if (!out) { askStart = performance.now(); dbg('--- rerun edited SQL'); }
   host.replaceChildren(el('p', { className: 'muted', textContent: 'Running...' }));
   try {
     const res = await runSql(sql);
@@ -338,6 +372,7 @@ async function execute(sql, chart, host, out) {
     await drawChart(chart, res, host);
     if (out) { out.result = { cols: res.cols, nrows: res.rows.length, first: res.rows[0] }; }
   } catch (e) {
+    dbg(`query error: ${e.message || e}`);
     host.replaceChildren(el('p', { className: 'err', textContent: String(e.message || e) }));
     if (out) out.error = String(e.message || e);
   }
@@ -349,28 +384,45 @@ async function ask() {
   const cfg = { provider: $('provider').value, key: $('key').value.trim(), model: $('model').value.trim(), base: $('base').value.trim() };
   if (cfg.provider !== 'mock' && !cfg.key) { $('status').textContent = 'Enter an API key.'; return; }
   saveCfg();
-  $('ask').disabled = true; $('status').textContent = 'Asking the model...';
+  askStart = performance.now();
+  dbg(`--- new question: ${question}`);
+  $('ask').disabled = true;
+  let phase = 'Asking the model';
+  const tick = setInterval(() => { $('status').textContent = `${phase}... ${((performance.now() - askStart) / 1000).toFixed(0)} s`; }, 500);
+  $('status').textContent = phase + '...';
   try {
     let out = await askModel(question, cfg);
+    dbg(`parsed: explanation=${JSON.stringify(out.explanation)} chart=${JSON.stringify(out.chart)}\nSQL:\n${out.sql}`);
     if (out.sql) {                                   // one automatic repair attempt on SQL errors
       try { await precheck(out.sql); } catch (e) {
-        $('status').textContent = 'Fixing SQL...';
+        phase = 'Fixing SQL';
+        dbg(`pre-check failed: ${String(e.message || e)}`);
         out = await askModel(question, cfg, { sql: out.sql, error: String(e.message || e) });
       }
     }
     history.push({ question, ...out });
-    $('status').textContent = '';
+    phase = 'Running query';
     await showTurn(question, out);
+    $('status').textContent = '';
+    dbg('--- done');
   } catch (e) {
+    dbg(`ERROR: ${e.stack || e.message || e}`);
     $('status').replaceChildren(el('span', { className: 'err', textContent: String(e.message || e) }));
-  } finally { $('ask').disabled = false; }
+  } finally { clearInterval(tick); $('ask').disabled = false; }
 }
 $('ask').addEventListener('click', ask);
 
+$('logclear').onclick = () => { logEl().textContent = ''; };
+$('logcopy').onclick = () => navigator.clipboard?.writeText(logEl().textContent);
+$('logverbose').onchange = e => { verboseEngine = e.target.checked; };
+window.addEventListener('unhandledrejection', e => dbg(`unhandled rejection: ${e.reason?.message || e.reason}`));
+window.addEventListener('error', e => dbg(`page error: ${e.message}`));
 window.__validateSql = validateSql;
 window.__ask = ask;
-initDb().then(() => { $('status').textContent = ''; $('ask').disabled = false; window.__ready = true; })
-        .catch(e => { $('status').textContent = 'Failed to start DuckDB: ' + e.message; });
+askStart = performance.now();
+dbg(`loading DuckDB-WASM; data base URL: ${DATA_BASE}`);
+initDb().then(() => { dbg(`DuckDB ready; ${TABLES.length} views registered`); $('status').textContent = ''; $('ask').disabled = false; window.__ready = true; })
+        .catch(e => { dbg(`startup failed: ${e.stack || e.message}`); $('status').textContent = 'Failed to start DuckDB: ' + e.message; });
 </script>
 </body>
 </html>
