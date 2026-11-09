@@ -1,0 +1,4 @@
+growth_form	n	slope	slope_ci_lo	slope_ci_hi	intercept	r2
+yeast	1109	0.09022	0.08	0.1004	3.267	0.2132
+dimorphic_yeast	207	0.2494	0.2172	0.2816	2.657	0.5325
+filamentous_mycelium	3804	0.3031	0.2785	0.3277	2.427	0.1331

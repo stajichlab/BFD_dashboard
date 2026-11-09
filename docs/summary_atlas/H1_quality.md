@@ -110,6 +110,47 @@ Genomes covered per table (distinct genome key) and rows. Full table: `tables/V0
 - Growth form of species representatives (FungalTraits 1.2 + overrides): filamentous_mycelium 4,741; yeast 1,543; thallus_photosynthetic 441; dimorphic_yeast 286; NULL 259; unicellular-aflagellate_(non-yeast) 81; zoosporic-rhizomycelial_(chytrid-like) 74; zoosporic-plasmodium_(aphelid) 5; zoosporic_only 4; other 1.
 - Rule D6: representative = highest BUSCO complete within species, tie N50. Per-class table: `tables/V05_representatives_by_class.tsv`.
 
+### V06 Strain oversampling
+
+![](figures/V06_genomes_per_species.png)
+
+- 23,680 genomes in 7,450 named species; top 20 species hold 6,806 genomes (28.7 %).
+
+| genomes_per_species | n_species |
+|---|---|
+| 1 | 5,575 |
+| 2 | 859 |
+| 3-5 | 584 |
+| 6-10 | 215 |
+| 11-50 | 166 |
+| 51-200 | 42 |
+| >200 | 9 |
+
+| SPECIES | n_genomes |
+|---|---|
+| Saccharomyces cerevisiae | 1,309 |
+| Candidozyma auris | 952 |
+| Fusarium oxysporum | 814 |
+| Pyricularia oryzae | 495 |
+| Macrophomina phaseolina | 466 |
+| Aspergillus fumigatus | 416 |
+| Aspergillus flavus | 328 |
+| Fusarium asiaticum | 257 |
+| Beauveria bassiana | 224 |
+| Cryptococcus neoformans | 187 |
+| Parastagonospora nodorum | 175 |
+| Alternaria alternata | 148 |
+| Botryosphaeria dothidea | 141 |
+| Komagataella phaffii | 135 |
+| Fusarium graminearum | 134 |
+| Candida albicans | 134 |
+| Aspergillus oryzae | 128 |
+| Rhodotorula mucilaginosa | 125 |
+| Aspergillus niger | 123 |
+| Candida tropicalis | 115 |
+
+- This is why every cross-clade view uses one representative per species. Table: `tables/V06_top_species.tsv`.
+
 ## Verdict
 
-**Verdict: supported.** BUSCO (fungi_odb12) completeness depends on class: median 75-84 % in Saccharomycetes, Pichiomycetes and Schizosaccharomycetes against 98-99 % in the large filamentous classes (V02). The partial-model fraction also differs by class (median 0.25 in Saccharomycetes, 0.65 in Glomeromycetes) and is only weakly related to N50 across all genomes (Spearman rho = -0.07, V04). Every later view therefore uses class-relative BUSCO thresholds and the complete-model filter. Next data needed: an RNA-seq-in-training flag per genome (D8).
+**Verdict: supported.** BUSCO (fungi_odb12) completeness depends on class: median 75-84 % in Saccharomycetes, Pichiomycetes and Schizosaccharomycetes against 98-99 % in the large filamentous classes (V02). The partial-model fraction also differs by class (median 0.25 in Saccharomycetes, 0.65 in Glomeromycetes) and is only weakly related to N50 across all genomes (Spearman rho = -0.07, V04). The top 20 species hold 28.7 % of all genomes (V06). Every later view therefore uses one genome per species, class-relative BUSCO thresholds and the complete-model filter. Next data needed: an RNA-seq-in-training flag per genome (D8).

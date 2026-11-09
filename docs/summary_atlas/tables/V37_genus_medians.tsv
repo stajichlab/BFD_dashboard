@@ -1,0 +1,60 @@
+GENUS	ctg_freq	ctg_frac_leu	PHYLUM	CLASS	ORDER_	growth_form	primary_lifestyle	yeast_origin	n_genomes	log_n50	busco_complete	log_genome	code
+Aciculoconidium	0.0067	0.06713	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	5.458	81.4	7.248	12
+Allodekkera	0.0082	0.08659	Ascomycota	Pichiomycetes	Pichiales	yeast	litter_saprotroph	Saccharomycotina	1	5.147	80.9	7.122	1
+Ambrosiozyma	0.00545	0.05752	Ascomycota	Pichiomycetes	Pichiales	yeast	wood_saprotroph	Saccharomycotina	12	5.452	81.3	7.171	1
+Australozyma	0.0098	0.09387	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.576	79.9	7.08	1
+Babjeviella	0.0063	0.06351	Ascomycota	Pichiomycetes	Serinales	yeast	soil_saprotroph	Saccharomycotina	1	5.97	84.7	7.182	1
+Brettanomyces	0.00705	0.07625	Ascomycota	Pichiomycetes	Pichiales	yeast	nectar/tap_saprotroph	Saccharomycotina	4	6.089	80.25	7.054	1
+Candida	0.00385	0.04044	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	18	5.576	80.8	7.151	12
+Candidozyma	0.0103	0.1009	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	11	5.944	80.4	7.113	1
+Cephaloascus	0.0027	0.0279	Ascomycota	Pichiomycetes	Serinales	yeast	wood_saprotroph	Saccharomycotina	2	5.502	87.75	7.159	1
+Chernovozyma	0.006	0.06061	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	3	5.481	82.6	7.133	12
+Citeromyces	0.02045	0.207	Ascomycota	Pichiomycetes	Pichiales	yeast	nectar/tap_saprotroph	Saccharomycotina	4	4.471	82.4	7.214	1
+Clavispora	0.0097	0.09473	Ascomycota	Pichiomycetes	Serinales	yeast	litter_saprotroph	Saccharomycotina	9	5.872	80.1	7.058	12
+Danielia	0.0092	0.08879	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.706	81.7	7.053	1
+Danielozyma	0.0058	0.05835	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	5.87	83	7.027	12
+Debaryomyces	0.004	0.04152	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	14	5.923	83.25	7.057	12
+Dujonia	0.0067	0.06954	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	6	5.612	81.95	7.14	12
+Fermentozyma	0.0042	0.04334	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	6.309	82.6	7.154	12
+Gaillardinia	0.0092	0.08745	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.86	82.5	6.998	1
+Glucitozyma	0.0035	0.03455	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.738	82.3	7.012	12
+Helenozyma	0.011	0.1048	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.484	80.3	7.054	1
+Hemisphaericaspora	0.0038	0.04013	Ascomycota	Pichiomycetes	Serinales	yeast	animal_endosymbiont	Saccharomycotina	5	5.035	80.4	7.177	12
+Hyphopichia	0.005	0.05181	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	7	5.5	82.1	7.124	12
+Insectozyma	0.00235	0.02341	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	8	5.443	79.9	7.078	12
+Intestinozyma	0.0062	0.06385	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.217	80.5	7.129	12
+Isabelozyma	0.0041	0.04197	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	3	5.707	82	7.093	1
+Keqinozyma	0.0056	0.05537	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.821	81.4	7.041	12
+Kodamaea	0.0095	0.0936	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	23	5.663	81.7	7.151	12
+Komagataella	0.0156	0.1552	Ascomycota	Pichiomycetes	Pichiales	yeast	wood_saprotroph	Saccharomycotina	7	6.38	82	6.973	1
+Kregervanrija	0.0043	0.04465	Ascomycota	Pichiomycetes	Pichiales	yeast	litter_saprotroph	Saccharomycotina	3	5.294	80.4	7.083	1
+Kuraishia	0.0236	0.2494	Ascomycota	Pichiomycetes	Pichiales	yeast	animal_endosymbiont	Saccharomycotina	8	5.712	85.1	7.079	1
+Kurtzmaniella	0.0131	0.1264	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	8	5.652	80.6	7.114	12
+Lizanozyma	0.0074	0.0749	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.438	80.05	7.109	12
+Lodderomyces	0.00485	0.05055	Ascomycota	Pichiomycetes	Serinales	yeast	animal_parasite	Saccharomycotina	8	6.012	80.4	7.126	12
+Metahyphopichia	0.0041	0.04218	Ascomycota	Pichiomycetes	Serinales	dimorphic_yeast	nectar/tap_saprotroph	dimorphic-other	1	5.667	82.5	7.057	12
+Metschnikowia	0.0097	0.09576	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	42	5.39	80.1	7.198	1
+Meyerozyma	0.0079	0.07916	Ascomycota	Pichiomycetes	Serinales	yeast	epiphyte	Saccharomycotina	7	5.966	82.8	7.011	12
+Millerozyma	0.0062	0.062	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	3	6.161	82.8	7.044	12
+Nakazawaea	0.01	0.09662	Ascomycota	Pichiomycetes	Alaninales	yeast	nectar/tap_saprotroph	Saccharomycotina	15	5.706	82.7	7.082	1
+Nematodospora	0.00325	0.03342	Ascomycota	Pichiomycetes	Serinales	yeast	animal_endosymbiont	Saccharomycotina	2	5.663	82.4	7.091	12
+Nothofagozyma	0.0029	0.02935	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.623	88.1	7.14	1
+Ogataea	0.0141	0.1418	Ascomycota	Pichiomycetes	Pichiales	yeast	nectar/tap_saprotroph	Saccharomycotina	50	5.739	83.05	7.06	1
+Osmozyma	0.00965	0.09454	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.254	80.25	7.073	1
+Pachysolen	0.0059	0.05836	Ascomycota	Pichiomycetes	Alaninales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	6.243	82.4	7.095	26
+Peterozyma	0.0067	0.06588	Ascomycota	Pichiomycetes	Alaninales	yeast	nectar/tap_saprotroph	Saccharomycotina	2	5.682	83.3	7.119	1
+Priceomyces	0.00545	0.05442	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	6	5.782	81.6	7.035	12
+Scheffersomyces	0.0049	0.0507	Ascomycota	Pichiomycetes	Serinales	yeast	animal_endosymbiont	Saccharomycotina	18	5.676	82.3	7.179	12
+Schwanniomyces	0.00395	0.04016	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	8	5.544	83.15	7.083	12
+Soucietia	0.0028	0.02976	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.385	80.6	7.174	1
+Spathaspora	0.0047	0.04875	Ascomycota	Pichiomycetes	Serinales	yeast	animal_endosymbiont	Saccharomycotina	6	5.341	81.45	7.115	12
+Suhomyces	0.0048	0.04948	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	31	5.594	82.4	7.123	12
+Sungouiella	0.0091	0.09037	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	15	5.752	80.9	7.104	1
+Suzukiozyma	0.0038	0.03942	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	5	5.738	81.7	7.1	12
+Teunomyces	0.0071	0.06992	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	12	5.633	82.35	7.024	12
+Wenyingozyma	0.0057	0.06155	Ascomycota	Pichiomycetes	Pichiales	yeast		Saccharomycotina	8	5.687	81.5	7.105	1
+Wickerhamia	0.0096	0.09393	Ascomycota	Pichiomycetes	Serinales	yeast	dung_saprotroph	Saccharomycotina	1	6.216	81.2	7.12	12
+Wilhelminamyces	0.01205	0.1131	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.797	82.15	7.091	1
+Xiuguozyma	0.02185	0.2387	Ascomycota	Pichiomycetes	Pichiales	yeast		Saccharomycotina	2	5.077	80.1	6.989	1
+Yamadazyma	0.004	0.04088	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	51	5.704	80.6	7.048	12
+Zhuliangozyma	0.00575	0.05948	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	4.719	81.05	7.087	12

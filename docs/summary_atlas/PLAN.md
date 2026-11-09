@@ -405,3 +405,16 @@ All jobs ran on partition `epyc` (16 CPU) except the render (`short`, 4 CPU) and
 The wall-time estimates in section 6.2 were too high by one to two orders of magnitude: DuckDB reads only the needed columns, and the tables are genome-ordered.
 
 Measured in the build: `idp_summary.protein_id` has no `-T` suffix (0 of 144,924,594 rows), so it joins on `gene_id`. 14,577,766 of 18,767,284 SignalP proteins have no TMHMM row; the TMHMM table holds only proteins with >= 1 predicted helix (0 of 45,707,260 rows have PredHel = 0; minimum 1), so a missing row means 0 helices and the secretome counts treat it so.
+
+### 9.1 P2 build (2026-11-08, 17:18-17:45 PST)
+
+| Job | SLURM ID | State | Elapsed | Output |
+|---|---|---|---|---|
+| J5 model anchor (swissprot_hits, 2.19 G rows, 16 chunks on species_prefix range; 32 CPU, 192 GB) | 31876370 | COMPLETED | 2 min 9 s | `A9/anchor_chunks/*.parquet`, `A9/protein_model_anchor.parquet` (235,798,074 rows = protein x reference organism), `A4/fam_anchor_genome.parquet` (18,926,123), `A9/anchor_genome_summary.parquet` |
+| J7 MEROPS best hit + family (map built from `/bigdata/stajichlab/shared/lib/funannotate_db/merops_scan.lib`, 5,009 ids, latin-1) | 31876407 (FAILED: CSV sniffer on the DeltaGain map), 31876736 (ran on a truncated map; outputs deleted), 31876846 (final) | COMPLETED | 5 s | `A5/merops_best.parquet`, `A5/merops_family_counts.parquet` (1,849,590), `A5/merops_mapping_check.parquet`: 54,808 of 6,750,232 best hits (0.81 %) unmapped |
+| J6 render, P2 subset | 31876671 (13 views), 31876847 (V10, V25) | COMPLETED | 1 min 12 s, 1 min 18 s | |
+| J6 render, final all views + index | 31877061 | COMPLETED | 4 min 3 s | 37 views (22 P1 + 15 P2), 7 hypothesis pages, 76 figure files, 46 tables; largest SVG now 524 KB (V27 was 10.9 MB) |
+
+P2 code: `bin/atlas/render_p2.py` (imported by `render_views.py`), `bin/atlas/sql/J5_model_anchor.sql`, `bin/atlas/sql/J7_merops.sql`, `workflows/atlas/J5.sh`, `workflows/atlas/J7.sh`, `atlas_data/labels/merops_family_map.tsv`. Scatter point layers are now rasterized inside the SVG files (`rasterized=True`), which applies to V03, V04, V16, V18, V27, V29, V30, V34, V37, V38, V40 and the per-class strip plots.
+
+P2 views not built: none. P3 (V19, V26, V32, V41, V42) stays out of scope.

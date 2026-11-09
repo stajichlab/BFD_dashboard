@@ -1,0 +1,240 @@
+LOCUSTAG	SPECIES	PHYLUM	CLASS	busco_duplicated	ident_per1000	largest_identical_group	n_identical_groups	hybrid	N50_bp
+F60E8408	Enterocytozoonidae sp. gmOTU26 Ox002348	Microsporidia		3.3	638.9	30	899	0	69153
+F1B2BAA8	Ogataea polymorpha x Ogataea parapolymorpha	Ascomycota	Pichiomycetes	78.6	597.1	3	4586	1	90445
+FFC6560D	Vairimorpha sp. gmOTU13 SAN23001243	Microsporidia		8.6	524.3	10	1337	0	270178
+FF4B6540	Nosema muscidifuracis	Microsporidia		10.2	505.9	12	1370	0	544348
+F1CF758D	Puccinia polysora	Basidiomycota	Pucciniomycetes	87.9	377.2	10	6430	0	53962258
+FEE05A87	Lentinula aciculospora	Basidiomycota	Agaricomycetes	92.2	376.1	15	4352	0	1192520
+F1D4FA12	Nosema sp. gmOTU22 Ox000071	Microsporidia		8.1	367.9	19	1436	0	562895
+F47EE4B8	Puccinia triticina	Basidiomycota	Pucciniomycetes	89.3	356.2	305	7366	0	7373251
+FC6EB23A	Neonectria sp. B-13	Ascomycota	Sordariomycetes	10.4	335	2	2721	0	1450799
+FD8D22AD	Scleroderma citrinum	Basidiomycota	Agaricomycetes	89.9	330.1	14	3130	0	1191306
+F452AD05	Amblyosporidae sp. gmOTU10 Ox001727	Microsporidia		10.2	315	13	1471	0	947223
+F45FF55D	Amblyosporidae sp. gmOTU8 NHMUK014451618	Microsporidia		1.2	313	10	313	0	259350
+FB0E91EB	Vairimorpha sp. gmOTU11 Ox002490	Microsporidia		7	282	4	555	0	235102
+F584321B	Nosema sp. gmOTU18 Ox002557	Microsporidia		10.2	271.8	12	1107	0	137544
+F7609CBB	Polychytrium aggregatum	Chytridiomycota	Chytridiomycetes	52	260.5	7	2052	0	389128
+F8BED89C	Nosema sp. gmOTU20 Ox002937	Microsporidia		10.3	255.6	18	961	0	660300
+FB423379	Morchella kakiicolor	Ascomycota	Pezizomycetes	23.1	245.9	8	1720	0	1098974
+FFA7B72F	Vairimorpha bombi	Microsporidia		1.3	240.1	9	391	0	283562
+F85C0CDC	Puccinia novopanici	Basidiomycota	Pucciniomycetes	29.2	234.4	11	2162	0	13091
+F03128A4	Phallus impudicus	Basidiomycota	Agaricomycetes	21.9	233.9	7	1754	0	322833
+F0BB6585	Trachipleistophora hominis	Microsporidia		2	215.3	5	255	0	163289
+F220C7FA	Amanita muscaria	Basidiomycota	Agaricomycetes	90.7	203	10	1881	0	2171544
+F1D30920	Smittium angustum	Kickxellomycota	Harpellomycetes	19.7	195.1	3	919	0	43922
+FFFCF7EE	Epichloe coenophiala	Ascomycota	Sordariomycetes	91.5	190.9	5	2170	0	1403312
+F17BD372	Vairimorpha sp. gmOTU12 Ox000033	Microsporidia		5.3	186.8	9	388	0	131863
+F93EB3E4	Vavraia culicis	Microsporidia		1.6	186.4	6	327	0	209597
+F1F10D17	Macrocystidia cucumis	Basidiomycota	Agaricomycetes	8.4	186.2	5	851	0	27979
+F32E7142	Cortinarius torvus	Basidiomycota	Agaricomycetes	2.5	185.1	34	1401	0	7340386
+F45BD9C7	Furculomyces boomerangus	Kickxellomycota	Harpellomycetes	18.3	179.6	4	841	0	45117
+F6DA467E	Tilletia controversa	Basidiomycota	Exobasidiomycetes	11.2	178	10	1049	0	137055
+F45472D2	Nosematidae sp. gmOTU23 NHMUK014425611	Microsporidia		6.5	174.3	6	373	0	100422
+FF838E9E	Brettanomyces naardenensis	Ascomycota	Pichiomycetes	8.9	170.4	2	495	0	210458
+FB5DEDA2	Epichloe hybrida	Ascomycota	Sordariomycetes	86.3	165.5	4	1375	0	2103505
+F634EC16	Morchella semilibera	Ascomycota	Pezizomycetes	12.2	163.5	3	1016	0	2999225
+F28A0749	Binucleata daphniae	Microsporidia		2.5	161.5	6	269	0	332081
+F5A7DA31	Encephalitozoon cuniculi	Microsporidia		0.3	158.7	21	72	0	248776
+FE1C0B6E	Morchella brunnea	Ascomycota	Pezizomycetes	10.9	152.4	23	878	0	1658427
+FF398EA3	Saccharomyces cerevisiae x Saccharomyces eubayanus	Ascomycota	Saccharomycetes	53.7	149	2	817	1	135641
+F7CD10D4	Amblyosporidae sp. gmOTU1 NHMUK015059140	Microsporidia		10.2	148.8	7	1182	0	375969
+F0F9A738	Glugoides intestinalis	Microsporidia		0.6	147.5	27	164	0	439321
+FC600A0E	Mycena citricolor	Basidiomycota	Agaricomycetes	61.5	146.3	23	1599	0	618461
+F33D5E14	Rutstroemia sp. NJR-2017a BVV2	Ascomycota	Leotiomycetes	8.4	144.8	2	934	0	973512
+FB0E312E	Vairimorpha sp. gmOTU5 Ox002256	Microsporidia		1.6	139.9	4	268	0	123891
+FD2E25D0	Aureobasidium sp. DW-1	Ascomycota	Dothideomycetes	76.8	139.9	11	1397	0	958830
+F10EB3D7	Lentinus squarrosulus	Basidiomycota	Agaricomycetes	7.3	137.4	2	627	0	9762
+F738530A	Golovinomyces cichoracearum	Ascomycota	Leotiomycetes	1.1	132.9	155	134	0	14200425
+F3FA3D58	Tricholoma populinum	Basidiomycota	Agaricomycetes	43.3	132.3	10	1856	0	681880
+F1A6B335	Nosema sp. gmOTU21 Ox000576	Microsporidia		1.4	131.6	14	243	0	487440
+FD95C5FA	Serpula himantioides	Basidiomycota	Agaricomycetes	8.4	130.8	14	813	0	269246
+FE4088EE	Sporobolomyces phaffii	Basidiomycota	Microbotryomycetes	5.6	130.4	11	482	0	1518663
+FDB1811F	Candida sp. LDI48194	Ascomycota	Pichiomycetes	10.9	130.4	3	383	0	49169
+F7F9CDD6	Tilletia laevis	Basidiomycota	Exobasidiomycetes	10.3	128.9	12	828	0	109964
+F5DF0B62	Encephalitozoon hellem	Microsporidia		0.4	126.4	22	83	0	246261
+FD8C016C	Melampsora pinitorqua	Basidiomycota	Pucciniomycetes	0.7	126.3	4	102	0	4907
+FA89A4D8	Clarireedia homoeocarpa	Ascomycota	Leotiomycetes	9.1	123.1	3	802	0	709078
+FE42E123	Vairimorpha sp. gmOTU4 NHMUK015059427	Microsporidia		0.6	120.8	6	174	0	480536
+F5F45F9B	Cryomyces antarcticus	Ascomycota	Dothideomycetes	87.7	119.8	19	965	0	689200
+F2CF8559	Russula emetica	Basidiomycota	Agaricomycetes	22	117.9	13	765	0	533037
+FEA0C093	Cronartium harknessii	Basidiomycota	Pucciniomycetes	6	116.4	36	717	0	5086375
+F4396AF9	Cortinarius acutus	Basidiomycota	Agaricomycetes	3.5	114.8	34	819	0	11630362
+FBCDBEB1	Pisolithus tinctorius	Basidiomycota	Agaricomycetes	53.7	114.7	9	1081	0	1374859
+F7C2FC56	Puccinia coronata	Basidiomycota	Pucciniomycetes	71.5	114.1	9	1772	0	170676
+F18DB08B	Boothiomyces sp. JEL0838	Chytridiomycota	Chytridiomycetes	4.3	113.4	2	396	0	116125
+FCC4B724	Amblyosporidae sp. gmOTU2 SAN22000477	Microsporidia		4.2	112.7	4	194	0	93895
+FBEC887B	Protostropharia sp. ZRL20200861	Basidiomycota	Agaricomycetes	16	108.3	11	1067	0	1093092
+FB6C2F68	Neopereziidae sp. gmOTU28 NHMUK014561543	Microsporidia		0.6	107.4	6	267	0	50626
+FAA36AFB	Lactarius tabidus	Basidiomycota	Agaricomycetes	86.2	106.3	9	1264	0	567094
+F3CA7825	Morchella americana	Ascomycota	Pezizomycetes	3.7	106.1	3	676	0	823223
+F22F00F8	Candida albicans	Ascomycota	Pichiomycetes	13.9	105.4	33	303	0	1029629
+F271FE36	Cryomyces minteri	Ascomycota	Dothideomycetes	38.4	103.9	4	702	0	17441
+FEEC04D5	Vairimorpha sp. gmOTU16 NHMUK010884576	Microsporidia		7.5	103.5	11	494	0	71541
+F4DB3A88	Lodderomyces beijingensis	Ascomycota	Pichiomycetes	1.9	101.8	9	74	0	2114155
+FD60F4C9	Ganoderma adspersum	Basidiomycota	Agaricomycetes	75.3	101	6	1202	0	326033
+F0A37E5F	Baeospora myosura	Basidiomycota	Agaricomycetes	6.6	99.31	5	577	0	11427
+FD4B4AC6	Paraphysoderma sedebokerense	Blastocladiomycota	Physodermatomycetes	6.7	99.05	5	477	0	253141
+F13D0CDE	Suillus fuscotomentosus	Basidiomycota	Agaricomycetes	28.8	95.45	20	990	0	438233
+FD44D45E	Suillus subluteus	Basidiomycota	Agaricomycetes	43	95.42	11	1336	0	431953
+F8483873	Enterocytozoonidae sp. gmOTU24 Ox000445	Microsporidia		2.6	94.64	4	129	0	87789
+FE4477B7	Aspergillus carbonarius	Ascomycota	Eurotiomycetes	5.7	94.52	2	517	0	1827541
+F235F0EC	Smittium culicis	Kickxellomycota	Harpellomycetes	15.8	94.01	4	643	0	15626
+F759982D	Encephalitozoon intestinalis	Microsporidia		0.3	92.9	21	46	0	230490
+F2D1A5D6	Boothiomyces sp. JEL0866	Chytridiomycota	Chytridiomycetes	4.1	92.2	3	352	0	115383
+F7E935FD	Inocybe asterospora	Basidiomycota	Agaricomycetes	1.7	91.12	19	509	0	2798300
+FE9518A1	Neosartorya sp. G135_14	Ascomycota	Eurotiomycetes	4.1	90.38	2	528	0	21393
+F72A0C24	Clitopilus abprunulus	Basidiomycota	Agaricomycetes	9.1	88.94	4	539	0	2915533
+FC3814D1	Nematocida minor	Microsporidia		0.3	88.75	2	110	0	90449
+FFA6FF73	Phallus indusiatus	Basidiomycota	Agaricomycetes	48.7	87.87	5	831	0	793652
+FF5F03AA	Vairimorpha sp. gmOTU5 NHMUK014536986	Microsporidia		0	87.35	3	47	0	253267
+FC019C81	Umbilicaria freyi	Ascomycota	Lecanoromycetes	10.2	84.12	4	429	0	2575641
+FCB42474	Roridomyces roridus	Basidiomycota	Agaricomycetes	37.9	83.84	5	1351	0	1221738
+F0DFA34A	Vairimorpha sp. gmOTU15 SAN0000875	Microsporidia		5.5	83.58	4	278	0	59277
+FB6174EB	Mycena alexandri	Basidiomycota	Agaricomycetes	25.5	83.01	6	1422	0	328412
+FE65C0E7	Pichia fermentans	Ascomycota	Pichiomycetes	16.3	82	3	262	0	1755768
+F0A381ED	Boletus coccyginus	Basidiomycota	Agaricomycetes	11.8	81.72	5	525	0	513028
+F371EA96	Hamiltosporidium magnivora	Microsporidia		1.5	80.13	3	158	0	11205
+FA6CE80F	Mycena vulgaris	Basidiomycota	Agaricomycetes	32.6	80.08	14	2044	0	342052
+F4A05088	Rutstroemia sp. NJR-2017a WRK4	Ascomycota	Leotiomycetes	6	79.63	2	505	0	459069
+F199F68F	Athelia sp. TMB	Basidiomycota	Agaricomycetes	64.8	79.52	5	987	0	133346
+FDDACA53	Neosartorya sp. G132_14	Ascomycota	Eurotiomycetes	3.9	79.41	2	455	0	70037
+F18C3827	Trichoderma sp. IMV 00454	Ascomycota	Sordariomycetes	2.8	78.73	5	258	0	1319489
+FDDB0F6D	Rachicladosporium sp. CCFEE 5018	Ascomycota	Dothideomycetes	62.4	78.22	4	658	0	1358697
+F863C518	Ceratobasidium sp. Cej3	Basidiomycota	Agaricomycetes	37.3	77.64	8	957	0	624318
+FF9F0E74	Morchella hispaniolensis	Ascomycota	Pezizomycetes	7.4	77.43	7	435	0	2042202
+FFF4176B	Flammula alnicola	Basidiomycota	Agaricomycetes	44	77.35	6	862	0	213982
+FE596CFF	Puccinia hordei	Basidiomycota	Pucciniomycetes	29.1	76.86	5	590	0	405324
+FDC5C692	Neosartorya sp. G127_14	Ascomycota	Eurotiomycetes	5.2	76.54	2	436	0	59062
+FD5075E2	Tremella sp. sinensis	Basidiomycota	Tremellomycetes	38.3	75.91	9	499	0	1700464
+F67353AC	Batkoa obscura	Entomophthoromycota	Entomophthoromycetes	65.8	74.88	8	695	0	1064193
+F997B409	Rhodocollybia maculata	Basidiomycota	Agaricomycetes	1.9	74.56	46	233	0	12465744
+FEFB692B	Tolypocladium sp. Sup5 PDA-1	Ascomycota	Sordariomycetes	5.2	74.24	3	410	0	491056
+F33D5451	Ceratobasidium sp. AG-Bb	Basidiomycota	Agaricomycetes	6	74.03	4	442	0	1743571
+FA717D80	Pisolithus microcarpus	Basidiomycota	Agaricomycetes	50.2	71.96	12	652	0	1409943
+F63FF847	Amblyosporidae sp. gmOTU2 SAN22000470	Microsporidia		0.9	71.77	6	98	0	965533
+FE269FF8	Smittium megazygosporum	Kickxellomycota	Harpellomycetes	9.4	71.77	4	298	0	25918
+F50AC181	Agaricus subrufescens	Basidiomycota	Agaricomycetes	4.1	71.56	12	407	0	3166853
+F43CF91D	Hemisphaericaspora xylanilytica	Ascomycota	Pichiomycetes	7.6	70.57	3	230	0	17835
+FDB022CA	Mycena sp. CBHHK59_15	Basidiomycota	Agaricomycetes	38.4	70.37	10	1415	0	200627
+FC35D36E	Apiotrichum akiyoshidainum	Basidiomycota	Tremellomycetes	3.9	70.04	2	333	0	53521
+F7842AA1	Apophysomyces elegans	Mucoromycota	Mucoromycetes	11.5	69.77	5	357	0	103110
+F2028281	Suillus placidus	Basidiomycota	Agaricomycetes	8.9	69.77	9	613	0	424821
+F5076DAB	Coprinus comatus	Basidiomycota	Agaricomycetes	14.8	69.63	7	403	0	2379206
+F591A93A	Batrachochytrium dendrobatidis	Chytridiomycota	Chytridiomycetes	4	69.03	18	280	0	1102615
+F1345F74	Ganoderma boninense	Basidiomycota	Agaricomycetes	2.7	69.01	11	462	0	733347
+F05B6213	Mycena floridula	Basidiomycota	Agaricomycetes	27.1	69	5	1137	0	1749311
+F16A6E8E	Gaeumannomyces hyphopodioides	Ascomycota	Sordariomycetes	3.3	68.53	5	428	0	6998096
+FE4E4FF3	Collybiopsis confluens	Basidiomycota	Agaricomycetes	6.4	68.5	8	513	0	181367
+F360B75C	Diutina catenulata	Ascomycota	Pichiomycetes	3.5	67.43	2	165	0	3921229
+F8BDDC36	Syncephalis pseudoplumigaleata	Zoopagomycota	Zoopagomycetes	3.4	67.4	6	198	0	5685
+F272F6E1	Melampsora americana	Basidiomycota	Pucciniomycetes	59.8	67.23	6	720	0	1070030
+F51F8EFF	Kuehneromyces mutabilis	Basidiomycota	Agaricomycetes	1.2	66.97	21	306	0	4090658
+F95AA216	Russula decolorans	Basidiomycota	Agaricomycetes	4.5	66.67	15	333	0	289313
+F83BF6E4	Inosperma lanatodiscum	Basidiomycota	Agaricomycetes	78.9	66.3	17	893	0	143225
+F2D1F235	Phlebopus sp. FC_14	Basidiomycota	Agaricomycetes	5.8	66.24	7	282	0	2478283
+F5570A3E	Auriscalpium microsporum	Basidiomycota	Agaricomycetes	3.2	66.2	7	387	0	2448894
+FC07BDFE	Armillaria mellea	Basidiomycota	Agaricomycetes	18.6	65.47	4	606	0	2540624
+F2288138	Lactarius akahatsu	Basidiomycota	Agaricomycetes	18.4	65.29	6	190	0	249015
+F860C58B	Schizosaccharomyces japonicus	Ascomycota	Schizosaccharomycetes	3	65.25	38	65	0	4617565
+F787FB4C	Paracoccidioides restrepoana	Ascomycota	Eurotiomycetes	4	65.05	13	244	0	6879454
+F1CE3C22	Phakopsora pachyrhizi	Basidiomycota	Pucciniomycetes	71.7	64.55	14	1110	0	47183946
+F8EB8BD2	Stygiomarasmius scandens	Basidiomycota	Agaricomycetes	11.3	63.59	7	646	0	688587
+FAF8A922	Morchella norvegiensis	Ascomycota	Pezizomycetes	4.5	62.35	23	333	0	1831039
+F0B88F2F	Mucidula mucida	Basidiomycota	Agaricomycetes	19.1	62.13	4	631	0	124763
+F80D5443	Cystastrum externum	Basidiomycota	Cystobasidiomycetes	34.5	61.9	4	420	0	25606
+F9EB74F2	Cortinarius flexipes	Basidiomycota	Agaricomycetes	3.1	61.86	37	379	0	5915426
+F82DC78C	Dirinaria sp. GBRC AP01	Ascomycota	Lecanoromycetes	12	60.93	5	266	0	4892
+FB3C3343	Epidermophyton floccosum	Ascomycota	Eurotiomycetes	2.6	60.08	3	223	0	1440268
+F20CE445	Mycena latifolia	Basidiomycota	Agaricomycetes	23.1	60.06	5	1172	0	768761
+FA47218D	Pecoramyces ruminantium	Neocallimastigomycota	Neocallimastigomycetes	5.8	60.02	8	740	0	3742
+FFD60FE2	Candida sanyaensis	Ascomycota	Pichiomycetes	59.9	59.52	7	356	0	282708
+F364B67D	Leucocoprinus sp. KB1807203	Basidiomycota	Agaricomycetes	7.8	59.26	4	131	0	189029
+FA6719D8	Nosema sp. gmOTU19 Ox001795	Microsporidia		0	59.22	3	28	0	48964
+F22B2D3A	Boothiomyces macroporosus	Chytridiomycota	Chytridiomycetes	3.8	58.53	3	252	0	109397
+F55450F0	Inocybe fraudans	Basidiomycota	Agaricomycetes	1.7	58.21	17	403	0	5181557
+F6179EBF	Encephalitozoon sp. gmOTU3 Ox001895	Microsporidia		0.3	58.09	8	41	0	452115
+FBB08B1E	Conidiobolus incongruus	Entomophthoromycota	Entomophthoromycetes	55.9	57.78	11	487	0	17177
+F888095F	Phycomyces blakesleeanus	Mucoromycota	Mucoromycetes	10.7	57.22	58	301	0	1893162
+FCD6113D	Aureobasidium aubasidani	Ascomycota	Dothideomycetes	2.7	56.97	4	305	0	1201293
+F2951465	Cantharellus anzutake	Basidiomycota	Agaricomycetes	52	56.89	7	483	0	576606
+F8002A09	Suillus variegatus	Basidiomycota	Agaricomycetes	21.3	56.88	6	513	0	171491
+FA9FBCE9	Entoloma clypeatum	Basidiomycota	Agaricomycetes	1.7	56.66	10	30	0	5092158
+F906E61A	Enteropsectra breve	Microsporidia		0.3	56.45	3	90	0	20659
+F5457454	Astrocystis sublimbata	Ascomycota	Sordariomycetes	2	56.28	6	299	0	538138
+FACBCE5B	Tricholoma cingulatum	Basidiomycota	Agaricomycetes	1.4	55.97	17	259	0	3145815
+F3279049	Gymnopilus luteofolius	Basidiomycota	Agaricomycetes	20.3	55.75	6	542	0	1033375
+FF800694	Thyridium curvatum	Ascomycota	Sordariomycetes	2.8	55.56	2	336	0	377547
+F54754F8	Mycena amicta	Basidiomycota	Agaricomycetes	26.9	55.51	9	789	0	906400
+F13B194A	Favolaschia claudopus	Basidiomycota	Agaricomycetes	87.5	55.39	7	1600	0	1463009
+FB798ABE	Pleurotus sapidus	Basidiomycota	Agaricomycetes	6.9	55.26	6	338	0	1656594
+FA4D4D0D	Neosartorya sp. G150_14	Ascomycota	Eurotiomycetes	3.8	54.35	2	313	0	34353
+F2A4F6F0	Mycena polygramma	Basidiomycota	Agaricomycetes	35	54.15	5	1023	0	742985
+F95782B4	Amblyosporidae sp. gmOTU2 SAN22000478	Microsporidia		1.2	53.84	7	91	0	815947
+FE882FED	Mycena metata	Basidiomycota	Agaricomycetes	36.4	53.6	13	1137	0	358022
+F3DAE981	Mycena haematopus	Basidiomycota	Agaricomycetes	15.5	53.52	6	476	0	162590
+FBB724EC	Filobasidium magnum	Basidiomycota	Tremellomycetes	1.5	53.2	3	212	0	1067880
+FC9298C0	Pseudomonodictys pantanalensis	Ascomycota	Dothideomycetes	2.8	52.82	2	402	0	74681
+FEFFC962	Galerina sulciceps	Basidiomycota	Agaricomycetes	39	52.8	10	708	0	1836322
+F89F5575	Fomitopsis pinicola	Basidiomycota	Agaricomycetes	0.9	52.51	4	275	0	107874
+FFE4BF58	Smittium mucronatum	Kickxellomycota	Harpellomycetes	4.3	52.51	3	287	0	23240
+FCA3D6BD	Dactylobotrys graminicola	Ascomycota	Sordariomycetes	4.2	52	4	232	0	205539
+FF4DBCEB	Epichloe sp. FaTG-3	Ascomycota	Sordariomycetes	76.4	51.48	8	385	0	1415236
+F2137557	Trimorphomyces papilionaceus	Basidiomycota	Tremellomycetes	44.4	51.48	4	308	0	105515
+F6EA8F79	Penicillium simplicissimum	Ascomycota	Eurotiomycetes	4.3	51.33	6	278	0	3969503
+F0AFF821	Conidiobolus coronatus	Entomophthoromycota	Entomophthoromycetes	1.5	51.07	19	206	0	1415773
+FC5E8576	Lactarius pseudohatsudake	Basidiomycota	Agaricomycetes	31.4	50.68	7	542	0	149378
+FB9A76F2	Marasmius cohortalis	Basidiomycota	Agaricomycetes	10.7	50.16	8	489	0	1840880
+FFAF9595	Dendrothele bispora	Basidiomycota	Agaricomycetes	9.7	50.04	3	743	0	119514
+F0091375	Armillaria ostoyae	Basidiomycota	Agaricomycetes	1.5	49.33	812	52	0	4706541
+F8186C82	Podosphaera xanthii	Ascomycota	Leotiomycetes	25	49.12	142	111	0	6112248
+FA8D86EB	Amylostereum areolatum	Basidiomycota	Agaricomycetes	12.4	47.61	23	352	0	731813
+FA853BAA	Gilbertella persicaria	Mucoromycota	Mucoromycetes	11.1	46.26	29	116	0	3665012
+F508C7F9	Wolfiporia cocos	Basidiomycota	Agaricomycetes	2.4	40.91	28	153	0	3762476
+FD68FAF8	Calonarius cisticola	Basidiomycota	Agaricomycetes	1.5	40.5	21	161	0	3271632
+FB682192	Puccinia graminis	Basidiomycota	Pucciniomycetes	81.3	39.34	50	566	0	5144719
+FA9035DC	Cunninghamella echinulata	Mucoromycota	Mucoromycetes	7.8	38.92	31	59	0	4258719
+FF9EEB10	Auricularia cornea	Basidiomycota	Agaricomycetes	2.3	37.24	27	350	0	6030586
+FE8756CC	Microbotryum superbum	Basidiomycota	Microbotryomycetes	1.1	36.89	20	130	0	2555869
+F9EA0D01	Hermanssonia centrifuga	Basidiomycota	Agaricomycetes	0.2	33.39	29	170	0	3382052
+F186E471	Stylopage hadra	Zoopagomycota	Zoopagomycetes	3.7	33.12	26	141	0	5160
+FE7BC5D9	Neocallimastix lanati	Neocallimastigomycota	Neocallimastigomycetes	32.4	33.04	23	379	0	1031807
+F20F2033	Armillaria mexicana	Basidiomycota	Agaricomycetes	2.9	32.66	24	152	0	3015657
+F07E4D21	Kazachstania sp. NW717	Ascomycota	Saccharomycetes	7.2	31.37	117	25	0	849619
+F7E00631	Schizosaccharomyces versatilis	Ascomycota	Schizosaccharomycetes	2.9	26.95	29	23	0	4455726
+F4452A36	Pochonia chlamydosporia	Ascomycota	Sordariomycetes	0.9	26.39	60	155	0	6552045
+F4E3794F	Rhizopus delemar	Mucoromycota	Mucoromycetes	23.4	25.09	26	115	0	3525286
+F3911D6D	Penicillium italicum	Ascomycota	Eurotiomycetes	0.7	24.96	39	89	0	6165159
+F8EAB1C9	Phlegmacium triumphans	Basidiomycota	Agaricomycetes	1.2	23.67	23	220	0	13644938
+F124EEE6	Linnemannia hyalina	Mortierellomycota	Mortierellomycetes	9.2	23.54	25	117	0	2317658
+FA0B2598	Neocallimastix sp. constans	Neocallimastigomycota	Neocallimastigomycetes	30.7	23.34	30	278	0	703164
+FD6849A1	Pyronema omphalodes	Ascomycota	Pezizomycetes	1.4	22.35	22	95	0	2057851
+F4649F29	Ramularia vizellae	Ascomycota	Dothideomycetes	0.8	21.88	22	65	0	3231786
+FB18985F	Colletotrichum sublineola	Ascomycota	Sordariomycetes	1.2	20.72	26	104	0	2691276
+FB1CF925	Porpolomopsis calyptriformis	Basidiomycota	Agaricomycetes	0.4	18.84	22	42	0	2289695
+F4166311	Rhizophagus clarus	Glomeromycota	Glomeromycetes	1.3	18.66	23	204	0	1323711
+FCA4EAF0	Hansenula subpelliculosa	Ascomycota	Saccharomycetes	3.7	18.48	32	38	0	2026738
+FA0C22CA	Fusarium vorosii	Ascomycota	Sordariomycetes	0.3	17.65	185	16	0	9588390
+F4CAA04F	Boeremia exigua	Ascomycota	Dothideomycetes	0.4	17.64	29	61	0	3020841
+FAB401D2	Cunninghamella elegans	Mucoromycota	Mucoromycetes	7.2	17.28	24	72	0	137136
+FDDF01FE	Laburnicola rhizohalophila	Ascomycota	Dothideomycetes	89.4	16.38	23	201	0	3319424
+F1B8C6CE	Ustilago loliicola	Basidiomycota	Ustilaginomycetes	0.8	16.37	25	31	0	830901
+F9E4744C	Hemileia vastatrix	Basidiomycota	Pucciniomycetes	31.1	13.38	20	121	0	35997290
+F12ADF88	Zymoseptoria tritici	Ascomycota	Dothideomycetes	0.1	13.28	23	29	0	3041780
+F0E640D2	Fusarium equiseti	Ascomycota	Sordariomycetes	0.8	13.25	130	26	0	5079678
+FBE5344D	Epichloe sp. 2 LKC-2024	Ascomycota	Sordariomycetes	82.7	12.38	26	56	0	3633821
+F403FB2E	Amorphotheca resinae	Ascomycota	Leotiomycetes	0.1	11.63	51	8	0	2338627
+F8EC00AA	Umbelopsis ramanniana	Mucoromycota	Umbelopsidomycetes	5.6	11.48	46	20	0	1650953
+F1B9A28C	Epichloe sp. 1 LKC-2024	Ascomycota	Sordariomycetes	83.3	11.31	32	48	0	3932176
+F0314A78	Pseudogymnoascus destructans	Ascomycota	Leotiomycetes	0.1	10.69	35	24	0	2546618
+F517667A	Ascochyta lentis	Ascomycota	Dothideomycetes	0.7	9.615	56	22	0	486758
+FDDA8A81	Colletotrichum echinochloae	Ascomycota	Sordariomycetes	0.4	9.044	45	29	0	5346453
+F85F6E38	Hyaloscypha variabilis	Ascomycota	Leotiomycetes	0.4	8.238	20	32	0	3026143
+FC8F01DA	Insectozyma corydali	Ascomycota	Pichiomycetes	0.6	8.144	44	1	0	1664773
+FC32100E	Fusarium neocosmosporiellum	Ascomycota	Sordariomycetes	1.1	7.993	20	42	0	6480858
+FA2F389E	Botrytis aclada	Ascomycota	Leotiomycetes	0.2	6.856	22	13	0	3028304
+F0C34388	Cercospora zeina	Ascomycota	Dothideomycetes	0.7	6.392	21	25	0	4769378
+FD9BC2BF	Chlamydoabsidia padenii	Mucoromycota	Mucoromycetes	19.8	5.978	24	23	0	911559
+FA48F006	Epichloe glyceriae	Ascomycota	Sordariomycetes	0.2	5.917	25	7	0	6230339
+F399AC24	Sclerotinia nivalis	Ascomycota	Leotiomycetes	0.3	5.72	26	16	0	2738900
+F878B385	Agaricus bisporus	Basidiomycota	Agaricomycetes	52.5	4.708	20	30	0	2340017
+F3B0F809	Colletotrichum destructivum	Ascomycota	Sordariomycetes	0.4	3.335	24	10	0	5290227

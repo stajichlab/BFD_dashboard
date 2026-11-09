@@ -59,6 +59,53 @@ PI hypothesis: yeast shorter. Proxies for orthology: SwissProt best-hit families
 - Origins with median offset < 0: 2 of 7 non-filamentous groups (Saccharomycotina, Taphrinomycotina). The filamentous row is the reference distribution (expected near 0 by construction).
 - Caveat: the filamentous reference itself is a mixture of classes; Pezizomycotina dominate it. Table: `tables/V09_offset_by_origin.tsv`. PGLS pending tree.
 
+### V10 Model-organism-anchored contrast (P-B)
+
+![](figures/V10_anchor_hist.png)
+
+- Family = the best hit of each protein to one reference proteome (*S. cerevisiae* YEAST, *N. crassa* NEUCR, *S. pombe* SCHPO, *A. nidulans* EMENI) taken from all ranked SwissProt hits, so yeast and filamentous genomes are compared on the same reference protein. Gates on the anchor hit: qcov >= 80 %, scov >= 80 %, pident >= 40 %; complete models; representative genomes with Q-ann, Q-rep (one genome per species), Q-busco-rel (BUSCO complete >= class 25th percentile), Q-dup (BUSCO duplicated <= 10 %), Q-n50 (N50 >= 50 kb), Q-model (complete gene models only); >= 10 genera per side; unit = family.
+
+| proxy | n_families | median_log2_ratio | ci_lo | ci_hi | ratio | frac_yeast_shorter | binom_p | p10 | p90 |
+|---|---|---|---|---|---|---|---|---|---|
+| P-B anchor YEAST | 1,572 | -0.019 | -0.023 | -0.017 | 0.987 | 0.693 | 1.13e-51 | -0.121 | 0.047 |
+| P-B anchor NEUCR | 493 | -0.019 | -0.024 | -0.014 | 0.987 | 0.713 | 5.01e-20 | -0.114 | 0.033 |
+| P-B anchor SCHPO | 1,707 | -0.022 | -0.025 | -0.018 | 0.985 | 0.704 | 2.91e-62 | -0.127 | 0.037 |
+| P-B anchor EMENI | 410 | -0.021 | -0.027 | -0.015 | 0.986 | 0.710 | 7.51e-17 | -0.128 | 0.034 |
+| P-A SwissProt best hit | 3,652 | -0.009 | -0.010 | -0.007 | 0.994 | 0.599 | 3.91e-31 | -0.102 | 0.058 |
+
+- Median number of strict anchors per representative genome:
+
+| org_code | median_strict_anchors_filamentous_mycelium | median_strict_anchors_yeast |
+|---|---|---|
+| EMENI | 598.500 | 207.000 |
+| NEUCR | 620.000 | 282.000 |
+| SCHPO | 1139.500 | 1006.000 |
+| YEAST | 931.000 | 1599.000 |
+
+- Result: the four anchors agree (median log2 ratio -0.019 to -0.022, 69-71 % of families yeast-shorter). The YEAST-anchored and NEUCR-anchored medians are the same (-0.019), so the P-A signal is not an artefact of Saccharomycotina genomes hitting *S. cerevisiae* references; P-B is the cleaner proxy because every genome is scored against one reference protein. Yeast genomes have more strict YEAST anchors (1,599 vs 931) and fewer NEUCR/EMENI anchors (282 vs 620) than filamentous genomes, which shows the reference-side bias that P-A inherits. Tables: `tables/V10_anchor_contrast.tsv`, `tables/V10_anchor_coverage.tsv`.
+
+### V11 Within-architecture length contrast, Pfam proxy (P-C)
+
+![](figures/V11_arch_log2_ratio.png)
+
+- Family = ordered Pfam domain string (domain_i_evalue <= 1e-5), architectures with >= 2 domains present in >= 10 yeast and >= 10 filamentous genera; complete models; representative genomes with Q-ann, Q-rep (one genome per species), Q-busco-rel (BUSCO complete >= class 25th percentile), Q-dup (BUSCO duplicated <= 10 %), Q-n50 (N50 >= 50 kb), Q-model (complete gene models only); unit = architecture.
+
+| proxy | n_families | median_log2_ratio | ci_lo | ci_hi | ratio | frac_yeast_shorter | binom_p | p10 | p90 |
+|---|---|---|---|---|---|---|---|---|---|
+| P-C Pfam architecture (>= 2 domains) | 5,026 | -0.029 | -0.032 | -0.026 | 0.980 | 0.639 | 2.26e-87 | -0.280 | 0.158 |
+
+- By number of domains in the architecture:
+
+| n_dom | median | size |
+|---|---|---|
+| (1, 2] | -0.032 | 2,135 |
+| (2, 3] | -0.027 | 1,253 |
+| (3, 4] | -0.031 | 772 |
+| (4, 6] | -0.030 | 621 |
+| (6, 100] | -0.013 | 245 |
+
+- Caveat: a truncated model loses domains and leaves its architecture class, so truncation does not make a family shorter here; what remains is linker and terminal length. Tables: `tables/V11_arch_ratios.tsv`, `tables/V11_ratio_by_domain_count.tsv`.
+
 ### V12 Sensitivity of the length contrast to quality filters
 
 ![](figures/V12_filter_grid.png)
@@ -71,9 +118,32 @@ PI hypothesis: yeast shorter. Proxies for orthology: SwissProt best-hit families
 | F3 default but all models (incl. partial) | 3,945 | -0.008 | -0.010 | -0.007 | 0.595 | 2.72e-31 |
 | F4 default with BUSCO >= class median | 2,966 | -0.009 | -0.011 | -0.007 | 0.596 | 2.30e-24 |
 | F5 default, taxonomy-only yeast definition | 3,866 | -0.008 | -0.010 | -0.007 | 0.596 | 2.45e-31 |
-| F6 default, >= 25 genera per side | 1,686 | -0.017 | -0.021 | -0.014 | 0.668 | 1.22e-41 |
+| F6 default, >= 25 genera per side | 1,686 | -0.017 | -0.020 | -0.014 | 0.668 | 1.22e-41 |
 
 - Same family statistic as V08 under each filter set. Table: `tables/V12_filter_grid.tsv`.
+
+### V13 Which families drive the difference
+
+![](figures/V13_by_reference_and_domains.png)
+
+- Same 3,652 families as V08 (unit = family). Split by the organism of the SwissProt reference each family maps to, and by the median Pfam domain count of its members.
+
+| ref_group | median | size | ci_lo | ci_hi | frac_yeast_shorter |
+|---|---|---|---|---|---|
+| N. crassa / A. nidulans | -0.014 | 269 | -0.018 | -0.008 | 0.645 |
+| S. cerevisiae (YEAST) | -0.024 | 667 | -0.028 | -0.018 | 0.683 |
+| S. pombe | -0.010 | 817 | -0.016 | -0.006 | 0.617 |
+| other reference | -0.003 | 1,899 | -0.006 | 0.000 | 0.554 |
+
+| dom_bin | median | size |
+|---|---|---|
+| 0 | -0.007 | 26 |
+| 1 | -0.011 | 1,599 |
+| 2 | -0.009 | 962 |
+| 3 | -0.008 | 514 |
+| >= 4 | -0.004 | 551 |
+
+- Reading: a negative median in the *N. crassa / A. nidulans*-referenced families shows the yeast-shorter signal is not produced by families referenced to *S. cerevisiae*. The 25 most negative and 25 most positive families are in `tables/V13_extreme_families.tsv`. Tables: `tables/V13_by_reference.tsv`, `tables/V13_by_domain_count.tsv`.
 
 ### V14 Paired sister-clade contrasts
 
@@ -90,6 +160,23 @@ PI hypothesis: yeast shorter. Proxies for orthology: SwissProt best-hit families
 
 - Unit = genus median offset (as V09). Pairs are taxonomy-based (D3), not tree-based. Sign test across pairs: 2 of 4 pairs negative, binomial p = 1.000 (low power with 4 pairs). Table: `tables/V14_sister_pairs.tsv`.
 
+### V31 Domains per protein and multi-domain fraction
+
+![](figures/V31_multidomain_by_class.png)
+
+- n = 4,377 genomes / 4,377 species / 1,030 genera. Filters: Q-ann, Q-rep (one genome per species), Q-busco-rel (BUSCO complete >= class 25th percentile), Q-dup (BUSCO duplicated <= 10 %), Q-n50 (N50 >= 50 kb). Domain gate domain_i_evalue <= 1e-5.
+**Multi-domain fraction:**
+- Unit = genus (median of representative genomes). Yeast genera n = 150, filamentous genera n = 829.
+- Median fraction of proteins with >= 2 Pfam domains: yeast 0.404, filamentous 0.326; difference 0.078 (bootstrap 95 % CI 0.073 to 0.081); Cliff's delta 0.849; Mann-Whitney p = 1.39e-61.
+- Dimorphic yeast genera n = 51, median 0.362 (shown, not pooled).
+- Mixed model `frac_multidomain ~ gf_yeast + log_n50 + busco_complete + (1|CLASS/ORDER_)` (n = 959 genera, 45 classes, converged = True): yeast effect 0.038 (95 % CI 0.013 to 0.064), p = 0.003. PGLS pending tree.
+**Fraction with any Pfam domain:**
+- Unit = genus (median of representative genomes). Yeast genera n = 150, filamentous genera n = 829.
+- Median fraction of proteins with >= 1 Pfam domain: yeast 0.853, filamentous 0.705; difference 0.148 (bootstrap 95 % CI 0.139 to 0.158); Cliff's delta 0.843; Mann-Whitney p = 9.91e-61.
+- Dimorphic yeast genera n = 51, median 0.751 (shown, not pooled).
+- Mixed model `frac_with_pfam ~ gf_yeast + log_n50 + busco_complete + (1|CLASS/ORDER_)` (n = 959 genera, 45 classes, converged = True): yeast effect 0.076 (95 % CI 0.028 to 0.124), p = 0.002. PGLS pending tree.
+- Link to H2: V13 shows the family length ratio by domain count. Table: `tables/V31_genus_medians.tsv`.
+
 ## Verdict
 
-**Verdict: not supported as a general rule; a small effect exists in Saccharomycotina only.** Within SwissProt families (V08, 3,652 families, strict gates) the median yeast/filamentous length ratio is 0.994 (log2 -0.009, 95 % CI -0.010 to -0.007); 59.9 % of families have the yeast median shorter. The effect is small against the spread between families (10th/90th percentiles -0.10/+0.06) and is stable across the quality-filter grid (V12: -0.004 to -0.017). By origin (V09) only Saccharomycotina (118 genera, 1.6 % shorter) and the two Taphrinomycotina genera are shorter; Tremellomycetes, Pucciniomycotina and Ustilaginomycotina yeasts are 0.2-1.3 % longer than the filamentous reference. Raw median protein length is slightly longer in yeast genera (414 vs 401 aa, V07). The sister-clade contrasts (V14) split 2 negative / 2 positive. The mixed model with CLASS/ORDER random intercepts gives a yeast effect of +18 aa on raw median length with a CI that spans zero (V07); growth form is nearly constant within class, so the class random effect absorbs the contrast and the model is not informative for yeast vs filamentous. The within-family, multiple-origin and sister-pair designs are the controls that carry the comparison. Caveats: SwissProt best-hit families are biased toward *S. cerevisiae* references for Saccharomycotina; the model-anchored (P-B) and Pfam-architecture (P-C) proxies are P2 and not yet run; PGLS pending tree.
+**Verdict: a small, consistent shortening exists; it is 1-2 % and strongest in Saccharomycotina.** Three orthology proxies agree in direction. P-A (shared SwissProt best hit, V08, 3,652 families): median yeast/filamentous length ratio 0.994 (log2 -0.009, 95 % CI -0.010 to -0.007), 59.9 % of families yeast-shorter. P-B (every genome anchored to one reference proteome, V10): ratio 0.985-0.987 (log2 -0.019 to -0.022) for all four anchors (*S. cerevisiae*, *N. crassa*, *S. pombe*, *A. nidulans*), 69-71 % of families yeast-shorter; the *S. cerevisiae*- and *N. crassa*-anchored medians are identical, so the reference-dominance bias of P-A does not create the signal. P-C (Pfam domain architecture, V11, 5,026 architectures): ratio 0.980 (log2 -0.029, 95 % CI -0.032 to -0.025), 63.9 % yeast-shorter, similar at every domain count. The effect is small against the spread between families (10th/90th percentiles about -0.12/+0.04 for P-B) and is stable across the quality-filter grid (V12). By origin (V09) Saccharomycotina genera are 1.6 % shorter and the two Taphrinomycotina genera 3 % shorter; Tremellomycetes, Pucciniomycotina and Ustilaginomycotina yeasts are 0.2-1.3 % longer than the filamentous reference, so the shortening is a Saccharomycotina trait rather than a yeast trait. Raw median protein length is slightly longer in yeast genera (414 vs 401 aa, V07) because yeast proteomes have more multi-domain proteins (V31: 40 % vs 33 %) and lack many short secreted families. The mixed model with CLASS/ORDER random intercepts cannot separate growth form from class; the within-family, multiple-origin and sister-pair designs carry the comparison. PGLS pending tree.

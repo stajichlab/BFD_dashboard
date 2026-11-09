@@ -1,0 +1,13 @@
+primary_lifestyle	n_genera	median_frac_secreted	median_n_cazy	median_n_cazy_secreted
+nectar/tap_saprotroph	51	0.155	137	21
+animal_endosymbiont	12	0.1985	161.2	29
+ectomycorrhizal	51	0.2786	231	65
+lichenized	93	0.2795	232	67
+animal_parasite	70	0.2831	249.2	69.5
+soil_saprotroph	114	0.323	306.5	95.5
+mycoparasite	25	0.3449	287	99
+unspecified_saprotroph	64	0.4087	380.5	162
+plant_pathogen	223	0.4179	451	190
+wood_saprotroph	198	0.4235	423	177
+litter_saprotroph	82	0.4261	470	194.8
+dung_saprotroph	17	0.4579	429	200

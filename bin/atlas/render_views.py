@@ -52,7 +52,7 @@ SISTER_PAIRS = [  # (name, yeast-side classes, yeast-side growth form or None, s
 
 class Ctx:
     def __init__(self, skip_mixed=False):
-        self.con = duckdb.connect(); self.con.execute("SET threads=4; SET memory_limit='6GB'; SET temp_directory='/scratch/jstajich/31870788/atlas_render_tmp'")
+        self.con = duckdb.connect(); self.con.execute("SET threads=4; SET memory_limit='6GB'; SET temp_directory='/scratch/jstajich/31877510/atlas_render_tmp'")
         self.skip_mixed = skip_mixed
         self.labels = self.q(f"SELECT * FROM '{A}/labels/genome_labels.parquet'")
         self.labels['log_n50'] = np.log10(self.labels['N50_bp'].astype(float))
@@ -177,7 +177,7 @@ def strip_by_class(gd_or_d, col, ylabel, vid, slug, min_n=10, log=False, unit='g
                    medianprops={'color': 'black'}, boxprops={'color': '#444'}, whiskerprops={'color': '#444'})
         gfc = sub['growth_form'].mode().iloc[0] if sub['growth_form'].notna().any() else 'other'
         jitter = (np.random.default_rng(1).random(len(vals)) - 0.5) * 0.5
-        ax.scatter(vals, i + jitter, s=6, alpha=0.5, color=GF_COLORS.get(gfc, '#999999'), linewidths=0)
+        ax.scatter(vals, i + jitter, s=6, alpha=0.5, color=GF_COLORS.get(gfc, '#999999'), linewidths=0, rasterized=True)
     ax.set_yticks(range(len(order))); ax.set_yticklabels([f'{c} (n={n[c]})' for c in order], fontsize=7)
     ax.set_xlabel(ylabel)
     if log:
@@ -261,7 +261,7 @@ def v03(ctx):
     res = {}
     for gf in GF_ORDER:
         s = d[d['growth_form'] == gf]
-        ax.scatter(s['total_length_bp'] / 1e6, s['n_protein_coding'], s=5, alpha=0.4, color=GF_COLORS[gf], label=f'{gf} (n={len(s)})', linewidths=0)
+        ax.scatter(s['total_length_bp'] / 1e6, s['n_protein_coding'], s=5, alpha=0.4, color=GF_COLORS[gf], label=f'{gf} (n={len(s)})', linewidths=0, rasterized=True)
         res[gf] = S.loglog_slope(s['total_length_bp'], s['n_protein_coding'])
     ax.set_xscale('log'); ax.set_yscale('log'); ax.set_xlabel('assembly size (Mb)'); ax.set_ylabel('protein-coding genes')
     ax.legend(fontsize=7); ax.set_title('V03: gene count vs assembly size (representative genomes)', fontsize=9)
@@ -285,7 +285,7 @@ def v04(ctx):
     fig, ax = plt.subplots(figsize=(6.5, 5))
     for gf in GF_ORDER:
         s = d[d['growth_form'] == gf]
-        ax.scatter(s['N50_bp'], s['partial_fraction'], s=4, alpha=0.3, color=GF_COLORS[gf], label=f'{gf} (n={len(s)})', linewidths=0)
+        ax.scatter(s['N50_bp'], s['partial_fraction'], s=4, alpha=0.3, color=GF_COLORS[gf], label=f'{gf} (n={len(s)})', linewidths=0, rasterized=True)
     ax.set_xscale('log'); ax.set_xlabel('assembly N50 (bp)'); ax.set_ylabel('fraction of transcripts flagged is_partial')
     ax.legend(fontsize=7); ax.set_title('V04: partial gene models vs N50 (all annotated genomes)', fontsize=9)
     fp = save_fig(fig, 'V04', 'partial_vs_n50')
@@ -551,8 +551,8 @@ def v18(ctx):
     res = {}
     for gf in GF_ORDER:
         s = d[d['growth_form'] == gf]
-        axs[0].scatter(s['total_length_bp'] / 1e6, s['genes_per_mb'], s=5, alpha=0.4, color=GF_COLORS[gf], label=f'{gf} (n={len(s)})', linewidths=0)
-        axs[1].scatter(s['masked_pct'], s['genes_per_mb'], s=5, alpha=0.4, color=GF_COLORS[gf], linewidths=0)
+        axs[0].scatter(s['total_length_bp'] / 1e6, s['genes_per_mb'], s=5, alpha=0.4, color=GF_COLORS[gf], label=f'{gf} (n={len(s)})', linewidths=0, rasterized=True)
+        axs[1].scatter(s['masked_pct'], s['genes_per_mb'], s=5, alpha=0.4, color=GF_COLORS[gf], linewidths=0, rasterized=True)
         res[gf] = {'size': S.spearman(s['total_length_bp'], s['genes_per_mb']), 'masked': S.spearman(s['masked_pct'], s['genes_per_mb'])}
     axs[0].set_xscale('log'); axs[0].set_xlabel('assembly size (Mb)'); axs[0].set_ylabel('protein-coding genes per Mb'); axs[0].legend(fontsize=7)
     axs[1].set_xlabel('masked (%)'); axs[1].set_ylabel('genes per Mb')
@@ -718,7 +718,7 @@ def v27(ctx):
         ax = axs[i]
         for gf in GF_ORDER:
             ss = s[s['growth_form'] == gf]
-            ax.scatter(ss['n_proteins'], ss['n_tf'].clip(lower=0.5), s=3, alpha=0.3, color=GF_COLORS[gf], linewidths=0)
+            ax.scatter(ss['n_proteins'], ss['n_tf'].clip(lower=0.5), s=3, alpha=0.3, color=GF_COLORS[gf], linewidths=0, rasterized=True)
         ax.set_xscale('log'); ax.set_yscale('log'); ax.set_title(f"{f[:38]}  slope {r.get('slope', np.nan):.2f}", fontsize=7)
         ax.tick_params(labelsize=6)
     for j in range(len(fams), len(axs)):
@@ -793,10 +793,10 @@ def v33(ctx):
     top = gd['CLASS'].value_counts(); top = top[top >= 15].index.tolist()
     cmap = plt.get_cmap('tab20')
     for i, c in enumerate(top):
-        s_ = gd[gd['CLASS'] == c]; axs[0].scatter(s_['PC1'], s_['PC2'], s=7, alpha=0.6, color=cmap(i % 20), label=f'{c} ({len(s_)})', linewidths=0)
+        s_ = gd[gd['CLASS'] == c]; axs[0].scatter(s_['PC1'], s_['PC2'], s=7, alpha=0.6, color=cmap(i % 20), label=f'{c} ({len(s_)})', linewidths=0, rasterized=True)
     axs[0].legend(fontsize=5, ncol=2); axs[0].set_xlabel(f'PC1 ({100*var[0]:.1f} %)'); axs[0].set_ylabel(f'PC2 ({100*var[1]:.1f} %)'); axs[0].set_title('by class (>= 15 genera)', fontsize=8)
     for gf in GF_ORDER:
-        s_ = gd[gd['growth_form'] == gf]; axs[1].scatter(s_['PC1'], s_['PC2'], s=7, alpha=0.5, color=GF_COLORS[gf], label=f'{gf} ({len(s_)})', linewidths=0)
+        s_ = gd[gd['growth_form'] == gf]; axs[1].scatter(s_['PC1'], s_['PC2'], s=7, alpha=0.5, color=GF_COLORS[gf], label=f'{gf} ({len(s_)})', linewidths=0, rasterized=True)
     axs[1].legend(fontsize=7); axs[1].set_xlabel(f'PC1 ({100*var[0]:.1f} %)'); axs[1].set_title('by growth form', fontsize=8)
     fig.suptitle('V33: PCA of genus-median RSCU (59 codons)', fontsize=9)
     fp = save_fig(fig, 'V33', 'rscu_pca')
@@ -823,7 +823,7 @@ def v34(ctx):
     fig, ax = plt.subplots(figsize=(6, 5)); rows = []
     for gf in GF_ORDER:
         s = d[d['growth_form'] == gf]
-        ax.scatter(s['gc_pct'], 100 * s['gc3'], s=5, alpha=0.4, color=GF_COLORS[gf], label=f'{gf} (n={len(s)})', linewidths=0)
+        ax.scatter(s['gc_pct'], 100 * s['gc3'], s=5, alpha=0.4, color=GF_COLORS[gf], label=f'{gf} (n={len(s)})', linewidths=0, rasterized=True)
         lr = __import__('scipy').stats.linregress(s['gc_pct'], 100 * s['gc3'])
         rows.append({'growth_form': gf, 'n_genomes': len(s), 'slope_gc3_on_gc': lr.slope, 'intercept': lr.intercept, 'r2': lr.rvalue ** 2,
                      'spearman_rho': S.spearman(s['gc_pct'], s['gc3'])['rho']})
@@ -891,12 +891,13 @@ PAGES = {
 }
 
 VERDICTS = {
-    'H1_quality': "**Verdict: supported.** BUSCO (fungi_odb12) completeness depends on class: median 75-84 % in Saccharomycetes, Pichiomycetes and Schizosaccharomycetes against 98-99 % in the large filamentous classes (V02). The partial-model fraction also differs by class (median 0.25 in Saccharomycetes, 0.65 in Glomeromycetes) and is only weakly related to N50 across all genomes (Spearman rho = -0.07, V04). Every later view therefore uses class-relative BUSCO thresholds and the complete-model filter. Next data needed: an RNA-seq-in-training flag per genome (D8).",
-    'H2_protein_length': "**Verdict: not supported as a general rule; a small effect exists in Saccharomycotina only.** Within SwissProt families (V08, 3,652 families, strict gates) the median yeast/filamentous length ratio is 0.994 (log2 -0.009, 95 % CI -0.010 to -0.007); 59.9 % of families have the yeast median shorter. The effect is small against the spread between families (10th/90th percentiles -0.10/+0.06) and is stable across the quality-filter grid (V12: -0.004 to -0.017). By origin (V09) only Saccharomycotina (118 genera, 1.6 % shorter) and the two Taphrinomycotina genera are shorter; Tremellomycetes, Pucciniomycotina and Ustilaginomycotina yeasts are 0.2-1.3 % longer than the filamentous reference. Raw median protein length is slightly longer in yeast genera (414 vs 401 aa, V07). The sister-clade contrasts (V14) split 2 negative / 2 positive. The mixed model with CLASS/ORDER random intercepts gives a yeast effect of +18 aa on raw median length with a CI that spans zero (V07); growth form is nearly constant within class, so the class random effect absorbs the contrast and the model is not informative for yeast vs filamentous. The within-family, multiple-origin and sister-pair designs are the controls that carry the comparison. Caveats: SwissProt best-hit families are biased toward *S. cerevisiae* references for Saccharomycotina; the model-anchored (P-B) and Pfam-architecture (P-C) proxies are P2 and not yet run; PGLS pending tree.",
-    'H3_gene_structure': "**Verdict: supported.** Yeast genera have a median 0.24 introns per transcript against 2.03 in filamentous genera (Cliff's delta -0.68), 81 % intronless transcripts against 22 % (V15), median intergenic distance 406 bp against 843 bp (V17), and 427 against 301 protein-coding genes per Mb (V03). Dimorphic yeasts sit between the two groups on every measure. The mixed models with CLASS/ORDER random intercepts return yeast effects with CIs spanning zero: growth form is confounded with class, so those models cannot separate the two; the genus-median contrasts above are the stated result. Caveats: intron counts depend on per-genome gene prediction and RNA-seq availability; intergenic distances are truncated by contig ends (Q-n50 applied).",
-    'H4_secretome_lifestyle': "**Verdict: supported in direction; lifestyle and clade are confounded.** The strict secretome is 2.6 % of the proteome in yeast genera against 5.9 % in filamentous genera (V20). Plant pathogens and dung/litter/wood saprotrophs have the largest secretome fractions (6.5-6.9 % and 5.5-5.7 %), ectomycorrhizal genera and the yeast-dominated nectar/tap saprotrophs the smallest (2.4-2.7 %) (V21). Plant-cell-wall CAZymes per 1,000 proteins: plant pathogens 11.3, wood saprotrophs 9.5, animal parasites 2.3, yeasts 1.5 (V23). PL and CE classes are near zero in yeasts (V22). Caveats: FungalTraits labels are genus traits; several lifestyles map to one clade, so the Kruskal-Wallis values overstate independence; the mixed model with CLASS/ORDER random intercepts still gives a yeast secretome effect below zero (count -270, 95 % CI -404 to -136; fraction -0.013, CI -0.023 to -0.004), so the yeast deficit is not explained by class membership alone. Across lifestyles the same model leaves only ectomycorrhizal genera different from unspecified saprotrophs (-0.021, 95 % CI -0.027 to -0.015); the other lifestyle contrasts in V21 are absorbed by class, so most of the lifestyle signal is clade signal; PGLS pending tree.",
-    'H5_domains_tf': "**Verdict: partly supported.** 17 of 19 TF families scale sub-linearly with proteome size (slope < 1, V27); the fungal-specific TF domain scales super-linearly (slope 1.24, 95 % CI 1.19-1.29) and Zn2Cys6 has slope 0.73. The Zn2Cys6 share of the TF repertoire is 0.40 in Pezizomycotina against 0.18 in Basidiomycota, but Saccharomycotina reach 0.39 (V28), so the expansion is an Ascomycota feature, not a Pezizomycotina-specific one. Caveat: slopes are fitted on genomes, not genera (clade non-independence not modelled in V27).",
-    'H6_codon_usage': "**Verdict: supported.** CLASS explains 57 % of the variance in genus-median RSCU (PERMANOVA R2 = 0.567) against 14 % for growth form, and growth form has no effect once permutations are restricted within class (p = 0.86, V33). GC3 follows genomic GC (Spearman rho 0.81 filamentous, 0.96 yeast, V34); at equal genomic GC, yeast genera have GC3 3.2 points lower than the filamentous regression line. Codon-usage distance rises with taxonomic rank; within a phylum, pairs with different growth forms are about twice as distant as pairs with the same growth form (V35), which reflects the Saccharomycotina/Pezizomycotina split. Caveat: whole-proteome codon frequencies, not expression-weighted; code-12 CTG kept in the Leu family.",
+    'H1_quality': "**Verdict: supported.** BUSCO (fungi_odb12) completeness depends on class: median 75-84 % in Saccharomycetes, Pichiomycetes and Schizosaccharomycetes against 98-99 % in the large filamentous classes (V02). The partial-model fraction also differs by class (median 0.25 in Saccharomycetes, 0.65 in Glomeromycetes) and is only weakly related to N50 across all genomes (Spearman rho = -0.07, V04). The top 20 species hold 28.7 % of all genomes (V06). Every later view therefore uses one genome per species, class-relative BUSCO thresholds and the complete-model filter. Next data needed: an RNA-seq-in-training flag per genome (D8).",
+    'H2_protein_length': "**Verdict: a small, consistent shortening exists; it is 1-2 % and strongest in Saccharomycotina.** Three orthology proxies agree in direction. P-A (shared SwissProt best hit, V08, 3,652 families): median yeast/filamentous length ratio 0.994 (log2 -0.009, 95 % CI -0.010 to -0.007), 59.9 % of families yeast-shorter. P-B (every genome anchored to one reference proteome, V10): ratio 0.985-0.987 (log2 -0.019 to -0.022) for all four anchors (*S. cerevisiae*, *N. crassa*, *S. pombe*, *A. nidulans*), 69-71 % of families yeast-shorter; the *S. cerevisiae*- and *N. crassa*-anchored medians are identical, so the reference-dominance bias of P-A does not create the signal. P-C (Pfam domain architecture, V11, 5,026 architectures): ratio 0.980 (log2 -0.029, 95 % CI -0.032 to -0.025), 63.9 % yeast-shorter, similar at every domain count. The effect is small against the spread between families (10th/90th percentiles about -0.12/+0.04 for P-B) and is stable across the quality-filter grid (V12). By origin (V09) Saccharomycotina genera are 1.6 % shorter and the two Taphrinomycotina genera 3 % shorter; Tremellomycetes, Pucciniomycotina and Ustilaginomycotina yeasts are 0.2-1.3 % longer than the filamentous reference, so the shortening is a Saccharomycotina trait rather than a yeast trait. Raw median protein length is slightly longer in yeast genera (414 vs 401 aa, V07) because yeast proteomes have more multi-domain proteins (V31: 40 % vs 33 %) and lack many short secreted families. The mixed model with CLASS/ORDER random intercepts cannot separate growth form from class; the within-family, multiple-origin and sister-pair designs carry the comparison. PGLS pending tree.",
+    'H3_gene_structure': "**Verdict: supported.** Yeast genera have a median 0.24 introns per transcript against 2.03 in filamentous genera (Cliff's delta -0.68), 81 % intronless transcripts against 22 % (V15), transcript span / CDS ratio 1.00 against 1.14 (V16), median intergenic distance 406 bp against 843 bp (V17), and 427 against 301 protein-coding genes per Mb (V03). Median CDS length is not shorter in yeasts (1,242 vs 1,194 bp, V16). Dimorphic yeasts sit between the two groups on every measure. The mixed models with CLASS/ORDER random intercepts return yeast effects with CIs spanning zero: growth form is confounded with class, so those models cannot separate the two; the genus-median contrasts above are the stated result. Caveats: intron counts depend on per-genome gene prediction and RNA-seq availability; intergenic distances are truncated by contig ends (Q-n50 applied).",
+    'H4_secretome_lifestyle': "**Verdict: supported in direction; lifestyle and clade are confounded.** The strict secretome is 2.6 % of the proteome in yeast genera against 5.9 % in filamentous genera (V20); 15 % of yeast CAZymes carry a signal peptide against 42 % (V24); secreted peptidases per 1,000 proteins are 2.6 against 5.6 while total MEROPS hits are similar (32 vs 28, V25). Plant pathogens and dung/litter/wood saprotrophs have the largest secretome fractions (6.5-6.9 % and 5.5-5.7 %), ectomycorrhizal genera and the yeast-dominated nectar/tap saprotrophs the smallest (2.4-2.7 %) (V21). Plant-cell-wall CAZymes per 1,000 proteins: plant pathogens 11.3, wood saprotrophs 9.5, animal parasites 2.3, yeasts 1.5 (V23). PL and CE classes are near zero in yeasts (V22). Caveats: FungalTraits labels are genus traits; several lifestyles map to one clade, so the Kruskal-Wallis values overstate independence; the mixed model with CLASS/ORDER random intercepts still gives a yeast secretome effect below zero (count -270, 95 % CI -404 to -136; fraction -0.013, CI -0.023 to -0.004), so the yeast deficit is not explained by class membership alone. Across lifestyles the same model leaves only ectomycorrhizal genera different from unspecified saprotrophs (-0.021, 95 % CI -0.027 to -0.015); the other lifestyle contrasts in V21 are absorbed by class, so most of the lifestyle signal is clade signal; PGLS pending tree.",
+    'H5_domains_tf': "**Verdict: partly supported.** 17 of 19 TF families scale sub-linearly with proteome size (slope < 1, V27); the fungal-specific TF domain scales super-linearly (slope 1.24, 95 % CI 1.19-1.29) and Zn2Cys6 has slope 0.73. Pfam family richness scales with slope 0.09 (yeast) and 0.30 (filamentous) and yeast genera carry 4,062 against 4,755 distinct families (V29). The Zn2Cys6 share of the TF repertoire is 0.40 in Pezizomycotina against 0.18 in Basidiomycota, but Saccharomycotina reach 0.39 (V28), so the expansion is an Ascomycota feature, not a Pezizomycotina-specific one. 3,582 of 7,907 Pfam families differ in genus presence between yeasts and filamentous fungi at BH q < 0.01 (V30); the most yeast-specific are Saccharomycotina-only entries (POC1, STD1, MPM1, Gsf2), the most filamentous-specific are cerato-platanin, GH6 cellulases and AAA_lid_6. Caveat: slopes are fitted on genomes, not genera (clade non-independence not modelled in V27/V29 slopes).",
+    'H6_codon_usage': "**Verdict: supported.** CLASS explains 57 % of the variance in genus-median RSCU (PERMANOVA R2 = 0.567) against 14 % for growth form, and growth form has no effect once permutations are restricted within class (p = 0.86, V33). GC3 follows genomic GC (Spearman rho 0.81 filamentous, 0.96 yeast, V34); at equal genomic GC, yeast genera have GC3 3.2 points lower than the filamentous regression line. Codon-usage distance rises with taxonomic rank; within a phylum, pairs with different growth forms are about twice as distant as pairs with the same growth form (V35), which reflects the Saccharomycotina/Pezizomycotina split. Amino-acid composition PC1 (75 % of variance) tracks genomic GC (rho = -0.86, V38). tRNA gene counts correlate with codon frequency more strongly in yeasts (median rho 0.39 vs 0.23, V36). Code-12 Pichiomycetes use CTG at 5.2 per 1,000 codons against 9.2 in code-1 Pichiomycetes and 17.7 across fungi (V37). Caveat: whole-proteome codon frequencies, not expression-weighted; code-12 CTG kept in the Leu family for RSCU.",
+    'H7_paralogs': "**Verdict: not supported.** Young paralog nodes (yn00 dS 0.05-1.0) per 1,000 proteins are 10.6 in yeast genera and 9.2 in filamentous genera (difference +1.4, 95 % CI -0.7 to +3.9, Cliff's delta -0.03, p = 0.58; V39, 987 genera, hybrids and BUSCO-duplicated > 5 % excluded). Identical-CDS gene content correlates with BUSCO duplication (rho = 0.37, V40), consistent with unpurged haplotigs, but TE-derived models also contribute. Caveats: interim wgd.ks release (7,384 genomes, subset rule undocumented); node sampling is noisy per node; PGLS pending tree.",
 }
 
 
@@ -904,6 +905,11 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--only', default=''); ap.add_argument('--skip-mixed', action='store_true'); ap.add_argument('--no-index', action='store_true')
     a = ap.parse_args()
     ctx = Ctx(skip_mixed=a.skip_mixed)
+    import render_p2
+    globals().update(render_p2.VIEWS)
+    for pg, vs in render_p2.PAGE_ADD.items():
+        t, e, cur = PAGES[pg]; PAGES[pg] = (t, e, sorted(set(cur) | set(vs), key=lambda x: int(x[1:])))
+    PAGES.update(render_p2.PAGE_NEW)
     only = set(x.strip().lower() for x in a.only.split(',') if x.strip())
     status = {}
     for page, (title, expect, views) in PAGES.items():
@@ -954,8 +960,7 @@ def write_index(status):
     for page, (title, expect, views) in PAGES.items():
         st = ', '.join(f"{v.upper()} ({status.get(v, 'pending')})" for v in views)
         lines.append(f'| [{page}]({page}.md) | {title} | {st} |')
-    lines += ['| H7 (P2) | Paralog retention per 1,000 genes is lower in yeasts | V39, V40 (not built in P1) |',
-              '| H8 (P3) | Telomere repeat monomer is conserved within classes | V41, V42 (not built in P1) |', '',
+    lines += ['| H8 (P3) | Telomere repeat monomer is conserved within classes | V41, V42 (P3, not built) |', '',
               '## Data coverage', '', 'See V01 on the H1 page. Tables and figures: `tables/`, `figures/`.', '']
     with open(f'{DOCS}/index.md', 'w') as o:
         o.write('\n'.join(lines))

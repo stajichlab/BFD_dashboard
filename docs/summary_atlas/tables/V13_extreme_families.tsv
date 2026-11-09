@@ -1,0 +1,51 @@
+sp_id	org_code	protein_name	size_yeast	size_filamentous_mycelium	median_yeast	median_filamentous_mycelium	log2_ratio
+327863	SCHPO	Small nuclear ribonucleoprotein-associated protein B	32	16	141.5	204.5	-0.5313
+198956	SCHPO	tRNA (cytidine(32)/guanosine(34)-2'-O)-methyltransferase	10	499	285	393	-0.4636
+268168	ARATH	Serine/threonine-protein phosphatase PP-X isozyme 1	36	364	308.5	420	-0.4451
+179287	EMENI	Putative GTPase-activating protein AN11010	12	492	879.5	1131	-0.3628
+269536	YEAST	tRNA (carboxymethyluridine(34)-5-O)-methyltransferase	83	62	262	331.5	-0.3394
+192618	SCHPO	Dehydrodolichyl diphosphate synthase complex subunit SPAC4D7.04c	45	422	276	346	-0.3261
+327855	SCHPO	CDP-diacylglycerol--inositol 3-phosphatidyltransferase	43	560	235	293	-0.3182
+299796	THET3	Alpha-ketoglutarate dehydrogenase subunit 4, mitochondrial	11	488	106	132	-0.3165
+297139	SCHPO	UDP-galactose transporter	29	461	362	449.5	-0.3123
+555491	HUMAN	Molybdenum cofactor biosynthesis protein 1 / GTP 3',8-cyclase / Cyclic pyranopterin monophosphate synthase	22	154	543.5	670	-0.3019
+555973	SCHPO	Transcription factor IIIB 60 kDa subunit	21	140	519	639.5	-0.3012
+446214	XENLA	Cleavage and polyadenylation specificity factor subunit 5	13	22	220	271	-0.3008
+565019	SCHPO	Pre-mRNA-splicing factor 38	15	27	203	249	-0.2947
+267698	YEAST	Aminomethyltransferase, mitochondrial	102	33	394	483	-0.2938
+575156	OGAPD	GTP 3',8-cyclase	21	125	359	435	-0.277
+255139	YEAST	Dolichyl-phosphate-mannose--protein mannosyltransferase 1	34	81	781	944	-0.2735
+536664	CRYGA	Superoxide dismutase [Cu-Zn]	14	16	154	186	-0.2724
+402893	DICDI	Trafficking protein particle complex subunit 4	22	63	135	163	-0.2719
+192256	SCHPO	Lariat debranching enzyme	18	98	456.5	550.2	-0.2695
+307141	YEAST	Sporulation protein RMD1	117	426	430	516	-0.263
+555774	SCHPO	Signal recognition particle subunit srp14	10	32	110	131.5	-0.2576
+199445	SCHPO	Probable 26S proteasome regulatory subunit rpn3	73	443	483	577	-0.2565
+253909	YEAST	Protein MSS51, mitochondrial	106	173	423	505	-0.2556
+267900	KLULA	Serine palmitoyltransferase 2	94	12	562.5	671.5	-0.2555
+254401	YEAST	Ribose-phosphate pyrophosphokinase 1	114	471	426	508	-0.254
+210023	SCHPO	Oxysterol-binding protein-like protein 1	10	285	535	459	0.221
+417074	CRYD1	Endopolyphosphatase	13	15	663.5	569	0.2217
+272398	YEAST	Suppressor of disruption of TFIIS	77	43	280	240	0.2224
+4592	ARTFL	Guanine nucleotide binding protein alpha subunit B	13	211	415	355	0.2253
+257115	YEAST	Vacuolar amino acid transporter 3	44	165	689.5	589	0.2273
+564897	SCHPO	N-terminal acetyltransferase A complex catalytic subunit ard1	45	175	185	158	0.2276
+448230	CANGA	Multidrug transporter TPO1_1	11	10	582	495.5	0.2321
+229211	CRYD1	Guanine nucleotide-binding protein subunit alpha	20	41	416	354	0.2328
+188983	CRYN9	Homoserine O-acetyltransferase	24	291	532	451	0.2383
+545047	NEUCR	Guanine nucleotide-binding protein alpha-3 subunit	14	229	419.5	355	0.2409
+211170	YEAST	L-lactate dehydrogenase (cytochrome)	15	68	584	494	0.2415
+565746	DROME	Oxygen-dependent coproporphyrinogen-III oxidase	11	67	441	373	0.2416
+260264	YEAST	Probable transporter SEO1	90	13	577.6	485	0.2521
+229530	CRYD1	Multiple RNA-binding domain-containing protein 1	15	14	776	651	0.2534
+444645	KLULA	Putative tyrosine-protein phosphatase OCA1	16	13	206.5	173	0.2554
+192266	SCHPO	Probable glutamate--tRNA ligase, cytoplasmic	18	661	764.2	640	0.256
+260543	YEAST	Protein BIM1	52	55	299	250	0.2582
+245730	YEAST	12 kDa heat shock protein	68	20	117.2	98	0.2587
+229351	CRYD1	Lysophospholipase NTE1	14	15	1614	1348	0.2588
+189000	CRYN9	Urease accessory protein 6	11	109	353	291	0.2786
+309200	YEAST	D-ribulokinase YDR109C	103	101	729.5	599	0.2844
+566516	DROME	Dolichyl-diphosphooligosaccharide--protein glycosyltransferase subunit DAD1	20	20	137.2	112	0.2933
+229462	CRYD1	Large ribosomal subunit protein bL27m	13	25	190	151	0.3315
+189021	CRYN9	Urease accessory protein 4	14	16	391	298.5	0.3894
+229099	CRYD1	Cytochrome c oxidase assembly protein COX16, mitochondrial	16	156	159.8	119	0.4249

@@ -1,0 +1,5 @@
+ref_group	median	size	ci_lo	ci_hi	frac_yeast_shorter
+N. crassa / A. nidulans	-0.01364	269	-0.01819	-0.007893	0.6454
+S. cerevisiae (YEAST)	-0.02392	667	-0.02791	-0.01764	0.6827
+S. pombe	-0.009523	817	-0.0158	-0.005661	0.6172
+other reference	-0.003497	1899	-0.006003	0	0.5536
