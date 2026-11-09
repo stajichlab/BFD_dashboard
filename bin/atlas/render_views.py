@@ -960,8 +960,21 @@ def write_index(status):
     for page, (title, expect, views) in PAGES.items():
         st = ', '.join(f"{v.upper()} ({status.get(v, 'pending')})" for v in views)
         lines.append(f'| [{page}]({page}.md) | {title} | {st} |')
-    lines += ['| H8 (P3) | Telomere repeat monomer is conserved within classes | V41, V42 (P3, not built) |', '',
-              '## Data coverage', '', 'See V01 on the H1 page. Tables and figures: `tables/`, `figures/`.', '']
+    lines += ['| H8 (P3) | Telomere repeat monomer is conserved within classes | V41, V42 (P3, not built) |', '']
+    hs_pages = [('HS_G1_genome_size_parasitism', 'G1', 'Two directions of genome size under obligate parasitism'),
+                ('HS_G3_intron_loss_by_origin', 'G3', 'Intron loss by independent yeast origin (falsification test)'),
+                ('HS_P2_disorder', 'P2', 'Intrinsic disorder across yeast origins, with GC control'),
+                ('HS_S1_signaling_scaling', 'S1', 'Signaling-gene counts scale with proteome size, not fruit-body complexity (falsification test)'),
+                ('HS_C1_nlr_allorecognition', 'C1', 'NLR allorecognition repertoires and the septate heterokaryotic habit'),
+                ('HS_C3_woronin_fusion', 'C3', 'Woronin-body and cell-fusion gene sets across organization shifts')]
+    if any(os.path.exists(f'{DOCS}/{p}.md') for p, _, _ in hs_pages):
+        lines += ['## Size-transition hypotheses', '',
+                  'Hypotheses about micro-to-macro shifts in fungal organization (yeasts, fruit bodies, coenocytic and zoosporic lineages, obligate parasites), with evolutionary framing: [HYPOTHESES_size_transitions.md](HYPOTHESES_size_transitions.md). '
+                  'Built pages (rendered by `bin/atlas/render_hs.py` from `atlas_data/A11`, job J9/J10):', '', '| Page | Hypothesis | Status |', '|---|---|---|']
+        for p, hid, t in hs_pages:
+            lines.append(f"| [{hid}]({p}.md) | {t} | {'built' if os.path.exists(f'{DOCS}/{p}.md') else 'not built'} |")
+        lines.append('')
+    lines += ['## Data coverage', '', 'See V01 on the H1 page. Tables and figures: `tables/`, `figures/`.', '']
     with open(f'{DOCS}/index.md', 'w') as o:
         o.write('\n'.join(lines))
 

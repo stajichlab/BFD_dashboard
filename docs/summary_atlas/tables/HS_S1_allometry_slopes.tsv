@@ -1,0 +1,10 @@
+set	label	n_genera	slope	slope_ci_lo	slope_ci_hi	r2
+kinase	protein kinases (Pkinase + PK_Tyr_Ser-Thr)	1367	0.7725	0.731	0.814	0.4944
+ras_arf	small GTPases (Ras + Arf)	1368	0.4091	0.3786	0.4397	0.336
+rho_reg	RhoGEF + RhoGAP	1367	0.5079	0.4511	0.5648	0.1837
+gpcr	GPCRs (7tm_1, STE2, STE3, opsin)	1301	0.7895	0.7097	0.8693	0.2247
+two_comp	two-component (HisKA + Response_reg)	1366	0.6959	0.6221	0.7698	0.2004
+g_alpha	G-alpha	1367	1.164	1.073	1.254	0.318
+calcium	EF-hand + C2	1368	0.505	0.4631	0.5469	0.2902
+sh3	SH3	1367	0.3182	0.2752	0.3611	0.1341
+ph	PH	1367	0.2715	0.2243	0.3188	0.08513

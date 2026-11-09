@@ -1,0 +1,9 @@
+hs_group	n_genera	med_idp	med_idp_nonsecreted	gc_pct	idp_res_gc
+zoosporic	45	0.3755	0.3765	48.17	-0.008309
+Mucoromycota_sl	59	0.3851	0.3855	37.55	0.004048
+Zoopagomycota_sl	28	0.4014	0.3991	41.19	0.004168
+filamentous_other	583	0.3971	0.4022	50.03	-0.003298
+lichen	156	0.4137	0.4175	48.46	0.01753
+Agaricomycetes	290	0.4045	0.4076	49.07	0.005026
+dimorphic	51	0.4393	0.442	52.57	0.02995
+yeast	153	0.3329	0.3344	42.82	-0.04879

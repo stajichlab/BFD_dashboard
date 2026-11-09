@@ -1,0 +1,6 @@
+contrast	min_genera_per_side	n_families	median_diff_idp	ci_lo	ci_hi	frac_derived_lower	binom_p
+all yeast origins vs filamentous	10	1864	-0.01083	-0.01333	-0.009	0.6282	2.843e-28
+Saccharomycotina vs Pezizomycotina	10	907	-0.03455	-0.0391	-0.0316	0.8281	5.981e-93
+Tremellomycetes vs Agaricomycetes	3	1250	0.017	0.0139	0.0203	0.3511	6.061e-26
+Pucciniomycotina yeasts vs Pucciniomycetes	3	314	0.01235	0.005349	0.01779	0.3994	0.0004395
+Eurotiomycetes dimorphic vs filamentous	3	2403	0.00385	0.002498	0.0053	0.4347	2.266e-10

@@ -27,6 +27,19 @@ Genomes: 23,680. Species representatives (one per species, best BUSCO then N50):
 | [H7_paralogs](H7_paralogs.md) | H7. Recent paralog retention is lower in yeasts; large identical-copy groups mark assembly artefacts | V39 (ok), V40 (ok) |
 | H8 (P3) | Telomere repeat monomer is conserved within classes | V41, V42 (P3, not built) |
 
+## Size-transition hypotheses
+
+Hypotheses about micro-to-macro shifts in fungal organization (yeasts, fruit bodies, coenocytic and zoosporic lineages, obligate parasites), with evolutionary framing: [HYPOTHESES_size_transitions.md](HYPOTHESES_size_transitions.md). Built pages (rendered by `bin/atlas/render_hs.py` from `atlas_data/A11`, jobs J9/J10):
+
+| Page | Hypothesis | Status |
+|---|---|---|
+| [G1](HS_G1_genome_size_parasitism.md) | Two directions of genome size under obligate parasitism | built |
+| [G3](HS_G3_intron_loss_by_origin.md) | Intron loss by independent yeast origin (falsification test) | built |
+| [P2](HS_P2_disorder.md) | Intrinsic disorder across yeast origins, with GC control | built |
+| [S1](HS_S1_signaling_scaling.md) | Signaling-gene counts scale with proteome size, not fruit-body complexity (falsification test) | built |
+| [C1](HS_C1_nlr_allorecognition.md) | NLR allorecognition repertoires and the septate heterokaryotic habit | built |
+| [C3](HS_C3_woronin_fusion.md) | Woronin-body and cell-fusion gene sets across organization shifts | built |
+
 ## Data coverage
 
 See V01 on the H1 page. Tables and figures: `tables/`, `figures/`.

@@ -1,0 +1,73 @@
+pair	gene	n_derived	n_sister	frac_derived	frac_sister	diff
+Saccharomycotina vs Pezizomycotina	HEX1	121	554	0	0.9892	-0.9892
+Saccharomycotina vs Pezizomycotina	WSC	121	554	0.8264	0.9928	-0.1663
+Saccharomycotina vs Pezizomycotina	PRM1	121	554	0.7521	0.9964	-0.2443
+Saccharomycotina vs Pezizomycotina	FIG1	121	554	0.6446	0	0.6446
+Saccharomycotina vs Pezizomycotina	HAM7	121	554	0.02479	0.9946	-0.9698
+Saccharomycotina vs Pezizomycotina	FUS3_MAPK	121	554	1	0.9928	0.00722
+Saccharomycotina vs Pezizomycotina	STE50	121	554	0.2645	0.00722	0.2572
+Saccharomycotina vs Pezizomycotina	STE11	121	554	0.9835	0.9711	0.01235
+Saccharomycotina vs Pezizomycotina	STE7	121	554	0.7025	0.001805	0.7007
+Saccharomycotina vs Pezizomycotina	STE12	121	554	0.124	0.005415	0.1186
+Saccharomycotina vs Pezizomycotina	SLT2_MAPK	121	554	1	1	0
+Saccharomycotina vs Pezizomycotina	HOG1_MAPK	121	554	0.9835	0.9477	0.03582
+Taphrinomycotina vs Pezizomycotina	HEX1	2	554	0	0.9892	-0.9892
+Taphrinomycotina vs Pezizomycotina	WSC	2	554	0	0.9928	-0.9928
+Taphrinomycotina vs Pezizomycotina	PRM1	2	554	1	0.9964	0.00361
+Taphrinomycotina vs Pezizomycotina	FIG1	2	554	0	0	0
+Taphrinomycotina vs Pezizomycotina	HAM7	2	554	0	0.9946	-0.9946
+Taphrinomycotina vs Pezizomycotina	FUS3_MAPK	2	554	1	0.9928	0.00722
+Taphrinomycotina vs Pezizomycotina	STE50	2	554	0	0.00722	-0.00722
+Taphrinomycotina vs Pezizomycotina	STE11	2	554	1	0.9711	0.02888
+Taphrinomycotina vs Pezizomycotina	STE7	2	554	0.5	0.001805	0.4982
+Taphrinomycotina vs Pezizomycotina	STE12	2	554	0.5	0.005415	0.4946
+Taphrinomycotina vs Pezizomycotina	SLT2_MAPK	2	554	1	1	0
+Taphrinomycotina vs Pezizomycotina	HOG1_MAPK	2	554	0.5	0.9477	-0.4477
+Tremellomycetes vs Agaricomycetes	HEX1	15	290	0	0	0
+Tremellomycetes vs Agaricomycetes	WSC	15	290	0	0.8931	-0.8931
+Tremellomycetes vs Agaricomycetes	PRM1	15	290	0.6667	0.8069	-0.1402
+Tremellomycetes vs Agaricomycetes	FIG1	15	290	0	0	0
+Tremellomycetes vs Agaricomycetes	HAM7	15	290	0	0.02759	-0.02759
+Tremellomycetes vs Agaricomycetes	FUS3_MAPK	15	290	1	0.9931	0.006897
+Tremellomycetes vs Agaricomycetes	STE50	15	290	0	0	0
+Tremellomycetes vs Agaricomycetes	STE11	15	290	0	0.05172	-0.05172
+Tremellomycetes vs Agaricomycetes	STE7	15	290	0	0	0
+Tremellomycetes vs Agaricomycetes	STE12	15	290	0	0	0
+Tremellomycetes vs Agaricomycetes	SLT2_MAPK	15	290	1	0.9897	0.01034
+Tremellomycetes vs Agaricomycetes	HOG1_MAPK	15	290	0.9333	0.7897	0.1437
+Pucciniomycotina yeasts vs Pucciniomycetes	HEX1	7	5	0	0	0
+Pucciniomycotina yeasts vs Pucciniomycetes	WSC	7	5	1	0.4	0.6
+Pucciniomycotina yeasts vs Pucciniomycetes	PRM1	7	5	1	0.8	0.2
+Pucciniomycotina yeasts vs Pucciniomycetes	FIG1	7	5	0	0	0
+Pucciniomycotina yeasts vs Pucciniomycetes	HAM7	7	5	0	0	0
+Pucciniomycotina yeasts vs Pucciniomycetes	FUS3_MAPK	7	5	1	1	0
+Pucciniomycotina yeasts vs Pucciniomycetes	STE50	7	5	0	0	0
+Pucciniomycotina yeasts vs Pucciniomycetes	STE11	7	5	0	0	0
+Pucciniomycotina yeasts vs Pucciniomycetes	STE7	7	5	0	0	0
+Pucciniomycotina yeasts vs Pucciniomycetes	STE12	7	5	0	0	0
+Pucciniomycotina yeasts vs Pucciniomycetes	SLT2_MAPK	7	5	1	1	0
+Pucciniomycotina yeasts vs Pucciniomycetes	HOG1_MAPK	7	5	0.1429	1	-0.8571
+Malasseziomycetes vs Ustilaginomycetes	HEX1	1	12	0	0	0
+Malasseziomycetes vs Ustilaginomycetes	WSC	1	12	0	1	-1
+Malasseziomycetes vs Ustilaginomycetes	PRM1	1	12	0	0.8333	-0.8333
+Malasseziomycetes vs Ustilaginomycetes	FIG1	1	12	0	0	0
+Malasseziomycetes vs Ustilaginomycetes	HAM7	1	12	0	0	0
+Malasseziomycetes vs Ustilaginomycetes	FUS3_MAPK	1	12	1	1	0
+Malasseziomycetes vs Ustilaginomycetes	STE50	1	12	0	0	0
+Malasseziomycetes vs Ustilaginomycetes	STE11	1	12	1	0	1
+Malasseziomycetes vs Ustilaginomycetes	STE7	1	12	0	0	0
+Malasseziomycetes vs Ustilaginomycetes	STE12	1	12	0	0	0
+Malasseziomycetes vs Ustilaginomycetes	SLT2_MAPK	1	12	1	1	0
+Malasseziomycetes vs Ustilaginomycetes	HOG1_MAPK	1	12	1	0.75	0.25
+Eurotiomycetes dimorphic vs filamentous	HEX1	15	32	0.5333	0.9688	-0.4354
+Eurotiomycetes dimorphic vs filamentous	WSC	15	32	1	1	0
+Eurotiomycetes dimorphic vs filamentous	PRM1	15	32	1	1	0
+Eurotiomycetes dimorphic vs filamentous	FIG1	15	32	0	0	0
+Eurotiomycetes dimorphic vs filamentous	HAM7	15	32	1	1	0
+Eurotiomycetes dimorphic vs filamentous	FUS3_MAPK	15	32	1	0.9375	0.0625
+Eurotiomycetes dimorphic vs filamentous	STE50	15	32	0	0	0
+Eurotiomycetes dimorphic vs filamentous	STE11	15	32	1	1	0
+Eurotiomycetes dimorphic vs filamentous	STE7	15	32	0	0	0
+Eurotiomycetes dimorphic vs filamentous	STE12	15	32	0	0	0
+Eurotiomycetes dimorphic vs filamentous	SLT2_MAPK	15	32	1	1	0
+Eurotiomycetes dimorphic vs filamentous	HOG1_MAPK	15	32	1	0.8438	0.1562

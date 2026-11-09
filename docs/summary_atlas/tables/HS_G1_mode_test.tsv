@@ -1,0 +1,7 @@
+# unit = lineage (genus-median of lineage); with and without Microsporidia
+trait	median_intracellular	median_extracellular	mw_p_all	median_intracellular_noMicro	mw_p_noMicro	n_lineages
+log10 genome size	7.139	8.005	0.009524	7.224	0.01587	6+4
+genes per Mb	400.1	168.7	0.03175	379.5	0.05714	5+4
+masked %	19.23	35.19	0.1714	17.93	0.1905	6+4
+introns per transcript	2.343	2.737	0.9048	3.832	0.4857	5+4
+Pfam families	3292	4031	0.2857	3605	0.4857	5+4

@@ -1,0 +1,9 @@
+hs_group	n_genera	introns_per_transcript	frac_intronless	median_intron_len
+zoosporic	48	3.57	0.1857	69
+Mucoromycota_sl	59	3.36	0.166	76
+Zoopagomycota_sl	28	1.903	0.4427	82.5
+filamentous_other	583	1.787	0.2466	59
+lichen	156	2.015	0.2304	56
+Agaricomycetes	290	4.905	0.09899	55
+dimorphic	51	1.562	0.3034	68
+yeast	153	0.2444	0.8143	73

@@ -1,0 +1,13 @@
+class	fruitbody	set	n_fruitbody	n_none	median_res_fruitbody	median_res_none	diff	ci_lo	ci_hi
+Sordariomycetes	perithecium	kinase	117	41	-0.08636	-0.06911	-0.01725	-0.04035	0.005846
+Sordariomycetes	perithecium	ras_arf	117	41	-0.01864	-0.01703	-0.00161	-0.01612	0.01082
+Sordariomycetes	perithecium	gpcr	117	41	0.04571	0.01475	0.03095	-0.007633	0.08561
+Sordariomycetes	perithecium	two_comp	117	41	0.0368	-0.01234	0.04915	-0.006855	0.07139
+Leotiomycetes	apothecium	kinase	39	5	-0.09477	-0.07868	-0.0161	-0.04226	0.06332
+Leotiomycetes	apothecium	ras_arf	39	5	-0.05801	-0.06315	0.005142	-0.02961	0.05255
+Leotiomycetes	apothecium	gpcr	39	5	-0.07282	-0.05594	-0.01688	-0.365	0.1295
+Leotiomycetes	apothecium	two_comp	39	5	0.2315	0.2507	-0.01921	-0.1551	0.07023
+Dothideomycetes	perithecium	kinase	94	0	-0.08726				
+Dothideomycetes	perithecium	ras_arf	94	0	-0.05267				
+Dothideomycetes	perithecium	gpcr	94	0	-0.02901				
+Dothideomycetes	perithecium	two_comp	94	0	0.2143				

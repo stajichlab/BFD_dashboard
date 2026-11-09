@@ -1,0 +1,7 @@
+fruitbody_type	n_genera	median_log10_density	ci_lo	ci_hi
+agaricoid	144	0.3693	0.2969	0.4693
+polyporoid	45	-0.2344	-0.4831	-4.213e-05
+corticioid	49	0.06485	-0.1411	0.3207
+gasteroid	9	0.4893	0.02715	1.186
+clavarioid	10	0.5216	-0.04042	0.6071
+gasteroid-hypogeous	7	0.06302	-0.05651	0.3327

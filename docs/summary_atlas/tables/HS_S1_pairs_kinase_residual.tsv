@@ -1,0 +1,7 @@
+pair	n_derived	n_sister	median_derived	median_sister	diff	ci_lo	ci_hi	cliffs_delta	mw_p
+Saccharomycotina vs Pezizomycotina	121	554	0.04618	-0.07503	0.1212	0.1136	0.132	0.7567	6.228e-39
+Taphrinomycotina vs Pezizomycotina	2	554	0.09837	-0.07503	0.1734	0.1401	0.2073	0.9242	0.006274
+Tremellomycetes vs Agaricomycetes	15	290	-0.06485	0.04374	-0.1086	-0.1354	-0.0928	-0.8276	6.553e-08
+Pucciniomycotina yeasts vs Pucciniomycetes	7	5	-0.04537	-0.1276	0.08219	-0.04853	0.6214	0.6	0.1061
+Malasseziomycetes vs Ustilaginomycetes	1	12	0.07145	-0.02363					
+Eurotiomycetes dimorphic vs filamentous	15	32	-0.07808	-0.007338	-0.07074	-0.184	0.04796	-0.3958	0.03103

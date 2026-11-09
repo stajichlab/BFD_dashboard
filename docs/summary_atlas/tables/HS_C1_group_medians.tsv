@@ -1,0 +1,9 @@
+hs_group	n_genera	het_per1000	nacht_per1000	nbarc_per1000	n_nlr_arch_per1000	n_het_nlr_per1000	n_het_only_per1000	n_sesa_per1000	n_hets_per1000	het_present	nacht_present	nbarc_present	n_nlr_arch_present
+zoosporic	48	0	0.07274	0	0	0	0	0	0	0.3125	0.5625	0.1562	0.2396
+Mucoromycota_sl	59	0	0.06981	0	0	0	0	0	0	0.3644	0.5932	0.2288	0.1864
+Zoopagomycota_sl	28	0	0	0	0	0	0	0	0	0.03571	0.2143	0.03571	0.07143
+filamentous_other	583	5.464	1.172	0.4618	0.5076	0.04072	5.182	0.1135	0	0.9451	0.9528	0.9065	0.8988
+lichen	156	3.248	1.816	0.9455	1.022	0	3.248	0.5099	0	0.9487	0.9872	0.984	0.9744
+Agaricomycetes	290	0.1512	1.77	0.01505	0.5269	0	0.1512	0	0	0.5879	0.9569	0.4828	0.7828
+dimorphic	51	0	0	0	0	0	0	0	0	0.3529	0.3922	0.4216	0.2941
+yeast	153	0	0	0	0	0	0	0	0	0.02614	0.02288	0.05882	0.009804

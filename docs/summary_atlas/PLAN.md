@@ -427,3 +427,22 @@ P2 views not built: none. P3 (V19, V26, V32, V41, V42) stays out of scope.
 | phyling tree, restart | stage 31890418 (plain FASTA, COMPLETED), driver 31890419 (RUNNING, 32 h limit) | | | First driver 31870356 FAILED after 2 h 50 min: PHYLING_ALIGN rejects plain gzip (`pyfaidx.UnsupportedCompressionFormat`); proteomes restaged as `.fa` in `atlas_data/phylo/pep_fa/`, `--input` changed, `-resume` |
 
 RNA-seq-trained flag (D8) is now available per genome in `A10/genome_offset_traits.parquet` (`rnaseq_trained`: a `training/funannotate_train.pasa.gff3` or `kallisto.tsv` file exists under `genome_annotation/<out>/`), for the offset genomes only.
+
+### 9.2 Size-transition hypotheses build (2026-11-08, 21:25-22:00 PST)
+
+Six hypotheses from `HYPOTHESES_size_transitions.md` approved by the PI (G1, G3, P2, S1, C1, C3). Microsporidia are excluded from every view except G1 (genomes < 10 Mb only; reported with and without them).
+
+| Step | SLURM ID | State | Elapsed | Output |
+|---|---|---|---|---|
+| labels ext (`bin/atlas/hs_labels.py`) | login node | done | < 1 min | `atlas_data/labels/genome_labels_ext.parquet` (23,680 rows; companion to genome_labels, not a replacement); `atlas_data/labels/pfam_trait_sets.tsv` |
+| J9 build (`workflows/atlas/J9_hs.sh`, `bin/atlas/sql/J9_hs.sql`) | 31895681 | COMPLETED | 25 s | `atlas_data/A11/` pfam_trait_proteins (3,804,576), pfam_trait_counts (117,940), nlr_arch_counts (7,390), c3_gene_presence (27,702), idp_family_genome (6,059,775), idp_genome_model (7,392) |
+| J9 rerun (new block, others skipped) | 31896260 | COMPLETED | 6 s | `A11/c3_anchor_presence.parquet` (97,603; first gate set) |
+| J9 rerun (anchor gate changed to reference coverage only) | 31896476 | COMPLETED | 6 s | `A11/c3_anchor_presence.parquet` rebuilt (97,603 rows) |
+| J10 render (`workflows/atlas/J10_hs_render.sh`, `bin/atlas/render_hs.py`) | 31896087 | COMPLETED (g1 failed: pandas column overlap) | 53 s | HS_G3, HS_P2, HS_S1, HS_C1, HS_C3 |
+| J10 render g1,g3 | 31896141 | COMPLETED (g1 failed: pandas NA in nullable column) | | HS_G3 |
+| J10 render p2,s1,c3 (anchor detector for C3; verdict wording) | 31896261 | COMPLETED | 33 s | HS_P2, HS_S1, HS_C3 |
+| J10 render g1 (fix: coerce nullable columns to float) | 31896263 | COMPLETED | 17 s | HS_G1 |
+| J10 render c1 (verdict wording) | 31896339 | COMPLETED | < 1 min | HS_C1 |
+| J10 render c3 (reference-coverage gate) | 31896477 | COMPLETED | 8 s | HS_C3 (final) |
+
+Design changes made during the build: (1) C3 gene set uses SwissProt entries of the four A9 reference proteomes (HEX1, WSC, PRM1, FIG1, HAM-7, FUS3/KSS1/SPK1, STE50, STE11, STE7, STE12, SLT2/SPM1, HOG1) because SwissProt holds no *N. crassa* SPA or HAM-5/6/8 proteins; presence uses the A9 per-reference anchors, not the best SwissProt hit over all organisms (that detector found HOG1 in 17 % of filamentous genera); the anchor gate uses reference coverage only (HEX-1 orthologs carry N-terminal extensions). (2) `genome_labels_ext.sister_pair` records only the first matching pair; the renderer evaluates pair membership itself. (3) S1 verdict is the within-Agaricomycetes contrast (complex fruit body vs corticioid), because Agaricomycetes as a class sit above the all-fungi kinase allometry. Columns of the ext table are documented in the `hs_labels.py` docstring. Pages are linked from `index.md` (section "Size-transition hypotheses", also written by `render_views.write_index`) and from the hypotheses file.

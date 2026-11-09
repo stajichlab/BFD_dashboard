@@ -1,0 +1,12 @@
+# genus medians; sister sets defined in render_hs.G1_SISTER
+lineage	mode	n_genera	n_sister_genera	genome_mb_lineage	genome_mb_sister	busco_duplicated_lineage	log_genome_lineage	log_genome_sister	size_ratio	genes_per_mb_lineage	genes_per_mb_sister	masked_pct_lineage	masked_pct_sister	introns_per_transcript_lineage	introns_per_transcript_sister	median_intergenic_lineage	median_intergenic_sister	n_pfam_families_lineage	n_pfam_families_sister	n_proteins_lineage	n_proteins_sister
+Entomophthorales	extracellular_obligate	6	22	60.9	24.52	14.95	7.772	7.389	2.413	302.8	347.7	45.29	15.4	2.333	1.531	1084	536.2	3888	3834	1.333e+04	8073
+Erysiphaceae	extracellular_obligate	4	65	89.98	45.21	0.625	7.898	7.655	1.747	119.3	290.9	17.24	13.94	1.389	2.027	3909	983.5	4174	4970	7654	1.254e+04
+Glomeromycota	extracellular_obligate	12	47	129.3	34.77	0.8	8.112	7.541	3.719	191.9	326.4	46.99	17.58	3.141	3.47	1210	604.5	4528	4660	2.735e+04	1.194e+04
+Pucciniales	extracellular_obligate	5	9	166.1	21.62	29.1	8.22	7.335	7.681	145.5	366.2	25.08	20.68	3.625	5.251	1766	409	3814	4114	1.836e+04	7600
+Aphelidiomycota	intracellular	2	43	18.34	31.93	7.425	7.254	7.504	0.5622	400.1	344.6	11.13	14.68	2.158	3.6	790.8	506	3918	4408	6924	1.202e+04
+Microsporidia	intracellular	30	43	4.259	31.93	0.025	6.629	7.504	0.1334	636.8	344.6	20.52	14.68	0.04821	3.6	254.2	506	1089	4408	2344	1.202e+04
+Olpidiomycota	intracellular	1	43	16.73	31.93	0.9	7.224	7.504	0.5242	238.5	344.6	23.83	14.68	2.343	3.6	825.5	506	2035	4408	3991	1.202e+04
+Pneumocystis	intracellular	1	3	7.581	12.42	0.05	6.88	7.094	0.6109	434.9	471.7	34.84	8.45	5.321	0.8109	317	443	3292	4149	3350	6096
+Rozellomycota	intracellular	1	43	11.32	31.93	0.4	7.054	7.504	0.3546		344.6	17.93	14.68		3.6		506		4408		1.202e+04
+Synchytrium	intracellular	1	30	23.83	31.35	1.05	7.375	7.496	0.7564	358.9	348.8	9.195	13.96	5.467	3.6	474	447	4415	4478	8572	1.03e+04
