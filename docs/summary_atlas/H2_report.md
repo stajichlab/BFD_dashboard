@@ -145,3 +145,12 @@ The table lists the 10 P-A families with the largest yeast shortening (from `tab
 2. Test gene-model accuracy: compare lengths only in genomes with RNA-seq-supported annotation (decision D8 in the plan).
 3. Find where the shortening is located in the protein: N-terminus, C-terminus, or linkers between domains. Use the alignment coordinates in `swissprot_best` (q_start, q_end, s_start, s_end).
 4. Add more basidiomycete yeast genomes to test whether those origins are really longer.
+
+## 11. Follow-up (H2b, 2026-11-08)
+
+The PI's follow-up questions are answered on [H2b_compaction_extremes.md](H2b_compaction_extremes.md) (views V50-V56, code `bin/atlas/h2b_build.py`, `bin/atlas/render_h2b.py`, job `workflows/atlas/J8_h2b.sh`). In short:
+
+- Genome compaction predicts shorter orthologs inside Saccharomycotina (genus-level Spearman rho -0.43 with genes per Mb, +0.44 with genome size; mixed model +0.012 log2 per SD of log genome size), but the slope is small (about 1 % per genome doubling) and the clade mean offset of -0.024 remains at mean compaction. The relation is absent or reversed in filamentous Pezizomycotina and absent in Tremellomycetes.
+- Annotation quality does not explain the offset inside Saccharomycotina (BUSCO rho -0.07, N50 +0.06; RNA-seq-trained genomes -0.020 vs -0.025).
+- 301 of 2,313 P-A families shrink consistently (>= 80 % of Saccharomycotina genera below the filamentous 10th percentile, >= 20 aa or 5 %); the loss is internal or N-terminal and mostly disordered sequence (188 of 301 lose >= 10 disordered residues; 7 lose a Pfam domain).
+- 54 families are consistently longer; extra Pfam domains explain few of them (8.7 % vs 3.6 % in unchanged families); most gains are N-terminal extensions.

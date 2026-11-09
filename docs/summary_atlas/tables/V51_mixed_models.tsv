@@ -1,0 +1,13 @@
+model	trait	n_genera	trait_effect_per_SD	ci_lo	ci_hi	p	yeast_effect	yeast_ci_lo	yeast_ci_hi	converged
+all genera: offset ~ trait + yeast + (1|CLASS/ORDER)	log_genome	1117	0.0007067	-1.456e-05	0.001428	0.05481	-0.003372	-0.006845	0.0001016	True
+Saccharomycotina: offset ~ trait + (1|ORDER/FAMILY)	log_genome	114	0.0118	0.007309	0.01629	2.618e-07				True
+Pezizomycotina-filamentous: offset ~ trait + (1|ORDER/FAMILY)	log_genome	502	-0.001027	-0.00199	-6.368e-05	0.03666				True
+all genera: offset ~ trait + yeast + (1|CLASS/ORDER)	genes_per_mb	1117	-0.001676	-0.002254	-0.001099	1.268e-08	-0.003136	-0.006554	0.0002818	True
+Saccharomycotina: offset ~ trait + (1|ORDER/FAMILY)	genes_per_mb	114	-0.004451	-0.006774	-0.002127	0.0001741				False
+Pezizomycotina-filamentous: offset ~ trait + (1|ORDER/FAMILY)	genes_per_mb	502	0.0004259	-0.0003533	0.001205	0.284				True
+all genera: offset ~ trait + yeast + (1|CLASS/ORDER)	median_intergenic	1117	0.001328	0.000689	0.001968	4.661e-05	-0.003356	-0.0068	8.748e-05	True
+Saccharomycotina: offset ~ trait + (1|ORDER/FAMILY)	median_intergenic	114	0.002209	0.0003399	0.004078	0.02054				True
+Pezizomycotina-filamentous: offset ~ trait + (1|ORDER/FAMILY)	median_intergenic	502	-0.001965	-0.003039	-0.0008899	0.00034				True
+all genera: offset ~ trait + yeast + (1|CLASS/ORDER)	introns_per_transcript	1117	0.0002059	-0.001394	0.001805	0.8008	-0.003462	-0.006952	2.781e-05	True
+Saccharomycotina: offset ~ trait + (1|ORDER/FAMILY)	introns_per_transcript	114	0.01298	0.00155	0.02441	0.02603				True
+Pezizomycotina-filamentous: offset ~ trait + (1|ORDER/FAMILY)	introns_per_transcript	502	-0.0234	-0.02744	-0.01935	8.666e-30				True

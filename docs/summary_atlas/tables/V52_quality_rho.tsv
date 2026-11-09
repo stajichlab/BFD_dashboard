@@ -1,0 +1,6 @@
+covariate	n	rho	ci_lo	ci_hi	p
+BUSCO complete (%)	118	-0.07002	-0.2399	0.1188	0.4512
+log10 N50	118	0.06362	-0.1358	0.2655	0.4937
+partial-model fraction	118	0.2812	0.09261	0.465	0.00204
+log10 genome size	118	0.4398	0.2801	0.5976	6.254e-07
+genes per Mb	118	-0.4291	-0.5756	-0.2418	1.242e-06

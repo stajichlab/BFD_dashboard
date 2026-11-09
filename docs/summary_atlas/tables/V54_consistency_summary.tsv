@@ -1,0 +1,5 @@
+proxy	families (n_sacch >= 10)	median loss aa (fil - sacch)	>= 80 % sacch below fil p10	consistent shrinkers (rule)	shrinkers (p25 rule, >= 90 %)	>= 80 % sacch above fil p90	consistent gainers (rule)	median sacch_frac_below_p25
+P-A	2313	5	388	301	354	73	54	0.5
+P-B-YEAST	1563	5	243	194	250	47	37	0.4851
+P-B-NEUCR	463	4	93	73	83	13	9	0.5054
+P-C	4033	16.5	600	565	702	102	95	0.4935

@@ -1,0 +1,5 @@
+class	n_families	share_domain_gain_ge1	share_domain_gain_ge05	share_domain_loss_ge1	median_ndom_fil	median_ndom_sacch
+yeast longer (>= 5 %)	138	0.08696	0.08696	0.05072	2	2
+intermediate	677	0.06647	0.08715	0.03988	2	2
+unchanged (< 2 %)	962	0.03638	0.05405	0.04158	2	2
+yeast shorter (>= 5 %)	536	0.07649	0.1026	0.07836	2	2

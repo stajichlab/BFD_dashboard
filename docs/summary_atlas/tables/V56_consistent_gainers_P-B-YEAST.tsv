@@ -1,0 +1,39 @@
+# rule: n_sacch >= 10, n_fil >= 10, >= 80 % of Saccharomycotina genera above the filamentous 90th percentile, gain >= 20 aa or >= 5 %
+fam_key	entry_name	org_code	protein_name	n_sacch	n_fil	fil_median	sacch_median	loss_aa	loss_frac	sacch_frac_above_p90	n_origins_longer	n_origins_tested	origin_deltas
+257115	AVT3_YEAST	YEAST	Vacuolar amino acid transporter 3	46	302	589	695	-106	-0.18	0.8043	1	1	Saccharomycotina:106.0
+272398	SDT1_YEAST	YEAST	Suppressor of disruption of TFIIS	89	250	238	279	-41	-0.1723	0.809	1	1	Saccharomycotina:41.0
+253926	ERG3_YEAST	YEAST	Delta(7)-sterol 5(6)-desaturase ERG3	107	601	346.5	372	-25.5	-0.07359	0.8131	1	3	Saccharomycotina:25.5; Tremellomycetes:-19.5; Ustilaginomycotina-yeast:-0.5
+254826	DUR3_YEAST	YEAST	Urea active transporter	104	575	684.5	716	-31.5	-0.04602	0.8173	1	2	Saccharomycotina:31.5; Tremellomycetes:-11.5
+272361	TAF6_YEAST	YEAST	SAGA complex/transcription factor TFIID complex subunit TAF6	108	33	451	492	-41	-0.09091	0.8241	1	1	Saccharomycotina:41.0
+272364	PPP5_YEAST	YEAST	Serine/threonine-protein phosphatase T	108	523	477	512	-35	-0.07338	0.8241	2	2	Saccharomycotina:35.0; Tremellomycetes:107.0
+219245	HEM1_YEAST	YEAST	5-aminolevulinate synthase, mitochondrial	94	52	523	562	-39	-0.07457	0.8298	1	1	Saccharomycotina:39.0
+260269	BDH1_YEAST	YEAST	(R,R)-butanediol dehydrogenase	59	17	362	383	-21	-0.05801	0.8305	1	1	Saccharomycotina:21.0
+297275	RL34A_YEAST	YEAST	Large ribosomal subunit protein eL34A	30	175	114	123.8	-9.75	-0.08553	0.8333	1	2	Saccharomycotina:9.8; Ustilaginomycotina-yeast:-1.0
+244307	PWP1_YEAST	YEAST	Periodic tryptophan protein 1	88	11	538	563	-25	-0.04647	0.8409	1	1	Saccharomycotina:25.0
+308997	HNT1_YEAST	YEAST	Adenosine 5'-monophosphoramidase HNT1	103	639	135	149	-14	-0.1037	0.8544	4	4	Pucciniomycotina-yeast:4.5; Saccharomycotina:14.0; Tremellomycetes:5.0; Ustilaginomycotina-yeast:3.0
+217057	ARD1_YEAST	YEAST	N-terminal acetyltransferase A complex catalytic subunit ARD1	106	164	158	211.5	-53.5	-0.3386	0.8585	1	4	Pucciniomycotina-yeast:-6.0; Saccharomycotina:53.5; Tremellomycetes:0.0; Ustilaginomycotina-yeast:-2.8
+239053	SYDM_YEAST	YEAST	Aspartate--tRNA ligase, mitochondrial	101	22	574	662.5	-88.5	-0.1542	0.8614	1	1	Saccharomycotina:88.5
+230113	RL43A_YEAST	YEAST	Large ribosomal subunit protein eL43A	95	644	92	100	-8	-0.08696	0.8632	1	4	Pucciniomycotina-yeast:0.0; Saccharomycotina:8.0; Tremellomycetes:0.0; Ustilaginomycotina-yeast:0.0
+309545	DAL4_YEAST	YEAST	Allantoin permease	76	82	561.5	593	-31.5	-0.0561	0.8684	1	1	Saccharomycotina:31.5
+307024	GCN5_YEAST	YEAST	Histone acetyltransferase GCN5	73	407	404	448	-44	-0.1089	0.8767	1	1	Saccharomycotina:44.0
+242241	YPK2_YEAST	YEAST	Serine/threonine-protein kinase YPK2/YKR2	34	51	560	665.2	-105.2	-0.1879	0.8824	1	1	Saccharomycotina:105.3
+217986	PSS_YEAST	YEAST	CDP-diacylglycerol--serine O-phosphatidyltransferase	104	129	242	268	-26	-0.1074	0.8846	2	2	Saccharomycotina:26.0; Tremellomycetes:16.5
+533067	DDP1_YEAST	YEAST	Diphosphoinositol polyphosphate phosphohydrolase DDP1	95	361	162	180	-18	-0.1111	0.8947	1	1	Saccharomycotina:18.0
+254037	IF2G_YEAST	YEAST	Eukaryotic translation initiation factor 2 subunit gamma	109	728	507	528	-21	-0.04142	0.8991	1	4	Pucciniomycotina-yeast:-10.0; Saccharomycotina:21.0; Tremellomycetes:-33.0; Ustilaginomycotina-yeast:-34.0
+261680	GPP1_YEAST	YEAST	Glycerol-1-phosphate phosphohydrolase 1	70	102	240	253	-13	-0.05417	0.9	1	1	Saccharomycotina:13.0
+254157	SPR1_YEAST	YEAST	Sporulation-specific glucan 1,3-beta-glucosidase	31	43	422	479	-57	-0.1351	0.9032	1	1	Saccharomycotina:57.0
+248071	ATG15_YEAST	YEAST	Putative lipase ATG15	74	12	476.5	537.8	-61.25	-0.1285	0.9054	1	1	Saccharomycotina:61.3
+314577	ALE1_YEAST	YEAST	Lysophospholipid acyltransferase	91	95	547	595.5	-48.5	-0.08867	0.9121	1	1	Saccharomycotina:48.5
+249068	RS5_YEAST	YEAST	Small ribosomal subunit protein uS7	110	768	213	224.5	-11.5	-0.05399	0.9182	1	4	Pucciniomycotina-yeast:-7.5; Saccharomycotina:11.5; Tremellomycetes:-10.0; Ustilaginomycotina-yeast:-6.0
+260541	RRAAH_YEAST	YEAST	4-hydroxy-4-methyl-2-oxoglutarate aldolase	99	26	224	238	-14	-0.0625	0.9293	1	1	Saccharomycotina:14.0
+260851	ALG8_YEAST	YEAST	Dolichyl pyrophosphate Glc1Man9GlcNAc2 alpha-1,3-glucosyltransferase	104	478	501	559.2	-58.25	-0.1163	0.9327	1	1	Saccharomycotina:58.3
+256341	UPS2_YEAST	YEAST	Protein UPS2, mitochondrial	61	14	195	216	-21	-0.1077	0.9344	1	1	Saccharomycotina:21.0
+236939	YPK1_YEAST	YEAST	Serine/threonine-protein kinase YPK1	51	46	548.5	667	-118.5	-0.216	0.9412	1	1	Saccharomycotina:118.5
+245730	HSP12_YEAST	YEAST	12 kDa heat shock protein	68	20	98	117.2	-19.25	-0.1964	0.9412	1	1	Saccharomycotina:19.3
+260543	BIM1_YEAST	YEAST	Protein BIM1	53	264	248	299	-51	-0.2056	0.9434	2	2	Saccharomycotina:51.0; Tremellomycetes:5.8
+312137	CORO_YEAST	YEAST	Coronin-like protein	74	11	607	640.5	-33.5	-0.05519	0.9459	1	1	Saccharomycotina:33.5
+246353	TOM40_YEAST	YEAST	Mitochondrial import receptor subunit TOM40	106	598	355	386	-31	-0.08732	0.9717	1	1	Saccharomycotina:31.0
+215424	FUR4_YEAST	YEAST	Uracil permease	38	81	558	591	-33	-0.05914	0.9737	1	1	Saccharomycotina:33.0
+266853	COX16_YEAST	YEAST	Cytochrome c oxidase assembly protein COX16, mitochondrial	100	458	115	122	-7	-0.06087	0.99	1	1	Saccharomycotina:7.0
+272851	PRS10_YEAST	YEAST	26S proteasome subunit RPT4	101	732	392	416.5	-24.5	-0.0625	0.9901	4	4	Pucciniomycotina-yeast:10.0; Saccharomycotina:24.5; Tremellomycetes:10.5; Ustilaginomycotina-yeast:18.0
+260264	SEO1_YEAST	YEAST	Probable transporter SEO1	90	13	485	577.6	-92.62	-0.191	1	1	1	Saccharomycotina:92.6

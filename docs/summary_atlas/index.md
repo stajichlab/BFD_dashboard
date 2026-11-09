@@ -18,6 +18,7 @@ Genomes: 23,680. Species representatives (one per species, best BUSCO then N50):
 | Page | Hypothesis | Views |
 |---|---|---|
 | [H1_quality](H1_quality.md) | H1. Annotation and assembly quality differ by clade | V01 (ok), V02 (ok), V03 (ok), V04 (ok), V05 (ok), V06 (ok) |
+| [H2b_compaction_extremes](H2b_compaction_extremes.md) | H2b. Is the Saccharomycotina shortening explained by genome compaction or annotation quality; which families shrink or grow consistently, where, and what is lost | V50, V51, V52, V54, V55, V56 (follow-up) |
 | [H2_protein_length](H2_protein_length.md) | H2. Among orthologous proteins, yeast proteins are shorter | V07 (ok), V08 (ok), V09 (ok), V10 (ok), V11 (ok), V12 (ok), V13 (ok), V14 (ok), V31 (ok) |
 | [H3_gene_structure](H3_gene_structure.md) | H3. Yeast genomes have fewer introns and denser, shorter genes | V15 (ok), V16 (ok), V17 (ok), V18 (ok) |
 | [H4_secretome_lifestyle](H4_secretome_lifestyle.md) | H4. Secretome and CAZy content track lifestyle | V20 (ok), V21 (ok), V22 (ok), V23 (ok), V24 (ok), V25 (ok) |

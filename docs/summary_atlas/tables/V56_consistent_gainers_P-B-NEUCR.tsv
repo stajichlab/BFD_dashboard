@@ -1,0 +1,11 @@
+# rule: n_sacch >= 10, n_fil >= 10, >= 80 % of Saccharomycotina genera above the filamentous 90th percentile, gain >= 20 aa or >= 5 %
+fam_key	entry_name	org_code	protein_name	n_sacch	n_fil	fil_median	sacch_median	loss_aa	loss_frac	sacch_frac_above_p90	n_origins_longer	n_origins_tested	origin_deltas
+471570	AMPP1_NEUCR	NEUCR	Probable Xaa-Pro aminopeptidase P	104	455	619	703.5	-84.5	-0.1365	0.8269	4	4	Pucciniomycotina-yeast:27.0; Saccharomycotina:84.5; Tremellomycetes:29.5; Ustilaginomycotina-yeast:1.0
+471800	ERG3_NEUCR	NEUCR	Probable Delta(7)-sterol 5(6)-desaturase	105	665	344	372	-28	-0.0814	0.8286	1	3	Saccharomycotina:28.0; Tremellomycetes:-18.5; Ustilaginomycotina-yeast:-16.0
+311145	GPA1_NEUCR	NEUCR	Guanine nucleotide-binding protein alpha-1 subunit	58	758	353	429.2	-76.25	-0.216	0.8793	2	4	Pucciniomycotina-yeast:1.5; Saccharomycotina:76.3; Tremellomycetes:-1.0; Ustilaginomycotina-yeast:0.0
+545047	GPA3_NEUCR	NEUCR	Guanine nucleotide-binding protein alpha-3 subunit	63	709	355	417	-62	-0.1746	0.9048	3	4	Pucciniomycotina-yeast:21.3; Saccharomycotina:62.0; Tremellomycetes:60.3; Ustilaginomycotina-yeast:-1.0
+471510	RS5_NEUCR	NEUCR	Small ribosomal subunit protein uS7	109	768	213	224	-11	-0.05164	0.9174	1	4	Pucciniomycotina-yeast:-7.5; Saccharomycotina:11.0; Tremellomycetes:-10.0; Ustilaginomycotina-yeast:-6.0
+575020	RM39_NEUCR	NEUCR	Large ribosomal subunit protein bL33m	17	320	58	66	-8	-0.1379	0.9412	1	3	Saccharomycotina:8.0; Tremellomycetes:-2.0; Ustilaginomycotina-yeast:-1.0
+268218	PP2A1_NEUCR	NEUCR	Serine/threonine-protein phosphatase PP2A catalytic subunit	106	704	327	351.5	-24.5	-0.07492	0.9623	1	4	Pucciniomycotina-yeast:-21.0; Saccharomycotina:24.5; Tremellomycetes:-21.0; Ustilaginomycotina-yeast:-21.0
+246953	TOM40_NEUCR	NEUCR	Mitochondrial import receptor subunit tom40	101	598	355	386	-31	-0.08732	0.9703	1	1	Saccharomycotina:31.0
+471792	EIF3L_NEUCR	NEUCR	Eukaryotic translation initiation factor 3 subunit L	10	517	476	511.5	-35.5	-0.07458	1	1	1	Saccharomycotina:35.5

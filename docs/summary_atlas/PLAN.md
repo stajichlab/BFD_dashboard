@@ -418,3 +418,12 @@ Measured in the build: `idp_summary.protein_id` has no `-T` suffix (0 of 144,924
 P2 code: `bin/atlas/render_p2.py` (imported by `render_views.py`), `bin/atlas/sql/J5_model_anchor.sql`, `bin/atlas/sql/J7_merops.sql`, `workflows/atlas/J5.sh`, `workflows/atlas/J7.sh`, `atlas_data/labels/merops_family_map.tsv`. Scatter point layers are now rasterized inside the SVG files (`rasterized=True`), which applies to V03, V04, V16, V18, V27, V29, V30, V34, V37, V38, V40 and the per-class strip plots.
 
 P2 views not built: none. P3 (V19, V26, V32, V41, V42) stays out of scope.
+
+### 9.2 H2b build (2026-11-08, 18:00-18:40 PST)
+
+| Job | SLURM ID | State | Elapsed | Output |
+|---|---|---|---|---|
+| J8 H2b build + render | 31890701 (FAILED: `GROUP BY ALL` with `f.*`), 31890832 (COMPLETED, build + render), 31890978 (render-only rerun with verdict) | COMPLETED | about 1 min each | `atlas_data/A10/genome_offset_traits.parquet` (4,654 genomes), `fam_consistency_{P-A,P-B-YEAST,P-B-NEUCR,P-C}.parquet`, `top_family_proteins.parquet` (472,638 proteins of 355 top families), `top_family_location.parquet`, `top_family_domains.parquet`; page `docs/summary_atlas/H2b_compaction_extremes.md`, figures V50-V56, tables V50-V56 incl. ranked shrinker/gainer TSVs |
+| phyling tree, restart | stage 31890418 (plain FASTA, COMPLETED), driver 31890419 (RUNNING, 32 h limit) | | | First driver 31870356 FAILED after 2 h 50 min: PHYLING_ALIGN rejects plain gzip (`pyfaidx.UnsupportedCompressionFormat`); proteomes restaged as `.fa` in `atlas_data/phylo/pep_fa/`, `--input` changed, `-resume` |
+
+RNA-seq-trained flag (D8) is now available per genome in `A10/genome_offset_traits.parquet` (`rnaseq_trained`: a `training/funannotate_train.pasa.gff3` or `kallisto.tsv` file exists under `genome_annotation/<out>/`), for the offset genomes only.
