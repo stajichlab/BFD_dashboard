@@ -1,0 +1,20 @@
+tf_family	n_genomes	slope	ci_lo	ci_hi	r2	median_yeast	median_filamentous
+Fungal-specific transcription factor domain (C-terminal to Zn_clus)	5097	1.238	1.186	1.291	0.2949	36	104
+Homeodomain	5104	0.9581	0.931	0.9853	0.484	3	7
+Homeobox KN domain	5003	0.958	0.9205	0.9954	0.3346	1	4
+High mobility group box	5111	0.7803	0.7494	0.8113	0.3231	5	8
+Zn(II)2Cys6 zinc cluster	5098	0.7287	0.6691	0.7884	0.1013	56	101
+C6H2-type zinc finger	4712	0.7032	0.6071	0.7993	0.04186	13	34
+Basic leucine zipper	5099	0.5953	0.5682	0.6224	0.2668	5	9
+Forkhead / winged-helix domain	5102	0.4972	0.4785	0.5159	0.3477	3	4
+Basic helix-loop-helix	5107	0.4034	0.3819	0.425	0.2088	9	10
+GATA zinc finger	5102	0.2433	0.2154	0.2712	0.05417	8	7
+Myb-like DNA-binding domain	5110	0.2325	0.213	0.2519	0.09724	12	12
+Myb-like DNA-binding domain variant	5106	0.2197	0.1984	0.2411	0.07407	9	9
+MADS-box (SRF-type)	5092	0.218	0.193	0.2431	0.05406	2	2
+Basic leucine zipper variant	5098	0.2139	0.1796	0.2483	0.02843	4	5
+CCCH zinc finger	5102	0.2062	0.1863	0.2262	0.07459	6	6
+RNA Pol I transcription factor Rrn7-type	4088	0.1357	0.117	0.1544	0.04719	0	1
+C2H2 zinc finger variant	301	0.1263	0.05788	0.1946	0.0423	0	0
+Heat shock factor DNA-binding domain	5101	0.08816	0.05843	0.1179	0.006586	4	3
+C2H2 zinc finger	5091	-0.01306	-0.04552	0.0194	0.0001222	7	8

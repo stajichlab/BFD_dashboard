@@ -1,0 +1,4 @@
+growth_form	n_genomes	slope_gc3_on_gc	intercept	r2	spearman_rho
+yeast	1109	1.893	-35.1	0.9313	0.9608
+dimorphic_yeast	207	1.688	-28.56	0.8041	0.9442
+filamentous_mycelium	3804	1.616	-19.82	0.6878	0.8089

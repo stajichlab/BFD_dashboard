@@ -1,0 +1,13 @@
+primary_lifestyle	GH	GT	PL	CE	AA	CBM
+ectomycorrhizal	9.396	4.895	0.3724	0.7743	4.15	0.3352
+lichenized	9.916	8.024	0	0.7619	5.069	0.2759
+nectar/tap_saprotroph	10.15	11.78	0	0.3552	1.885	0.7088
+animal_endosymbiont	11.53	10.36	0	0.6238	1.936	0.6659
+animal_parasite	12.55	7.505	0.1138	1.255	5.228	0.5336
+soil_saprotroph	14.92	7.388	0.6279	2.056	5.305	0.7181
+mycoparasite	16.69	7.302	0.7733	1.472	5.34	0.5802
+litter_saprotroph	17.19	6.572	0.9904	2.452	8.043	1.082
+wood_saprotroph	18.06	5.96	1.009	2.012	8.042	0.7947
+dung_saprotroph	19.05	7.457	0.5881	3.731	10.11	1.237
+unspecified_saprotroph	19.17	7.593	0.6332	2.507	7.401	1.023
+plant_pathogen	20.35	7.374	0.8409	2.914	8.126	1.054

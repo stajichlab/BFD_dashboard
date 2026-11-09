@@ -1,0 +1,8 @@
+filter_set	n_families	median_log2_ratio	ci_lo	ci_hi	frac_yeast_shorter	binom_p
+F0 Q-rep + Q-ann only, complete models	4574	-0.004419	-0.006116	-0.002812	0.5618	5.62e-16
+F1 + Q-busco-rel (p25)	3896	-0.007032	-0.008888	-0.005146	0.5851	5.132e-25
+F2 default: + Q-dup + Q-n50	3652	-0.008998	-0.01041	-0.006969	0.5987	3.912e-31
+F3 default but all models (incl. partial)	3945	-0.008462	-0.01007	-0.006789	0.5952	2.722e-31
+F4 default with BUSCO >= class median	2966	-0.009098	-0.01089	-0.007196	0.596	2.296e-24
+F5 default, taxonomy-only yeast definition	3866	-0.00821	-0.01003	-0.00702	0.5961	2.453e-31
+F6 default, >= 25 genera per side	1686	-0.01737	-0.0205	-0.01365	0.6681	1.224e-41

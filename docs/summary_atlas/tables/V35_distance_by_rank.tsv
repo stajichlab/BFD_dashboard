@@ -1,0 +1,10 @@
+rank	same_growth_form	median	size
+same family	True	0.9261	4090
+same order	False	1.328	6
+same order	True	1.215	19580
+same class	False	1.065	175
+same class	True	1.7	66351
+same phylum	False	4.479	76249
+same phylum	True	2.188	115122
+different phylum	False	3.864	65510
+different phylum	True	2.434	247512

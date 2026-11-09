@@ -1,0 +1,35 @@
+table	key	n_genomes	n_rows	source
+species	LOCUSTAG	23680	23680	measured at render
+samples	LOCUSTAG	23680	23680	measured at render
+asm_stats	ASMID	23584	23584	measured at render
+busco_genome	ASMID	23582	23582	measured at render
+telomere_summary	ASMID	23582	23582	measured at render
+telomere_tracts	ASMID	8369	73242	measured at render
+aa_freq	species_prefix	23452	477535	measured at render
+codon_freq	species_prefix	23452	1500925	measured at render
+tf_inventory	species_prefix	23394	10946927	measured at render
+cazy.overview	species_prefix	23401	9310657	measured at render
+cazy.cazymes_hmm	species_prefix	23394	9164068	measured at render
+signalp.signal_peptide	species_prefix	23410	18767284	measured at render
+targetP	species_prefix	125	178535	measured at render
+infernal_rfam	species_prefix	14	3925	measured at render
+wgd.ks.summary	species_prefix	7384	7384	measured at render
+gene_trnas	split_part(gene_id)	23446	4558316	measured at render
+wgd.ks	species_prefix	7384	25831001	tables/_manifest/wgd.ks.json
+wgd.ks.nodes	species_prefix	7384	28982469	tables/_manifest/wgd.ks.nodes.json
+gene_CDS	split_part(transcript_id)	23452	753622745	job J0
+gene_exons	split_part(transcript_id)	23452	758181061	job J0
+gene_info	LOCUSTAG	23452	249546610	job J0
+gene_intergenic_distances	species_prefix	23452	233406624	job J0
+gene_introns	split_part(transcript_id)	23452	508634451	job J0
+gene_proteins	split_part(gene_id)	23452	244988294	job J0
+gene_transcripts	split_part(gene_id)	23452	249546610	job J0
+idp	species_prefix	23412	233329228	job J0
+idp_summary	species_prefix	23412	144924594	job J0
+merops	species_prefix	23404	43462876	job J0
+pfam	split_part(protein_id)	23410	368209721	job J0
+predgpi	species_prefix	23410	227238177	job J0
+swissprot_best	species_prefix	23409	157614964	job J0
+swissprot_hits	species_prefix	23409	2192440076	job J0
+tmhmm	species_prefix	23409	45707260	job J0
+wolfpsort	species_prefix	23410	244790951	job J0

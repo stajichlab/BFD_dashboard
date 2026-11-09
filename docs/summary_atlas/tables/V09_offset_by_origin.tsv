@@ -1,0 +1,9 @@
+yeast_origin	n_genera	median_offset_log2	ci_lo	ci_hi	ratio
+Saccharomycotina	118	-0.0235	-0.02564	-0.0204	0.9838
+Taphrinomycotina	2	-0.04317	-0.04423	-0.04211	0.9705
+Tremellomycetes	15	0.002939	0	0.009045	1.002
+Pucciniomycotina-yeast	6	0.01048	0.002038	0.01493	1.007
+Ustilaginomycotina-yeast	5	0.0193	-0.008229	0.02438	1.013
+Pezizomycotina-dimorphic	18	0.004807	0.002951	0.005669	1.003
+Ustilaginomycotina-dimorphic	20	0.02151	0.01837	0.02673	1.015
+filamentous	823	0	0	0	1

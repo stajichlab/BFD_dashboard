@@ -1,0 +1,13 @@
+primary_lifestyle	n_genera	median_secretome_frac	median_n_secreted	dominant_growth_form
+nectar/tap_saprotroph	51	0.02445	133	yeast
+ectomycorrhizal	51	0.02732	326	filamentous_mycelium
+animal_endosymbiont	12	0.02994	221.2	yeast
+soil_saprotroph	115	0.04521	480	filamentous_mycelium
+mycoparasite	25	0.05232	545	filamentous_mycelium
+unspecified_saprotroph	64	0.05443	610.5	filamentous_mycelium
+wood_saprotroph	198	0.05548	681.5	filamentous_mycelium
+animal_parasite	71	0.0567	474	filamentous_mycelium
+litter_saprotroph	82	0.05735	734	filamentous_mycelium
+lichenized	93	0.05837	554	thallus_photosynthetic
+plant_pathogen	223	0.06513	735	filamentous_mycelium
+dung_saprotroph	17	0.06919	727	filamentous_mycelium

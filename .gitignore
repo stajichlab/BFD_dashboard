@@ -4,3 +4,7 @@ __pycache__/
 # generated build outputs (reproducible via bin/make_dashboard.py)
 cache/
 explorer.html
+
+# summary atlas: large intermediates and local Python env (rebuild via workflows/atlas/)
+atlas_data/
+atlas_env/

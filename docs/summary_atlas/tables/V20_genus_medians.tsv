@@ -1,0 +1,1030 @@
+GENUS	n_secreted_strict	secretome_frac	signalp_frac	n_proteins	PHYLUM	CLASS	ORDER_	growth_form	primary_lifestyle	yeast_origin	n_genomes	log_n50	busco_complete	log_genome
+Aaosphaeria	1029	0.08042	0.09508	1.28e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	soil_saprotroph	filamentous	2	6.31	99.15	7.589
+Abortiporus	693	0.05763	0.06437	1.202e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.042	98.9	7.527
+Acaromyces	435	0.05835	0.07606	7455	Basidiomycota	Exobasidiomycetes	Exobasidiales	yeast	animal_parasite	Ustilaginomycotina-yeast	1	6.5	96.6	7.286
+Acaulopage	669	0.1039	0.126	6436	Zoopagomycota	Zoopagomycetes	Zoopagales	filamentous_mycelium	protistan_parasite	filamentous	1	4.729	81.6	7.042
+Acephala	1075	0.05653	0.07131	1.902e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.238	99.6	7.864
+Achaetomium	642	0.06173	0.07529	1.04e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	4.884	99.5	7.507
+Aciculoconidium	297	0.04785	0.06493	6207	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	5.458	81.4	7.248
+Acidiella	336	0.03547	0.04687	9473	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.066	99.1	7.429
+Acidomyces	398	0.04043	0.05048	9845	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.084	98.9	7.468
+Acremonium	939.5	0.07889	0.09377	1.19e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	unspecified_saprotroph	filamentous	2	6.359	99.15	7.586
+Acrocalymma	1445	0.08057	0.09278	1.793e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.843	99.4	7.75
+Acrodontium	467	0.05195	0.06653	8989	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	6.242	99.5	7.364
+Actinomortierella	648.5	0.0632	0.07425	1.024e+04	Mortierellomycota	Mortierellomycetes	Mortierellales	filamentous_mycelium		filamentous	2	4.842	94.8	7.549
+Aeminium	409	0.0503	0.06456	8132	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	sooty_mold	filamentous	1	5.259	98.8	7.354
+Agaricus	451	0.04336	0.05379	1.026e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	4	6.287	98.9	7.55
+Agrocybe	1055	0.06176	0.07387	1.683e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	3	6.435	99.3	7.773
+Agyrium	420	0.04826	0.06228	8703	Ascomycota	Lecanoromycetes	Pertusariales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	5.381	99.3	7.448
+Akanthomyces	841	0.07728	0.09653	1.062e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	4	5.849	99.6	7.536
+Albifimbria	1169	0.08618	0.1004	1.356e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.729	99.7	7.685
+Albophoma	488	0.05163	0.06824	9452	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.527	99.6	7.495
+Allantophomopsis	679.5	0.06541	0.08394	1.039e+04	Ascomycota	Leotiomycetes	Phacidiales	filamentous_mycelium	plant_pathogen	filamentous	2	6.291	99.6	7.537
+Alloascoidea	238	0.02818	0.05128	8444	Ascomycota	Alloascoideomycetes	Alloascoideales	yeast	nectar/tap_saprotroph	Saccharomycotina	2	5.729	90.75	7.382
+Allodekkera	103	0.01908	0.03131	5397	Ascomycota	Pichiomycetes	Pichiales	yeast	litter_saprotroph	Saccharomycotina	1	5.147	80.9	7.122
+Alloperoneutypa	761	0.06919	0.08355	1.1e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium		filamentous	1	5.213	99.5	7.722
+Alternaria	1010	0.07899	0.09362	1.262e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	63	6.222	99.2	7.529
+Amanita	129	0.01921	0.02254	6315	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	ectomycorrhizal	filamentous	12	5.973	98.2	7.66
+Amauroascus	328.5	0.03957	0.05219	8296	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	soil_saprotroph	filamentous	2	5.349	99.35	7.403
+Ambrosiella	250	0.03584	0.05161	6975	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	plant_pathogen	filamentous	1	5.877	98.7	7.431
+Ambrosiozyma	164	0.02702	0.04498	6069	Ascomycota	Pichiomycetes	Pichiales	yeast	wood_saprotroph	Saccharomycotina	11	5.524	81.4	7.169
+Amesomyces	449	0.04919	0.06376	9128	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium		filamentous	1	6.667	99.2	7.492
+Amniculicola	1072	0.07884	0.09318	1.36e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.642	99.1	7.694
+Amorphotheca	370	0.04021	0.05478	9201	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.369	99.6	7.479
+Ampelomyces	604	0.06163	0.07469	9800	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	3	6.476	99.2	7.572
+Amphichorda	628	0.06504	0.08068	9655	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	dung_saprotroph	filamentous	1	6.516	99.5	7.471
+Amphirosellinia	785	0.06266	0.07224	1.253e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	1	7.071	99.2	7.683
+Ampulloclitocybe	830	0.04715	0.05726	1.76e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.779	99.6	7.943
+Amylocarpus	747	0.06548	0.08126	1.141e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	wood_saprotroph	filamentous	1	4.885	99.4	7.655
+Amylocystis	364	0.03238	0.03932	1.124e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.205	95.4	7.55
+Amyloporia	400	0.03005	0.03876	1.331e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.17	98.8	7.67
+Anguillospora	1224	0.08003	0.09833	1.53e+04	Ascomycota			filamentous_mycelium	plant_pathogen	filamentous	1	6.506	99.7	7.744
+Annulohypoxylon	835	0.07175	0.08593	1.177e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	10	6.171	99.7	7.604
+Anthostomella	1210	0.07926	0.09183	1.527e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	foliar_endophyte	filamentous	1	6.735	99.8	7.73
+Anthracocystis	367	0.05639	0.07421	6510	Basidiomycota	Ustilaginomycetes	Ustilaginales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	2	6.027	97.1	7.271
+Antrodiella	471	0.04233	0.05483	1.113e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	4.825	98.9	7.517
+Aotearoamyces	333	0.03933	0.05634	8466	Ascomycota	Leotiomycetes	Leotiales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.918	99.8	7.413
+Aphanoascus	331	0.04317	0.05777	7668	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.648	99.4	7.361
+Apiosordaria	907	0.07892	0.09562	1.149e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	dung_saprotroph	filamentous	1	6.459	99.1	7.604
+Apiospora	1246	0.08467	0.09879	1.43e+04	Ascomycota	Sordariomycetes	Amphisphaeriales	filamentous_mycelium	plant_pathogen	filamentous	15	6.699	99.6	7.688
+Apiotrichum	423.5	0.05092	0.06964	7990	Basidiomycota	Tremellomycetes	Trichosporonales	yeast	soil_saprotroph	Tremellomycetes	12	6.428	96.85	7.393
+Aplosporella	675	0.06569	0.07873	1.028e+04	Ascomycota	Dothideomycetes	Botryosphaeriales	filamentous_mycelium	plant_pathogen	filamentous	1	5.981	99.6	7.514
+Apodospora	1128	0.08642	0.1058	1.305e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.675	99.7	7.623
+Apophysomyces	394	0.0352	0.04772	1.12e+04	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	2	5.461	97.95	7.56
+Aquanectria	816	0.05662	0.07265	1.441e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.693	99.6	7.73
+Arachnomyces	846	0.0801	0.09345	1.057e+04	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	animal_parasite	filamentous	2	6.358	99.45	7.517
+Arachnopeziza	1074	0.07361	0.09198	1.459e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	wood_saprotroph	filamentous	3	6.431	99.6	7.635
+Arcopilus	780	0.07309	0.09014	1.067e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.69	99.6	7.565
+Aristastoma	735	0.07176	0.08669	1.024e+04	Ascomycota			filamentous_mycelium	plant_pathogen	filamentous	1	5.579	98.8	7.504
+Armillaria	941	0.04746	0.05608	1.912e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	10	6.372	99	7.809
+Arthrinium	1129	0.08649	0.1028	1.309e+04	Ascomycota	Sordariomycetes	Amphisphaeriales	filamentous_mycelium	plant_pathogen	filamentous	2	6.681	99.25	7.642
+Arthrobotrys	1103	0.09641	0.1147	1.118e+04	Ascomycota	Orbiliomycetes	Orbiliales	filamentous_mycelium	animal_parasite	filamentous	7	6.37	98.2	7.6
+Arthroderma	475.5	0.05579	0.0702	8549	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	animal_parasite	filamentous	4	5.612	98.9	7.377
+Articulospora	1092	0.07937	0.1009	1.376e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.599	99.6	7.622
+Artomyces	565	0.04628	0.05816	1.221e+04	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.675	99.2	7.578
+Aschersonia	474	0.05784	0.07456	8195	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	5	4.831	98.7	7.429
+Ascochyta	906.5	0.07617	0.09264	1.168e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	6	6.299	98.95	7.658
+Ascocoryne	551	0.05134	0.06979	1.073e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.536	99.8	7.535
+Ascodesmis	757	0.05902	0.07511	1.209e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	dung_saprotroph	filamentous	2	5.921	98.85	7.566
+Ascoidea	124	0.02094	0.03665	5890	Ascomycota	Saccharomycetes	Ascoideales	yeast	nectar/tap_saprotroph	Saccharomycotina	2	5.559	77.45	7.266
+Aspergillus	767	0.06354	0.07783	1.217e+04	Ascomycota	Eurotiomycetes	Eurotiales	filamentous_mycelium	unspecified_saprotroph	filamentous	240	5.872	99.3	7.537
+Asteromyces	473	0.05214	0.06548	9072	Ascomycota			filamentous_mycelium	unspecified_saprotroph	filamentous	1	5.756	98.8	7.459
+Asterophora	475	0.04995	0.06341	9509	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	mycoparasite	filamentous	1	4.817	98	7.455
+Atkinsonella	378	0.04882	0.06309	7744	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	foliar_endophyte	filamentous	2	5.273	99.4	7.5
+Atractium	437	0.0434	0.06049	1.007e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	wood_saprotroph	filamentous	1	4.753	98.8	7.524
+Aureobasidium	627	0.06263	0.08016	9784	Ascomycota	Dothideomycetes	Dothideales	dimorphic_yeast	sooty_mold	Pezizomycotina-dimorphic	24	6.056	99.5	7.41
+Aureoboletus	238.5	0.02725	0.03444	8726	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	2	5.657	98.8	7.698
+Auricularia	1226	0.07236	0.08717	1.695e+04	Basidiomycota	Agaricomycetes	Auriculariales	filamentous_mycelium	wood_saprotroph	filamentous	6	6.613	97.85	7.727
+Aurifilum	746	0.07042	0.08703	1.059e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	1	6.348	99.6	7.6
+Auriscalpium	629	0.04352	0.05452	1.413e+04	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	litter_saprotroph	filamentous	3	6.259	98.7	7.638
+Australozyma	145	0.02886	0.04697	5025	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.576	79.9	7.08
+Austroboletus	340	0.03447	0.04471	9864	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	4.786	98.5	7.571
+Babjevia	142	0.0217	0.03255	6544	Ascomycota	Lipomycetes	Lipomycetales	yeast		Saccharomycotina	1	5.207	93.4	7.238
+Babjeviella	132	0.02337	0.04037	5648	Ascomycota	Pichiomycetes	Serinales	yeast	soil_saprotroph	Saccharomycotina	1	5.97	84.7	7.182
+Bachmanniomyces	353	0.04748	0.06254	7435	Ascomycota	Lecanoromycetes		filamentous_mycelium	lichen_parasite	filamentous	1	5.477	99.2	7.362
+Barnettozyma	135.5	0.02376	0.04245	5522	Ascomycota	Saccharomycetes	Phaffomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	8	5.59	83.65	7.053
+Bartalinia	1310	0.09388	0.1124	1.395e+04	Ascomycota	Sordariomycetes	Amphisphaeriales	filamentous_mycelium	foliar_endophyte	filamentous	1	6.747	99.7	7.678
+Basidioascus	532	0.0545	0.06833	9761	Basidiomycota	Geminibasidiomycetes	Geminibasidiales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.358	97.1	7.542
+Basipetospora	711	0.07701	0.0963	9232	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.74	99.2	7.525
+Baudoinia	370	0.041	0.05296	9025	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.114	99.5	7.34
+Beauveria	724	0.07234	0.08927	1.006e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	11	5.141	99.8	7.542
+Benniella	729	0.04549	0.05773	1.602e+04	Mortierellomycota	Mortierellomycetes	Mortierellales	filamentous_mycelium		filamentous	1	6.422	96.3	7.745
+Berkeleyomyces	388	0.05529	0.07025	7026	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	plant_pathogen	filamentous	2	6.294	98.85	7.465
+Beverwykella	1177	0.08735	0.1028	1.347e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.479	99.4	7.662
+Bifiguratus	333	0.03855	0.05395	8638	Mucoromycota	Endogonomycetes	Endogonales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.01	95.9	7.287
+Bimuria	1188	0.07145	0.08227	1.663e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.853	99.5	7.893
+Bipolaris	867.5	0.07733	0.0909	1.1e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	8	6.282	98.95	7.544
+Biscogniauxia	778.5	0.06963	0.08345	1.137e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	4	5.665	99.75	7.635
+Bjerkandera	784	0.0605	0.07486	1.296e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.196	99.6	7.583
+Blakeslea	379	0.03334	0.0431	1.137e+04	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.375	95.8	7.574
+Blastobotrys	243.5	0.03673	0.05203	6502	Ascomycota	Dipodascomycetes	Dipodascales	yeast	nectar/tap_saprotroph	Saccharomycotina	28	5.359	92.8	7.151
+Blastomyces	330	0.03605	0.04631	8831	Ascomycota	Eurotiomycetes	Onygenales	dimorphic_yeast	animal_parasite	Pezizomycotina-dimorphic	3	5.475	99.3	7.842
+Blumeria	249	0.03794	0.0419	6556	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	2	6.92	99.15	8.123
+Blumeriella	502	0.0551	0.07145	9111	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.172	99.3	7.676
+Boeremia	877	0.07545	0.09042	1.143e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	3	5.418	98.8	7.536
+Boletus	461	0.03813	0.04591	1.209e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	3	5.717	98.7	7.61
+Bombardia	733	0.06769	0.08441	1.083e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.995	99.5	7.587
+Botryobasidium	659	0.04997	0.06211	1.319e+04	Basidiomycota	Agaricomycetes	Cantharellales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.648	98.7	7.669
+Botryosphaeria	1055	0.0792	0.09485	1.332e+04	Ascomycota	Dothideomycetes	Botryosphaeriales	filamentous_mycelium	plant_pathogen	filamentous	2	5.504	99.8	7.659
+Botryotinia	695.5	0.05724	0.07268	1.214e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	4	4.889	99.4	7.659
+Botrytis	739.5	0.06127	0.078	1.211e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	16	6.227	99.5	7.654
+Brettanomyces	99.5	0.01887	0.03425	5273	Ascomycota	Pichiomycetes	Pichiales	yeast	nectar/tap_saprotroph	Saccharomycotina	4	6.089	80.25	7.054
+Brunneochlamydosporium	1285	0.09503	0.1123	1.352e+04	Ascomycota	Sordariomycetes	Glomerellales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.872	99.2	7.639
+Buchwaldoboletus	383	0.03622	0.04719	1.057e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	mycoparasite	filamentous	1	6.43	99.3	7.487
+Bullera	291.5	0.03779	0.05018	7714	Basidiomycota	Tremellomycetes	Tremellales	yeast	unspecified_saprotroph	Tremellomycetes	2	6.101	95.75	7.293
+Butyriboletus	301	0.03331	0.04306	9022	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	2	6.45	99.15	7.516
+Byssothecium	1051	0.073	0.08744	1.44e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	5.939	98.9	7.692
+Cadophora	1316	0.07821	0.09694	1.614e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	6	5.927	99.8	7.696
+Calcarisporiella	633	0.06214	0.08502	1.019e+04	Calcarisporiellomycota	Calcarisporiellomycetes	Calcarisporiellales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.929	96.3	7.45
+Calcarisporium	882	0.07002	0.08216	1.26e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	mycoparasite	filamentous	1	6.185	99.1	7.647
+Calocera	513	0.04881	0.06184	1.051e+04	Basidiomycota	Dacrymycetes	Dacrymycetales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.451	98.05	7.491
+Calonarius	474	0.04044	0.05021	1.178e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium		filamentous	2	6.478	99.15	7.64
+Calonectria	1542	0.08364	0.1009	1.835e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	19	6.119	99.6	7.79
+Calvatia	522	0.04446	0.05341	1.174e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.481	98.6	7.658
+Calycina	829.5	0.05755	0.07104	1.307e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.126	99.55	7.686
+Camarosporium	706	0.06425	0.07799	1.099e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	foliar_endophyte	filamentous	1	5.134	99.1	7.541
+Camillea	850	0.07059	0.08396	1.204e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.723	99.6	7.653
+Camptophora	516	0.05324	0.06892	9692	Ascomycota	Eurotiomycetes	Chaetothyriales	filamentous_mycelium	epiphyte	filamentous	1	5.999	98.8	7.419
+Canariomyces	672	0.06923	0.08592	9707	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	soil_saprotroph	filamentous	2	5.528	99.6	7.491
+Candida	185.5	0.03132	0.05205	5884	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	16	5.38	80.75	7.15
+Candidozyma	141	0.027	0.045	5307	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	11	5.944	80.4	7.113
+Candolleomyces	867	0.04976	0.05978	1.743e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium		filamentous	2	5.545	99.15	7.764
+Cantharellus	284	0.03172	0.04188	8954	Basidiomycota	Agaricomycetes	Cantharellales	filamentous_mycelium	ectomycorrhizal	filamentous	1	6.316	98.8	7.604
+Capillidium	1236	0.1232	0.1388	1.003e+04	Entomophthoromycota	Entomophthoromycetes	Entomophthorales	filamentous_mycelium	animal_parasite	filamentous	1	6.224	74.4	7.475
+Capniomyces	581	0.08517	0.1074	6822	Kickxellomycota	Harpellomycetes	Harpellales	filamentous_mycelium	animal_endosymbiont	filamentous	1	5.775	80	7.395
+Capronia	308	0.03354	0.04725	1.029e+04	Ascomycota	Eurotiomycetes	Chaetothyriales	dimorphic_yeast	soil_saprotroph	Pezizomycotina-dimorphic	3	6.506	98.9	7.461
+Casaregolazyma	182	0.03078	0.04566	5913	Ascomycota	Dipodascomycetes	Dipodascales	yeast		Saccharomycotina	3	5.425	89.8	7.071
+Catenulostroma	666	0.05955	0.07494	1.118e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	6.004	99.2	7.44
+Celoporthe	752	0.0672	0.0806	1.119e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	1	6.55	99.7	7.617
+Cenococcum	511	0.02948	0.03975	1.734e+04	Ascomycota	Dothideomycetes	Gloniales	filamentous_mycelium	ectomycorrhizal	filamentous	1	6.349	100	8.249
+Cephaloascus	159.5	0.02632	0.0429	6060	Ascomycota	Pichiomycetes	Serinales	yeast	wood_saprotroph	Saccharomycotina	2	5.502	87.75	7.159
+Cephalotrichum	807	0.07729	0.09549	1.044e+04	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.309	99.2	7.555
+Ceraceosorus	487.5	0.06965	0.08401	6998	Basidiomycota	Exobasidiomycetes	Ceraceosorales	filamentous_mycelium	plant_pathogen	filamentous	2	5.692	93.75	7.398
+Ceratobasidium	872	0.0641	0.07751	1.21e+04	Basidiomycota	Agaricomycetes	Cantharellales	filamentous_mycelium	plant_pathogen	filamentous	5	6.241	97.1	7.638
+Ceratocystiopsis	225	0.03251	0.04704	6923	Ascomycota	Sordariomycetes	Ophiostomatales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.402	99	7.317
+Ceratocystis	537	0.07222	0.08503	7503	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	plant_pathogen	filamentous	17	4.883	98.8	7.478
+Ceratorhiza	759	0.06314	0.07696	1.202e+04	Basidiomycota	Agaricomycetes	Cantharellales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.022	97.5	7.689
+Ceratostomella	612	0.06079	0.07977	1.007e+04	Ascomycota	Sordariomycetes	Barbatosphaeriales	filamentous_mycelium	wood_saprotroph	filamentous	3	5.298	99	7.682
+Cercophora	1048	0.08684	0.1054	1.217e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	dung_saprotroph	filamentous	4	6.32	99.5	7.602
+Cercospora	1029	0.07939	0.09529	1.294e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	15	6.455	99.2	7.538
+Cerrena	769.5	0.05653	0.06859	1.362e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.084	98.8	7.626
+Chaetomella	614	0.07	0.08767	8772	Ascomycota	Leotiomycetes	Chaetomellales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.479	99.9	7.484
+Chaetomidium	760	0.07367	0.08928	1.032e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	dung_saprotroph	filamentous	1	5.012	99.3	7.503
+Chaetomium	823	0.07661	0.09261	1.062e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	litter_saprotroph	filamentous	7	6.663	99.1	7.533
+Chaetoscypha	812	0.07323	0.08947	1.109e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	1	4.836	99.7	7.586
+Chalara	1289	0.07222	0.08746	1.785e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.794	99.3	7.769
+Chalaropsis	288	0.04407	0.05907	6535	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	plant_pathogen	filamentous	1	6.593	98.6	7.368
+Chalciporus	378.5	0.03953	0.04954	9405	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	mycoparasite	filamentous	4	5.109	98.75	7.461
+Chernovozyma	184.5	0.03219	0.04663	5644	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.663	82.7	7.179
+Chiua	413	0.03255	0.03973	1.269e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	6.287	99.1	7.686
+Chlorencoelia	558	0.05021	0.06605	1.111e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.544	99.8	7.606
+Chloridium	465	0.05178	0.06715	8980	Ascomycota	Sordariomycetes	Chaetosphaeriales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.537	99.4	7.471
+Chlorociboria	633	0.05332	0.06649	1.192e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.791	99.5	7.622
+Chlorophyllum	561	0.0524	0.0638	1.071e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.545	99.2	7.59
+Choiromyces	507	0.02725	0.03505	1.86e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.795	98.3	8.098
+Chrysoporthe	741	0.06318	0.07763	1.173e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	5	6.617	99.6	7.65
+Chrysosporium	319	0.0406	0.05536	7858	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.415	99.2	7.367
+Ciboria	616	0.05839	0.07508	1.055e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.38	99.6	7.594
+Ciborinia	759	0.0623	0.07831	1.218e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.436	99.6	7.666
+Circinella	466.5	0.03257	0.04307	1.432e+04	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	2	5.474	97.3	7.706
+Cirrosporium	487	0.04938	0.06489	9863	Ascomycota	Xylobotryomycetes	Xylobotryales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.819	99.3	7.497
+Citeromyces	113	0.01982	0.02912	5700	Ascomycota	Pichiomycetes	Pichiales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	4.743	82.4	7.204
+Cladobotryum	815	0.07002	0.08351	1.162e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	mycoparasite	filamentous	5	6.697	99.9	7.599
+Cladophialophora	462.5	0.03844	0.05242	1.273e+04	Ascomycota	Eurotiomycetes	Chaetothyriales	dimorphic_yeast	soil_saprotroph	Pezizomycotina-dimorphic	8	6.39	98.8	7.54
+Cladorrhinum	982	0.08545	0.1051	1.144e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	unspecified_saprotroph	filamentous	4	5.411	99.35	7.569
+Cladosporium	877.5	0.07289	0.08739	1.195e+04	Ascomycota	Dothideomycetes	Cladosporiales	filamentous_mycelium	litter_saprotroph	filamentous	44	6.213	99.45	7.503
+Clarireedia	765	0.06569	0.0821	1.151e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	6	5.274	99.6	7.64
+Clathrospora	717	0.06388	0.07653	1.122e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	5.264	99.1	7.571
+Clathrus	598	0.05359	0.0674	1.116e+04	Basidiomycota	Agaricomycetes	Phallales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.502	98.8	7.562
+Clavaria	193	0.01908	0.02679	1.012e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.565	97.4	7.688
+Clavariadelphus	361	0.02513	0.03195	1.437e+04	Basidiomycota	Agaricomycetes	Gomphales	filamentous_mycelium	litter_saprotroph	filamentous	1	7.323	97.2	8.424
+Claviceps	495	0.05937	0.07294	8172	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	12	4.805	98.8	7.483
+Clavispora	110	0.02141	0.03582	4963	Ascomycota	Pichiomycetes	Serinales	yeast	litter_saprotroph	Saccharomycotina	9	5.872	80.1	7.058
+Clavulina	744	0.05923	0.07356	1.256e+04	Basidiomycota	Agaricomycetes	Cantharellales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.429	97.1	7.617
+Clitopilus	735	0.05852	0.06865	1.243e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	4	6.498	99.25	7.571
+Clonostachys	1481	0.08182	0.09778	1.808e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	wood_saprotroph	filamentous	12	5.958	99.6	7.747
+Coccidioides	276	0.03459	0.048	7979	Ascomycota	Eurotiomycetes	Onygenales	dimorphic_yeast	soil_saprotroph	Pezizomycotina-dimorphic	2	6.743	99.2	7.444
+Coccinonectria	443	0.05528	0.0705	8014	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.622	99.5	7.407
+Codinaeella	1713	0.1029	0.1224	1.664e+04	Ascomycota	Sordariomycetes	Chaetosphaeriales	filamentous_mycelium		filamentous	1	5.553	99.2	7.743
+Coemansia	323.5	0.04632	0.06573	6809	Kickxellomycota	Kickxellomycetes	Kickxellales	filamentous_mycelium	soil_saprotroph	filamentous	30	4.987	90.7	7.199
+Coleophoma	1011	0.07181	0.09031	1.406e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	3	6.296	99.7	7.628
+Colletotrichum	1435	0.1025	0.1184	1.398e+04	Ascomycota	Sordariomycetes	Glomerellales	filamentous_mycelium	plant_pathogen	filamentous	115	5.653	99.8	7.754
+Collybia	719	0.06386	0.07745	1.2e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	mycoparasite	filamentous	3	6.561	99.4	7.635
+Collybiopsis	1030	0.05844	0.06985	1.76e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium		filamentous	2	5.531	98.45	7.8
+Conidiobolus	1784	0.1303	0.1476	1.369e+04	Entomophthoromycota	Entomophthoromycetes	Entomophthorales	filamentous_mycelium	animal_parasite	filamentous	1	6.151	79.5	7.645
+Coniella	605	0.06048	0.07749	1.005e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	2	5.903	99.3	7.587
+Coniferiporia	470.5	0.04336	0.05724	1.085e+04	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.522	98.45	7.585
+Coniochaeta	789.5	0.07075	0.0886	1.053e+04	Ascomycota	Sordariomycetes	Coniochaetales	filamentous_mycelium	unspecified_saprotroph	filamentous	8	5.668	99.65	7.528
+Conioexocarpus	840	0.0625	0.07314	1.344e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium		filamentous	1	5.59	98.8	7.657
+Coniophora	679	0.05545	0.06492	1.225e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.38	99.5	7.633
+Coniosporium	411.5	0.0418	0.05454	9851	Ascomycota	Dothideomycetes		filamentous_mycelium	plant_pathogen	filamentous	2	5.701	99.6	7.498
+Coniothyrina	546	0.05774	0.0718	9457	Ascomycota	Dothideomycetes		filamentous_mycelium	unspecified_saprotroph	filamentous	1	5.634	99.1	7.418
+Coniothyrium	718.5	0.0665	0.08233	1.081e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	2	5.64	99	7.496
+Conoideocrella	1125	0.08386	0.1	1.342e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	1	5.046	99.4	7.675
+Coprinellus	817	0.05326	0.06428	1.51e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	7	6.622	99.1	7.716
+Coprinopsis	758.5	0.06383	0.07664	1.189e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	4	5.376	99.3	7.586
+Copromyces	570	0.05807	0.07243	9816	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	dung_saprotroph	filamentous	1	5.506	99.9	7.699
+Cordyceps	732	0.07213	0.09234	1.014e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	15	6.629	99.6	7.522
+Corinectria	657	0.05882	0.07332	1.117e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	1	5.408	99.6	7.624
+Coriolopsis	869	0.0669	0.0726	1.299e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.403	99.5	7.589
+Cortinarius	390	0.01816	0.02394	1.982e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	ectomycorrhizal	filamentous	5	6.82	98.3	7.963
+Corynascus	654.5	0.06892	0.08514	9496	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	soil_saprotroph	filamentous	2	5.683	99.6	7.505
+Corynespora	1128	0.07907	0.0926	1.427e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	6.399	98.9	7.651
+Cosmosporella	639	0.05369	0.06948	1.19e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.61	99.7	7.612
+Crassisporium	732	0.06671	0.08065	1.097e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.334	99.2	7.57
+Crepidotus	870	0.06934	0.08185	1.255e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.51	99.3	7.585
+Crinitomyces	145	0.02444	0.04467	5933	Ascomycota	Dipodascomycetes	Dipodascales	yeast		Saccharomycotina	1	5.228	88.1	7.092
+Cristinia	593	0.05692	0.07045	1.042e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.812	98.5	7.479
+Cronartium	552	0.03473	0.03989	1.454e+04	Basidiomycota	Pucciniomycetes	Pucciniales	filamentous_mycelium	plant_pathogen	filamentous	3	6.509	94.7	8.056
+Crucibulum	826	0.06866	0.08403	1.203e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.817	98.8	7.648
+Cryphonectria	765	0.06856	0.08485	1.117e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	7	5.635	99.2	7.594
+Cryptocalciella	473	0.03867	0.05429	1.223e+04	Mortierellomycota	Mortierellomycetes	Mortierellales	filamentous_mycelium		filamentous	1	6.517	95.9	7.644
+Cryptococcus	209	0.03178	0.04332	6758	Basidiomycota	Tremellomycetes	Tremellales	yeast	unspecified_saprotroph	Tremellomycetes	21	6.124	96.3	7.271
+Cryptoporus	457	0.04734	0.05957	9653	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.423	98.9	7.539
+Cryptotrichosporon	232	0.03373	0.04768	6879	Basidiomycota	Tremellomycetes	Trichosporonales	yeast	plant_pathogen	Tremellomycetes	1	6.162	95.6	7.277
+Cubamyces	696	0.06386	0.07863	1.09e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium		filamentous	3	5.823	99.6	7.547
+Cucurbitaria	836	0.07206	0.08637	1.16e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	6.795	98.9	7.517
+Cumuliphoma	834	0.07802	0.0956	1.069e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.031	98.8	7.517
+Cunninghamella	470	0.04478	0.05525	1.064e+04	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	4	6.035	97.65	7.499
+Curvularia	838	0.07703	0.09169	1.09e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	14	5.709	99	7.513
+Cutaneotrichosporon	278	0.03682	0.05518	7460	Basidiomycota	Tremellomycetes	Trichosporonales	yeast	animal_parasite	Tremellomycetes	14	6.34	96.6	7.301
+Cyanodermella	756	0.07338	0.08774	1.03e+04	Ascomycota	Lecanoromycetes	Ostropales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.253	98.8	7.457
+Cyclaneusma	572	0.0523	0.06538	1.094e+04	Ascomycota	Leotiomycetes	Marthamycetales	filamentous_mycelium	plant_pathogen	filamentous	1	5.756	99.6	7.619
+Cyclocybe	819.5	0.05752	0.06789	1.434e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.812	99.1	7.695
+Cylindrobasidium	810	0.06495	0.07088	1.247e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	4.956	98.9	7.493
+Cylindrodendrum	1064	0.07055	0.08702	1.508e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	2	4.801	99.3	7.678
+Cyphellophora	513	0.04608	0.06126	1.113e+04	Ascomycota	Eurotiomycetes	Chaetothyriales	dimorphic_yeast	litter_saprotroph	Pezizomycotina-dimorphic	1	6.377	98.8	7.459
+Cystobasidium	296.5	0.0397	0.0535	7472	Basidiomycota	Cystobasidiomycetes	Cystobasidiales	dimorphic_yeast	mycoparasite	dimorphic-other	10	5.753	93	7.335
+Cystoderma	706	0.04811	0.05751	1.468e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.57	99.2	7.704
+Cytidiella	547	0.04219	0.05145	1.296e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.025	96.4	7.706
+Cytospora	632	0.05759	0.07351	1.102e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	7	5.774	99.7	7.582
+Dacryopinax	496	0.05008	0.06331	9902	Basidiomycota	Dacrymycetes	Dacrymycetales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.188	94.7	7.468
+Dactylella	925	0.08534	0.1053	1.084e+04	Ascomycota	Orbiliomycetes	Orbiliales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.7	98.1	7.576
+Dactylellina	1209	0.1099	0.1324	1.1e+04	Ascomycota	Orbiliomycetes	Orbiliales	filamentous_mycelium	animal_parasite	filamentous	5	6.289	98.2	7.583
+Dactylobotrys	513	0.05558	0.07237	9230	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	1	5.313	98.6	7.499
+Dactylonectria	1158	0.06381	0.0785	1.808e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	4	6.257	99.5	7.807
+Daedaleopsis	886	0.06589	0.08118	1.354e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.573	99.45	7.667
+Daia	138	0.02593	0.04481	5328	Ascomycota	Dipodascomycetes	Dipodascales	yeast		Saccharomycotina	2	5.903	86.2	7.068
+Daldinia	786	0.0715	0.08551	1.095e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	12	5.924	99.8	7.569
+Danielia	127	0.02411	0.03923	5262	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.706	81.7	7.053
+Danielozyma	163	0.02965	0.04347	5498	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	5.87	83	7.027
+Deakozyma	134	0.02426	0.04309	5523	Ascomycota	Dipodascomycetes	Dipodascales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	5.622	86.3	7.067
+Debaryomyces	133	0.02339	0.03685	5577	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	11	5.932	83.2	7.05
+Deconica	909	0.05954	0.07244	1.527e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.18	99.4	7.727
+Decorospora	676	0.0653	0.0794	1.035e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.176	98.8	7.482
+Delitschia	640	0.06952	0.08418	9206	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	litter_saprotroph	filamentous	1	4.838	99.4	7.493
+Delphinella	435	0.04453	0.05815	9768	Ascomycota	Dothideomycetes	Dothideales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.353	99.5	7.466
+Dendrostoma	1094	0.08067	0.09808	1.356e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	1	5.019	99.6	7.791
+Dendrothele	1447	0.04821	0.05784	3.001e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.077	99.3	8.111
+Dendryphion	1086	0.08271	0.09931	1.313e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	6.281	99.3	7.614
+Dengshuqunia	136	0.02597	0.04545	5237	Ascomycota	Dipodascomycetes	Dipodascales	yeast		Saccharomycotina	1	6.355	87.3	7.027
+Dentipellis	512	0.04745	0.05737	1.079e+04	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.685	98.9	7.563
+Desarmillaria	697	0.059	0.0733	1.181e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	plant_pathogen	filamentous	1	6.607	98.9	7.609
+Diaporthe	1550	0.09233	0.1084	1.657e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	36	5.869	99.6	7.759
+Diatrype	867	0.07281	0.08541	1.191e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	plant_pathogen	filamentous	1	5.607	99.5	7.691
+Dichomitus	697	0.05826	0.06721	1.196e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.803	99.5	7.631
+Dichotomopilus	669	0.07002	0.08624	9555	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	5.564	99.2	7.513
+Diddensiella	155	0.02564	0.04185	6451	Ascomycota	Dipodascomycetes	Dipodascales	yeast	wood_saprotroph	Saccharomycotina	3	5.74	93.3	7.096
+Didymella	889	0.07262	0.08954	1.18e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	9	6.115	98.9	7.536
+Didymobotryum	902	0.07163	0.08568	1.259e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.49	99.6	7.62
+Didymosphaeria	1286	0.09178	0.1055	1.401e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	2	6.631	99.05	7.601
+Dioszegia	354	0.04168	0.05409	8478	Basidiomycota	Tremellomycetes	Tremellales	yeast	litter_saprotroph	Tremellomycetes	7	5.918	96.4	7.314
+Diplocarpon	504	0.05616	0.07118	8921	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	3	6.472	99.7	7.713
+Diplodia	804	0.06998	0.0863	1.157e+04	Ascomycota	Dothideomycetes	Botryosphaeriales	filamentous_mycelium	plant_pathogen	filamentous	6	6.062	99.45	7.578
+Diplogelasinospora	850	0.06748	0.08494	1.26e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.346	99.6	7.682
+Dipodascopsis	119	0.02009	0.03394	5923	Ascomycota	Lipomycetes	Lipomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	6.133	92.1	7.211
+Discina	549.5	0.04777	0.06131	1.158e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	wood_saprotroph	filamentous	4	5.202	99.4	7.641
+Discula	857	0.07441	0.08952	1.152e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	1	6.748	99	7.671
+Dissoconium	532	0.06042	0.07768	8805	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.25	99.4	7.424
+Diversispora	346	0.01111	0.01468	3.114e+04	Glomeromycota	Glomeromycetes	Diversisporales	filamentous_mycelium	arbuscular_mycorrhizal	filamentous	1	5.656	91.4	8.194
+Dothidotthia	691	0.06482	0.07964	1.066e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	6.133	99	7.537
+Dothiora	516	0.05189	0.06787	9945	Ascomycota	Dothideomycetes	Dothideales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.794	99.4	7.462
+Dothiorella	724	0.06513	0.08042	1.112e+04	Ascomycota	Dothideomycetes	Botryosphaeriales	filamentous_mycelium	plant_pathogen	filamentous	1	5.359	99.5	7.565
+Dothistroma	675	0.05639	0.06148	1.197e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	6.366	99.7	7.552
+Drechmeria	495	0.06049	0.07772	8183	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	1	7.009	99.5	7.516
+Drechslera	804	0.07545	0.09065	1.066e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	5.731	99.2	7.512
+Drechslerella	781	0.0772	0.09707	1.011e+04	Ascomycota	Orbiliomycetes	Orbiliales	filamentous_mycelium	animal_parasite	filamentous	2	6.287	98.1	7.569
+Drepanopeziza	672	0.06835	0.08401	9832	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.306	99.6	7.715
+Dryadomyces	347	0.04216	0.05873	8230	Ascomycota	Sordariomycetes	Ophiostomatales	filamentous_mycelium	wood_saprotroph	filamentous	4	6.596	99.3	7.42
+Dujonia	145.5	0.02561	0.04788	5644	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	6	5.612	81.95	7.14
+Durotheca	609	0.06133	0.07533	9930	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.976	99.7	7.683
+Earliella	861	0.05524	0.06833	1.559e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.295	99.6	7.713
+Echria	1056	0.08884	0.1086	1.189e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	dung_saprotroph	filamentous	1	6.278	99.4	7.578
+Elsinoe	705.5	0.07299	0.08808	9488	Ascomycota	Dothideomycetes	Myriangiales	filamentous_mycelium	plant_pathogen	filamentous	6	6.135	99.45	7.406
+Emergomyces	351	0.03721	0.04983	9433	Ascomycota	Eurotiomycetes	Onygenales	dimorphic_yeast	soil_saprotroph	Pezizomycotina-dimorphic	1	6.109	99.6	7.55
+Emericellopsis	503	0.05546	0.07112	9069	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	soil_saprotroph	filamentous	3	5.88	99.8	7.429
+Emmonsiellopsis	628	0.06075	0.07323	1.034e+04	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.389	99.2	7.531
+Endocalyx	1099	0.08246	0.0983	1.333e+04	Ascomycota	Sordariomycetes	Amphisphaeriales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.649	99.4	7.651
+Endoconidiophora	308.5	0.04242	0.05967	7273	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	plant_pathogen	filamentous	2	4.914	98.7	7.511
+Endothia	707	0.06333	0.07954	1.116e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	1	5.825	99.6	7.617
+Entoloma	2	0.001416	0.001416	1412	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.707	98.4	7.779
+Entomortierella	652	0.0531	0.06581	1.228e+04	Mortierellomycota	Mortierellomycetes	Mortierellales	filamentous_mycelium		filamentous	1	6.435	95.7	7.59
+Entonaema	815	0.0709	0.08491	1.15e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.549	99.8	7.593
+Epibryon	424	0.03854	0.0514	1.112e+04	Ascomycota	Eurotiomycetes	Chaetothyriales	filamentous_mycelium	plant_pathogen	filamentous	2	5.481	98.8	7.48
+Epichloe	397	0.05155	0.06769	7752	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	foliar_endophyte	filamentous	14	6.733	99.3	7.55
+Epicoccum	872.5	0.07339	0.08994	1.18e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	6	6.145	99	7.52
+Eremomyces	339	0.04553	0.06232	7446	Ascomycota	Dothideomycetes	Eremomycetales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.63	99	7.383
+Eremothecium	97	0.02176	0.0323	4454	Ascomycota	Saccharomycetes	Saccharomycetales	yeast	plant_pathogen	Saccharomycotina	4	6.126	75.8	6.959
+Escovopsis	324	0.04496	0.05878	7100	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	mycoparasite	filamentous	4	6.554	99.1	7.457
+Esteya	474	0.05491	0.07101	8632	Ascomycota	Sordariomycetes	Ophiostomatales	filamentous_mycelium	animal_parasite	filamentous	1	6.669	99.2	7.531
+Eutypa	1198	0.07703	0.08911	1.555e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	plant_pathogen	filamentous	1	5.307	99.8	7.738
+Eutypella	873	0.07191	0.08475	1.214e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	plant_pathogen	filamentous	1	6.356	99.4	7.687
+Evansstolkia	374	0.04418	0.05835	8466	Ascomycota	Eurotiomycetes	Eurotiales	filamentous_mycelium		filamentous	1	4.773	99	7.411
+Exobasidium	640	0.08627	0.1016	7418	Basidiomycota	Exobasidiomycetes	Exobasidiales	filamentous_mycelium	plant_pathogen	filamentous	2	6.746	96.85	7.249
+Exophiala	452	0.0384	0.05095	1.177e+04	Ascomycota	Eurotiomycetes	Chaetothyriales	dimorphic_yeast	animal_parasite	Pezizomycotina-dimorphic	16	6.41	99.1	7.504
+Exserohilum	889.5	0.07767	0.08944	1.14e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	2	6.216	99.05	7.602
+Exsudoporus	344	0.03498	0.04545	9835	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	4.782	98	7.541
+Extremus	616	0.04678	0.05924	1.317e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	5.608	99	7.508
+Falciformispora	939	0.0778	0.09413	1.207e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.312	99.3	7.622
+Falciphora	1196	0.09397	0.1113	1.273e+04	Ascomycota	Sordariomycetes	Magnaporthales	filamentous_mycelium	root_endophyte	filamentous	1	5.878	98.9	7.705
+Farysia	301	0.04928	0.06418	6108	Basidiomycota	Ustilaginomycetes	Ustilaginales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	1	5.675	97.3	7.138
+Fennellomyces	480	0.03403	0.04636	1.411e+04	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.877	97.9	7.662
+Fermentozyma	131	0.02413	0.04071	5429	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	6.309	82.6	7.154
+Fibroporia	387	0.04301	0.05368	8998	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	4.911	97.4	7.453
+Filosporella	1322	0.08963	0.1095	1.475e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.416	99.7	7.661
+Fistulina	394	0.03967	0.05165	9933	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	plant_pathogen	filamentous	1	5.544	98.7	7.526
+Flammulina	990.5	0.06508	0.07456	1.521e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.497	98.9	7.576
+Flavodon	611	0.05276	0.06753	1.158e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.573	99.6	7.569
+Floccularia	582	0.06151	0.07652	9462	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.37	99.4	7.428
+Floridaphiala	439	0.04983	0.06459	8810	Ascomycota	Dothideomycetes		filamentous_mycelium		filamentous	1	5.715	99.6	7.396
+Fomes	767	0.06113	0.075	1.255e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.477	99.4	7.612
+Fomitiporia	591.5	0.0502	0.05997	1.176e+04	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	plant_pathogen	filamentous	2	6.745	99.25	7.862
+Fomitopsis	493	0.0434	0.05412	1.106e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	6	5.543	98.7	7.596
+Fonsecaea	427	0.03537	0.04838	1.214e+04	Ascomycota	Eurotiomycetes	Chaetothyriales	dimorphic_yeast	soil_saprotroph	Pezizomycotina-dimorphic	3	6.427	98.8	7.54
+Fonsecazyma	304	0.04007	0.0543	7587	Basidiomycota	Tremellomycetes	Tremellales	yeast	unspecified_saprotroph	Tremellomycetes	1	6.353	96.5	7.257
+Fragosphaeria	490	0.05334	0.07119	9187	Ascomycota	Sordariomycetes	Ophiostomatales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.708	99.1	7.541
+Fulvia	929	0.06042	0.0718	1.538e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	4.763	99.6	7.611
+Fulvifomes	464	0.03591	0.04713	1.292e+04	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.393	99.6	7.658
+Furcasterigmium	1106	0.0886	0.1077	1.245e+04	Ascomycota	Sordariomycetes	Glomerellales	filamentous_mycelium	soil_saprotroph	filamentous	2	6.144	98.7	7.563
+Fusarium	1078	0.07269	0.08886	1.5e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	233	5.766	99.6	7.636
+Fusicolla	648	0.05232	0.0688	1.231e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	mycoparasite	filamentous	2	5.753	99.55	7.594
+Gaeumannomyces	1091	0.09502	0.1099	1.107e+04	Ascomycota	Sordariomycetes	Magnaporthales	filamentous_mycelium	plant_pathogen	filamentous	3	6.845	98.9	7.617
+Gaillardinia	145	0.02836	0.04381	5113	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.86	82.5	6.998
+Galerina	980.5	0.05133	0.06154	1.91e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.885	99.4	7.816
+Gamarada	1002	0.05795	0.07385	1.729e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	root_endophyte	filamentous	1	4.822	99.6	7.762
+Gamsiella	539	0.04513	0.05267	1.194e+04	Mortierellomycota	Mortierellomycetes	Mortierellales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.568	93.9	7.576
+Gamszarea	655	0.06341	0.08451	1.033e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	1	5.665	99.8	7.483
+Ganoderma	823	0.06036	0.0738	1.378e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	plant_pathogen	filamentous	8	6.255	99.4	7.683
+Gautieria	53	0.004643	0.005169	1.142e+04	Basidiomycota	Agaricomycetes	Gomphales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.267	96.7	8.089
+Gelatoporia	549	0.0461	0.05684	1.191e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.377	99.6	7.587
+Geoglossum	342	0.03294	0.04647	1.038e+04	Ascomycota	Geoglossomycetes	Geoglossales	filamentous_mycelium	soil_saprotroph	filamentous	4	5.015	97.7	7.513
+Geosmithia	451	0.05073	0.06431	8883	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	unspecified_saprotroph	filamentous	3	6.116	99.6	7.469
+Geotrichum	207	0.02899	0.04547	7014	Ascomycota	Dipodascomycetes	Dipodascales	yeast	nectar/tap_saprotroph	Saccharomycotina	8	5.159	91	7.336
+Gerronema	1480	0.06105	0.07099	2.424e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.854	98.4	7.914
+Gibellulopsis	975	0.0875	0.1061	1.114e+04	Ascomycota	Sordariomycetes	Glomerellales	filamentous_mycelium	plant_pathogen	filamentous	1	6.474	98.8	7.523
+Gigaspora	906.5	0.01898	0.02255	6.29e+04	Glomeromycota	Glomeromycetes	Diversisporales	filamentous_mycelium	arbuscular_mycorrhizal	filamentous	2	5.442	91.65	8.819
+Glaciozyma	237	0.03248	0.04541	7304	Basidiomycota	Microbotryomycetes	Kriegeriales	yeast	unspecified_saprotroph	Pucciniomycotina-yeast	2	5.794	96.05	7.287
+Glarea	1185	0.08923	0.09413	1.328e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.323	99.9	7.597
+Gliomastix	1025	0.07633	0.09234	1.343e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.723	99.6	7.627
+Gliophorus	284	0.03165	0.04112	8974	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.261	98.7	7.452
+Gloeopeniophorella	526	0.04537	0.05814	1.159e+04	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.567	98.1	7.579
+Gloeophyllum	500	0.04774	0.0591	1.047e+04	Basidiomycota	Agaricomycetes	Gloeophyllales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.269	99.6	7.57
+Gloeoporus	588	0.05504	0.06833	1.068e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.476	99.1	7.505
+Gloeostereum	618	0.05275	0.06504	1.172e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.542	98	7.587
+Glomus	428	0.01559	0.0212	2.746e+04	Glomeromycota	Glomeromycetes	Glomerales	filamentous_mycelium	arbuscular_mycorrhizal	filamentous	1	4.803	91.9	8.191
+Glucitozyma	160	0.03174	0.04682	5041	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.738	82.3	7.012
+Glutinoglossum	239	0.0302	0.04726	7914	Ascomycota	Geoglossomycetes	Geoglossales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.071	96.6	7.416
+Gnomoniopsis	1099	0.08897	0.1088	1.248e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	foliar_endophyte	filamentous	3	6.425	99.3	7.627
+Golubevia	615	0.07441	0.09008	8271	Basidiomycota	Exobasidiomycetes	Golubeviales	yeast	mycoparasite	Ustilaginomycotina-yeast	4	5.929	95.4	7.412
+Gongronella	420	0.04002	0.05403	1.05e+04	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	2	5.715	96.45	7.529
+Gotozyma	128	0.0225	0.03995	5206	Ascomycota	Saccharomycetes	Phaffomycetales	yeast		Saccharomycotina	3	5.848	84.7	7.047
+Grammothele	736	0.06035	0.07707	1.22e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.553	99	7.626
+Graphilbum	262	0.03701	0.05382	7154	Ascomycota	Sordariomycetes	Ophiostomatales	filamentous_mycelium	wood_saprotroph	filamentous	3	5.509	98.8	7.38
+Graphiopsis	830	0.07113	0.08604	1.167e+04	Ascomycota	Dothideomycetes	Cladosporiales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.298	99	7.502
+Graphium	733	0.06801	0.08739	1.064e+04	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	plant_pathogen	filamentous	2	5.361	99.45	7.543
+Gremmenia	741	0.05955	0.07345	1.244e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.238	99.7	7.566
+Grifola	511	0.0402	0.05089	1.271e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.504	99.8	7.579
+Grinbergsozyma	139	0.02547	0.03903	5458	Ascomycota	Dipodascomycetes	Dipodascales	yeast		Saccharomycotina	1	5.07	84.8	7.084
+Groenewaldozyma	162	0.02803	0.04417	5708	Ascomycota	Dipodascomycetes	Dipodascales	yeast	nectar/tap_saprotroph	Saccharomycotina	4	5.234	88.8	7.095
+Grosmannia	295.5	0.03921	0.0524	7544	Ascomycota	Sordariomycetes	Ophiostomatales	filamentous_mycelium	plant_pathogen	filamentous	2	6.04	98.9	7.445
+Guyanagaster	543	0.04163	0.0509	1.304e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.126	99.3	7.73
+Guyanaporus	299	0.0363	0.04759	8237	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.182	98.7	7.487
+Gymnopilus	743	0.05068	0.06046	1.43e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	6	5.819	99.3	7.708
+Gymnopus	1187	0.04817	0.05834	2.464e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	2	5.596	99.3	7.954
+Gyoerffyella	1117	0.07829	0.09616	1.427e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.366	99.7	7.645
+Gyrodon	402	0.03952	0.04955	1.017e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	6.063	98.8	7.633
+Gyromitra	544	0.04971	0.06373	1.114e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	wood_saprotroph	filamentous	13	5.254	99.2	7.639
+Gyroporus	169	0.0164	0.02096	1.03e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	7.132	95.2	8.031
+Hagleromyces	121	0.02506	0.03998	4828	Ascomycota	Saccharomycetes	Saccharomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	5.002	76.6	7.068
+Halenospora	1371	0.0784	0.09601	1.749e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.224	99.8	7.745
+Halteromyces	374	0.03669	0.05072	1.019e+04	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.558	98	7.419
+Hamigera	443	0.04922	0.06367	9000	Ascomycota	Eurotiomycetes	Eurotiales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	5.386	99	7.45
+Hansenula	182	0.02902	0.04544	6187	Ascomycota	Saccharomycetes	Phaffomycetales	yeast		Saccharomycotina	11	5.516	87.3	7.141
+Hansfordia	1099	0.1056	0.1224	1.04e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.47	99.4	7.67
+Haplographium	750	0.05547	0.07226	1.352e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	5.238	99.8	7.606
+Haplosporangium	384	0.03573	0.05215	1.075e+04	Mortierellomycota	Mortierellomycetes	Mortierellales	filamentous_mycelium	soil_saprotroph	filamentous	2	4.777	94.6	7.518
+Hapsidospora	504	0.05681	0.07215	8871	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.589	99.6	7.464
+Harringtonia	421.5	0.04129	0.05608	1.016e+04	Ascomycota	Sordariomycetes	Ophiostomatales	filamentous_mycelium		filamentous	2	5.384	99.05	7.548
+Hazslinszkyomyces	942	0.07437	0.08723	1.267e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.442	99.1	7.545
+Hebeloma	603.5	0.03988	0.04941	1.531e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	ectomycorrhizal	filamentous	2	6.103	99.25	7.698
+Helenozyma	130	0.02589	0.0431	5025	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.484	80.3	7.054
+Helicocarpus	617	0.06238	0.07573	9891	Ascomycota	Eurotiomycetes	Onygenales	dimorphic_yeast	animal_parasite	Pezizomycotina-dimorphic	1	5.099	99	7.505
+Heliocybe	494	0.04744	0.05973	1.041e+04	Basidiomycota	Agaricomycetes	Gloeophyllales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.069	99.3	7.504
+Helminthosporium	869	0.07912	0.09578	1.098e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	5.024	99	7.533
+Helostroma	339	0.05346	0.06655	6341	Basidiomycota	Exobasidiomycetes	Microstromatales	dimorphic_yeast		Ustilaginomycotina-dimorphic	1	5.975	93.9	7.209
+Hemileccinum	312	0.031	0.04029	1.005e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	2	4.84	98.15	7.611
+Hemisphaericaspora	166.5	0.02844	0.05075	5854	Ascomycota	Pichiomycetes	Serinales	yeast	animal_endosymbiont	Saccharomycotina	4	5.095	80.9	7.173
+Hericium	435	0.03383	0.04433	1.286e+04	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	wood_saprotroph	filamentous	3	6.51	99.1	7.615
+Hermanssonia	598	0.04487	0.0571	1.333e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.529	99.5	7.596
+Herpotrichia	1271	0.08382	0.09819	1.516e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	5.744	99.5	7.74
+Hesseltinella	294	0.02931	0.03998	1.003e+04	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.757	96.9	7.435
+Heterobasidion	356	0.04179	0.05335	8566	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	plant_pathogen	filamentous	4	6.389	99.25	7.552
+Hirsutella	701.5	0.06974	0.08681	1.013e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	2	6.032	99.4	7.725
+Histoplasma	277	0.02978	0.03888	9352	Ascomycota	Eurotiomycetes	Onygenales	dimorphic_yeast	animal_parasite	Pezizomycotina-dimorphic	2	6.777	99.3	7.554
+Hohenbuehelia	1152	0.09162	0.1086	1.257e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.46	99.5	7.59
+Holtermannia	225	0.03078	0.0461	7310	Basidiomycota	Tremellomycetes	Holtermanniales	dimorphic_yeast	animal_parasite	dimorphic-other	1	5.766	95.9	7.316
+Holtermanniella	222	0.03153	0.04638	7116	Basidiomycota	Tremellomycetes	Holtermanniales	dimorphic_yeast	unspecified_saprotroph	dimorphic-other	4	6.074	95.3	7.219
+Hongkongmyces	1256	0.07656	0.09314	1.641e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	animal_parasite	filamentous	1	6.317	99.2	7.716
+Hormonema	605	0.05316	0.06924	1.138e+04	Ascomycota	Dothideomycetes	Dothideales	dimorphic_yeast	unspecified_saprotroph	Pezizomycotina-dimorphic	1	6.403	99.7	7.518
+Hortaea	618.5	0.06247	0.07767	9898	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	animal_parasite	filamentous	2	6.082	99.5	7.424
+Humicola	889	0.0805	0.09907	1.104e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.703	99.3	7.55
+Humicolopsis	551	0.04278	0.05792	1.288e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.141	99.4	7.652
+Huntiella	429	0.06029	0.0735	7116	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	plant_pathogen	filamentous	1	6.189	98.9	7.456
+Hyaloscypha	934	0.05376	0.06965	1.737e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	5	5.845	99.8	7.798
+Hydnellum	337	0.01928	0.02368	1.748e+04	Basidiomycota	Agaricomycetes	Thelephorales	filamentous_mycelium	ectomycorrhizal	filamentous	1	7.076	93.3	8.065
+Hydnum	247	0.0191	0.02387	1.296e+04	Basidiomycota	Agaricomycetes	Cantharellales	filamentous_mycelium	ectomycorrhizal	filamentous	2	6.019	98.2	7.787
+Hygrocybe	337	0.02871	0.03846	1.297e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	5	6.446	98.3	7.591
+Hygrophoropsis	539	0.04514	0.0572	1.194e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	litter_saprotroph	filamentous	1	4.711	98	7.561
+Hymenochaete	428	0.04586	0.05904	9333	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.135	96.3	7.454
+Hymenopellis	1059	0.05042	0.06027	2.1e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.407	96.5	7.78
+Hymenoscyphus	1293	0.08676	0.1022	1.432e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	9	5.201	99.7	7.755
+Hymenotorrendiella	1118	0.07423	0.08963	1.506e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	1	4.851	99.4	7.741
+Hyphodiscus	577	0.05017	0.06665	1.15e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	mycoparasite	filamentous	2	6.009	99.55	7.539
+Hypholoma	725	0.04789	0.05925	1.514e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	3	5.745	99.3	7.745
+Hyphopichia	172	0.02944	0.04679	5749	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	7	5.5	82.1	7.124
+Hypomontagnella	994	0.08068	0.09315	1.233e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.25	99.55	7.617
+Hypomyces	816	0.07106	0.08499	1.143e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	mycoparasite	filamentous	3	6.708	99.6	7.596
+Hypoxylon	843.5	0.07153	0.0854	1.185e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	22	5.857	99.65	7.603
+Hypsizygus	836	0.05756	0.06127	1.452e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.913	99.7	7.606
+Hysterangium	383	0.01921	0.02372	1.994e+04	Basidiomycota	Agaricomycetes	Hysterangiales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.745	98.8	8.049
+Hysterium	888	0.06578	0.08015	1.35e+04	Ascomycota	Dothideomycetes	Hysteriales	filamentous_mycelium	wood_saprotroph	filamentous	1	4.955	99.2	7.58
+Ilyonectria	1119	0.06354	0.0772	1.806e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	4	5.884	99.4	7.783
+Imleria	375	0.02936	0.03868	1.277e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	4.947	98.8	7.58
+Immersiella	1230	0.09128	0.1109	1.348e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.787	99.5	7.616
+Immersiporthe	637	0.06066	0.07532	1.05e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	1	6.597	99.7	7.591
+Inocutis	399	0.04263	0.05599	9359	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.436	99.1	7.57
+Inocybe	376.5	0.02871	0.03509	1.395e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	ectomycorrhizal	filamentous	6	6.537	98.55	7.697
+Inonotus	474	0.04294	0.05802	1.048e+04	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	wood_saprotroph	filamentous	3	6.295	99.2	7.547
+Insectozyma	198.5	0.03532	0.05044	5544	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	8	5.443	79.9	7.078
+Intestinozyma	170	0.03118	0.05006	5453	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.217	80.5	7.129
+Irpex	622	0.05273	0.06684	1.192e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	6	5.597	99.3	7.564
+Isabelozyma	155	0.02762	0.04491	5574	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	3	5.707	82	7.093
+Ischnoderma	421	0.04167	0.05296	1.01e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.492	99.6	7.533
+Jaapia	528	0.03982	0.05302	1.326e+04	Basidiomycota	Agaricomycetes	Jaapiales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.035	99.6	7.654
+Jackrogersella	779.5	0.07026	0.08505	1.109e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.876	99.9	7.568
+Jamesozyma	129	0.02441	0.04219	5285	Ascomycota	Saccharomycetes	Saccharomycetales	yeast		Saccharomycotina	1	5.249	75.3	7.079
+Jaminaea	427	0.06575	0.083	6494	Basidiomycota	Exobasidiomycetes	Microstromatales	yeast	epiphyte	Ustilaginomycotina-yeast	3	6.035	94.6	7.237
+Kalmanozyma	349	0.05429	0.07141	6428	Basidiomycota	Ustilaginomycetes	Ustilaginales	dimorphic_yeast	unspecified_saprotroph	Ustilaginomycotina-dimorphic	1	5.858	97.1	7.239
+Kalmusia	1351	0.09252	0.1071	1.46e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.343	99.5	7.631
+Karstenula	1070	0.07715	0.09092	1.387e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.285	98.9	7.653
+Kazachstania	136	0.02669	0.0475	5095	Ascomycota	Saccharomycetes	Saccharomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	5.254	75	7.043
+Keithomyces	626	0.06479	0.08052	9662	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	1	6.706	99.6	7.513
+Kendrickiella	266	0.03793	0.05247	7013	Ascomycota			filamentous_mycelium	mycoparasite	filamentous	1	6.297	99.7	7.323
+Keqinozyma	144	0.02734	0.0436	5272	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.821	81.4	7.041
+Kluyveromyces	93	0.01898	0.03308	4762	Ascomycota	Saccharomycetes	Saccharomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	9	5.828	76.1	6.997
+Knoxdaviesia	396	0.05333	0.07232	7425	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	plant_pathogen	filamentous	1	6.621	99.2	7.551
+Kockiozyma	128	0.02116	0.03472	6049	Ascomycota	Lipomycetes	Lipomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	5.955	91.9	7.146
+Kockovaella	401	0.04727	0.06082	8484	Basidiomycota	Tremellomycetes	Tremellales	yeast	epiphyte	Tremellomycetes	1	6.501	96.7	7.366
+Kodamaea	178	0.0324	0.05169	5530	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	23	5.663	81.7	7.151
+Komagataea	121	0.02175	0.03832	5637	Ascomycota	Saccharomycetes	Phaffomycetales	yeast		Saccharomycotina	5	5.309	84.8	7.087
+Komagataella	110	0.02251	0.0397	4886	Ascomycota	Pichiomycetes	Pichiales	yeast	wood_saprotroph	Saccharomycotina	7	6.38	82	6.973
+Kregervanrija	116	0.02122	0.03357	5452	Ascomycota	Pichiomycetes	Pichiales	yeast	litter_saprotroph	Saccharomycotina	3	5.294	80.4	7.083
+Kuehneromyces	780	0.05081	0.06163	1.535e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.612	99.3	7.751
+Kuraishia	118.5	0.0216	0.03433	5502	Ascomycota	Pichiomycetes	Pichiales	yeast	animal_endosymbiont	Saccharomycotina	8	5.712	85.1	7.079
+Kurtzmaniella	132	0.02479	0.04142	5360	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	8	5.652	80.6	7.114
+Kwoniella	345.5	0.04438	0.0597	7836	Basidiomycota	Tremellomycetes	Tremellales	dimorphic_yeast	unspecified_saprotroph	dimorphic-other	18	6.302	97.05	7.359
+Laburnicola	863.5	0.06308	0.07389	1.368e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.451	99.05	7.797
+Laccaria	491.5	0.03197	0.04086	1.543e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	ectomycorrhizal	filamentous	2	5.627	99.5	7.744
+Lachancea	103	0.02098	0.03083	4890	Ascomycota	Saccharomycetes	Saccharomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	12	6.119	78.15	7.034
+Lachnellula	679	0.05741	0.07203	1.183e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.219	99.1	7.527
+Lactarius	22	0.004403	0.005003	4997	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	ectomycorrhizal	filamentous	3	6.736	98.8	7.838
+Lactifluus	133.5	0.01357	0.01751	8538	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	ectomycorrhizal	filamentous	2	6.024	98.15	7.724
+Laetiporus	406	0.0354	0.04107	1.147e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	plant_pathogen	filamentous	1	5.718	99.5	7.599
+Lanmaoa	38	0.01213	0.01372	3134	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	6.389	98.9	7.669
+Lapidomyces	572	0.05781	0.07347	9895	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.305	99.4	7.39
+Laricifomes	308	0.03474	0.04501	8865	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.999	99.3	7.459
+Lasiodiplodia	978	0.07478	0.09088	1.313e+04	Ascomycota	Dothideomycetes	Botryosphaeriales	filamentous_mycelium	plant_pathogen	filamentous	11	6.036	99.6	7.638
+Lasiosphaeria	955	0.06883	0.0847	1.397e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	unspecified_saprotroph	filamentous	3	6.784	99.5	7.694
+Lasiosphaeris	889	0.06994	0.08639	1.271e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.77	99.7	7.648
+Lecanicillium	739	0.06846	0.09005	1.038e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	3	5.616	99.8	7.517
+Lecanosticta	625	0.05793	0.07155	1.079e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	6.085	99.1	7.564
+Leccinum	510.5	0.04751	0.05703	1.066e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	2	4.793	98.65	7.559
+Lentinula	845	0.07323	0.08581	1.168e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	7	5.623	99.3	7.606
+Lentinus	769	0.05373	0.06567	1.433e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.742	99.55	7.627
+Lentithecium	1158	0.07942	0.09499	1.458e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.023	98.9	7.737
+Lenzites	626	0.05623	0.07115	1.113e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.747	99	7.573
+Lepidopterella	495	0.04075	0.05492	1.215e+04	Ascomycota	Dothideomycetes	Mytilinidiales	filamentous_mycelium	wood_saprotroph	filamentous	1	4.734	99.2	7.641
+Lepiota	553	0.0429	0.05185	1.296e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	3	6.088	98.3	7.692
+Leptodontidium	1608	0.07509	0.09221	2.142e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	2	5.962	99.65	7.877
+Leptodophora	1587	0.07545	0.09242	2.104e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium		filamentous	1	6.769	99.6	7.876
+Leptographium	293	0.03792	0.05293	7690	Ascomycota	Sordariomycetes	Ophiostomatales	filamentous_mycelium	plant_pathogen	filamentous	6	5.702	98.9	7.436
+Leptosphaerulina	738	0.06997	0.08675	1.055e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	4.765	99.1	7.544
+Leucoagaricus	662.5	0.04643	0.05596	1.626e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	2	5.385	98.55	7.789
+Leucocoprinus	357	0.027	0.03041	1.322e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	3	6.323	99.3	7.675
+Leucogyrophana	538	0.04851	0.06178	1.108e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.405	98.65	7.561
+Leucosporidium	337	0.03411	0.04807	9752	Basidiomycota	Microbotryomycetes	Leucosporidiales	yeast	soil_saprotroph	Pucciniomycotina-yeast	3	5.397	96.5	7.422
+Liangdongia	158.5	0.02729	0.04548	5790	Ascomycota	Saccharomycetes	Phaffomycetales	yeast		Saccharomycotina	2	5.169	85.85	7.076
+Lignosus	557	0.05482	0.06765	1.018e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	2	4.956	98.85	7.592
+Limtongella	132	0.02358	0.03823	5598	Ascomycota	Dipodascomycetes	Dipodascales	yeast		Saccharomycotina	1	6.498	85.2	7.082
+Limtongia	124	0.02114	0.03444	5865	Ascomycota	Lipomycetes	Lipomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	5.954	91.9	7.15
+Lindgomyces	1003	0.07392	0.09021	1.357e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.086	99.2	7.839
+Lineolata	329	0.04326	0.0593	7605	Ascomycota	Dothideomycetes	Lineolatales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.045	99.2	7.493
+Linnemannia	761	0.05776	0.07519	1.407e+04	Mortierellomycota	Mortierellomycetes	Mortierellales	filamentous_mycelium		filamentous	7	6.365	95.7	7.695
+Lipomyces	156	0.0227	0.03247	6868	Ascomycota	Lipomycetes	Lipomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	14	5.283	93.35	7.27
+Lizanozyma	122.5	0.02318	0.03848	5288	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.438	80.05	7.109
+Lizonia	629	0.05638	0.06938	1.116e+04	Ascomycota	Dothideomycetes		filamentous_mycelium	plant_pathogen	filamentous	1	5.955	99.1	7.712
+Lobosporangium	500	0.03947	0.05004	1.267e+04	Mortierellomycota	Mortierellomycetes	Mortierellales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.828	94.7	7.631
+Lodderomyces	171	0.03021	0.04928	5661	Ascomycota	Pichiomycetes	Serinales	yeast	animal_parasite	Saccharomycotina	7	5.918	80.2	7.116
+Lojkania	838	0.07075	0.08577	1.184e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.406	99	7.786
+Lomentospora	793	0.07909	0.09853	1.003e+04	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.291	99.8	7.565
+Lophiostoma	1042	0.07121	0.08461	1.463e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.212	98.8	7.621
+Lophiotrema	1368	0.07933	0.09337	1.724e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.993	98.9	7.687
+Lophium	710	0.05021	0.06392	1.414e+04	Ascomycota	Dothideomycetes	Mytilinidiales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.309	99.3	7.637
+Lyophyllum	734.5	0.06108	0.0702	1.218e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	ectomycorrhizal	filamentous	2	6.388	99.45	7.592
+Macrocybe	591	0.05898	0.06526	1.002e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.413	99	7.525
+Macrolepiota	443.5	0.03778	0.04438	9902	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	2	4.915	96.4	7.684
+Macrophomina	1078	0.08211	0.09764	1.313e+04	Ascomycota	Dothideomycetes	Botryosphaeriales	filamentous_mycelium	plant_pathogen	filamentous	6	5.168	99.6	7.702
+Macroventuria	724	0.06223	0.0771	1.163e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.819	99.1	7.523
+Madurella	800	0.07486	0.09051	1.096e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	animal_parasite	filamentous	3	6.944	99.5	7.553
+Magnaporthiopsis	1007	0.09324	0.1137	1.08e+04	Ascomycota	Sordariomycetes	Magnaporthales	filamentous_mycelium	unspecified_pathotroph	filamentous	1	5.401	98.8	7.601
+Magnusiomyces	176.5	0.0279	0.04983	6367	Ascomycota	Dipodascomycetes	Dipodascales	yeast	animal_parasite	Saccharomycotina	6	6.656	90	7.294
+Malassezia	111.5	0.02839	0.03684	3985	Basidiomycota	Malasseziomycetes	Malasseziales	yeast	soil_saprotroph	Ustilaginomycotina-yeast	18	6.126	90.6	6.908
+Malbranchea	267	0.03532	0.04828	7560	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	soil_saprotroph	filamentous	1	4.83	99	7.396
+Marasmius	939	0.06253	0.07421	1.605e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	4	6.502	99.2	7.802
+Marcelleina	746	0.06735	0.08378	1.108e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.082	99	7.619
+Margaritispora	1068	0.07948	0.1005	1.344e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.269	99.8	7.629
+Mariannaea	728.5	0.05475	0.06896	1.339e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.968	99.5	7.669
+Marquandomyces	939	0.07424	0.09218	1.265e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	1	6.402	99.5	7.64
+Marssonina	548	0.05285	0.06655	1.037e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.653	99.5	7.906
+Martensiomyces	404	0.05487	0.07185	7363	Kickxellomycota	Kickxellomycetes	Kickxellales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.083	93.7	7.294
+Massarina	958	0.08215	0.09672	1.166e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	6.196	98.9	7.582
+Massariosphaeria	968	0.07523	0.08836	1.287e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.128	98.9	7.624
+Maublancomyces	553	0.04854	0.06294	1.105e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium		filamentous	7	5.138	99.3	7.626
+Meira	781	0.1021	0.1188	7656	Basidiomycota	Exobasidiomycetes	Exobasidiales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	2	6.621	97.15	7.247
+Melampsora	994	0.05415	0.0608	1.836e+04	Basidiomycota	Pucciniomycetes	Pucciniales	filamentous_mycelium	plant_pathogen	filamentous	1	6.059	95.7	8.005
+Melanina	437	0.03854	0.04868	1.134e+04	Ascomycota	Eurotiomycetes	Chaetothyriales	filamentous_mycelium		filamentous	1	6.276	98.9	7.49
+Melanodothis	798	0.07117	0.08607	1.121e+04	Ascomycota	Dothideomycetes	Cladosporiales	filamentous_mycelium	plant_pathogen	filamentous	1	5.752	99.4	7.483
+Melanogaster	343	0.02623	0.03151	1.308e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.295	99.2	7.692
+Melanomma	1180	0.08381	0.09879	1.408e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	4.813	98.8	7.618
+Melanopsichium	268	0.04456	0.06086	6014	Basidiomycota	Ustilaginomycetes	Ustilaginales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	1	5.95	97.4	7.325
+Menisporopsis	1454	0.1022	0.1207	1.423e+04	Ascomycota	Sordariomycetes	Chaetosphaeriales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.893	99.3	7.765
+Meredithiella	285	0.03966	0.05385	7186	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	plant_pathogen	filamentous	1	5.833	98.8	7.436
+Meripilus	593	0.04626	0.05874	1.282e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	plant_pathogen	filamentous	1	4.723	98.1	7.661
+Meristemomyces	539	0.04703	0.06117	1.146e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.604	99.6	7.461
+Meruliopsis	251	0.03905	0.05228	6427	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.051	96.7	7.162
+Metahyphopichia	170	0.03013	0.04413	5643	Ascomycota	Pichiomycetes	Serinales	dimorphic_yeast	nectar/tap_saprotroph	dimorphic-other	1	5.667	82.5	7.057
+Metarhizium	894.5	0.07507	0.08649	1.153e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	14	6.254	99.4	7.609
+Metschnikowia	220	0.04166	0.05921	5414	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	40	5.39	80.05	7.194
+Meyerozyma	134	0.02498	0.03978	5354	Ascomycota	Pichiomycetes	Serinales	yeast	epiphyte	Saccharomycotina	7	5.966	82.8	7.011
+Microbotryum	284.5	0.03684	0.04533	7646	Basidiomycota	Microbotryomycetes	Microbotryales	filamentous_mycelium	plant_pathogen	filamentous	8	6.208	95.75	7.466
+Microcera	635	0.05733	0.07331	1.108e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	1	4.746	99.7	7.529
+Microcyclospora	447	0.05195	0.06729	8604	Ascomycota	Dothideomycetes	Capnodiales	filamentous_mycelium	plant_pathogen	filamentous	1	5.746	99.4	7.371
+Microcyclosporella	646	0.05932	0.0742	1.089e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	6.18	99.6	7.446
+Microdochium	855	0.07285	0.09165	1.147e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	plant_pathogen	filamentous	5	6.539	99.7	7.572
+Microsporum	401	0.04869	0.0612	8235	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	animal_parasite	filamentous	3	5.704	98.9	7.372
+Microstroma	258	0.04149	0.05483	6219	Basidiomycota	Exobasidiomycetes	Microstromatales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	1	5.987	95	7.235
+Microthyrium	1175	0.09739	0.1164	1.206e+04	Ascomycota	Dothideomycetes	Microthyriales	filamentous_mycelium	epiphyte	filamentous	1	6.399	99	7.569
+Middelhovenomyces	177	0.02859	0.04765	6191	Ascomycota	Dipodascomycetes	Dipodascales	yeast	wood_saprotroph	Saccharomycotina	1	6.025	94.4	7.174
+Millerago	130	0.02298	0.04578	5372	Ascomycota	Saccharomycetes	Phaffomycetales	yeast		Saccharomycotina	3	5.557	84	7.038
+Millerozyma	134.5	0.02575	0.04079	5220	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	2	5.99	82.4	7.038
+Moelleriella	539	0.06363	0.07957	8471	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	1	6.107	98.6	7.489
+Moesziomyces	337.5	0.05184	0.06804	6513	Basidiomycota	Ustilaginomycetes	Ustilaginales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	6	5.791	97.05	7.264
+Mollisia	1330	0.07669	0.09491	1.734e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.124	99.7	7.689
+Monascus	292	0.03249	0.04504	8925	Ascomycota	Eurotiomycetes	Eurotiales	filamentous_mycelium	unspecified_saprotroph	filamentous	3	6.487	99.3	7.395
+Monilia	651	0.06029	0.07511	1.08e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	5.926	99.5	7.6
+Monilinia	634	0.05889	0.0743	1.078e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	7	6.176	99.6	7.632
+Moniliophthora	1145	0.06622	0.07836	1.729e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	plant_pathogen	filamentous	1	5.824	99.3	7.775
+Monosporascus	811	0.06272	0.07394	1.29e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	plant_pathogen	filamentous	9	5.142	99.3	7.94
+Morchella	598	0.05243	0.06743	1.143e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	soil_saprotroph	filamentous	35	6.248	99	7.729
+Mortierella	586	0.04837	0.06439	1.207e+04	Mortierellomycota	Mortierellomycetes	Mortierellales	filamentous_mycelium	soil_saprotroph	filamentous	6	5.015	94.95	7.622
+Multifurca	193	0.02059	0.02368	9374	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.228	98	7.738
+Mycena	1523	0.05717	0.06695	2.714e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	15	6.106	98.7	8.017
+Mycocentrospora	762	0.067	0.08177	1.137e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	5.884	99	7.56
+Mycoemilia	420	0.05723	0.07167	7339	Kickxellomycota	Kickxellomycetes	Kickxellales	filamentous_mycelium	soil_saprotroph	filamentous	1	4.83	85.6	7.359
+Mycogone	618	0.06051	0.07604	1.021e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	mycoparasite	filamentous	2	5.981	99.6	7.556
+Mycosarcoma	350.5	0.05348	0.07035	6555	Basidiomycota	Ustilaginomycetes	Ustilaginales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	2	5.898	97.2	7.297
+Mycosphaerella	705	0.05903	0.07267	1.194e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	5.799	99.5	7.577
+Mycosphaerelloides	805	0.06244	0.07803	1.289e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	5.536	99.3	7.524
+Mycothermus	504	0.0632	0.07887	7975	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.256	99.6	7.459
+Mycotypha	315	0.03297	0.04427	9555	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.293	97.4	7.465
+Myriangium	746	0.07642	0.09281	9762	Ascomycota	Dothideomycetes	Myriangiales	filamentous_mycelium	animal_parasite	filamentous	1	6.27	99.5	7.41
+Myriodontium	480	0.05501	0.06957	8725	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.072	99.3	7.392
+Myriosclerotinia	589	0.05343	0.0684	1.102e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	5.378	99	7.602
+Myrmaecium	348	0.04409	0.05955	7893	Ascomycota	Dothideomycetes	Valsariales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.91	99.7	7.412
+Myrothecium	1185	0.1001	0.1198	1.184e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.698	99.7	7.614
+Mytilinidion	638	0.04315	0.05519	1.478e+04	Ascomycota	Dothideomycetes	Mytilinidiales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.224	99.6	7.674
+Myxozyma	115.5	0.01914	0.03257	6040	Ascomycota	Lipomycetes	Lipomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	8	5.329	92.3	7.17
+Nadsonia	105	0.01813	0.03069	5734	Ascomycota	Dipodascomycetes	Dipodascales	yeast	nectar/tap_saprotroph	Saccharomycotina	3	5.136	90.8	7.138
+Naematelia	229.5	0.03111	0.04501	7380	Basidiomycota	Tremellomycetes	Tremellales	dimorphic_yeast	mycoparasite	dimorphic-other	2	6.26	96.15	7.32
+Nakaseomyces	136	0.02667	0.04545	5061	Ascomycota	Saccharomycetes	Saccharomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	5	5.375	75.3	7.094
+Nakazawaea	146	0.02491	0.03954	5847	Ascomycota	Pichiomycetes	Alaninales	yeast	nectar/tap_saprotroph	Saccharomycotina	15	5.706	82.7	7.082
+Nannizziopsis	419.5	0.0531	0.06678	7894	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	animal_parasite	filamentous	2	6.8	98.85	7.442
+Naumovozyma	121	0.02234	0.03767	5416	Ascomycota	Saccharomycetes	Saccharomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	6.095	75.3	7.05
+Nemania	897.5	0.07106	0.08458	1.263e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	6	5.371	99.4	7.686
+Nematodospora	151.5	0.02796	0.0418	5418	Ascomycota	Pichiomycetes	Serinales	yeast	animal_endosymbiont	Saccharomycotina	2	5.663	82.4	7.091
+Neoaidaea	89	0.01806	0.03085	4927	Ascomycota	Lipomycetes	Lipomycetales	yeast		Saccharomycotina	1	5.527	93.1	7.118
+Neoarthrinium	1195	0.08761	0.1058	1.364e+04	Ascomycota	Sordariomycetes	Amphisphaeriales	filamentous_mycelium		filamentous	1	5.884	99.9	7.645
+Neoascochyta	697	0.07273	0.09119	9584	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	5.488	99	7.437
+Neoboletus	347	0.02732	0.03527	1.27e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	6.458	98.6	7.688
+Neobulgaria	684	0.06169	0.07909	1.109e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.444	99.8	7.581
+Neocamarosporium	813	0.07396	0.08852	1.099e+04	Ascomycota	Dothideomycetes		filamentous_mycelium	wood_saprotroph	filamentous	1	5.901	98.9	7.502
+Neoconidiobolus	892	0.1024	0.1202	8712	Entomophthoromycota	Entomophthoromycetes	Entomophthorales	filamentous_mycelium	animal_parasite	filamentous	1	4.962	77.6	7.387
+Neoconiothyrium	730	0.06635	0.08035	1.1e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	5.641	99.2	7.51
+Neocucurbitaria	880	0.07187	0.08714	1.224e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.209	99.2	7.542
+Neodevriesia	575	0.05373	0.06925	1.07e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	5.833	98.8	7.427
+Neodothiora	430	0.04692	0.06297	9108	Ascomycota	Dothideomycetes	Dothideales	filamentous_mycelium		filamentous	2	6.312	99.7	7.407
+Neofabraea	976	0.07009	0.08675	1.392e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.772	99.7	7.713
+Neofusicoccum	1028	0.07907	0.09274	1.298e+04	Ascomycota	Dothideomycetes	Botryosphaeriales	filamentous_mycelium	plant_pathogen	filamentous	6	5.282	99.45	7.633
+Neogyromitra	478	0.04521	0.05895	1.073e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium		filamentous	5	5.162	98.8	7.595
+Neohortaea	449	0.04894	0.06213	9174	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.289	98.9	7.31
+Neolentinus	405	0.03973	0.05051	1.02e+04	Basidiomycota	Agaricomycetes	Gloeophyllales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.558	99.4	7.551
+Neonectria	834.5	0.06495	0.08061	1.29e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	10	5.817	99.35	7.646
+Neopestalotiopsis	1355	0.08714	0.1034	1.56e+04	Ascomycota	Sordariomycetes	Amphisphaeriales	filamentous_mycelium	plant_pathogen	filamentous	8	5.705	99.7	7.702
+Neophaeosphaeria	551	0.05867	0.07347	9391	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.376	99.1	7.447
+Neoroussoella	1292	0.08051	0.09472	1.605e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.801	99	7.682
+Neosartorya	658	0.06059	0.07523	1.086e+04	Ascomycota	Eurotiomycetes	Eurotiales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	5.016	98.8	7.506
+Neoscytalidium	937	0.07166	0.08757	1.308e+04	Ascomycota	Dothideomycetes	Botryosphaeriales	filamentous_mycelium	plant_pathogen	filamentous	1	6.69	99.8	7.646
+Neurospora	625	0.06091	0.07506	9966	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	unspecified_saprotroph	filamentous	25	5.459	99.6	7.58
+Nigrograna	1220	0.07275	0.0862	1.676e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	animal_parasite	filamentous	2	6.061	99.25	7.711
+Nigrospora	1035	0.08759	0.1064	1.201e+04	Ascomycota	Sordariomycetes	Amphisphaeriales	filamentous_mycelium	litter_saprotroph	filamentous	13	6.881	99.6	7.667
+Nothofagozyma	155	0.02486	0.04042	6234	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.623	88.1	7.14
+Nothomitra	480	0.0387	0.05313	1.24e+04	Ascomycota	Geoglossomycetes		filamentous_mycelium	soil_saprotroph	filamentous	1	4.944	98.3	7.662
+Nothopassalora	748	0.05338	0.06058	1.401e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	6.664	99.5	7.738
+Nothophaeocryptopus	744	0.05395	0.06635	1.379e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	6.433	99.4	7.55
+Nothophoma	915	0.07645	0.09207	1.197e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.921	98.8	7.535
+Novakomyces	130	0.02259	0.03092	5756	Ascomycota	Novakomycetes	Novakomycetales	filamentous_mycelium		filamentous	1	6.227	88.8	7.157
+Obba	447	0.04485	0.05639	9967	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.073	99.6	7.53
+Oculimacula	1191	0.0821	0.1002	1.451e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.383	99.9	7.687
+Oehlia	471	0.01566	0.02171	3.008e+04	Glomeromycota	Glomeromycetes	Glomerales	filamentous_mycelium	arbuscular_mycorrhizal	filamentous	1	4.876	92.6	8.197
+Ogataea	115	0.02146	0.03483	5532	Ascomycota	Pichiomycetes	Pichiales	yeast	nectar/tap_saprotroph	Saccharomycotina	49	5.74	83	7.059
+Oidiodendron	1158	0.07364	0.08909	1.572e+04	Ascomycota	Leotiomycetes		filamentous_mycelium	soil_saprotroph	filamentous	1	6.291	99.7	7.667
+Oleoguttula	542	0.04721	0.06106	1.148e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.637	99.6	7.462
+Omphalotus	662.5	0.06027	0.07507	1.108e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.896	99	7.507
+Onygena	317	0.04312	0.05673	7351	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.644	98.8	7.339
+Ophidiomyces	417	0.04923	0.06446	8470	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	animal_parasite	filamentous	1	5.481	99.6	7.409
+Ophiobolus	1066	0.07306	0.0856	1.459e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.117	99.1	7.62
+Ophioceras	879	0.07851	0.09709	1.12e+04	Ascomycota	Sordariomycetes	Magnaporthales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	4.988	99	7.631
+Ophiocordyceps	634	0.08328	0.0997	8009	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	5	6.474	99.1	7.636
+Ophiognomonia	1248	0.08662	0.1041	1.441e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	1	5.206	99.2	7.709
+Ophiosphaerella	895	0.06796	0.08178	1.317e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	5.023	98.8	7.719
+Ophiostoma	399.5	0.04608	0.0628	8507	Ascomycota	Sordariomycetes	Ophiostomatales	filamentous_mycelium	plant_pathogen	filamentous	20	5.833	99.35	7.498
+Orbilia	1067	0.09599	0.1156	1.093e+04	Ascomycota	Orbiliomycetes	Orbiliales	filamentous_mycelium	wood_saprotroph	filamentous	5	6.488	98.3	7.598
+Osmozyma	130.5	0.02597	0.04119	5018	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.254	80.25	7.073
+Ovatospora	463	0.05615	0.07131	8246	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.58	99.6	7.474
+Ovulinia	586	0.05218	0.06696	1.123e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.484	99.6	7.755
+Pachysolen	109	0.02543	0.03009	4287	Ascomycota	Pichiomycetes	Alaninales	yeast	nectar/tap_saprotroph	Saccharomycotina	1	6.243	82.4	7.095
+Paecilomyces	473	0.04505	0.05945	1.033e+04	Ascomycota	Eurotiomycetes	Eurotiales	filamentous_mycelium	foliar_endophyte	filamentous	20	6.145	99.4	7.499
+Pallidohirschioporus	606	0.04312	0.05429	1.405e+04	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium		filamentous	1	6.592	98.7	7.705
+Panaeolus	1033	0.06919	0.08329	1.457e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	dung_saprotroph	filamentous	6	6.335	99.6	7.677
+Panellus	732	0.05562	0.06945	1.316e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.481	98.7	7.606
+Panus	640	0.05733	0.06987	1.116e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.174	99.5	7.559
+Papiliotrema	318	0.0381	0.05204	7986	Basidiomycota	Tremellomycetes	Tremellales	dimorphic_yeast	mycoparasite	dimorphic-other	7	6.149	95.5	7.29
+Paracamarosporium	1356	0.08887	0.1037	1.526e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.411	99.4	7.658
+Parachaetomium	892	0.08035	0.09692	1.11e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium		filamentous	1	5.062	98.9	7.562
+Paracoccidioides	215	0.02721	0.04039	8063	Ascomycota	Eurotiomycetes	Onygenales	dimorphic_yeast	animal_parasite	Pezizomycotina-dimorphic	5	6.794	99.1	7.502
+Paraconiothyrium	1270	0.09044	0.1036	1.404e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.678	99.15	7.597
+Paracorniculantispora	976	0.08786	0.107	1.111e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	1	6.367	99.9	7.557
+Paradiscina	683	0.05584	0.07097	1.223e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium		filamentous	1	5.131	99.6	7.691
+Parafenestella	885	0.07	0.08384	1.264e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	5.957	99.2	7.533
+Paragyromitra	588	0.05304	0.0691	1.109e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium		filamentous	3	5.557	99.5	7.642
+Parahypoxylon	755	0.06981	0.08423	1.082e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium		filamentous	1	6.756	100	7.699
+Parajaminaea	302.5	0.04806	0.0627	6286	Basidiomycota	Exobasidiomycetes	Microstromatales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	2	6.453	95.35	7.238
+Paramarasmius	1431	0.06453	0.07639	2.218e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium		filamentous	1	5.629	98.8	7.835
+Parametarhizium	577.5	0.06614	0.08258	8734	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	2	6.732	99.4	7.465
+Paramyrothecium	1526	0.1015	0.1183	1.504e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	soil_saprotroph	filamentous	2	6.661	99.6	7.694
+Paraphaeosphaeria	1156	0.08834	0.09568	1.304e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.459	99.3	7.633
+Paraphoma	1153	0.07724	0.08898	1.492e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	2	5.752	98.95	7.597
+Parasarocladium	518	0.06445	0.08374	8037	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	1	5.213	99.1	7.385
+Parascedosporium	668	0.07627	0.09363	8758	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.329	99.6	7.592
+Parastagonospora	1081	0.08187	0.09136	1.319e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	2	5.85	99.15	7.55
+Parathielavia	583	0.06194	0.07684	9370	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium		filamentous	2	5.99	99.35	7.504
+Parengyodontium	651	0.06304	0.08434	1.033e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	1	5.904	99.9	7.483
+Pascua	519	0.05427	0.07551	9562	Basidiomycota	Tremellomycetes	Trichosporonales	yeast	soil_saprotroph	Tremellomycetes	6	5.689	96.8	7.506
+Passalora	759	0.06632	0.08082	1.144e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	6.105	99.4	7.502
+Patellaria	520	0.05776	0.07442	9003	Ascomycota	Dothideomycetes	Patellariales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.166	98.8	7.457
+Paxillus	315.5	0.02647	0.03451	1.207e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	2	5.269	97.1	7.658
+Peltaster	425	0.05198	0.06495	8176	Ascomycota	Dothideomycetes		filamentous_mycelium	plant_pathogen	filamentous	1	6.565	99.2	7.278
+Penicilliopsis	453	0.04827	0.06618	9384	Ascomycota	Eurotiomycetes	Eurotiales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.085	98.9	7.415
+Penicillium	629	0.05457	0.0697	1.135e+04	Ascomycota	Eurotiomycetes	Eurotiales	filamentous_mycelium	unspecified_saprotroph	filamentous	172	6.522	99.3	7.51
+Peniophora	958.5	0.05885	0.07042	1.629e+04	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.151	98.75	7.665
+Peribolospora	284.5	0.04169	0.05546	6825	Basidiomycota	Peribolosporomycetes	Peribolosporales	filamentous_mycelium		filamentous	2	5.167	96.5	7.355
+Periconia	1204	0.08228	0.09609	1.414e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	5	5.521	98.9	7.645
+Periglandula	800	0.07444	0.09072	1.075e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	foliar_endophyte	filamentous	1	5.203	99.4	7.543
+Peroneutypa	909	0.07507	0.08812	1.211e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	plant_pathogen	filamentous	3	6.748	99.6	7.677
+Pestalotiopsis	1302	0.08847	0.1041	1.441e+04	Ascomycota	Sordariomycetes	Amphisphaeriales	filamentous_mycelium	plant_pathogen	filamentous	11	6.805	99.5	7.681
+Petasospora	166	0.02925	0.04824	5864	Ascomycota	Saccharomycetes	Phaffomycetales	yeast		Saccharomycotina	23	5.456	86.5	7.082
+Peterozyma	150	0.02467	0.03988	6079	Ascomycota	Pichiomycetes	Alaninales	yeast	nectar/tap_saprotroph	Saccharomycotina	2	5.682	83.3	7.119
+Pewenomyces	497.5	0.05792	0.07432	8658	Ascomycota	Eurotiomycetes	Coryneliales	filamentous_mycelium		filamentous	4	5.671	99.1	7.472
+Pezicula	856	0.07042	0.08686	1.228e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	root_endophyte	filamentous	7	5.449	99.6	7.599
+Peziza	526	0.04131	0.05513	1.273e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.393	99	7.79
+Phaeoacremonium	1099	0.07172	0.08882	1.532e+04	Ascomycota	Sordariomycetes	Togniniales	filamentous_mycelium	plant_pathogen	filamentous	1	5.525	99.9	7.675
+Phaeoclavulina	615	0.05283	0.06365	1.164e+04	Basidiomycota	Agaricomycetes	Gomphales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.564	99	7.696
+Phaeococcomyces	438	0.05115	0.06563	8563	Ascomycota	Arthoniomycetes	Lichenostigmatales	dimorphic_yeast	unspecified_saprotroph	Pezizomycotina-dimorphic	1	5.768	98.7	7.343
+Phaeoisaria	888	0.08384	0.1038	1.059e+04	Ascomycota	Sordariomycetes	Pleurotheciales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.558	99.3	7.569
+Phaeomoniella	448	0.04858	0.06441	9222	Ascomycota	Eurotiomycetes	Phaeomoniellales	dimorphic_yeast	plant_pathogen	Pezizomycotina-dimorphic	1	5.252	99.1	7.435
+Phaeophleospora	993	0.0776	0.09377	1.28e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	6.209	99.6	7.499
+Phaeotremella	249	0.0329	0.04413	7569	Basidiomycota	Tremellomycetes	Tremellales	dimorphic_yeast	mycoparasite	dimorphic-other	3	6.002	97.2	7.346
+Phaffomyces	118	0.0216	0.03771	5543	Ascomycota	Saccharomycetes	Phaffomycetales	yeast	plant_pathogen	Saccharomycotina	5	5.337	83.9	7.07
+Phanerochaete	740	0.05585	0.0677	1.322e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.083	98.8	7.641
+Phanerodontia	718	0.05215	0.056	1.377e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.985	99.5	7.593
+Phascolomyces	488	0.03609	0.04763	1.352e+04	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.028	97.3	7.678
+Phialemonium	608	0.05713	0.0729	1.06e+04	Ascomycota	Sordariomycetes	Cephalothecales	filamentous_mycelium	animal_parasite	filamentous	2	5.943	99.5	7.497
+Phialocephala	1110	0.06041	0.07628	1.816e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	soil_saprotroph	filamentous	2	5.727	99.5	7.771
+Phialophora	466	0.03736	0.05031	1.252e+04	Ascomycota	Eurotiomycetes	Chaetothyriales	dimorphic_yeast	litter_saprotroph	Pezizomycotina-dimorphic	5	6.236	98.8	7.546
+Phialophoropsis	257	0.03654	0.05132	7034	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	plant_pathogen	filamentous	1	5.901	98.6	7.427
+Phlebia	612.5	0.0526	0.06602	1.163e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	2	4.869	99.2	7.551
+Phlebiopsis	599	0.05551	0.06965	1.076e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.147	99.1	7.514
+Phlebopus	241	0.02881	0.03886	9013	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	arthropod-associated	filamentous	3	6.319	99.3	7.557
+Phlegmacium	439.5	0.0248	0.03054	1.852e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium		filamentous	2	6.385	99.4	8.014
+Phlyctema	955	0.07956	0.08465	1.2e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.592	99.7	7.582
+Pholiota	677	0.04892	0.06071	1.413e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	9	5.664	99.3	7.7
+Phoma	927.5	0.07539	0.09178	1.241e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	4	6.145	99	7.568
+Phomopsis	1555	0.09317	0.1093	1.669e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	1	6.849	99.6	7.771
+Phyllachora	447	0.06177	0.07558	7237	Ascomycota	Sordariomycetes	Phyllachorales	filamentous_mycelium	plant_pathogen	filamentous	1	6.785	98.8	7.809
+Phylloporus	220	0.02779	0.03562	7917	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	4.728	96	7.428
+Phyllosticta	498	0.04933	0.06351	1.013e+04	Ascomycota	Dothideomycetes	Botryosphaeriales	filamentous_mycelium	plant_pathogen	filamentous	7	6.303	99.6	7.496
+Pilatotrama	579	0.05626	0.07015	1.029e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.515	99.6	7.531
+Pilobolus	283	0.02496	0.0336	1.134e+04	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	dung_saprotroph	filamentous	1	5.627	97.5	7.541
+Piloderma	478	0.03215	0.04055	1.487e+04	Basidiomycota	Agaricomycetes	Atheliales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.724	98.6	7.772
+Piptocephalis	423	0.07051	0.09452	5999	Zoopagomycota	Zoopagomycetes	Zoopagales	filamentous_mycelium	mycoparasite	filamentous	1	5.119	76.6	7.268
+Piscidiscina	482	0.03919	0.05041	1.23e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium		filamentous	1	4.884	99.5	7.732
+Pithoascus	666	0.07116	0.08366	9359	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.601	98.7	7.531
+Plectosphaerella	1077	0.08983	0.1096	1.202e+04	Ascomycota	Sordariomycetes	Glomerellales	filamentous_mycelium	plant_pathogen	filamentous	4	6.167	99.35	7.565
+Pleiochaeta	683	0.06797	0.08309	1.005e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	6.184	98.8	7.523
+Plenodomus	833	0.07817	0.08719	1.189e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	5	6.16	99.2	7.587
+Pleoardoris	955	0.05182	0.06034	1.843e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium		filamentous	1	4.878	99.1	8.02
+Pleomassaria	895	0.07496	0.09045	1.194e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.276	99.1	7.634
+Pleurocybella	491	0.04877	0.05959	1.007e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.238	99	8.021
+Pleurostoma	689	0.0555	0.07177	1.241e+04	Ascomycota	Sordariomycetes	Calosphaeriales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.84	99.6	7.6
+Pleurotheciella	864	0.08375	0.105	1.032e+04	Ascomycota	Sordariomycetes	Pleurotheciales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.302	98.6	7.612
+Pleurotus	863	0.07099	0.08314	1.277e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	15	6.408	99.4	7.586
+Plicatura	539	0.04721	0.05903	1.142e+04	Basidiomycota	Agaricomycetes	Amylocorticiales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.263	99.4	7.538
+Pluteus	728	0.04587	0.05966	1.587e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.02	99	7.712
+Pneumocystis	35	0.0105	0.01715	3350	Ascomycota	Pneumocystomycetes	Pneumocystales	yeast	animal_parasite	Taphrinomycotina	6	5.675	86.55	6.88
+Pochonia	1355	0.08373	0.08904	1.618e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	1	6.816	99.4	7.729
+Podaxis	608	0.05791	0.06972	1.024e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	9	5.014	98.3	7.548
+Podila	760.5	0.05911	0.0785	1.287e+04	Mortierellomycota	Mortierellomycetes	Mortierellales	filamentous_mycelium		filamentous	2	5.61	94.25	7.61
+Podospora	871	0.08078	0.09857	1.118e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	dung_saprotroph	filamentous	13	6.627	99.5	7.558
+Polycephalomyces	411	0.04491	0.05846	9151	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	1	5.758	99.1	7.475
+Polychaeton	487	0.05228	0.06763	9315	Ascomycota	Dothideomycetes	Capnodiales	filamentous_mycelium	sooty_mold	filamentous	1	5.449	99.1	7.432
+Polyplosphaeria	1116	0.08443	0.1005	1.322e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.257	99.1	7.567
+Polyporus	763	0.05488	0.06619	1.524e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	3	6.592	99.4	7.763
+Polyrhizophydium	313	0.03422	0.0552	9148	Chytridiomycota	Chytridiomycetes	Rhizophydiales	filamentous_mycelium		filamentous	1	5.545	90.2	7.493
+Polytolypa	490	0.05096	0.06552	9616	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.135	98.8	7.539
+Porodaedalea	491	0.03736	0.04871	1.312e+04	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.917	99.05	7.714
+Porogramme	796	0.05966	0.07548	1.334e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	4.779	98.3	7.66
+Poronia	719	0.07244	0.08594	9925	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	5.144	99.3	7.677
+Porpolomopsis	244	0.02704	0.03679	9023	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.36	98.5	7.526
+Priceomyces	128.5	0.02325	0.03714	5401	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	6	5.782	81.6	7.035
+Prillingera	278	0.03607	0.05657	7707	Basidiomycota	Tremellomycetes	Trichosporonales	yeast	unspecified_saprotroph	Tremellomycetes	1	6.285	96.5	7.307
+Proliferodiscus	880	0.07409	0.08899	1.188e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.968	99.6	7.532
+Protomyces	251.5	0.04064	0.05403	6096	Ascomycota	Taphrinomycetes	Taphrinales	dimorphic_yeast	plant_pathogen	dimorphic-other	4	5.437	91.1	7.094
+Psathyrella	833.5	0.05276	0.06273	1.595e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.114	99.35	7.721
+Pseudocercospora	1107	0.07256	0.08679	1.526e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	7	5.61	99.3	7.662
+Pseudodiploospora	714	0.07437	0.0902	9601	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	1	5.603	99.3	7.537
+Pseudodiscina	497	0.04951	0.06505	1.004e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium		filamentous	1	5.136	99.1	7.61
+Pseudofabraea	1047	0.07527	0.09195	1.391e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.172	99.3	7.643
+Pseudofusicolla	607	0.0495	0.06492	1.226e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	1	4.983	99.6	7.57
+Pseudogymnoascus	745	0.06588	0.0829	1.101e+04	Ascomycota	Leotiomycetes	Thelebolales	filamentous_mycelium	soil_saprotroph	filamentous	14	5.354	99.4	7.519
+Pseudohalonectria	784	0.07358	0.09066	1.066e+04	Ascomycota	Sordariomycetes	Magnaporthales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.015	98.8	7.618
+Pseudohumicola	899	0.08202	0.101	1.096e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium		filamentous	1	5.644	99.5	7.546
+Pseudomassariella	943	0.08087	0.09871	1.166e+04	Ascomycota	Sordariomycetes	Amphisphaeriales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.409	99	7.65
+Pseudometarhizium	781	0.07261	0.08972	1.076e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	1	5.757	98.9	7.523
+Pseudomicrostroma	260	0.04193	0.05564	6201	Basidiomycota	Exobasidiomycetes	Microstromatales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	1	5.988	95.5	7.233
+Pseudonectria	489	0.05709	0.073	8566	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.46	99.5	7.449
+Pseudoneurospora	537	0.05361	0.06659	1.002e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.136	99.8	7.6
+Pseudopestalotiopsis	1398	0.08871	0.1052	1.575e+04	Ascomycota	Sordariomycetes	Amphisphaeriales	filamentous_mycelium	plant_pathogen	filamentous	2	6.259	99.6	7.706
+Pseudophaeomoniella	441	0.0477	0.06316	9246	Ascomycota	Eurotiomycetes	Phaeomoniellales	dimorphic_yeast	plant_pathogen	Pezizomycotina-dimorphic	1	5.56	99.5	7.42
+Pseudopithomyces	1222	0.09263	0.1081	1.318e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	4	6.303	98.9	7.592
+Pseudopyrenochaeta	1026	0.07129	0.08489	1.438e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	unspecified_saprotroph	filamentous	2	6.073	99.25	7.644
+Pseudorhizina	563.5	0.04481	0.05801	1.258e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	litter_saprotroph	filamentous	2	5.294	99.45	7.759
+Pseudorhypophila	1412	0.09672	0.1144	1.46e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium		filamentous	2	5.255	99.45	7.729
+Pseudotremella	333	0.04115	0.05326	8092	Basidiomycota	Tremellomycetes	Tremellales	dimorphic_yeast	wood_saprotroph	dimorphic-other	1	5.933	95.8	7.324
+Pseudoverpa	607	0.05946	0.07514	1.021e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium		filamentous	1	5.35	98.8	7.61
+Pseudovirgaria	645	0.06347	0.07872	1.016e+04	Ascomycota	Dothideomycetes	Acrospermales	filamentous_mycelium	mycoparasite	filamentous	1	6.198	99.5	7.549
+Pseudozyma	338	0.05227	0.0702	6447	Basidiomycota	Ustilaginomycetes	Ustilaginales	yeast	epiphyte	Ustilaginomycotina-yeast	5	5.697	97.4	7.266
+Psilocybe	829	0.05898	0.07172	1.39e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	11	5.239	99.3	7.668
+Pterulicium	905	0.08125	0.09723	1.114e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.806	98.8	7.541
+Puccinia	956.5	0.06872	0.07752	1.348e+04	Basidiomycota	Pucciniomycetes	Pucciniales	filamentous_mycelium	plant_pathogen	filamentous	2	6.54	93.7	7.852
+Punctularia	640	0.06209	0.07606	1.031e+04	Basidiomycota	Agaricomycetes	Corticiales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.327	99.2	7.534
+Purpureocillium	782.5	0.07176	0.08935	1.078e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	4	6.638	99.6	7.565
+Pyrenochaeta	965.5	0.0738	0.08813	1.308e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.894	98.95	7.567
+Pyrenopeziza	757	0.06036	0.07687	1.254e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.489	99.6	7.865
+Pyrenophora	827	0.0729	0.08706	1.118e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	3	6.564	99.1	7.598
+Pyrenopolyporus	670	0.06957	0.08504	9631	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.417	99.5	7.606
+Pyricularia	1160	0.1025	0.1216	1.105e+04	Ascomycota	Sordariomycetes	Magnaporthales	filamentous_mycelium	plant_pathogen	filamentous	8	6.195	99.15	7.622
+Pyronema	580	0.04865	0.06125	1.187e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	soil_saprotroph	filamentous	2	6.24	98	7.779
+Pyrrhoderma	440.5	0.0458	0.06027	9603	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.313	98.9	7.493
+Quambalaria	424	0.06086	0.07277	6967	Basidiomycota	Exobasidiomycetes	Microstromatales	filamentous_mycelium	plant_pathogen	filamentous	1	4.78	90.7	7.363
+Rachicladosporium	588	0.05661	0.07134	1.039e+04	Ascomycota	Dothideomycetes	Cladosporiales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.163	99.1	7.391
+Raffaelea	534	0.04687	0.06223	1.035e+04	Ascomycota	Sordariomycetes	Ophiostomatales	filamentous_mycelium	plant_pathogen	filamentous	5	6.342	99.1	7.565
+Ramaria	492	0.02709	0.03166	1.816e+04	Basidiomycota	Agaricomycetes	Gomphales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.36	98.7	8.021
+Ramariopsis	567	0.03694	0.04633	1.535e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.518	99	7.678
+Ramichloridium	551	0.05948	0.07761	9264	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	5.64	99.1	7.449
+Ramularia	787	0.07621	0.09346	1.033e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	3	6.509	99.2	7.534
+Ramulariopsis	688	0.06593	0.08232	1.044e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	1	6.326	99.2	7.523
+Rasamsonia	429.5	0.0429	0.05843	1.003e+04	Ascomycota	Eurotiomycetes	Eurotiales	filamentous_mycelium	soil_saprotroph	filamentous	2	6.103	98.9	7.517
+Recurvomyces	671	0.06016	0.07468	1.115e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.883	99.4	7.431
+Remersonia	412	0.05729	0.07384	7191	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	dung_saprotroph	filamentous	1	6.649	99.4	7.438
+Reticulascus	1472	0.1115	0.1324	1.32e+04	Ascomycota	Sordariomycetes	Glomerellales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.578	99.9	7.632
+Rhamphoriopsis	1050	0.08936	0.1096	1.176e+04	Ascomycota	Sordariomycetes		filamentous_mycelium	wood_saprotroph	filamentous	2	5.706	99.6	7.565
+Rhexocercosporidium	1245	0.07503	0.09432	1.659e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.387	99.6	7.798
+Rhinocladiella	391.5	0.03161	0.04305	1.226e+04	Ascomycota	Eurotiomycetes	Chaetothyriales	dimorphic_yeast	soil_saprotroph	Pezizomycotina-dimorphic	2	6.337	99	7.526
+Rhizoctonia	896	0.07748	0.09166	1.156e+04	Basidiomycota	Agaricomycetes	Cantharellales	filamentous_mycelium	plant_pathogen	filamentous	1	6.393	98	7.617
+Rhizodermea	1046	0.05973	0.07566	1.751e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	root_endophyte	filamentous	1	6.3	99.7	7.776
+Rhizodiscina	819	0.06461	0.08086	1.268e+04	Ascomycota	Dothideomycetes	Aulographales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.335	99.4	7.524
+Rhizomucor	299.5	0.03164	0.04373	9470	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	2	5.684	97.95	7.419
+Rhizophagus	477	0.01799	0.02503	3.316e+04	Glomeromycota	Glomeromycetes	Glomerales	filamentous_mycelium	arbuscular_mycorrhizal	filamentous	3	6.122	92.3	8.164
+Rhizopogon	265	0.02439	0.03258	1.074e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	3	5.029	99	7.62
+Rhizosphaera	385	0.04517	0.06019	8523	Ascomycota	Dothideomycetes	Dothideales	filamentous_mycelium	plant_pathogen	filamentous	1	6.265	99.6	7.395
+Rhodocollybia	46	0.003997	0.003997	1.151e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	1	7.096	98.4	8.156
+Rhodofomes	519	0.04091	0.05132	1.269e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.058	99.2	7.584
+Rhodonia	389	0.03846	0.04854	1.012e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.323	99.5	7.628
+Rhodosporidiobolus	383.5	0.04149	0.05674	9172	Basidiomycota	Microbotryomycetes	Sporidiobolales	yeast	unspecified_saprotroph	Pucciniomycotina-yeast	6	5.349	95.8	7.392
+Rhodotorula	230	0.03116	0.04446	7366	Basidiomycota	Microbotryomycetes	Sporidiobolales	yeast	unspecified_saprotroph	Pucciniomycotina-yeast	19	5.59	96.4	7.309
+Rhynchosporium	854	0.07152	0.08934	1.194e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	3	5.482	99.7	7.719
+Rhypophila	1432	0.0977	0.1128	1.464e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium		filamentous	2	5.289	99.45	7.676
+Rickenella	622	0.04678	0.05972	1.33e+04	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	plant_pathogen	filamentous	1	5.559	99.1	7.651
+Rigidonotus	445	0.04081	0.05237	1.09e+04	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium		filamentous	1	6.319	99.5	7.584
+Ripartites	733	0.04685	0.05459	1.564e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.731	98.7	7.777
+Rosellinia	864	0.07142	0.08647	1.21e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	plant_pathogen	filamentous	1	5.096	99.3	7.684
+Rostrohypoxylon	777	0.06918	0.08379	1.123e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.432	99.8	7.571
+Rugonectria	761	0.05545	0.07076	1.372e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.612	99.5	7.65
+Russula	328	0.02945	0.03502	1.054e+04	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	ectomycorrhizal	filamentous	17	6.538	98.8	7.636
+Rutstroemia	881	0.07074	0.08719	1.268e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	3	5.988	99.4	7.626
+Ruyongia	166	0.02654	0.04817	6238	Ascomycota	Saccharomycetes	Phaffomycetales	yeast		Saccharomycotina	2	5.277	80.35	7.148
+Saccharata	460	0.05113	0.06669	8997	Ascomycota	Dothideomycetes	Botryosphaeriales	filamentous_mycelium	plant_pathogen	filamentous	1	5.971	99.2	7.496
+Saccharomyces	131.5	0.02439	0.04161	5388	Ascomycota	Saccharomycetes	Saccharomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	10	5.953	75.7	7.075
+Saccharomycopsis	245	0.04197	0.06349	5918	Ascomycota	Saccharomycetes	Ascoideales	yeast	nectar/tap_saprotroph	Saccharomycotina	20	5.669	79.2	7.155
+Saitoella	197	0.02983	0.04286	6603	Ascomycota	Saitoellomycetes	Saitoellales	yeast	soil_saprotroph	yeast-other	2	5.622	96.85	7.149
+Saitozyma	353	0.03892	0.05214	9378	Basidiomycota	Tremellomycetes	Tremellales	yeast	soil_saprotroph	Tremellomycetes	3	6.108	97	7.45
+Saksenaea	401	0.03431	0.04647	1.169e+04	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.05	98	7.603
+Salinomyces	520	0.05762	0.07258	9024	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium		filamentous	1	5.521	99	7.378
+Salmacisia	434	0.06716	0.08403	6462	Basidiomycota	Exobasidiomycetes	Tilletiales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	1	5.955	92.2	7.302
+Samsoniella	803	0.07552	0.09583	1.063e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	1	6.371	99.7	7.539
+Sanghuangporus	493	0.04741	0.06034	1.028e+04	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	wood_saprotroph	filamentous	5	6.419	99.1	7.533
+Sanguinoderma	867.5	0.06327	0.07616	1.378e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium		filamentous	2	6.551	99.7	7.65
+Sarcodon	323	0.03822	0.04994	8450	Basidiomycota	Agaricomycetes	Thelephorales	filamentous_mycelium	ectomycorrhizal	filamentous	1	4.882	98.5	7.489
+Sarcoleotia	515	0.05642	0.0768	9128	Ascomycota	Geoglossomycetes	Geoglossales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.298	98.8	7.48
+Sarcomyxa	686	0.05512	0.06557	1.244e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.249	98.8	7.552
+Sarcopodium	1153	0.07153	0.08692	1.612e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	1	6.493	99.5	7.689
+Sarea	250	0.03273	0.04582	7638	Ascomycota	Sareomycetes	Sareales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	5.432	99.1	7.407
+Sarocladium	756	0.07433	0.09192	1.028e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	10	6.547	99.6	7.517
+Saxophila	616	0.05528	0.0691	1.114e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.151	99.2	7.413
+Scedosporium	854	0.07262	0.09041	1.146e+04	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	soil_saprotroph	filamentous	5	6.21	99.6	7.615
+Scheffersomyces	165.5	0.02752	0.04589	5973	Ascomycota	Pichiomycetes	Serinales	yeast	animal_endosymbiont	Saccharomycotina	18	5.676	82.3	7.179
+Schizophyllum	772	0.05625	0.06659	1.372e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.569	99.4	7.659
+Schizopora	584	0.04269	0.05534	1.368e+04	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.088	98.4	7.643
+Schizosaccharomyces	86	0.0177	0.02835	4903	Ascomycota	Schizosaccharomycetes	Schizosaccharomycetales	yeast	nectar/tap_saprotroph	Taphrinomycotina	5	6.545	84.1	7.063
+Schizothecium	806	0.08378	0.1034	9592	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	dung_saprotroph	filamentous	21	5.467	99.2	7.509
+Schwanniomyces	122.5	0.02187	0.03555	5772	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	8	5.544	83.15	7.083
+Scleroderma	217	0.01997	0.02633	1.093e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	2	5.434	96.45	7.687
+Scleromitrula	586	0.05003	0.066	1.171e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.558	99.2	7.591
+Sclerotinia	612	0.05546	0.07136	1.096e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	10	6.151	99.6	7.618
+Sclerotiophoma	876	0.07805	0.09658	1.122e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium		filamentous	1	6.23	99	7.613
+Scopulariopsis	566	0.05967	0.07653	9486	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.258	99.5	7.502
+Scorias	333	0.04075	0.05605	8172	Ascomycota	Dothideomycetes	Capnodiales	filamentous_mycelium	sooty_mold	filamentous	1	6.528	99.3	7.384
+Scytalidium	716	0.05172	0.0662	1.385e+04	Ascomycota	Leotiomycetes		filamentous_mycelium	wood_saprotroph	filamentous	2	5.393	99.5	7.645
+Seiridium	1163	0.07935	0.09642	1.473e+04	Ascomycota	Sordariomycetes	Amphisphaeriales	filamentous_mycelium	plant_pathogen	filamentous	7	5.551	99.8	7.665
+Septoria	795	0.06978	0.08769	1.132e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	5	6.423	98.9	7.471
+Septoriella	596	0.06228	0.07565	9570	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.173	98.9	7.431
+Serendipita	675	0.06021	0.0706	1.116e+04	Basidiomycota	Agaricomycetes	Sebacinales	filamentous_mycelium	root_endophyte	filamentous	2	5.72	95.3	7.478
+Serpula	406	0.03175	0.04074	1.304e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	wood_saprotroph	filamentous	2	5.931	99.1	7.75
+Sertulicium	564	0.04928	0.06204	1.144e+04	Basidiomycota	Agaricomycetes	Sistotremastrales	filamentous_mycelium		filamentous	1	5.843	98.8	7.548
+Setomelanomma	875	0.064	0.07651	1.367e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	5.373	99	7.592
+Shiraia	771	0.07081	0.08457	1.084e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	2	5.729	98.95	7.511
+Simplicillium	1033	0.0896	0.1054	1.118e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	3	6.671	99.6	7.481
+Sistotremastrum	560	0.05013	0.06239	1.117e+04	Basidiomycota	Agaricomycetes	Sistotremastrales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.049	98.8	7.525
+Smittium	440.5	0.05761	0.0685	7640	Kickxellomycota	Harpellomycetes	Harpellales	filamentous_mycelium	animal_endosymbiont	filamentous	2	5.6	76.7	7.576
+Sodiomyces	411.5	0.05311	0.06834	7748	Ascomycota	Sordariomycetes	Glomerellales	filamentous_mycelium	soil_saprotroph	filamentous	2	6.702	99.4	7.687
+Somion	508	0.04886	0.0629	1.04e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium		filamentous	1	6.485	99.6	7.491
+Sordaria	677	0.06527	0.07947	1.038e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	dung_saprotroph	filamentous	3	6.548	99.7	7.596
+Soucietia	148	0.02565	0.04299	5769	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.385	80.6	7.174
+Sparassis	323	0.02933	0.03623	1.101e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	plant_pathogen	filamentous	3	6.475	99.4	7.591
+Spathaspora	167.5	0.02841	0.0544	5880	Ascomycota	Pichiomycetes	Serinales	yeast	animal_endosymbiont	Saccharomycotina	6	5.341	81.45	7.115
+Spencermartinsiella	210.5	0.03312	0.04933	6346	Ascomycota	Dipodascomycetes	Dipodascales	yeast	nectar/tap_saprotroph	Saccharomycotina	4	5.774	93.95	7.163
+Sphaceloma	581	0.07062	0.08509	8227	Ascomycota	Dothideomycetes	Myriangiales	filamentous_mycelium	plant_pathogen	filamentous	1	5.777	99.6	7.316
+Sphaerellopsis	673	0.07344	0.08817	9164	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	1	5.58	99	7.442
+Sphaerostilbella	545	0.05597	0.07158	9737	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	mycoparasite	filamentous	1	5.504	99.3	7.539
+Spiromastigoides	764	0.0719	0.08479	1.063e+04	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.716	99.3	7.581
+Sporisorium	311	0.04755	0.06478	6670	Basidiomycota	Ustilaginomycetes	Ustilaginales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	5	5.916	97.5	7.284
+Sporobolomyces	247	0.03154	0.04316	7600	Basidiomycota	Microbotryomycetes	Sporidiobolales	yeast	mycoparasite	Pucciniomycotina-yeast	5	5.731	95.6	7.331
+Sporopachydermia	94	0.01757	0.02997	5354	Ascomycota	Sporopachydermiomycetes	Sporopachydermiales	yeast	plant_pathogen	Saccharomycotina	2	5.644	87.3	7.207
+Sporormia	652	0.06916	0.08486	9427	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	dung_saprotroph	filamentous	1	5.718	99.1	7.412
+Sporothrix	555	0.05734	0.07348	9660	Ascomycota	Sordariomycetes	Ophiostomatales	filamentous_mycelium	plant_pathogen	filamentous	20	5.679	99.3	7.569
+Stachybotrys	969	0.08116	0.09668	1.187e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	wood_saprotroph	filamentous	4	6.253	99.5	7.624
+Stagonosporopsis	851	0.07654	0.09215	1.113e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	3	6.251	98.8	7.533
+Staphylotrichum	871	0.07986	0.09682	1.091e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	soil_saprotroph	filamentous	1	6.725	99.2	7.551
+Starmera	109.5	0.02178	0.03533	5026	Ascomycota	Saccharomycetes	Phaffomycetales	yeast	plant_pathogen	Saccharomycotina	4	5.018	81.15	7.041
+Steccherinum	781	0.06338	0.07612	1.232e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	4.798	97.1	7.547
+Stemphylium	909	0.07429	0.08847	1.233e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	plant_pathogen	filamentous	5	6.253	99.1	7.569
+Stenocarpella	972	0.07542	0.09048	1.289e+04	Ascomycota	Sordariomycetes	Diaporthales	filamentous_mycelium	plant_pathogen	filamentous	1	5.464	99.6	7.738
+Stereum	701	0.05388	0.06618	1.301e+04	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.255	99.6	7.668
+Stipitochalara	1454	0.079	0.09932	1.841e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium		filamentous	1	6.429	99.6	7.719
+Strobilurus	728	0.04547	0.0566	1.643e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	4	6.433	98.7	7.69
+Stromatinia	649	0.05275	0.06413	1.23e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	plant_pathogen	filamentous	1	6.004	99.6	7.75
+Stropharia	901	0.05887	0.07148	1.586e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	3	5.045	98.8	7.725
+Sugiyamaella	158.5	0.02613	0.04203	6222	Ascomycota	Dipodascomycetes	Dipodascales	yeast	animal_endosymbiont	Saccharomycotina	20	5.557	92.9	7.165
+Suhomyces	152	0.02827	0.04454	5298	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	31	5.594	82.4	7.123
+Suillus	364	0.02464	0.0325	1.498e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	15	5.555	98.8	7.715
+Sungouiella	129	0.02316	0.04059	5356	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	15	5.752	80.9	7.104
+Suzukiozyma	131	0.02381	0.03927	5435	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	5	5.738	81.7	7.1
+Symbiotaphrina	275	0.03144	0.0431	8748	Ascomycota		Symbiotaphrinales	yeast	animal_endosymbiont	yeast-other	1	5.872	99	7.374
+Symmetrospora	348.5	0.04613	0.05976	7555	Basidiomycota	Cystobasidiomycetes		yeast	epiphyte	Pucciniomycotina-yeast	2	6.104	92.8	7.303
+Sympodiomycopsis	358	0.0519	0.06561	6898	Basidiomycota	Exobasidiomycetes	Microstromatales	dimorphic_yeast	unspecified_symbiotroph	Ustilaginomycotina-dimorphic	2	6.511	95.3	7.272
+Syncephalastrum	377	0.03791	0.05281	9933	Mucoromycota	Mucoromycetes	Mucorales	filamentous_mycelium	soil_saprotroph	filamentous	5	5.272	97.4	7.444
+Syncephalis	951	0.09644	0.1144	9861	Zoopagomycota	Zoopagomycetes	Zoopagales	filamentous_mycelium	mycoparasite	filamentous	1	5.676	86.1	7.467
+Taiozyma	136	0.02362	0.04086	5775	Ascomycota	Saccharomycetes	Phaffomycetales	yeast		Saccharomycotina	7	5.447	87.1	7.078
+Taiwanofungus	284	0.03103	0.03685	9151	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	3	6.321	99.2	7.561
+Takashimella	264	0.03292	0.04646	7834	Basidiomycota	Tremellomycetes	Trichosporonales	yeast	epiphyte	Tremellomycetes	2	6.118	96.55	7.375
+Talaromyces	671	0.05391	0.06828	1.233e+04	Ascomycota	Eurotiomycetes	Eurotiales	filamentous_mycelium	unspecified_saprotroph	filamentous	56	6.153	99.35	7.536
+Taphrina	273	0.04363	0.05623	6331	Ascomycota	Taphrinomycetes	Taphrinales	dimorphic_yeast	plant_pathogen	dimorphic-other	9	5.507	92.4	7.124
+Tardiomyces	155	0.02693	0.04468	5751	Ascomycota	Dipodascomycetes	Dipodascales	yeast		Saccharomycotina	2	6.592	92.35	7.149
+Tephrocybe	673	0.06283	0.0773	1.071e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.135	99.6	7.5
+Teratoramularia	563	0.06021	0.0755	9351	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	epiphyte	filamentous	1	5.453	99.3	7.326
+Teratosphaeria	615	0.06197	0.07457	1e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	7	5.386	99.2	7.478
+Terfezia	324	0.02377	0.03139	1.367e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	ectomycorrhizal	filamentous	2	5.624	98.55	7.836
+Termitomyces	526.5	0.04273	0.05144	1.276e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	10	5.902	98.7	7.771
+Tetracladium	887.5	0.07349	0.09157	1.209e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	2	6.304	99.55	7.571
+Tetrapyrgos	1456	0.05753	0.06828	2.531e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.536	98.5	7.996
+Teunia	269	0.03653	0.05188	7363	Basidiomycota	Tremellomycetes	Tremellales	dimorphic_yeast	soil_saprotroph	dimorphic-other	1	5.65	97.4	7.318
+Teunomyces	156.5	0.02887	0.04405	5349	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	12	5.633	82.35	7.024
+Thecaphora	239	0.03848	0.05039	6211	Basidiomycota	Ustilaginomycetes	Urocystidales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	1	5.936	97.4	7.314
+Thelephora	269.5	0.02258	0.03164	1.195e+04	Basidiomycota	Agaricomycetes	Thelephorales	filamentous_mycelium	ectomycorrhizal	filamentous	2	5.69	98.85	7.583
+Thelonectria	751	0.06296	0.07872	1.193e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	litter_saprotroph	filamentous	3	6.061	99.6	7.647
+Thermoascus	361	0.04081	0.05186	8845	Ascomycota	Eurotiomycetes	Eurotiales	filamentous_mycelium	soil_saprotroph	filamentous	2	5.864	99.5	7.473
+Thermocarpiscus	373	0.04251	0.05471	8774	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium		filamentous	1	5.089	98.9	7.46
+Thermochaetoides	386	0.05231	0.06735	7379	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium		filamentous	1	6.495	99.2	7.454
+Thermomyces	198	0.02771	0.04037	7144	Ascomycota	Eurotiomycetes	Eurotiales	filamentous_mycelium	soil_saprotroph	filamentous	2	6.28	99.1	7.298
+Thermothelomyces	497.5	0.05754	0.06766	8640	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	soil_saprotroph	filamentous	2	6.369	99.35	7.569
+Thermothielavioides	546	0.05944	0.07545	9185	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium		filamentous	1	6.977	99.6	7.567
+Thielaviopsis	327	0.04588	0.06341	7135	Ascomycota	Sordariomycetes	Microascales	filamentous_mycelium	plant_pathogen	filamentous	3	5.792	98.9	7.469
+Thozetella	2165	0.109	0.1296	1.987e+04	Ascomycota	Sordariomycetes	Chaetosphaeriales	filamentous_mycelium	litter_saprotroph	filamentous	1	5.948	99.3	7.862
+Thyridium	1044	0.07631	0.09471	1.358e+04	Ascomycota	Sordariomycetes	Thyridiales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.12	99.4	7.625
+Tilletia	559	0.06365	0.07666	9648	Basidiomycota	Exobasidiomycetes	Tilletiales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	5	6.198	93.1	7.502
+Tilletiaria	185	0.03168	0.04607	5839	Basidiomycota	Exobasidiomycetes	Georgefischeriales	dimorphic_yeast	wood_saprotroph	Ustilaginomycotina-dimorphic	1	5.105	95.9	7.271
+Tilletiopsis	272	0.04376	0.06162	6216	Basidiomycota	Exobasidiomycetes	Entylomatales	filamentous_mycelium	plant_pathogen	filamentous	1	5.862	93.7	7.273
+Tirmania	314	0.02551	0.03591	1.231e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.802	98.4	7.8
+Tolypocladium	475	0.05416	0.07246	8944	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	animal_parasite	filamentous	12	5.567	99.5	7.481
+Tortispora	113	0.02357	0.03504	4811	Ascomycota	Trigonopsidomycetes	Trigonopsidales	yeast	plant_pathogen	Saccharomycotina	7	5.497	81.6	6.963
+Torulaspora	96	0.02034	0.03237	4725	Ascomycota	Saccharomycetes	Saccharomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	20	5.754	76.75	6.965
+Tothia	972	0.07526	0.09136	1.292e+04	Ascomycota	Dothideomycetes	Venturiales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.507	99.1	7.564
+Trametes	641	0.05671	0.07057	1.101e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	16	6.114	99.5	7.556
+Trametopsis	501	0.05119	0.0659	9788	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.993	99.3	7.474
+Tranzscheliella	268	0.04226	0.05646	6341	Basidiomycota	Ustilaginomycetes	Ustilaginales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	1	5.34	96.7	7.265
+Trematosphaeria	1183	0.07561	0.09037	1.565e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.322	99.2	7.679
+Tremella	316	0.03234	0.04475	8718	Basidiomycota	Tremellomycetes	Tremellales	dimorphic_yeast	mycoparasite	dimorphic-other	3	5.384	96.5	7.432
+Triangularia	867	0.07868	0.09663	1.101e+04	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	soil_saprotroph	filamentous	2	5.158	99.2	7.563
+Trichaptum	596	0.04037	0.05083	1.482e+04	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.692	99.35	7.733
+Trichocladium	470.5	0.05023	0.06667	8986	Ascomycota	Sordariomycetes	Sordariales	filamentous_mycelium	unspecified_saprotroph	filamentous	2	6.042	99.05	7.555
+Trichodelitschia	616	0.07459	0.09361	8258	Ascomycota	Dothideomycetes	Phaeotrichales	filamentous_mycelium	dung_saprotroph	filamentous	1	6.025	99.3	7.411
+Trichoderma	727	0.06441	0.07802	1.132e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	mycoparasite	filamentous	81	6.224	99.6	7.583
+Trichoglossum	433	0.04256	0.05966	1.018e+04	Ascomycota	Geoglossomycetes	Geoglossales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.663	98.4	7.555
+Tricholoma	326	0.01584	0.01876	2.058e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	ectomycorrhizal	filamentous	5	6.977	99.2	8.111
+Tricholomella	681	0.05042	0.05479	1.351e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	soil_saprotroph	filamentous	1	5.942	98.9	7.647
+Trichophyton	388	0.04827	0.06183	7886	Ascomycota	Eurotiomycetes	Onygenales	filamentous_mycelium	animal_parasite	filamentous	6	6.39	98.8	7.367
+Trichosporon	412	0.05249	0.06438	7849	Basidiomycota	Tremellomycetes	Trichosporonales	yeast	animal_parasite	Tremellomycetes	11	5.882	96.4	7.373
+Trichothecium	529	0.05332	0.06632	9899	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	3	5.239	99.5	7.515
+Tricladium	1258	0.08796	0.1084	1.43e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium	litter_saprotroph	filamentous	1	6.063	99.7	7.683
+Trigonopsis	130	0.02367	0.03632	5376	Ascomycota	Trigonopsidomycetes	Trigonopsidales	yeast	nectar/tap_saprotroph	Saccharomycotina	4	5.503	90.2	7.057
+Trizodia	527	0.0751	0.09349	7017	Ascomycota			filamentous_mycelium	moss_symbiont	filamentous	1	5.277	97.9	7.322
+Tropicoporus	586	0.05288	0.06633	1.108e+04	Basidiomycota	Agaricomycetes	Hymenochaetales	filamentous_mycelium	wood_saprotroph	filamentous	1	6.172	98.7	7.532
+Truncatella	1160	0.07993	0.09523	1.451e+04	Ascomycota	Sordariomycetes	Amphisphaeriales	filamentous_mycelium	plant_pathogen	filamentous	1	6.597	99.6	7.673
+Tuber	292	0.01822	0.0234	1.492e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	ectomycorrhizal	filamentous	5	5.732	98.5	8.075
+Tulasnella	747	0.05091	0.0622	1.479e+04	Basidiomycota	Agaricomycetes	Cantharellales	filamentous_mycelium	litter_saprotroph	filamentous	3	5.278	98	7.684
+Tylopilus	322.5	0.03128	0.03894	1.022e+04	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	2	5.554	98.35	7.581
+Umbelopsis	420	0.04521	0.05929	9284	Mucoromycota	Umbelopsidomycetes	Umbelopsidales	filamentous_mycelium	soil_saprotroph	filamentous	8	6.028	98.95	7.377
+Ustanciosporium	391	0.05971	0.07468	6548	Basidiomycota	Ustilaginomycetes	Ustilaginales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	1	6.093	96.7	7.305
+Ustilaginoidea	423.5	0.05383	0.06737	7874	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	2	6.7	98.75	7.575
+Ustilago	340	0.05262	0.06754	6526	Basidiomycota	Ustilaginomycetes	Ustilaginales	dimorphic_yeast	plant_pathogen	Ustilaginomycotina-dimorphic	17	5.92	97	7.315
+Ustulina	936	0.06844	0.0745	1.368e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium		filamentous	1	5.919	99.4	7.749
+Vanderwaltozyma	126.5	0.02445	0.03808	5170	Ascomycota	Saccharomycetes	Saccharomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	2	5.275	75.25	7.095
+Vanrija	427	0.04754	0.07154	8960	Basidiomycota	Tremellomycetes	Trichosporonales	yeast	wood_saprotroph	Tremellomycetes	5	6.549	97	7.355
+Vararia	467	0.0462	0.05925	1.011e+04	Basidiomycota	Agaricomycetes	Russulales	filamentous_mycelium	wood_saprotroph	filamentous	1	4.921	98.6	7.561
+Venturia	962	0.08453	0.1013	1.148e+04	Ascomycota	Dothideomycetes	Venturiales	filamentous_mycelium	plant_pathogen	filamentous	8	6.093	99.55	7.639
+Venustampulla	671	0.06192	0.07853	1.084e+04	Ascomycota	Leotiomycetes	Helotiales	filamentous_mycelium		filamentous	1	6.578	99.6	7.527
+Verpa	702.5	0.06107	0.07598	1.15e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	litter_saprotroph	filamentous	2	6.223	99.4	7.655
+Verruconis	337	0.03335	0.04731	1.01e+04	Ascomycota	Dothideomycetes	Venturiales	filamentous_mycelium	animal_parasite	filamentous	1	5.757	99.5	7.501
+Verticillium	888	0.08466	0.1032	1.056e+04	Ascomycota	Sordariomycetes	Glomerellales	filamentous_mycelium	plant_pathogen	filamentous	9	6.568	99.2	7.557
+Vishniacozyma	320	0.04099	0.05265	7806	Basidiomycota	Tremellomycetes	Tremellales	yeast	soil_saprotroph	Tremellomycetes	5	6.239	95.7	7.296
+Volutella	1000	0.0726	0.0893	1.377e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	plant_pathogen	filamentous	1	6.698	99.7	7.655
+Volvariella	450	0.04347	0.05729	1e+04	Basidiomycota	Agaricomycetes	Agaricales	filamentous_mycelium	litter_saprotroph	filamentous	2	6.207	99.3	7.5
+Wallemia	198.5	0.03787	0.04725	5058	Basidiomycota	Wallemiomycetes	Wallemiales	filamentous_mycelium	unspecified_saprotroph	filamentous	4	5.163	86.95	6.985
+Waltergamsia	877	0.07714	0.0928	1.137e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	1	5.681	99.5	7.538
+Waltiozyma	120	0.02125	0.03773	5647	Ascomycota	Saccharomycetes	Phaffomycetales	yeast		Saccharomycotina	5	5.071	81.6	7.103
+Watsoniomyces	332	0.05218	0.06836	6363	Ascomycota	Lichinomycetes	Lichinales	filamentous_mycelium		filamentous	1	4.804	97.3	7.372
+Wenyingozyma	113.5	0.02055	0.03745	5628	Ascomycota	Pichiomycetes	Pichiales	yeast		Saccharomycotina	8	5.687	81.5	7.105
+Westerdykella	727	0.07044	0.08544	1.02e+04	Ascomycota	Dothideomycetes	Pleosporales	filamentous_mycelium	dung_saprotroph	filamentous	3	6.901	99	7.495
+Whalleya	954	0.0756	0.08986	1.262e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.81	99.2	7.684
+Wickerhamia	140	0.02707	0.04313	5171	Ascomycota	Pichiomycetes	Serinales	yeast	dung_saprotroph	Saccharomycotina	1	6.216	81.2	7.12
+Wickerhamiella	113	0.02365	0.0401	4820	Ascomycota	Dipodascomycetes	Dipodascales	yeast	nectar/tap_saprotroph	Saccharomycotina	11	5.561	79.4	6.967
+Wickerhamomyces	149	0.02545	0.0424	5877	Ascomycota	Saccharomycetes	Phaffomycetales	yeast	litter_saprotroph	Saccharomycotina	19	5.533	86.5	7.087
+Wilcoxina	344	0.02121	0.0259	1.622e+04	Ascomycota	Pezizomycetes	Pezizales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.686	98.8	8.067
+Wilhelmdebeerea	261	0.03049	0.04509	8561	Ascomycota	Sordariomycetes	Ophiostomatales	filamentous_mycelium		filamentous	1	5.149	99.2	7.498
+Wilhelminamyces	151.5	0.02819	0.04533	5368	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	2	5.797	82.15	7.091
+Williopsis	132	0.02265	0.03927	5869	Ascomycota	Saccharomycetes	Phaffomycetales	yeast	soil_saprotroph	Saccharomycotina	13	5.448	85.9	7.083
+Wolfiporia	331.5	0.02668	0.03417	1.242e+04	Basidiomycota	Agaricomycetes	Polyporales	filamentous_mycelium	wood_saprotroph	filamentous	2	6.601	99.6	7.788
+Xenoacremonium	626	0.04502	0.05969	1.39e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium	wood_saprotroph	filamentous	1	5.75	99.5	7.616
+Xenopyricularia	917	0.09648	0.1154	9505	Ascomycota	Sordariomycetes	Magnaporthales	filamentous_mycelium	plant_pathogen	filamentous	1	6.808	99.3	7.612
+Xenosphaeropsis	551	0.05944	0.07832	9270	Ascomycota	Leotiomycetes	Phacidiales	filamentous_mycelium		filamentous	1	5.509	99.6	7.491
+Xerocomellus	321	0.03322	0.04274	9662	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	4.744	98.8	7.499
+Xerocomus	314	0.03508	0.04413	8950	Basidiomycota	Agaricomycetes	Boletales	filamentous_mycelium	ectomycorrhizal	filamentous	1	5.189	98.5	7.477
+Xingzhongia	162	0.02743	0.04303	5917	Ascomycota	Saccharomycetes	Phaffomycetales	yeast		Saccharomycotina	2	5.596	85.1	7.078
+Xiuguozyma	115	0.02219	0.03685	5183	Ascomycota	Pichiomycetes	Pichiales	yeast		Saccharomycotina	1	5.58	80.6	6.965
+Xylaria	919	0.07395	0.0881	1.232e+04	Ascomycota	Sordariomycetes	Xylariales	filamentous_mycelium	wood_saprotroph	filamentous	35	5.558	99.4	7.666
+Xylogone	1065	0.06584	0.08018	1.618e+04	Ascomycota	Leotiomycetes		filamentous_mycelium	mycoparasite	filamentous	1	6.906	99.8	7.7
+Xylona	237	0.03135	0.04391	7561	Ascomycota	Xylonomycetes	Xylonales	filamentous_mycelium	foliar_endophyte	filamentous	1	6.28	99.9	7.386
+Yamadazyma	150.5	0.02745	0.04322	5518	Ascomycota	Pichiomycetes	Serinales	yeast	nectar/tap_saprotroph	Saccharomycotina	50	5.725	80.6	7.047
+Yarrowia	268	0.04161	0.07012	6401	Ascomycota	Dipodascomycetes	Dipodascales	yeast	unspecified_saprotroph	Saccharomycotina	19	6.469	89.7	7.327
+Zalaria	377	0.04405	0.05748	8559	Ascomycota	Dothideomycetes	Dothideales	yeast	unspecified_saprotroph	yeast-other	1	5.947	99.6	7.349
+Zalerion	529	0.05022	0.06541	1.053e+04	Ascomycota	Sordariomycetes	Lulworthiales	filamentous_mycelium	litter_saprotroph	filamentous	1	4.824	98.8	7.763
+Zancudomyces	597	0.07769	0.09761	7684	Kickxellomycota	Harpellomycetes	Harpellales	filamentous_mycelium	animal_endosymbiont	filamentous	1	6.402	75	7.433
+Zarea	1232	0.08861	0.105	1.39e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	1	5.188	99.7	7.648
+Zasmidium	1210	0.07962	0.09427	1.525e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	4	5.919	99.45	7.58
+Zelopaecilomyces	735	0.07231	0.08737	1.016e+04	Ascomycota	Sordariomycetes	Hypocreales	filamentous_mycelium		filamentous	1	6.813	99.5	7.6
+Zhuliangozyma	147	0.02739	0.04491	5366	Ascomycota	Pichiomycetes	Serinales	yeast		Saccharomycotina	1	5.017	80.8	7.085
+Zopfia	1189	0.05388	0.06258	2.207e+04	Ascomycota	Dothideomycetes		filamentous_mycelium	unspecified_saprotroph	filamentous	1	6.196	99.2	8.182
+Zygoascus	146	0.02608	0.04338	5631	Ascomycota	Dipodascomycetes	Dipodascales	yeast	nectar/tap_saprotroph	Saccharomycotina	8	5.845	90.75	7.073
+Zygosaccharomyces	112	0.02278	0.03476	4860	Ascomycota	Saccharomycetes	Saccharomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	7	5.523	75.9	7.007
+Zygotorulaspora	103	0.02065	0.03244	4905	Ascomycota	Saccharomycetes	Saccharomycetales	yeast	nectar/tap_saprotroph	Saccharomycotina	7	5.934	76.2	7.02
+Zymoseptoria	898	0.07195	0.08742	1.159e+04	Ascomycota	Dothideomycetes	Mycosphaerellales	filamentous_mycelium	plant_pathogen	filamentous	5	5.046	99.4	7.515

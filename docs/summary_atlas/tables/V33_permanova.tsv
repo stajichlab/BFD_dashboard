@@ -1,0 +1,4 @@
+model	pseudo_F	R2	p	n	n_groups	n_perm
+CLASS	55.19	0.5674	0.002	1121	27	499
+growth_form	91.86	0.1411	0.002	1121	3	499
+growth_form | CLASS (permutations within class)	91.86	0.1411	0.858	1121	3	499

@@ -1,0 +1,9 @@
+group	n_genera	median_pcw_per_1000	ci_lo	ci_hi
+plant_pathogen	223	11.32	9.777	11.99
+wood_saprotroph	198	9.466	9.111	9.953
+litter_saprotroph	82	10.74	9.445	12.02
+soil_saprotroph	115	5.955	3.533	8.545
+ectomycorrhizal	51	3.585	2.762	4.136
+animal_parasite	72	2.313	1.145	3.384
+yeast (growth form)	150	1.475	1.347	1.633
+filamentous (growth form)	829	9.642	9.261	10.16
