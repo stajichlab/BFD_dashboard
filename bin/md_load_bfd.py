@@ -137,6 +137,12 @@ def comment_for(tables: Path, name: str, stem: str):
     return text or None
 
 
+def set_comment(c, tables: Path, name: str, p: Path):
+    txt = comment_for(tables, name, p.name.removesuffix(".parquet"))
+    if txt:
+        c.sql(f"COMMENT ON TABLE \"{name}\" IS '" + txt.replace("'", "''") + "'")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--tables", type=Path, required=True)
@@ -175,6 +181,7 @@ def main():
         if name in existing:
             have = c.sql(f"SELECT count(*) FROM {a.db}.main.\"{name}\"").fetchone()[0]
             if have == want:
+                set_comment(c, a.tables, name, p)  # backfill/refresh comment on reruns
                 print(f"skip  {name:36s} {want:>14,d} rows (already loaded)", flush=True)
                 continue
             print(f"redo  {name:36s} have {have:,d} != {want:,d}", flush=True)
@@ -184,9 +191,7 @@ def main():
             have = c.sql(f"SELECT count(*) FROM \"{name}\"").fetchone()[0]
             if have != want:
                 raise RuntimeError(f"row count {have:,d} != source {want:,d}")
-            txt = comment_for(a.tables, name, p.name.removesuffix(".parquet"))
-            if txt:
-                c.sql(f"COMMENT ON TABLE \"{name}\" IS '" + txt.replace("'", "''") + "'")
+            set_comment(c, a.tables, name, p)
             dt = time.time() - t0
             print(f"load  {name:36s} {want:>14,d} rows {size/1e9:7.2f} GB {dt:7.0f}s "
                   f"({size/1e6/max(dt,1):.0f} MB/s)", flush=True)
