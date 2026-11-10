@@ -34,14 +34,54 @@ import duckdb
 # Excluded unless --include-swissprot / explicitly listed with --only.
 DEFAULT_EXCLUDE = ["swissprot_hits", "*.bak*", "*.csv*", "*.md", "_*"]
 
+# Genome keys: ASMID (assembly accession) and LOCUSTAG (= species_prefix = the
+# prefix of every gene/transcript/protein id, e.g. 'F2D1C788_000724-T1' -> 'F2D1C788').
+_G = "Genome key species_prefix = species.LOCUSTAG."
+_ID = "Genome = split_part(<id>,'_',1) = species.LOCUSTAG."
 DEFAULT_COMMENTS = {
-    "species": "One row per genome. Taxonomy PHYLUM..SPECIES. Keys: ASMID; LOCUSTAG = protein_id prefix = species_prefix.",
-    "samples": "Per-genome sample metadata (BioProject, strain, translation table). Key ASMID.",
-    "asm_stats": "Assembly statistics per genome (ASMID): N50/L50, GC, repeat masking, telomeres, annotation status.",
-    "busco_genome": "BUSCO completeness per genome (ASMID).",
-    "pfam": "Pfam hmmsearch domain hits, one row per domain. Genome = split_part(protein_id,'_',1) = species.LOCUSTAG.",
-    "cazy_overview": "dbCAN CAZyme calls per protein. species_prefix = species.LOCUSTAG.",
-    "gene_info": "Gene coordinates. LOCUSTAG joins species.",
+    # per-genome
+    "species": "One row per genome. Taxonomy PHYLUM..SPECIES (SUBPHYLUM is mostly empty; use CLASS). Keys: ASMID; LOCUSTAG = protein_id prefix = species_prefix.",
+    "samples": "Per-genome sample metadata: input species name, strain, BioProject, NCBI taxid, BUSCO lineage, translation table, taxonomy. Keys ASMID, LOCUSTAG.",
+    "asm_stats": "Assembly statistics per genome (ASMID): contig count, total length, N50/L50, N90/L90, GC, gaps, repeat-masked bases, T2T scaffolds, telomere counts, annotation status.",
+    "busco_genome": "BUSCO completeness per genome (ASMID): complete/single/duplicated/fragmented/missing %. All scored with fungi_odb12; budding-yeast classes (Saccharomycetes, Pichiomycetes) score ~75-80% from real gene loss, not poor assembly.",
+    "telomere_summary": "Telomere repeat summary per genome (ASMID, LOCUSTAG): scaffolds with telomeres at one/both ends, tract counts and lengths, 5'/3' and terminal/internal counts, dominant repeat monomer.",
+    "telomere_tracts": "One row per telomeric repeat tract: scaffold, end (5'/3'), strand, monomer, repeat count, length, coordinates, whether terminal, distance to scaffold end, sequence. Keys ASMID, LOCUSTAG.",
+    "aa_freq": "Proteome amino-acid composition: one row per genome x amino acid, frequency = fraction of all residues. " + _G,
+    "codon_freq": "Codon usage: one row per genome x codon, frequency = fraction of all codons in CDS. " + _G,
+    "wgd_ks_summary": "Paralog Ks summary per genome: pair/family/node counts, hybrid flag, identical-copy groups. " + _G,
+    # gene models
+    "gene_info": "One row per gene: coordinates (chrom, start, end, strand) and gene_type. LOCUSTAG joins species.",
+    "gene_transcripts": "One row per transcript: gene_id, coordinates, partial flag, start/stop codon presence, CDS length, md5. " + _ID,
+    "gene_proteins": "One row per protein: gene_id, protein_id, transcript_id, length (aa), md5 of sequence. " + _ID,
+    "gene_exons": "One row per exon: transcript_id, exon order, coordinates, GC content. " + _ID,
+    "gene_CDS": "One row per CDS segment: transcript_id, order, coordinates, GC content. " + _ID,
+    "gene_introns": "One row per intron: transcript_id, intron number, coordinates, 5'/3' splice dinucleotides, GC, codon phase. " + _ID,
+    "gene_intergenic_distances": "Distance (bp) between each pair of adjacent genes (left_gene, right_gene). " + _G,
+    "gene_trnas": "tRNA genes: gene_id, amino acid, anticodon. " + _ID,
+    "infernal_rfam": "Infernal cmscan hits to Rfam non-coding RNA models: model name/accession, contig, coordinates, strand, e-value, score. " + _G,
+    # protein domains and families
+    "pfam": "Pfam hmmsearch domain hits, one row per domain: pfam_id (name), pfam_acc, e-values, scores, HMM/alignment/envelope coordinates. Genome = split_part(protein_id,'_',1) = species.LOCUSTAG.",
+    "tf_inventory": "Transcription-factor inventory: proteins with TF-defining Pfam domains, assigned tf_family, domain e-value and score. " + _G,
+    "cazy_overview": "dbCAN CAZyme calls, one row per protein: CAZy family, subfamily, EC, predicted substrate, number of dbCAN tools agreeing (toolcount). " + _G,
+    "cazy_cazymes_hmm": "dbCAN HMM hits to CAZy families: HMM_id, profile/protein lengths, e-value, coordinates, coverage. " + _G,
+    "merops": "MEROPS peptidase BLAST hits: merops_id, % identity, alignment stats, e-value, bitscore. " + _G,
+    # localization and protein properties
+    "signalp_signal_peptide": "SignalP predicted signal peptides (secretion): peptide start/end, probability. Only proteins with a predicted signal peptide are listed. " + _G,
+    "targetP": "TargetP targeting predictions: only proteins predicted SP (secretory signal peptide) or mTP (mitochondrial transit peptide) are listed; absent = no targeting peptide. Probability, cleavage site, motif. " + _G,
+    "wolfpsort": "WoLF PSORT localization predictions: localization class and score per protein. " + _G,
+    "predgpi": "PredGPI GPI-anchor predictions (GFF-style rows: feature, coordinates, score, attributes). " + _G,
+    "tmhmm": "TMHMM transmembrane helix predictions per protein: length, expected TM residues (ExpAA), PredHel count, topology string. " + _G,
+    "idp": "Intrinsically disordered regions: one row per region with start, end, length, mean disorder score. " + _G,
+    "idp_summary": "Per-protein disorder summary: disordered residues, IDP_fraction, protein length. " + _G,
+    # paralogs / WGD
+    "wgd_ks": "Paralog pair Ks estimates (wgd): family, genes, dN, dS, dN/dS, alignment stats. dS is the synonymous divergence used for WGD peaks. " + _G,
+    "wgd_ks_nodes": "wgd gene-family tree nodes: pair counts, pass/sample flags, mean/min/max dS, mean identity. " + _G,
+    # SwissProt
+    "swissprot_best": "Best SwissProt DIAMOND hit per protein, with subject annotation: accession, protein name, % identity/coverage x10 (divide by 10), bitscore, -log10 e-value. " + _G,
+    "swissprot_hits": "All ranked SwissProt DIAMOND hits per protein (rk = rank). pident/qcov/scov stored x10. Join sp_id to swissprot_subject. " + _G,
+    "swissprot_subject": "SwissProt subject proteins referenced by hits (sp_id): accession, name, gene, organism, GO terms, EC, InterPro, Pfam.",
+    "swissprot_subject_summary": "Per SwissProt subject (sp_id): number of hits, number of genomes hit, best hits, max bitscore and identity (x10).",
+    "swissprot_annot": "SwissProt annotation by accession: protein and gene names, organism, GO terms, EC numbers, InterPro, Pfam, length.",
 }
 
 
