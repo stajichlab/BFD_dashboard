@@ -1,0 +1,144 @@
+# Functional and comparative analyses: plans and findings
+
+Started: 2026-11-10. This page tracks the exploratory analyses run against the full BFD database in MotherDuck, and the plan to turn the useful ones into HPCC jobs. Results are added as each analysis finishes.
+
+## Data access and conventions
+
+- **Source:** MotherDuck database `bfd` (36 tables, all of `Fungi_BFD_runs/tables` except `swissprot_hits`). Loaded by `bin/md_load_bfd.py` / `workflows/md_load_bfd.sh`. Every table has a comment giving its genome key and caveats.
+- **Scratch:** intermediate tables go in the MotherDuck database `bfd_scratch`, never in `bfd`. Prefix by analysis:
+
+  | Prefix | Analysis |
+  |---|---|
+  | `kw_` | Kingdom-wide domain survey (B) |
+  | `ao_` | *Antarctolithica obscura* characterization (C) |
+  | `rf_` | Functional classifier (D) |
+  | none | Kickxellomycota and research agenda (A) |
+
+- **Statistics:** follow the atlas conventions in [summary_atlas/index.md](summary_atlas/index.md):
+  - species representatives (7,435) and genus representatives (1,669);
+  - genus medians as the replication unit for cross-clade tests;
+  - effect sizes first;
+  - quality filters Q-busco-rel, Q-dup, Q-n50, Q-model.
+- **Known data caveats** (also in the table comments):
+
+  | Item | Caveat |
+  |---|---|
+  | `tmhmm` | Lists only proteins with at least one TM helix (about 20% of proteins) |
+  | `targetP` | 125 genomes; may be replaced by DeepLoc |
+  | `infernal_rfam` | 14 genomes |
+  | `pfam` | 23,410 genomes; 42 genomes with proteins have no Pfam rows |
+  | BUSCO (`fungi_odb12`) | About 75–80% in budding yeasts, from real gene loss |
+  | `SUBPHYLUM` | Mostly empty; use CLASS and ORDER |
+
+- **End state:** the analyses that prove useful become restartable SLURM jobs in `workflows/` that read the parquet tables on HPCC directly, in the same way as the atlas jobs J0–J10. MotherDuck is used for exploration and for MCP access, not as the production compute.
+
+## A. Review of current ideas and Kickxellomycota deep dive
+
+**Status:** running (Fable agent).
+
+**Questions**
+- How do Kickxellomycota reduce genome size and intron content while staying mostly filamentous?
+- Is the reduction concentrated in particular orders or lifestyles: Harpellales (gut symbionts), Dimargaritales (mycoparasites), or saprotrophs?
+- Is intron reduction a matter of fewer introns or shorter introns?
+- Which gene families are lost? Candidates: spliceosome and NMD, RNAi, DNA methylation, transposable-element domains, DNA repair.
+- Are these losses convergent with yeast reductions?
+
+The agent also reviews the current dashboard and atlas ideas and proposes a ranked research agenda: gene-family gain, loss and expansion; candidate horizontal transfers; how to define lineage-restricted Pfam domains robustly; and what the dashboard and MCP path need.
+
+**Findings:** pending.
+
+## B. Kingdom-wide survey of domain and functional-class change
+
+**Status:** running (Fable agent).
+
+**Approach:** a genome × Pfam count matrix over species representatives (`bfd_scratch.kw_*`), used to find:
+- lineage-restricted domains;
+- loss modules (domains lost together independently in several lineages);
+- family expansions measured against proteome size, and whether each tracks lifestyle or taxonomy;
+- shifts in CAZy, MEROPS, TF, secretome and disorder classes.
+
+From these it distills 6–10 patterns worth deeper study.
+
+**Findings:** pending.
+
+## C. *Antarctolithica obscura* (taxid 3698444)
+
+**Status:** running (Fable agent).
+
+**The genomes:** 8 MAGs from the `FM_MARS` samples. They are unplaced within Ascomycota (no class, order or family), 7.3–10.5 Mb, with GC about 49%.
+
+| LOCUSTAG | Strain | Size (Mb) | Contigs | N50 | BUSCO complete |
+|---|---|---|---|---|---|
+| FF1FC3B3 | Mars-82.9 | 9.76 | 89 | 181,073 | 93.2% |
+| F46C92EF | Mars-17.30 | 9.60 | 124 | 127,517 | 93.0% |
+| F7B4B958 | Mars-52.25 | 9.51 | 166 | 91,831 | 92.8% |
+| F7E47E53 | Mars-62.17 | 10.47 | 363 | 46,728 | 92.1% |
+| FA7C05DE | Mars-55.28 | 9.25 | 620 | 20,473 | 85.7% |
+| F1D0D74C | Mars-14.71 | 7.82 | 213 | 63,415 | 77.9% |
+| FD4728EA | Mars-9.1 | 7.46 | 644 | 14,431 | 63.5% |
+| F3948469 | Mars-19.38 | 7.25 | 735 | 11,512 | 62.5% |
+
+**Approach**
+1. **MAG consistency and contamination.** Rely on the four MAGs at about 93% BUSCO. Count a gene as absent only if it is absent from all four.
+2. **Per-feature comparison** against Ascomycota species representatives, grouped by class. Feature blocks:
+   - genome and gene structure;
+   - codon and amino-acid usage;
+   - tRNA genes;
+   - Pfam, CAZy, MEROPS and TF profiles;
+   - secretome, disorder and localization;
+   - paralogs and telomeres;
+   - SwissProt best-hit taxonomy.
+3. **Statistics for each block:**
+   - ordination (PCoA) with PERMANOVA;
+   - percentiles within each class, with Kruskal–Wallis and ANOVA tests;
+   - a random-forest class prediction with feature importance.
+4. **Distinctive content:** present in every good MAG but rare in other Ascomycota, or near-universal in Ascomycota but missing from every good MAG.
+5. **Phylogenomic placement:** a plan, using `workflows/run_phyling.sh`.
+
+Scripts and outputs on HPCC are in `~/antarctolithica/`.
+
+**Findings:** pending.
+
+## D. Functional classifier for unknown genomes (planned)
+
+**Status:** queued (Fable agent). It starts after C finishes, reusing C's feature matrices.
+
+**Goal:** given a genome annotated by the BFD pipeline, predict:
+- (a) its taxonomic placement from functional content;
+- (b) its ecology: yeast vs. filamentous, saprotroph, plant pathogen, animal parasite, animal symbiont.
+
+**Features**, built once for species representatives and stored in `bfd_scratch.rf_*` and as parquet on HPCC:
+- Pfam presence, and counts normalized to proteome size;
+- CAZy families and substrates, MEROPS families, TF families;
+- secretome fraction, disorder and localization;
+- gene structure: introns, gene density, intergenic distance, protein length from `gene_proteins`;
+- codon and amino-acid usage (CLR-transformed) and tRNA counts.
+
+**Design**
+
+| Step | Labels | Cross-validation | Output |
+|---|---|---|---|
+| Taxonomy | PHYLUM, CLASS, ORDER | Grouped by genus, so the same genus is never in both training and test data | Accuracy by rank, plus a novelty score (distance to nearest training genomes, or forest proximity) so new lineages are flagged rather than forced into a class |
+| Ecology | FungalTraits genus-level labels plus the atlas override file | **Leave one order or class out**, compared with a taxonomy-only baseline | Shows whether the ecology signal generalizes beyond ancestry |
+| Incompleteness | n/a | Randomly drop 10–40% of genes during training | Models that handle MAGs and fragmented assemblies |
+| Explanation | n/a | n/a | Permutation importance or SHAP for each prediction |
+
+- **Which ecology traits are testable:**
+
+  | Trait | Origins | Testable? |
+  |---|---|---|
+  | Yeast vs. filamentous | Many independent origins | Testable |
+  | Animal parasite | Several origins | Testable |
+  | Saprotroph vs. plant pathogen | n/a | Feasible, but the labels are noisy |
+  | Animal symbiont | Few origins | Probably too few to generalize |
+
+- **First unknowns to test:** the 8 *Antarctolithica* MAGs, including the two at about 63% BUSCO.
+- **Pilot deliverables:**
+  - a script that builds the feature matrix;
+  - training and evaluation scripts;
+  - a per-trait accuracy table (blocked vs. random cross-validation);
+  - a CLI that classifies a new genome.
+- **Production path:** an HPCC SLURM job (`workflows/`) that rebuilds the matrix from the parquet tables and retrains, with the model artifact versioned with each data release. Later the classifier could be exposed as an MCP tool or a dashboard view.
+- **Later:** add phylogenetic eigenvectors once the genus-level tree from atlas PLAN is finished, to separate ecology from ancestry explicitly.
+
+**Findings:** pending.
