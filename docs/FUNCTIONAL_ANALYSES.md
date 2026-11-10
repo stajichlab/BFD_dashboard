@@ -65,7 +65,28 @@ The agent also reviews the current dashboard and atlas ideas and proposes a rank
 
 From these it distills 6–10 patterns worth deeper study.
 
-**Findings:** pending.
+**Status:** done 2026-11-10. Full report with 9 figures and cited methods: [analyses/kingdom_domains/](analyses/kingdom_domains/README.md).
+
+**Scope:** 7,411 representative genomes, collapsed to 1,173 quality-filtered genera, across 15,052 Pfam domains plus CAZy, MEROPS and TF sets. Nothing is phylogenetically corrected yet (the genus tree is pending), so class and order fixed effects and counts of independent lineages stand in for it. Loss calls in lineages with BUSCO below 80% are provisional.
+
+**Findings**
+1. **Taxonomy dominates lifestyle.** After normalizing to proteome size, class explains a median 44% of between-genus variance per Pfam family; lifestyle within order explains 2.4%. CAZy families are the exception (median 5.4%; GH10 19%).
+2. **Dikarya-stem loss.** 203 ancestral domains are in ≤5% of Dikarya genera, and 191 of them are retained in ≥50% of Mucoromycota genera. Examples: B12-dependent enzymes, Integrator, the Fanconi core, KICSTOR, SMG1, DNA-PKcs.
+3. **Convergent reductive loss.** Fraction of 3,568 core domains absent: Microsporidia 62%, *Hanseniaspora* 28%, *Pneumocystis* 23%. Loss sets overlap 3–11× more than chance. 58 co-absence modules, including complex I, β-oxidation plus glyoxylate cycle, molybdenum cofactor (≥9 lineages), urease, RNAi and sulfate assimilation.
+4. **Fatty-acid synthase is absent** in all *Malassezia*, *Pneumocystis*, Glomeromycota and Microsporidia species, against 93–100% elsewhere.
+5. **Pezizomycotina expansion** of HET, NACHT, ankyrin, CFEM and rhodopsin-like 7TM families. These follow taxonomy (class explains 49–91% of variance) rather than lifestyle (≤8%).
+6. **Ectomycorrhizal contraction** extends beyond plant-cell-wall CAZymes to SDR, GST, aldo-keto reductase and methyltransferase families (20–30% fewer within orders).
+7. **Glomeromycota:** median 2,020 kinase proteins per genome, plus Sel1 and TLDc expansions.
+8. **Lineage-restricted domains:** 1,041 in total, including large unknown families (Basidiomycota DUF6534; Pezizomycotina DUF8004 and DUF8035) and WRKY in Mucoromycota. *S. cerevisiae*-biased Pfam models produce artefactual "Saccharomycetales-restricted" domains.
+9. **Kickxellomycota:** Ku70/80 is in only 4% of 169 species, against 85–100% elsewhere. Needs tblastn confirmation, because BUSCO is about 71% in this group.
+
+**Next (all need the genus tree):**
+- Dollo/Count gain-loss reconstruction for the Dikarya-stem and convergent losses;
+- phylogenetic logistic regression for FAS loss;
+- Pagel correlated-evolution tests for the MoCo, sulfate and urease modules;
+- PGLS and sister-pair tests for ECM contraction;
+- CAFE for the NLR, 7TM and ankyrin expansions;
+- tblastn validation of key absences.
 
 ## C. *Antarctolithica obscura* (taxid 3698444)
 
