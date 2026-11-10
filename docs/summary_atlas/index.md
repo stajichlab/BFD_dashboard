@@ -39,6 +39,7 @@ Hypotheses about micro-to-macro shifts in fungal organization (yeasts, fruit bod
 | [S1](HS_S1_signaling_scaling.md) | Signaling-gene counts scale with proteome size, not fruit-body complexity (falsification test) | built |
 | [C1](HS_C1_nlr_allorecognition.md) | NLR allorecognition repertoires and the septate heterokaryotic habit | built |
 | [C3](HS_C3_woronin_fusion.md) | Woronin-body and cell-fusion gene sets across organization shifts | built |
+| [I](HS_I_intron_position.md) | Intron position within proteins, genome reduction and regulatory retention | pilot (MotherDuck queries, `bin/atlas/sql/md_intron_position.sql`) |
 
 ## Data coverage
 
