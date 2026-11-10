@@ -1,7 +1,8 @@
 """Shared helpers: comparison set, block transforms, colours."""
-import sys, numpy as np, pandas as pd
-sys.path.insert(0, '/Users/jstajich/projects/BFD_dashboard')
-FIG = '/private/tmp/claude-501/-Users-jstajich-projects-BFD-dashboard/929a1015-d227-4ee9-8529-1b3cbd7701c1/scratchpad'
+import os, sys, numpy as np, pandas as pd
+# Run from AO_BASE (the working dir holding data/); repo root found relative to this file.
+sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parents[4]))
+FIG = os.environ.get('AO_BASE', '.')  # where figures are written
 U = pd.read_parquet('data/ao_set.parquet').set_index('LOCUSTAG')
 HQ = ['FF1FC3B3', 'F46C92EF', 'F7B4B958', 'F7E47E53']
 AO = list(U.index[U.role == 'AO'])
