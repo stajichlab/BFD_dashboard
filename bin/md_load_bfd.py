@@ -70,7 +70,7 @@ DEFAULT_COMMENTS = {
     "targetP": "PARTIAL COVERAGE: only 125 genomes as of 2026-11 (check species_prefix before comparing taxa; use signalp_signal_peptide for secretion across ~23k genomes). TargetP targeting predictions: only proteins predicted SP (secretory signal peptide) or mTP (mitochondrial transit peptide) are listed; absent = no targeting peptide. Probability, cleavage site, motif. " + _G,
     "wolfpsort": "WoLF PSORT localization predictions: localization class and score per protein. " + _G,
     "predgpi": "PredGPI GPI-anchor predictions (GFF-style rows: feature, coordinates, score, attributes). " + _G,
-    "tmhmm": "TMHMM transmembrane helix predictions per protein: length, expected TM residues (ExpAA), PredHel count, topology string. " + _G,
+    "tmhmm": "TMHMM transmembrane helix predictions: only proteins with >=1 predicted helix are listed (about 20% of proteins); absent = no TM helix. Do not use for protein length of all proteins (use gene_proteins). Columns: len, ExpAA, First60, PredHel, Topology. " + _G,
     "idp": "Intrinsically disordered regions: one row per region with start, end, length, mean disorder score. " + _G,
     "idp_summary": "Per-protein disorder summary: disordered residues, IDP_fraction, protein length. " + _G,
     # paralogs / WGD
