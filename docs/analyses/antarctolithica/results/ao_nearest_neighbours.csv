@@ -1,0 +1,166 @@
+block,rank,dist,LOCUSTAG,CLASS,ORDER,SPECIES,genome_mb
+struct,1,2.2812090108753096,FB5CF295,Taphrinomycetes,Taphrinales,Protomyces arabidopsidicola,11.827508
+struct,2,3.710014394441641,F4F8C5D9,Dipodascomycetes,Dipodascales,Casaregolazyma lundiana,12.26649
+struct,3,4.155728370519018,FD36131F,Dipodascomycetes,Dipodascales,Diddensiella caesifluorescens,11.820257
+struct,4,4.270372781829756,F929528F,Taphrinomycetes,Taphrinales,Taphrina wiesneri,13.085382
+struct,5,4.31029025878169,FE83717A,Dipodascomycetes,Dipodascales,Trichomonascaceae sp. VP_10,11.587717
+struct,6,4.42806385724798,FC5854E8,Dipodascomycetes,Dipodascales,Trichomonascaceae sp. B5901,11.597012
+struct,7,4.8031915431830114,F08B0915,Saccharomycetes,Phaffomycetales,Candida freyschussii,10.90907
+struct,8,4.94309951122195,F634A7E4,Dipodascomycetes,Dipodascales,Blastobotrys adeninivorans,12.132449
+struct,9,5.04910403441343,FEA343C5,Pichiomycetes,Pichiales,Komagataella phaffii,9.325904
+struct,10,5.2295631388983566,F0BC45A2,Dipodascomycetes,Dipodascales,Groenewaldozyma tartarivorans,12.663212
+struct,11,5.273229572570794,FEB86B74,Trigonopsidomycetes,Trigonopsidales,Tortispora starmeri,9.285433
+struct,12,5.344297534111064,FC22DC67,Dipodascomycetes,Dipodascales,Spencermartinsiella ligniputridi,13.876111
+struct,13,5.552712532204311,F461ECF8,Pichiomycetes,Pichiales,Kuraishia capsulata,11.371246
+struct,14,5.618215443711854,F6365D46,Saitoellomycetes,Saitoellales,Saitoella complicata,14.136186
+struct,15,5.719211196001744,FAD3C0EC,Taphrinomycetes,Taphrinales,Savitreella phatthalungensis,12.735194
+struct_all,1,2.3602686249404483,FB5CF295,Taphrinomycetes,Taphrinales,Protomyces arabidopsidicola,11.827508
+struct_all,2,3.788659448651661,F4F8C5D9,Dipodascomycetes,Dipodascales,Casaregolazyma lundiana,12.26649
+struct_all,3,4.254591667078582,FD36131F,Dipodascomycetes,Dipodascales,Diddensiella caesifluorescens,11.820257
+struct_all,4,4.339018182306163,F929528F,Taphrinomycetes,Taphrinales,Taphrina wiesneri,13.085382
+struct_all,5,4.3816547672723,FE83717A,Dipodascomycetes,Dipodascales,Trichomonascaceae sp. VP_10,11.587717
+struct_all,6,4.497667880987722,FC5854E8,Dipodascomycetes,Dipodascales,Trichomonascaceae sp. B5901,11.597012
+struct_all,7,4.964152242559194,F08B0915,Saccharomycetes,Phaffomycetales,Candida freyschussii,10.90907
+struct_all,8,5.141900529074524,FEA343C5,Pichiomycetes,Pichiales,Komagataella phaffii,9.325904
+struct_all,9,5.158800329860007,F634A7E4,Dipodascomycetes,Dipodascales,Blastobotrys adeninivorans,12.132449
+struct_all,10,5.2912942118683395,FEB86B74,Trigonopsidomycetes,Trigonopsidales,Tortispora starmeri,9.285433
+struct_all,11,5.40976621400372,F0BC45A2,Dipodascomycetes,Dipodascales,Groenewaldozyma tartarivorans,12.663212
+struct_all,12,5.501807658110484,FC22DC67,Dipodascomycetes,Dipodascales,Spencermartinsiella ligniputridi,13.876111
+struct_all,13,5.589234066205344,F461ECF8,Pichiomycetes,Pichiales,Kuraishia capsulata,11.371246
+struct_all,14,5.77147327169256,FAD3C0EC,Taphrinomycetes,Taphrinales,Savitreella phatthalungensis,12.735194
+struct_all,15,5.935850414299251,F6365D46,Saitoellomycetes,Saitoellales,Saitoella complicata,14.136186
+codon,1,0.8586467599002514,F93AFDF8,Lecanoromycetes,Peltigerales,Lobaria immixta,55.886429
+codon,2,0.8880050080589661,FDD7181F,Eurotiomycetes,Eurotiales,Trichocomaceae sp. PYS4502,29.089681
+codon,3,0.947851268205258,FC3C0763,Eurotiomycetes,Eurotiales,Eurotiales sp. R13A2,34.455427
+codon,4,0.94955391507377,F2CA1079,Eurotiomycetes,Eurotiales,Eurotiales sp. R3503,34.242035
+codon,5,0.9592587307169864,FA787783,Lecanoromycetes,Peltigerales,Pseudocyphellaria aurata,42.928881
+codon,6,1.0048282837957228,F5C1CC8D,Leotiomycetes,,Oidiodendron maius,46.426256
+codon,7,1.009416266825931,F19F6843,Lecanoromycetes,Baeomycetales,Xylographa pallens,29.159458
+codon,8,1.0271112415513417,FD0AD664,Lecanoromycetes,Baeomycetales,Lambiella insularis,36.292339
+codon,9,1.0363625644243515,F7C862B8,Lecanoromycetes,Peltigerales,Massalongia carnosa,49.705174
+codon,10,1.041896065162334,F65D1F27,Dothideomycetes,Mycosphaerellales,Acidomyces sp. richmondensis,29.347235
+codon,11,1.0525608260551305,F624A265,Geoglossomycetes,Geoglossales,Sabuloglossum arenarium,32.533234
+codon,12,1.0706861565084367,F2446B61,Eurotiomycetes,Onygenales,Spiromastix sp. SCSIO F190,38.085455
+codon,13,1.0769752247094255,FDA65162,Dothideomycetes,,Zopfia rhizophila,152.129996
+codon,14,1.0829162633677287,FE1053B4,Eurotiomycetes,Onygenales,Amauroascus niger,26.662059
+codon,15,1.0839650291634564,F741EBA0,Lecanoromycetes,Teloschistales,Letrouitia transgressa,26.191732
+aa,1,0.26587326060843325,F929528F,Taphrinomycetes,Taphrinales,Taphrina wiesneri,13.085382
+aa,2,0.28472581956602955,F54A0BF8,Sordariomycetes,Hypocreales,Conoideocrella luteorostrata,47.312217
+aa,3,0.2848798965532259,F0824B1C,Sordariomycetes,Hypocreales,Cladobotryum sp. ATHUM 6904,41.089792
+aa,4,0.2863129743710089,FF876646,Sordariomycetes,Hypocreales,Zelopaecilomyces penicillatus,39.778378
+aa,5,0.2874640181751634,F8558C9E,Sordariomycetes,Hypocreales,Hypomyces rosellus,38.475127
+aa,6,0.2883598924826617,F4E48CF3,Dothideomycetes,Venturiales,Verruconis gallopava,31.710672
+aa,7,0.2904981130636386,FEC34A64,Sordariomycetes,Hypocreales,Periglandula clandestina,34.877964
+aa,8,0.2923597731396198,F63EAAA5,Sordariomycetes,Hypocreales,Simplicillium aogashimaense,30.262571
+aa,9,0.2925086400467054,FF38817C,Sordariomycetes,Hypocreales,Pseudodiploospora longispora,34.403154
+aa,10,0.2952112349052327,F207BA59,Eurotiomycetes,Chaetothyriales,Cladophialophora brunneola,33.806687
+aa,11,0.29845329111604124,FDD7181F,Eurotiomycetes,Eurotiales,Trichocomaceae sp. PYS4502,29.089681
+aa,12,0.29873362445048346,FC5CDD69,Leotiomycetes,Helotiales,Humicolopsis cephalosporioides,44.914522
+aa,13,0.30018185829298677,F4452A36,Sordariomycetes,Hypocreales,Pochonia chlamydosporia,53.562829
+aa,14,0.3011303863663083,FD559E38,Sordariomycetes,Hypocreales,Microcera larvarum,33.819279
+aa,15,0.3023723446044128,FE034506,Eurotiomycetes,Chaetothyriales,Epibryon interlamellare,26.191621
+trna,1,1.970260596251934,F0BC45A2,Dipodascomycetes,Dipodascales,Groenewaldozyma tartarivorans,12.663212
+trna,2,2.2258132980975773,F0C6003C,Lichinomycetes,Lichinales,Lichinales sp.,20.387402
+trna,3,2.4306697618086783,F539636A,Geoglossomycetes,Geoglossales,Trichoglossum hirsutum,35.872256
+trna,4,2.6248932242544796,FA4EB839,Lecanoromycetes,Teloschistales,Teloschistes peruensis,26.453058
+trna,5,2.74205596422383,FB5CF295,Taphrinomycetes,Taphrinales,Protomyces arabidopsidicola,11.827508
+trna,6,2.7434439738326133,FD8D3B19,Dothideomycetes,Lineolatales,Lineolata rhizophorae,31.128814
+trna,7,2.7753085911575592,F4F8C5D9,Dipodascomycetes,Dipodascales,Casaregolazyma lundiana,12.26649
+trna,8,2.811936742701868,FB6515DC,Dothideomycetes,,Dothideomycetidae sp. 11243,21.719822
+trna,9,2.844128184501128,FA19DAE6,Dothideomycetes,Myriangiales,Sphaceloma murrayae,20.69956
+trna,10,2.880364713580077,F6D4562C,Eurotiomycetes,Onygenales,Trichophyton indotineae,22.546498
+trna,11,2.9066190464824624,FEB86B74,Trigonopsidomycetes,Trigonopsidales,Tortispora starmeri,9.285433
+trna,12,2.915687258842095,F17CA823,Eurotiomycetes,Onygenales,Onygena corvina,21.820208
+trna,13,2.957566350589057,F55DF0F5,Lecanoromycetes,Peltigerales,Peltigera evansiana,98.573368
+trna,14,3.0279476762636683,FAD3C0EC,Taphrinomycetes,Taphrinales,Savitreella phatthalungensis,12.735194
+trna,15,3.0419957587584943,F49C12FE,Lecanoromycetes,Teloschistales,Seirophora lacunosa,38.766395
+pfam_pa,1,0.22108160527496123,F6365D46,Saitoellomycetes,Saitoellales,Saitoella complicata,14.136186
+pfam_pa,2,0.22121476560113468,F70C0600,Lipomycetes,Lipomycetales,Kockiozyma suomiensis,13.995969
+pfam_pa,3,0.2221673824406209,F3AEFE5D,Lipomycetes,Lipomycetales,Dipodascopsis uninucleata,16.271401
+pfam_pa,4,0.2233695340178127,FE042A26,Lipomycetes,Lipomycetales,Babjevia anomala,17.308046
+pfam_pa,5,0.22353008119830223,FF5D997E,Lipomycetes,Lipomycetales,Myxozyma sirexii,13.505254
+pfam_pa,6,0.22639833425016898,F2543581,Dipodascomycetes,Dipodascales,Tardiomyces blankii,14.773726
+pfam_pa,7,0.22715408840244156,FD36131F,Dipodascomycetes,Dipodascales,Diddensiella caesifluorescens,11.820257
+pfam_pa,8,0.2282100468711247,F40A6D80,Lipomycetes,Lipomycetales,Lipomyces orientalis,19.812746
+pfam_pa,9,0.22830092354974912,F929528F,Taphrinomycetes,Taphrinales,Taphrina wiesneri,13.085382
+pfam_pa,10,0.22854147798014476,F06605DD,Trigonopsidomycetes,Trigonopsidales,Trigonopsis cantarellii,11.446789
+pfam_pa,11,0.2285522513376625,F3B4A0F0,Novakomycetes,Novakomycetales,Novakomyces olei,14.339745
+pfam_pa,12,0.22875610671361232,FC7F6D4F,Lipomycetes,Lipomycetales,Limtongia smithiae,14.132213
+pfam_pa,13,0.22921011002896674,FB5CF295,Taphrinomycetes,Taphrinales,Protomyces arabidopsidicola,11.827508
+pfam_pa,14,0.22928341615153391,FC22DC67,Dipodascomycetes,Dipodascales,Spencermartinsiella ligniputridi,13.876111
+pfam_pa,15,0.22979810670352646,F11DF9D5,Dipodascomycetes,Dipodascales,Sugiyamaella lignohabitans,15.938258
+pfam_ab,1,0.14720805331864184,F06605DD,Trigonopsidomycetes,Trigonopsidales,Trigonopsis cantarellii,11.446789
+pfam_ab,2,0.1511316971908946,F3AEFE5D,Lipomycetes,Lipomycetales,Dipodascopsis uninucleata,16.271401
+pfam_ab,3,0.15119007930657508,F3B4A0F0,Novakomycetes,Novakomycetales,Novakomyces olei,14.339745
+pfam_ab,4,0.15161749097000984,FD6B1078,Dipodascomycetes,Dipodascales,Daia tannicola,11.109562
+pfam_ab,5,0.1520921418615282,F8679035,Dipodascomycetes,Dipodascales,Zygoascus polysorbophilus,12.269174
+pfam_ab,6,0.15355915800411368,FF5D997E,Lipomycetes,Lipomycetales,Myxozyma sirexii,13.505254
+pfam_ab,7,0.15444510539376063,F70C0600,Lipomycetes,Lipomycetales,Kockiozyma suomiensis,13.995969
+pfam_ab,8,0.15504847755090007,FC7F6D4F,Lipomycetes,Lipomycetales,Limtongia smithiae,14.132213
+pfam_ab,9,0.15513138496792006,FD36131F,Dipodascomycetes,Dipodascales,Diddensiella caesifluorescens,11.820257
+pfam_ab,10,0.15555200381625034,F2543581,Dipodascomycetes,Dipodascales,Tardiomyces blankii,14.773726
+pfam_ab,11,0.15834384334820834,FA54C30E,Dipodascomycetes,Dipodascales,Trichomonascaceae sp. UFMG-CM-Y2876,12.258213
+pfam_ab,12,0.158776290752509,FCA09E2E,Dipodascomycetes,Dipodascales,Grinbergsozyma bentonensis,12.14501
+pfam_ab,13,0.15960683921403207,FC5854E8,Dipodascomycetes,Dipodascales,Trichomonascaceae sp. B5901,11.597012
+pfam_ab,14,0.15973621441666913,F634A7E4,Dipodascomycetes,Dipodascales,Blastobotrys adeninivorans,12.132449
+pfam_ab,15,0.159801627853854,FE83717A,Dipodascomycetes,Dipodascales,Trichomonascaceae sp. VP_10,11.587717
+cazy,1,0.19472469445123114,F4F8C5D9,Dipodascomycetes,Dipodascales,Casaregolazyma lundiana,12.26649
+cazy,2,0.20898756847909597,FD6B1078,Dipodascomycetes,Dipodascales,Daia tannicola,11.109562
+cazy,3,0.2135289508595866,FC5854E8,Dipodascomycetes,Dipodascales,Trichomonascaceae sp. B5901,11.597012
+cazy,4,0.21376783433338922,FE83717A,Dipodascomycetes,Dipodascales,Trichomonascaceae sp. VP_10,11.587717
+cazy,5,0.21550795253038355,FD36131F,Dipodascomycetes,Dipodascales,Diddensiella caesifluorescens,11.820257
+cazy,6,0.21581611447997673,F1B3BD85,Pichiomycetes,Serinales,Yamadazyma atmosphaerica,11.461614
+cazy,7,0.21685899144977336,F8679035,Dipodascomycetes,Dipodascales,Zygoascus polysorbophilus,12.269174
+cazy,8,0.2175285511623466,FC22DC67,Dipodascomycetes,Dipodascales,Spencermartinsiella ligniputridi,13.876111
+cazy,9,0.22074586456047657,F2543581,Dipodascomycetes,Dipodascales,Tardiomyces blankii,14.773726
+cazy,10,0.22829848876100625,F634A7E4,Dipodascomycetes,Dipodascales,Blastobotrys adeninivorans,12.132449
+cazy,11,0.23945256158849848,F0BC45A2,Dipodascomycetes,Dipodascales,Groenewaldozyma tartarivorans,12.663212
+cazy,12,0.2423884847371672,F11DF9D5,Dipodascomycetes,Dipodascales,Sugiyamaella lignohabitans,15.938258
+cazy,13,0.24239947804288436,F461ECF8,Pichiomycetes,Pichiales,Kuraishia capsulata,11.371246
+cazy,14,0.24500958883675458,F3225A6D,Pichiomycetes,Serinales,Meyerozyma guilliermondii,10.331542
+cazy,15,0.2502901502527284,F5C4389D,Dipodascomycetes,Dipodascales,Deakozyma indianensis,11.677736
+merops,1,0.13417744243845386,F634A7E4,Dipodascomycetes,Dipodascales,Blastobotrys adeninivorans,12.132449
+merops,2,0.13621872195393733,F5F0D4F4,Sporopachydermiomycetes,Sporopachydermiales,Sporopachydermia lactativora,15.833813
+merops,3,0.14129777437986113,FD36131F,Dipodascomycetes,Dipodascales,Diddensiella caesifluorescens,11.820257
+merops,4,0.14507296378410225,FC22DC67,Dipodascomycetes,Dipodascales,Spencermartinsiella ligniputridi,13.876111
+merops,5,0.1458326784546481,FD6B1078,Dipodascomycetes,Dipodascales,Daia tannicola,11.109562
+merops,6,0.14757048095848846,F3225A6D,Pichiomycetes,Serinales,Meyerozyma guilliermondii,10.331542
+merops,7,0.14866884488535506,FEB86B74,Trigonopsidomycetes,Trigonopsidales,Tortispora starmeri,9.285433
+merops,8,0.15001366063991714,FE375E3B,Pichiomycetes,Serinales,Debaryomycetaceae sp. CAB 1570,10.862534
+merops,9,0.15057228967784994,F4F8C5D9,Dipodascomycetes,Dipodascales,Casaregolazyma lundiana,12.26649
+merops,10,0.15129159043314855,F3AEFE5D,Lipomycetes,Lipomycetales,Dipodascopsis uninucleata,16.271401
+merops,11,0.15326803678883869,F0BC45A2,Dipodascomycetes,Dipodascales,Groenewaldozyma tartarivorans,12.663212
+merops,12,0.15328855411359432,F8679035,Dipodascomycetes,Dipodascales,Zygoascus polysorbophilus,12.269174
+merops,13,0.15456379352731942,F2543581,Dipodascomycetes,Dipodascales,Tardiomyces blankii,14.773726
+merops,14,0.15473192333386776,F3BC375D,Pichiomycetes,Serinales,Debaryomycetaceae sp. ZIM 2471,10.860569
+merops,15,0.1550708695669998,F22527ED,Dipodascomycetes,Dipodascales,Limtongella incommunis,12.07524
+tf,1,0.8921494376299686,F22385DF,Pezizomycetes,Pezizales,Maublancomyces geogenius,42.247791
+tf,2,0.8974085374645788,FA49E9D2,Lecanoromycetes,Pertusariales,Icmadophila ericetorum,36.514809
+tf,3,0.9028914704832389,FFF069D9,Sordariomycetes,Microascales,Berkeleyomyces rouxiae,33.431715
+tf,4,0.9158081312195854,F62C7D35,Sordariomycetes,Microascales,Phialophoropsis hubbardii,26.758106
+tf,5,0.9324340174596146,F4883A63,Pezizomycetes,Pezizales,Terfezia boudieri,63.073122
+tf,6,0.9329154924765584,F34CEB69,Pezizomycetes,Pezizales,Pseudorhizina californica,57.658819
+tf,7,0.964224514184763,F8222828,Dothideomycetes,Phaeotrichales,Trichodelitschia bisporula,25.775798
+tf,8,0.9719841569417982,F4F61C42,Pezizomycetes,Pezizales,Peziza echinospora,61.702591
+tf,9,0.9740683231337022,F2AC92A6,Lecanoromycetes,Teloschistales,Gallowayella cf. fulva,29.454211
+tf,10,0.976418355977313,F8E2962F,Pezizomycetes,Pezizales,Tirmania nivea,63.11947
+tf,11,0.9772899261019847,F44D730E,Sordariomycetes,Sordariales,Mycothermus thermophilus,28.753852
+tf,12,0.9885489455274757,F7164EF4,Lecanoromycetes,Baeomycetales,Ptychographa xylographoides,25.544166
+tf,13,1.016135205263812,F06426C5,Sordariomycetes,Hypocreales,Escovopsis sp. Ae733,29.977691
+tf,14,1.022573148335765,FCD05392,Pezizomycetes,Pezizales,Paragyromitra ambigua,43.83708
+tf,15,1.0229164877973909,F7C862B8,Lecanoromycetes,Peltigerales,Massalongia carnosa,49.705174
+cell,1,5.895029612413121,F3B4A0F0,Novakomycetes,Novakomycetales,Novakomyces olei,14.339745
+cell,2,6.239389695715492,F70C0600,Lipomycetes,Lipomycetales,Kockiozyma suomiensis,13.995969
+cell,3,6.4837888152041385,FF5D997E,Lipomycetes,Lipomycetales,Myxozyma sirexii,13.505254
+cell,4,6.848132172441642,F17CA823,Eurotiomycetes,Onygenales,Onygena corvina,21.820208
+cell,5,6.8874338863002835,FCA09E2E,Dipodascomycetes,Dipodascales,Grinbergsozyma bentonensis,12.14501
+cell,6,6.996659289892701,FA54C30E,Dipodascomycetes,Dipodascales,Trichomonascaceae sp. UFMG-CM-Y2876,12.258213
+cell,7,7.017910161685453,F3264CDE,Xylonomycetes,Xylonales,Xylona heveae,24.335196
+cell,8,7.125760333784542,F6D4562C,Eurotiomycetes,Onygenales,Trichophyton indotineae,22.546498
+cell,9,7.343068993634276,F53B407F,Eurotiomycetes,Onygenales,Nannizziopsis arthrosporioides,24.246093
+cell,10,7.3544403754315075,FC7F6D4F,Lipomycetes,Lipomycetales,Limtongia smithiae,14.132213
+cell,11,7.355134577828883,FCEA440F,Eurotiomycetes,Onygenales,Coccidioides immitis,27.437171
+cell,12,7.413441411524602,F22527ED,Dipodascomycetes,Dipodascales,Limtongella incommunis,12.07524
+cell,13,7.422975429702018,F06605DD,Trigonopsidomycetes,Trigonopsidales,Trigonopsis cantarellii,11.446789
+cell,14,7.442113234976159,F8679035,Dipodascomycetes,Dipodascales,Zygoascus polysorbophilus,12.269174
+cell,15,7.447957747362981,FEB86B74,Trigonopsidomycetes,Trigonopsidales,Tortispora starmeri,9.285433

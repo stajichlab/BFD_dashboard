@@ -145,9 +145,23 @@ From these it distills 6–10 patterns worth deeper study.
 4. **Distinctive content:** present in every good MAG but rare in other Ascomycota, or near-universal in Ascomycota but missing from every good MAG.
 5. **Phylogenomic placement:** a plan, using `workflows/run_phyling.sh`.
 
-Scripts and outputs on HPCC are in `~/antarctolithica/`.
+**Status:** done 2026-11-10. Full report with 8 figures and cited methods: [analyses/antarctolithica/](analyses/antarctolithica/README.md). HPCC was in maintenance, so everything ran locally.
 
-**Findings:** pending.
+**Data quality**
+- Only 6 of the 8 MAGs have annotations; Mars-9.1 and Mars-19.38 were skipped as too small.
+- They are one species (median amino-acid identity 99.2–99.7%) but distinct genotypes.
+- Mars-55.28 carries about 4.4% high-GC contigs from a second fungus.
+- The annotation under-calls genes: 33 of 44 "absent" near-universal families are found in the assemblies by blastx. Single-gene absences are therefore weak evidence.
+
+**Findings**
+1. **A new deep lineage, not any sampled class.** Phylogenomics (300 BUSCO markers, 159 taxa, FastTree LG+G) places the MAGs as a monophyletic sister to Saccharomycotina + Pezizomycotina, branching after Taphrinomycotina. SH-like support is 1.0, and the placement is stable across 7 runs (marker jackknifes, WAG, long-branch taxa removed; 0.996–1.0). Its root-to-tip length is short, so this is not a long-branch artefact.
+2. **The classifier agrees: it's out of distribution.** The highest random-forest class probability is 0.32, against a median of 0.94 for correctly classified genomes; classes left out of training score 0.20–0.49. Dothideomycetes, Eurotiomycetes and the lichen classes each score ≤0.04. The signal is a mosaic across feature blocks: gene structure looks like Taphrinomycetes, gene content like early Saccharomycotina or Taphrinomycotina, and codon, tRNA and TF usage like Pezizomycotina.
+3. **The compaction is real, not missing data.** Extrapolated to 100% BUSCO the genome is about 10–10.4 Mb. It has 555 genes per Mb (99.8th percentile of Ascomycota genera); median intergenic distance (178 bp) and median intron length (34.5 bp) are both in the lowest 0.5%. It averages 0.56 introns per transcript, carries about 5,400 genes, and has a minimal tRNA set of 44–46 genes (one per anticodon class).
+4. **No Pezizomycotina toolkit.** It lacks HET/NLR, NRPS, reducing PKS, DHN-melanin genes, hydrophobins, AA9, DNA methyltransferase and transposable-element domains, and has few P450s (12.5) and Zn2Cys6 TFs (33).
+5. **What it retains looks like adaptation to UV and desiccation:** photolyases (4), UVDE, opsins, the trehalose pathway, expanded PhyH dioxygenases (21 vs median 6) and arylsulfatases (9–10 vs 1).
+6. **Side finding:** "Saccharomycotina sp. YJ-2025a/b" group with Basidiomycota, so their phylum label in BFD looks wrong.
+
+**Next:** a full nf_phyling / IQ-TREE run with site-heterogeneous models and AU tests (plan in the report's section 12), better gene annotation of the MAGs, and adding Taphrinomycotina-rich and *Neolecta*-like taxa to the placement analysis.
 
 ## D. Functional classifier for unknown genomes (planned)
 
