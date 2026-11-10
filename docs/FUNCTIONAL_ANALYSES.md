@@ -30,6 +30,12 @@ Started: 2026-11-10. This page tracks the exploratory analyses run against the f
   | BUSCO (`fungi_odb12`) | About 75–80% in budding yeasts, from real gene loss |
   | `SUBPHYLUM` | Mostly empty; use CLASS and ORDER |
 
+- **Reporting standard (every analysis):**
+  - Include figures (PNG, embedded in the report) and tables.
+  - Explain every analytical choice: thresholds, normalization, distance metrics, tests, representative selection, CV design, hyperparameters.
+  - Wherever a statistical or ML model or an established method is used, justify it and cite the literature. Never invent a citation; mark uncertain ones "citation to verify".
+  - Keep the scripts that produce each figure.
+  - Detailed reports and figures go in `docs/analyses/<analysis>/`; this page keeps the summary.
 - **End state:** the analyses that prove useful become restartable SLURM jobs in `workflows/` that read the parquet tables on HPCC directly, in the same way as the atlas jobs J0–J10. MotherDuck is used for exploration and for MCP access, not as the production compute.
 
 ## A. Review of current ideas and Kickxellomycota deep dive
