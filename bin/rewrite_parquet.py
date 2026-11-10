@@ -49,10 +49,15 @@ def build_jobs(t):
             LEFT JOIN {T('busco_genome')} b USING (ASMID)
             ORDER BY s.LOCUSTAG""", 100_000),
 
-        # --- protein dimension: length per protein (from tmhmm) ----------------
+        # --- protein dimension: length per protein (from gene_proteins) --------
+        # tmhmm lists only proteins with >=1 predicted TM helix, so it must not be
+        # the source of protein length; it only supplies PredHel (0 when absent).
         "protein": (f"""
-            SELECT species_prefix, protein_id, len AS length_aa, PredHel
-            FROM {T('tmhmm')} ORDER BY species_prefix, protein_id""", 250_000),
+            WITH tm AS (SELECT protein_id, max(PredHel) AS PredHel FROM {T('tmhmm')} GROUP BY 1)
+            SELECT split_part(p.protein_id, '_', 1) AS species_prefix, p.protein_id,
+                   p.length AS length_aa, coalesce(tm.PredHel, 0) AS PredHel
+            FROM {T('gene_proteins')} p LEFT JOIN tm USING (protein_id)
+            ORDER BY species_prefix, p.protein_id""", 250_000),
 
         # --- pfam, two sort orders ---------------------------------------------
         # by genome: per-genome profile / join to protein
@@ -89,10 +94,10 @@ def build_jobs(t):
             FROM {T('pfam')} GROUP BY 1, 2 ORDER BY 1, 2""", 250_000),
 
         "genome_protein_len": (f"""
-            SELECT species_prefix, count(*) AS n_proteins,
-                   avg(len) AS mean_len, median(len) AS median_len,
-                   quantile_cont(len, 0.10) AS p10_len, quantile_cont(len, 0.90) AS p90_len
-            FROM {T('tmhmm')} GROUP BY 1 ORDER BY 1""", 100_000),
+            SELECT split_part(protein_id, '_', 1) AS species_prefix, count(*) AS n_proteins,
+                   avg(length) AS mean_len, median(length) AS median_len,
+                   quantile_cont(length, 0.10) AS p10_len, quantile_cont(length, 0.90) AS p90_len
+            FROM {T('gene_proteins')} GROUP BY 1 ORDER BY 1""", 100_000),
 
         "genome_intergenic": (f"""
             SELECT species_prefix, count(*) AS n_pairs,
@@ -109,10 +114,13 @@ def wide_job(out):
     O = lambda n: q(f"{out}/{n}.parquet")
     return ("genome_features", f"""
         SELECT g.*, p.n_proteins, p.mean_len, p.median_len, p.p10_len, p.p90_len,
-               i.n_pairs, i.mean_dist, i.median_dist, i.p10_dist, i.p90_dist
+               i.n_pairs, i.mean_dist, i.median_dist, i.p10_dist, i.p90_dist,
+               f.n_pfam_domains  -- NULL = genome has no Pfam rows (used for coverage)
         FROM {O('genome')} g
         LEFT JOIN {O('genome_protein_len')} p USING (species_prefix)
         LEFT JOIN {O('genome_intergenic')} i USING (species_prefix)
+        LEFT JOIN (SELECT species_prefix, sum(n_domains) AS n_pfam_domains
+                   FROM {O('genome_pfam_counts')} GROUP BY 1) f USING (species_prefix)
         ORDER BY species_prefix""", 100_000)
 
 

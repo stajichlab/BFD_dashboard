@@ -44,12 +44,14 @@ The plan finishes Generation 2. It has four layers:
    |---|---|---|
    | `pfam` | 23,410 | Nearly complete: 42 genomes with proteins have no Pfam rows |
    | `gene_proteins` | 23,452 | Complete |
+   | `tmhmm` | 23,409 | Complete, but lists only proteins with ≥1 TM helix |
    | `gene_intergenic_distances` | 23,452 | Complete |
    | `signalp.signal_peptide` | 23,410 | Complete |
    | `targetP` | 125 | **Incomplete run.** May be replaced by DeepLoc. Do not compare taxa with it. |
    | `infernal_rfam` | 14 | **Incomplete run.** |
 
-   Remove the typed-in numbers from `chat.html` and read coverage from the manifest instead (Layer 1).
+   Fixed: `chat.html` now measures coverage from `genome_features` when it loads (using the new `n_pfam_domains` column) instead of using typed-in numbers. Once the manifest exists (Layer 1), read coverage from it.
+4b. **Protein length came from membrane proteins only.** `rewrite_parquet.py` built `protein` and `genome_protein_len` from `tmhmm`, which lists only proteins with at least one predicted TM helix (about 20% of proteins). Median length was biased upward (Exophiala: 499 aa for TM proteins vs 426 aa for all proteins). Fixed: length now comes from `gene_proteins`, and `PredHel` is 0 for proteins with no `tmhmm` row. **The hosted release must be rebuilt** before `protein`, `genome_protein_len` and `genome_features` are correct.
 5. **The model never sees the query result.** It writes the explanation and chart spec before the query runs. It cannot notice an empty or wrong result.
 6. **The chart spec is too small.** It has only `{type, x, y}`. There is no color by group, log scale, histogram, box plot, heatmap or facet.
 7. **The query timeout may not work.** `conn.cancelSent()` is called for a query started with `conn.query()`. This was not checked. Test it.
