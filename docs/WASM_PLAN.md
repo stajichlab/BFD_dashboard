@@ -34,11 +34,22 @@ The plan finishes Generation 2. It has four layers:
 3. **The WASM data covers fewer tables than the Python dashboard.** `rewrite_parquet.py` leaves out:
    - codon and amino-acid frequency
    - CAZy and MEROPS
-   - localization (SignalP, TargetP, WoLF PSORT, PredGPI, IDP)
+   - localization (SignalP, TargetP, WoLF PSORT, PredGPI, IDP). TargetP covers only 125 genomes; see coverage below.
    - BUSCO lineage, telomeres, WGD Ks, TF inventory, SwissProt
 
    `aa_freq.parquet` covers 23,452 genomes and is only 2 MB, but the browser cannot query it.
-4. **The coverage numbers in the chat prompt may be out of date.** `chat.html` has them typed in (Pfam about 745 genomes, protein about 770, intergenic about 7,800). The snapshot tables were rebuilt on Nov 5–7, after `chat.html` last changed. Pfam coverage was not re-measured.
+4. **The coverage numbers in the chat prompt are out of date.** `chat.html` has them typed in (Pfam about 745 genomes, protein about 770, intergenic about 7,800). They were measured before the Nov 5–7 table rebuild. Re-measured on 2026-11-10 (genomes with at least one row; `species` has 23,680):
+
+   | Table | Genomes | Status |
+   |---|---|---|
+   | `pfam` | 23,410 | Nearly complete: 42 genomes with proteins have no Pfam rows |
+   | `gene_proteins` | 23,452 | Complete |
+   | `gene_intergenic_distances` | 23,452 | Complete |
+   | `signalp.signal_peptide` | 23,410 | Complete |
+   | `targetP` | 125 | **Incomplete run.** May be replaced by DeepLoc. Do not compare taxa with it. |
+   | `infernal_rfam` | 14 | **Incomplete run.** |
+
+   Remove the typed-in numbers from `chat.html` and read coverage from the manifest instead (Layer 1).
 5. **The model never sees the query result.** It writes the explanation and chart spec before the query runs. It cannot notice an empty or wrong result.
 6. **The chart spec is too small.** It has only `{type, x, y}`. There is no color by group, log scale, histogram, box plot, heatmap or facet.
 7. **The query timeout may not work.** `conn.cancelSent()` is called for a query started with `conn.query()`. This was not checked. Test it.
@@ -52,7 +63,7 @@ The plan finishes Generation 2. It has four layers:
 - Add small per-genome tables:
   - codon and amino-acid frequency
   - CAZy and MEROPS family counts
-  - localization fractions
+  - localization fractions (SignalP and WoLF PSORT for all genomes; leave TargetP out until it is rerun or replaced by DeepLoc)
   - BUSCO
 - Write `manifest.json` with, for each table: row count, genome coverage, schema. Also record build date and source database.
 - Compute on HPCC what a browser cannot:
@@ -101,8 +112,13 @@ The plan finishes Generation 2. It has four layers:
 | 4. Subset analysis | Ordination and PERMANOVA in Pyodide. | Browser results match the Python results on the same subset. Size limits are measured. |
 | 5. One app | Port the explorer views. Add whole-database embeddings. | Views match the old `explorer.html` on the demo subset. |
 
-## 6. Open questions (no data yet)
+## 6. Pending reruns
 
-- **Hosting.** The full tables are over 100 GB (Pfam alone is 20 GB). They need a static host with HTTP range requests and CORS. The code says that browser (CORS) access to the nrp.ai endpoint is not confirmed.
-- **Query speed.** Speed of DuckDB-WASM range reads on the 20 GB Pfam tables is unknown. Memory use of large joins is unknown. The wasm32 memory limit is 4 GB.
+- **TargetP:** run on 125 genomes only. It may be replaced by DeepLoc for all genomes. Until then, exclude it from localization summaries and from the chat prompt.
+- **Infernal / Rfam:** run on 14 genomes only. Exclude it from whole-database views until it is rerun.
+
+## 7. Open questions (no data yet)
+
+- **Hosting.** The full tables are 105 GB, of which the SwissProt tables are 42 GB (`swissprot_hits` 37 GB, `swissprot_best` 4.8 GB) and Pfam is 12 GB. They need a static host with HTTP range requests and CORS. The code says that browser (CORS) access to the nrp.ai endpoint is not confirmed.
+- **Query speed.** Speed of DuckDB-WASM range reads on the 12 GB Pfam table (368M rows) is unknown. Memory use of large joins is unknown. The wasm32 memory limit is 4 GB.
 - **API key.** Option A: each user brings their own key, as the page does now. Option B: run a proxy.
