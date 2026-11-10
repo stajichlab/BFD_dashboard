@@ -1,0 +1,8 @@
+	mb	n_protein_coding	introns_per_transcript	median_intron_len	median_intergenic	masked_pct	gc_pct
+mb	1.0	0.76	-0.58	0.84	0.92	0.47	-0.64
+n_protein_coding	0.76	1.0	-0.58	0.54	0.59	0.03	-0.29
+introns_per_transcript	-0.58	-0.58	1.0	-0.43	-0.5	-0.05	0.14
+median_intron_len	0.84	0.54	-0.43	1.0	0.89	0.54	-0.5
+median_intergenic	0.92	0.59	-0.5	0.89	1.0	0.52	-0.61
+masked_pct	0.47	0.03	-0.05	0.54	0.52	1.0	-0.79
+gc_pct	-0.64	-0.29	0.14	-0.5	-0.61	-0.79	1.0

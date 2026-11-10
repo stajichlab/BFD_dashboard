@@ -29,6 +29,7 @@ Started: 2026-11-10. This page tracks the exploratory analyses run against the f
   | `pfam` | 23,410 genomes; 42 genomes with proteins have no Pfam rows |
   | BUSCO (`fungi_odb12`) | About 75–80% in budding yeasts, from real gene loss |
   | `SUBPHYLUM` | Mostly empty; use CLASS and ORDER |
+  | `gene_introns.codon_position`, `codon_frame` | **Bug:** off by one exon. They describe the next CDS junction, and the last intron gets the protein length and frame 0. Recompute from cumulative `gene_CDS` lengths. Confirmed 2026-11-10; the upstream table builder needs fixing |
 
 - **Reporting standard (every analysis):**
   - Include figures (PNG, embedded in the report) and tables.
@@ -51,7 +52,29 @@ Started: 2026-11-10. This page tracks the exploratory analyses run against the f
 
 The agent also reviews the current dashboard and atlas ideas and proposes a ranked research agenda: gene-family gain, loss and expansion; candidate horizontal transfers; how to define lineage-restricted Pfam domains robustly; and what the dashboard and MCP path need.
 
-**Findings:** pending.
+**Status:** done 2026-11-10. Full report with 7 figures, tables, methods and references: [analyses/kickxellomycota/](analyses/kickxellomycota/README.md).
+
+**Scope:** 169 Kickxellomycota species representatives (15 genera, 4 orders; Asellariales not sampled). Genera are treated as independent, because no tree is available yet.
+
+**Findings**
+1. **Reduction is concentrated in core Kickxellales** (*Coemansia*, *Kickxella*, *Linderina* and relatives). Genus medians: 18.0 Mb, 7,363 genes and 0.65 introns per transcript, against 34.2 Mb, 11,460 genes and 3.83 for Mucorales (Cliff's δ = −1.00 for all three). Harpellales, the gut symbionts, are not reduced (27.6 Mb, 2.06 introns per transcript, AT- and repeat-rich), and neither are Dimargaritales. So the free-living saprotrophs are the reduced group, not the host-associated ones.
+2. **The intron deficit is real.** It persists in 30 *Coemansia* assemblies with N50 ≥ 50 kb (0.43 introns per transcript). Within SwissProt-anchored ortholog families shared with Mucorales, *Coemansia* keeps 8.5% of introns (0.43 vs 5.05 per gene; 2,317 families). That is the level of Dipodascomycetes (7.2%) and close to Saccharomycetes (3.5%). CDS length is unchanged.
+3. **Intron number fell, not intron length.** Introns per kb of CDS fell 8-fold. The surviving introns are longer, and they are biased toward the 5′ end of genes (39% of sole introns are in the first CDS decile, against 14% in Mucorales), which is the signature of loss by reverse transcription. Zoopagales reached small genomes the other way: they kept intron number and shortened introns.
+4. **Gene content: losses unlike the yeasts.** Ku70/80 is absent from all 134 *Coemansia* genomes and from Harpellales; canonical RdRP, histone H1, chitin deacetylase and photolyase are also lost. Unlike budding yeasts, they keep the spliceosome, NMD (Upf1–3, Mago), RNAi (Piwi, Dicer) and DNMT. DNA-transposon domains are depleted. Only 4 of 41 core losses overlap the budding-yeast losses: the intron phenotype converged with yeasts, but gene content mostly did not. Ku loss is a candidate permissive factor for intron loss, but Harpellales (no Ku, 2 introns per transcript) argue against it being sufficient.
+5. **Atlas review.**
+   - *Missing:* a phylogeny (genus-level p-values are anticonservative), orthogroups, an annotation-gap control for presence/absence calls, and a repeat-class table.
+   - *Hidden by pooling:* the pooled "Zoopagomycota s.l." row averages over very different groups.
+   - *Over-filtering:* Q-n50 removes 79% of Kickxellomycota.
+   - *Bug found:* the `gene_introns` phase bug above.
+
+**Top next studies**
+1. Orthogroups plus a species tree, with CAFE, Dollo and Count gain-loss analysis. Load the orthogroups into the release.
+2. A robust definition of lineage-restricted domains: model false absences with BUSCO, N50 and partial-gene covariates, and check absences in six frames.
+3. Fix and publish shared tables: the `gene_introns` phase bug, `genome_labels`, a `pfam_genome_matrix`, and a taxon synonym table.
+4. Ancestral reconstruction of intron positions and Ku/RdRP presence in Kickxellomycota, and a kingdom-wide test of Ku loss against intron density.
+5. RNA-seq validation of intron models, and a repeat-class table.
+
+All absences need tblastn confirmation.
 
 ## B. Kingdom-wide survey of domain and functional-class change
 

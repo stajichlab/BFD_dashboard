@@ -55,7 +55,7 @@ DEFAULT_COMMENTS = {
     "gene_proteins": "One row per protein: gene_id, protein_id, transcript_id, length (aa), md5 of sequence. " + _ID,
     "gene_exons": "One row per exon: transcript_id, exon order, coordinates, GC content. " + _ID,
     "gene_CDS": "One row per CDS segment: transcript_id, order, coordinates, GC content. " + _ID,
-    "gene_introns": "One row per intron: transcript_id, intron number, coordinates, 5'/3' splice dinucleotides, GC, codon phase. " + _ID,
+    "gene_introns": "One row per intron: transcript_id, intron number, coordinates, 5'/3' splice dinucleotides, GC. KNOWN BUG: codon_position and codon_frame describe the NEXT CDS junction (off by one exon; last intron gets protein length, frame 0) - recompute phase/position from gene_CDS cumulative lengths. " + _ID,
     "gene_intergenic_distances": "Distance (bp) between each pair of adjacent genes (left_gene, right_gene). " + _G,
     "gene_trnas": "tRNA genes: gene_id, amino acid, anticodon. " + _ID,
     "infernal_rfam": "PARTIAL COVERAGE: only 14 genomes as of 2026-11. Infernal cmscan hits to Rfam non-coding RNA models: model name/accession, contig, coordinates, strand, e-value, score. " + _G,
