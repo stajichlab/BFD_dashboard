@@ -20,8 +20,12 @@
 # The marker database is downloaded by the PHYLING_DOWNLOAD step into $BENCH/phyling_db, not into the shared atlas
 # phyling_db (which holds fungi_odb10 only and is a shared folder we do not write to).
 set -euo pipefail
-TREE=${1:?usage: sbatch kickx_tree.sh backbone|coemansia}
-case "$TREE" in backbone|coemansia) ;; *) echo "TREE must be backbone or coemansia" >&2; exit 2;; esac
+TREE=${1:?usage: sbatch kickx_tree.sh taxa|backbone|coemansia}
+case "$TREE" in taxa|backbone|coemansia) ;; *) echo "arg must be taxa, backbone or coemansia" >&2; exit 2;; esac
+# Run order: first 'taxa' (selection SQL writes BOTH taxa files, so it must run once, never concurrently), then the
+# two tree jobs, which depend on it:
+#   T=$(sbatch --parsable -p short --time=0:30:00 kickx_tree.sh taxa)
+#   sbatch --dependency=afterok:$T kickx_tree.sh backbone; sbatch --dependency=afterok:$T kickx_tree.sh coemansia
 : "${SCRATCH:?SCRATCH is not set; this job must run under SLURM on UCR HPCC}"
 : "${REPO:?set REPO to a checkout of the BFD_dashboard repo}"
 BENCH=${BENCH:-$HOME/projects/BFD_dashboard/bench/kickx_tree}
@@ -31,16 +35,19 @@ TABLES=/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/tables
 PHYSRC=/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard/atlas_data/phylo
 export NXF_SINGULARITY_CACHEDIR=/bigdata/stajichlab/shared/singularity_cache
 export NXF_HOME=$HOME/.nextflow
-mkdir -p "$BENCH/$TREE" "$BENCH/phyling_db"
+mkdir -p "$BENCH"
 
 # (1) taxa. run_duckdb_job.py writes <atlas>/taxa/*.tsv and skips blocks whose output exists.
-if [ ! -s "$BENCH/taxa/${TREE}_taxa.tsv" ]; then
+if [ "$TREE" = taxa ]; then
   /usr/bin/python3.12 "$REPO/bin/atlas/run_duckdb_job.py" \
     --sql "$REPO/bin/phylo/kickx_tree_taxa.sql" --tables "$TABLES" --atlas "$BENCH" \
     --tmp "$SCRATCH/duckdb_tmp" --threads 2 --memory 6GB
+  wc -l "$BENCH"/taxa/*.tsv
+  exit 0
 fi
+mkdir -p "$BENCH/$TREE" "$BENCH/phyling_db"
 TAXA="$BENCH/taxa/${TREE}_taxa.tsv"
-test -s "$TAXA"
+test -s "$TAXA" || { echo "missing $TAXA: run 'kickx_tree.sh taxa' first" >&2; exit 4; }
 
 # (2) proteomes -> plain FASTA named <LOCUSTAG>.fa (the taxon label in the tree is the LOCUSTAG).
 PEP="$BENCH/$TREE/pep_fa"; mkdir -p "$PEP"
