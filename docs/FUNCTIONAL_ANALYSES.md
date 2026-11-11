@@ -257,6 +257,8 @@ From these it distills 6–10 patterns worth deeper study.
 - Some reporting queries (H4 leverage and candidate listings; H3 display queries) are comments, not tables. Exploratory design queries that only informed choices are not saved.
 - A full end-to-end rebuild from empty scratch has not been done, so "saved" is not yet "proven to rebuild".
 
+**Follow-up: Ku loss and its pathway (2026-11-11).** First pass, report and SQL in [analyses/kx2_ku_pathway/](analyses/kx2_ku_pathway/README.md). On the first-pass backbone tree Ku is lost once, on the stem of Kickxellales + Harpellales; Lig4, XLF, Pol4, aprataxin and DNA-PKcs were already lost earlier, in Ku-retaining Kickxellomycota lineages, so Ku loss looks like a late step in an already-dismantled NHEJ, not its trigger. MRN, Dna2, TERT, Rad51/52, Mus81 and FEN1 are retained. No compensation was found: POLQ, LIG3 and PARP1-like were absent before Ku loss, HR genes are not expanded, and no Ku-specific telomere change is detectable. Every absence needs tblastn (a 14-item worklist is saved), and the tree is first-pass.
+
 **Production path:** add a `workflows/atlas/J12*.sh` job that rebuilds these metrics from the parquet tables on HPCC (reusing `A3/protein_pfam_arch.parquet` from J2b), with a fixture test and the full rebuild above. This is not done yet. The numbers are exploratory until the end-to-end rebuild agrees with them.
 
 ## Upstream follow-ups (BFD/Fungi_BFD_runs)
