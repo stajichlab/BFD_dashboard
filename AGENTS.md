@@ -13,20 +13,20 @@ When generating reports that mention protein domains, gene families, or other bi
 For any of the following feature types, use the format:
 
 ```
-[PF00001](https://pfam.xfam.org/protein/PF00001)
+[PF00001](https://www.ebi.ac.uk/interpro/entry/pfam/PF00001/)
 ```
 
 or equivalently with the full Pfam accession name:
 
 ```
-[PF00001|Some description](https://pfam.xfam.org/protein/PF00001)
+[PF00001|Some description](https://www.ebi.ac.uk/interpro/entry/pfam/PF00001/)
 ```
 
 ### Database Preferences
 
 | Feature Type | Preferred Database | Link Format |
 |---|---|---|
-| **Pfam domains** | Pfam (pfam.xfam.org) | `[PFxxxxx](https://pfam.xfam.org/protein/PFxxxxx)` |
+| **Pfam domains** | Pfam (pfam.xfam.org) | `[PFxxxxx](https://www.ebi.ac.uk/interpro/entry/pfam/PFxxxxx)` |
 | **CAZy families** | CAZy (cazy.org) | `[GHxx](https://cazy.org/famGHxx)` or `[GTxx](https://cazy.org/famGTxx)` |
 | **MEROPS peptidases** | MEROPS (merops.org) | `[MxxX](https://www.ebi.ac.uk/merops/search/peptidase?name=MxxX)` |
 | **UniProt proteins** | UniProt (uniprot.org) | `[GeneID/ProteinName](https://www.uniprot.org/entry/ACC)` |
@@ -43,7 +43,7 @@ In `docs/analyses/antarctolithica/README.md`, Pfam identifiers were updated from
 to:
 
 ```
-| [13812](https://pfam.xfam.org/protein/13812)PPR_3 | 6.5 | 1 | 1 | 4 | 2.91 | 100 |
+| [PF13812](https://www.ebi.ac.uk/interpro/entry/pfam/PF13812) PPR_3 | 6.5 | 1 | 1 | 4 | 2.91 | 100 |
 ```
 
 This pattern should be applied consistently across all report files in this project whenever domains or gene families are mentioned.

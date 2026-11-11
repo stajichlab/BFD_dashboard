@@ -490,26 +490,26 @@ MEROPS families present in >= 80 % of Ascomycota genera and absent from all 6 MA
 
 | Pfam | AO_HQ_median_n | med_Pez | med_Sac | med_Taph | log2_rate_vs_Asco_median | pct_rate_in_Asco |
 |---|---|---|---|---|---|---|
-| [13812](https://pfam.xfam.org/protein/13812)PPR_3 | 6.5 | 1 | 1 | 4 | 2.91 | 100 |
-| [16347](https://pfam.xfam.org/protein/16347)SGSH_C | 8.5 | 2 | 0 | 1 | 2.87 | 99.8 |
-| [05721](https://pfam.xfam.org/protein/05721)PhyH | 21 | 6 | 2 | 1 | 2.85 | 99.9 |
-| [17677](https://pfam.xfam.org/protein/17677)Glyco_hydro38C2 | 5 | 1 | 1 | 1 | 2.8 | 99.8 |
-| [22907](https://pfam.xfam.org/protein/22907)Ams1-like_1st | 5 | 1 | 1 | 1 | 2.79 | 99.8 |
-| [09261](https://pfam.xfam.org/protein/09261)Alpha-mann_mid | 5 | 1 | 1 | 1 | 2.79 | 99.8 |
-| [07748](https://pfam.xfam.org/protein/07748)Glyco_hydro_38C | 5 | 1 | 1 | 1 | 2.79 | 99.8 |
-| [01074](https://pfam.xfam.org/protein/01074)Glyco_hydro_38N | 5 | 1 | 1 | 1 | 2.78 | 99.8 |
-| [23276](https://pfam.xfam.org/protein/23276)TPR_24 | 5 | 1 | 0 | 2 | 2.55 | 99.9 |
-| [17652](https://pfam.xfam.org/protein/17652)Glyco_hydro81C | 5 | 1 | 2 | 2 | 2.55 | 100 |
-| [02746](https://pfam.xfam.org/protein/02746)MR_MLE_N | 6.5 | 2 | 0 | 0 | 2.52 | 100 |
-| [00884](https://pfam.xfam.org/protein/00884)Sulfatase | 14.5 | 6 | 2 | 2 | 2.42 | 99.8 |
-| [17784](https://pfam.xfam.org/protein/17784)Sulfotransfer_4 | 8.5 | 4 | 0 | 0 | 2.29 | 99.2 |
-| [13378](https://pfam.xfam.org/protein/13378)MR_MLE_C | 7.5 | 3 | 1 | 1 | 2.22 | 100 |
-| [00467](https://pfam.xfam.org/protein/00467)KOW | 5 | 2 | 3 | 3 | 2.05 | 99.3 |
-| [01663](https://pfam.xfam.org/protein/01663)Phosphodiest | 11 | 5 | 4 | 3 | 1.91 | 100 |
-| [01433](https://pfam.xfam.org/protein/01433)Peptidase_M1 | 5.5 | 3 | 4 | 2 | 1.68 | 99.6 |
-| [06325](https://pfam.xfam.org/protein/06325)PrmA | 5.5 | 3 | 3 | 5 | 1.57 | 99.8 |
-| [05686](https://pfam.xfam.org/protein/05686)Glyco_transf_90 | 6 | 5 | 0 | 0 | 1.49 | 99.7 |
-| [00929](https://pfam.xfam.org/protein/00929)RNase_T | 7 | 5 | 4 | 4 | 1.42 | 99.9 |
+| [PF13812](https://www.ebi.ac.uk/interpro/entry/pfam/PF13812)PPR_3 | 6.5 | 1 | 1 | 4 | 2.91 | 100 |
+| [PF16347](https://www.ebi.ac.uk/interpro/entry/pfam/PF16347)SGSH_C | 8.5 | 2 | 0 | 1 | 2.87 | 99.8 |
+| [PF05721](https://www.ebi.ac.uk/interpro/entry/pfam/PF05721)PhyH | 21 | 6 | 2 | 1 | 2.85 | 99.9 |
+| [PF17677](https://www.ebi.ac.uk/interpro/entry/pfam/PF17677)Glyco_hydro38C2 | 5 | 1 | 1 | 1 | 2.8 | 99.8 |
+| [PF22907](https://www.ebi.ac.uk/interpro/entry/pfam/PF22907)Ams1-like_1st | 5 | 1 | 1 | 1 | 2.79 | 99.8 |
+| [PF09261](https://www.ebi.ac.uk/interpro/entry/pfam/PF09261)Alpha-mann_mid | 5 | 1 | 1 | 1 | 2.79 | 99.8 |
+| [PF07748](https://www.ebi.ac.uk/interpro/entry/pfam/PF07748)Glyco_hydro_38C | 5 | 1 | 1 | 1 | 2.79 | 99.8 |
+| [PF01074](https://www.ebi.ac.uk/interpro/entry/pfam/PF01074)Glyco_hydro_38N | 5 | 1 | 1 | 1 | 2.78 | 99.8 |
+| [PF23276](https://www.ebi.ac.uk/interpro/entry/pfam/PF23276)TPR_24 | 5 | 1 | 0 | 2 | 2.55 | 99.9 |
+| [PF17652](https://www.ebi.ac.uk/interpro/entry/pfam/PF17652)Glyco_hydro81C | 5 | 1 | 2 | 2 | 2.55 | 100 |
+| [PF02746](https://www.ebi.ac.uk/interpro/entry/pfam/PF02746)MR_MLE_N | 6.5 | 2 | 0 | 0 | 2.52 | 100 |
+| [PF00884](https://www.ebi.ac.uk/interpro/entry/pfam/PF00884)Sulfatase | 14.5 | 6 | 2 | 2 | 2.42 | 99.8 |
+| [PF17784](https://www.ebi.ac.uk/interpro/entry/pfam/PF17784)Sulfotransfer_4 | 8.5 | 4 | 0 | 0 | 2.29 | 99.2 |
+| [PF13378](https://www.ebi.ac.uk/interpro/entry/pfam/PF13378)MR_MLE_C | 7.5 | 3 | 1 | 1 | 2.22 | 100 |
+| [PF00467](https://www.ebi.ac.uk/interpro/entry/pfam/PF00467)KOW | 5 | 2 | 3 | 3 | 2.05 | 99.3 |
+| [PF01663](https://www.ebi.ac.uk/interpro/entry/pfam/PF01663)Phosphodiest | 11 | 5 | 4 | 3 | 1.91 | 100 |
+| [PF01433](https://www.ebi.ac.uk/interpro/entry/pfam/PF01433)Peptidase_M1 | 5.5 | 3 | 4 | 2 | 1.68 | 99.6 |
+| [PF06325](https://www.ebi.ac.uk/interpro/entry/pfam/PF06325)PrmA | 5.5 | 3 | 3 | 5 | 1.57 | 99.8 |
+| [PF05686](https://www.ebi.ac.uk/interpro/entry/pfam/PF05686)Glyco_transf_90 | 6 | 5 | 0 | 0 | 1.49 | 99.7 |
+| [PF00929](https://www.ebi.ac.uk/interpro/entry/pfam/PF00929)RNase_T | 7 | 5 | 4 | 4 | 1.42 | 99.9 |
 
   Phytanoyl-CoA dioxygenase (PhyH; 21 copies against a Pezizomycotina median of 6; best hits to bacterial KanJ-like dioxygenases at about 30 % identity), sulfatases (14.5 copies; 9-10 are arylsulfatases with best hit to *Pseudomonas* AtsA at 53-56 % identity, against a Pezizomycotina median of 1 such hit and 0 in both yeast subphyla), N-sulfoglucosamine sulfohydrolase C-terminal domains, GH38 alpha-mannosidases, and enolase-superfamily MR/MLE enzymes. Sulfatases and 2-oxoglutarate dioxygenases point to scavenging of sulfur and carbon from organic esters, which is plausible in an oligotrophic rock community; this is a hypothesis from domain counts, not a demonstrated function. A bacterial origin for the arylsulfatase family cannot be judged from best hits alone.
 
@@ -517,32 +517,32 @@ Families present in all 4 high-quality MAGs but in fewer than 5 % of Ascomycota 
 
 | Pfam | AO_all6_present | prev_Asco | prev_Pez | prev_Sac | prev_Taph |
 |---|---|---|---|---|---|
-| [13263](https://pfam.xfam.org/protein/13263)PHP_C | 6 | 0 | 0 | 0 | 0 |
-| [23761](https://pfam.xfam.org/protein/23761)Beta-prop_DCAF4 | 5 | 0.0011 | 0.0014 | 0 | 0.08 |
-| [10437](https://pfam.xfam.org/protein/10437)Lip_prot_lig_C | 6 | 0.0022 | 0 | 0 | 0.28 |
-| [03948](https://pfam.xfam.org/protein/03948)Ribosomal_L9_C | 6 | 0.0022 | 0.0027 | 0 | 0 |
-| [23013](https://pfam.xfam.org/protein/23013)IML1_N | 6 | 0.0022 | 0.0014 | 0 | 0.12 |
-| [28421](https://pfam.xfam.org/protein/28421)DOLK | 6 | 0.0034 | 0 | 0.0068 | 0.12 |
-| [26017](https://pfam.xfam.org/protein/26017)BACK_BTBD8 | 6 | 0.0034 | 0 | 0.02 | 0 |
-| [16036](https://pfam.xfam.org/protein/16036)Chalcone_3 | 5 | 0.0034 | 0 | 0.02 | 0 |
-| [00883](https://pfam.xfam.org/protein/00883)Peptidase_M17 | 6 | 0.0067 | 0.0014 | 0 | 0.68 |
-| [16185](https://pfam.xfam.org/protein/16185)MTABC_N | 5 | 0.0067 | 0.0068 | 0.0068 | 0 |
-| [15663](https://pfam.xfam.org/protein/15663)zf-CCCH_3 | 5 | 0.0079 | 0.0068 | 0 | 0.24 |
-| [30845](https://pfam.xfam.org/protein/30845)Mug123 | 6 | 0.012 | 0.0068 | 0 | 0.92 |
-| [06979](https://pfam.xfam.org/protein/06979)TMEM70 | 6 | 0.015 | 0 | 0.048 | 0.76 |
-| [17102](https://pfam.xfam.org/protein/17102)Stealth_CR3 | 6 | 0.016 | 0.016 | 0 | 0.16 |
-| [02955](https://pfam.xfam.org/protein/02955)GSH-S_ATP | 5 | 0.016 | 0.019 | 0 | 0 |
-| [04239](https://pfam.xfam.org/protein/04239)DUF421 | 6 | 0.018 | 0.019 | 0 | 0.28 |
-| [30953](https://pfam.xfam.org/protein/30953)TAD3_N | 6 | 0.03 | 0 | 0.16 | 0.68 |
-| [19088](https://pfam.xfam.org/protein/19088)TUTase | 6 | 0.03 | 0.0027 | 0.16 | 0.32 |
-| [12811](https://pfam.xfam.org/protein/12811)BaxI_1 | 6 | 0.031 | 0.0095 | 0.14 | 0.04 |
-| [08397](https://pfam.xfam.org/protein/08397)IMD | 5 | 0.034 | 0.024 | 0.082 | 0.04 |
-| [23412](https://pfam.xfam.org/protein/23412)zf_RING_Vps8 | 5 | 0.036 | 0.034 | 0.048 | 0 |
-| [25041](https://pfam.xfam.org/protein/25041)UFL1_C | 6 | 0.039 | 0.035 | 0.054 | 0.08 |
-| [15510](https://pfam.xfam.org/protein/15510)CENP-W | 6 | 0.042 | 0.033 | 0.082 | 0.12 |
-| [28859](https://pfam.xfam.org/protein/28859)SPCC191_01 | 6 | 0.043 | 0.035 | 0.041 | 0.88 |
-| [08635](https://pfam.xfam.org/protein/08635)ox_reductase_C | 6 | 0.044 | 0.034 | 0.048 | 0.8 |
-| [13440](https://pfam.xfam.org/protein/13440)Polysacc_synt_3 | 5 | 0.046 | 0.052 | 0 | 0.36 |
+| [PF13263](https://www.ebi.ac.uk/interpro/entry/pfam/PF13263)PHP_C | 6 | 0 | 0 | 0 | 0 |
+| [PF23761](https://www.ebi.ac.uk/interpro/entry/pfam/PF23761)Beta-prop_DCAF4 | 5 | 0.0011 | 0.0014 | 0 | 0.08 |
+| [PF10437](https://www.ebi.ac.uk/interpro/entry/pfam/PF10437)Lip_prot_lig_C | 6 | 0.0022 | 0 | 0 | 0.28 |
+| [PF03948](https://www.ebi.ac.uk/interpro/entry/pfam/PF03948)Ribosomal_L9_C | 6 | 0.0022 | 0.0027 | 0 | 0 |
+| [PF23013](https://www.ebi.ac.uk/interpro/entry/pfam/PF23013)IML1_N | 6 | 0.0022 | 0.0014 | 0 | 0.12 |
+| [PF28421](https://www.ebi.ac.uk/interpro/entry/pfam/PF28421)DOLK | 6 | 0.0034 | 0 | 0.0068 | 0.12 |
+| [PF26017](https://www.ebi.ac.uk/interpro/entry/pfam/PF26017)BACK_BTBD8 | 6 | 0.0034 | 0 | 0.02 | 0 |
+| [PF16036](https://www.ebi.ac.uk/interpro/entry/pfam/PF16036)Chalcone_3 | 5 | 0.0034 | 0 | 0.02 | 0 |
+| [PF00883](https://www.ebi.ac.uk/interpro/entry/pfam/PF00883)Peptidase_M17 | 6 | 0.0067 | 0.0014 | 0 | 0.68 |
+| [PF16185](https://www.ebi.ac.uk/interpro/entry/pfam/PF16185)MTABC_N | 5 | 0.0067 | 0.0068 | 0.0068 | 0 |
+| [PF15663](https://www.ebi.ac.uk/interpro/entry/pfam/PF15663)zf-CCCH_3 | 5 | 0.0079 | 0.0068 | 0 | 0.24 |
+| [PF30845](https://www.ebi.ac.uk/interpro/entry/pfam/PF30845)Mug123 | 6 | 0.012 | 0.0068 | 0 | 0.92 |
+| [PF06979](https://www.ebi.ac.uk/interpro/entry/pfam/PF06979)TMEM70 | 6 | 0.015 | 0 | 0.048 | 0.76 |
+| [PF17102](https://www.ebi.ac.uk/interpro/entry/pfam/PF17102)Stealth_CR3 | 6 | 0.016 | 0.016 | 0 | 0.16 |
+| [PF02955](https://www.ebi.ac.uk/interpro/entry/pfam/PF02955)GSH-S_ATP | 5 | 0.016 | 0.019 | 0 | 0 |
+| [PF04239](https://www.ebi.ac.uk/interpro/entry/pfam/PF04239)DUF421 | 6 | 0.018 | 0.019 | 0 | 0.28 |
+| [PF30953](https://www.ebi.ac.uk/interpro/entry/pfam/PF30953)TAD3_N | 6 | 0.03 | 0 | 0.16 | 0.68 |
+| [PF19088](https://www.ebi.ac.uk/interpro/entry/pfam/PF19088)TUTase | 6 | 0.03 | 0.0027 | 0.16 | 0.32 |
+| [PF12811](https://www.ebi.ac.uk/interpro/entry/pfam/PF12811)BaxI_1 | 6 | 0.031 | 0.0095 | 0.14 | 0.04 |
+| [PF08397](https://www.ebi.ac.uk/interpro/entry/pfam/PF08397)IMD | 5 | 0.034 | 0.024 | 0.082 | 0.04 |
+| [PF23412](https://www.ebi.ac.uk/interpro/entry/pfam/PF23412)zf_RING_Vps8 | 5 | 0.036 | 0.034 | 0.048 | 0 |
+| [PF25041](https://www.ebi.ac.uk/interpro/entry/pfam/PF25041)UFL1_C | 6 | 0.039 | 0.035 | 0.054 | 0.08 |
+| [PF15510](https://www.ebi.ac.uk/interpro/entry/pfam/PF15510)CENP-W | 6 | 0.042 | 0.033 | 0.082 | 0.12 |
+| [PF28859](https://www.ebi.ac.uk/interpro/entry/pfam/PF28859)SPCC191_01 | 6 | 0.043 | 0.035 | 0.041 | 0.88 |
+| [PF08635](https://www.ebi.ac.uk/interpro/entry/pfam/PF08635)ox_reductase_C | 6 | 0.044 | 0.034 | 0.048 | 0.8 |
+| [PF13440](https://www.ebi.ac.uk/interpro/entry/pfam/PF13440)Polysacc_synt_3 | 5 | 0.046 | 0.052 | 0 | 0.36 |
 
   Many of these (Peptidase_M17, TMEM70, Mug123, TAD3_N, ox_reductase_C, SPCC191_01) are common in Taphrinomycotina (68-92 %) and near-absent from Pezizomycotina: ancestral genes kept by early-diverging lineages and lost later. PHP_C is unique to *A. obscura* in the set.
 
