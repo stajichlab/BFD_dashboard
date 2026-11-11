@@ -210,7 +210,7 @@ From these it distills 6–10 patterns worth deeper study.
 
 ## E. What was lost, gained and reshaped in Kickxellomycota reduction, and how it compares with yeasts
 
-**Status:** first pass done 2026-11-10 (four parallel agents, exploration in MotherDuck). No report directory yet. The SQL is saved in `bin/atlas/sql/kx2_h1/` to `kx2_h4/` (numbered in run order, with a README per directory giving dependencies and a verification record); see "Reproducibility" below for what was and was not re-run. Scratch tables: `bfd_scratch.kx2_h1_*` to `kx2_h4_*`.
+**Status:** first pass done 2026-11-10 (four parallel agents, exploration in MotherDuck). No narrative report yet. The SQL is saved in [analyses/kx2_kickx_reduction/](analyses/kx2_kickx_reduction/README.md) as `sql_h1/` to `sql_h4/` (numbered in run order, with a README per directory giving dependencies and a verification record); see "Reproducibility" below for what was and was not re-run. Scratch tables: `bfd_scratch.kx2_h1_*` to `kx2_h4_*`.
 
 **Scope and conventions:** genus medians over species representatives. Quality filter BUSCO ≥ 85 and N50 ≥ 50 kb for main comparisons, unfiltered shown alongside. No genus has passed the filter in Harpellales or Dimargaritales, so those rows are unfiltered only. Core Kickxellales is 3–5 genera, almost all *Coemansia* (146 of 169 species). Baselines: Mucorales for Kickxellomycota and Zoopagales; Pezizomycotina for yeasts. Nothing is phylogenetically corrected.
 
@@ -243,7 +243,7 @@ From these it distills 6–10 patterns worth deeper study.
 4. Trypsin tandem-array and repeat check, and a MEROPS family map.
 5. RNA-seq UTR annotation for a few genomes, and repeat coordinates, to open the UTR and masked terms of the accounting.
 
-**Reproducibility** (SQL in `bin/atlas/sql/kx2_h1/` to `kx2_h4/`, MotherDuck dialect, plain SQL, nothing done in Python or by hand; each README has the dependency graph). Verification was done by re-running the later steps from the existing upstream scratch tables into temporary tables and diffing against the originals:
+**Reproducibility** (SQL in `docs/analyses/kx2_kickx_reduction/sql_h1/` to `sql_h4/`, MotherDuck dialect, plain SQL, nothing done in Python or by hand; each README has the dependency graph). Verification was done by re-running the later steps from the existing upstream scratch tables into temporary tables and diffing against the originals:
 
 | | Re-run and matched | Saved but **not** re-run |
 |---|---|---|
