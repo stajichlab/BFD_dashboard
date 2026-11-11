@@ -1,0 +1,181 @@
+# Kickxellomycota genome and intron reduction in BFD, with a review of the atlas and a research agenda
+
+Date: 2026-11-10. Data: BFD (23,680 genomes), MotherDuck database `bfd` plus atlas intermediates on HPCC (`atlas_data/`).
+Nothing in the repo or in `bfd` was modified. Scratch objects are listed in section 5.
+
+**Headline results**
+
+- Reduction in Kickxellomycota is **not uniform**. It is concentrated in the core Kickxellales (*Coemansia*, *Kickxella*, *Linderina*, *Martensiomyces*, *Dipsacomyces*): genus-median 18.0 Mb, 7,363 genes, 0.65 introns per transcript, against 34.2 Mb, 11,460 genes and 3.83 introns per transcript in Mucorales (Cliff's delta = -1.00 for all three; 5 vs 36 genera). Harpellales (27.6 Mb, 2.06 introns) and Dimargaritales (29.1 Mb, 1.31 introns) are intermediate in introns and not small.
+- Among orthologs shared with Mucorales, *Coemansia* keeps **8.5 %** of the introns (0.43 vs 5.05 per gene; 2,317 families; 95.6 % of families have fewer; 70 % are intronless). This is the same level as Dipodascomycetes yeasts (7.2 %) and close to Saccharomycetes (3.5 %). Coding length is unchanged (median CDS ratio 1.01).
+- Intron loss and compaction are **separable**. Zoopagales are as small as core Kickxellales (17.2 Mb, 6,901 genes) and keep 3.3 introns per transcript with 50 bp introns. Core Kickxellales lost intron number, and the introns that remain are longer (96 bp median; 10-90 % range 34-377 bp in *Coemansia*), as in Saccharomycotina.
+- The surviving introns in *Coemansia* sit at the 5' end of the CDS (39 % of sole introns in the first decile; Mucorales 14 %; Dipodascomycetes 51 %; *Schizosaccharomyces* 39 %). This is the pattern expected from reverse-transcriptase-mediated loss.
+- The spliceosome, exon-junction core (Mago), NMD core (Upf1-3), Argonaute/Dicer and DNMT domains are **retained** in *Coemansia*; budding yeasts lost several of these. Losses specific to Kickxellales + Harpellales are Ku70/Ku80 (0 of 134 *Coemansia* genomes, 0 of 9 Harpellales), the canonical RdRP (PF05183), linker histone H1, photolyase, and chitin deacetylase. Secreted-enzyme repertoires are kept or expanded (AA9 in 134 of 134 *Coemansia*, tyrosinase, trypsin, laccase, GH18).
+- Of 2,471 Pfam domains that are near-universal in sister lineages, core Kickxellales lack 41 and Saccharomycetes + Pichiomycetes lack 57; only 4 are shared (odds ratio 4.8, Fisher p = 0.014). The overlap with *Schizosaccharomyces* is larger (18 of 41; OR 17). So the intron phenotype converged with yeasts; the gene-content phenotype mostly did not.
+- **Data bug found:** `gene_introns.codon_position` and `codon_frame` describe the *next* exon boundary, not the intron's own. Every sole intron gets the full protein length and phase 0. All phase and position results here were recomputed from `gene_CDS`.
+
+Contents: (1) review of current ideas; (2) Kickxellomycota findings; (3) methods and justification; (4) research agenda; (5) scratch objects and scripts; (6) references.
+
+---
+
+## 1. Review of the current atlas and dashboard ideas
+
+### 1.1 What is strong
+
+- **Unit of replication is explicit.** One genome per species, then genus medians, removes the 1,309 *S. cerevisiae* / 952 *C. auris* problem. *Coemansia* shows why it is needed at genus level too: it supplies 146 of 169 Kickxellomycota species representatives.
+- **H1 (quality) comes first**, and the BUSCO filter is class-relative. This is correct. A fixed 95 % cutoff would remove all yeasts and, as shown below, all Harpellales (BUSCO 71-81 % even at N50 of 0.6-2.5 Mb).
+- **Effect sizes before p-values**, and several hypotheses are written as falsification tests (G3, S1) with stated polarity and outgroups.
+- **Reference-bias controls in H2** (compare `q_len` within the same `sp_id`; model-organism anchors) are careful and reusable. I reused the same idea for intron counts.
+- **Coverage honesty.** Table comments and the chat prompt now warn about targetP, Rfam and tmhmm.
+
+### 1.2 What is missing
+
+1. **No phylogeny, so no independent-contrast test.** Genus medians treat 279 Sordariomycetes genera as 279 independent points. Every cross-clade p-value in the atlas is anticonservative for this reason (Felsenstein 1985). The pending genus tree should feed PGLS for continuous traits and phylogenetic logistic regression for presence/absence.
+2. **No orthogroups.** SwissProt anchoring works for conserved genes but covers early-diverging fungi poorly: with the strict gate *Coemansia* has 5,348 anchored families and Sordariomycetes 18,112. Gain/loss, HGT and orphan questions cannot be asked with the anchor proxy.
+3. **Pooled groups hide the main signal.** "Zoopagomycota s.l." appears in G3 as one row with 1.90 introns per transcript (28 genera). It contains core Kickxellales at 0.5-0.9 and Zoopagales at 3.3. Early-diverging lineages need order-level rows.
+4. **Q-n50 removes most of some clades.** With the full Q filter only 36 of 169 Kickxellomycota species representatives survive, and none of the Dimargaritales. The filter is right for statistics that depend on contiguity, but section 2.1 shows that intron density in *Coemansia* is only weakly tied to N50. A per-statistic sensitivity rule would keep more taxa.
+5. **Presence/absence calls have no annotation-gap control.** H5 and HS_C1/C3 report "fraction of genera with domain X". A missing domain can be a missing gene model, a diverged sequence or a fragmented assembly. See agenda item A2 for a design.
+6. **Intron phase and position columns are wrong in the source table** (section 2.4). Any future view using `codon_frame` would be affected. A2 `genome_gene_stats` does not use them, so the built H3 and G3 pages are not affected.
+7. **Lifestyle is a genus label.** FungalTraits calls all Harpellales "animal_endosymbiont" and all Kickxellales "soil_saprotroph" (one "dung_saprotroph"). With one label per order, lifestyle and phylogeny are fully confounded inside Kickxellomycota.
+8. **TE content is only `masked_pct`.** There is no repeat-class table (LTR, DNA, LINE), so "reduced TE load" can only be approximated from Pfam TE domains in gene models, which masking removes on purpose.
+
+### 1.3 What is statistically weak
+
+- **Multiple testing.** V30 and V55/V56 screen thousands of families. Report q-values (Benjamini and Hochberg 1995) and, better, a permutation null that shuffles group labels at genus level.
+- **Small sister sets in G1/G3 pairs.** *Pneumocystis* vs *Schizosaccharomyces* + *Taphrina* is one genus against two. These are case descriptions, not tests; label them so.
+- **Kruskal-Wallis across classes** mostly detects that classes differ, which is known. A variance partition (class, order within class, genus within order) is more informative. The mixed models in V51 already go this way.
+- **Proteome-size scaling slopes (H5, S1)** are fitted on log-log genus medians. OLS slopes are biased toward zero when the x variable has error (gene count depends on annotation). Fit a major-axis or phylogenetic regression as well and report both.
+- **BUSCO as a covariate** is ambiguous for reduced lineages: low BUSCO is both a quality signal and a biological outcome. In *Coemansia* BUSCO tracks N50 (rho = 0.92) and so is quality; in Harpellales it does not (77 % at Mb-scale N50) and so is biology or marker divergence. One covariate cannot serve both.
+
+### 1.4 Dashboard and LLM-chat review (docs/WASM_PLAN.md, web/chat.html)
+
+The plan's own problem list is accurate (model does not see results; chart spec too small; stale coverage now fixed). Additional gaps that this analysis ran into:
+
+- **No label table in the queryable database.** Representatives, quality flags, growth form and lifestyle live only in `atlas_data/labels/genome_labels.parquet`. In MotherDuck I had to rebuild representatives in SQL. A chat user will not; they will count strains. Publish `genome_labels` (and the ext table) in the release and state the rule in the prompt.
+- **No genome x Pfam matrix in the release.** Any presence/absence question scans 368 M rows. The atlas already has A7 (105 M rows, 355 MB). Publish it, plus a genus-level and an order-level presence table.
+- **`SUBPHYLUM` is empty** and the phylum names are the split ones (Kickxellomycota, Zoopagomycota, Entomophthoromycota, Basidiobolomycota). A user asking for "Kickxellomycotina" or "Zoopagomycota" in the older broad sense gets nothing or the wrong set. Add a synonym table.
+- **Key-form traps** (`protein_id` vs `gene_id` forms, `idp_summary` keys, strings 'TRUE'/'FALSE') should be normalized in the release, not explained in the prompt.
+- **The prompt has no statistical guidance.** Add three rules: dedupe to representatives; report n genera and n species; never infer absence from tables that list only positives (tmhmm, signalp, targetP).
+
+---
+
+## 2. Kickxellomycota deep dive
+
+### 2.1 Taxon sampling and assembly quality (observed)
+
+Kickxellomycota in BFD: 190 genomes, 169 species representatives, 15 genera, 4 orders. Asellariales, Barbatosporales and Orphellales are **not sampled**. *Ramicandelaber* has one genome and CLASS is NULL.
+
+{{frag_kx_genera}}
+
+Table 1. Kickxellomycota species representatives by genus (medians; atlas A1/A2). 129 of the 146 *Coemansia* species are unnamed "sp." strains, so "species" here means strain-level NCBI taxa, and the 146 are not 146 independent lineages.
+
+Quality facts that shape everything below:
+
+- **Most *Coemansia* assemblies are fragmented**: median N50 8.7 kb, median BUSCO 68 %. Within *Coemansia*, BUSCO is a function of contiguity (Spearman rho = 0.92 with N50; n = 146). The 30 assemblies with N50 >= 50 kb have BUSCO 87-91 %. So low BUSCO in *Coemansia* is mostly assembly, and about 9 % of fungi_odb12 markers are missing even in the best assemblies.
+- **Gene count and genome size are biased down by fragmentation** (rho with BUSCO 0.62 and 0.61). The high-quality subset gives 15.8 Mb and 6,809 genes (10-90 %: 13.1-18.7 Mb; 6,285-7,020 genes) instead of 13.6 Mb and 6,169.
+- **Intron density is not an artefact of fragmentation.** Introns per transcript are slightly *higher* in fragmented assemblies (rho with N50 = -0.35); the high-quality subset has 0.43 (10-90 %: 0.39-0.51).
+- **Harpellales BUSCO is low for a different reason**: 71-81 % at N50 up to 2.5 Mb, with 15-24 % missing. This is real loss or marker divergence, as in budding yeasts.
+- **Partial gene models are common**: partial fraction 0.18 in *Coemansia*, 0.41-0.54 in Harpellales (even in the 2.5 Mb-N50 *Zancudomyces* assembly), against 0.10-0.14 in Pezizomycotina. Gene-structure statistics below use complete models where stated.
+- Duplicated BUSCO of 24-55 % in *Dispira simplex*, *Tieghemiomyces* and *Linderina pennispora* indicates dikaryotic, co-cultured or contaminated assemblies. Their genome sizes (26-51 Mb) and gene counts are inflated. Dimargaritales are obligate mycoparasites usually sequenced with a host, so treat their sizes as upper bounds.
+
+![Coemansia quality](kx_figs/fig3_coemansia_quality.png)
+
+Figure 3. *Coemansia* species representatives: BUSCO and gene count rise with contig N50; introns per transcript do not.
+
+### 2.2 How small, relative to sisters and to independently reduced lineages (observed)
+
+{{frag_group_structure}}
+
+Table 2. Genus medians of species-representative values (all annotated representatives, no N50 filter; atlas A2). The Q-filtered version is in `kx_data/grp_genus_medians_q.tsv`; for *Coemansia* it gives 15.8 Mb, 6,809 genes, 0.43 introns per transcript.
+
+![Genome size vs introns](kx_figs/fig1_genome_size_vs_introns.png)
+
+Figure 1. Left: genome size against introns per transcript, one point per genus. Right: intergenic distance against intron length.
+
+![Kickxellomycota by genus](kx_figs/fig2_kickxellomycota_by_genus.png)
+
+Figure 2. Species representatives within Kickxellomycota.
+
+Effect sizes for core Kickxellales (5 genera) against reference groups:
+
+{{frag_effect_sizes}}
+
+Table 3. Genus-level contrasts. Median difference with 95 % bootstrap interval (5,000 resamples of genera), log2 ratio of medians, Cliff's delta, Mann-Whitney p. Full table with Harpellales and Dimargaritales: `kx_data/stats_genus_effect_sizes.tsv`.
+
+Observed:
+
+- **Core Kickxellales are half the size of Mucorales** (-16.2 Mb, CI -21.2 to -12.0) with 4,100 fewer genes and 3.2 fewer introns per transcript. Every core Kickxellales genus is below every Mucorales genus on all three (delta = -1.00).
+- **They are the same size as Zoopagales** (delta 0.00 for Mb, -0.05 for genes) but have 2.6 fewer introns per transcript (delta -1.00).
+- **Against Dipodascomycetes yeasts** they are slightly larger (18.0 vs 12.4 Mb; 7,363 vs 5,824 genes) with a little more intron (0.65 vs 0.38) and shorter median protein length (349 vs 397 aa; partly an effect of fragmented models).
+- **Harpellales**: 27.6 Mb, 8,400 genes, 2.06 introns per transcript. Genome size is not reduced relative to Mucorales (delta -0.49, CI spans zero), gene count is (delta -0.96). They are AT-rich (GC 26-37 %) and repeat-rich (23-51 % masked; *Smittium mucronatum* 101 Mb).
+- **Dimargaritales**: 19-31 Mb for the assemblies without heavy duplication, 6,000-7,500 genes, 1.3 introns per transcript, and the longest introns in the phylum (median 194 bp).
+- **Early-branching Kickxellales** (*Mycoemilia*, *Spiromyces*) keep 1.7 introns per transcript. *Ramicandelaber* (0.51) and *Dispira* (0.56) are as intron-poor as *Coemansia*.
+- Gene density in *Coemansia* (443 genes per Mb) matches Dipodascomycetes (460) and Saccharomycetes (455); Mucorales have 345.
+
+Interpretation: there are at least two different states inside the phylum. Core Kickxellales are compact and intron-poor. Harpellales and Dimargaritales have fewer genes than Mucorales but ordinary or large genomes. Intron poverty appears in three places (core Kickxellales, *Ramicandelaber*, *Dispira*) that are not each other's closest relatives in the published phylogeny (Reynolds et al. 2023), so either the ancestor was intron-poor with later regain in Harpellales, *Mycoemilia* and *Spiromyces*, or loss happened several times. Regain on that scale is unusual in fungi (Stajich et al. 2007), so parallel loss is the simpler reading, but this needs the tree (agenda B1).
+
+### 2.3 Is the intron deficit real? Ortholog-matched test (observed)
+
+Raw introns per transcript depend on which genes a genome has and on fragmented models. I therefore compared intron counts inside the same SwissProt-anchored family (best hit with query and subject coverage >= 80 %, identity >= 30 %, complete gene model), with Mucorales as the common reference.
+
+{{frag_ortho}}
+
+Table 4. Families shared with Mucorales (reference families need >= 5 Mucorales species; focal group >= 2 species). `ratio_sum` = total introns in the focal group / total introns in Mucorales over the shared families. `f_fewer` = fraction of families with fewer introns than in Mucorales. `mean_ilen` = mean intron length (bp) in those genes. `med_cds_ratio` = median CDS length ratio.
+
+![Ortholog-matched introns](kx_figs/fig5_ortholog_matched_introns.png)
+
+Figure 5. Intron retention relative to Mucorales in shared families.
+
+- *Coemansia*: 0.43 introns per ortholog against 5.05 (ratio 0.085); 95.6 % of 2,317 families have fewer introns and 0.7 % have more; 69.9 % are intronless (Mucorales 2.5 %).
+- Other core Kickxellales 0.115; Dimargaritales 0.26; early Kickxellales 0.46; Harpellales 0.54; Mortierellales 0.80; Zoopagales 0.91; chytrids 1.00.
+- CDS length is conserved (ratio 1.007-1.018 in all Kickxellomycota groups). The proteins did not shrink; the genes lost introns.
+- Remaining introns are **longer**: mean 172 bp in *Coemansia* and 185 bp in other core Kickxellales against 67 bp in Mucorales. Saccharomycetes show the same (146 bp).
+
+Interpretation: the deficit is in conserved, well-modelled genes and is as deep as in non-*Saccharomyces* budding yeasts. It cannot be explained by gene-content differences or by truncated models, because the comparison is within families and on complete models.
+
+### 2.4 Fewer introns or shorter introns? Splice sites, phase, position (observed)
+
+| group | introns/tx (complete) | introns/kb CDS | intronless frac | intron bp median (q10-q90) | GC-AG % | phase 0/1/2 | sole intron in first 10 % of CDS | sole intron in last 20 % | intron share of genome | CDS share of genome |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Kx: *Coemansia* | 0.50 | 0.36 | 0.66 | 94 (34-377) | 3.67 | .37/.33/.30 | 0.29 | 0.38 | 3.7 % | 59.7 % |
+| Kx: core Kickxellales, other | 0.71 | 0.54 | 0.60 | 117 (35-441) | 3.14 | .44/.30/.27 | 0.29 | 0.22 | 6.3 % | 55.6 % |
+| Kx: early Kickxellales | 1.77 | 1.31 | 0.39 | 105 (80-181) | 3.53 | .43/.33/.24 | 0.23 | 0.26 | 8.2 % | 47.6 % |
+| Kx: *Ramicandelaber* (1 genome) | 0.47 | 0.28 | 0.72 | 210 (29-1006) | 2.71 | .34/.27/.39 | 0.18 | 0.38 | 7.6 % | 57.0 % |
+| Kx: Dimargaritales | 1.32 | 0.88 | 0.44 | 194 (126-291) | 0.99 | .45/.34/.21 | 0.25 | 0.26 | 7.2 % | 45.4 % |
+| Kx: Harpellales | 2.14 | 1.39 | 0.33 | 105 (68-194) | 1.76 | .41/.36/.23 | 0.22 | 0.14 | 7.3 % | 44.2 % |
+| Zoopagales | 3.27 | 2.46 | 0.28 | 50 (41-96) | 2.08 | .45/.32/.22 | 0.13 | 0.24 | 8.5 % | 55.4 % |
+| Mortierellales | 2.86 | 1.85 | 0.19 | 105 (86-223) | 1.42 | .42/.34/.24 | 0.16 | 0.12 | 13.5 % | 49.6 % |
+| Mucorales | 3.79 | 2.90 | 0.14 | 64 (54-90) | 1.22 | .42/.34/.24 | 0.15 | 0.11 | 9.8 % | 46.3 % |
+| Chytrids + Monoblepharids | 3.72 | 2.42 | 0.17 | 66 (51-111) | 0.56 | .45/.33/.23 | 0.10 | 0.14 | 12.1 % | 57.2 % |
+| Saccharomycetes | 0.13 | 0.08 | 0.89 | 123 (44-583) | 0.57 | .40/.34/.26 | 0.30 | 0.18 | 1.5 % | 69.1 % |
+| Pichiomycetes | 0.15 | 0.09 | 0.88 | 96 (44-547) | 0.57 | .38/.35/.27 | 0.33 | 0.19 | 1.6 % | 67.8 % |
+| Dipodascomycetes | 0.36 | 0.25 | 0.74 | 77 (45-279) | 0.47 | .41/.34/.26 | 0.52 | 0.10 | 1.8 % | 66.8 % |
+| *Schizosaccharomyces* | 1.03 | 0.73 | 0.53 | 54 (42-147) | 0.26 | .43/.32/.25 | 0.39 | 0.09 | 3.6 % | 58.0 % |
+| *Malassezia* | 1.29 | 0.78 | 0.38 | 26 (23-82) | 1.80 | .38/.32/.29 | 0.21 | 0.30 | 4.1 % | 77.5 % |
+| Ustilaginomycetes | 0.48 | 0.26 | 0.71 | 95 (78-305) | 0.45 | .40/.34/.27 | 0.24 | 0.20 | 2.7 % | 60.4 % |
+| Microsporidia | 0.18 | 0.21 | 0.94 | 63 (26-468) | 0.99 | .40/.30/.27 | 0.07 | 0.61 | 0.8 % | 49.9 % |
+| Sordariomycetes | 1.79 | 1.22 | 0.24 | 65 (52-136) | 1.03 | .39/.34/.27 | 0.20 | 0.12 | 5.0 % | 42.5 % |
+| Agaricomycetes | 5.14 | 3.61 | 0.08 | 55 (49-71) | 1.17 | .43/.31/.26 | 0.12 | 0.12 | 11.0 % | 41.5 % |
+
+Table 5. Intron statistics, genus medians of per-genome values (MotherDuck scan of `gene_introns`, `gene_transcripts`, `gene_CDS` for 1,904 genomes; all species representatives of a genus, so the *Coemansia* row includes fragmented assemblies). Phase and position are recomputed from `gene_CDS`; see the bug note below. AT-AC introns have a genus-median frequency of 0 in every group.
+
+![Intron position](kx_figs/fig4_intron_position.png)
+
+Figure 4. Position of introns along the CDS in complete gene models, pooled over genomes of each group. *Coemansia* is restricted to the 30 assemblies with N50 >= 50 kb.
+
+Observed:
+
+- **The reduction is in intron number.** Introns per kb of CDS fall 8-fold from Mucorales to *Coemansia* (2.90 to 0.36). Median intron length is not shorter (94 vs 64 bp); the length distribution is wider (q90 377 vs 90 bp).
+- **Two routes to a small genome.** Zoopagales and *Malassezia* shorten introns (50 and 26 bp) and intergenic spacers (272 and 123 bp) and keep intron number. Core Kickxellales and Saccharomycotina remove introns and keep the survivors long.
+- **Intergenic distance does shrink** in core Kickxellales (416 bp vs 619 bp in Mucorales; delta -0.88). In *Coemansia* introns occupy 3.7 % of the genome (Mucorales 9.8 %) and CDS 59.7 % (Mucorales 46.3 %).
+- **Co-variation inside *Coemansia*** (30 high-quality assemblies, Spearman): genome size with intergenic distance 0.92, with intron length 0.84, with gene count 0.76, with masked fraction 0.47; intron length with intergenic distance 0.89; introns per transcript with genome size -0.58. Across the 15 genera: genome size with intergenic 0.67, with introns per transcript 0.33; introns per transcript with intron length -0.34. So spacer length and intron length move together with genome size, and intron number is a separate axis that does not follow it.
+- **5' bias.** In single-intron genes of the high-quality assemblies, 38.8 % of *Coemansia* introns are in the first tenth of the CDS, against 14.2 % in Mucorales, 16.4 % in Mortierellales and 15.5 % in Zoopagales. Dipodascomycetes have 51.3 %, Saccharomycetes 43.2 %, *Schizosaccharomyces* 38.7 %. Harpellales are intermediate (20.8 %).
+- **A 3' excess also exists** in *Coemansia* (16 % of sole introns in the last decile), other core Kickxellales (20 %), Saccharomycetes (12 %) and most strongly Microsporidia (32 %). It is absent from Mucorales (6 %) and *Schizosaccharomyces* (5 %).
+- **GC-AG introns are 3 times more frequent** in Kickxellales (3.1-3.7 % of introns; early Kickxellales 3.5 %) than in Mucorales (1.2 %); Harpellales 1.8 %, Dimargaritales 1.0 %.
+- **Phase**: *Coemansia* has less phase 0 and more phase 2 (0.37/0.33/0.30) than Mucorales (0.42/0.34/0.24).
+
+Interpretation:
+
+- The 5' concentration of survivors matches the reverse-transcriptase model: recombination of the gene with a cDNA copy primed from the 3' end removes 3' introns first (Fink 1987; Mourier and Jeffares 2003; Roy and Gilbert 2006). The same signature in three independent intron-poor lineages (Saccharomycotina, *Schizosaccharomyces*, core Kickxellales) and its absence from the compact-but-intron-rich Zoopagales argue that the mechanism, not small size, is shared.
+- The 3' excess, the excess of very short (< 50 bp, 16 %) and very long (> 500 bp, 6 %) introns, the high GC-AG share and the flattened phase distribution are all what spurious introns in evidence-poor gene models would produce. I cannot separate real from spurious without RNA-seq support. The true intron count in *Coemansia* is therefore probably **lower** than reported, which strengthens the main result but weakens anything said about splice-site composition.
+
+**Bug in `gene_introns`.** For intron k of a transcript, `codon_position` and `codon_frame` hold the cumulative codon count and remainder at the end of exon k+1, not exon k. Check: `F0000039_000001-T1` has CDS segments of 91, 391, 1011 and 487 nt; intron 0 follows nt 91 (codon 30, phase 1) but the table gives codon 160, frame 2, which is the boundary after nt 482. For the last intron the table gives the full protein length (660) and frame 0. Consequence in the raw table: phase 0 is 58 % overall and rises as intron number falls (0.80 in *Coemansia*, 0.90 in Pichiomycetes), and `codon_position * 3 / CDS_length` is exactly 1 for every sole intron. The fix is to shift the values by one exon in the writer, or to recompute from `gene_CDS` as done here.

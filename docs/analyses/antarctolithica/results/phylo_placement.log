@@ -1,0 +1,30 @@
+AO monophyletic: True support 1.0
+ancestor -1: support=1.0 n_other_tips=117 classes={'Dothideomycetes': 23, 'nan': 20, 'Eurotiomycetes': 14, 'Lecanoromycetes': 8, 'Sordariomycetes': 6, 'Pezizomycetes': 6, 'Leotiomycetes': 5, 'Lichinomycetes': 4, 'Arthoniomycetes': 4, 'Lipomycetes': 3, 'Orbiliomycetes': 3, 'Pichiomycetes': 3, 'Dipodascomycetes': 3, 'Saccharomycetes': 3, 'Candelariomycetes': 2, 'Geoglossomycetes': 2, 'Coniocybomycetes': 2, 'Trigonopsidomycetes': 1, 'Sporopachydermiomycetes': 1, 'Alloascoideomycetes': 1, 'Sareomycetes': 1, 'Xylonomycetes': 1, 'Xylobotryomycetes': 1}
+   sister tips: ['Neoaidaea tothii [Lipomycetes]', 'Lipomyces orientalis [Lipomycetes]', 'Limtongia smithiae [Lipomycetes]', 'Trigonopsis cantarellii [Trigonopsidomycetes]', 'Yarrowia lipolytica [Dipodascomycetes]', 'Sugiyamaella lignohabitans [Dipodascomycetes]', 'Spencermartinsiella ligniputridi [Dipodascomycetes]', 'Alloascoidea africana [Alloascoideomycetes]', 'Sporopachydermia lactativora [Sporopachydermiomycetes]', 'Saccharomyces mikatae [Saccharomycetes]', 'Phaffomyces coquimbonensis [Saccharomycetes]', 'Ruyongia ponderosae [Saccharomycetes]']
+ancestor -2: support=1.0 n_other_tips=142 classes={'Dothideomycetes': 23, 'nan': 20, 'Eurotiomycetes': 14, 'Taphrinomycetes': 11, 'Lecanoromycetes': 8, 'Pezizomycetes': 6, 'Sordariomycetes': 6, 'Schizosaccharomycetes': 5, 'Leotiomycetes': 5, 'Pneumocystomycetes': 5, 'Arthoniomycetes': 4, 'Lichinomycetes': 4, 'Lipomycetes': 3, 'Dipodascomycetes': 3, 'Orbiliomycetes': 3, 'Pichiomycetes': 3, 'Saccharomycetes': 3, 'Geoglossomycetes': 2, 'Saitoellomycetes': 2, 'Candelariomycetes': 2, 'Coniocybomycetes': 2, 'Alloascoideomycetes': 1, 'Sporopachydermiomycetes': 1, 'Trigonopsidomycetes': 1, 'Novakomycetes': 1, 'Neolectomycetes': 1, 'Sareomycetes': 1, 'Xylonomycetes': 1, 'Xylobotryomycetes': 1}
+ancestor -3: support=1.0 n_other_tips=151 classes={'Dothideomycetes': 23, 'nan': 22, 'Eurotiomycetes': 14, 'Taphrinomycetes': 11, 'Lecanoromycetes': 8, 'Pezizomycetes': 6, 'Sordariomycetes': 6, 'Schizosaccharomycetes': 5, 'Leotiomycetes': 5, 'Pneumocystomycetes': 5, 'Lichinomycetes': 4, 'Arthoniomycetes': 4, 'Dipodascomycetes': 3, 'Saccharomycetes': 3, 'Pichiomycetes': 3, 'Lipomycetes': 3, 'Orbiliomycetes': 3, 'Geoglossomycetes': 2, 'Candelariomycetes': 2, 'Saitoellomycetes': 2, 'Coniocybomycetes': 2, 'Microbotryomycetes': 1, 'Exobasidiomycetes': 1, 'Ustilaginomycetes': 1, 'Sporopachydermiomycetes': 1, 'Dacrymycetes': 1, 'Neolectomycetes': 1, 'Novakomycetes': 1, 'Geminibasidiomycetes': 1, 'Alloascoideomycetes': 1, 'Trigonopsidomycetes': 1, 'Tremellomycetes': 1, 'Agaricomycetes': 1, 'Sareomycetes': 1, 'Xylonomycetes': 1, 'Xylobotryomycetes': 1}
+closest tips by patristic distance:
+  1.337  Saitoella complicata [Saitoellomycetes]
+  1.338  Saitoella coloradoensis [Saitoellomycetes]
+  1.372  Pseudoverpa anthracobia [Pezizomycetes]
+  1.375  Maublancomyces geogenius [Pezizomycetes]
+  1.387  Tuber indicum [Pezizomycetes]
+  1.400  Peziza echinospora [Pezizomycetes]
+  1.409  Tirmania nivea [Pezizomycetes]
+  1.417  Lipomyces orientalis [Lipomycetes]
+  1.452  Sarea resinae [Sareomycetes]
+  1.452  Candelaria pacifica [Candelariomycetes]
+  1.453  Candelina mexicana [Candelariomycetes]
+  1.454  Neoaidaea tothii [Lipomycetes]
+median root-to-tip by group:
+Antarctolithica             1.697
+Basidiomycota (outgroup)    1.629
+Dothideomycetes             2.043
+Eurotiomycetes              2.025
+Lecanoromycetes             1.884
+Leotiomycetes               1.816
+Saccharomycotina            2.082
+Sordariomycetes             2.000
+Taphrinomycotina            1.866
+other Pezizomycotina        1.779
+unplaced Ascomycota         1.883

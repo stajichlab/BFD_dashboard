@@ -1,0 +1,270 @@
+
+### 2.5 Gene families and Pfam domains (observed)
+
+Presence is the fraction of species representatives with at least one hit of any reported strength. *Coemansia* is restricted to the 41 genomes with BUSCO >= 85 % for group comparisons; key absences were then checked in all 134 *Coemansia* genomes that have Pfam rows.
+
+![Pfam presence](kx_figs/fig6_pfam_presence_heatmap.png)
+
+Figure 6. Presence of selected domains. The first five columns are Kickxellomycota; the next three are sister lineages.
+
+**Intron and RNA-processing machinery**
+
+- Core spliceosome domains are present in essentially all high-quality Kickxellomycota genomes: Prp8, SF3a/SF3b, Prp19, Slu7, U1-70K, Bud13, Cwc/Cwf, LSM. No Kickxellomycota-specific spliceosome loss was found. Budding yeasts lack hits to the SF3b1 domain model (0.00-0.06), `SF3a60_bindingd` and `RBM39linker`; *Coemansia* keeps SF3b1 (0.98) and has reduced `RBM39linker` (0.05; other core Kickxellales 0.6, Harpellales 1.0).
+- Exon-junction complex: Mago nashi is present in *Coemansia* (0.93; 115 of 134 genomes) and nearly lost in Saccharomycetes and Pichiomycetes (0.16, 0.12). Btz is absent from all Kickxellomycota and all yeasts (Mucorales 0.34, Sordariomycetes 0.92). SAP18 is absent from Kickxellales and Harpellales (0 of 134 *Coemansia*), present in Mucorales (0.97).
+- NMD: Upf1, Upf2, Upf3 retained. SMG1 and Smg8/9 are absent from all Kickxellomycota and Zoopagales and from every Dikarya group examined, but present in Mucorales and Mortierellales (0.96-1.00). This is not a Kickxellomycota-specific loss.
+- Minor spliceosome: the U11-48K zinc finger is present in Harpellales and Dimargaritales (1.0), in 0.27 of *Coemansia* and 0.09 of Zoopagales. AT-AC introns are at zero frequency everywhere, so U12-type introns cannot be assessed from dinucleotides alone.
+
+**RNAi and DNA methylation**
+
+- Piwi, PAZ, ArgoN and Dicer domains are present throughout Kickxellomycota (Piwi 132 of 134 *Coemansia*; median 2 copies, 5 in *Kickxella*, *Linderina*, *Dispira*). The single *Ramicandelaber* genome has none of them.
+- The canonical eukaryotic RdRP (PF05183) is **absent from all Kickxellales and Harpellales** (0 of 134 *Coemansia*, 0 of 9 Harpellales, 0 in *Mycoemilia*, *Spiromyces*) and present in all Dimargaritales (6 of 6). Mucorales 1.00, Mortierellales 0.96.
+- DNA methyltransferase (PF00145) is present in every Kickxellomycota genus (133 of 134 *Coemansia*, 2-3 copies) and absent from Saccharomycotina.
+
+**DNA repair and chromatin**
+
+- **Ku70/Ku80 (PF02735, PF03731) are absent from all Kickxellales and Harpellales** (0 of 134 *Coemansia*; 0 of 9 Harpellales) and present in Dimargaritales (6 of 6) and *Ramicandelaber*, in all yeasts and in Mucorales/Mortierellales (1.00). The independent kingdom-wide survey run in parallel reports the same thing from the other direction: Ku in 4 % of 169 Kickxellomycota species against 85-100 % almost everywhere else; the 4 % are the Dimargaritales and *Ramicandelaber*. DNA ligase catalytic domains are present.
+- Photolyase (PF00875, PF03441): 0 of 134 *Coemansia*, 1 of 9 Harpellales. PARP: 5 of 134 *Coemansia* (Mucorales 1.00; lost in yeasts as well). `Rad54_N` 0.32 in *Coemansia*, 0 in Harpellales.
+- Fanconi-pathway domains (FancD2, FANCI) are retained in Kickxellomycota and get no hits in the Dikarya groups examined. Mismatch repair, Rad51, Rad52, XPA/XPG are retained.
+- Linker histone H1 (PF00538): 0 of 134 *Coemansia*, 0 of 9 Harpellales; present in Dimargaritales, sisters and budding yeasts.
+
+**Transposable-element domains in gene models**
+
+- Median TE-domain proteins per genome: *Coemansia* 2, other core Kickxellales 4, Dimargaritales 2, Harpellales 16, Mucorales 34.5, Mortierellales 19, Glomeromycota 214. DNA-transposase domains (DDE_1, DDE_3, DDE_Tnp_4, MULE, Helitron) are in 0-10 % of *Coemansia* genomes and 30-100 % of Mucorales/Mortierellales genomes. Harpellales keep several (DDE_Tnp_4 0.89, DDE_1 0.67).
+- Masked fraction: *Coemansia* 11.4 %, Mucorales 20.1 %, Harpellales 23.9 % (up to 51 %).
+
+**Losses against a sister-defined core.** 2,471 Pfam domains are present in >= 90 % of Mucorales, Mortierellales, Sordariomycetes and Agaricomycetes representatives and >= 80 % of chytrids. Core Kickxellales lack 41 of them (<= 10 % of *Coemansia* and <= 20 % of other core genera); 15 are absent from the whole phylum. Besides those named above the list includes chitin deacetylase (`Polysacc_deac_1`, 0 against a median 23-27 copies in Mucorales and Mortierellales), Pil1 (eisosome), ATG11, `Sec15_C`, `MOR2-PAG1_C`, `Swi3`, `TRAP_alpha`, DENN, GMC oxidoreductase, UDP-glycosyltransferases (`UDPGT`, `Glyco_transf_28`), `Flavin_Reduct` and ELMO. Harpellales lack 85 (33 shared with core Kickxellales), Dimargaritales 46 (19 shared). The kingdom-wide survey, with a different core definition and the phylum taken as one group, counts 164 core domains absent in Kickxellomycota and finds the loss set most similar to Zoopagomycetes and Entomophthoromycetes; my order-level split shows the Zoopagales overlap is 6 of 41 (OR 21) and that the phylum-level number mixes three different order-level loss sets. Pfam richness: *Coemansia* 3,973 families, Harpellales 3,687, Mucorales 4,685, Saccharomycetes 4,135, Zoopagales 3,829.
+
+**Depleted by copy number** (median copies *Coemansia* vs Mucorales / Mortierellales): F-box-like 13 vs 71 / 96; Kelch 7 vs 38 / 58; BTB 1 vs 12 / 13; HisKA 1 vs 9 / 13 and Response_reg 3 vs 18 / 19; G-alpha 2 vs 13 / 8; arrestin 1 vs 22 / 11; bZIP 8 vs 32 / 18; homeodomain 7 vs 26 / 11; aspartic peptidase 6 vs 24 / 29; PH 13 vs 48 / 30.
+
+**Retained or expanded** (median copies *Coemansia* / other core Kickxellales / Harpellales vs Mucorales / Mortierellales): tyrosinase 9 / 9.5 / 12 vs 0 / 0; AA9 lytic polysaccharide monooxygenase 8 / 4 / 0 vs 0 / 0 (134 of 134 *Coemansia*; absent from Harpellales, Dimargaritales, *Ramicandelaber*, *Spiromyces*); trypsin 18 / 24 / 73 vs 2 / 2; fungal-specific kinase (`Pkinase_fungal`) 41 / 33 / 7 vs 15 / 5; type I fatty-acid-synthase domains 7-8 / 6-12 / 2.5 vs 1 / 1; multicopper oxidase 12 / 12 / 2 vs 7 / 5; GH18 chitinase 18 / 22 / 5 vs 12 / 10; GH46 chitosanase 5 / 9 / 0 vs 2 / 0; MatE 15 / 10 / 1.5 vs 5 / 2; `Transferase` (PF02458) 20 / 29 / 0 vs 2 / 2.
+
+**Secretome, CAZymes, peptidases, TFs**
+
+{{frag_group_function}}
+
+Table 6. Functional class counts, genus medians (atlas A5). "secreted" is the atlas `n_secreted_strict` count.
+
+- Per 1,000 genes *Coemansia* has as many or more secreted proteins (43.8), CAZymes (26.0) and peptidases (33.2) as Mucorales (34.2, 23.7, 27.1) and about twice the secreted fraction of Saccharomycetes (22.5). TF density is lower than in Mucorales (20.3 vs 28.3 per 1,000) and similar to yeasts (23.7).
+- Harpellales and Dimargaritales have higher secreted density (66 and 63 per 1,000), Zoopagales 83, with fewer CAZymes per 1,000 (20.7, 16.6, 14.9).
+
+### 2.6 Convergence test against other reduced lineages (observed, then interpretation)
+
+{{frag_fisher}}
+
+Table 7. Overlap of losses among the 2,471 core domains. First nine rows: core Kickxellales (41 lost) against each lineage. Last four rows: Saccharomycetes + Pichiomycetes (57 lost) against others, for scale. Two-sided Fisher exact test; no phylogenetic correction.
+
+![Loss overlap](kx_figs/fig7_loss_overlap.png)
+
+Figure 7. Observed and expected shared losses.
+
+- Within the phylum, losses are strongly shared (Harpellales OR 189, Dimargaritales OR 77). That is common ancestry, not convergence.
+- With budding yeasts the overlap is 4 domains (`PI31_Prot_N`, `ELMO_CED12`, `HEAT_SCC3-SA`, `MMtag`), OR 4.8. With *Schizosaccharomyces* it is 18 (OR 17), about the same strength as budding yeast against *Schizosaccharomyces* (OR 15.5).
+- 36 of the 41 are also absent from Microsporidia (expected 21).
+
+Interpretation (none of this is tested with a tree):
+
+1. **Intron loss converged; gene content did not.** Core Kickxellales reached budding-yeast intron densities with the 5'-biased survivor pattern, while keeping machinery that budding yeasts lost (RNAi effectors, DNMT, Mago, SF3b1-type spliceosome, Fanconi pathway) and a filamentous saprotroph's secreted enzymes. A hypothesis that intron loss follows from loss of splicing or surveillance factors is not supported here.
+2. **A candidate mechanism link: loss of NHEJ.** Kickxellales and Harpellales lack Ku. One model of intron dynamics ties intron gain to NHEJ repair of double-strand breaks and intron loss to homologous recombination (Farlow et al. 2011). A lineage without Ku repairs breaks by homologous recombination, which would favor cDNA-mediated loss and block NHEJ-dependent gain. Against a simple version: Harpellales also lack Ku and keep 2 introns per transcript, and budding yeasts lost introns with Ku present. Ku loss may be permissive rather than sufficient. This is testable (agenda B2).
+3. **RdRP loss with Argonaute and Dicer retained** suggests RNAi in Kickxellales and Harpellales works without canonical amplification, or uses a diverged polymerase the Pfam model misses. With low TE-domain counts and 11 % masked sequence in *Coemansia* this fits a genome with little TE activity. Harpellales break the pattern (no RdRP, yet repeat-rich), so RdRP loss does not by itself predict TE load.
+4. **Lifestyle.** The compact, intron-poor state belongs to free-living saprotrophs (core Kickxellales). The host-associated orders (Harpellales gut commensals, Dimargaritales mycoparasites) are not the reduced ones in genome size. This is the reverse of the "symbiont reduces" expectation, and unlike Microsporidia or *Pneumocystis*. AA9, laccases, tyrosinases and chitinases in *Coemansia* fit soil and dung saprotrophy; the trypsin expansion in Harpellales (median 73) fits a protein-rich insect-gut habitat. Because lifestyle is one label per order, this is a three-point observation, not a test.
+5. **Chitin deacetylase absence** (and GH46 chitosanase presence in core Kickxellales) suggests a cell wall without the chitosan typical of Mucoromycota; Dimargaritales, which parasitize Mucorales, keep the deacetylase. Host contamination in Dimargaritales assemblies is an alternative explanation for that presence and for their Ku, RdRP and H1 hits; it must be excluded by checking the contigs.
+6. **What compaction correlates with**: shorter intergenic spacers, fewer paralogs in signaling and regulation families (F-box, Kelch, BTB, two-component, G-alpha, bZIP), fewer TE-derived genes and less masked sequence. Mucorales paralog counts are raised by ancient whole-genome duplication, so part of the "depletion" is the reference group's expansion.
+
+### 2.7 Caveats
+
+- **Sample size.** 15 genera; core Kickxellales n = 5, Harpellales 4, Dimargaritales 3, *Ramicandelaber* 1 genome. *Coemansia* dominates and its 146 "species" are mostly unnamed strains. Asellariales are absent.
+- **No tree.** Genus contrasts and Fisher tests treat genera and domains as independent. Shared ancestry inside the phylum is not removed. Polarity statements rely on published topologies.
+- **Assembly quality.** 116 of 146 *Coemansia* assemblies have N50 < 50 kb. Counts and sizes are biased low; I report high-quality subsets alongside. Dimargaritales have no assembly with N50 >= 50 kb and two have 53-55 % BUSCO duplication.
+- **Annotation.** Gene models appear to be evidence-poor for these taxa (partial fraction 0.18-0.54). Spurious or missed introns are likely; splice-site and phase results are the least reliable part. Intron counts are per annotated transcript.
+- **Absence calls** are absences from the annotated proteome at Pfam sensitivity. A domain can be present in the genome but unannotated, or too diverged for the HMM (likely for Pil1, `Sec15_C`, ATG11, which are also "absent" from Entomophthorales and *Basidiobolus*). The Ku, RdRP, H1, photolyase and chitin-deacetylase absences hold in 134 of 134 *Coemansia* genomes and across 9 Harpellales, which rules out assembly gaps but not model failure or systematic annotation misses. Confirm with tblastn on assemblies and with profile searches seeded from Dimargaritales sequences.
+- **TE domains** are counted in gene models after repeat masking, so they undercount TEs in every group; only the between-group ratio is informative, and only weakly.
+- **SwissProt anchoring** favors conserved genes; the ortholog-matched intron result is about those genes.
+- **Representatives in MotherDuck** were re-derived (best BUSCO, then N50, then LOCUSTAG) and may differ from atlas representatives in ties: 1,919 genomes against 1,944 from the atlas list, the difference being mostly Microsporidia.
+- **Transcription.** Table 5, Figure 4, Figure 6 inputs and Table 4 were copied by hand from query output into TSV files; the scratch tables are the authority.
+
+---
+
+## 3. Methods and the reasons for each choice
+
+**Representatives.** One genome per species: highest BUSCO complete, then highest N50 (atlas rule). Reason: strains of a species are pseudo-replicates. For large Dikarya classes one genome per genus (same ordering) was used in the MotherDuck scans to bound cost; early-diverging phyla and small reduced lineages kept all species representatives. Genus medians of species values were then taken, and group statistics are medians over genera. Reason: species within a genus share most of their history; the genus median is the atlas convention and a crude substitute for phylogenetic correction (Felsenstein 1985).
+
+**Groups.** Kickxellomycota was split by order and, inside Kickxellales, into *Coemansia*, other core genera and the two early-branching genera (*Mycoemilia*, *Spiromyces*), following Reynolds et al. (2023). This split was made after seeing that the two genera differ in intron density, so it is descriptive and not a pre-specified contrast. Sister groups follow Spatafora et al. (2016).
+
+**Quality filters.** Group tables are shown without Q-n50, because the filter removes 79 % of Kickxellomycota; Q-filtered values (Q-busco-rel, Q-dup <= 10 %, Q-n50 >= 50 kb) are given alongside. For *Coemansia* a "high-quality" subset was defined as N50 >= 50 kb (n = 30) for structure statistics and BUSCO >= 85 % (n = 41) for Pfam presence. 85 % was chosen because BUSCO plateaus at 87-91 % in contiguous *Coemansia* assemblies. Complete gene models (not partial, start and stop present; atlas Q-model) were required for intron position, phase and ortholog-matched counts.
+
+**Normalization.** Functional classes are given as counts and per 1,000 proteins. Introns are given per transcript (comparable with the atlas) and per kb of CDS (removes gene-length effects). Pfam copy number is the number of proteins with a domain instance at i-Evalue <= 1e-5 (the atlas P-C threshold); presence uses any hit in the table, which is deliberately lenient so that absence is conservative. Density ratios use log2 with a pseudocount of 0.05 per 1,000.
+
+**Effect sizes.** Median difference with a percentile bootstrap interval from 5,000 resamples of genera within each group (Efron 1979); log2 ratio of medians; Cliff's delta, the probability that a focal genus exceeds a reference genus minus the reverse (Cliff 1993). Cliff's delta was chosen because the distributions are skewed, n is 3-5 on one side, and it has a direct reading (delta = -1 means complete separation). Mann-Whitney p-values are given for screening only; with 5 vs 36 genera the smallest possible two-sided p is about 3e-6 and with 3 vs 8 about 0.012, so they mostly restate n.
+
+**Correlations.** Spearman rank correlation, because relations are monotone but not linear and outliers (a 101 Mb *Smittium*) are present. No p-values are attached to the within-*Coemansia* matrix because the strains are not independent.
+
+**Ortholog-matched introns.** Family = SwissProt best hit (`swissprot_best.sp_id`) with query coverage >= 80 %, subject coverage >= 80 %, identity >= 30 %. The atlas P-A proxy uses identity >= 40 %; I lowered it to 30 % because early-diverging fungi are far from SwissProt references, and kept both coverage gates so that truncated models cannot enter. Where a genome has several proteins for one `sp_id` the highest-bitscore one is used. Family values are medians over species within genus, then over genera within group. Mucorales is the reference because it is the best-sampled early-diverging order. The summary is a ratio of sums plus the fraction of families with fewer introns (a sign-test style statistic that needs no distributional assumption).
+
+**Intron position and phase.** From `gene_CDS`: cumulative CDS length to each exon end, divided by total CDS length; phase = cumulative length mod 3. Decile histograms pool introns over the genomes of a group. Sole-intron genes are shown separately because they are the clearest test of 5' bias (Mourier and Jeffares 2003).
+
+**Core-domain losses.** Core = present in >= 90 % of species representatives in each of Mucorales, Mortierellales, Sordariomycetes, Agaricomycetes and >= 80 % in chytrids. Requiring two early-diverging orders, two Dikarya classes and a zoosporic outgroup makes the core ancestral to Kickxellomycota under any published topology. Loss = present in <= 10 % of a group's representatives (<= 1 of 9 for Harpellales, <= 1 of 6 for Dimargaritales, <= 1 of 7 for *Schizosaccharomyces*, <= 20 % for the 5 other core Kickxellales). Overlap between two lineages' loss sets is tested with Fisher's exact test on the 2x2 table over the 2,471 core domains, and the Jaccard index is given as a similarity. Limits: domains are not independent (multi-domain proteins lose several at once: Ku and Ku_N; GMC_oxred_N and _C), which inflates significance; and shared ancestry is not modelled (Maddison and FitzJohn 2015). The odds ratios are for ranking lineages, not for inference.
+
+**Why not PGLS, Dollo or Count here.** These need a tree. The atlas genus tree is not finished. They are specified in the agenda instead.
+
+**Figures.** Colors are the categorical slots of the house reference palette in fixed order; the palette validator could not be run on this machine (broken Node install), so the reference values were used unchanged.
+
+**SQL summary (MotherDuck, database `bfd`, results in `bfd_scratch`).**
+
+```sql
+-- representatives and groups (kx_genomes): species JOIN asm_stats JOIN busco_genome,
+--   row_number() OVER (PARTITION BY SPECIES ORDER BY complete_pct DESC, N50_bp DESC, LOCUSTAG) = 1, CASE on PHYLUM/CLASS/ORDER for grp
+-- one scan of each big table, restricted by left(id,8) IN (SELECT LOCUSTAG FROM kx_genomes):
+CREATE TABLE kx_it  AS SELECT left(transcript_id,8) genome, transcript_id, "end"-"start"+1 ilen, upper(splice_5) s5, upper(splice_3) s3, ... FROM bfd.gene_introns WHERE ...;
+CREATE TABLE kx_tx  AS SELECT ..., (NOT is_partial AND has_start_codon='TRUE' AND has_stop_codon='TRUE') q_model FROM bfd.gene_transcripts WHERE ...;
+CREATE TABLE kx_junc AS  -- corrected intron positions
+  SELECT transcript_id, ord, sum(len) OVER (PARTITION BY transcript_id ORDER BY ord) cum, sum(len) OVER (PARTITION BY transcript_id) tot, count(*) OVER (...) ncds
+  FROM (SELECT transcript_id, "order" ord, "end"-"start"+1 len FROM bfd.gene_CDS WHERE ...) WHERE ord < ncds-1;
+CREATE TABLE kx_pf  AS SELECT left(protein_id,8) genome, pfam_acc, count(DISTINCT protein_id) n_prot_any,
+  count(DISTINCT protein_id) FILTER (WHERE domain_i_evalue<=1e-5) n_prot FROM bfd.pfam WHERE ... GROUP BY 1,2;
+CREATE TABLE kx_sp_genome AS SELECT b.species_prefix genome, b.sp_id, arg_max(t.n_int,b.bitscore) n_int, arg_max(t.CDS_length,b.bitscore) cds_len, ...
+  FROM bfd.swissprot_best b JOIN kx_txi t ON t.transcript_id=b.protein_id
+  WHERE qcov_x10>=800 AND scov_x10>=800 AND pident_x10>=300 GROUP BY 1,2;
+-- group level: zero-filled genome x pfam (CROSS JOIN), genus fraction/median, then group (kx_pf_grp); PIVOT to kx_pf_wide with core/lost flags
+```
+
+HPCC was in a maintenance reservation from 08:00 on 2026-11-10, so no `srun` job could start. Only small atlas intermediates (labels, A2, A5; a few MB) were read on the login node; all large-table work was moved to MotherDuck.
+
+---
+
+## 4. Research agenda
+
+Priority order. Each item: question; tables and joins; design; pitfalls.
+
+### Tier A: foundations that most other studies need
+
+**A1. Orthogroups and a species tree for representatives.**
+- Question: which gene families were gained, lost, expanded or contracted on which branches?
+- Data: proteomes of the 1,669 genus representatives (already staged for PHYling in `atlas_data/phylo/`), plus all species representatives for focal clades. OrthoFinder (Emms and Kelly 2019), or profile-based assignment to a fixed orthogroup set so new genomes can be added without rerunning. Load `orthogroup(protein_id, og_id)` and `og_genome_counts(genome, og_id, n)` into the release.
+- Design: species tree from the BUSCO-marker PHYling run. Gene-family birth-death with CAFE 5 (Mendes et al. 2020); Dollo parsimony (Farris 1977) and the phylogenetic birth-death model in Count (Csűrös 2010) for presence/absence. Dollo is the right first pass for complex domains that are unlikely to be regained; the likelihood model is needed where HGT is plausible. Report per-branch gain and loss with an error model for incomplete genomes.
+- Pitfalls: fragmented assemblies create false losses and split genes create false gains; run with and without low-quality genomes. Dollo overestimates ancestral content when HGT or model failure exists. Deep fungal branching (order of the zygomycete phyla) changes loss counts; run on two alternative backbones.
+
+**A2. A robust definition of "lineage-restricted" Pfam domains.**
+- Question: which domains are confined to one clade, and is the restriction real?
+- Data: `pfam` (or A7 `pfam_genome_matrix`; the kingdom-wide scratch tables `kw_pfam_matrix` and `kw_genus_pfam` already hold a representative-level matrix), `genome_labels`, `gene_proteins`, assemblies for tblastn.
+- Design: for each domain and clade C compute sensitivity (fraction of genera in C with the domain) and specificity (fraction of all genera with the domain that are in C), at genus level. Call "restricted" if specificity >= 0.95 and the domain is in >= 3 genera and >= 50 % of genera of C. Guard against annotation gaps with three checks: (i) logistic model presence ~ clade + BUSCO + log N50 + partial fraction with a genus random effect; keep domains whose clade effect survives; (ii) re-examine outside-clade hits by score, HMM coverage and contig context, to separate contamination or HGT from true presence; (iii) for a sample of "absent" calls run the HMM against six-frame translations of the assembly. Estimate a false-absence rate per clade from domains carried by BUSCO genes, which should be present.
+- Pitfalls: Pfam families are built from model organisms, so "restricted to Saccharomycetes" is partly ascertainment (seen above: `PRP9_N`, `Rtt106_N`, `SLX5_C`). Restriction at domain level can be fast divergence rather than gain (Weisman et al. 2020); phylostratigraphy errors are systematic (Moyers and Zhang 2015). Report restriction together with a divergence-rate proxy for the carrier proteins.
+
+**A3. Fix and publish the shared tables.** `gene_introns` phase/position bug; `genome_labels` and `pfam_genome_matrix` in the release; order-level groups for early-diverging fungi; synonym table for higher taxa.
+
+### Tier B: Kickxellomycota follow-ups
+
+**B1. Ancestral-state reconstruction of intron density and of Ku/RdRP presence in the zygomycete grade.**
+- Question: one intron-loss event with regain, or parallel losses in core Kickxellales, *Ramicandelaber* and *Dispira*?
+- Data: tree from A1 with all 169 Kickxellomycota representatives plus Zoopagales, Entomophthorales, *Basidiobolus*; `kx_sp_genome` (ortholog-matched intron counts); intron positions from `gene_CDS`.
+- Design: map intron presence/absence at homologous positions in aligned orthologs (needs protein alignments, not in the database) and reconstruct by Dollo and by likelihood. Shared intron positions between *Coemansia* and Harpellales answer the regain question directly. Continuous version: PGLS of introns per kb on Ku presence, genome size and lifestyle (Grafen 1989).
+- Pitfalls: single genomes for *Ramicandelaber*, *Mycoemilia*, *Spiromyces*; spurious introns in models; the number of independent events is 2-4 whatever the method.
+
+**B2. NHEJ loss and intron dynamics across fungi (convergence test with a tree).**
+- Question: do lineages without Ku lose introns faster, or gain fewer?
+- Data: genome x Pfam presence of PF02735, PF03731; A2 intron densities; tree.
+- Design: find all independent Ku-loss events across the 1,669 genera (verify each by tblastn); test with phylogenetic logistic regression (Ives and Garland 2010) or Pagel's correlated-evolution test (Pagel 1994), and report the number of independent origins as the effective n (Maddison and FitzJohn 2015).
+- Pitfalls: few events; Harpellales are a known counterexample; Ku is diverged in some fungi.
+
+**B3. RNA-supported check of intron models in a panel.**
+- Question: how many *Coemansia*, Harpellales and Dimargaritales introns are real, and are GC-AG and 3'-terminal introns artefacts?
+- Data: public RNA-seq where it exists; splice-junction counts against annotated introns.
+- Design: per genome, fraction of annotated introns with junction support by position decile, length class and splice dinucleotide; recompute Table 5 on supported introns only.
+- Pitfalls: RNA-seq exists for few of these taxa; lowly expressed genes are unsupported whatever their truth.
+
+**B4. RNAi without RdRP, and TE load with real repeat annotation.**
+- Question: is TE content low in core Kickxellales, and what replaced RdRP?
+- Data: assemblies; a repeat-class table per genome added to BFD as `repeats(genome, class, bp)`.
+- Design: TE bp by class as a fraction of the assembly, with N50 as covariate (short-read assemblies collapse repeats, which biases *Coemansia* low). Compare contiguous assemblies only where possible. Search for diverged RdRP with profile-profile and structure search.
+- Pitfalls: repeat collapse is the dominant artefact for exactly the fragmented genomes.
+
+**B5. Cell-wall and secreted-enzyme evolution with lifestyle.**
+- Question: are AA9, GH46, laccase, tyrosinase and trypsin expansions gains (HGT or duplication) on the Kickxellales and Harpellales branches?
+- Data: `cazy_overview`, `merops`, `signalp_signal_peptide`, orthogroups, gene trees.
+- Design: gene-tree/species-tree reconciliation for each family; HGT screen by alien index against a non-fungal database (Gladyshev et al. 2008) followed by phylogenetic confirmation; secretion status of each copy.
+- Pitfalls: contamination in co-cultured mycoparasite assemblies and gut-fungus assemblies looks like HGT; require the candidate to sit on a contig with fungal neighbors.
+
+### Tier C: database-wide studies
+
+**C1. Function of lineage-restricted domains.**
+- Question: what do clade-restricted domains do?
+- Data: A3 `protein_pfam_arch` (ordered architectures), `signalp_signal_peptide`, `tmhmm`, `predgpi`, `wolfpsort`, `idp_summary`, `gene_info` coordinates for neighbors, `swissprot_best`.
+- Design: for each restricted domain: (i) co-occurring domains and architecture diversity; (ii) secretion, TM and GPI fractions against the genome background (odds ratio per genome, then combined across genera); (iii) disorder fraction and length; (iv) genomic clustering with CAZymes or other restricted domains (permutation of gene order within contigs); (v) copy-number association with lifestyle by phylogenetic regression; (vi) structure-based annotation of a representative with Foldseek (van Kempen et al. 2024).
+- Pitfalls: restricted domains are short, repetitive or disordered more often than average; lifestyle labels are genus-level.
+
+**C2. Orphan and de novo gene candidates.**
+- Question: how many proteins per genome have no Pfam, no SwissProt hit and no orthogroup outside the genus, and do they look like genes?
+- Data: `gene_proteins` anti-joined to `pfam` and `swissprot_best`; orthogroups; `gene_transcripts` completeness; `idp_summary`; `codon_freq`.
+- Design: per genome, count and classify no-hit proteins by length, completeness, disorder and codon usage relative to the genome's own. Model the count on assembly and annotation covariates first, so that the residual is biology. De novo candidates need a syntenic non-genic region in a sister species.
+- Pitfalls: homology-detection failure explains most "orphans" (Weisman et al. 2020); annotation pipelines differ in how many short ORFs they keep.
+
+**C3. HGT candidates at scale.**
+- Data: needs hits against a non-fungal database (not in BFD). `swissprot_best.org_code` gives a first pass: proteins whose best hit is bacterial with high coverage.
+- Design: alien index per protein, cluster candidates by orthogroup, require presence in >= 2 genomes of a clade and fungal flanking genes; confirm by phylogeny for the top families.
+- Pitfalls: contamination; SwissProt is too small for a final call.
+
+**C4. Convergent loss sets across all independent reductions.**
+- Question: is there a common "reduction module"?
+- Data: genus-level presence matrix; tree.
+- Design: reconstruct losses per branch (A1), then test whether the same orthogroups are lost on independent reduction branches more often than expected from each orthogroup's own overall loss rate (a per-family rate null, not a uniform null). The Fisher tests in section 2.6 are the tree-free version.
+- Pitfalls: dispensable families are lost everywhere; without the per-family null any two reduced lineages look convergent.
+
+### Dashboard and chat additions that support these
+
+1. **Release tables**: `genome_labels` (+ext), `pfam_genome_matrix`, `pfam_genus_presence`, orthogroup tables, `repeats`, corrected `gene_introns`, a `taxon_synonyms` table. The per-genome gene-structure summary (A2) should be queryable as is.
+2. **Clade-contrast view**: pick a focal and a reference clade; get genus-level presence fractions, copy-number log2 ratios and Cliff's delta, with representative and quality filters as toggles and n shown. This is section 2.5 as a tool.
+3. **Lineage-restriction browser**: sensitivity and specificity per domain per clade, with the annotation-gap flags from A2 and links to architectures and secretion fractions.
+4. **Intron view**: position-decile and length histograms per clade, computed from `gene_CDS`.
+5. **Chat/MCP path**: let the model see the result and revise; give it the label table and the representative rule; add stored macros (`rep_genomes()`, `genus_median(metric)`, `pfam_presence(clade)`) so that the right design is the easy query; warn on absence inference from positive-only tables; return n genera and n species with every aggregate; a cost guard that rejects unfiltered scans of the 250 M+ row tables and points to the summary table.
+
+---
+
+## 5. Scratch objects and scripts
+
+MotherDuck database `bfd_scratch` (`bfd` untouched). Tables created by this work:
+
+| table | content |
+|---|---|
+| `kx_genomes` | 1,919 genomes: group label, taxonomy, assembly and BUSCO statistics, representative flags |
+| `kx_it`, `kx_tx`, `kx_txi` | introns (56.2 M rows) and transcripts (21.0 M) for those genomes; transcripts with intron counts |
+| `kx_junc` | corrected intron positions from `gene_CDS` (cumulative nt, total, exon count) |
+| `kx_scan_tx`, `kx_scan_intron`, `kx_scan_junc` | per-genome intron and gene-structure aggregates |
+| `kx_pf`, `kx_nprot`, `kx_pfset` | genome x Pfam counts (8.1 M rows), proteome sizes, genome set used for Pfam contrasts |
+| `kx_pf_grp`, `kx_pf_wide` | group x Pfam presence and copy statistics; wide table with core and loss flags |
+| `kx_sp_genome`, `kx_sp_grp` | SwissProt-anchored family x genome intron counts; group medians |
+
+Note: in `kx_scan_intron` the columns `ph0`, `ph1`, `ph2`, `relpos_*`, `f_first20*`, `f_last20`, `f_cpos_le60*` use the faulty source columns and should not be used; `kx_scan_junc` has the corrected values. The `kw_*` tables in the same database belong to the kingdom-wide survey and were not used or changed.
+
+HPCC: `~/bigdata/tmp_kx_scratch/` (`g.parquet`, `scanset.parquet`, TSV summaries, two job scripts that never ran). `/tmp/kx_g_all.parquet` and `/tmp/kx_*.py` on the login node. One queued `srun` job was cancelled; nothing ran on compute nodes.
+
+Local files (scratchpad, relative to this report):
+
+- `kx_scripts/`: `k1.py`, `k2.py`, `k3_groups.py`, `k5.py` (atlas-intermediate summaries, run on HPCC); `k4_scan.py`, `k6_pf.py` (not run; replaced by the MotherDuck queries); `make_figures_and_stats.py` (figures 1-7, effect sizes, Fisher tests); `make_report_tables.py`; `report_part1.txt`, `report_part2.txt`, `assemble_report.py`.
+- `kx_data/`: `genus_medians_all.tsv`, `grp_genus_medians_all.tsv`, `grp_genus_medians_q.tsv`, `kx_species_reps.tsv`, `md_intron_position_deciles.tsv`, `md_ortholog_matched_introns.tsv`, `md_pfam_presence_curated.tsv`, `stats_genus_effect_sizes.tsv`, `stats_loss_overlap_fisher.tsv`, `stats_coemansia_hq_spearman.tsv`.
+- `kx_figs/`: figures 1-7.
+
+## 6. References
+
+- Benjamini Y, Hochberg Y (1995) Controlling the false discovery rate: a practical and powerful approach to multiple testing. J R Stat Soc B 57:289-300.
+- Cliff N (1993) Dominance statistics: ordinal analyses to answer ordinal questions. Psychol Bull 114:494-509. doi:10.1037/0033-2909.114.3.494
+- Csűrös M (2010) Count: evolutionary analysis of phylogenetic profiles with parsimony and likelihood. Bioinformatics 26:1910-1912. doi:10.1093/bioinformatics/btq315
+- Efron B (1979) Bootstrap methods: another look at the jackknife. Ann Stat 7:1-26. doi:10.1214/aos/1176344552
+- Emms DM, Kelly S (2019) OrthoFinder: phylogenetic orthology inference for comparative genomics. Genome Biol 20:238. doi:10.1186/s13059-019-1832-y
+- Farlow A, Meduri E, Schlötterer C (2011) DNA double-strand break repair and the evolution of intron density. Trends Genet 27:1-6. (citation to verify)
+- Farris JS (1977) Phylogenetic analysis under Dollo's law. Syst Zool 26:77-88.
+- Felsenstein J (1985) Phylogenies and the comparative method. Am Nat 125:1-15. doi:10.1086/284325
+- Fink GR (1987) Pseudogenes in yeast? Cell 49:5-6. doi:10.1016/0092-8674(87)90746-X
+- Gladyshev EA, Meselson M, Arkhipova IR (2008) Massive horizontal gene transfer in bdelloid rotifers. Science 320:1210-1213.
+- Grafen A (1989) The phylogenetic regression. Phil Trans R Soc Lond B 326:119-157.
+- Ives AR, Garland T (2010) Phylogenetic logistic regression for binary dependent variables. Syst Biol 59:9-26.
+- Maddison WP, FitzJohn RG (2015) The unsolved challenge to phylogenetic correlation tests for categorical characters. Syst Biol 64:127-136.
+- Mendes FK, Vanderpool D, Fulton B, Hahn MW (2020) CAFE 5 models variation in evolutionary rates among gene families. Bioinformatics 36:5516-5518.
+- Mourier T, Jeffares DC (2003) Eukaryotic intron loss. Science 300:1393. doi:10.1126/science.1080559
+- Moyers BA, Zhang J (2015) Phylostratigraphic bias creates spurious patterns of genome evolution. Mol Biol Evol 32:258-267.
+- Pagel M (1994) Detecting correlated evolution on phylogenies: a general method for the comparative analysis of discrete characters. Proc R Soc Lond B 255:37-45.
+- Põlme S et al. (2020) FungalTraits: a user-friendly traits database of fungi and fungus-like stramenopiles. Fungal Divers 105:1-16.
+- Reynolds NK et al. (2023) Mycoparasites, gut dwellers, and saprotrophs: phylogenomic reconstructions and comparative analyses of Kickxellomycotina fungi. Genome Biol Evol 15:evac185. (citation to verify: volume and article number)
+- Roy SW, Gilbert W (2006) The evolution of spliceosomal introns: patterns, puzzles and progress. Nat Rev Genet 7:211-221.
+- Spatafora JW et al. (2016) A phylum-level phylogenetic classification of zygomycete fungi based on genome-scale data. Mycologia 108:1028-1046.
+- Stajich JE, Dietrich FS, Roy SW (2007) Comparative genomic analysis of fungal genomes reveals intron-rich ancestors. Genome Biol 8:R223.
+- van Kempen M et al. (2024) Fast and accurate protein structure search with Foldseek. Nat Biotechnol 42:243-246.
+- Weisman CM, Murray AW, Eddy SR (2020) Many, but not all, lineage-specific genes can be explained by homology detection failure. PLoS Biol 18:e3000862.

@@ -55,10 +55,10 @@ DEFAULT_COMMENTS = {
     "gene_proteins": "One row per protein: gene_id, protein_id, transcript_id, length (aa), md5 of sequence. " + _ID,
     "gene_exons": "One row per exon: transcript_id, exon order, coordinates, GC content. " + _ID,
     "gene_CDS": "One row per CDS segment: transcript_id, order, coordinates, GC content. " + _ID,
-    "gene_introns": "One row per intron: transcript_id, intron number, coordinates, 5'/3' splice dinucleotides, GC, codon phase. " + _ID,
+    "gene_introns": "One row per intron: transcript_id, intron number, coordinates, 5'/3' splice dinucleotides, GC. KNOWN BUG: codon_position and codon_frame describe the NEXT CDS junction (off by one exon; last intron gets protein length, frame 0) - recompute phase/position from gene_CDS cumulative lengths. " + _ID,
     "gene_intergenic_distances": "Distance (bp) between each pair of adjacent genes (left_gene, right_gene). " + _G,
     "gene_trnas": "tRNA genes: gene_id, amino acid, anticodon. " + _ID,
-    "infernal_rfam": "Infernal cmscan hits to Rfam non-coding RNA models: model name/accession, contig, coordinates, strand, e-value, score. " + _G,
+    "infernal_rfam": "PARTIAL COVERAGE: only 14 genomes as of 2026-11. Infernal cmscan hits to Rfam non-coding RNA models: model name/accession, contig, coordinates, strand, e-value, score. " + _G,
     # protein domains and families
     "pfam": "Pfam hmmsearch domain hits, one row per domain: pfam_id (name), pfam_acc, e-values, scores, HMM/alignment/envelope coordinates. Genome = split_part(protein_id,'_',1) = species.LOCUSTAG.",
     "tf_inventory": "Transcription-factor inventory: proteins with TF-defining Pfam domains, assigned tf_family, domain e-value and score. " + _G,
@@ -67,10 +67,10 @@ DEFAULT_COMMENTS = {
     "merops": "MEROPS peptidase BLAST hits: merops_id, % identity, alignment stats, e-value, bitscore. " + _G,
     # localization and protein properties
     "signalp_signal_peptide": "SignalP predicted signal peptides (secretion): peptide start/end, probability. Only proteins with a predicted signal peptide are listed. " + _G,
-    "targetP": "TargetP targeting predictions: only proteins predicted SP (secretory signal peptide) or mTP (mitochondrial transit peptide) are listed; absent = no targeting peptide. Probability, cleavage site, motif. " + _G,
+    "targetP": "PARTIAL COVERAGE: only 125 genomes as of 2026-11 (check species_prefix before comparing taxa; use signalp_signal_peptide for secretion across ~23k genomes). TargetP targeting predictions: only proteins predicted SP (secretory signal peptide) or mTP (mitochondrial transit peptide) are listed; absent = no targeting peptide. Probability, cleavage site, motif. " + _G,
     "wolfpsort": "WoLF PSORT localization predictions: localization class and score per protein. " + _G,
     "predgpi": "PredGPI GPI-anchor predictions (GFF-style rows: feature, coordinates, score, attributes). " + _G,
-    "tmhmm": "TMHMM transmembrane helix predictions per protein: length, expected TM residues (ExpAA), PredHel count, topology string. " + _G,
+    "tmhmm": "TMHMM transmembrane helix predictions: only proteins with >=1 predicted helix are listed (about 20% of proteins); absent = no TM helix. Do not use for protein length of all proteins (use gene_proteins). Columns: len, ExpAA, First60, PredHel, Topology. " + _G,
     "idp": "Intrinsically disordered regions: one row per region with start, end, length, mean disorder score. " + _G,
     "idp_summary": "Per-protein disorder summary: disordered residues, IDP_fraction, protein length. " + _G,
     # paralogs / WGD

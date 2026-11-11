@@ -95,8 +95,9 @@ WHICH TABLE TO USE
 - Protein length per protein: protein.length_aa.
 - Always prefer the small tables. Avoid scanning pfam_by_genome, pfam_by_domain, or intergenic_by_genome without a filter on their sort key.
 
-COVERAGE (important for honest answers)
-- genome covers all genomes. pfam tables cover about 745 genomes. protein (length) covers about 770 genomes. Intergenic data covers about 7,800 genomes.
+COVERAGE (important for honest answers; measured from the live files when this page loaded)
+{{COVERAGE}}
+- protein.PredHel is the number of predicted transmembrane helices (0 = none).
 - Gene tables for introns, exons, and sequences are NOT available. If the question needs introns or sequences, say so in "explanation" and return an empty "sql".
 - Columns with NULL mean the genome has no data for that table. Mention the sample size in the explanation when it is small.
 
@@ -154,7 +155,25 @@ async function initDb() {
     const d = (await conn.query(`DESCRIBE ${t}`)).toArray();
     parts.push(`TABLE ${t}(${d.map(r => `${r.column_name} ${r.column_type}`).join(', ')})`);
   }
-  schemaText = `${SCHEMA_RULES}\n\nTABLES (read from the live files)\n${parts.join('\n')}\n\n${EXAMPLES}`;
+  const coverage = await measureCoverage();
+  schemaText = `${SCHEMA_RULES.replace('{{COVERAGE}}', coverage)}\n\nTABLES (read from the live files)\n${parts.join('\n')}\n\n${EXAMPLES}`;
+}
+
+// Coverage = genomes with data in each table, from the small genome_features table.
+// A NULL summary column means that genome has no rows in the source table.
+async function measureCoverage() {
+  const cols = new Set((await conn.query('DESCRIBE genome_features')).toArray().map(r => r.column_name));
+  const measures = [['n_pfam_domains', 'pfam tables'], ['n_proteins', 'protein (length)'],
+                    ['n_pairs', 'intergenic tables']].filter(([c]) => cols.has(c));
+  const sel = ['count(*) AS total', ...measures.map(([c]) => `count(${c}) AS ${c}`)].join(', ');
+  const r = (await conn.query(`SELECT ${sel} FROM genome_features`)).toArray()[0];
+  const n = v => Number(v).toLocaleString();
+  const lines = [`- genome covers all ${n(r.total)} genomes.`];
+  for (const [c, label] of measures) lines.push(`- ${label} cover ${n(r[c])} of ${n(r.total)} genomes.`);
+  if (!cols.has('n_pfam_domains')) lines.push('- pfam coverage is unknown for this release; count DISTINCT species_prefix in genome_pfam_counts if it matters.');
+  lines.push('- Genomes without data have NULL in the matching genome_features columns. Restrict comparisons to genomes that have the data.');
+  dbg(`coverage: ${lines.join(' ')}`);
+  return lines.join('\n');
 }
 
 // ---------------------------------------------------------------- SQL validation

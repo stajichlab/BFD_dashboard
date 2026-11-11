@@ -1,0 +1,151 @@
+focal	reference	metric	n_focal_genera	n_ref_genera	median_focal	median_ref	median_diff	boot_lo	boot_hi	log2_ratio	cliffs_delta	mannwhitney_p
+core Kickxellales (5 genera)	Mucorales	mb	5	36	18.02	34.21	-16.19	-21.2	-11.96	-0.92	-1.0	2.6688088305546586e-06
+core Kickxellales (5 genera)	Mucorales	n_protein_coding	5	36	7363.0	11459.5	-4096.5	-5828.5	-2929.5	-0.64	-1.0	2.6688088305546586e-06
+core Kickxellales (5 genera)	Mucorales	introns_per_transcript	5	36	0.65	3.83	-3.18	-3.38	-2.72	-2.55	-1.0	2.6688088305546586e-06
+core Kickxellales (5 genera)	Mucorales	median_intron_len	5	36	96.0	64.25	31.75	6.25	97.0	0.58	0.82	0.0036035892459072467
+core Kickxellales (5 genera)	Mucorales	median_intergenic	5	36	416.0	619.25	-203.25	-371.26	-50.06	-0.57	-0.88	0.0017620922820064022
+core Kickxellales (5 genera)	Mucorales	median_protein_len	5	36	348.5	359.5	-11.0	-48.0	40.0	-0.04	-0.22	0.4370987722884142
+core Kickxellales (5 genera)	Mucorales	masked_pct	5	36	12.65	20.05	-7.4	-13.4	-0.65	-0.66	-0.6	0.029831945107939975
+core Kickxellales (5 genera)	Mucorales	sec_k	5	36	47.6	34.16	13.44	6.44	27.01	0.48	0.98	1.0675235322218634e-05
+core Kickxellales (5 genera)	Mucorales	cazy_k	5	36	26.04	23.69	2.35	0.13	4.97	0.14	0.61	0.026559985481679965
+core Kickxellales (5 genera)	Mucorales	tf_k	5	36	19.41	28.32	-8.9	-12.62	-7.19	-0.54	-1.0	2.6688088305546586e-06
+core Kickxellales (5 genera)	Mortierellales	mb	5	14	18.02	38.07	-20.05	-28.19	-15.82	-1.08	-1.0	0.0001719986240110079
+core Kickxellales (5 genera)	Mortierellales	n_protein_coding	5	14	7363.0	12343.25	-4980.25	-6500.5	-3874.5	-0.75	-1.0	0.0001719986240110079
+core Kickxellales (5 genera)	Mortierellales	introns_per_transcript	5	14	0.65	2.81	-2.15	-2.32	-1.91	-2.1	-1.0	0.0001719986240110079
+core Kickxellales (5 genera)	Mortierellales	median_intron_len	5	14	96.0	105.0	-9.0	-34.5	56.0	-0.13	-0.2	0.5464374291162887
+core Kickxellales (5 genera)	Mortierellales	median_intergenic	5	14	416.0	625.25	-209.25	-357.0	-48.0	-0.59	-0.89	0.0020639834881320948
+core Kickxellales (5 genera)	Mortierellales	median_protein_len	5	14	348.5	426.75	-78.25	-115.5	-27.75	-0.29	-0.91	0.0012039903680770552
+core Kickxellales (5 genera)	Mortierellales	masked_pct	5	14	12.65	16.07	-3.42	-5.52	2.91	-0.35	-0.66	0.033883728930168555
+core Kickxellales (5 genera)	Mortierellales	sec_k	5	14	47.6	44.41	3.19	-6.79	17.36	0.1	0.29	0.391296869625043
+core Kickxellales (5 genera)	Mortierellales	cazy_k	5	14	26.04	18.2	7.84	5.69	10.57	0.52	1.0	0.0001719986240110079
+core Kickxellales (5 genera)	Mortierellales	tf_k	5	14	19.41	16.12	3.3	-0.06	5.09	0.27	0.74	0.014275885792913657
+core Kickxellales (5 genera)	Zoopagales	mb	5	8	18.02	17.16	0.86	-10.22	6.13	0.07	0.0	1.0
+core Kickxellales (5 genera)	Zoopagales	n_protein_coding	5	8	7363.0	6901.0	462.0	-3128.0	1775.0	0.09	-0.05	0.9432789432789432
+core Kickxellales (5 genera)	Zoopagales	introns_per_transcript	5	8	0.65	3.29	-2.64	-3.45	-1.43	-2.33	-1.0	0.001554001554001554
+core Kickxellales (5 genera)	Zoopagales	median_intron_len	5	8	96.0	49.5	46.5	16.75	113.5	0.96	0.95	0.003108003108003108
+core Kickxellales (5 genera)	Zoopagales	median_intergenic	5	8	416.0	272.25	143.75	-156.0	362.0	0.61	0.3	0.43512043512043513
+core Kickxellales (5 genera)	Zoopagales	median_protein_len	5	8	348.5	369.25	-20.75	-58.25	36.5	-0.08	-0.2	0.6079144110112804
+core Kickxellales (5 genera)	Zoopagales	masked_pct	5	8	12.65	14.22	-1.57	-11.8	4.7	-0.17	-0.35	0.3543123543123543
+core Kickxellales (5 genera)	Zoopagales	sec_k	5	8	47.6	82.88	-35.28	-52.15	-11.8	-0.8	-0.9	0.006216006216006216
+core Kickxellales (5 genera)	Zoopagales	cazy_k	5	8	26.04	14.93	11.11	7.1	14.78	0.8	1.0	0.001554001554001554
+core Kickxellales (5 genera)	Zoopagales	tf_k	5	8	19.41	12.34	7.08	3.72	9.19	0.65	1.0	0.001554001554001554
+core Kickxellales (5 genera)	Sacch:Saccharomycetes	mb	5	43	18.02	11.98	6.04	1.44	10.44	0.59	0.86	0.00047655089283211397
+core Kickxellales (5 genera)	Sacch:Saccharomycetes	n_protein_coding	5	43	7363.0	5191.0	2172.0	796.5	3271.0	0.5	0.93	7.008101365178147e-05
+core Kickxellales (5 genera)	Sacch:Saccharomycetes	introns_per_transcript	5	43	0.65	0.15	0.5	0.34	0.74	2.12	1.0	1.1680168941963577e-06
+core Kickxellales (5 genera)	Sacch:Saccharomycetes	median_intron_len	5	43	96.0	109.5	-13.5	-139.0	60.0	-0.19	-0.06	0.839483037507273
+core Kickxellales (5 genera)	Sacch:Saccharomycetes	median_intergenic	5	43	416.0	369.5	46.5	-86.0	189.5	0.17	0.13	0.6365611200990038
+core Kickxellales (5 genera)	Sacch:Saccharomycetes	median_protein_len	5	43	348.5	412.0	-63.5	-105.5	-13.0	-0.24	-0.98	0.0003926169029379769
+core Kickxellales (5 genera)	Sacch:Saccharomycetes	masked_pct	5	43	12.65	16.9	-4.24	-7.9	2.95	-0.42	-0.31	0.2746112839776114
+core Kickxellales (5 genera)	Sacch:Saccharomycetes	sec_k	5	43	47.6	22.54	25.05	19.46	38.54	1.08	1.0	1.1680168941963577e-06
+core Kickxellales (5 genera)	Sacch:Saccharomycetes	cazy_k	5	43	26.04	24.15	1.88	-0.64	4.59	0.11	0.54	0.04805338304413235
+core Kickxellales (5 genera)	Sacch:Saccharomycetes	tf_k	5	43	19.41	23.69	-4.28	-8.34	-2.8	-0.29	-0.97	8.176118259374503e-06
+core Kickxellales (5 genera)	Sacch:Dipodascomycetes	mb	5	22	18.02	12.4	5.62	-0.3	9.85	0.54	0.56	0.05504768983029852
+core Kickxellales (5 genera)	Sacch:Dipodascomycetes	n_protein_coding	5	22	7363.0	5823.5	1539.5	96.0	2690.95	0.34	0.71	0.012609934349064784
+core Kickxellales (5 genera)	Sacch:Dipodascomycetes	introns_per_transcript	5	22	0.65	0.38	0.28	0.11	0.54	0.79	0.76	0.006292580205623684
+core Kickxellales (5 genera)	Sacch:Dipodascomycetes	median_intron_len	5	22	96.0	66.0	30.0	4.5	95.0	0.54	0.56	0.05686407832176809
+core Kickxellales (5 genera)	Sacch:Dipodascomycetes	median_intergenic	5	22	416.0	428.25	-12.25	-155.0	130.38	-0.04	0.0	1.0
+core Kickxellales (5 genera)	Sacch:Dipodascomycetes	median_protein_len	5	22	348.5	396.5	-48.0	-85.5	3.0	-0.19	-0.73	0.010107766629505759
+core Kickxellales (5 genera)	Sacch:Dipodascomycetes	masked_pct	5	22	12.65	11.58	1.07	-0.8	7.35	0.13	0.35	0.25717824848259624
+core Kickxellales (5 genera)	Sacch:Dipodascomycetes	sec_k	5	22	47.6	26.14	21.46	15.93	34.96	0.86	1.0	2.477393781741608e-05
+core Kickxellales (5 genera)	Sacch:Dipodascomycetes	cazy_k	5	22	26.04	23.15	2.89	-2.12	5.98	0.17	0.27	0.37693546389198557
+core Kickxellales (5 genera)	Sacch:Dipodascomycetes	tf_k	5	22	19.41	24.51	-5.09	-8.89	-1.74	-0.34	-0.64	0.027870680044593088
+Harpellales (4 genera)	Mucorales	mb	4	36	27.55	34.21	-6.66	-9.51	9.1	-0.31	-0.49	0.12285808075281761
+Harpellales (4 genera)	Mucorales	n_protein_coding	4	36	8402.0	11459.5	-3057.5	-4692.0	-1549.0	-0.45	-0.96	0.0001531896268738374
+Harpellales (4 genera)	Mucorales	introns_per_transcript	4	36	2.06	3.83	-1.77	-2.44	-1.38	-0.9	-1.0	2.18842324105482e-05
+Harpellales (4 genera)	Mucorales	median_intron_len	4	36	105.0	64.25	40.75	6.5	75.75	0.71	0.82	0.00828792675325452
+Harpellales (4 genera)	Mucorales	median_intergenic	4	36	981.75	619.25	362.5	-198.25	784.5	0.66	0.44	0.1555505435968248
+Harpellales (4 genera)	Mucorales	median_protein_len	4	36	376.25	359.5	16.75	-26.25	50.5	0.07	0.21	0.5131797557968569
+Harpellales (4 genera)	Mucorales	masked_pct	4	36	23.86	20.05	3.81	-1.69	12.38	0.25	0.32	0.3103795608247748
+Harpellales (4 genera)	Mucorales	sec_k	4	36	66.32	34.16	32.15	16.16	51.0	0.96	1.0	2.18842324105482e-05
+Harpellales (4 genera)	Mucorales	cazy_k	4	36	20.66	23.69	-3.03	-8.66	-0.46	-0.2	-0.67	0.028274428274428273
+Harpellales (4 genera)	Mucorales	tf_k	4	36	16.9	28.32	-11.41	-15.66	1.48	-0.74	-0.67	0.028274428274428273
+Harpellales (4 genera)	Mortierellales	mb	4	14	27.55	38.07	-10.52	-16.04	5.24	-0.47	-0.61	0.07908496732026143
+Harpellales (4 genera)	Mortierellales	n_protein_coding	4	14	8402.0	12343.25	-3941.25	-5521.25	-2470.5	-0.55	-1.0	0.00065359477124183
+Harpellales (4 genera)	Mortierellales	introns_per_transcript	4	14	2.06	2.81	-0.75	-1.42	-0.62	-0.45	-1.0	0.00065359477124183
+Harpellales (4 genera)	Mortierellales	median_intron_len	4	14	105.0	105.0	0.0	-34.0	35.0	0.0	-0.09	0.8312814543348137
+Harpellales (4 genera)	Mortierellales	median_intergenic	4	14	981.75	625.25	356.5	-204.25	779.75	0.65	0.5	0.15751633986928104
+Harpellales (4 genera)	Mortierellales	median_protein_len	4	14	376.25	426.75	-50.5	-93.0	-16.5	-0.18	-0.82	0.011764705882352941
+Harpellales (4 genera)	Mortierellales	masked_pct	4	14	23.86	16.07	7.79	6.2	16.4	0.57	1.0	0.0034781782825550715
+Harpellales (4 genera)	Mortierellales	sec_k	4	14	66.32	44.41	21.91	4.53	41.01	0.58	0.71	0.034640522875816995
+Harpellales (4 genera)	Mortierellales	cazy_k	4	14	20.66	18.2	2.46	-3.17	5.11	0.18	0.43	0.23267973856209148
+Harpellales (4 genera)	Mortierellales	tf_k	4	14	16.9	16.12	0.79	-3.3	13.69	0.07	0.18	0.6450980392156862
+Harpellales (4 genera)	Zoopagales	mb	4	8	27.55	17.16	10.39	-1.31	26.15	0.68	0.62	0.1090909090909091
+Harpellales (4 genera)	Zoopagales	n_protein_coding	4	8	8402.0	6901.0	1501.0	-1612.5	3202.0	0.28	0.31	0.46060606060606063
+Harpellales (4 genera)	Zoopagales	introns_per_transcript	4	8	2.06	3.29	-1.23	-2.35	-0.08	-0.68	-0.75	0.04848484848484849
+Harpellales (4 genera)	Zoopagales	median_intron_len	4	8	105.0	49.5	55.5	15.5	90.5	1.08	0.94	0.00808080808080808
+Harpellales (4 genera)	Zoopagales	median_intergenic	4	8	981.75	272.25	709.5	92.49	1131.5	1.85	0.81	0.028282828282828285
+Harpellales (4 genera)	Zoopagales	median_protein_len	4	8	376.25	369.25	7.0	-35.5	47.53	0.03	0.25	0.5515177080217877
+Harpellales (4 genera)	Zoopagales	masked_pct	4	8	23.86	14.22	9.64	0.68	18.2	0.75	0.62	0.10602449927906324
+Harpellales (4 genera)	Zoopagales	sec_k	4	8	66.32	82.88	-16.56	-40.58	10.18	-0.32	-0.44	0.2828282828282829
+Harpellales (4 genera)	Zoopagales	cazy_k	4	8	20.66	14.93	5.73	-0.16	9.62	0.47	0.75	0.04848484848484849
+Harpellales (4 genera)	Zoopagales	tf_k	4	8	16.9	12.34	4.57	0.48	17.46	0.45	0.81	0.028282828282828285
+Harpellales (4 genera)	Sacch:Saccharomycetes	mb	4	43	27.55	11.98	15.57	12.86	31.33	1.2	1.0	1.1212962184285033e-05
+Harpellales (4 genera)	Sacch:Saccharomycetes	n_protein_coding	4	43	8402.0	5191.0	3211.0	1669.5	4675.0	0.69	0.98	4.4851848737140134e-05
+Harpellales (4 genera)	Sacch:Saccharomycetes	introns_per_transcript	4	43	2.06	0.15	1.91	1.24	1.98	3.78	1.0	1.1212962184285033e-05
+Harpellales (4 genera)	Sacch:Saccharomycetes	median_intron_len	4	43	105.0	109.5	-4.5	-130.0	43.0	-0.06	-0.1	0.7458220644643629
+Harpellales (4 genera)	Sacch:Saccharomycetes	median_intergenic	4	43	981.75	369.5	612.25	54.0	1034.25	1.41	0.85	0.0057077157748302585
+Harpellales (4 genera)	Sacch:Saccharomycetes	median_protein_len	4	43	376.25	412.0	-35.75	-78.25	-2.0	-0.13	-0.84	0.006387941211674331
+Harpellales (4 genera)	Sacch:Saccharomycetes	masked_pct	4	43	23.86	16.9	6.96	3.82	15.53	0.5	0.6	0.049590907369361156
+Harpellales (4 genera)	Sacch:Saccharomycetes	sec_k	4	43	66.32	22.54	43.77	28.22	62.66	1.56	1.0	1.1212962184285033e-05
+Harpellales (4 genera)	Sacch:Saccharomycetes	cazy_k	4	43	20.66	24.15	-3.49	-9.12	-1.1	-0.23	-0.85	0.002175314663751297
+Harpellales (4 genera)	Sacch:Saccharomycetes	tf_k	4	43	16.9	23.69	-6.79	-10.88	6.11	-0.49	-0.52	0.0903540492809688
+Harpellales (4 genera)	Sacch:Dipodascomycetes	mb	4	22	27.55	12.4	15.15	11.98	30.91	1.15	1.0	0.00013377926421404682
+Harpellales (4 genera)	Sacch:Dipodascomycetes	n_protein_coding	4	22	8402.0	5823.5	2578.5	995.81	4055.25	0.53	0.98	0.00026755852842809364
+Harpellales (4 genera)	Sacch:Dipodascomycetes	introns_per_transcript	4	22	2.06	0.38	1.68	1.01	1.85	2.45	1.0	0.00013377926421404682
+Harpellales (4 genera)	Sacch:Dipodascomycetes	median_intron_len	4	22	105.0	66.0	39.0	-1.0	74.0	0.67	0.55	0.0947921078106568
+Harpellales (4 genera)	Sacch:Dipodascomycetes	median_intergenic	4	22	981.75	428.25	553.5	-7.25	975.5	1.2	0.7	0.025953177257525085
+Harpellales (4 genera)	Sacch:Dipodascomycetes	median_protein_len	4	22	376.25	396.5	-20.25	-62.75	14.0	-0.08	-0.48	0.15010033444816054
+Harpellales (4 genera)	Sacch:Dipodascomycetes	masked_pct	4	22	23.86	11.58	12.28	10.91	20.84	1.04	0.93	0.0039931571560967525
+Harpellales (4 genera)	Sacch:Dipodascomycetes	sec_k	4	22	66.32	26.14	40.17	24.65	59.02	1.34	1.0	0.00013377926421404682
+Harpellales (4 genera)	Sacch:Dipodascomycetes	cazy_k	4	22	20.66	23.15	-2.49	-9.45	0.55	-0.16	-0.52	0.1119732441471572
+Harpellales (4 genera)	Sacch:Dipodascomycetes	tf_k	4	22	16.9	24.51	-7.6	-11.48	5.18	-0.54	-0.41	0.22327759197324415
+Dimargaritales (3 genera)	Mucorales	mb	3	36	29.09	34.21	-5.12	-10.63	17.26	-0.23	-0.26	0.49655323339533874
+Dimargaritales (3 genera)	Mucorales	n_protein_coding	3	36	8760.0	11459.5	-2699.5	-4706.64	1723.75	-0.39	-0.5	0.1717912244228034
+Dimargaritales (3 genera)	Mucorales	introns_per_transcript	3	36	1.31	3.83	-2.52	-3.35	-2.14	-1.55	-1.0	0.000218842324105482
+Dimargaritales (3 genera)	Mucorales	median_intron_len	3	36	194.0	64.25	129.75	100.0	146.0	1.59	1.0	0.0047663790228525535
+Dimargaritales (3 genera)	Mucorales	median_intergenic	3	36	840.5	619.25	221.25	93.25	524.0	0.44	0.7	0.04809550931313045
+Dimargaritales (3 genera)	Mucorales	median_protein_len	3	36	376.0	359.5	16.5	1.0	28.5	0.06	0.47	0.18747596288796398
+Dimargaritales (3 genera)	Mucorales	masked_pct	3	36	11.15	20.05	-8.9	-15.26	-5.82	-0.85	-0.87	0.0067841120472699416
+Dimargaritales (3 genera)	Mucorales	sec_k	3	36	62.97	34.16	28.81	20.85	51.33	0.88	1.0	0.000218842324105482
+Dimargaritales (3 genera)	Mucorales	cazy_k	3	36	16.55	23.69	-7.15	-8.47	-6.04	-0.52	-0.98	0.000437684648210964
+Dimargaritales (3 genera)	Mucorales	tf_k	3	36	19.37	28.32	-8.95	-11.23	-7.06	-0.55	-1.0	0.000218842324105482
+Dimargaritales (3 genera)	Mortierellales	mb	3	14	29.09	38.07	-8.98	-17.69	13.35	-0.39	-0.38	0.36176470588235293
+Dimargaritales (3 genera)	Mortierellales	n_protein_coding	3	14	8760.0	12343.25	-3583.25	-5305.5	771.5	-0.49	-0.48	0.24411764705882352
+Dimargaritales (3 genera)	Mortierellales	introns_per_transcript	3	14	1.31	2.81	-1.49	-2.27	-1.39	-1.1	-1.0	0.0029411764705882353
+Dimargaritales (3 genera)	Mortierellales	median_intron_len	3	14	194.0	105.0	89.0	55.5	103.0	0.89	1.0	0.00957790994005959
+Dimargaritales (3 genera)	Mortierellales	median_intergenic	3	14	840.5	625.25	215.25	115.25	511.25	0.43	1.0	0.0029411764705882353
+Dimargaritales (3 genera)	Mortierellales	median_protein_len	3	14	376.0	426.75	-50.75	-60.0	-33.5	-0.18	-0.86	0.020588235294117647
+Dimargaritales (3 genera)	Mortierellales	masked_pct	3	14	11.15	16.07	-4.92	-7.66	-2.79	-0.53	-1.0	0.0029411764705882353
+Dimargaritales (3 genera)	Mortierellales	sec_k	3	14	62.97	44.41	18.57	7.51	43.53	0.5	0.9	0.011764705882352941
+Dimargaritales (3 genera)	Mortierellales	cazy_k	3	14	16.55	18.2	-1.66	-2.93	-0.57	-0.14	-0.67	0.09117647058823529
+Dimargaritales (3 genera)	Mortierellales	tf_k	3	14	19.37	16.12	3.25	1.41	5.35	0.26	1.0	0.0029411764705882353
+Dimargaritales (3 genera)	Zoopagales	mb	3	8	29.09	17.16	11.93	-0.25	35.95	0.76	0.67	0.13333333333333333
+Dimargaritales (3 genera)	Zoopagales	n_protein_coding	3	8	8760.0	6901.0	1859.0	-2047.5	6422.0	0.34	0.5	0.2787878787878788
+Dimargaritales (3 genera)	Zoopagales	introns_per_transcript	3	8	1.31	3.29	-1.98	-3.44	-0.79	-1.33	-0.83	0.048484848484848485
+Dimargaritales (3 genera)	Zoopagales	median_intron_len	3	8	194.0	49.5	144.5	100.0	164.5	1.97	1.0	0.012121212121212121
+Dimargaritales (3 genera)	Zoopagales	median_intergenic	3	8	840.5	272.25	568.25	306.0	939.25	1.63	1.0	0.012121212121212121
+Dimargaritales (3 genera)	Zoopagales	median_protein_len	3	8	376.0	369.25	6.75	-8.0	33.0	0.03	0.38	0.412083049595689
+Dimargaritales (3 genera)	Zoopagales	masked_pct	3	8	11.15	14.22	-3.07	-13.46	-0.69	-0.35	-0.75	0.08484848484848484
+Dimargaritales (3 genera)	Zoopagales	sec_k	3	8	62.97	82.88	-19.9	-38.17	13.37	-0.4	-0.33	0.496969696969697
+Dimargaritales (3 genera)	Zoopagales	cazy_k	3	8	16.55	14.93	1.62	-1.62	4.3	0.15	0.17	0.7757575757575759
+Dimargaritales (3 genera)	Zoopagales	tf_k	3	8	19.37	12.34	7.03	4.92	9.51	0.65	1.0	0.012121212121212121
+Dimargaritales (3 genera)	Sacch:Saccharomycetes	mb	3	43	29.09	11.98	17.11	12.02	39.09	1.28	1.0	0.00013175230566534913
+Dimargaritales (3 genera)	Sacch:Saccharomycetes	n_protein_coding	3	43	8760.0	5191.0	3569.0	1962.0	7797.0	0.75	0.98	0.00026350461133069827
+Dimargaritales (3 genera)	Sacch:Saccharomycetes	introns_per_transcript	3	43	1.31	0.15	1.16	0.36	1.22	3.13	1.0	0.00013175230566534913
+Dimargaritales (3 genera)	Sacch:Saccharomycetes	median_intron_len	3	43	194.0	109.5	84.5	-41.0	119.82	0.83	0.24	0.5044324088415377
+Dimargaritales (3 genera)	Sacch:Saccharomycetes	median_intergenic	3	43	840.5	369.5	471.0	396.0	745.75	1.19	1.0	0.004408545399061591
+Dimargaritales (3 genera)	Sacch:Saccharomycetes	median_protein_len	3	43	376.0	412.0	-36.0	-48.5	-26.5	-0.13	-1.0	0.0043939661206387004
+Dimargaritales (3 genera)	Sacch:Saccharomycetes	masked_pct	3	43	11.15	16.9	-5.74	-10.32	-2.74	-0.6	-0.6	0.09354413702239789
+Dimargaritales (3 genera)	Sacch:Saccharomycetes	sec_k	3	43	62.97	22.54	40.43	34.55	62.3	1.48	1.0	0.00013175230566534913
+Dimargaritales (3 genera)	Sacch:Saccharomycetes	cazy_k	3	43	16.55	24.15	-7.61	-8.81	-6.89	-0.55	-1.0	0.00013175230566534913
+Dimargaritales (3 genera)	Sacch:Saccharomycetes	tf_k	3	43	19.37	23.69	-4.33	-6.29	-2.68	-0.29	-0.97	0.0005270092226613965
+Dimargaritales (3 genera)	Sacch:Dipodascomycetes	mb	3	22	29.09	12.4	16.69	10.45	38.65	1.23	1.0	0.0008695652173913044
+Dimargaritales (3 genera)	Sacch:Dipodascomycetes	n_protein_coding	3	22	8760.0	5823.5	2936.5	1187.0	7243.5	0.59	1.0	0.0008695652173913044
+Dimargaritales (3 genera)	Sacch:Dipodascomycetes	introns_per_transcript	3	22	1.31	0.38	0.93	0.13	1.1	1.8	0.85	0.013913043478260868
+Dimargaritales (3 genera)	Sacch:Dipodascomycetes	median_intron_len	3	22	194.0	66.0	128.0	83.25	145.5	1.56	0.73	0.04930727544521828
+Dimargaritales (3 genera)	Sacch:Dipodascomycetes	median_intergenic	3	22	840.5	428.25	412.25	323.5	695.62	0.97	0.94	0.0034782608695652175
+Dimargaritales (3 genera)	Sacch:Dipodascomycetes	median_protein_len	3	22	376.0	396.5	-20.5	-35.25	-8.0	-0.08	-0.73	0.04608695652173913
+Dimargaritales (3 genera)	Sacch:Dipodascomycetes	masked_pct	3	22	11.15	11.58	-0.43	-3.14	2.08	-0.05	-0.15	0.722608695652174
+Dimargaritales (3 genera)	Sacch:Dipodascomycetes	sec_k	3	22	62.97	26.14	36.83	30.84	58.83	1.27	1.0	0.0008695652173913044
+Dimargaritales (3 genera)	Sacch:Dipodascomycetes	cazy_k	3	22	16.55	23.15	-6.6	-10.86	-4.35	-0.48	-1.0	0.0008695652173913044
+Dimargaritales (3 genera)	Sacch:Dipodascomycetes	tf_k	3	22	19.37	24.51	-5.14	-7.4	-1.54	-0.34	-0.64	0.08869565217391305

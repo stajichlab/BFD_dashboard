@@ -1,0 +1,49 @@
+training species: 1779 classes: 16
+CLASS
+Sordariomycetes        555
+Dothideomycetes        326
+Pichiomycetes          204
+Leotiomycetes          135
+Eurotiomycetes         122
+Saccharomycetes        118
+Lecanoromycetes        116
+Dipodascomycetes        66
+Pezizomycetes           52
+Orbiliomycetes          18
+Lipomycetes             15
+Trigonopsidomycetes     13
+Taphrinomycetes         11
+Arthoniomycetes         11
+Geoglossomycetes         9
+Lichinomycetes           8
+{'target': 'class', 'block': 'struct', 'n_features': 23, 'balanced_acc': 0.6192307950711821, 'macro_F1': 0.6476646428726984, 'acc': np.float64(0.8566610455311973), 'median_maxprob_correct': np.float64(0.804)}
+{'target': 'class', 'block': 'struct_all', 'n_features': 27, 'balanced_acc': 0.6641888654064076, 'macro_F1': 0.7021417608118012, 'acc': np.float64(0.863406408094435), 'median_maxprob_correct': np.float64(0.818)}
+{'target': 'class', 'block': 'cell', 'n_features': 51, 'balanced_acc': 0.8223883452340606, 'macro_F1': 0.8548782433123647, 'acc': np.float64(0.9376053962900506), 'median_maxprob_correct': np.float64(0.83)}
+{'target': 'class', 'block': 'codon', 'n_features': 61, 'balanced_acc': 0.6709611688888616, 'macro_F1': 0.7176440837564284, 'acc': np.float64(0.8870151770657673), 'median_maxprob_correct': np.float64(0.818)}
+{'target': 'class', 'block': 'aa', 'n_features': 20, 'balanced_acc': 0.7098193921660874, 'macro_F1': 0.7670037306236681, 'acc': np.float64(0.8813940415964024), 'median_maxprob_correct': np.float64(0.81)}
+{'target': 'class', 'block': 'trna', 'n_features': 62, 'balanced_acc': 0.4381198886436163, 'macro_F1': 0.4820653687276664, 'acc': np.float64(0.7650365373805509), 'median_maxprob_correct': np.float64(0.64)}
+{'target': 'class', 'block': 'tf', 'n_features': 20, 'balanced_acc': 0.6221561171479522, 'macro_F1': 0.6799063450007736, 'acc': np.float64(0.7993254637436762), 'median_maxprob_correct': np.float64(0.644), 'balanced_acc_thin0.93': 0.5562883243445089, 'balanced_acc_thin0.75': 0.3598373762798992}
+{'target': 'class', 'block': 'cazy', 'n_features': 186, 'balanced_acc': 0.8206572126911784, 'macro_F1': 0.86085377565592, 'acc': np.float64(0.9443507588532883), 'median_maxprob_correct': np.float64(0.836), 'balanced_acc_thin0.93': 0.8209468454157625, 'balanced_acc_thin0.75': 0.7295425486480724}
+{'target': 'class', 'block': 'merops', 'n_features': 124, 'balanced_acc': 0.7872268389940886, 'macro_F1': 0.836903710616332, 'acc': np.float64(0.9291736930860034), 'median_maxprob_correct': np.float64(0.778), 'balanced_acc_thin0.93': 0.765858954072058, 'balanced_acc_thin0.75': 0.5668695884554503}
+{'target': 'class', 'block': 'pfam_pa', 'n_features': 7061, 'balanced_acc': 0.9272599132647343, 'macro_F1': 0.9408919287301092, 'acc': np.float64(0.9814502529510961), 'median_maxprob_correct': np.float64(0.956)}
+{'target': 'class', 'block': 'pfam_ab', 'n_features': 7061, 'balanced_acc': 0.8869074174050663, 'macro_F1': 0.9157640471838391, 'acc': np.float64(0.9786396852164138), 'median_maxprob_correct': np.float64(0.934), 'balanced_acc_thin0.93': 0.8807900413408629, 'balanced_acc_thin0.75': 0.8710271381353314}
+{'target': 'class', 'block': 'all_nonpfam', 'n_features': 547, 'balanced_acc': 0.849385105050564, 'macro_F1': 0.8840980190240768, 'acc': np.float64(0.9572793704328274), 'median_maxprob_correct': np.float64(0.868)}
+{'target': 'class', 'block': 'all', 'n_features': 7608, 'balanced_acc': 0.8754161508491447, 'macro_F1': 0.9058573295985926, 'acc': np.float64(0.9763912310286678), 'median_maxprob_correct': np.float64(0.936)}
+{'target': 'subphylum', 'block': 'struct', 'n_features': 23, 'balanced_acc': 0.748761655011655, 'macro_F1': 0.800533561153092, 'acc': np.float64(0.9893198426082068), 'median_maxprob_correct': np.float64(1.0)}
+{'target': 'subphylum', 'block': 'struct_all', 'n_features': 27, 'balanced_acc': 0.7209241079433387, 'macro_F1': 0.7604331420106266, 'acc': np.float64(0.9893198426082068), 'median_maxprob_correct': np.float64(1.0)}
+{'target': 'subphylum', 'block': 'cell', 'n_features': 51, 'balanced_acc': 0.907488344988345, 'macro_F1': 0.9459499750278533, 'acc': np.float64(0.9971894322653176), 'median_maxprob_correct': np.float64(1.0)}
+{'target': 'subphylum', 'block': 'codon', 'n_features': 61, 'balanced_acc': 0.6547090729783037, 'macro_F1': 0.656064644300096, 'acc': np.float64(0.9842608206857786), 'median_maxprob_correct': np.float64(0.998)}
+{'target': 'subphylum', 'block': 'aa', 'n_features': 20, 'balanced_acc': 0.6637697238658777, 'macro_F1': 0.6618719768011614, 'acc': np.float64(0.9910061832490163), 'median_maxprob_correct': np.float64(1.0)}
+{'target': 'subphylum', 'block': 'trna', 'n_features': 62, 'balanced_acc': 0.6145833333333334, 'macro_F1': 0.6293053692639109, 'acc': np.float64(0.9572793704328274), 'median_maxprob_correct': np.float64(0.958)}
+{'target': 'subphylum', 'block': 'tf', 'n_features': 20, 'balanced_acc': 0.7000907746100054, 'macro_F1': 0.7487997105304548, 'acc': np.float64(0.9747048903878583), 'median_maxprob_correct': np.float64(0.996)}
+{'target': 'subphylum', 'block': 'cazy', 'n_features': 186, 'balanced_acc': 0.7232663170163169, 'macro_F1': 0.7646673960326359, 'acc': np.float64(0.9921304103428893), 'median_maxprob_correct': np.float64(1.0)}
+{'target': 'subphylum', 'block': 'merops', 'n_features': 124, 'balanced_acc': 0.8723776223776224, 'macro_F1': 0.9201117238824049, 'acc': np.float64(0.9932546374367622), 'median_maxprob_correct': np.float64(1.0)}
+{'target': 'subphylum', 'block': 'pfam_pa', 'n_features': 7061, 'balanced_acc': 0.9979043392504932, 'macro_F1': 0.9979043392504932, 'acc': np.float64(0.9977515458122541), 'median_maxprob_correct': np.float64(1.0)}
+{'target': 'subphylum', 'block': 'pfam_ab', 'n_features': 7061, 'balanced_acc': 0.9664918414918415, 'macro_F1': 0.9816241614728162, 'acc': np.float64(0.9971894322653176), 'median_maxprob_correct': np.float64(0.998)}
+{'target': 'subphylum', 'block': 'all_nonpfam', 'n_features': 547, 'balanced_acc': 0.9361888111888113, 'macro_F1': 0.9643183533284608, 'acc': np.float64(0.9966273187183811), 'median_maxprob_correct': np.float64(1.0)}
+{'target': 'subphylum', 'block': 'all', 'n_features': 7608, 'balanced_acc': 0.9983974358974358, 'macro_F1': 0.9989504210485697, 'acc': np.float64(0.9988757729061271), 'median_maxprob_correct': np.float64(0.998)}
+all LOCO done
+pfam_ab LOCO done
+all_nonpfam LOCO done
+codon LOCO done
+struct LOCO done

@@ -1,0 +1,37 @@
+| reference | metric | n_focal_genera | n_ref_genera | median_focal | median_ref | median_diff | 95% CI | log2_ratio | cliffs_delta | mannwhitney_p |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Mucorales | mb | 5 | 36 | 18.02 | 34.21 | -16.19 | -21.2 to -11.96 | -0.92 | -1.0 | 2.7e-06 |
+| Mucorales | n_protein_coding | 5 | 36 | 7363 | 11459.5 | -4096.5 | -5828.5 to -2929.5 | -0.64 | -1.0 | 2.7e-06 |
+| Mucorales | introns_per_transcript | 5 | 36 | 0.65 | 3.83 | -3.18 | -3.38 to -2.72 | -2.55 | -1.0 | 2.7e-06 |
+| Mucorales | median_intron_len | 5 | 36 | 96.0 | 64.25 | 31.75 | 6.25 to 97.0 | 0.58 | 0.82 | 0.0036 |
+| Mucorales | median_intergenic | 5 | 36 | 416 | 619.25 | -203.25 | -371.26 to -50.06 | -0.57 | -0.88 | 0.0018 |
+| Mucorales | median_protein_len | 5 | 36 | 348.5 | 359.5 | -11.0 | -48.0 to 40.0 | -0.04 | -0.22 | 0.44 |
+| Mucorales | masked_pct | 5 | 36 | 12.65 | 20.05 | -7.4 | -13.4 to -0.65 | -0.66 | -0.6 | 0.03 |
+| Mortierellales | mb | 5 | 14 | 18.02 | 38.07 | -20.05 | -28.19 to -15.82 | -1.08 | -1.0 | 0.00017 |
+| Mortierellales | n_protein_coding | 5 | 14 | 7363 | 12343.25 | -4980.25 | -6500.5 to -3874.5 | -0.75 | -1.0 | 0.00017 |
+| Mortierellales | introns_per_transcript | 5 | 14 | 0.65 | 2.81 | -2.15 | -2.32 to -1.91 | -2.1 | -1.0 | 0.00017 |
+| Mortierellales | median_intron_len | 5 | 14 | 96.0 | 105 | -9.0 | -34.5 to 56.0 | -0.13 | -0.2 | 0.55 |
+| Mortierellales | median_intergenic | 5 | 14 | 416 | 625.25 | -209.25 | -357.0 to -48.0 | -0.59 | -0.89 | 0.0021 |
+| Mortierellales | median_protein_len | 5 | 14 | 348.5 | 426.75 | -78.25 | -115.5 to -27.75 | -0.29 | -0.91 | 0.0012 |
+| Mortierellales | masked_pct | 5 | 14 | 12.65 | 16.07 | -3.42 | -5.52 to 2.91 | -0.35 | -0.66 | 0.034 |
+| Zoopagales | mb | 5 | 8 | 18.02 | 17.16 | 0.86 | -10.22 to 6.13 | 0.07 | 0.0 | 1 |
+| Zoopagales | n_protein_coding | 5 | 8 | 7363 | 6901 | 462 | -3128.0 to 1775.0 | 0.09 | -0.05 | 0.94 |
+| Zoopagales | introns_per_transcript | 5 | 8 | 0.65 | 3.29 | -2.64 | -3.45 to -1.43 | -2.33 | -1.0 | 0.0016 |
+| Zoopagales | median_intron_len | 5 | 8 | 96.0 | 49.5 | 46.5 | 16.75 to 113.5 | 0.96 | 0.95 | 0.0031 |
+| Zoopagales | median_intergenic | 5 | 8 | 416 | 272.25 | 143.75 | -156.0 to 362.0 | 0.61 | 0.3 | 0.44 |
+| Zoopagales | median_protein_len | 5 | 8 | 348.5 | 369.25 | -20.75 | -58.25 to 36.5 | -0.08 | -0.2 | 0.61 |
+| Zoopagales | masked_pct | 5 | 8 | 12.65 | 14.22 | -1.57 | -11.8 to 4.7 | -0.17 | -0.35 | 0.35 |
+| Sacch:Saccharomycetes | mb | 5 | 43 | 18.02 | 11.98 | 6.04 | 1.44 to 10.44 | 0.59 | 0.86 | 0.00048 |
+| Sacch:Saccharomycetes | n_protein_coding | 5 | 43 | 7363 | 5191 | 2172 | 796.5 to 3271.0 | 0.5 | 0.93 | 7e-05 |
+| Sacch:Saccharomycetes | introns_per_transcript | 5 | 43 | 0.65 | 0.15 | 0.5 | 0.34 to 0.74 | 2.12 | 1.0 | 1.2e-06 |
+| Sacch:Saccharomycetes | median_intron_len | 5 | 43 | 96.0 | 109.5 | -13.5 | -139.0 to 60.0 | -0.19 | -0.06 | 0.84 |
+| Sacch:Saccharomycetes | median_intergenic | 5 | 43 | 416 | 369.5 | 46.5 | -86.0 to 189.5 | 0.17 | 0.13 | 0.64 |
+| Sacch:Saccharomycetes | median_protein_len | 5 | 43 | 348.5 | 412 | -63.5 | -105.5 to -13.0 | -0.24 | -0.98 | 0.00039 |
+| Sacch:Saccharomycetes | masked_pct | 5 | 43 | 12.65 | 16.9 | -4.24 | -7.9 to 2.95 | -0.42 | -0.31 | 0.27 |
+| Sacch:Dipodascomycetes | mb | 5 | 22 | 18.02 | 12.4 | 5.62 | -0.3 to 9.85 | 0.54 | 0.56 | 0.055 |
+| Sacch:Dipodascomycetes | n_protein_coding | 5 | 22 | 7363 | 5823.5 | 1539.5 | 96.0 to 2690.95 | 0.34 | 0.71 | 0.013 |
+| Sacch:Dipodascomycetes | introns_per_transcript | 5 | 22 | 0.65 | 0.38 | 0.28 | 0.11 to 0.54 | 0.79 | 0.76 | 0.0063 |
+| Sacch:Dipodascomycetes | median_intron_len | 5 | 22 | 96.0 | 66.0 | 30.0 | 4.5 to 95.0 | 0.54 | 0.56 | 0.057 |
+| Sacch:Dipodascomycetes | median_intergenic | 5 | 22 | 416 | 428.25 | -12.25 | -155.0 to 130.38 | -0.04 | 0.0 | 1 |
+| Sacch:Dipodascomycetes | median_protein_len | 5 | 22 | 348.5 | 396.5 | -48.0 | -85.5 to 3.0 | -0.19 | -0.73 | 0.01 |
+| Sacch:Dipodascomycetes | masked_pct | 5 | 22 | 12.65 | 11.58 | 1.07 | -0.8 to 7.35 | 0.13 | 0.35 | 0.26 |

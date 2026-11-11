@@ -1,0 +1,341 @@
+# *Antarctolithica obscura* (Ascomycota sp., NCBI taxid 3698444) compared with the Ascomycota in BFD
+
+Analysis date 2026-11-10. Data: BFD parquet snapshot (species table built 2026-11-06), atlas intermediates, MotherDuck `bfd`. All statistics were run on the local workstation because SLURM on the HPCC was under a maintenance reservation for the whole session. Scripts are in `fable_C_ao_scripts/`, result tables in `fable_C_ao_results/` (both next to this file).
+
+## Summary
+
+- ***A. obscura* does not belong to any Ascomycota class in BFD.** In a 300-marker, 159-taxon phylogeny the 6 MAGs form one clade that is sister to Saccharomycotina + Pezizomycotina, branching after Taphrinomycotina (SH-like support 1.0; the same placement is recovered in all 6 robustness runs, support 0.996-1.0; limits in section 9.2). None of the proposed affinities (Dothideomycetes, Chaetothyriales, Arthoniomycetes, Lecanoromycetes, Lichinomycetes) is supported by any feature block.
+- **The feature profile is a mosaic, as expected for a lineage outside the trained classes.** Genome architecture resembles Taphrinomycetes (*Taphrina*, *Protomyces*); gene content resembles small-genome early Saccharomycotina (Lipomycetes, Dipodascomycetes, Trigonopsidomycetes) and Taphrinomycetes; codon usage, the tRNA pool and the TF repertoire resemble Pezizomycotina. The random forest on all blocks gives a maximum class probability of 0.32 (Trigonopsidomycetes), against a median of 0.94 for correctly classified genomes of known classes and 0.20-0.49 for classes deliberately left out of training (except the two sister yeast classes).
+- **The genome is small because it is compact, not because the MAGs are incomplete.** The 4 best MAGs are 9.5-10.5 Mb at 92-93 % BUSCO; extrapolation to 100 % gives about 10.4 Mb. Gene density (555 genes/Mb), coding fraction (0.74), median intergenic distance (178 bp) and median intron length (34.5 bp) are within the most extreme 0.5 % of 891 Ascomycota genera, and these measures do not depend on completeness. It is the smallest non-*Pneumocystis* genome among the non-Saccharomycotina Ascomycota in the set.
+- **Distinctive content.** Complete absence of the Pezizomycotina toolkit (HET, NACHT/NB-ARC, hydrophobins, NRPS, reducing PKS, tyrosinase, scytalone dehydratase, LPMO AA9, cutinase, GH55/GH128/GT69, peptidase S53, C5 DNA methyltransferase); a one-copy-per-anticodon tRNA set (44-46 genes); few transposon-derived proteins. Retained or expanded: 4 photolyase/cryptochrome genes, UVDE, 2 opsins, 3 phytoene-synthase-family genes, trehalose synthesis, and expansions of phytanoyl-CoA dioxygenase (PhyH, 21 copies), sulfatases (14.5), GH38 alpha-mannosidases (5), enolase-superfamily MR/MLE (7) and GT90.
+- **MAG quality.** The MAGs are one species (median protein identity 99.2-99.7 %) but different genotypes (15-38 % identical proteins). Only 6 of 8 are annotated. Contamination is low except Mars-55.28 (4.4 % of bp on high-GC contigs carrying a second fungus). Gene annotation under-calls genes: of 44 "universal" families absent from all 6 proteomes, 33 are present in the assembly by translated search.
+- **Confidence.** High that it is outside every sampled Pezizomycotina class and that the genome is compact. Moderate for the exact branching point: 7 of 7 FastTree runs agree, but all use one fast method with site-homogeneous models and no bootstrap, and deep Ascomycota nodes are sensitive to model choice.
+
+## 1. Data quality and consistency of the 8 MAGs
+
+![MAG QC](fable_C_ao_fig1_mag_qc.png)
+
+*Figure 1. A: BUSCO (fungi_odb12, genome mode). B: assembly size against completeness. C: contig GC against length for the 6 annotated MAGs. D: share of each assembly on flagged contigs.*
+
+{{qc}}
+
+- **Annotation coverage.** Mars-9.1 and Mars-19.38 were skipped by the annotation pipeline (`predict.skipped_too_small`). They have assembly, BUSCO and telomere rows only. Every protein-based result uses 6 MAGs.
+- **Same species, different genotypes.** Median amino-acid identity to Mars-82.9 is 99.2-99.7 %, and only 15-38 % of proteins are identical. The MAGs are therefore not copies of one assembly, but they are one lineage and are treated as repeated measurements (section 2.1).
+- **Consistency across blocks.** The median distance between the 4 high-quality MAGs is below the median nearest-neighbour distance between reference genera in every block, and far below the distance from *A. obscura* to its nearest reference genus:
+
+{{consistency}}
+
+- **Contamination.** SwissProt best hits are 83 % fungal in every MAG; the prokaryote-like share (4.3-5.0 %) is at the 30th percentile of Ascomycota genera, so there is no bacterial signal above the fungal background. Flagged contigs:
+
+{{contam}}
+
+  Mars-55.28 carries 31 contigs (407 kb, 265 genes) at 56-57 % GC whose genes hit fungal proteins, and it alone has HET domains (5), PS-DH (7) and 27 P450s where the other MAGs have 0, 0 and 10-13. This is a second fungus in the bin. Mars-62.17 has 6 such contigs (96 kb), which fits its larger size (10.47 Mb). The recurrent 12-20 kb contigs with "prokaryote-like" hits in the other MAGs carry low-identity metabolic genes (sugar-acid dehydratase, transporter) at normal GC and gene density and are not contamination.
+- **Annotation completeness is lower than assembly completeness.** With the BUSCO fungi_odb10 HMMs run on the proteomes (section 2.7), the 4 high-quality MAGs have 696-703 single-copy markers and 52-58 missing of 758, against a median of 31 missing in Taphrinomycetes and 3-10 in the large Pezizomycotina classes. 34 markers are missing from all 6 proteomes. The translated-search check (section 7.3) shows that most such "absences" are unannotated genes, so the true gene count is above the 5,300-5,700 predicted.
+
+## 3. Genome size, gene density and gene structure
+
+![Compaction](fable_C_ao_fig3_compaction.png)
+
+*Figure 3. Genus units of the comparison set; all 25 Taphrinomycotina species; the 6 annotated MAGs.*
+
+{{uni_struct}}
+
+*Columns: median of the 4 high-quality MAGs; range over the 6 annotated MAGs; subphylum medians; percentile of the A. obscura value within each group; robust z against Pezizomycotina; Kruskal-Wallis epsilon-squared across the 14 classes with >= 5 genera.*
+
+**Is the small genome real?**
+
+1. Assembly size rises 0.086 Mb per BUSCO point across the 8 MAGs (Figure 1B), which is the incompleteness effect. Extrapolated to 100 % it gives 10.4 Mb; the 4 best MAGs average 9.83 Mb. Complete Taphrinomycetes genomes score only 90-93 % on fungi_odb12, so the best MAGs may already be near complete.
+2. Density measures do not depend on how much of the genome was recovered, and all are extreme: 555 genes/Mb (above 99.8 % of Ascomycota genera; Taphrinomycotina median 453, Saccharomycotina 448, Pezizomycotina 304), coding fraction 0.74, median intergenic distance 178 bp (Pezizomycotina 895, Taphrinomycotina 363), 10th-percentile intergenic distance 41 bp.
+3. Fragmentation would lower, not raise, measured gene density (genes are lost at contig ends), and the range over the 6 MAGs is narrow (541-572 genes/Mb) across N50 values from 20 to 181 kb.
+4. Repeat content is 5-6 % (below 99 % of Ascomycota genera) and transposon-derived Pfam domains are absent. MAG binning does lose repeats, so the repeat figure is a lower bound; the gene-space compaction is not affected.
+
+Conclusion: a real compact genome of roughly 10-10.5 Mb. The unannotated genes found in section 7.3 mean that true gene density is higher still.
+
+**Gene structure.** 0.56 introns per transcript and 69 % intron-less genes, between Saccharomycotina (0.19; 85 %) and Taphrinomycotina (0.99; 54 %) and far from Pezizomycotina (1.80; 25 %). Introns are among the shortest in the set (median 34.5 bp, 0.2nd percentile of Ascomycota, 90th percentile 60 bp; Pezizomycotina 58 and 120). Proteins are short (median 362 aa, 5th percentile of Ascomycota). The combination of few, very short introns with short intergenic regions is closest to *Protomyces* and *Taphrina* (Figure 3D).
+
+**tRNA genes.** 44-46 tRNA genes in the high-quality MAGs, each of 44 anticodon classes present once (Pezizomycotina median 113.5 genes, Saccharomycotina 162, Taphrinomycotina 57). tRNA-Val(UAC) (codon GTA) is absent from all 6 MAGs and present in >= 90 % of Pezizomycotina. A strictly single-copy tRNA set is unusual for a free-living fungus; MAG binning can lose multi-copy loci, so copy number is a lower bound, but the same set is recovered in 4 independent MAGs.
+
+**Telomeres and paralogs.** Terminal telomere tracts were found in 2 of 8 MAGs (3 tracts), all the canonical TTAGGG/CCCTAA repeat; MAG contigs rarely end in telomeres, so nothing follows about chromosome number. Paralog statistics exist only for Mars-82.9:
+
+{{uni_wgd}}
+
+  221 paralog nodes per 1,000 genes (15th percentile of Ascomycota), no identical-copy groups, no hybrid flag, and 12 young nodes per 1,000 genes (74th percentile). There is no whole-genome-duplication signal.
+
+## 4. Codon usage, amino-acid composition and tRNA pool
+
+Genome GC 49.6 % and GC3 0.535 are unremarkable (55th and 29th percentile of Ascomycota). Largest CLR deviations from Pezizomycotina (robust z), with the same comparison against the other subphyla:
+
+{{composition}}
+
+- **Amino acids.** Low proline and threonine and high leucine, methionine and phenylalanine relative to Pezizomycotina (|z| 2.4-5.0), but within the Taphrinomycotina and Saccharomycotina ranges (|z| < 1.6 for the same residues). Lower proline goes with the lower intrinsic disorder (section 6).
+- **Codons.** No single codon deviates by more than 2.5 robust SD from Pezizomycotina; the profile is Pezizomycotina-like with weaker GC3 bias (more TTT, ATT; fewer TTC, ACC, AAC).
+- **tRNA pool.** Composition falls inside the Lecanoromycetes, Lichinomycetes and Arthoniomycetes clouds (typicality 100 %), because those lichen-forming classes also have small, nearly single-copy tRNA sets (Lecanoromycetes median 43 genes). This is convergence on a minimal pool, not evidence of relationship; the block has the weakest class signal (PERMANOVA R2 0.35, RF balanced accuracy 0.44).
+
+## 5. Ordination and PERMANOVA
+
+![PCoA by block](fable_C_ao_fig2_pcoa_blocks.png)
+
+*Figure 2. PCoA of each feature block (one point per genus; stars = the 6 MAGs).*
+
+{{permanova}}
+
+*PERMANOVA on 355 genera in 14 classes (<= 40 genera per class), 999 permutations. dispersion_ratio = largest/smallest mean distance to class centroid.*
+
+- CLASS explains 35-74 % of the variance depending on the block; amino-acid composition (0.74), Pfam content (0.71) and CAZy (0.69) carry the most class signal, the tRNA pool the least. All p = 0.001 (the minimum with 999 permutations). Dispersion differs between classes by 2- to 19-fold, so part of each pseudo-F reflects spread (Anderson & Walsh 2013).
+- *A. obscura* was not part of the test. Its position relative to each class, in the full feature space:
+
+{{position}}
+
+*ratio = distance of A. obscura to the class centroid / median distance of the class's own members to it. Classes with >= 3 genera.*
+
+{{nn}}
+
+- In no block except the tRNA pool and TF composition does *A. obscura* fall inside a class: its distance to the nearest centroid is 1.8-3 times the typical member distance, and usually no member is farther out.
+- The nearest classes change with the block: Taphrinomycetes for structure and amino acids; Lipomycetes, Dipodascomycetes, Trigonopsidomycetes and Taphrinomycetes for Pfam, CAZy, MEROPS and cell-biology scalars; Lecanoromycetes, Eurotiomycetes and Pezizomycetes for codons, tRNA and TFs.
+- In the Pfam presence/absence ordination (Figure 2) it lies with the non-*Schizosaccharomyces* Taphrinomycotina, between the Saccharomycotina and Pezizomycotina clouds, and its nearest single genome is *Saitoella complicata*.
+
+## 6. Proteome-level features
+
+![Percentiles](fable_C_ao_fig4_percentiles.png)
+
+*Figure 4. Percentile of the A. obscura value within each reference group for every scalar feature.*
+
+{{uni_cell}}
+
+- **Secretome.** 3.8 % of proteins have a signal peptide and 2.4 % pass the strict secreted filter (Pezizomycotina medians 8.5 % and 6.4 %; below 99.7 % of Pezizomycotina genera; ordinary for yeasts and Taphrinomycotina). About 130 secreted proteins, 25 secreted CAZymes and 9-10 secreted peptidases: no sign of a secreted-enzyme lifestyle.
+- **Disorder.** Median disordered fraction 0.34, lower than 95 % of Pezizomycotina genera (0.40) and typical of yeasts.
+- **Domain coverage.** 86 % of proteins have a Pfam domain and 82 % a SwissProt hit (Pezizomycotina 73 % and 65 %): the proteome is dominated by conserved core genes, with few lineage-specific or orphan proteins. The 4 high-quality MAGs carry 4,059-4,096 Pfam families (Pezizomycotina median 4,886; Saccharomycotina 4,068; Taphrinomycotina 4,033).
+- **Signalling.** Per 1,000 proteins, kinases (31.6), small GTPases (10.4), WD40 (12.5), PH, SH3 and Rho regulators are at the top of the Pezizomycotina range. This is a proportional effect of a small proteome that keeps the conserved signalling core, as the atlas found for yeasts.
+- **Localisation.** WoLF PSORT "cytoskeleton" is predicted for 4.7 % of proteins, above every reference genome (Pezizomycotina 2.8 %). No biological cause was identified; the prediction depends on composition, and this may be an artefact of the unusual amino-acid profile.
+- **Transcription factors.** 121-126 TF proteins (2.7 % of the proteome). 33 Zn2Cys6 proteins against a Pezizomycotina median of 100 and a Taphrinomycotina median of 28. The Zn2Cys6 expansion that defines Pezizomycotina is absent.
+
+{{tf}}
+
+## 7. Distinctive gene content
+
+### 7.1 CAZymes and peptidases
+
+173 CAZymes (3.2 % of proteins; 99 GH, 57 GT, 11 AA, 5 CE, 4 CBM, 1 PL) and 178 MEROPS peptidases. Families at the extremes of the Ascomycota per-proteome rate:
+
+{{cazy}}
+
+CAZy families present in >= 80 % of Ascomycota genera and absent from all 6 MAGs:
+
+{{cazy_absent}}
+
+{{merops}}
+
+MEROPS families present in >= 80 % of Ascomycota genera and absent from all 6 MAGs:
+
+{{merops_absent}}
+
+- Plant-cell-wall degradation is minimal: no AA9 LPMO, no cutinase, no pectate lyase, 1 PL, no GH55 or GH128. The substrate profile is dominated by beta-glucan, host/N-glycan, chitin and starch.
+- Gains relative to both yeast subphyla: GT90 (6 copies; Pezizomycotina 5, Saccharomycotina 0, Taphrinomycotina 0), GH51, GH2, GH31, GH38 (5 copies against 1 everywhere else), S09C and M01 peptidases.
+- GT48 and GT90 are also among the features the CAZy random forest relies on most (section 8).
+
+### 7.2 Candidate stress, pigment and secondary-metabolism families
+
+{{candidates}}
+
+*Counts are proteins with the domain; "AO_range6" is the range over the 6 MAGs (the upper values for PKS, PS-DH, HET, P450 come from the contaminated Mars-55.28).*
+
+- **UV and light.** 4 photolyase/cryptochrome-family genes (top of the Ascomycota rate distribution; Saccharomycotina median 0, Taphrinomycotina 1), UV-damage endonuclease, 2 opsins and 3 squalene/phytoene-synthase-family genes; one opsin has its best hit to the *Fusarium* carotenoid-cluster opsin CarO. For a 5,400-gene genome this is a full light-response and UV-repair set, consistent with an exposed rock habitat.
+- **Melanin.** No scytalone dehydratase, no tyrosinase, 2 multicopper oxidases, and 3 ketosynthase-domain proteins (fatty-acid synthase accounts for 2 in most fungi). The DHN-melanin pathway that characterises rock-inhabiting black fungi is not detectable. If the organism is dark ("obscura"), the pigment is not made by the canonical DHN route, or the genes are among those missed.
+- **Compatible solutes.** Trehalose synthesis and degradation are complete (3 TPS, 2 TPP, 1 trehalase); no mannitol dehydrogenase; 1 glycerol-3-phosphate dehydrogenase. No LEA, ice-binding or cold-shock-domain proteins, as in almost all Ascomycota.
+- **Secondary metabolism.** No NRPS condensation domain, no terpene synthase, no DMATS, no reducing PKS, 12.5 P450s (Pezizomycotina median 93). Lichen-forming classes carry large PKS repertoires (Lecanoromycetes median 25 ketosynthases); this genome does not look like a lichen mycobiont.
+- **Self/non-self and genome defence.** No HET, no NACHT/NB-ARC, no C5 DNA methyltransferase, no reverse transcriptase or DDE transposase domains; 2 Dicer, 2 Argonaute and 1 RdRP are present.
+- **Expansions.**
+
+{{expansions}}
+
+  Phytanoyl-CoA dioxygenase (PhyH; 21 copies against a Pezizomycotina median of 6; best hits to bacterial KanJ-like dioxygenases at about 30 % identity), sulfatases (14.5 copies; 9-10 are arylsulfatases with best hit to *Pseudomonas* AtsA at 53-56 % identity, against a Pezizomycotina median of 1 such hit and 0 in both yeast subphyla), N-sulfoglucosamine sulfohydrolase C-terminal domains, GH38 alpha-mannosidases, and enolase-superfamily MR/MLE enzymes. Sulfatases and 2-oxoglutarate dioxygenases point to scavenging of sulfur and carbon from organic esters, which is plausible in an oligotrophic rock community; this is a hypothesis from domain counts, not a demonstrated function. A bacterial origin for the arylsulfatase family cannot be judged from best hits alone.
+
+Families present in all 4 high-quality MAGs but in fewer than 5 % of Ascomycota genera:
+
+{{rare}}
+
+  Many of these (Peptidase_M17, TMEM70, Mug123, TAD3_N, ox_reductase_C, SPCC191_01) are common in Taphrinomycotina (68-92 %) and near-absent from Pezizomycotina: ancestral genes kept by early-diverging lineages and lost later. PHP_C is unique to *A. obscura* in the set.
+
+### 7.3 Absences: loss, or not annotated?
+
+Number of the 3,745 Pfam families found in >= 95 % of Pezizomycotina genera that are missing per genome:
+
+{{missing_cal}}
+
+- Each high-quality MAG lacks about 395 Pezizomycotina-universal families, the same as Taphrinomycetes (362), Novakomycetes (395) and Dipodascomycetes (387), and far more than any Pezizomycotina class (8-248). 312 are absent from all 6 MAGs. By gene content *A. obscura* stands with the lineages outside Pezizomycotina.
+- 52 families present in >= 95 % of Pezizomycotina and >= 90 % of Taphrinomycotina and of Ascomycota are absent from all 6 proteomes, including ribosomal proteins L22e, L34e and S21e, ORC3 and Dbf4. These cannot all be real losses. Translated search of three MAG assemblies with the *Saitoella complicata* proteins (44 queries covering the 52 domains):
+
+{{losscheck}}
+
+*Cells: % identity / fraction of query aligned / e-value of the best blastx hit in each assembly; last column, best blastp hit in the Mars-82.9 proteome.*
+
+- **33 of 44 are in the assembly.** 22 have no predicted protein at all (all three ribosomal proteins, UMP1, PSF2, RNase P p29, Coa1, Peptidase_M76 and others): the gene is there and the annotation missed it. 11 have a predicted protein in which the Pfam domain was not detected (diverged or truncated model).
+- **11 have no hit in any assembly**: Nrap/Utp22, Exportin-T, Mediator Med4 and Med11, BEACH, ribosome recycling factor (mitochondrial), LMW phosphotyrosine phosphatase, TFIIIC subunit 6, ADIP, Metallopep, HVSL. Several are essential in yeasts, so divergence beyond detection or a region missing from every bin is more likely than loss.
+- **Consequence.** A proteome-based absence in these MAGs is weak evidence. The absences reported in sections 7.1-7.2 are of large, multi-copy families (HET, NRPS, PKS, AA9, P450 scale) whose complete absence from 6 proteomes cannot be explained by scattered annotation misses; single-gene absences should be confirmed by translated search before being called losses.
+
+## 8. Random-forest classification
+
+![RF probabilities](fable_C_ao_fig5_rf_probabilities.png)
+
+*Figure 5. A: class probabilities for A. obscura by block (mean of the 4 high-quality MAGs). B: subphylum-level models. C: per-MAG probabilities from the all-block model.*
+
+**Cross-validated performance (genus-grouped 5-fold) and effect of thinning held-out proteomes:**
+
+{{rf_perf}}
+
+**Predictions for *A. obscura* (mean of 4 high-quality MAGs): three most probable classes, and subphylum probabilities:**
+
+{{rf_pred}}
+
+**Per MAG, all-block model:**
+
+{{rf_permag}}
+
+![RF importance and LOCO](fable_C_ao_fig6_rf_importance_loco.png)
+
+*Figure 6. A, B: top features by Gini importance. C: leave-one-class-out calibration for the all-block model.*
+
+**Most important features per block (Gini; permutation importance = drop in balanced accuracy on held-out genera):**
+
+{{rf_imp}}
+
+**Leave-one-class-out summary:**
+
+{{rf_loco_summary}}
+
+{{rf_loco}}
+
+- **The classifiers work on known classes.** Balanced accuracy is 0.93 for Pfam presence/absence and 0.88 for all blocks (0.998 at subphylum level). Correctly classified genomes have a median maximum probability of 0.94; only 0.8 % of all cross-validated genomes have a maximum probability at or below 0.33.
+- ***A. obscura* gets no confident class.** All-block model: Trigonopsidomycetes 0.32, Taphrinomycetes 0.19, Dipodascomycetes 0.08. Pfam: no class above 0.29. Subphylum models split 0.51 Saccharomycotina / 0.27 Pezizomycotina / 0.22 Taphrinomycotina, although they separate the three subphyla with 99.8 % balanced accuracy on known genomes.
+- **This is the signature of a class absent from training.** When a class is left out, its members receive median maximum probabilities of 0.20-0.49 (Taphrinomycetes 0.20, Lipomycetes 0.27, Pezizomycetes 0.28, Lichinomycetes 0.26, Dothideomycetes 0.31), except Saccharomycetes and Pichiomycetes, which substitute for each other (0.89-0.92). *A. obscura* scores 0.23-0.42 across these models, inside the left-out range.
+- **Blocks disagree in the same way as the ordinations.** Structure says Taphrinomycetes (0.70), driven by introns per transcript, intron length and tRNA density, which are the top features by both importance measures. CAZy and MEROPS say early Saccharomycotina. Codon usage, tRNA and TFs say Pezizomycotina (subphylum probabilities 0.76-0.86) with no preferred class. A member of any trained class would be assigned consistently.
+- **Completeness is not the cause.** The five MAGs at 86-93 % BUSCO give the same probabilities within 0.05; only Mars-14.71 (78 %) shifts (Taphrinomycetes 0.25, Trigonopsidomycetes 0.17). Thinning held-out reference proteomes to 93 % changes balanced accuracy by at most 0.02 for Pfam, CAZy and MEROPS (TF composition, with 20 features, is more sensitive); at 75 % Pfam still reaches 0.87.
+- **Other unplaced Ascomycota**, for comparison (all-block model): several are confidently placed (for example *Aristastoma* in Dothideomycetes 0.99, *Anguillospora* in Leotiomycetes 0.98, CTeuk-1837 in Lecanoromycetes 0.87), while the Spribille lichen-associated genomes (*Thelocarpon*, *Vezdaea*, *Sarcosagium*, *Piccolia*) score 0.2-0.3 like *A. obscura* and are also likely outside the trained classes.
+
+{{rf_unplaced}}
+
+## 9. SwissProt best-hit taxonomy and phylogenomic placement
+
+### 9.1 SwissProt best hits
+
+![SwissProt signal](fable_C_ao_fig7_swissprot.png)
+
+*Figure 7. A: share of best hits to S. pombe against the identity advantage of N. crassa hits over S. pombe hits. B: identity differences between three anchors.*
+
+{{sprot}}
+
+*Medians over genus units. frac_* = share of a genome's best hits; pid_* = mean % identity of best hits to that organism.*
+
+- 36.5 % of *A. obscura* best hits go to *S. pombe*, above every Pezizomycotina class (21-29 %) and Saccharomycotina class (7-26 %) and below Taphrinomycotina (41-59 %).
+- Proteins that hit *N. crassa* are 11.3 identity points closer than those that hit *S. pombe*; the same difference is 14-23 in Pezizomycotina classes and 6-9 in Taphrinomycotina. Identity to *N. crassa* hits (55.5 %) is below every Pezizomycotina class median (56.2-64.1 %).
+- *S. pombe* hits are not more similar than *S. cerevisiae* hits (-0.9 points), as in Pezizomycotina (-0.3 to -1.3) and unlike Taphrinomycotina (+1.0 to +5.2).
+- Read together: equidistant from the model yeasts like a Pezizomycotina genome, but less similar to Pezizomycotina references than any Pezizomycotina class, and with a share of *S. pombe* best hits that only lineages outside Pezizomycotina reach. In both panels of Figure 7 it sits in the gap between Pezizomycotina and Taphrinomycotina. That is the position expected for a branch near the base of Saccharomycotina + Pezizomycotina.
+
+### 9.2 Phylogeny
+
+![Phylogeny](fable_C_ao_fig8_phylogeny.png)
+
+*Figure 8. FastTree LG+Gamma tree, 300 BUSCO fungi_odb10 markers, 169,466 aligned columns, 159 taxa, rooted on Mucoromycota. Red numbers: SH-like support below 0.90.*
+
+- The 6 MAGs are monophyletic (support 1.0) on a short branch; gap fraction in the concatenated alignment is 6.6-7.9 % for the 4 high-quality MAGs (11-14 % for the other two).
+- Their sister group is all 15 Saccharomycotina plus all 82 Pezizomycotina tips (including 20 of the unplaced genomes), support 1.0. The 25 Taphrinomycotina are monophyletic and branch first.
+- The tree recovers the accepted backbone (Taphrinomycotina, then Saccharomycotina and Pezizomycotina; Orbiliomycetes and Pezizomycetes at the base of Pezizomycotina; Lipomycetes at the base of Saccharomycotina), which is a check on the marker extraction.
+- Root-to-tip distance of *A. obscura* is 1.70 substitutions per site, shorter than Pezizomycotina (1.78-2.04), Saccharomycotina (2.08) and Taphrinomycotina (1.87). It is not a long branch, so attraction to the base of the tree by fast evolution is unlikely.
+- Nearest tips by patristic distance: *Saitoella* (1.34), then Pezizomycetes (1.37-1.41), Lipomycetes (1.42), Candelariomycetes (1.45); the rock-inhabiting Dothideomycetes and Chaetothyriales in the tree are farther (see `fable_C_ao_results/phylo_patristic.csv`).
+- Side observation: "Saccharomycotina sp. YJ-2025a" and "YJ-2025b" group with Basidiomycota (Microbotryomycetes) in this tree, so their BFD phylum assignment looks wrong.
+
+**Robustness runs** (marker jackknife, alternative matrix, removal of long-branch yeasts):
+
+{{jk}}
+
+*sister_X = number of tips of subphylum X in the sister clade of A. obscura / number in the tree.*
+
+- All 7 trees place *A. obscura* as sister to the complete Saccharomycotina + Pezizomycotina clade (support 0.996-1.0), with no Taphrinomycotina tip in the sister group. The result does not depend on which 100 markers are used, on LG versus WAG, or on the presence of the long-branch yeasts (*Pneumocystis*, *Schizosaccharomyces*, Saccharomycetes, Pichiomycetes).
+- In the reduced-taxon tree (rooted on Basidiomycota, without the Mucoromycota) the remaining Taphrinomycotina are not recovered as one clade; the position of *A. obscura* relative to Saccharomycotina + Pezizomycotina is unchanged.
+- The jackknife replicates share markers with the main tree and use the same method, so their agreement shows stability to marker sampling, not independence from model misspecification.
+
+**Limits.** One fast approximate-ML method with a site-homogeneous model, SH-like supports, and no bootstrap or site-heterogeneous analysis. Deep Ascomycota relationships are known to be sensitive to model and taxon sampling (Li et al. 2021). The placement "outside every sampled Pezizomycotina and Saccharomycotina class and not within Taphrinomycotina" is supported by the tree, the SwissProt signal, the gene-content calibration and the random forest independently. The exact node (sister to Saccharomycotina + Pezizomycotina, versus sister to Pezizomycotina alone or to Taphrinomycotina) rests on the tree only.
+
+## 10. Synthesis
+
+**Where it sits.** The most likely position is a previously unsampled lineage near the base of the crown Ascomycota, sister to Saccharomycotina + Pezizomycotina. Under current classification that is a rank above class. The candidate affinities named in the brief are rejected:
+
+| Candidate | Evidence against |
+|---|---|
+| Dothideomycetes (rock-inhabiting black fungi) | Not within Pezizomycotina in the tree; lacks 395 of 3,745 Pezizomycotina-universal Pfam families (Dothideomycetes median 10); RF probability 0.03; no DHN-melanin genes, HET, NRPS, hydrophobins; intergenic distance 178 bp against 773. |
+| Eurotiomycetes (Chaetothyriales) | Same; RF 0.03; Eurotiomycetes median 19 universal families missing. |
+| Arthoniomycetes | RF < 0.01; not sister in tree; shares only a reduced tRNA pool. |
+| Lecanoromycetes, Lichinomycetes | RF 0.04 and < 0.01; no PKS repertoire; tRNA and codon similarity is not matched by any gene-content block. |
+| Taphrinomycotina | Closest in genome architecture and in ancestral gene families; but branches after Taphrinomycotina in the tree, *S. pombe* identity advantage absent, RF Taphrinomycetes 0.19. Cannot be excluded as an alternative placement without better phylogenetics. |
+| Novel deep lineage | Supported by tree, mosaic block signal, RF novelty calibration and SwissProt profile. |
+
+**What makes it distinctive among Ascomycota.**
+
+1. One of the most gene-dense genomes in the set (99.8th percentile): 555 genes/Mb, 74 % coding, 178 bp median intergenic distance, 34.5 bp median intron, about 10 Mb.
+2. A minimal single-copy tRNA gene set.
+3. A yeast-sized proteome (about 5,400 predicted genes; more exist unannotated) with 86 % Pfam coverage, a small secretome (2.4 %), low disorder and no Pezizomycotina-specific expansions (Zn2Cys6, HET/NLR, P450, secondary metabolism, plant-cell-wall CAZymes).
+4. Retention of Pezizomycotina-type families that both yeast subphyla lack (GT90, GH51, GH2, 4 photolyases) alongside ancestral families otherwise kept mainly by Taphrinomycotina.
+5. Expansions of PhyH dioxygenases, sulfatases, GH38 mannosidases and MR/MLE enzymes, and a full photoreception, carotenoid-precursor and UV-repair set.
+
+**Where it is ordinary.** Genome GC, GC3, codon usage, splice-site usage (0.9 % GC-AG), protein-family counts for chaperones, catalase, SOD and trehalose metabolism, paralog-family density, and TF family composition are all inside the Ascomycota range.
+
+## 11. Caveats
+
+- **One lineage.** All statements describe one species sampled as 6 annotated MAGs from one BioProject (PRJNA1448026). No p-value compares *A. obscura* with a class.
+- **MAG incompleteness and annotation.** 5-6 % of BUSCOs are missing; gene models were predicted without RNA-seq and miss real genes (section 7.3). Family absences are proteome-based unless stated. Gene count, tRNA copy number, repeat content and telomere counts are lower bounds.
+- **Contamination.** Mars-55.28 (and to a small degree Mars-62.17) contains contigs from another fungus. Using the median of the 4 high-quality MAGs limits its effect but Mars-62.17 is one of the four; the per-MAG ranges in the tables show where it matters.
+- **Reference bias.** SwissProt is dominated by *S. pombe* and *S. cerevisiae*, so best-hit shares are comparable between genomes only, not interpretable as absolute affinity. Taphrinomycotina is represented by 8 genera, so percentiles within it are coarse.
+- **Classifier scope.** The random forest can only name trained classes; classes with fewer than 8 species (Saitoellomycetes, Neolectomycetes, Novakomycetes, Pneumocystomycetes, Schizosaccharomycetes and several small Pezizomycotina classes) were not targets.
+- **Organism-class mapping for contamination** uses genus lists, not NCBI lineages; the "prokaryote-like" class includes unlisted eukaryotes.
+- **Phylogeny** as stated in section 9.2.
+- **Functional readings** (sulfur scavenging, light response) are inferences from domain counts.
+- **No habitat metadata were examined.** The cryptoendolithic interpretation comes from the name and sample labels only.
+
+## 12. Next steps
+
+1. **Proper phylogenomics once SLURM is back.** The atlas genus-representative run (`atlas_data/phylo/run_phyling_atlas.sh`) excludes these MAGs because GENUS is NULL. Stage the 6 proteomes plus the 159-taxon set used here and run:
+   `nextflow run stajichlab/nf_phyling -r 52b694f356 -profile singularity_slurm,ucr_hpcc --seq_type protein --input <pep_fa dir> --prefix antarctolithica --markerset fungi_odb10 --phyling_db /bigdata/stajichlab/shared/projects/BFD/BFD_dashboard/atlas_data/phylo/phyling_db --outdir results/phyling_antarctolithica`
+   then IQ-TREE with a site-heterogeneous model (LG+C60+F+G with PMSF) and ultrafast bootstrap on the concatenated matrix, a coalescent summary (ASTRAL) from the gene trees, and an AU test of three constrained topologies: sister to Saccharomycotina + Pezizomycotina, sister to Pezizomycotina, sister to or within Taphrinomycotina. The concatenated alignment from this analysis (`ao/phylo/concat.fa`, 159 taxa x 169,466 columns) can be used directly.
+2. **Add missing early lineages.** *Archaeorhizomyces* and any available *Neolecta*, *Saitoella* and Taphrinomycotina MAGs, plus rDNA (SSU/LSU/ITS) recovered from the metagenomes for comparison with named Antarctic endolithic taxa.
+3. **Re-annotate.** Run the gene predictor with protein evidence from Taphrinomycotina and Saccharomycotina and BUSCO-trained parameters; rescue the 22 unannotated conserved genes as a test. Re-run BUSCO in protein mode and keep `full_table.tsv`.
+4. **Decontaminate Mars-55.28 and Mars-62.17** by removing the high-GC contigs listed in `fable_C_ao_results/mag_contigs.csv`, then recompute their features.
+5. **Pangenome of the 8 MAGs.** They are distinct genotypes; a union gene set would give a firmer presence/absence table, and SNP density would give population diversity.
+6. **Check single-gene absences by translated search** before reporting losses (the 11 unresolved families in section 7.3, tRNA-Val(UAC), Woronin-body HEX1, mating-type genes).
+7. **Test the HGT hypothesis for the arylsulfatase and PhyH expansions** with gene trees including bacterial and fungal homologues.
+8. **Fix BFD metadata.** The two annotation-skipped MAGs; the phylum of "Saccharomycotina sp. YJ-2025a/b".
+
+## 13. Files
+
+- Figures: `fable_C_ao_fig1_mag_qc.png`, `fable_C_ao_fig2_pcoa_blocks.png`, `fable_C_ao_fig3_compaction.png`, `fable_C_ao_fig4_percentiles.png`, `fable_C_ao_fig5_rf_probabilities.png`, `fable_C_ao_fig6_rf_importance_loco.png`, `fable_C_ao_fig7_swissprot.png`, `fable_C_ao_fig8_phylogeny.png`.
+- Scripts (run order): `fable_C_ao_scripts/01_build_set.py`, `02_phylo_taxa.py`, `03_phylo_search.sh`, `04_build_features.py`, `05_ordination.py`, `06_rf.py`, `07_univariate.py`, `08_swissprot_contam.py`, `09_gene_content.py`, `10_figures.py`, `11_phylo_build.py`, `12_composition.py`, `13_phylo_fig.py`, `14_phylo_jackknife.py`, `14b_phylo_jk_eval.py`, `15_rf_fig.py`, `16_report_tables.py`, `17_assemble_report.py`, with `common.py` and `mdtab.py`. They expect the working directory `ao/` in the scratchpad (data, virtualenv and phylogeny files are there).
+- Result tables: `fable_C_ao_results/*.csv`; tree `fable_C_ao_results/concat.fasttree.nwk`.
+- **bfd_scratch tables created: none.** The comparison-set aggregation was done locally from the atlas intermediates; MotherDuck was used read-only (table comments, per-MAG protein md5 comparison, Pfam hits of the *Saitoella* reference).
+- HPCC: only `~/antarctolithica/desc.py` (a schema-listing helper). No SLURM job was submitted; the cluster went offline for the shutdown before the scripts could be copied to `~/antarctolithica/`, so the scratchpad copy is the only one.
+
+## 14. References
+
+- Aitchison J (1982) The statistical analysis of compositional data. *Journal of the Royal Statistical Society B* 44:139-177.
+- Anderson MJ (2001) A new method for non-parametric multivariate analysis of variance. *Austral Ecology* 26:32-46.
+- Anderson MJ, Walsh DCI (2013) PERMANOVA, ANOSIM, and the Mantel test in the face of heterogeneous dispersions: what null hypothesis are you testing? *Ecological Monographs* 83:557-574.
+- Bray JR, Curtis JT (1957) An ordination of the upland forest communities of southern Wisconsin. *Ecological Monographs* 27:325-349.
+- Breiman L (2001) Random forests. *Machine Learning* 45:5-32.
+- Buchfink B, Xie C, Huson DH (2015) Fast and sensitive protein alignment using DIAMOND. *Nature Methods* 12:59-60.
+- Capella-Gutiérrez S, Silla-Martínez JM, Gabaldón T (2009) trimAl: a tool for automated alignment trimming in large-scale phylogenetic analyses. *Bioinformatics* 25:1972-1973.
+- Eddy SR (2011) Accelerated profile HMM searches. *PLoS Computational Biology* 7:e1002195.
+- Gloor GB, Macklaim JM, Pawlowsky-Glahn V, Egozcue JJ (2017) Microbiome datasets are compositional: and this is not optional. *Frontiers in Microbiology* 8:2224.
+- Gower JC (1966) Some distance properties of latent root and vector methods used in multivariate analysis. *Biometrika* 53:325-338.
+- Hurlbert SH (1984) Pseudoreplication and the design of ecological field experiments. *Ecological Monographs* 54:187-211.
+- Jaccard P (1912) The distribution of the flora in the alpine zone. *New Phytologist* 11:37-50.
+- Katoh K, Standley DM (2013) MAFFT multiple sequence alignment software version 7. *Molecular Biology and Evolution* 30:772-780.
+- Kruskal WH, Wallis WA (1952) Use of ranks in one-criterion variance analysis. *Journal of the American Statistical Association* 47:583-621.
+- Le SQ, Gascuel O (2008) An improved general amino acid replacement matrix. *Molecular Biology and Evolution* 25:1307-1320.
+- Legendre P, Gallagher ED (2001) Ecologically meaningful transformations for ordination of species data. *Oecologia* 129:271-280.
+- Leys C, Ley C, Klein O, Bernard P, Licata L (2013) Detecting outliers: do not use standard deviation around the mean, use absolute deviation around the median. *Journal of Experimental Social Psychology* 49:764-766.
+- Li Y, Steenwyk JL, Chang Y, et al. (2021) A genome-scale phylogeny of the kingdom Fungi. *Current Biology* 31:1653-1665.
+- Manni M, Berkeley MR, Seppey M, Simão FA, Zdobnov EM (2021) BUSCO update. *Molecular Biology and Evolution* 38:4647-4654.
+- Pedregosa F, Varoquaux G, Gramfort A, et al. (2011) Scikit-learn: machine learning in Python. *Journal of Machine Learning Research* 12:2825-2830.
+- Price MN, Dehal PS, Arkin AP (2010) FastTree 2: approximately maximum-likelihood trees for large alignments. *PLoS ONE* 5:e9490.
+- Roberts DR, Bahn V, Ciuti S, et al. (2017) Cross-validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure. *Ecography* 40:913-929.
+- Simão FA, Waterhouse RM, Ioannidis P, Kriventseva EV, Zdobnov EM (2015) BUSCO: assessing genome assembly and annotation completeness with single-copy orthologs. *Bioinformatics* 31:3210-3212.
+- Strobl C, Boulesteix A-L, Zeileis A, Hothorn T (2007) Bias in random forest variable importance measures. *BMC Bioinformatics* 8:25.
+- Tomczak M, Tomczak E (2014) The need to report effect size estimates revisited. *Trends in Sport Sciences* 21:19-25. (citation to verify)
