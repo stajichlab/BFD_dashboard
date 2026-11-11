@@ -10,7 +10,7 @@ worklist is `../sql_coloss/14_tblastn_worklist.sql`.
 |---|---|
 | `genomes.tsv`, `queries.tsv` | inputs (genomes from the worklist; 23 query proteins, 22 from UniProt plus one *Actinomortierella* DNA-PKcs from BFD) |
 | `fetch_queries.sh` | builds `queries.faa` (checks each UniProt length against `bfd.swissprot_subject`) |
-| `run_tblastn.sh` | SLURM array, one task per genome, `tblastn` against `input/dna/<name>.scaffolds.fa`, BLAST+ 2.17.0 |
+| `run_tblastn.sh` | SLURM array, one task per genome, `tblastn` against `input_clean_genomes/<ASMID>.fa.gz` (unmasked; masked file as fallback), BLAST+ 2.17.0. The `input/dna/*.scaffolds.fa` links are broken (they point at deleted `genome_annotation/.../predict_results/` copies), which stopped the first submission |
 | `summarize_tblastn.py` | per genome and gene: strong / weak / none |
 
 ## Settings and thresholds (fixed before the results were seen)
