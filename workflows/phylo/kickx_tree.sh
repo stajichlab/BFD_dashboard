@@ -36,6 +36,9 @@ PHYSRC=/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard/atlas_data/phylo
 export NXF_SINGULARITY_CACHEDIR=/bigdata/stajichlab/shared/singularity_cache
 export NXF_HOME=$HOME/.nextflow
 mkdir -p "$BENCH"
+# ~/projects is a symlink into /bigdata on UCR HPCC and the containers only see the real /bigdata path; a
+# /rhome/... path appears read-only inside Singularity (PHYLING_DOWNLOAD failed with mkdir: Read-only file system).
+BENCH=$(readlink -f "$BENCH")
 
 # (1) taxa. run_duckdb_job.py writes <atlas>/taxa/*.tsv and skips blocks whose output exists.
 if [ "$TREE" = taxa ]; then
