@@ -1,0 +1,6 @@
+# Raw MotherDuck exports and the joined genome matrix are re-creatable with
+# ../scripts/export_queries.sql; only the small derived result tables are tracked.
+th_*.csv
+th_genome_matrix.tsv
+.cache.pkl
+th_genus_medians.tsv
