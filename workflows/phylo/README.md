@@ -34,7 +34,26 @@ Backbone, 63 taxa, 51,761 sites, median 29.6% gaps. All 63 taxa have markers; th
   Kickxellales, so Ku loss (absent in both) may be a single event on the stem of that pair, and the intron and size reduction
   happened later, inside Kickxellales. Ancestral-state reconstruction is needed to test it.
 
-Not yet done: site-heterogeneous IQ-TREE, a marker-count sensitivity run without the flagged taxa, and the *Coemansia* tree.
+### *Coemansia* tree (121 taxa: 107 strains + 14 other Kickxellomycota genera; 40,311 sites; FastTree, first pass)
+
+Scripts: `bin/phylo/check_coemansia_tree.py`, `check_coemansia_redundancy.py`. All 121 taxa are in the concatenated alignment
+(median gap 28.9%; strains 26.5%, three strains above 60%). Branch lengths are amino-acid substitutions per site and the tree is
+unrooted as printed; the redundancy numbers below do not depend on rooting.
+
+- ***Coemansia* is not monophyletic**: the smallest split holding all 107 strains also holds *Kickxella*. *Kickxella* sits in a
+  9-taxon clade of 8 strains + *Kickxella* (support 1.00); its closest relative within that clade is one strain at support
+  only 0.53. So *Kickxella* nests inside *Coemansia*, but its exact position is weak. The other 13 genera are outside.
+  Possible reasons are real paraphyly of the genus, a mislabelled genome, or a long-branch/coverage effect (the *Kickxella*
+  genome has 40% missing sites, 11.4% BUSCO-duplicated); this needs a check against other *Kickxella* genomes and a
+  second method before it is stated as a result.
+- **The strains are strongly redundant.** Of 29 pairs of strains that are each other's closest relatives, 8 differ by less than
+  0.001 substitutions per site and 20 by less than 0.005, so many of the 107 "strains" are near-clonal or very close. This
+  supports dereplicating before counting independent lineages.
+- **Well resolved:** 66 nested all-*Coemansia* clades have support >= 0.95 (largest 25, 21, 19, 19, 15, 13 strains), and only
+  7 of 84 internal nodes among strains are below 0.70.
+
+Not yet done: site-heterogeneous IQ-TREE, a marker-count sensitivity run without the flagged taxa, ASTRAL for the *Coemansia*
+tree, rooting on the outgroups, and an ANI or Mash dereplication to define lineages.
 
 ## Lessons from the first runs
 
