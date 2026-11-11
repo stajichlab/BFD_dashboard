@@ -20,9 +20,13 @@ module load ncbi-blast/2.17.0+
 # ROUND=1 (default): queries.faa -> hits/ ; ROUND=2: queries_round2.faa -> hits_round2/ (closer-relative BFD proteins).
 # Leave-one-out: a query protein that comes from the genome being searched (accession starts with its locustag) is dropped,
 # so a positive control cannot be recovered trivially by its own protein.
-SUF=""; [ "${ROUND:-1}" = 2 ] && SUF="_round2"
+# ROUND=3: queries_round3.faa -> hits_round3/, genomes from genomes_round3.tsv (128 genomes: submit with --array=1-128%8, the
+# #SBATCH line above is for rounds 1 and 2). Column 6 of genomes_round3.tsv is the expected scaffold count (bfd.asm_stats.contig_count);
+# the task fails if the assembly does not match it.
+case "${ROUND:-1}" in 1) SUF="";; 2) SUF="_round2";; 3) SUF="_round3";; *) echo "ROUND must be 1, 2 or 3" >&2; exit 2;; esac
+GEN="$T/genomes.tsv"; [ "${ROUND:-1}" = 3 ] && GEN="$T/genomes_round3.tsv"
 mkdir -p "$BENCH/hits${SUF}"
-row=$(tail -n +2 "$T/genomes.tsv" | sed -n "${SLURM_ARRAY_TASK_ID}p")
+row=$(tail -n +2 "$GEN" | sed -n "${SLURM_ARRAY_TASK_ID}p")
 test -n "$row" || { echo "no genome for task ${SLURM_ARRAY_TASK_ID}" >&2; exit 2; }
 loc=$(echo "$row" | cut -f1); name=$(echo "$row" | cut -f2); asmid=$(echo "$row" | cut -f5)
 out="$BENCH/hits${SUF}/$loc.tsv"
@@ -32,6 +36,10 @@ test -s "$asm" || asm="$CLEAN/$asmid.masked.fasta.gz"
 test -s "$asm" || { echo "missing assembly for $loc ($asmid) in $CLEAN" >&2; exit 4; }
 db="$SCRATCH/db_$loc"; mkdir -p "$db"
 zcat "$asm" > "$db/asm.fa"
+if [ "${ROUND:-1}" = 3 ]; then
+  exp=$(echo "$row" | cut -f6); got=$(grep -c '^>' "$db/asm.fa")
+  if [ -n "$exp" ] && [ "$exp" != "$got" ]; then echo "SCAFFOLD COUNT MISMATCH for $loc: $got in file, $exp in asm_stats" >&2; exit 6; fi
+fi
 makeblastdb -in "$db/asm.fa" -dbtype nucl -out "$db/asm" -parse_seqids >/dev/null
 # columns: query, subject scaffold, %identity, aligned length (aa), e-value, bitscore, qstart, qend, qlen, sstart, send, frame
 awk -v l="$loc" '/^>/{keep=(index($0, "|" l "_")==0)} keep' "$BENCH/queries${SUF}.faa" > "$db/q.faa"

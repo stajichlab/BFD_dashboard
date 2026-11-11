@@ -74,6 +74,83 @@ Caveats: round 2 queries were chosen after round 1 (post hoc, declared above); P
 "none" in a fragmented assembly can still mean a missing region; Rad51 was not repeated (round 1: 30 of 31 genomes); weak and strong
 hits were not checked by reciprocal best hit against a proteome.
 
+## Round 3 design (2026-11-11; written before the round 3 results were seen)
+
+Round 3 is **post hoc**, like round 2: it adds queries after rounds 1 and 2 showed which genes lacked sensitivity. Same thresholds,
+same calls, same leave-one-out rule, same BLAST settings. Files: `queries_round3.tsv` (94 queries = the 44 of rounds 1 and 2 plus 50
+new), `genomes_round3.tsv` (128 genomes = the 31 plus the remaining 97 annotated *Coemansia* strains with BUSCO complete >= 60 and
+>= 3,000 proteins; column 6 is the expected scaffold count from `bfd.asm_stats`, and a task fails if its assembly disagrees),
+`coemansia_strain_table.py`, `test_tblastn_fixture.py`. Run with `ROUND=3` and `--array=1-128%12` (outputs `hits_round3/`).
+
+New queries: Ku (8 BFD proteins from Glomeromycota, Mortierellomycota, Mucorales, Endogonales, Umbelopsidales, chytrids,
+Blastocladiomycota and *Syncephalis*); Pol4 (8 BFD proteins, 450-700 aa, from Mucoromycota, Glomeromycota, Zoopagales, chytrids,
+Blastocladiomycota, Monoblepharomycota); Lig4 (4 UniProt: *S. pombe*, *Coprinopsis*, *Cryptococcus*, *Candida*, plus 9 BFD proteins,
+850-1,200 aa); DNA-PKcs (5 BFD proteins of 3,800-4,500 aa from Mucorales, Umbelopsidales, Glomeromycota and chytrids; the 1,999 aa
+*Rhizopus* model of round 2 is kept but is a partial model); Sae2/CtIP (10 BFD proteins that Q1 called present, name evidence weak);
+and the Rad51 family (Dmc1, Rad55, Rad57 from *S. cerevisiae* and *S. pombe*, keys `RecA_DMC1`, `RecA_RAD55`, `RecA_RAD57`). **These
+RecA-family keys are hit evidence only:** every RecA-like protein hits every other, so a hit under a key does not say which paralog
+it is. That needs the gene-family trees. Every UniProt length was checked against `bfd.swissprot_annot`, and every BFD protein must
+fall in its length range (`fetch_queries.sh` fails otherwise).
+
+**Positive controls (from the Q1 Pfam calls, fixed before the results):** Ku in *Basidiobolus*, *Conidiobolus*, *Dimargaris*,
+*Dispira*, *Ramicandelaber*, *Rhizopus*; Pol4 in *Basidiobolus*, *Rhizopus*; ATR in 13 genomes; Sae2 in 10 (weak name evidence); Lig4 in
+*Basidiobolus* only; aprataxin in *Basidiobolus* only; DNA-PKcs and XLF/Nej1 in *Rhizopus* only. **A gene's negatives count as
+informative only if at least 75% of its control genomes are strong**; with one control, one strong hit is "one control only" (weak
+evidence) and a miss makes the gene uninformative. A control is judged with its own protein left out.
+
+## Round 3 results (2026-11-11)
+
+All 128 genomes ran (every assembly matched its expected scaffold count). Files in `results/`: `round3_calls.tsv`, `round3_by_group.tsv`,
+`round3_coemansia_strains.tsv` (per strain, with BUSCO, N50 and the `none_in_fragmented` flag), `round3_lig4_cterminal.tsv`,
+`round3_query_lengths.txt`. Evaluated with `round3_evaluate.py`; `test_tblastn_fixture.py` passes.
+
+**Controls (judged as declared above).**
+
+| Gene | Controls strong | Verdict |
+|---|---|---|
+| Ku | 6 of 6 | pass |
+| Pol4 | 2 of 2 | pass |
+| ATR/Mec1 | 12 of 12 | pass |
+| Lig4, aprataxin, DNA-PKcs | 1 of 1 each | one control only |
+| XLF/Nej1 | 0 of 1 | **uninformative** |
+| Sae2/CtIP | 1 of 10 (6 weak, 3 none) | **uninformative** |
+| Rad51 (completeness proxy) | 126 of 128 strong (106 of 107 *Coemansia*; failures: *Dipsacomyces*, N50 15 kb, and strain RSA 2675, N50 17 kb) | assemblies are largely complete for a core gene |
+
+**Ku: no hit at all in 0 of 107 *Coemansia* strains** (not even an HSP at e-value 1e-3 with any of the 22 Ku queries); controls pass
+6 of 6. 75 of the 107 assemblies are fragmented (N50 < 50 kb or BUSCO < 70), 32 are not, and Ku is absent in both sets, including the
+two with N50 >= 500 kb (RSA 1278, RSA 71). The 21 other genomes are unchanged from round 2 (Ku strong in *Dimargaris*, *Dispira*,
+*Tieghemiomyces*, *Ramicandelaber*, *Rhizopus*, *Caulochytrium*, *Basidiobolus*, *Conidiobolus*; weak in *Capillidium*; none in all
+Harpellales, core Kickxellales, *Mycoemilia*/*Spiromyces*, *Piptocephalis*, *Neoconidiobolus*).
+
+**Pol4: none in all 107 *Coemansia* strains and all 14 other Kickxellomycota genomes**, with controls passing (2 of 2). Pol4 hits
+exist in *Rhizopus*, *Basidiobolus* (now strong with a *Phlyctochytrium* query) and *Piptocephalis*; *Caulochytrium* is none.
+
+**Lig4: the "strong" calls are not evidence of Lig4.** Round 3 moved 16 original-genome calls from weak to strong, 13 of them
+core Kickxellales (10 *Coemansia* strains, *Kickxella*, *Linderina*, *Martensiomyces*) and 14 of the 16 through the same *Zoophagus*
+query, and 102 of 107 *Coemansia* strains are strong. These hits are one block
+that covers query residues 1-417 of 964 (the N-terminal ligase core that Lig4 shares with LIG1); the 30% coverage rule is met by that
+core alone, so **the threshold is not specific for Lig4** (a design flaw I did not foresee). The more specific observation (`lig4_cterminal_evidence.py`, evidence
+only) is whether Lig4 query hits also reach the C-terminal third, where Lig4 has its BRCT region: yes in 13 of the 17 non-core
+genomes (Dimargaritales 3 of 3, *Ramicandelaber* 1 of 1, Harpellales 2 of 4, *Mycoemilia*/*Spiromyces* 1 of 2, Entomophthorales 3 of 4,
+*Rhizopus*, *Caulochytrium*, *Piptocephalis*), but **in 0 of 111 core Kickxellales genomes** (maximum 0.20, median 0.12). BRCT domains
+occur in many proteins, so this is supportive, not specific; the identity needs the gene-family trees.
+
+**DNA-PKcs:** *Rhizopus* is strong (full-length *Cunninghamella* query, e = 1e-167, 89% coverage). All Kickxellomycota genomes are weak
+(median coverage 0.16, the shared PIKK kinase region), except one *Coemansia* strain (RSA 485, 23.8% BUSCO-duplicated) that is strong with the
+partial *Rhizopus* model: its hits are the query's C-terminal kinase region and the ATR queries hit the same scaffold, so it is a PIKK
+paralog, not a DNA-PKcs call. **Aprataxin:** weak in 31 and none in 76 strains, one control only. **Sae2, XLF/Nej1: uninformative.**
+
+**RecA-family keys (hit evidence only, not paralog calls):** `RecA_DMC1` and `RecA_RAD57` are strong in all 107 strains and `RecA_RAD55`
+weak in 8 (none in 99); a Dmc1 or Rad57 query also matches Rad51, so these do not show that Dmc1, Rad55 or Rad57 exist.
+
+**Changes from round 2 in the original 31 genomes:** 20 calls, all upgrades (16 weak to strong, 2 not_tested to strong, 1 none to strong,
+1 none to weak); none downgraded. All Lig4 upgrades are explained by the shared ligase core (above); the others are DNA-PKcs in *Rhizopus*
+(full-length query, previously untested) and Pol4 in *Basidiobolus*.
+
+**Still uninformative:** XLF/Nej1, Sae2/CtIP, aprataxin and DNA-PKcs outside Mucoromycota (one control only, or weak PIKK-like hits); Lig4
+identity (needs trees); Dmc1/Rad55/Rad57 identity (needs trees); anything about fragmented assemblies (75 of 107 strains) beyond core
+genes such as Rad51 being present.
+
 ## Run (HPCC)
 
     BENCH=~/projects/BFD_dashboard/bench/kx2_ku_tblastn REPO=<checkout> bash fetch_queries.sh      # login node, light
