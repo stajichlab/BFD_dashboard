@@ -13,6 +13,39 @@ Every cross-clade result in Analysis E and the Kickxellomycota report is tree-fr
 independent and the Mucorales baseline cannot be checked. A tree is the gate for ancestral reconstruction of genome
 size and intron density, Dollo or Count gain-loss, CAFE, PGLS, and relative-rate tests of selection vs drift.
 
+## Result so far (2026-11-11, first pass, FastTree and ASTRAL on 80 fungi_odb12 markers; not yet a final tree)
+
+Backbone, 63 taxa, 51,761 sites, median 29.6% gaps. All 63 taxa have markers; the weakest are *Tieghemiomyces* (84% gaps,
+55% BUSCO-duplicated, the only genome of its genus), *Linderina*, *Spiromyces* and *Basidiobolus* (58-66%). Checks are
+`bin/phylo/check_marker_recovery.py`, `check_tree_clades.py` and `print_kickx_subtree.py` (run on the HPCC with
+`python3 - <tree> < script.py`).
+
+- Kickxellomycota is monophyletic in both trees (FastTree 1.00, ASTRAL 0.9998), as are all sampled orders.
+- Within it, both trees give: Dimargaritales as the earliest branch; Ramicandelaber sister to (Kickxellales + Harpellales);
+  Kickxellales and Harpellales sister to each other (support 1.00 and 1.00). In Kickxellales: (Coemansia, Kickxella),
+  (Dipsacomyces, Martensiomyces) and (Mycoemilia, Spiromyces).
+- **The one disagreement inside Kickxellomycota is *Linderina***: sister to the (Coemansia, Kickxella) + (Dipsacomyces,
+  Martensiomyces) clade in FastTree (0.997), but grouped with (Dipsacomyces, Martensiomyces) in ASTRAL (0.87). It is a flagged
+  taxon (24% duplicated, 66% gaps).
+- *Basidiobolus* is unstable: with Zoopagomycota + Entomophthoromycota in FastTree at support 0.43, but outside that group
+  in ASTRAL. Entomophthorales fall with Kickxellomycota + Zoopagales in both trees. The contested zygomycete backbone is
+  therefore not resolved by this run.
+- What this means for the reduction analyses is a hypothesis, not a result: the unreduced Harpellales are sister to
+  Kickxellales, so Ku loss (absent in both) may be a single event on the stem of that pair, and the intron and size reduction
+  happened later, inside Kickxellales. Ancestral-state reconstruction is needed to test it.
+
+Not yet done: site-heterogeneous IQ-TREE, a marker-count sensitivity run without the flagged taxa, and the *Coemansia* tree.
+
+## Lessons from the first runs
+
+- **Genome choice.** Ranking by BUSCO complete favoured duplicated assemblies; genomes with BUSCO duplicated 52-70% recovered
+  14-426 of 1,089 markers, and *Massospora* (BUSCO 71.7%) had only 415 proteins in BFD and no markers. The selection now ranks by
+  single-copy BUSCO and requires an annotation (see `bin/phylo/kickx_tree_taxa.sql`).
+- **Nextflow on a busy scheduler.** A partial `squeue` listing made Nextflow fail healthy SLURM jobs ("terminated for an unknown
+  reason", 2026-11-09 and 2026-11-11); the script sets `executor.exitReadTimeout = '12 h'`.
+- **Memory.** `PHYLING_ALIGN` needed more than 64 GB for 121 taxa (peak 67 GB); memory now scales with the tree and doubles on retry.
+- **Paths.** `~/projects` is a symlink into `/bigdata`; containers need the resolved path (`readlink -f`).
+
 ## State of the existing genus tree (checked 2026-11-11, read-only)
 
 The atlas genus tree (1,654 genera, `atlas_data/phylo/`, nf_phyling, `fungi_odb10`, FastTree) has **not finished**.
