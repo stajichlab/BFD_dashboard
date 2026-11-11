@@ -15,7 +15,14 @@ import csv, os, sys
 from collections import defaultdict
 
 bench, genomes_tsv, prefix = sys.argv[1], sys.argv[2], sys.argv[3]
+suffix = sys.argv[4] if len(sys.argv) > 4 else ''   # '' for round 1, '_round2' for round 2
 genomes = list(csv.DictReader(open(genomes_tsv), delimiter='\t'))
+# query accessions per gene key, from the query file that was searched (header >KEY|ACCESSION)
+qacc = defaultdict(list)
+for line in open(f'{bench}/queries{suffix}.faa'):
+    if line.startswith('>'):
+        k, a = line[1:].strip().split('|')
+        qacc[k].append(a)
 
 
 def merged_span(iv):
@@ -36,7 +43,7 @@ def merged_span(iv):
 rows = []
 for g in genomes:
     loc = g['locustag']
-    path = f'{bench}/hits/{loc}.tsv'
+    path = f'{bench}/hits{suffix}/{loc}.tsv'
     if not os.path.exists(path):
         rows.append({'locustag': loc, 'genus': g['genus'], 'grp': g['grp'], 'gene': 'NA', 'call': 'NOT_RUN'})
         continue
@@ -58,10 +65,14 @@ for g in genomes:
                'query_cov': round(cov, 3), 'n_hsps': len(sub)}
         if key not in per_gene or (rec['query_cov'] * rec['best_bits']) > (per_gene[key]['query_cov'] * per_gene[key]['best_bits']):
             per_gene[key] = rec
-    keys = sorted({q.split('|')[0] for q in by_q} | set())
-    allkeys = ['Ku', 'DNA-PKcs', 'Lig4', 'Pol4', 'XLF_Nej1', 'Aprataxin', 'ATR_Mec1', 'Sae2_CtIP', 'CTRL_Rad51']
-    for key in allkeys:
+    for key in sorted(qacc):
         rec = per_gene.get(key)
+        # leave-one-out in round 2: queries from the searched genome itself were dropped by run_tblastn.sh
+        n_used = sum(1 for a in qacc[key] if not a.startswith(loc + '_'))
+        if n_used == 0:
+            rows.append({'locustag': loc, 'genus': g['genus'], 'grp': g['grp'], 'gene': key, 'call': 'not_tested', 'query': '',
+                         'scaffold': '', 'best_evalue': '', 'best_bits': '', 'pident_best_hsp': '', 'query_cov': 0, 'n_hsps': 0})
+            continue
         if rec is None:
             rows.append({'locustag': loc, 'genus': g['genus'], 'grp': g['grp'], 'gene': key, 'call': 'none', 'query': '',
                          'scaffold': '', 'best_evalue': '', 'best_bits': '', 'pident_best_hsp': '', 'query_cov': 0, 'n_hsps': 0})
@@ -86,7 +97,7 @@ for r in rows:
     if r['gene'] != 'NA':
         tab[(r['grp'], r['gene'])][r['call']] += 1
 with open(prefix + '_by_group.tsv', 'w') as f:
-    f.write('grp\tgene\tn_genomes\tstrong\tweak\tnone\n')
+    f.write('grp\tgene\tn_genomes\tstrong\tweak\tnone\tnot_tested\n')
     for (grp, gene), c in sorted(tab.items()):
-        f.write(f"{grp}\t{gene}\t{sum(c.values())}\t{c['strong']}\t{c['weak']}\t{c['none']}\n")
+        f.write(f"{grp}\t{gene}\t{sum(c.values())}\t{c['strong']}\t{c['weak']}\t{c['none']}\t{c['not_tested']}\n")
 print('wrote', prefix + '_calls.tsv', 'and', prefix + '_by_group.tsv')

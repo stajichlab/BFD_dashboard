@@ -8,8 +8,11 @@ HERE=$(cd "$(dirname "$0")" && pwd)
 : "${BENCH:?set BENCH to the output folder, e.g. ~/projects/BFD_dashboard/bench/kx2_ku_tblastn}"
 BENCH=$(readlink -f "$BENCH"); mkdir -p "$BENCH"
 MAP=/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard/atlas_data/phylo/locustag_to_pep.tsv   # read-only
-OUT="$BENCH/queries.faa"; : > "$OUT.tmp"
-tail -n +2 "$HERE/queries.tsv" | while IFS=$'\t' read -r key src acc exp; do
+# ROUND=1 (default): queries.tsv -> queries.faa ; ROUND=2: queries_round2.tsv -> queries_round2.faa (closer-relative proteins)
+SUF=""; [ "${ROUND:-1}" = 2 ] && SUF="_round2"
+QTSV="$HERE/queries${SUF}.tsv"
+OUT="$BENCH/queries${SUF}.faa"; : > "$OUT.tmp"
+tail -n +2 "$QTSV" | while IFS=$'\t' read -r key src acc exp; do
   if [ "$src" = uniprot ]; then
     seq=$(curl -fsS "https://rest.uniprot.org/uniprotkb/${acc}.fasta")
     len=$(printf '%s\n' "$seq" | awk 'NR>1{n+=length($0)} END{print n}')
@@ -22,6 +25,6 @@ tail -n +2 "$HERE/queries.tsv" | while IFS=$'\t' read -r key src acc exp; do
     zcat "$pep" | awk -v id="$acc" -v h=">${key}|${acc}" '/^>/{p=($1==">" id)} p{if(/^>/) print h; else print}' >> "$OUT.tmp"
   fi
 done
-n=$(grep -c '^>' "$OUT.tmp"); want=$(( $(wc -l < "$HERE/queries.tsv") - 1 ))
+n=$(grep -c '^>' "$OUT.tmp"); want=$(( $(wc -l < "$QTSV") - 1 ))
 test "$n" -eq "$want" || { echo "queries: got $n sequences, expected $want" >&2; exit 5; }
 mv "$OUT.tmp" "$OUT"; echo "wrote $OUT with $n sequences"
