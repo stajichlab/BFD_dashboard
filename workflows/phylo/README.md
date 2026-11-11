@@ -2,6 +2,11 @@
 
 Status: **drafted, not yet run.** Nothing here has been submitted on the HPCC.
 
+Decisions (owner, 2026-11-11): narrow trees only, run on the UCR HPCC; marker set **fungi_odb12**; membership as below
+(*Coemansia* at BUSCO >= 60% = 107 genomes; all 15 Kickxellomycota genera kept and flagged `low_busco` when BUSCO < 60%;
+backbone outgroups unchanged at 65 taxa). The atlas genus-representative tree is being built on a different machine, so
+this pair of trees must be reconciled with it (tip labels are LOCUSTAGs here; confirm the same convention there).
+
 ## Why
 
 Every cross-clade result in Analysis E and the Kickxellomycota report is tree-free, so genus medians are treated as
@@ -32,8 +37,13 @@ One ingroup genus has BUSCO of only 44%, so marker coverage per taxon must be in
     REPO=~/projects/BFD_dashboard/repo sbatch workflows/phylo/kickx_tree.sh backbone
     REPO=~/projects/BFD_dashboard/repo sbatch workflows/phylo/kickx_tree.sh coemansia
 
-Outputs go to `~/projects/BFD_dashboard/bench/kickx_tree/` (purgeable). `MARKERSET` defaults to `fungi_odb10`, the set the
-shared `phyling_db` already contains; BFD's BUSCO is `fungi_odb12`, so decide whether that mismatch matters.
+Outputs go to `~/projects/BFD_dashboard/bench/kickx_tree/` (purgeable). `MARKERSET` defaults to `fungi_odb12`; the
+markers are downloaded by phyling into `bench/kickx_tree/phyling_db` (the shared atlas `phyling_db` holds only
+`fungi_odb10` and is not written to). The pinned nf_phyling revision (`52b694f356`, the head as of 2026-10-03) defaults to
+`fungi_odb12`, and its config says it runs a no-support tree and a bootstrap-support tree per marker set. A comma-separated
+list such as `fungi_odb12,mucoromycota_odb12` is supported; the first pass uses `fungi_odb12` only because the root taxa
+(chytrids, Blastocladiomycota) are outside Mucoromycota. Taxa with `low_busco = true` in `backbone_taxa.tsv` need their
+marker count inspected, and the topology reported with and without them.
 
 ## Still to do before this answers the questions
 

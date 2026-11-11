@@ -14,21 +14,24 @@
 #
 # Required:  REPO   a checkout of this repo on the HPCC that contains bin/atlas/run_duckdb_job.py and bin/phylo/
 # Optional:  BENCH  default ~/projects/BFD_dashboard/bench/kickx_tree
-#            MARKERSET default fungi_odb10 (the set the shared phyling_db already holds; BFD BUSCO is fungi_odb12,
-#                      so check that the choice is intended before reporting a final tree)
+#            MARKERSET default fungi_odb12 (chosen 2026-11-11; matches BFD's BUSCO lineage). nf_phyling accepts a
+#                      comma-separated list, e.g. fungi_odb12,mucoromycota_odb12, but the root taxa (chytrids etc.)
+#                      are outside Mucoromycota, so the first pass uses fungi_odb12 only.
+# The marker database is downloaded by the PHYLING_DOWNLOAD step into $BENCH/phyling_db, not into the shared atlas
+# phyling_db (which holds fungi_odb10 only and is a shared folder we do not write to).
 set -euo pipefail
 TREE=${1:?usage: sbatch kickx_tree.sh backbone|coemansia}
 case "$TREE" in backbone|coemansia) ;; *) echo "TREE must be backbone or coemansia" >&2; exit 2;; esac
 : "${SCRATCH:?SCRATCH is not set; this job must run under SLURM on UCR HPCC}"
 : "${REPO:?set REPO to a checkout of the BFD_dashboard repo}"
 BENCH=${BENCH:-$HOME/projects/BFD_dashboard/bench/kickx_tree}
-MARKERSET=${MARKERSET:-fungi_odb10}
+MARKERSET=${MARKERSET:-fungi_odb12}
 TABLES=/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/tables
-# Read-only inputs from the existing atlas phylo staging: locustag -> proteome path, and the downloaded marker set.
+# Read-only input from the existing atlas phylo staging: locustag -> proteome path.
 PHYSRC=/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard/atlas_data/phylo
 export NXF_SINGULARITY_CACHEDIR=/bigdata/stajichlab/shared/singularity_cache
 export NXF_HOME=$HOME/.nextflow
-mkdir -p "$BENCH/$TREE"
+mkdir -p "$BENCH/$TREE" "$BENCH/phyling_db"
 
 # (1) taxa. run_duckdb_job.py writes <atlas>/taxa/*.tsv and skips blocks whose output exists.
 if [ ! -s "$BENCH/taxa/${TREE}_taxa.tsv" ]; then
@@ -77,6 +80,6 @@ nextflow run stajichlab/nf_phyling -r 52b694f356 \
     --input "$PEP" \
     --prefix "kickx_${TREE}" \
     --markerset "$MARKERSET" \
-    --phyling_db "$PHYSRC/phyling_db" \
+    --phyling_db "$BENCH/phyling_db" \
     --outdir "$BENCH/$TREE/results" \
     -resume

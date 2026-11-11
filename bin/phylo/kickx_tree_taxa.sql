@@ -42,18 +42,19 @@ FROM genus_rep;
 
 -- @output taxa/backbone_taxa.tsv
 COPY (
-  SELECT 'ingroup' AS role, LOCUSTAG, ASMID, PHYLUM, cls, ord, FAMILY, GENUS, SPECIES, complete_pct, N50_bp
+  SELECT 'ingroup' AS role, LOCUSTAG, ASMID, PHYLUM, cls, ord, FAMILY, GENUS, SPECIES, complete_pct, N50_bp,
+         (complete_pct < 60) AS low_busco
   FROM genus_rep_ranked WHERE PHYLUM = 'Kickxellomycota'
   UNION ALL
-  SELECT 'sister', LOCUSTAG, ASMID, PHYLUM, cls, ord, FAMILY, GENUS, SPECIES, complete_pct, N50_bp
+  SELECT 'sister', LOCUSTAG, ASMID, PHYLUM, cls, ord, FAMILY, GENUS, SPECIES, complete_pct, N50_bp, (complete_pct < 60)
   FROM genus_rep_ranked WHERE PHYLUM IN ('Zoopagomycota','Entomophthoromycota','Basidiobolomycota') AND complete_pct >= 60
   UNION ALL
-  SELECT 'mucoromycot', LOCUSTAG, ASMID, PHYLUM, cls, ord, FAMILY, GENUS, SPECIES, complete_pct, N50_bp
+  SELECT 'mucoromycot', LOCUSTAG, ASMID, PHYLUM, cls, ord, FAMILY, GENUS, SPECIES, complete_pct, N50_bp, (complete_pct < 60)
   FROM genus_rep_ranked
   WHERE PHYLUM IN ('Mucoromycota','Mortierellomycota','Glomeromycota') AND complete_pct >= 85
     AND ord_rank <= CASE WHEN ord = 'Mucorales' THEN 8 ELSE 2 END
   UNION ALL
-  SELECT 'root', LOCUSTAG, ASMID, PHYLUM, cls, ord, FAMILY, GENUS, SPECIES, complete_pct, N50_bp
+  SELECT 'root', LOCUSTAG, ASMID, PHYLUM, cls, ord, FAMILY, GENUS, SPECIES, complete_pct, N50_bp, (complete_pct < 60)
   FROM genus_rep_ranked
   WHERE PHYLUM IN ('Blastocladiomycota','Chytridiomycota','Monoblepharomycota','Neocallimastigomycota')
     AND complete_pct >= 75 AND ord_rank = 1
