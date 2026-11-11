@@ -18,9 +18,18 @@ The tree is the first-pass FastTree backbone in `workflows/phylo/README.md` (63 
 1. **Ku is lost once, on the stem of Kickxellales + Harpellales, in this tree.** Dimargaritales and *Ramicandelaber* keep it,
    and it is absent from all 107 *Coemansia* strains and all 11 stem genera. The relaxed single-domain rule gives 2 losses on the tree and the strict rule 5; the
    extra ones are single genera that are probably annotation misses (*Tieghemiomyces* is a 55%-duplicated genome).
-2. **The rest of classical end joining was already gone before Ku.** On the stem of Entomophthorales + Kickxellomycota (18 genera)
-   Lig4, XLF/Nej1, Pol4 and aprataxin are lost; DNA-PKcs is lost earlier still (27 genera, with Basidiobolus and Zoopagales), a loss
-   separate from the Dikarya-stem loss because Mucoromycota keep it. Nothing else is co-lost with Ku itself.
+   **tblastn confirms this** (see [`tblastn/`](tblastn/README.md), round 2): Ku is found in *Tieghemiomyces*, *Caulochytrium* and
+   *Conidiobolus* (annotation misses), and not found in any of the 20 genomes of the 11 stem genera, with all four Ku positive
+   controls recovered. *Piptocephalis* and *Neoconidiobolus* are also none and *Capillidium* weak, so further independent Ku losses
+   or strong divergence are not excluded.
+2. **Much of the rest of classical end joining looks gone before Ku, by annotation, but tblastn only partly confirms it.** By Pfam, on the stem of
+   Entomophthorales + Kickxellomycota (18 genera) Lig4, XLF/Nej1, Pol4 and aprataxin are lost, and DNA-PKcs earlier still (27
+   genera), separately from the Dikarya-stem loss because Mucoromycota keep it. tblastn: **Pol4** is supported (strong in
+   *Rhizopus* and Zoopagales, none in all 24 Kickxellomycota and 4 Entomophthorales genomes; two queries only). **Lig4 is
+   unresolved**: strong hits appear in *Ramicandelaber*, Dimargaritales, Harpellales (2 of 4) and elsewhere, though none strong in
+   the 14 core Kickxellales, and a Lig4 query can match the LIG1-type ligase, so the Pfam result "Lig4 lost before Ku" is not
+   confirmed. XLF/Nej1, aprataxin and DNA-PKcs are uninformative by tblastn (controls fail, or only PIKK-like weak hits). ATR is
+   present in every genome. Nothing else is co-lost with Ku itself.
 3. **The other arms are retained:** MRN (Mre11, Rad50), Dna2, TERT, Est1, Ten1, PNKP, TDP1, and Rad51, Rad52, Mus81 and FEN1.
    Sae2 is lost in Kickxellales but kept in Harpellales; Rif1 is retained in core Kickxellales but absent from Harpellales.
 4. **No compensation was found.** POLQ, LIG3 and PARP1-like are absent in the Ku-retaining Dimargaritales and *Ramicandelaber* as well,
@@ -40,6 +49,10 @@ gene-targeting efficiency and fewer random integrations in Harpellales and *Coem
 
 ## Caveats
 
+- **tblastn status (2026-11-11):** done for Ku, Lig4, Pol4, XLF/Nej1, aprataxin, DNA-PKcs and ATR in 31 genomes, in two rounds (round 2
+  used closer-relative queries and was a post-hoc change after a control failed); see [`tblastn/`](tblastn/README.md). Sae2 and the
+  low-confidence families were not checked, and weak or strong hits were not tested by reciprocal best hit. The caveat below
+  still applies to everything not covered.
 - **Every absence needs tblastn.** BFD annotation under-calls genes and BUSCO is 61-93% in these groups. Control genes that must be
   present are missed in 12.5-14% of calls with the multi-domain rules (2-6% with a single key domain), so single-gene absences are weak.
   Ku absence in all 107 strains and 11 stem genera, against presence in sister lineages by the same rule, is far outside random misses
@@ -60,8 +73,9 @@ gene-targeting efficiency and fewer random integrations in Harpellales and *Coem
 
 ## Next
 
-1. Run the tblastn worklist on the HPCC (priority 1 first; Ku against all stem genera and *Coemansia* strains, with Ku in
-   *Ramicandelaber*, *Dimargaris* and *Rhizopus* as positive controls). A long-read terminal-repeat scan for *Coemansia* telomeres.
+1. tblastn is done for 31 genomes (above). Still open: a reciprocal-best-hit check for Lig4 (is each hit Lig4 or LIG1?), more
+   query proteins per gene (Pol4 and Lig4 rest on one or two), the remaining *Coemansia* strains, Sae2 and the Dmc1/Rad55/Rad57
+   calls, and a long-read terminal-repeat scan for *Coemansia* telomeres.
 2. Re-do the parsimony as a likelihood or Dollo reconstruction on the final tree (IQ-TREE, ASTRAL, rooted, strains dereplicated).
 3. Link to the reduction analyses: the tree puts Ku loss on the stem of Kickxellales + Harpellales, before the intron and size
    reduction of core Kickxellales, but this is a placement on a first-pass tree, not a causal test.

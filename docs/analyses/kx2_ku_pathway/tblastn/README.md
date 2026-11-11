@@ -48,6 +48,32 @@ called present in nearby lineages (`queries_round2.tsv`: Ku from *Dimargaris*, *
 searched is dropped (leave-one-out), so no control is recovered by its own protein; a gene whose only query was from that genome
 is reported `not_tested`, not `none`. Sae2 and the Rad51 control are not repeated (the Sae2 proteins have no name evidence).
 
+## Round 2 result (2026-11-11)
+
+Saved as `results/round2_calls.tsv` and `results/round2_by_group.tsv`. Assembly check: the scaffold counts of all 31
+`input_clean_genomes` files match `bfd.asm_stats.contig_count` (0 differences; no masked-file fallbacks).
+
+**Ku.** With closer-relative queries all four Ku positives are recovered strongly (*Dimargaris*, *Dispira*, *Ramicandelaber*,
+*Rhizopus*). tblastn also finds Ku in three genomes where Pfam called it absent (*Tieghemiomyces*, *Caulochytrium*,
+*Conidiobolus*, all strong), so those were annotation misses and not losses. Ku remains **none in all 14 core Kickxellales, all 4
+Harpellales and both *Mycoemilia*/*Spiromyces* genomes** (20 of 20 genomes in the 11 genera under the stem node), which supports a
+real loss on the stem of Kickxellales + Harpellales. *Piptocephalis* and *Neoconidiobolus* are none and *Capillidium* is weak, so
+independent Ku loss (or strong divergence) in those lineages is not excluded.
+
+| Gene | What round 2 shows | Reading |
+|---|---|---|
+| Ku | controls 4 of 4 strong; none in all 20 stem-clade genomes | supported absence in the stem clade |
+| ATR/Mec1 | strong in all Kickxellomycota genomes, including all 4 Harpellales | present everywhere; the weak Harpellales hits in round 1 were query divergence |
+| Pol4 | strong in *Rhizopus* and Zoopagales (control passes); none in all 24 Kickxellomycota and all 4 Entomophthorales genomes | supported absence, but from two queries only, one an unusually large (1,604 aa) gene model |
+| Lig4 | strong or weak hits in nearly every lineage, strong in 2 of 4 Harpellales, **0 strong and 13 weak in 14 core Kickxellales** | **unresolved**: a single query and the ligase catalytic domain is shared with LIG1; needs a reciprocal-best-hit check |
+| XLF/Nej1 | none everywhere, including *Rhizopus* | uninformative (control fails; small, fast-evolving) |
+| Aprataxin | strong in the root genus, one Dimargaritales and one Entomophthorales genus; none or weak elsewhere | uninformative |
+| DNA-PKcs | weak (PIKK-like) hits everywhere; *Rhizopus* untested (its own protein was the only query) | uninformative |
+
+Caveats: round 2 queries were chosen after round 1 (post hoc, declared above); Pol4 and Lig4 each rest on one or two proteins; a
+"none" in a fragmented assembly can still mean a missing region; Rad51 was not repeated (round 1: 30 of 31 genomes); weak and strong
+hits were not checked by reciprocal best hit against a proteome.
+
 ## Run (HPCC)
 
     BENCH=~/projects/BFD_dashboard/bench/kx2_ku_tblastn REPO=<checkout> bash fetch_queries.sh      # login node, light
