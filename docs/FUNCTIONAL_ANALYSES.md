@@ -210,7 +210,7 @@ From these it distills 6–10 patterns worth deeper study.
 
 ## E. What was lost, gained and reshaped in Kickxellomycota reduction, and how it compares with yeasts
 
-**Status:** first pass done 2026-11-10 (four parallel agents, exploration in MotherDuck). No report directory yet; the SQL was run inline and is **not saved**, so every number below is unreproduced until the J12 job exists (see Production path). Scratch tables: `bfd_scratch.kx2_h1_*` to `kx2_h4_*`.
+**Status:** first pass done 2026-11-10 (four parallel agents, exploration in MotherDuck). No report directory yet. The SQL is saved in `bin/atlas/sql/kx2_h1/` to `kx2_h4/` (numbered in run order, with a README per directory giving dependencies and a verification record); see "Reproducibility" below for what was and was not re-run. Scratch tables: `bfd_scratch.kx2_h1_*` to `kx2_h4_*`.
 
 **Scope and conventions:** genus medians over species representatives. Quality filter BUSCO ≥ 85 and N50 ≥ 50 kb for main comparisons, unfiltered shown alongside. No genus has passed the filter in Harpellales or Dimargaritales, so those rows are unfiltered only. Core Kickxellales is 3–5 genera, almost all *Coemansia* (146 of 169 species). Baselines: Mucorales for Kickxellomycota and Zoopagales; Pezizomycotina for yeasts. Nothing is phylogenetically corrected.
 
@@ -234,7 +234,7 @@ From these it distills 6–10 patterns worth deeper study.
 - Reduction in both lineages is mostly fewer genes with each gene's content preserved. Intron loss is the visible phenotype but a small share of the size deficit.
 - The Mucorales baseline may overstate "reduction": Mucorales carry 2.5× the repeat fraction and 2.4× the intron bp per gene, and Zoopagales already have Kickxellales-sized genomes (about 19.7 Mb). Reduction is relative to an uncertain ancestral state until a tree exists.
 
-**Caveats:** BUSCO of about 71% in Kickxellomycota inflates complete-loss calls, so those are upper bounds. The family decomposition (H1) and Pfam function assignment (H4, GO keyword argmax, 41% unclassified) are crude. Pfam e-value was not varied beyond 1e-5, and the Mucorales matrix includes recent expansions. Codon indices are genome-wide and confounded by GC. The tAI wobble weights and the ENC formula are marked citation to verify.
+**Caveats:** BUSCO of about 71% in Kickxellomycota inflates complete-loss calls, so those are upper bounds. The family decomposition (H1) and Pfam function assignment (H4, GO keyword argmax; 6,310 of 20,084 Pfams, 31%, are in SwissProt subjects, and the first report of 41% unclassified was wrong) are crude. In H1, `arch_per1000` and `bigram_per1000` are per 1,000 Pfam-annotated proteins in the 2,000-protein rarefied sample (annotated count 53–1,867), so groups with low Pfam hit rates such as Microsporidia rest on fewer proteins. Pfam e-value was not varied beyond 1e-5, and the Mucorales matrix includes recent expansions. Codon indices are genome-wide and confounded by GC. The tAI wobble weights and the ENC formula are marked citation to verify.
 
 **Next, in priority order**
 1. Species tree and orthogroups (Analysis A, item A1), then ancestral reconstruction of genome size, intron density and gene count against a phylogenetic baseline. This gates H3, H4 and the baseline issue.
@@ -243,7 +243,21 @@ From these it distills 6–10 patterns worth deeper study.
 4. Trypsin tandem-array and repeat check, and a MEROPS family map.
 5. RNA-seq UTR annotation for a few genomes, and repeat coordinates, to open the UTR and masked terms of the accounting.
 
-**Production path:** save the SQL used for H1–H4 under `bin/atlas/sql/`, add a `workflows/atlas/J12*.sh` job that rebuilds the metrics from the parquet tables on HPCC (reusing `A3/protein_pfam_arch.parquet` from J2b), and add a fixture test. This is not done yet; the numbers above should be treated as exploratory until then.
+**Reproducibility** (SQL in `bin/atlas/sql/kx2_h1/` to `kx2_h4/`, MotherDuck dialect, plain SQL, nothing done in Python or by hand; each README has the dependency graph). Verification was done by re-running the later steps from the existing upstream scratch tables into temporary tables and diffing against the originals:
+
+| | Re-run and matched | Saved but **not** re-run |
+|---|---|---|
+| H1 | steps 03–07 (genome metrics, arch metrics, genus medians, Cliff's δ; 0 of 300 δ rows differ) | 01, 02 (genome list, 5M-row protein table), 09–12 (family decomposition, fusion, long families), 13–14 |
+| H2 | 05 lineage terms (37 rows), 06 decomposition (both orderings), 08 genus table (row count only), 09 δ (119 rows identical) | 01–04 and 07 (genome list, per-gene table, intergenic distances, orientation) |
+| H3 | 07–09 and the `resid` step of 10 (0 differing rows); ENC and GC3 recomputed independently (max difference 3e-14) | 04 (tRNA and tAI), 05 (amino acid, disorder), 06 (protein-rate proxy), `resid2` |
+| H4 | loss split, lost-set overlap, gains (0 row differences) | 01, 02, 04–06 (medians, class counts, scaling fits, Pfam categories) |
+
+- H2 and H3 start from the Analysis A scratch table `kx_genomes` (1,919 genomes), whose SQL is in [analyses/kickxellomycota/](analyses/kickxellomycota/README.md); it was not rebuilt.
+- H2's lineage list is hand-defined over `kx_genomes.grp`, not derived from taxonomy.
+- Some reporting queries (H4 leverage and candidate listings; H3 display queries) are comments, not tables. Exploratory design queries that only informed choices are not saved.
+- A full end-to-end rebuild from empty scratch has not been done, so "saved" is not yet "proven to rebuild".
+
+**Production path:** add a `workflows/atlas/J12*.sh` job that rebuilds these metrics from the parquet tables on HPCC (reusing `A3/protein_pfam_arch.parquet` from J2b), with a fixture test and the full rebuild above. This is not done yet. The numbers are exploratory until the end-to-end rebuild agrees with them.
 
 ## Upstream follow-ups (BFD/Fungi_BFD_runs)
 
