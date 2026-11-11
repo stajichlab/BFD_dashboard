@@ -68,6 +68,13 @@ if [ "$have" -ne "$want" ]; then echo "taxa without a proteome path:" >&2
 # (3) nf_phyling. Small run (about 65 or 120 proteomes), so far less than the 1,654-genus atlas run that failed.
 # Pinned to the same nf_phyling commit as the atlas run. Only flags already used by that run are passed.
 cat > "$BENCH/$TREE/phyling.config" <<'EOF'
+// Nextflow polls squeue for running jobs. On the busy UCR HPCC that query sometimes returns an incomplete list, so a
+// RUNNING job looks like it left the queue; with the default exitReadTimeout (270 s) the task is then failed with
+// "terminated for an unknown reason" while the SLURM job keeps running (seen on 2026-11-09 and 2026-11-11). Waiting for
+// the .exitcode file instead is safe: it appears when the job really ends.
+executor {
+    exitReadTimeout = '12 h'
+}
 process {
     maxRetries = 1
     withName: 'PHYLING_DOWNLOAD' { time = 1.h }
