@@ -206,3 +206,14 @@ From these it distills 6–10 patterns worth deeper study.
 - **Later:** add phylogenetic eigenvectors once the genus-level tree from atlas PLAN is finished, to separate ecology from ancestry explicitly.
 
 **Findings:** pending.
+
+## Upstream follow-ups (BFD/Fungi_BFD_runs)
+
+To do when HPCC is back online. These are also in `TODO.md`.
+
+| Issue | Evidence | Action |
+|---|---|---|
+| Gene annotation under-calls | Analysis C: 33 of 44 near-universal families absent from all 6 annotated *Antarctolithica* proteomes are found in the assemblies by blastx, including ribosomal proteins L22e, L34e and S21e. Mars-9.1 and Mars-19.38 were not annotated (too small) | Find out why gene prediction missed them: training set, filtering, contig edges, short or single-exon genes. Check other small or fragmented genomes for the same problem. Treat single-gene absences as weak evidence until this is fixed |
+| `gene_introns.codon_position`, `codon_frame` | Off by one exon; confirmed 2026-11-10 | Fix the table builder and rebuild `gene_introns` |
+| "Saccharomycotina sp. YJ-2025a/b" (FF90B97F, F6EB82EF) | Group with Basidiomycota in the analysis C tree | Check and correct the phylum. Excluded from analyses C and D |
+
