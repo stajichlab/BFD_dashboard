@@ -1,10 +1,6 @@
-results/annotated/reca_* and reca.treefile come from the FIRST RecA/Rad51 tree, built on only 41 alignment columns (362 sequences). Its leave-one-out
-test re-assigned 13 of 31 references, so Rad51, Dmc1, Rad55 and Rad57 calls from it must NOT be used.
-
-A re-trimmed tree is queued as HPCC job 32026340 (scripts/06b_retrim_tree.sh). When it has finished, run on the HPCC:
-    cd ~/projects/BFD_dashboard/bench/kx2_ku_family && sbatch scripts/07_classify.sh annotated
-then replace reca_* and reca.treefile here with trees_annotated/reca_* and trees_annotated/reca.treefile and check trees_annotated/reca_loo.tsv first.
-See ../README.md, section "Pending".
+results/annotated/reca_* and reca.treefile are from the RE-TRIMMED RecA/Rad51 tree (HPCC job 32026340, 327 alignment sites; the first tree with 41 sites was
+discarded and replaced on 2026-11-11). Leave-one-out re-assigned 19 of 31 references: Dmc1 5/5 and Rad57 2/2 are usable; Rad55 (0/2) and Rad51 (0/7 under the strict
+rule) are not. See ../RECA_RESULT.md before using any call.
 
 results/rescue/ holds the rescue-layer ligase and Pol X tables and trees. Those trees used 13 (ligase) and 65 (Pol X) alignment columns, so they are untested
 at tree level, not evidence about the rescued models (README, "What the rescue layer added").

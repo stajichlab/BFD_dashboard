@@ -45,7 +45,14 @@ The tree is the first-pass FastTree backbone in `workflows/phylo/README.md` (63 
    Sae2 is lost in Kickxellales but kept in Harpellales; Rif1 is retained in core Kickxellales but absent from Harpellales.
 4. **No compensation was found.** POLQ, LIG3 and PARP1-like are absent in the Ku-retaining Dimargaritales and *Ramicandelaber* as well,
    so they were not available to compensate; only one LIG1-type ligase remains. HR genes are not expanded; the Rad51 family and
-   paralogs are slightly smaller. A possible Kickxellales-specific loss of Dmc1 (and Rad55/Rad57) is a later event than Ku loss.
+   paralogs are slightly smaller. **RecA-family tree** ([`family_trees/RECA_RESULT.md`](family_trees/RECA_RESULT.md); 327 sites, leave-one-out
+   19 of 31, Dmc1 5/5): the meiotic recombinase **Dmc1 is absent from the five core Kickxellales genera** (all 10 *Coemansia*
+   strains in the tree, *Kickxella*, *Linderina*, *Dipsacomyces*, *Martensiomyces*; also *Spiromyces* and *Ramicandelaber* with weaker
+   evidence) but present in *Mycoemilia*, Harpellales (4/4), Dimargaritales (3/3), Entomophthorales (4/4) and most Mucoromycota (18/21),
+   so it is a later event than Ku loss, on the stem of core Kickxellales (the clade with the strongest intron and size reduction).
+   A tblastn locus count supports one Rad51-like locus in 100 of 111 core Kickxellales genomes (the six with two are duplicated Rad51
+   loci), with limited sensitivity. The earlier hypothesis of a Rad55/Rad57 loss in Kickxellales is **not supported**: they are
+   absent from Mucoromycota too (0 of 21), and Rad55 is unrecoverable by the tree. Rad51 itself is present but not callable by the tree.
 5. **Telomeres: nothing Ku-specific.** Harpellales show canonical CCCTAA repeats; *Coemansia* shows no detected tract, but so do most
    Mortierellomycota and Glomeromycota, and the detector only scans canonical repeats.
 6. **Replication across fungi:** 6 independent Ku-negative lineages (5 usable); Lig4 is lower in 3 of 5 and never higher; no
