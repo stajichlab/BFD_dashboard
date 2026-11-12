@@ -1,0 +1,280 @@
+locustag	genus	grp	gene	call	query	scaffold	best_evalue	best_bits	pident_best_hsp	query_cov	n_hsps
+F1C537C3	Dimargaris	Dimargaritales	Ku	none						0	0
+F1C537C3	Dimargaris	Dimargaritales	DNA-PKcs	weak	P78527	gb|JANBQC010000049.1|	2.2e-41	170.0	26.367	0.146	1
+F1C537C3	Dimargaris	Dimargaritales	Lig4	weak	Q08387	gb|JANBQC010000058.1|	2.05e-08	58.5	28.272	0.201	1
+F1C537C3	Dimargaris	Dimargaritales	Pol4	none						0	0
+F1C537C3	Dimargaris	Dimargaritales	XLF_Nej1	none						0	0
+F1C537C3	Dimargaris	Dimargaritales	Aprataxin	none	O74859	gb|JANBQC010000011.1|	0.000125	42.7	39.216	0.207	1
+F1C537C3	Dimargaris	Dimargaritales	ATR_Mec1	strong	Q02099	gb|JANBQC010000021.1|	0.0	664.0	35.257	0.666	2
+F1C537C3	Dimargaris	Dimargaritales	Sae2_CtIP	none						0	0
+F1C537C3	Dimargaris	Dimargaritales	CTRL_Rad51	strong	Q99133	gb|JANBQC010000400.1|	4.59e-163	504.0	75.385	0.947	1
+F1C9E2AA	Dispira	Dimargaritales	Ku	strong	Q5B4H8	gb|JANBPY010000329.1|	5.15e-12	68.9	22.948	0.679	1
+F1C9E2AA	Dispira	Dimargaritales	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBPY010000019.1|	7.13e-41	167.0	28.178	0.112	1
+F1C9E2AA	Dispira	Dimargaritales	Lig4	strong	Q7SB49	gb|JANBPY010000397.1|	2.69e-25	113.0	26.245	0.464	1
+F1C9E2AA	Dispira	Dimargaritales	Pol4	none						0	0
+F1C9E2AA	Dispira	Dimargaritales	XLF_Nej1	none						0	0
+F1C9E2AA	Dispira	Dimargaritales	Aprataxin	none						0	0
+F1C9E2AA	Dispira	Dimargaritales	ATR_Mec1	strong	Q02099	gb|JANBPY010000951.1|	0.0	836.0	29.959	0.722	1
+F1C9E2AA	Dispira	Dimargaritales	Sae2_CtIP	none						0	0
+F1C9E2AA	Dispira	Dimargaritales	CTRL_Rad51	strong	Q99133	gb|JANBPY010002153.1|	5.09e-171	503.0	77.492	0.914	1
+F4FD0401	Tieghemiomyces	Dimargaritales	Ku	none						0	0
+F4FD0401	Tieghemiomyces	Dimargaritales	DNA-PKcs	weak	P78527	gb|JANBPT010000225.1|	6.85e-44	179.0	25.379	0.169	1
+F4FD0401	Tieghemiomyces	Dimargaritales	Lig4	weak	Q08387	gb|JANBPT010000315.1|	4.71e-18	90.9	27.24	0.273	1
+F4FD0401	Tieghemiomyces	Dimargaritales	Pol4	none						0	0
+F4FD0401	Tieghemiomyces	Dimargaritales	XLF_Nej1	none						0	0
+F4FD0401	Tieghemiomyces	Dimargaritales	Aprataxin	none	Q08702	gb|JANBPT010000430.1|	2.9e-05	45.1	41.463	0.189	1
+F4FD0401	Tieghemiomyces	Dimargaritales	ATR_Mec1	strong	Q02099	gb|JANBPT010000268.1|	3.76e-161	560.0	42.429	0.699	3
+F4FD0401	Tieghemiomyces	Dimargaritales	Sae2_CtIP	none						0	0
+F4FD0401	Tieghemiomyces	Dimargaritales	CTRL_Rad51	strong	Q99133	gb|JANBPT010001906.1|	1.45e-171	507.0	76.489	0.938	1
+F3D937C5	Capniomyces	Harpellales	Ku	none						0	0
+F3D937C5	Capniomyces	Harpellales	DNA-PKcs	weak	P78527	gb|LUVW01000013.1|	3.06e-34	146.0	28.926	0.087	1
+F3D937C5	Capniomyces	Harpellales	Lig4	strong	Q08387	gb|LUVW01000030.1|	9.81e-25	111.0	26.847	0.409	1
+F3D937C5	Capniomyces	Harpellales	Pol4	none						0	0
+F3D937C5	Capniomyces	Harpellales	XLF_Nej1	none						0	0
+F3D937C5	Capniomyces	Harpellales	Aprataxin	none						0	0
+F3D937C5	Capniomyces	Harpellales	ATR_Mec1	weak	Q02099	gb|LUVW01000002.1|	6.43e-61	204.0	53.073	0.274	6
+F3D937C5	Capniomyces	Harpellales	Sae2_CtIP	weak	O74986	gb|LUVW01000015.1|	2.12e-06	48.5	30.769	0.289	1
+F3D937C5	Capniomyces	Harpellales	CTRL_Rad51	strong	Q99133	gb|LUVW01000012.1|	4.46e-126	397.0	63.777	0.914	2
+F45BD9C7	Furculomyces	Harpellales	Ku	none						0	0
+F45BD9C7	Furculomyces	Harpellales	DNA-PKcs	weak	F574EFC1_006650-T1	gb|MBFT01000602.1|	1.83e-36	153.0	25.314	0.13	1
+F45BD9C7	Furculomyces	Harpellales	Lig4	none						0	0
+F45BD9C7	Furculomyces	Harpellales	Pol4	none						0	0
+F45BD9C7	Furculomyces	Harpellales	XLF_Nej1	none						0	0
+F45BD9C7	Furculomyces	Harpellales	Aprataxin	none						0	0
+F45BD9C7	Furculomyces	Harpellales	ATR_Mec1	weak	Q02099	gb|MBFT01000119.1|	1.71e-109	393.0	50.127	0.243	3
+F45BD9C7	Furculomyces	Harpellales	Sae2_CtIP	none						0	0
+F45BD9C7	Furculomyces	Harpellales	CTRL_Rad51	strong	Q99133	gb|MBFT01000380.1|	6.19e-125	263.0	78.049	0.914	3
+FCCDAB75	Smittium	Harpellales	Ku	none						0	0
+FCCDAB75	Smittium	Harpellales	DNA-PKcs	weak	P78527	gb|JBJCJL010000039.1|	4.65e-39	162.0	26.457	0.147	1
+FCCDAB75	Smittium	Harpellales	Lig4	none						0	0
+FCCDAB75	Smittium	Harpellales	Pol4	none						0	0
+FCCDAB75	Smittium	Harpellales	XLF_Nej1	none						0	0
+FCCDAB75	Smittium	Harpellales	Aprataxin	none						0	0
+FCCDAB75	Smittium	Harpellales	ATR_Mec1	weak	Q02099	gb|JBJCJL010000020.1|	1.6e-108	390.0	53.216	0.259	3
+FCCDAB75	Smittium	Harpellales	Sae2_CtIP	none	O74986	gb|JBJCJL010000039.1|	0.000285	42.4	28.448	0.303	1
+FCCDAB75	Smittium	Harpellales	CTRL_Rad51	strong	Q99133	gb|JBJCJL010000033.1|	1.51e-121	253.0	67.895	0.909	3
+F23D95F9	Zancudomyces	Harpellales	Ku	none						0	0
+F23D95F9	Zancudomyces	Harpellales	DNA-PKcs	weak	P78527	gb|JBNJNM010000021.1|	5.55e-33	142.0	24.298	0.14	2
+F23D95F9	Zancudomyces	Harpellales	Lig4	weak	Q5BH83	gb|JBNJNM010000006.1|	2.67e-07	54.7	25.849	0.325	1
+F23D95F9	Zancudomyces	Harpellales	Pol4	none						0	0
+F23D95F9	Zancudomyces	Harpellales	XLF_Nej1	none						0	0
+F23D95F9	Zancudomyces	Harpellales	Aprataxin	none						0	0
+F23D95F9	Zancudomyces	Harpellales	ATR_Mec1	weak	Q02099	gb|JBNJNM010000015.1|	8.03e-127	449.0	39.415	0.265	2
+F23D95F9	Zancudomyces	Harpellales	Sae2_CtIP	none						0	0
+F23D95F9	Zancudomyces	Harpellales	CTRL_Rad51	strong	Q99133	gb|JBNJNM010000008.1|	3.03e-74	249.0	64.615	0.914	2
+FD8916FB	Coemansia	Kickxellales_core	Ku	none						0	0
+FD8916FB	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBTN010000002.1|	6.27e-35	147.0	27.477	0.104	1
+FD8916FB	Coemansia	Kickxellales_core	Lig4	none						0	0
+FD8916FB	Coemansia	Kickxellales_core	Pol4	none						0	0
+FD8916FB	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FD8916FB	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FD8916FB	Coemansia	Kickxellales_core	ATR_Mec1	strong	Q02099	gb|JANBTN010000088.1|	6.28e-158	548.0	43.025	0.508	3
+FD8916FB	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FD8916FB	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTN010000011.1|	3.13e-151	469.0	71.924	0.929	2
+F0DE0BF4	Coemansia	Kickxellales_core	Ku	none						0	0
+F0DE0BF4	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JAIXMV010000012.1|	6.38e-35	147.0	27.477	0.109	2
+F0DE0BF4	Coemansia	Kickxellales_core	Lig4	none						0	0
+F0DE0BF4	Coemansia	Kickxellales_core	Pol4	none						0	0
+F0DE0BF4	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F0DE0BF4	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F0DE0BF4	Coemansia	Kickxellales_core	ATR_Mec1	strong	Q02099	gb|JAIXMV010000012.1|	5.45e-158	549.0	43.172	0.476	4
+F0DE0BF4	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F0DE0BF4	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JAIXMV010000015.1|	3.18e-151	469.0	71.924	0.929	3
+F3D51D57	Coemansia	Kickxellales_core	Ku	none						0	0
+F3D51D57	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBUE010000003.1|	4.07e-36	151.0	27.5	0.104	1
+F3D51D57	Coemansia	Kickxellales_core	Lig4	none						0	0
+F3D51D57	Coemansia	Kickxellales_core	Pol4	none						0	0
+F3D51D57	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F3D51D57	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F3D51D57	Coemansia	Kickxellales_core	ATR_Mec1	strong	Q02099	gb|JANBUE010000031.1|	6.39e-162	561.0	38.382	0.489	2
+F3D51D57	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F3D51D57	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUE010000098.1|	4.39e-150	466.0	71.474	0.914	1
+FC1174D9	Coemansia	Kickxellales_core	Ku	none						0	0
+FC1174D9	Coemansia	Kickxellales_core	DNA-PKcs	weak	P78527	gb|JAIXMU010000012.1|	4.07e-38	158.0	27.912	0.17	2
+FC1174D9	Coemansia	Kickxellales_core	Lig4	none	Q08387	gb|JAIXMU010000004.1|	0.000572	42.7	26.126	0.118	1
+FC1174D9	Coemansia	Kickxellales_core	Pol4	none						0	0
+FC1174D9	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FC1174D9	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FC1174D9	Coemansia	Kickxellales_core	ATR_Mec1	strong	Q02099	gb|JAIXMU010000001.1|	0.0	623.0	31.196	0.646	3
+FC1174D9	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FC1174D9	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JAIXMU010000002.1|	4.18e-152	471.0	72.756	0.914	1
+F7A7AA4C	Coemansia	Kickxellales_core	Ku	none						0	0
+F7A7AA4C	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBTF010000002.1|	6.99e-35	147.0	27.455	0.109	2
+F7A7AA4C	Coemansia	Kickxellales_core	Lig4	none	Q5BH83	gb|JANBTF010000001.1|	0.00034	43.9	27.136	0.15	1
+F7A7AA4C	Coemansia	Kickxellales_core	Pol4	none						0	0
+F7A7AA4C	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F7A7AA4C	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F7A7AA4C	Coemansia	Kickxellales_core	ATR_Mec1	strong	Q02099	gb|JANBTF010000002.1|	1.58e-159	553.0	42.493	0.444	3
+F7A7AA4C	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F7A7AA4C	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTF010000006.1|	4.19e-157	486.0	69.851	0.982	2
+F2470181	Coemansia	Kickxellales_core	Ku	none						0	0
+F2470181	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBRJ010000001.1|	6.98e-35	147.0	27.455	0.109	2
+F2470181	Coemansia	Kickxellales_core	Lig4	none	Q5BH83	gb|JANBRJ010000003.1|	0.000339	43.9	27.136	0.15	1
+F2470181	Coemansia	Kickxellales_core	Pol4	none						0	0
+F2470181	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F2470181	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F2470181	Coemansia	Kickxellales_core	ATR_Mec1	strong	Q02099	gb|JANBRJ010000001.1|	1.58e-159	553.0	42.493	0.444	3
+F2470181	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F2470181	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRJ010000005.1|	4.19e-157	486.0	69.851	0.982	2
+F4F8BFB2	Coemansia	Kickxellales_core	Ku	none						0	0
+F4F8BFB2	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANJYS010000003.1|	6.99e-35	147.0	27.455	0.109	2
+F4F8BFB2	Coemansia	Kickxellales_core	Lig4	none	Q5BH83	gb|JANJYS010000001.1|	0.00034	43.9	27.136	0.15	1
+F4F8BFB2	Coemansia	Kickxellales_core	Pol4	none						0	0
+F4F8BFB2	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F4F8BFB2	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F4F8BFB2	Coemansia	Kickxellales_core	ATR_Mec1	strong	Q02099	gb|JANJYS010000003.1|	1.58e-159	553.0	42.493	0.444	3
+F4F8BFB2	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F4F8BFB2	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANJYS010000010.1|	5.13e-157	486.0	69.851	0.982	2
+F0DB79EE	Coemansia	Kickxellales_core	Ku	none						0	0
+F0DB79EE	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBTS010000061.1|	6.24e-36	150.0	22.901	0.158	1
+F0DB79EE	Coemansia	Kickxellales_core	Lig4	none	Q08387	gb|JANBTS010000003.1|	0.000567	42.7	26.126	0.118	1
+F0DB79EE	Coemansia	Kickxellales_core	Pol4	none						0	0
+F0DB79EE	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F0DB79EE	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F0DB79EE	Coemansia	Kickxellales_core	ATR_Mec1	strong	Q02099	gb|JANBTS010000047.1|	0.0	621.0	31.196	0.646	2
+F0DB79EE	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F0DB79EE	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTS010000018.1|	3.83e-152	471.0	72.756	0.914	1
+F333880B	Coemansia	Kickxellales_core	Ku	none						0	0
+F333880B	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBQD010000003.1|	6.23e-35	147.0	27.477	0.104	1
+F333880B	Coemansia	Kickxellales_core	Lig4	none						0	0
+F333880B	Coemansia	Kickxellales_core	Pol4	none						0	0
+F333880B	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F333880B	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F333880B	Coemansia	Kickxellales_core	ATR_Mec1	strong	Q02099	gb|JANBQD010000086.1|	6.27e-158	548.0	43.025	0.508	3
+F333880B	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F333880B	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQD010000011.1|	3.11e-151	469.0	71.924	0.929	2
+F80EB351	Coemansia	Kickxellales_core	Ku	none						0	0
+F80EB351	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBQR010000001.1|	7.01e-35	147.0	27.455	0.109	2
+F80EB351	Coemansia	Kickxellales_core	Lig4	none	Q5BH83	gb|JANBQR010000003.1|	0.00034	43.9	27.136	0.15	1
+F80EB351	Coemansia	Kickxellales_core	Pol4	none						0	0
+F80EB351	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F80EB351	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F80EB351	Coemansia	Kickxellales_core	ATR_Mec1	strong	Q02099	gb|JANBQR010000001.1|	1.59e-159	553.0	42.493	0.444	3
+F80EB351	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F80EB351	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQR010000002.1|	5.15e-157	486.0	69.851	0.982	2
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Ku	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBPZ010000827.1|	7.17e-38	156.0	25.895	0.112	1
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Lig4	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Pol4	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	XLF_Nej1	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Aprataxin	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	ATR_Mec1	strong	Q02099	gb|JANBPZ010000098.1|	5.05e-161	557.0	38.776	0.306	1
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Sae2_CtIP	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	CTRL_Rad51	none						0	0
+F9F51274	Kickxella	Kickxellales_core	Ku	none						0	0
+F9F51274	Kickxella	Kickxellales_core	DNA-PKcs	weak	P78527	ref|NW_026251479.1|	1.53e-41	170.0	28.412	0.104	3
+F9F51274	Kickxella	Kickxellales_core	Lig4	none						0	0
+F9F51274	Kickxella	Kickxellales_core	Pol4	none						0	0
+F9F51274	Kickxella	Kickxellales_core	XLF_Nej1	none						0	0
+F9F51274	Kickxella	Kickxellales_core	Aprataxin	none						0	0
+F9F51274	Kickxella	Kickxellales_core	ATR_Mec1	strong	Q02099	ref|NW_026251472.1|	3.63e-140	492.0	35.948	0.459	3
+F9F51274	Kickxella	Kickxellales_core	Sae2_CtIP	none						0	0
+F9F51274	Kickxella	Kickxellales_core	CTRL_Rad51	strong	Q99133	ref|NW_026251484.1|	1.97e-148	461.0	71.935	0.909	1
+F43C8248	Linderina	Kickxellales_core	Ku	none						0	0
+F43C8248	Linderina	Kickxellales_core	DNA-PKcs	weak	P78527	ref|NW_024468253.1|	8.94e-31	134.0	26.895	0.099	2
+F43C8248	Linderina	Kickxellales_core	Lig4	none	Q5BH83	ref|NW_024468254.1|	1.18e-05	49.3	29.474	0.299	2
+F43C8248	Linderina	Kickxellales_core	Pol4	none						0	0
+F43C8248	Linderina	Kickxellales_core	XLF_Nej1	none						0	0
+F43C8248	Linderina	Kickxellales_core	Aprataxin	none						0	0
+F43C8248	Linderina	Kickxellales_core	ATR_Mec1	strong	Q02099	ref|NW_024468253.1|	2.45e-77	182.0	30.458	0.49	8
+F43C8248	Linderina	Kickxellales_core	Sae2_CtIP	none						0	0
+F43C8248	Linderina	Kickxellales_core	CTRL_Rad51	strong	Q99133	ref|NW_024468260.1|	2.06e-149	464.0	71.154	0.914	2
+FE0E32D4	Martensiomyces	Kickxellales_core	Ku	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|MU603968.1|	1.5e-34	146.0	25.688	0.126	1
+FE0E32D4	Martensiomyces	Kickxellales_core	Lig4	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	Pol4	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	XLF_Nej1	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	Aprataxin	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	ATR_Mec1	strong	Q02099	gb|MU603997.1|	2.1e-156	544.0	44.643	0.378	2
+FE0E32D4	Martensiomyces	Kickxellales_core	Sae2_CtIP	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|MU603932.1|	1.93e-149	464.0	72.313	0.9	1
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Ku	strong	Q7RX73	gb|JARGYL010000042.1|	2.43e-23	61.6	28.713	0.492	4
+F8E635D0	Rhizopus	Mucoromycota_s.l.	DNA-PKcs	strong	F574EFC1_006650-T1	gb|JARGYL010000143.1|	7.74e-126	404.0	34.765	0.747	20
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Lig4	weak	Q08387	gb|JARGYL010000016.1|	3.82e-17	86.7	31.844	0.18	1
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Pol4	weak	Q09693	gb|JARGYL010000012.1|	3.98e-10	62.4	30.508	0.395	2
+F8E635D0	Rhizopus	Mucoromycota_s.l.	XLF_Nej1	none						0	0
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Aprataxin	none						0	0
+F8E635D0	Rhizopus	Mucoromycota_s.l.	ATR_Mec1	strong	Q02099	gb|JARGYL010000371.1|	2.9e-43	174.0	39.732	0.383	5
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Sae2_CtIP	none						0	0
+F8E635D0	Rhizopus	Mucoromycota_s.l.	CTRL_Rad51	strong	Q99133	gb|JARGYL010000096.1|	9.72e-54	132.0	53.488	0.906	6
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Ku	none						0	0
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	DNA-PKcs	weak	P78527	gb|JANBPU010000029.1|	1.13e-42	174.0	25.995	0.172	1
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Lig4	strong	Q7SB49	gb|JANBPU010000056.1|	1.28e-14	55.8	21.594	0.482	2
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Pol4	none						0	0
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	XLF_Nej1	none						0	0
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Aprataxin	none						0	0
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	ATR_Mec1	strong	Q02099	gb|JANBPU010000008.1|	2.75e-160	556.0	43.931	0.44	2
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Sae2_CtIP	none						0	0
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	CTRL_Rad51	strong	Q99133	gb|JANBPU010000092.1|	2e-166	513.0	74.375	0.941	1
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Ku	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JAMZIH010000006.1|	7.68e-34	143.0	23.836	0.127	1
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Lig4	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Pol4	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	XLF_Nej1	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Aprataxin	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	ATR_Mec1	weak	Q02099	gb|JAMZIH010005808.1|	1.83e-74	270.0	59.33	0.084	1
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Sae2_CtIP	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	CTRL_Rad51	strong	Q99133	gb|JAMZIH010000016.1|	1.89e-165	509.0	74.085	0.965	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Ku	strong	Q5B4H8	gb|MU602790.1|	1.74e-15	80.9	28.723	0.577	2
+F7FE4923	Ramicandelaber	Ramicandelaber	DNA-PKcs	weak	F574EFC1_006650-T1	gb|MU602993.1|	5e-34	145.0	27.752	0.104	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Lig4	strong	Q5BH83	gb|MU602750.1|	1.38e-23	108.0	26.055	0.474	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Pol4	none						0	0
+F7FE4923	Ramicandelaber	Ramicandelaber	XLF_Nej1	none						0	0
+F7FE4923	Ramicandelaber	Ramicandelaber	Aprataxin	none						0	0
+F7FE4923	Ramicandelaber	Ramicandelaber	ATR_Mec1	strong	Q02099	gb|MU603350.1|	1.24e-131	464.0	35.881	0.374	2
+F7FE4923	Ramicandelaber	Ramicandelaber	Sae2_CtIP	none						0	0
+F7FE4923	Ramicandelaber	Ramicandelaber	CTRL_Rad51	strong	Q99133	gb|MU602683.1|	1.96e-143	447.0	67.405	0.932	1
+F3F252DC	Caulochytrium	Root	Ku	weak	Q7RX73	gb|ML014362.1|	7.13e-09	58.9	23.506	0.564	1
+F3F252DC	Caulochytrium	Root	DNA-PKcs	weak	F574EFC1_006650-T1	gb|ML014140.1|	8.58e-40	164.0	26.993	0.127	1
+F3F252DC	Caulochytrium	Root	Lig4	strong	Q08387	gb|ML014118.1|	9.92e-21	98.2	23.975	0.621	1
+F3F252DC	Caulochytrium	Root	Pol4	none						0	0
+F3F252DC	Caulochytrium	Root	XLF_Nej1	none						0	0
+F3F252DC	Caulochytrium	Root	Aprataxin	strong	O74859	gb|ML014162.1|	6.76e-18	81.6	27.128	0.694	1
+F3F252DC	Caulochytrium	Root	ATR_Mec1	strong	Q02099	gb|ML014141.1|	2.16e-124	441.0	37.803	0.421	3
+F3F252DC	Caulochytrium	Root	Sae2_CtIP	weak	O74986	gb|ML014199.1|	2.35e-06	48.5	30.0	0.405	1
+F3F252DC	Caulochytrium	Root	CTRL_Rad51	strong	Q99133	gb|ML014140.1|	5.7e-163	503.0	75.0	0.932	1
+FEB493EF	Piptocephalis	Zoopagales	Ku	none						0	0
+FEB493EF	Piptocephalis	Zoopagales	DNA-PKcs	weak	F574EFC1_006650-T1	gb|MU626175.1|	2.19e-20	99.8	27.171	0.094	2
+FEB493EF	Piptocephalis	Zoopagales	Lig4	strong	Q7SB49	gb|MU626120.1|	2.13e-22	103.0	26.96	0.46	1
+FEB493EF	Piptocephalis	Zoopagales	Pol4	none						0	0
+FEB493EF	Piptocephalis	Zoopagales	XLF_Nej1	none						0	0
+FEB493EF	Piptocephalis	Zoopagales	Aprataxin	none						0	0
+FEB493EF	Piptocephalis	Zoopagales	ATR_Mec1	weak	Q02099	gb|MU626237.1|	4.95e-56	216.0	40.996	0.25	3
+FEB493EF	Piptocephalis	Zoopagales	Sae2_CtIP	none						0	0
+FEB493EF	Piptocephalis	Zoopagales	CTRL_Rad51	strong	Q99133	gb|MU626071.1|	2.67e-144	449.0	80.0	0.935	3
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Ku	strong	Q5B4H8	gb|JBLKGV010000599.1|	1.84e-43	142.0	29.041	0.615	2
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JBLKGV010000120.1|	6.69e-40	166.0	27.636	0.127	1
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Lig4	weak	Q5BH83	gb|JBLKGV010000159.1|	4.66e-27	74.3	25.185	0.286	3
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Pol4	none						0	0
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	XLF_Nej1	none						0	0
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Aprataxin	none	Q08702	gb|JBLKGV010000002.1|	7.63e-05	44.3	33.083	0.585	1
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	ATR_Mec1	strong	Q02099	gb|JBLKGV010000398.1|	1.6e-102	372.0	27.273	0.643	9
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Sae2_CtIP	none						0	0
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	CTRL_Rad51	strong	Q99133	gb|JBLKGV010000001.1|	2.81e-81	209.0	76.515	0.914	4
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Ku	none						0	0
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	DNA-PKcs	weak	P78527	gb|WBMQ01000006.1|	1.65e-26	120.0	31.061	0.169	3
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Lig4	weak	Q5BH83	gb|WBMQ01000003.1|	1e-14	67.8	28.295	0.278	2
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Pol4	none						0	0
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	XLF_Nej1	none						0	0
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Aprataxin	none						0	0
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	ATR_Mec1	weak	Q02099	gb|WBMQ01000006.1|	5.14e-55	214.0	29.143	0.233	3
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Sae2_CtIP	none						0	0
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	CTRL_Rad51	strong	Q99133	gb|WBMQ01000012.1|	9.72e-134	420.0	64.353	0.926	1
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Ku	weak	Q7SA95	gb|JBNZCG010000017.1|	6.39e-09	59.7	20.652	0.687	1
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	DNA-PKcs	weak	P78527	gb|JBNZCG010000014.1|	5.18e-42	172.0	27.432	0.121	2
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Lig4	strong	Q08387	gb|JBNZCG010000011.1|	6.3e-24	109.0	27.083	0.4	1
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Pol4	none						0	0
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	XLF_Nej1	none						0	0
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Aprataxin	none						0	0
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	ATR_Mec1	weak	Q02099	gb|JBNZCG010000014.1|	4.54e-49	194.0	30.383	0.15	2
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Sae2_CtIP	none						0	0
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	CTRL_Rad51	strong	Q99133	gb|JBNZCG010000024.1|	1.31e-87	188.0	70.4	0.929	2
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Ku	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	DNA-PKcs	weak	P78527	gb|MU626480.1|	1.05e-39	164.0	26.134	0.156	2
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Lig4	none	Q08387	gb|MU626371.1|	7.62e-05	37.7	34.615	0.104	2
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Pol4	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	XLF_Nej1	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Aprataxin	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	ATR_Mec1	strong	Q02099	gb|MU626324.1|	2.12e-124	441.0	25.431	0.645	1
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Sae2_CtIP	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	CTRL_Rad51	strong	Q99133	gb|MU626635.1|	3.98e-131	412.0	62.264	0.929	1

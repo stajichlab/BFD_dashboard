@@ -1,0 +1,108 @@
+locustag	strain	busco_complete	n50_bp	contigs_expected	fragmented	Ku	Lig4	Pol4	Sae2_CtIP	DNA-PKcs	ATR_Mec1	CTRL_Rad51	none_in_fragmented	strong_or_weak_Ku
+FA99CC43	BCRC 34297	75.9	22064	1383	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F1DEA344	BCRC 34301	84.9	34756	744	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F6545673	BCRC 34381	75.9	8421	2447	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F9A4B572	BCRC 34489	75.5	29428	521	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F333880B	BCRC 34882	91.1	170142	278	no	none	strong	none	none	weak	strong	strong		no
+F3D51D57	BCRC 34962	91.3	98446	327	no	none	strong	none	none	weak	strong	strong		no
+FDF042C1	Benny D115	90.7	85888	384	no	none	strong	none	none	weak	strong	strong		no
+F993D0AD	Benny D160-2	86.5	18039	1521	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F24A7D8D	CBS 109367	86.1	53278	633	no	none	strong	none	none	weak	strong	strong		no
+FBF4A129	CBS 516.66	82.4	27354	1136	yes	none	weak	none	none	weak	weak	strong	Ku,Pol4,Sae2_CtIP	no
+F897AC32	CBS 939.97	80.4	34970	444	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FE83C30F	D1744	70.1	7946	2052	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FF5D60B2	IMI 203386	90.4	85231	293	no	none	strong	none	none	weak	strong	strong		no
+F26DD490	IMI 209127	70.5	7100	2524	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F52B818A	IMI 209128	90.7	59696	490	no	none	strong	none	none	weak	strong	strong		no
+FD12E2B4	IMI 214461	76.6	22685	1082	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F0DFB354	IMI 214463	71.5	14521	1353	yes	none	weak	none	none	weak	weak	strong	Ku,Pol4,Sae2_CtIP	no
+F50540CB	IMI 279145	66.8	7508	2651	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FA376F2E	NBRC 105413	90.1	42541	759	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F00A57ED	NBRC 105414	82.8	40877	419	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FBF7F5A3	NBRC 32514	87.1	45773	827	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F35EFF3E	NRRL 1564	90.7	347177	346	no	none	strong	none	none	weak	strong	strong		no
+F771CC9E	NRRL 1565	67.6	8768	2577	yes	none	weak	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FE3CD348	NRRL 1566	65.8	31969	1117	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FFF4186D	NRRL 2694	86.2	45786	474	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F5353C03	NRRL 3115	90.8	166849	250	no	none	strong	none	none	weak	strong	strong		no
+FDFF0B8B	RSA 1085	90.8	148728	214	no	none	strong	none	none	weak	strong	strong		no
+FBC9CC9D	RSA 1086	89.3	51259	483	no	none	strong	none	none	weak	strong	strong		no
+F9197CED	RSA 1199	88.7	109488	306	no	none	strong	none	none	weak	strong	strong		no
+F4DA7CFA	RSA 1200	90.7	116424	359	no	none	strong	none	none	weak	strong	strong		no
+F0DB79EE	RSA 1250	91.4	153715	214	no	none	strong	none	none	weak	strong	strong		no
+F0DE0BF4	RSA 1278	91.8	991117	34	no	none	strong	none	none	weak	strong	strong		no
+F61EE814	RSA 1285	65.8	7888	3354	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F889F3AF	RSA 1290	67.3	14830	1043	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FD8916FB	RSA 1358	91.2	196470	226	no	none	strong	none	none	weak	strong	strong		no
+F242D38C	RSA 1365	76.4	30678	524	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F90C8E1A	RSA 1591	65.8	6334	2328	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F4F8BFB2	RSA 1646	91.3	157985	298	no	none	strong	none	none	weak	strong	strong		no
+F9735524	RSA 1722	87.7	18359	1830	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F7943FC0	RSA 1752	65.8	6263	2344	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FE019C62	RSA 1804	86.5	17781	2215	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FE4EB007	RSA 1807	82.5	36028	434	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F7A7AA4C	RSA 1813	91.3	164981	308	no	none	strong	none	none	weak	strong	strong		no
+FE3D2DE5	RSA 1821	89.8	72001	412	no	none	strong	none	none	weak	strong	strong		no
+F53A5B42	RSA 1822	87.1	70176	430	no	none	strong	none	none	weak	strong	strong		no
+FE60C51C	RSA 1824	68.6	7210	2151	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F0A69C67	RSA 1843	90.5	91060	460	no	none	strong	none	none	weak	strong	strong		no
+F02CB1ED	RSA 1853	85.3	67071	453	no	none	strong	none	none	weak	strong	strong		no
+F8589389	RSA 1878	63.2	7935	1918	yes	none	strong	none	none	weak	weak	strong	Ku,Pol4,Sae2_CtIP	no
+F735041E	RSA 1933	77.4	7884	2488	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F6E9E45A	RSA 1935	68.4	8659	1895	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F7B5F16C	RSA 1938	65.5	6257	2365	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FD7FFCA4	RSA 1939	87.5	18575	2018	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FD3FEA21	RSA 1972	89.4	93551	374	no	none	strong	none	none	weak	strong	strong		no
+F97F055E	RSA 2049	67.6	7778	3368	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F9025F8A	RSA 2050	91.1	95684	349	no	none	strong	none	none	weak	strong	strong		no
+FC37F49D	RSA 2131	78	43425	899	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F40251F8	RSA 2167	67.1	7862	2059	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FD97B502	RSA 2320	75.3	19079	1306	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FCE53DE3	RSA 2322	68.7	13615	1420	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FB3261E7	RSA 2336	86.3	58557	287	no	none	strong	none	none	weak	strong	strong		no
+F3E9A416	RSA 2337	63.6	7394	3273	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FA0999E6	RSA 2399	72.4	7724	2423	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F5845C02	RSA 2424	66.9	7654	3133	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FC546B88	RSA 2440	61.1	7228	2146	yes	none	strong	none	none	weak	weak	strong	Ku,Pol4,Sae2_CtIP	no
+F090F877	RSA 2523	70.6	8407	1988	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F023BB0A	RSA 2526	81.3	34477	437	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F55D1F1F	RSA 2530	68.5	14150	1466	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F24CD14F	RSA 2559	60.2	6161	2948	yes	none	strong	none	none	weak	weak	strong	Ku,Pol4,Sae2_CtIP	no
+F8EA1BC9	RSA 2607	66.8	8632	2691	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F6CB2D58	RSA 2610	62.2	8690	2207	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FA9ADEB3	RSA 2611	70.7	5257	5103	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F340C8D3	RSA 2618	62.9	6623	2698	yes	none	weak	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F05FC232	RSA 2675	84.4	17353	1463	yes	none	strong	none	none	weak	strong	weak	Ku,Pol4,Sae2_CtIP	no
+F7BBDC12	RSA 2704	60	7322	2339	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F258DE34	RSA 2705	61.4	7885	2270	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FB9A10E8	RSA 2711	79.9	38218	432	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F56A3D5B	RSA 355	71.3	16738	1369	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FE668E47	RSA 370	63	8114	1961	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F1649C35	RSA 371	63.5	7446	2083	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F3F357F6	RSA 451	70.5	6959	2201	yes	none	strong	none	none	weak	weak	strong	Ku,Pol4,Sae2_CtIP	no
+F8384A64	RSA 455	62.2	6970	3172	yes	none	weak	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FD671B08	RSA 476	86.1	48720	459	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+FE980263	RSA 485	88.5	19268	1929	yes	none	strong	none	none	strong	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F2470181	RSA 487	91.2	149761	289	no	none	strong	none	none	weak	strong	strong		no
+F8348CBD	RSA 518	71.3	8433	2005	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F7DF6513	RSA 521	63.5	7767	1983	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F5AC56AA	RSA 522	68.5	8776	1881	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F4A7DF8C	RSA 532	68.2	7862	2012	yes	none	strong	none	none	weak	weak	strong	Ku,Pol4,Sae2_CtIP	no
+F4CFDB08	RSA 552	82.5	47232	375	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F235E971	RSA 562	65.6	9304	1736	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F1C72083	RSA 564	81.8	35504	445	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F097EC52	RSA 637	68.3	9878	1708	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F6D48826	RSA 638	87.5	66033	476	no	none	strong	none	none	weak	strong	strong		no
+FC1174D9	RSA 71	91.2	900813	51	no	none	strong	none	none	weak	strong	strong		no
+F8C73C93	RSA 720	89.4	131427	283	no	none	strong	none	none	weak	strong	strong		no
+FB97D937	RSA 922	86.3	17452	2361	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F80EB351	RSA 986	91.3	174829	291	no	none	strong	none	none	weak	strong	strong		no
+FEE0DDE5	RSA 988	85.7	48864	444	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F5BD664F	RSA 989	89.8	72005	403	no	none	strong	none	none	weak	strong	strong		no
+FA34ED10	RSA 990	89.8	74859	400	no	none	strong	none	none	weak	strong	strong		no
+FEDE47E1	S100	72.5	9159	3163	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F5E0444E	S146	90.6	87899	420	no	none	strong	none	none	weak	strong	strong		no
+FFBB50EB	S155-1	75.2	9634	3085	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F0E0ADB2	S16	84.4	15341	2355	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F0D6C540	S3946	87.3	16178	2221	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no
+F1709B5F	S680	76.6	23526	1204	yes	none	strong	none	none	weak	strong	strong	Ku,Pol4,Sae2_CtIP	no

@@ -1,0 +1,1537 @@
+locustag	genus	grp	gene	call	query	scaffold	best_evalue	best_bits	pident_best_hsp	query_cov	n_hsps
+F1C537C3	Dimargaris	Dimargaritales	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQC010000021.1|	0.0	1342.0	57.0	0.99	2
+F1C537C3	Dimargaris	Dimargaritales	Aprataxin	weak	FCDD8027_000090-T1	gb|JANBQC010000011.1|	2.42e-11	63.2	44.643	0.228	1
+F1C537C3	Dimargaris	Dimargaritales	CTRL_Rad51	strong	Q99133	gb|JANBQC010000400.1|	4.59e-163	504.0	75.385	0.947	1
+F1C537C3	Dimargaris	Dimargaritales	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBQC010000049.1|	1.52e-40	166.0	33.227	0.154	1
+F1C537C3	Dimargaris	Dimargaritales	Ku	strong	F1C9E2AA_001899-T1	gb|JANBQC010000011.1|	9.34e-12	68.2	33.566	0.439	2
+F1C537C3	Dimargaris	Dimargaritales	Lig4	weak	F9A17E9D_003104-T1	gb|JANBQC010000183.1|	1.53e-23	108.0	38.764	0.283	2
+F1C537C3	Dimargaris	Dimargaritales	Pol4	none						0	0
+F1C537C3	Dimargaris	Dimargaritales	RecA_DMC1	strong	P25453	gb|JANBQC010000400.1|	1.2e-96	313.0	52.733	0.925	1
+F1C537C3	Dimargaris	Dimargaritales	RecA_RAD55	none						0	0
+F1C537C3	Dimargaris	Dimargaritales	RecA_RAD57	strong	Q9UUL2	gb|JANBQC010000587.1|	1.8e-46	169.0	35.179	0.819	1
+F1C537C3	Dimargaris	Dimargaritales	Sae2_CtIP	none						0	0
+F1C537C3	Dimargaris	Dimargaritales	XLF_Nej1	none						0	0
+F1C9E2AA	Dispira	Dimargaritales	ATR_Mec1	strong	F1C537C3_000771-T1	gb|JANBPY010000951.1|	0.0	1912.0	50.879	0.689	1
+F1C9E2AA	Dispira	Dimargaritales	Aprataxin	none						0	0
+F1C9E2AA	Dispira	Dimargaritales	CTRL_Rad51	strong	Q99133	gb|JANBPY010002153.1|	5.09e-171	503.0	77.492	0.914	1
+F1C9E2AA	Dispira	Dimargaritales	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBPY010002860.1|	2.52e-43	170.0	33.548	0.154	1
+F1C9E2AA	Dispira	Dimargaritales	Ku	strong	F1C537C3_000480-T1	gb|JANBPY010000329.1|	4.67e-35	141.0	27.915	0.87	1
+F1C9E2AA	Dispira	Dimargaritales	Lig4	strong	F359FEE0_014802-T1	gb|JANBPY010000397.1|	4.47e-39	157.0	24.138	0.575	1
+F1C9E2AA	Dispira	Dimargaritales	Pol4	none						0	0
+F1C9E2AA	Dispira	Dimargaritales	RecA_DMC1	strong	P25453	gb|JANBPY010002153.1|	5.67e-97	308.0	52.412	0.925	1
+F1C9E2AA	Dispira	Dimargaritales	RecA_RAD55	weak	O14129	gb|JANBPY010000023.1|	6.53e-06	47.4	28.205	0.377	1
+F1C9E2AA	Dispira	Dimargaritales	RecA_RAD57	strong	Q9UUL2	gb|JANBPY010000418.1|	1.22e-38	145.0	33.333	0.819	1
+F1C9E2AA	Dispira	Dimargaritales	Sae2_CtIP	none	F1C537C3_000516-T1	gb|JANBPY010000748.1|	4.34e-05	45.1	29.104	0.283	1
+F1C9E2AA	Dispira	Dimargaritales	XLF_Nej1	none						0	0
+F4FD0401	Tieghemiomyces	Dimargaritales	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBPT010000268.1|	0.0	854.0	62.387	0.944	3
+F4FD0401	Tieghemiomyces	Dimargaritales	Aprataxin	strong	FB5167BD_001770-T1	gb|JANBPT010000430.1|	1.06e-11	64.7	32.051	0.533	1
+F4FD0401	Tieghemiomyces	Dimargaritales	CTRL_Rad51	strong	Q99133	gb|JANBPT010000123.1|	5.05e-164	507.0	75.701	0.944	1
+F4FD0401	Tieghemiomyces	Dimargaritales	DNA-PKcs	weak	P78527	gb|JANBPT010000225.1|	6.85e-44	179.0	25.379	0.169	1
+F4FD0401	Tieghemiomyces	Dimargaritales	Ku	strong	F1C537C3_000480-T1	gb|JANBPT010000349.1|	2.95e-21	99.8	45.283	0.701	4
+F4FD0401	Tieghemiomyces	Dimargaritales	Lig4	strong	F5655B54_010178-T1	gb|JANBPT010000315.1|	1.07e-23	109.0	25.397	0.386	1
+F4FD0401	Tieghemiomyces	Dimargaritales	Pol4	none						0	0
+F4FD0401	Tieghemiomyces	Dimargaritales	RecA_DMC1	strong	P25453	gb|JANBPT010000296.1|	1.2e-21	96.7	65.753	0.725	5
+F4FD0401	Tieghemiomyces	Dimargaritales	RecA_RAD55	none	O14129	gb|JANBPT010001184.1|	2.78e-05	46.6	24.691	0.391	1
+F4FD0401	Tieghemiomyces	Dimargaritales	RecA_RAD57	strong	Q9UUL2	gb|JANBPT010000288.1|	2.76e-41	155.0	33.939	0.751	1
+F4FD0401	Tieghemiomyces	Dimargaritales	Sae2_CtIP	strong	F1C537C3_000516-T1	gb|JANBPT010000083.1|	8.41e-13	71.2	39.583	0.326	2
+F4FD0401	Tieghemiomyces	Dimargaritales	XLF_Nej1	none						0	0
+F3D937C5	Capniomyces	Harpellales	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|LUVW01000002.1|	4.9e-61	201.0	50.857	0.407	7
+F3D937C5	Capniomyces	Harpellales	Aprataxin	none						0	0
+F3D937C5	Capniomyces	Harpellales	CTRL_Rad51	strong	Q99133	gb|LUVW01000012.1|	4.46e-126	397.0	63.777	0.914	2
+F3D937C5	Capniomyces	Harpellales	DNA-PKcs	weak	FEF8F4D3_003986-T1	gb|LUVW01000013.1|	5.02e-41	168.0	27.022	0.134	1
+F3D937C5	Capniomyces	Harpellales	Ku	none						0	0
+F3D937C5	Capniomyces	Harpellales	Lig4	strong	FCDD8027_004152-T1	gb|LUVW01000030.1|	1.72e-35	146.0	27.5	0.435	1
+F3D937C5	Capniomyces	Harpellales	Pol4	none						0	0
+F3D937C5	Capniomyces	Harpellales	RecA_DMC1	strong	O42634	gb|LUVW01000010.1|	8.22e-52	184.0	60.563	0.633	3
+F3D937C5	Capniomyces	Harpellales	RecA_RAD55	none						0	0
+F3D937C5	Capniomyces	Harpellales	RecA_RAD57	strong	Q9UUL2	gb|LUVW01000013.1|	1.25e-12	68.9	29.482	0.63	1
+F3D937C5	Capniomyces	Harpellales	Sae2_CtIP	weak	F22945DF_008617-T1	gb|LUVW01000015.1|	3.3e-16	80.5	41.489	0.218	1
+F3D937C5	Capniomyces	Harpellales	XLF_Nej1	none						0	0
+F45BD9C7	Furculomyces	Harpellales	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|MBFT01000119.1|	5.79e-129	420.0	43.927	0.516	5
+F45BD9C7	Furculomyces	Harpellales	Aprataxin	none						0	0
+F45BD9C7	Furculomyces	Harpellales	CTRL_Rad51	strong	Q99133	gb|MBFT01000380.1|	6.19e-125	263.0	78.049	0.914	3
+F45BD9C7	Furculomyces	Harpellales	DNA-PKcs	weak	F8E635D0_004853-T1	gb|MBFT01000267.1|	2.76e-39	161.0	32.209	0.163	1
+F45BD9C7	Furculomyces	Harpellales	Ku	none						0	0
+F45BD9C7	Furculomyces	Harpellales	Lig4	strong	F9A17E9D_003104-T1	gb|MBFT01000040.1|	2.05e-54	168.0	32.432	0.399	2
+F45BD9C7	Furculomyces	Harpellales	Pol4	none						0	0
+F45BD9C7	Furculomyces	Harpellales	RecA_DMC1	strong	O42634	gb|MBFT01000150.1|	2.67e-89	291.0	48.81	0.997	2
+F45BD9C7	Furculomyces	Harpellales	RecA_RAD55	none						0	0
+F45BD9C7	Furculomyces	Harpellales	RecA_RAD57	strong	P25301	gb|MBFT01000150.1|	3.63e-12	68.6	27.941	0.383	1
+F45BD9C7	Furculomyces	Harpellales	Sae2_CtIP	weak	F4696F25_005121-T1	gb|MBFT01000049.1|	1.04e-07	53.9	34.146	0.201	1
+F45BD9C7	Furculomyces	Harpellales	XLF_Nej1	none						0	0
+FCCDAB75	Smittium	Harpellales	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JBJCJL010000020.1|	5.87e-118	419.0	56.534	0.591	7
+FCCDAB75	Smittium	Harpellales	Aprataxin	none						0	0
+FCCDAB75	Smittium	Harpellales	CTRL_Rad51	strong	Q99133	gb|JBJCJL010000033.1|	1.51e-121	253.0	67.895	0.909	3
+FCCDAB75	Smittium	Harpellales	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JBJCJL010000039.1|	2.94e-42	171.0	33.131	0.163	1
+FCCDAB75	Smittium	Harpellales	Ku	none						0	0
+FCCDAB75	Smittium	Harpellales	Lig4	weak	F4696F25_002989-T1	gb|JBJCJL010000035.1|	2.96e-07	47.8	29.508	0.156	2
+FCCDAB75	Smittium	Harpellales	Pol4	none						0	0
+FCCDAB75	Smittium	Harpellales	RecA_DMC1	strong	P25453	gb|JBJCJL010000019.1|	9.78e-91	296.0	49.091	0.766	1
+FCCDAB75	Smittium	Harpellales	RecA_RAD55	none						0	0
+FCCDAB75	Smittium	Harpellales	RecA_RAD57	weak	Q9UUL2	gb|JBJCJL010000039.1|	3.78e-09	46.6	25.123	0.686	3
+FCCDAB75	Smittium	Harpellales	Sae2_CtIP	weak	F4696F25_005121-T1	gb|JBJCJL010000039.1|	5e-11	64.7	26.207	0.256	1
+FCCDAB75	Smittium	Harpellales	XLF_Nej1	none						0	0
+F23D95F9	Zancudomyces	Harpellales	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JBNJNM010000015.1|	3.3e-151	524.0	39.747	0.461	3
+F23D95F9	Zancudomyces	Harpellales	Aprataxin	none						0	0
+F23D95F9	Zancudomyces	Harpellales	CTRL_Rad51	strong	Q99133	gb|JBNJNM010000008.1|	3.03e-74	249.0	64.615	0.914	2
+F23D95F9	Zancudomyces	Harpellales	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JBNJNM010000015.1|	3.22e-43	174.0	32.797	0.152	2
+F23D95F9	Zancudomyces	Harpellales	Ku	none						0	0
+F23D95F9	Zancudomyces	Harpellales	Lig4	strong	F359FEE0_014802-T1	gb|JBNJNM010000006.1|	4.32e-30	129.0	25.839	0.512	1
+F23D95F9	Zancudomyces	Harpellales	Pol4	none						0	0
+F23D95F9	Zancudomyces	Harpellales	RecA_DMC1	strong	O42634	gb|JBNJNM010000021.1|	3.17e-78	184.0	63.38	0.747	7
+F23D95F9	Zancudomyces	Harpellales	RecA_RAD55	none						0	0
+F23D95F9	Zancudomyces	Harpellales	RecA_RAD57	strong	Q9UUL2	gb|JBNJNM010000021.1|	2.03e-14	58.5	37.037	0.692	4
+F23D95F9	Zancudomyces	Harpellales	Sae2_CtIP	none						0	0
+F23D95F9	Zancudomyces	Harpellales	XLF_Nej1	none						0	0
+FD8916FB	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTN010000088.1|	0.0	754.0	37.419	0.835	2
+FD8916FB	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBTN010000037.1|	2.34e-06	47.4	28.369	0.565	1
+FD8916FB	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTN010000011.1|	3.13e-151	469.0	71.924	0.929	2
+FD8916FB	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTN010000099.1|	2.7e-36	150.0	29.773	0.154	1
+FD8916FB	Coemansia	Kickxellales_core	Ku	none						0	0
+FD8916FB	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTN010000008.1|	5.37e-53	202.0	35.167	0.433	1
+FD8916FB	Coemansia	Kickxellales_core	Pol4	none						0	0
+FD8916FB	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTN010000011.1|	6.96e-94	305.0	50.321	0.925	2
+FD8916FB	Coemansia	Kickxellales_core	RecA_RAD55	weak	O14129	gb|JANBTN010000023.1|	4.9e-07	50.8	27.481	0.337	1
+FD8916FB	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTN010000011.1|	3e-17	82.8	28.674	0.785	2
+FD8916FB	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FD8916FB	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F0DE0BF4	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JAIXMV010000012.1|	0.0	759.0	37.897	0.856	3
+F0DE0BF4	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JAIXMV010000005.1|	4.18e-06	46.6	28.369	0.565	1
+F0DE0BF4	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JAIXMV010000015.1|	3.18e-151	469.0	71.924	0.929	3
+F0DE0BF4	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JAIXMV010000012.1|	1.68e-34	145.0	31.379	0.157	2
+F0DE0BF4	Coemansia	Kickxellales_core	Ku	none						0	0
+F0DE0BF4	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JAIXMV010000006.1|	5.47e-53	202.0	35.167	0.433	1
+F0DE0BF4	Coemansia	Kickxellales_core	Pol4	none						0	0
+F0DE0BF4	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JAIXMV010000015.1|	7.08e-94	305.0	50.321	0.925	3
+F0DE0BF4	Coemansia	Kickxellales_core	RecA_RAD55	weak	O14129	gb|JAIXMV010000001.1|	5.2e-07	50.8	27.481	0.337	1
+F0DE0BF4	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JAIXMV010000015.1|	3.05e-17	82.8	28.674	0.785	3
+F0DE0BF4	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F0DE0BF4	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F3D51D57	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBUE010000031.1|	0.0	899.0	30.189	0.739	1
+F3D51D57	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBUE010000008.1|	7.36e-07	48.9	26.667	0.61	1
+F3D51D57	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUE010000098.1|	4.39e-150	466.0	71.474	0.914	1
+F3D51D57	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUE010000138.1|	2.74e-35	147.0	29.878	0.163	1
+F3D51D57	Coemansia	Kickxellales_core	Ku	none						0	0
+F3D51D57	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUE010000011.1|	2e-58	219.0	34.928	0.433	1
+F3D51D57	Coemansia	Kickxellales_core	Pol4	none						0	0
+F3D51D57	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUE010000098.1|	1.29e-95	309.0	51.923	0.925	1
+F3D51D57	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F3D51D57	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUE010000260.1|	2.09e-29	118.0	27.444	0.689	1
+F3D51D57	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F3D51D57	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FC1174D9	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JAIXMU010000001.1|	0.0	701.0	37.04	0.931	3
+FC1174D9	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JAIXMU010000005.1|	9.06e-06	45.4	25.175	0.573	1
+FC1174D9	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JAIXMU010000002.1|	4.18e-152	471.0	72.756	0.914	1
+FC1174D9	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JAIXMU010000012.1|	1.35e-35	148.0	24.953	0.259	2
+FC1174D9	Coemansia	Kickxellales_core	Ku	none						0	0
+FC1174D9	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JAIXMU010000011.1|	6.58e-60	223.0	35.952	0.433	1
+FC1174D9	Coemansia	Kickxellales_core	Pol4	none						0	0
+FC1174D9	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JAIXMU010000002.1|	1.24e-93	303.0	50.641	0.925	1
+FC1174D9	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FC1174D9	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JAIXMU010000001.1|	4.41e-27	111.0	29.502	0.709	1
+FC1174D9	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FC1174D9	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F7A7AA4C	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTF010000002.1|	0.0	756.0	38.944	0.927	3
+F7A7AA4C	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F7A7AA4C	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTF010000006.1|	4.19e-157	486.0	69.851	0.982	2
+F7A7AA4C	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTF010000002.1|	1.67e-37	155.0	25.175	0.215	2
+F7A7AA4C	Coemansia	Kickxellales_core	Ku	none						0	0
+F7A7AA4C	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTF010000148.1|	6.11e-58	217.0	36.58	0.433	1
+F7A7AA4C	Coemansia	Kickxellales_core	Pol4	none						0	0
+F7A7AA4C	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTF010000006.1|	3.26e-95	308.0	49.533	0.952	2
+F7A7AA4C	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBTF010000062.1|	0.000668	40.8	25.773	0.26	1
+F7A7AA4C	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTF010000002.1|	7.53e-26	108.0	25.979	0.715	1
+F7A7AA4C	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F7A7AA4C	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F2470181	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBRJ010000001.1|	0.0	756.0	38.944	0.927	3
+F2470181	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F2470181	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRJ010000005.1|	4.19e-157	486.0	69.851	0.982	2
+F2470181	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBRJ010000001.1|	1.67e-37	155.0	25.175	0.215	2
+F2470181	Coemansia	Kickxellales_core	Ku	none						0	0
+F2470181	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRJ010000074.1|	6.7e-58	217.0	36.58	0.433	1
+F2470181	Coemansia	Kickxellales_core	Pol4	none						0	0
+F2470181	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRJ010000005.1|	3.25e-95	308.0	49.533	0.952	2
+F2470181	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBRJ010000019.1|	0.000669	40.8	25.773	0.26	1
+F2470181	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRJ010000001.1|	7.51e-26	108.0	25.979	0.715	1
+F2470181	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F2470181	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F4F8BFB2	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANJYS010000003.1|	0.0	756.0	38.944	0.927	3
+F4F8BFB2	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F4F8BFB2	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANJYS010000010.1|	5.13e-157	486.0	69.851	0.982	2
+F4F8BFB2	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANJYS010000003.1|	1.67e-37	155.0	25.175	0.215	2
+F4F8BFB2	Coemansia	Kickxellales_core	Ku	none						0	0
+F4F8BFB2	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANJYS010000115.1|	6.51e-58	217.0	36.58	0.433	1
+F4F8BFB2	Coemansia	Kickxellales_core	Pol4	none						0	0
+F4F8BFB2	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANJYS010000010.1|	3.51e-95	308.0	49.533	0.952	2
+F4F8BFB2	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANJYS010000018.1|	0.00067	40.8	25.773	0.26	1
+F4F8BFB2	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANJYS010000003.1|	7.52e-26	108.0	25.979	0.715	1
+F4F8BFB2	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F4F8BFB2	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F0DB79EE	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTS010000047.1|	0.0	701.0	37.04	0.931	2
+F0DB79EE	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBTS010000009.1|	8.33e-06	45.4	25.175	0.573	1
+F0DB79EE	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTS010000018.1|	3.83e-152	471.0	72.756	0.914	1
+F0DB79EE	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBTS010000061.1|	6.24e-36	150.0	22.901	0.158	1
+F0DB79EE	Coemansia	Kickxellales_core	Ku	none						0	0
+F0DB79EE	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTS010000081.1|	6.12e-60	223.0	35.952	0.433	1
+F0DB79EE	Coemansia	Kickxellales_core	Pol4	none						0	0
+F0DB79EE	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTS010000018.1|	1.13e-93	303.0	50.641	0.925	1
+F0DB79EE	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F0DB79EE	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTS010000047.1|	8.3e-28	114.0	29.885	0.709	1
+F0DB79EE	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F0DB79EE	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F333880B	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQD010000086.1|	0.0	754.0	37.419	0.835	2
+F333880B	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBQD010000004.1|	2.33e-06	47.4	28.369	0.565	1
+F333880B	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQD010000011.1|	3.11e-151	469.0	71.924	0.929	2
+F333880B	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBQD010000106.1|	2.69e-36	150.0	29.773	0.154	1
+F333880B	Coemansia	Kickxellales_core	Ku	none						0	0
+F333880B	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQD010000006.1|	5.34e-53	202.0	35.167	0.433	1
+F333880B	Coemansia	Kickxellales_core	Pol4	none						0	0
+F333880B	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQD010000011.1|	6.92e-94	305.0	50.321	0.925	2
+F333880B	Coemansia	Kickxellales_core	RecA_RAD55	weak	O14129	gb|JANBQD010000026.1|	4.87e-07	50.8	27.481	0.337	1
+F333880B	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQD010000011.1|	2.98e-17	82.8	28.674	0.785	2
+F333880B	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F333880B	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F80EB351	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQR010000001.1|	0.0	756.0	38.944	0.927	3
+F80EB351	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F80EB351	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQR010000002.1|	5.15e-157	486.0	69.851	0.982	2
+F80EB351	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBQR010000001.1|	1.67e-37	155.0	25.175	0.215	2
+F80EB351	Coemansia	Kickxellales_core	Ku	none						0	0
+F80EB351	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQR010000138.1|	6.25e-58	217.0	36.58	0.433	1
+F80EB351	Coemansia	Kickxellales_core	Pol4	none						0	0
+F80EB351	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQR010000002.1|	3.52e-95	308.0	49.533	0.952	2
+F80EB351	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBQR010000022.1|	0.000671	40.8	25.773	0.26	1
+F80EB351	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQR010000001.1|	7.54e-26	108.0	25.979	0.715	1
+F80EB351	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F80EB351	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBPZ010000098.1|	0.0	714.0	42.921	0.576	3
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBPZ010000425.1|	1.33e-07	50.8	30.07	0.573	1
+F4C3EFF5	Dipsacomyces	Kickxellales_core	CTRL_Rad51	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	DNA-PKcs	weak	FEF8F4D3_003986-T1	gb|JANBPZ010000827.1|	8.35e-42	169.0	25.036	0.161	1
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Ku	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Lig4	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Pol4	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	RecA_DMC1	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	RecA_RAD55	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	RecA_RAD57	weak	Q9UUL2	gb|JANBPZ010000419.1|	1.54e-07	52.0	30.172	0.288	1
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Sae2_CtIP	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	XLF_Nej1	none						0	0
+F9F51274	Kickxella	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	ref|NW_026251472.1|	0.0	828.0	28.815	0.737	2
+F9F51274	Kickxella	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	ref|NW_026251486.1|	3.21e-06	47.4	26.812	0.553	1
+F9F51274	Kickxella	Kickxellales_core	CTRL_Rad51	strong	Q99133	ref|NW_026251484.1|	1.97e-148	461.0	71.935	0.909	1
+F9F51274	Kickxella	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	ref|NW_026251472.1|	1.09e-34	146.0	32.323	0.151	2
+F9F51274	Kickxella	Kickxellales_core	Ku	none						0	0
+F9F51274	Kickxella	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	ref|NW_026251472.1|	6.27e-57	214.0	34.458	0.428	1
+F9F51274	Kickxella	Kickxellales_core	Pol4	none						0	0
+F9F51274	Kickxella	Kickxellales_core	RecA_DMC1	strong	P25453	ref|NW_026251484.1|	1.21e-92	301.0	50.321	0.925	1
+F9F51274	Kickxella	Kickxellales_core	RecA_RAD55	none						0	0
+F9F51274	Kickxella	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	ref|NW_026251472.1|	1.01e-17	84.3	29.11	0.785	1
+F9F51274	Kickxella	Kickxellales_core	Sae2_CtIP	none						0	0
+F9F51274	Kickxella	Kickxellales_core	XLF_Nej1	none						0	0
+F43C8248	Linderina	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	ref|NW_024468253.1|	4.14e-101	323.0	28.497	0.653	7
+F43C8248	Linderina	Kickxellales_core	Aprataxin	none	FCDD8027_000090-T1	ref|NW_024468249.1|	0.000161	42.4	32.468	0.313	1
+F43C8248	Linderina	Kickxellales_core	CTRL_Rad51	strong	Q99133	ref|NW_024468260.1|	2.06e-149	464.0	71.154	0.914	2
+F43C8248	Linderina	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	ref|NW_024468253.1|	3.66e-30	131.0	27.974	0.154	4
+F43C8248	Linderina	Kickxellales_core	Ku	none						0	0
+F43C8248	Linderina	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	ref|NW_024468262.1|	9.92e-60	223.0	36.867	0.428	1
+F43C8248	Linderina	Kickxellales_core	Pol4	none						0	0
+F43C8248	Linderina	Kickxellales_core	RecA_DMC1	strong	P25453	ref|NW_024468260.1|	6.33e-95	308.0	51.603	0.925	2
+F43C8248	Linderina	Kickxellales_core	RecA_RAD55	none	O14129	ref|NW_024468260.1|	6.15e-05	44.7	27.536	0.374	1
+F43C8248	Linderina	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	ref|NW_024468253.1|	4.1e-18	68.9	38.144	0.508	3
+F43C8248	Linderina	Kickxellales_core	Sae2_CtIP	none						0	0
+F43C8248	Linderina	Kickxellales_core	XLF_Nej1	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|MU603997.1|	0.0	776.0	38.182	0.931	2
+FE0E32D4	Martensiomyces	Kickxellales_core	Aprataxin	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|MU603932.1|	1.93e-149	464.0	72.313	0.9	1
+FE0E32D4	Martensiomyces	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|MU603968.1|	2.12e-35	148.0	28.793	0.154	1
+FE0E32D4	Martensiomyces	Kickxellales_core	Ku	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|MU603951.1|	2.36e-60	225.0	37.321	0.428	1
+FE0E32D4	Martensiomyces	Kickxellales_core	Pol4	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	RecA_DMC1	strong	P25453	gb|MU603932.1|	3.54e-93	303.0	51.792	0.91	1
+FE0E32D4	Martensiomyces	Kickxellales_core	RecA_RAD55	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|MU604035.1|	3.2e-29	118.0	28.309	0.689	1
+FE0E32D4	Martensiomyces	Kickxellales_core	Sae2_CtIP	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	XLF_Nej1	none						0	0
+F8E635D0	Rhizopus	Mucoromycota_s.l.	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JARGYL010000371.1|	1.03e-49	196.0	26.04	0.421	5
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Aprataxin	none						0	0
+F8E635D0	Rhizopus	Mucoromycota_s.l.	CTRL_Rad51	strong	Q99133	gb|JARGYL010000096.1|	9.72e-54	132.0	53.488	0.906	6
+F8E635D0	Rhizopus	Mucoromycota_s.l.	DNA-PKcs	strong	FEACB2E7_002676-T1	gb|JARGYL010000143.1|	2.68e-167	530.0	41.161	0.893	21
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Ku	strong	F4696F25_008192-T1	gb|JARGYL010000073.1|	1.31e-58	132.0	31.636	0.667	4
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Lig4	strong	F4696F25_002989-T1	gb|JARGYL010000026.1|	1.51e-23	107.0	27.385	0.784	10
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Pol4	strong	FCDD8027_009225-T1	gb|JARGYL010000005.1|	3.31e-75	183.0	36.314	0.301	4
+F8E635D0	Rhizopus	Mucoromycota_s.l.	RecA_DMC1	strong	O42634	gb|JARGYL010000016.1|	3.64e-51	182.0	44.783	0.855	3
+F8E635D0	Rhizopus	Mucoromycota_s.l.	RecA_RAD55	none						0	0
+F8E635D0	Rhizopus	Mucoromycota_s.l.	RecA_RAD57	strong	Q9UUL2	gb|JARGYL010000557.1|	1.32e-28	106.0	29.368	0.788	2
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Sae2_CtIP	none	F4696F25_005121-T1	gb|JARGYL010000040.1|	1.2e-05	43.1	48.837	0.157	2
+F8E635D0	Rhizopus	Mucoromycota_s.l.	XLF_Nej1	none						0	0
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBPU010000008.1|	0.0	691.0	38.454	0.979	2
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Aprataxin	none						0	0
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	CTRL_Rad51	strong	Q99133	gb|JANBPU010000092.1|	2e-166	513.0	74.375	0.941	1
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	DNA-PKcs	weak	P78527	gb|JANBPU010000029.1|	1.13e-42	174.0	25.995	0.172	1
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Ku	none						0	0
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Lig4	strong	F359FEE0_014802-T1	gb|JANBPU010000056.1|	1.38e-39	96.7	24.885	0.531	2
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Pol4	none						0	0
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	RecA_DMC1	strong	P25453	gb|JANBPU010000007.1|	1.24e-46	77.8	69.388	0.82	6
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	RecA_RAD55	none						0	0
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	RecA_RAD57	strong	Q9UUL2	gb|JANBPU010000092.1|	1.33e-17	84.0	27.698	0.782	1
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Sae2_CtIP	none						0	0
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	XLF_Nej1	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	ATR_Mec1	weak	F1C9E2AA_003657-T1	gb|JAMZIH010001266.1|	1.92e-104	352.0	38.856	0.214	1
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Aprataxin	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	CTRL_Rad51	strong	Q99133	gb|JAMZIH010000016.1|	1.89e-165	509.0	74.085	0.965	1
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JAMZIH010000006.1|	2.34e-36	150.0	27.536	0.163	1
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Ku	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Lig4	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Pol4	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	RecA_DMC1	strong	P25453	gb|JAMZIH010000016.1|	5.85e-100	322.0	50.15	0.988	1
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	RecA_RAD55	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	RecA_RAD57	strong	Q9UUL2	gb|JAMZIH010005157.1|	3.31e-28	114.0	33.493	0.579	1
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Sae2_CtIP	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	XLF_Nej1	none						0	0
+F7FE4923	Ramicandelaber	Ramicandelaber	ATR_Mec1	strong	FCDD8027_008095-T1	gb|MU603350.1|	2.2e-143	503.0	47.452	0.553	6
+F7FE4923	Ramicandelaber	Ramicandelaber	Aprataxin	none	FB5167BD_001770-T1	gb|MU602763.1|	6.82e-05	43.5	25.676	0.553	1
+F7FE4923	Ramicandelaber	Ramicandelaber	CTRL_Rad51	strong	Q99133	gb|MU602683.1|	1.96e-143	447.0	67.405	0.932	1
+F7FE4923	Ramicandelaber	Ramicandelaber	DNA-PKcs	weak	F8E635D0_004853-T1	gb|MU603350.1|	5.92e-40	163.0	31.987	0.149	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Ku	strong	FCDD8027_010528-T1	gb|MU602790.1|	6.03e-21	97.4	30.597	0.698	2
+F7FE4923	Ramicandelaber	Ramicandelaber	Lig4	strong	F5655B54_010178-T1	gb|MU602750.1|	4.38e-34	142.0	25.714	0.63	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Pol4	none						0	0
+F7FE4923	Ramicandelaber	Ramicandelaber	RecA_DMC1	strong	P25453	gb|MU602683.1|	4.22e-97	314.0	51.104	0.949	1
+F7FE4923	Ramicandelaber	Ramicandelaber	RecA_RAD55	none						0	0
+F7FE4923	Ramicandelaber	Ramicandelaber	RecA_RAD57	strong	Q9UUL2	gb|MU602683.1|	2.19e-20	92.4	29.286	0.785	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Sae2_CtIP	weak	F22945DF_008617-T1	gb|MU602857.1|	2.47e-09	58.9	30.476	0.208	1
+F7FE4923	Ramicandelaber	Ramicandelaber	XLF_Nej1	none						0	0
+F3F252DC	Caulochytrium	Root	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|ML014141.1|	0.0	649.0	33.358	0.781	2
+F3F252DC	Caulochytrium	Root	Aprataxin	strong	FB5167BD_001770-T1	gb|ML014162.1|	2.19e-27	109.0	32.979	0.667	1
+F3F252DC	Caulochytrium	Root	CTRL_Rad51	strong	Q99133	gb|ML014140.1|	5.7e-163	503.0	75.0	0.932	1
+F3F252DC	Caulochytrium	Root	DNA-PKcs	weak	F8E635D0_004853-T1	gb|ML014140.1|	2.05e-42	171.0	33.435	0.163	1
+F3F252DC	Caulochytrium	Root	Ku	strong	FCDD8027_010528-T1	gb|ML014362.1|	7.22e-24	106.0	24.764	0.763	1
+F3F252DC	Caulochytrium	Root	Lig4	strong	O74833	gb|ML014118.1|	3.15e-39	158.0	26.125	0.582	1
+F3F252DC	Caulochytrium	Root	Pol4	none						0	0
+F3F252DC	Caulochytrium	Root	RecA_DMC1	strong	O42634	gb|ML014139.1|	5.1e-101	212.0	59.322	0.958	2
+F3F252DC	Caulochytrium	Root	RecA_RAD55	none						0	0
+F3F252DC	Caulochytrium	Root	RecA_RAD57	strong	Q9UUL2	gb|ML014307.1|	1.27e-11	65.5	26.295	0.814	2
+F3F252DC	Caulochytrium	Root	Sae2_CtIP	weak	FAC8BA67_001475-T1	gb|ML014199.1|	7.73e-10	59.7	31.544	0.453	1
+F3F252DC	Caulochytrium	Root	XLF_Nej1	none						0	0
+FEB493EF	Piptocephalis	Zoopagales	ATR_Mec1	strong	FCDD8027_008095-T1	gb|MU626237.1|	2.24e-146	369.0	35.704	0.499	2
+FEB493EF	Piptocephalis	Zoopagales	Aprataxin	none	FCDD8027_000090-T1	gb|MU626147.1|	4.94e-05	43.5	33.333	0.333	1
+FEB493EF	Piptocephalis	Zoopagales	CTRL_Rad51	strong	Q99133	gb|MU626071.1|	2.67e-144	449.0	80.0	0.935	3
+FEB493EF	Piptocephalis	Zoopagales	DNA-PKcs	weak	F574EFC1_006650-T1	gb|MU626175.1|	2.19e-20	99.8	27.171	0.094	2
+FEB493EF	Piptocephalis	Zoopagales	Ku	none						0	0
+FEB493EF	Piptocephalis	Zoopagales	Lig4	strong	FCDD8027_004152-T1	gb|MU626120.1|	6.35e-39	157.0	25.49	0.507	1
+FEB493EF	Piptocephalis	Zoopagales	Pol4	strong	FCDD8027_009225-T1	gb|MU626087.1|	4.89e-108	382.0	43.347	0.309	1
+FEB493EF	Piptocephalis	Zoopagales	RecA_DMC1	strong	P25453	gb|MU626071.1|	2.46e-81	268.0	51.331	0.787	1
+FEB493EF	Piptocephalis	Zoopagales	RecA_RAD55	none						0	0
+FEB493EF	Piptocephalis	Zoopagales	RecA_RAD57	strong	Q9UUL2	gb|MU626071.1|	5.48e-17	82.0	27.798	0.782	1
+FEB493EF	Piptocephalis	Zoopagales	Sae2_CtIP	none						0	0
+FEB493EF	Piptocephalis	Zoopagales	XLF_Nej1	none						0	0
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	ATR_Mec1	strong	F1C537C3_000771-T1	gb|JBLKGV010000398.1|	8.66e-147	411.0	31.191	0.617	9
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Aprataxin	strong	FB5167BD_001770-T1	gb|JBLKGV010000002.1|	5.91e-24	86.3	35.811	0.776	3
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	CTRL_Rad51	strong	Q99133	gb|JBLKGV010000001.1|	2.81e-81	209.0	76.515	0.914	4
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	DNA-PKcs	weak	F4696F25_006566-T1	gb|JBLKGV010000120.1|	9.13e-47	189.0	26.837	0.16	1
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Ku	strong	Q5B4H8	gb|JBLKGV010000599.1|	1.84e-43	142.0	29.041	0.615	2
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Lig4	strong	F4696F25_002989-T1	gb|JBLKGV010000159.1|	1.38e-14	80.1	27.574	0.75	10
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Pol4	strong	F5A4E39E_004736-T1	gb|JBLKGV010000486.1|	7.7e-21	64.3	27.564	0.493	5
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	RecA_DMC1	strong	O42634	gb|JBLKGV010000190.1|	5.73e-70	183.0	55.866	0.892	3
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	RecA_RAD55	none						0	0
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	RecA_RAD57	strong	Q9UUL2	gb|JBLKGV010000012.1|	5.6e-31	101.0	28.837	0.751	3
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Sae2_CtIP	weak	F22945DF_008617-T1	gb|JBLKGV010000051.1|	2.97e-17	61.2	40.299	0.233	2
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	XLF_Nej1	none						0	0
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|WBMQ01000006.1|	1.8e-64	244.0	28.387	0.415	4
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Aprataxin	none						0	0
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	CTRL_Rad51	strong	Q99133	gb|WBMQ01000012.1|	9.72e-134	420.0	64.353	0.926	1
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	DNA-PKcs	weak	F1D7B4F9_002334-T1	gb|WBMQ01000006.1|	1.83e-30	134.0	26.406	0.161	3
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Ku	weak	FD4B4AC6_002746-T1	gb|WBMQ01000009.1|	7.96e-10	51.2	21.127	0.335	2
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Lig4	weak	O74833	gb|WBMQ01000003.1|	4.69e-23	101.0	32.474	0.272	2
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Pol4	none						0	0
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	RecA_DMC1	strong	O42634	gb|WBMQ01000002.1|	8.24e-104	333.0	53.799	0.883	1
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	RecA_RAD55	none						0	0
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	RecA_RAD57	strong	Q9UUL2	gb|WBMQ01000012.1|	1.64e-15	77.8	27.798	0.782	1
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Sae2_CtIP	none						0	0
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	XLF_Nej1	none						0	0
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JBNZCG010000014.1|	1.3e-60	232.0	35.629	0.309	3
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Aprataxin	none	FCDD8027_000090-T1	gb|JBNZCG010000039.1|	5.26e-05	44.7	36.471	0.333	1
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	CTRL_Rad51	strong	Q99133	gb|JBNZCG010000024.1|	1.31e-87	188.0	70.4	0.929	2
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	DNA-PKcs	weak	FEF8F4D3_003986-T1	gb|JBNZCG010000014.1|	7.5e-41	169.0	24.928	0.161	2
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Ku	strong	FD4B4AC6_002746-T1	gb|JBNZCG010000017.1|	1.75e-15	81.3	22.862	0.817	1
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Lig4	strong	FCDD8027_004152-T1	gb|JBNZCG010000011.1|	9.95e-39	157.0	30.052	0.395	1
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Pol4	none						0	0
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	RecA_DMC1	strong	O42634	gb|JBNZCG010000018.1|	8.34e-78	159.0	66.355	0.907	5
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	RecA_RAD55	none						0	0
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	RecA_RAD57	strong	Q9UUL2	gb|JBNZCG010000019.1|	1.8e-25	79.7	24.79	0.746	3
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Sae2_CtIP	weak	F797C73E_003965-T1	gb|JBNZCG010000024.1|	4.92e-08	38.1	57.143	0.174	2
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	XLF_Nej1	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	ATR_Mec1	strong	FCDD8027_008095-T1	gb|MU626324.1|	3.97e-165	575.0	27.941	0.673	2
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Aprataxin	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	CTRL_Rad51	strong	Q99133	gb|MU626635.1|	3.98e-131	412.0	62.264	0.929	1
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	DNA-PKcs	weak	FEF8F4D3_003986-T1	gb|MU626480.1|	1.12e-39	164.0	25.342	0.162	2
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Ku	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Lig4	weak	F9A17E9D_003104-T1	gb|MU626443.1|	3.05e-28	64.3	28.415	0.274	3
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Pol4	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	RecA_DMC1	strong	O42634	gb|MU626410.1|	1.07e-81	215.0	62.13	0.901	4
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	RecA_RAD55	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	RecA_RAD57	strong	Q9UUL2	gb|MU626635.1|	1.34e-14	74.7	25.448	0.782	1
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Sae2_CtIP	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	XLF_Nej1	none						0	0
+F00A57ED	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBUL010000137.1|	0.0	693.0	43.507	0.735	3
+F00A57ED	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F00A57ED	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUL010000111.1|	1.7e-151	470.0	72.115	0.914	1
+F00A57ED	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUL010000179.1|	1.48e-43	174.0	29.091	0.218	1
+F00A57ED	Coemansia	Kickxellales_core	Ku	none						0	0
+F00A57ED	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUL010000335.1|	3.65e-56	211.0	34.524	0.433	1
+F00A57ED	Coemansia	Kickxellales_core	Pol4	none						0	0
+F00A57ED	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUL010000111.1|	3.56e-95	308.0	50.962	0.925	1
+F00A57ED	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F00A57ED	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUL010000135.1|	4.08e-28	114.0	29.965	0.737	1
+F00A57ED	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F00A57ED	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F023BB0A	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBSJ010000004.1|	0.0	836.0	30.437	0.994	1
+F023BB0A	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F023BB0A	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSJ010000039.1|	2.51e-153	475.0	73.397	0.914	1
+F023BB0A	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSJ010000004.1|	1e-36	152.0	32.353	0.153	1
+F023BB0A	Coemansia	Kickxellales_core	Ku	none						0	0
+F023BB0A	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSJ010000205.1|	7.98e-59	219.0	35.407	0.434	1
+F023BB0A	Coemansia	Kickxellales_core	Pol4	none						0	0
+F023BB0A	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSJ010000039.1|	2.08e-93	303.0	50.473	0.94	1
+F023BB0A	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F023BB0A	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSJ010000315.1|	5.47e-25	105.0	26.198	0.805	1
+F023BB0A	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F023BB0A	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F02CB1ED	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTC010000072.1|	0.0	746.0	33.558	0.92	2
+F02CB1ED	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F02CB1ED	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTC010000245.1|	2.78e-151	469.0	72.756	0.914	1
+F02CB1ED	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTC010000072.1|	6.22e-38	156.0	28.833	0.218	1
+F02CB1ED	Coemansia	Kickxellales_core	Ku	none						0	0
+F02CB1ED	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTC010000113.1|	1.04e-58	219.0	35.167	0.434	1
+F02CB1ED	Coemansia	Kickxellales_core	Pol4	none						0	0
+F02CB1ED	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTC010000245.1|	3.04e-95	308.0	50.789	0.94	1
+F02CB1ED	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F02CB1ED	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTC010000079.1|	1.55e-26	110.0	26.198	0.805	1
+F02CB1ED	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F02CB1ED	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F05FC232	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBOX010000248.1|	0.0	752.0	38.462	0.927	2
+F05FC232	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBOX010000288.1|	1.77e-06	47.4	26.0	0.61	1
+F05FC232	Coemansia	Kickxellales_core	CTRL_Rad51	weak	Q99133	gb|JANBOX010001313.1|	4.74e-30	119.0	62.353	0.251	1
+F05FC232	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBOX010000248.1|	1.12e-35	148.0	26.279	0.215	1
+F05FC232	Coemansia	Kickxellales_core	Ku	none						0	0
+F05FC232	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOX010000372.1|	4.49e-60	223.0	35.084	0.433	1
+F05FC232	Coemansia	Kickxellales_core	Pol4	none						0	0
+F05FC232	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOX010000437.1|	1.53e-20	91.7	35.294	0.503	1
+F05FC232	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F05FC232	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOX010000437.1|	2.62e-27	112.0	29.167	0.689	1
+F05FC232	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F05FC232	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F090F877	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBOU010000004.1|	0.0	836.0	30.437	0.994	1
+F090F877	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F090F877	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOU010001048.1|	4.48e-159	475.0	73.397	0.914	1
+F090F877	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBOU010000515.1|	1e-38	158.0	26.566	0.218	1
+F090F877	Coemansia	Kickxellales_core	Ku	none						0	0
+F090F877	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOU010000883.1|	3.97e-59	219.0	35.407	0.434	1
+F090F877	Coemansia	Kickxellales_core	Pol4	none						0	0
+F090F877	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOU010001048.1|	2.36e-94	303.0	50.473	0.94	1
+F090F877	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F090F877	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOU010000005.1|	5.86e-25	105.0	26.198	0.805	1
+F090F877	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F090F877	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F097EC52	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQX010000004.1|	0.0	833.0	30.39	0.994	1
+F097EC52	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F097EC52	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQX010000531.1|	3.41e-155	478.0	68.314	0.997	1
+F097EC52	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBQX010000416.1|	1.92e-38	157.0	26.782	0.218	1
+F097EC52	Coemansia	Kickxellales_core	Ku	none						0	0
+F097EC52	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQX010000920.1|	3.79e-59	219.0	35.407	0.434	1
+F097EC52	Coemansia	Kickxellales_core	Pol4	none						0	0
+F097EC52	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQX010000531.1|	1.47e-93	303.0	50.473	0.94	1
+F097EC52	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F097EC52	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQX010000004.1|	5.85e-25	105.0	26.198	0.805	1
+F097EC52	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F097EC52	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F0A69C67	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBOQ010000002.1|	0.0	756.0	38.944	0.927	3
+F0A69C67	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F0A69C67	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOQ010000021.1|	4.2e-157	486.0	69.851	0.982	1
+F0A69C67	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBOQ010000002.1|	1.68e-37	155.0	25.175	0.215	2
+F0A69C67	Coemansia	Kickxellales_core	Ku	none						0	0
+F0A69C67	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOQ010000176.1|	6.31e-58	217.0	36.58	0.433	1
+F0A69C67	Coemansia	Kickxellales_core	Pol4	none						0	0
+F0A69C67	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOQ010000021.1|	3.26e-95	308.0	49.533	0.952	1
+F0A69C67	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBOQ010000131.1|	0.000667	40.8	25.773	0.26	1
+F0A69C67	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOQ010000002.1|	7.56e-26	108.0	25.979	0.715	1
+F0A69C67	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F0A69C67	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F0D6C540	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQJ010000097.1|	0.0	733.0	37.562	0.93	2
+F0D6C540	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBQJ010000925.1|	0.000341	41.2	26.0	0.606	1
+F0D6C540	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQJ010000065.1|	7.96e-151	469.0	73.226	0.909	1
+F0D6C540	Coemansia	Kickxellales_core	DNA-PKcs	weak	P78527	gb|JANBQJ010001340.1|	8.93e-39	160.0	25.079	0.147	1
+F0D6C540	Coemansia	Kickxellales_core	Ku	none						0	0
+F0D6C540	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQJ010000331.1|	8.11e-58	217.0	35.952	0.433	1
+F0D6C540	Coemansia	Kickxellales_core	Pol4	none						0	0
+F0D6C540	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQJ010000065.1|	1.21e-93	304.0	51.923	0.925	1
+F0D6C540	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F0D6C540	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQJ010000867.1|	2.94e-27	112.0	28.727	0.689	1
+F0D6C540	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F0D6C540	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F0DFB354	Coemansia	Kickxellales_core	ATR_Mec1	weak	F1C9E2AA_003657-T1	gb|JANBQE010000142.1|	3.3e-139	485.0	57.474	0.185	1
+F0DFB354	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBQE010000126.1|	0.000873	38.9	26.277	0.557	1
+F0DFB354	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQE010000032.1|	4.25e-151	469.0	69.846	0.953	1
+F0DFB354	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBQE010000015.1|	1.29e-34	145.0	27.245	0.169	2
+F0DFB354	Coemansia	Kickxellales_core	Ku	none						0	0
+F0DFB354	Coemansia	Kickxellales_core	Lig4	weak	F9A17E9D_003104-T1	gb|JANBQE010000310.1|	8.01e-21	97.8	36.41	0.198	1
+F0DFB354	Coemansia	Kickxellales_core	Pol4	none						0	0
+F0DFB354	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQE010000032.1|	2.85e-94	305.0	50.779	0.952	1
+F0DFB354	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBQE010000177.1|	0.000108	42.7	32.911	0.209	1
+F0DFB354	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQE010000177.1|	4.44e-28	114.0	27.3	0.785	1
+F0DFB354	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F0DFB354	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F0E0ADB2	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQL010000611.1|	0.0	686.0	42.002	0.865	3
+F0E0ADB2	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBQL010000919.1|	0.000337	41.2	26.0	0.606	1
+F0E0ADB2	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQL010001011.1|	7.35e-151	469.0	73.226	0.909	1
+F0E0ADB2	Coemansia	Kickxellales_core	DNA-PKcs	weak	P78527	gb|JANBQL010001067.1|	8.34e-40	164.0	25.472	0.148	1
+F0E0ADB2	Coemansia	Kickxellales_core	Ku	none						0	0
+F0E0ADB2	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQL010000871.1|	6.25e-58	218.0	34.928	0.433	1
+F0E0ADB2	Coemansia	Kickxellales_core	Pol4	none						0	0
+F0E0ADB2	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQL010001011.1|	1.12e-93	304.0	51.923	0.925	1
+F0E0ADB2	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F0E0ADB2	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQL010000846.1|	3.92e-27	112.0	28.727	0.689	1
+F0E0ADB2	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F0E0ADB2	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F1649C35	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBRQ010001433.1|	0.0	632.0	48.834	0.303	1
+F1649C35	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F1649C35	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRQ010000990.1|	4.27e-157	477.0	68.314	0.997	1
+F1649C35	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBRQ010001433.1|	3.75e-37	152.0	32.353	0.153	1
+F1649C35	Coemansia	Kickxellales_core	Ku	none						0	0
+F1649C35	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRQ010001308.1|	7.05e-48	184.0	35.588	0.353	1
+F1649C35	Coemansia	Kickxellales_core	Pol4	none						0	0
+F1649C35	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRQ010000990.1|	7.33e-94	303.0	50.473	0.94	1
+F1649C35	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F1649C35	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRQ010000830.1|	4.92e-25	105.0	26.198	0.805	1
+F1649C35	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F1649C35	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F1709B5F	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQH010000042.1|	0.0	738.0	37.263	0.93	2
+F1709B5F	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F1709B5F	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQH010000433.1|	4.76e-151	469.0	73.226	0.909	1
+F1709B5F	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBQH010000042.1|	1.41e-35	148.0	29.18	0.149	1
+F1709B5F	Coemansia	Kickxellales_core	Ku	none						0	0
+F1709B5F	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQH010000166.1|	4.42e-58	218.0	35.952	0.433	1
+F1709B5F	Coemansia	Kickxellales_core	Pol4	none						0	0
+F1709B5F	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQH010000433.1|	7.25e-94	304.0	51.923	0.925	1
+F1709B5F	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F1709B5F	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQH010000433.1|	2.5e-15	76.6	27.046	0.785	1
+F1709B5F	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F1709B5F	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F1C72083	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQY010000402.1|	0.0	837.0	30.437	0.994	1
+F1C72083	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F1C72083	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQY010000051.1|	2.56e-153	475.0	73.397	0.914	1
+F1C72083	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBQY010000402.1|	2.16e-37	154.0	30.719	0.153	1
+F1C72083	Coemansia	Kickxellales_core	Ku	none						0	0
+F1C72083	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQY010000299.1|	7.85e-59	219.0	35.407	0.434	1
+F1C72083	Coemansia	Kickxellales_core	Pol4	none						0	0
+F1C72083	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQY010000051.1|	2.12e-93	303.0	50.473	0.94	1
+F1C72083	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F1C72083	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQY010000371.1|	5.52e-25	105.0	26.198	0.805	1
+F1C72083	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F1C72083	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F1DEA344	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBUG010000156.1|	0.0	751.0	37.51	0.93	2
+F1DEA344	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F1DEA344	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUG010000312.1|	1.83e-150	467.0	66.092	0.941	1
+F1DEA344	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUG010000037.1|	3.58e-35	147.0	26.935	0.154	1
+F1DEA344	Coemansia	Kickxellales_core	Ku	none						0	0
+F1DEA344	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUG010000005.1|	3.1e-55	209.0	36.038	0.433	1
+F1DEA344	Coemansia	Kickxellales_core	Pol4	none						0	0
+F1DEA344	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUG010000312.1|	1.81e-95	308.0	51.923	0.925	1
+F1DEA344	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F1DEA344	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUG010000136.1|	3.8e-31	123.0	27.385	0.785	1
+F1DEA344	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F1DEA344	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F235E971	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQZ010000003.1|	0.0	836.0	30.437	0.994	1
+F235E971	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F235E971	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQZ010000409.1|	2.2e-154	477.0	68.314	0.997	1
+F235E971	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBQZ010000003.1|	1.01e-36	152.0	32.353	0.153	1
+F235E971	Coemansia	Kickxellales_core	Ku	none						0	0
+F235E971	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQZ010000038.1|	8.32e-59	219.0	35.407	0.434	1
+F235E971	Coemansia	Kickxellales_core	Pol4	none						0	0
+F235E971	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQZ010000409.1|	9.87e-94	303.0	50.473	0.94	1
+F235E971	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F235E971	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQZ010000003.1|	5.77e-25	105.0	26.198	0.805	1
+F235E971	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F235E971	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F242D38C	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTM010000266.1|	0.0	650.0	48.498	0.327	1
+F242D38C	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F242D38C	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTM010000285.1|	3.62e-151	469.0	71.795	0.914	1
+F242D38C	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTM010000002.1|	1.05e-37	155.0	26.151	0.253	1
+F242D38C	Coemansia	Kickxellales_core	Ku	none						0	0
+F242D38C	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTM010000030.1|	1.91e-58	219.0	35.577	0.428	1
+F242D38C	Coemansia	Kickxellales_core	Pol4	none						0	0
+F242D38C	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTM010000285.1|	9.54e-95	306.0	50.641	0.925	1
+F242D38C	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F242D38C	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTM010000285.1|	1.58e-16	80.1	27.957	0.785	1
+F242D38C	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F242D38C	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F24A7D8D	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTX010000071.1|	0.0	746.0	38.391	0.927	2
+F24A7D8D	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBTX010000012.1|	8.05e-06	45.4	25.333	0.61	1
+F24A7D8D	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTX010000020.1|	1.24e-150	468.0	71.795	0.914	1
+F24A7D8D	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTX010000071.1|	3.92e-36	150.0	26.512	0.215	1
+F24A7D8D	Coemansia	Kickxellales_core	Ku	none						0	0
+F24A7D8D	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTX010000096.1|	3.78e-59	221.0	35.084	0.433	1
+F24A7D8D	Coemansia	Kickxellales_core	Pol4	none						0	0
+F24A7D8D	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTX010000020.1|	7.4e-95	307.0	51.603	0.925	1
+F24A7D8D	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F24A7D8D	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTX010000346.1|	2.12e-27	112.0	29.167	0.689	1
+F24A7D8D	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F24A7D8D	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F24CD14F	Coemansia	Kickxellales_core	ATR_Mec1	weak	F1C9E2AA_003657-T1	gb|JANBSG010002827.1|	3.35e-148	475.0	60.638	0.181	1
+F24CD14F	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F24CD14F	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSG010000179.1|	3.69e-157	486.0	69.851	0.982	1
+F24CD14F	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSG010002827.1|	2.61e-37	150.0	26.107	0.215	1
+F24CD14F	Coemansia	Kickxellales_core	Ku	none						0	0
+F24CD14F	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSG010000158.1|	1.25e-57	216.0	36.867	0.428	1
+F24CD14F	Coemansia	Kickxellales_core	Pol4	none						0	0
+F24CD14F	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSG010000179.1|	4.76e-95	308.0	49.533	0.952	1
+F24CD14F	Coemansia	Kickxellales_core	RecA_RAD55	weak	O14129	gb|JANBSG010000028.1|	1.2e-06	49.3	28.058	0.343	1
+F24CD14F	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSG010001188.1|	7.61e-26	107.0	27.273	0.712	1
+F24CD14F	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F24CD14F	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F258DE34	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBRV010000756.1|	0.0	642.0	35.818	0.537	1
+F258DE34	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBRV010000323.1|	7.22e-06	45.4	25.568	0.707	1
+F258DE34	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRV010000007.1|	2.08e-156	484.0	68.328	0.997	1
+F258DE34	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBRV010001358.1|	1.73e-37	153.0	30.199	0.168	1
+F258DE34	Coemansia	Kickxellales_core	Ku	none						0	0
+F258DE34	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRV010000563.1|	8.26e-61	226.0	35.971	0.433	1
+F258DE34	Coemansia	Kickxellales_core	Pol4	none						0	0
+F258DE34	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRV010000007.1|	7.68e-97	313.0	49.552	0.994	1
+F258DE34	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F258DE34	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRV010000423.1|	7.97e-32	125.0	28.354	0.814	1
+F258DE34	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F258DE34	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F26DD490	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBPH010000248.1|	0.0	748.0	38.424	0.856	2
+F26DD490	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F26DD490	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBPH010001316.1|	1.51e-162	484.0	69.552	0.982	1
+F26DD490	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBPH010000248.1|	6.05e-37	152.0	26.45	0.215	1
+F26DD490	Coemansia	Kickxellales_core	Ku	none						0	0
+F26DD490	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBPH010001898.1|	1.08e-46	179.0	38.889	0.334	1
+F26DD490	Coemansia	Kickxellales_core	Pol4	none						0	0
+F26DD490	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBPH010001316.1|	2.92e-95	305.0	49.221	0.952	1
+F26DD490	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F26DD490	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBPH010001316.1|	1.39e-17	83.2	28.674	0.785	1
+F26DD490	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F26DD490	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F340C8D3	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBSB010000001.1|	0.0	642.0	45.378	0.732	2
+F340C8D3	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F340C8D3	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSB010000002.1|	1.35e-151	470.0	72.436	0.914	1
+F340C8D3	Coemansia	Kickxellales_core	DNA-PKcs	weak	P78527	gb|JANBSB010001509.1|	1.36e-41	168.0	24.339	0.173	1
+F340C8D3	Coemansia	Kickxellales_core	Ku	none						0	0
+F340C8D3	Coemansia	Kickxellales_core	Lig4	weak	F9A17E9D_003104-T1	gb|JANBSB010000617.1|	3.87e-16	82.8	46.154	0.094	1
+F340C8D3	Coemansia	Kickxellales_core	Pol4	none						0	0
+F340C8D3	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSB010000002.1|	3.44e-95	308.0	51.282	0.925	1
+F340C8D3	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F340C8D3	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSB010000001.1|	1.1e-30	122.0	28.571	0.718	1
+F340C8D3	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F340C8D3	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F35EFF3E	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|KZ303507.1|	0.0	702.0	38.043	0.93	2
+F35EFF3E	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F35EFF3E	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|KZ303493.1|	6.55e-151	469.0	71.795	0.914	1
+F35EFF3E	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|KZ303522.1|	3.15e-36	151.0	25.777	0.259	1
+F35EFF3E	Coemansia	Kickxellales_core	Ku	none						0	0
+F35EFF3E	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|KZ303496.1|	9.16e-58	217.0	35.422	0.428	1
+F35EFF3E	Coemansia	Kickxellales_core	Pol4	none						0	0
+F35EFF3E	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|KZ303493.1|	1.92e-94	306.0	50.641	0.925	1
+F35EFF3E	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F35EFF3E	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|KZ303507.1|	3.77e-28	115.0	27.063	0.76	1
+F35EFF3E	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F35EFF3E	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F3E9A416	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBSO010001878.1|	0.0	665.0	46.853	0.328	1
+F3E9A416	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBSO010000258.1|	0.000271	41.2	26.0	0.606	1
+F3E9A416	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSO010001716.1|	3.11e-155	469.0	73.226	0.909	1
+F3E9A416	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSO010001878.1|	8.61e-36	148.0	29.18	0.149	1
+F3E9A416	Coemansia	Kickxellales_core	Ku	none						0	0
+F3E9A416	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSO010000248.1|	5.86e-58	217.0	35.952	0.433	1
+F3E9A416	Coemansia	Kickxellales_core	Pol4	none						0	0
+F3E9A416	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSO010001716.1|	2.96e-94	304.0	51.923	0.925	1
+F3E9A416	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F3E9A416	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSO010001716.1|	2.78e-15	76.6	27.046	0.785	1
+F3E9A416	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F3E9A416	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F3F357F6	Coemansia	Kickxellales_core	ATR_Mec1	weak	F1C9E2AA_003657-T1	gb|JANBRO010002073.1|	2.84e-143	462.0	56.25	0.186	1
+F3F357F6	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F3F357F6	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRO010000020.1|	2.56e-153	475.0	73.397	0.914	1
+F3F357F6	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBRO010002073.1|	1.74e-38	154.0	32.353	0.153	1
+F3F357F6	Coemansia	Kickxellales_core	Ku	none						0	0
+F3F357F6	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRO010000108.1|	7.6e-59	219.0	35.407	0.434	1
+F3F357F6	Coemansia	Kickxellales_core	Pol4	none						0	0
+F3F357F6	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRO010000020.1|	2.12e-93	303.0	50.473	0.94	1
+F3F357F6	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F3F357F6	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRO010001737.1|	4.22e-25	105.0	26.198	0.805	1
+F3F357F6	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F3F357F6	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F40251F8	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBOS010000720.1|	0.0	696.0	39.135	0.49	1
+F40251F8	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F40251F8	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOS010000005.1|	5.55e-154	477.0	68.314	0.997	1
+F40251F8	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBOS010000506.1|	1.11e-38	157.0	26.566	0.218	1
+F40251F8	Coemansia	Kickxellales_core	Ku	none						0	0
+F40251F8	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOS010000067.1|	7.92e-59	219.0	35.407	0.434	1
+F40251F8	Coemansia	Kickxellales_core	Pol4	none						0	0
+F40251F8	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOS010000005.1|	1.1e-93	303.0	50.473	0.94	1
+F40251F8	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F40251F8	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOS010000005.1|	5.35e-16	78.2	27.338	0.782	1
+F40251F8	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F40251F8	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F4A7DF8C	Coemansia	Kickxellales_core	ATR_Mec1	weak	F1C9E2AA_003657-T1	gb|JANBRD010001649.1|	5.23e-148	481.0	56.145	0.194	1
+F4A7DF8C	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F4A7DF8C	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRD010000578.1|	6.6e-154	475.0	73.397	0.914	1
+F4A7DF8C	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBRD010001649.1|	4.35e-38	154.0	32.353	0.153	1
+F4A7DF8C	Coemansia	Kickxellales_core	Ku	none						0	0
+F4A7DF8C	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRD010000331.1|	6.73e-59	219.0	35.407	0.434	1
+F4A7DF8C	Coemansia	Kickxellales_core	Pol4	none						0	0
+F4A7DF8C	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRD010000578.1|	1.92e-93	303.0	50.473	0.94	1
+F4A7DF8C	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F4A7DF8C	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRD010000821.1|	5.04e-25	105.0	26.198	0.805	1
+F4A7DF8C	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F4A7DF8C	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F4CFDB08	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBRB010000023.1|	0.0	703.0	37.681	0.885	3
+F4CFDB08	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBRB010000056.1|	7.07e-06	45.4	31.25	0.447	1
+F4CFDB08	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRB010000276.1|	4.47e-149	462.0	71.474	0.914	1
+F4CFDB08	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBRB010000023.1|	9.94e-33	139.0	30.132	0.151	1
+F4CFDB08	Coemansia	Kickxellales_core	Ku	none						0	0
+F4CFDB08	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRB010000369.1|	1.51e-59	221.0	35.154	0.436	1
+F4CFDB08	Coemansia	Kickxellales_core	Pol4	none						0	0
+F4CFDB08	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRB010000276.1|	2.35e-95	308.0	51.603	0.925	1
+F4CFDB08	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F4CFDB08	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRB010000005.1|	2.69e-28	115.0	26.625	0.808	1
+F4CFDB08	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F4CFDB08	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F4DA7CFA	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTT010000006.1|	0.0	758.0	38.228	0.742	2
+F4DA7CFA	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F4DA7CFA	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTT010000009.1|	2.25e-156	484.0	69.552	0.982	2
+F4DA7CFA	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTT010000163.1|	2.68e-35	147.0	33.447	0.142	1
+F4DA7CFA	Coemansia	Kickxellales_core	Ku	none						0	0
+F4DA7CFA	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTT010000036.1|	5.98e-63	233.0	38.072	0.428	1
+F4DA7CFA	Coemansia	Kickxellales_core	Pol4	none						0	0
+F4DA7CFA	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTT010000009.1|	6.76e-96	310.0	49.844	0.952	1
+F4DA7CFA	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBTT010000117.1|	1.51e-05	46.2	30.357	0.303	1
+F4DA7CFA	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTT010000005.1|	2.04e-25	107.0	27.875	0.723	1
+F4DA7CFA	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F4DA7CFA	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F50540CB	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBUS010000246.1|	0.0	642.0	45.378	0.732	2
+F50540CB	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F50540CB	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUS010000041.1|	1.38e-151	470.0	72.436	0.914	1
+F50540CB	Coemansia	Kickxellales_core	DNA-PKcs	weak	P78527	gb|JANBUS010000696.1|	2.29e-41	168.0	24.816	0.155	1
+F50540CB	Coemansia	Kickxellales_core	Ku	none						0	0
+F50540CB	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUS010000662.1|	1.19e-59	222.0	35.952	0.433	1
+F50540CB	Coemansia	Kickxellales_core	Pol4	none						0	0
+F50540CB	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUS010000041.1|	3.51e-95	308.0	51.282	0.925	1
+F50540CB	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F50540CB	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUS010001670.1|	1.14e-30	122.0	28.214	0.718	1
+F50540CB	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F50540CB	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F52B818A	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTZ010000105.1|	0.0	751.0	38.262	0.927	2
+F52B818A	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBTZ010000010.1|	1.9e-06	47.4	26.0	0.61	1
+F52B818A	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTZ010000095.1|	1.25e-150	468.0	71.795	0.914	1
+F52B818A	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTZ010000105.1|	1.15e-35	148.0	26.279	0.215	1
+F52B818A	Coemansia	Kickxellales_core	Ku	none						0	0
+F52B818A	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTZ010000008.1|	5.22e-60	224.0	35.084	0.433	1
+F52B818A	Coemansia	Kickxellales_core	Pol4	none						0	0
+F52B818A	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTZ010000095.1|	7.47e-95	307.0	51.603	0.925	1
+F52B818A	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F52B818A	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTZ010000339.1|	5.55e-27	111.0	29.545	0.689	1
+F52B818A	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F52B818A	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F5353C03	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTW010000088.1|	0.0	754.0	37.419	0.835	2
+F5353C03	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBTW010000005.1|	2.34e-06	47.4	28.369	0.565	1
+F5353C03	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTW010000044.1|	3.11e-151	469.0	71.924	0.929	1
+F5353C03	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTW010000100.1|	2.7e-36	150.0	29.773	0.154	1
+F5353C03	Coemansia	Kickxellales_core	Ku	none						0	0
+F5353C03	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTW010000022.1|	5.34e-53	202.0	35.167	0.433	1
+F5353C03	Coemansia	Kickxellales_core	Pol4	none						0	0
+F5353C03	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTW010000044.1|	6.93e-94	305.0	50.321	0.925	1
+F5353C03	Coemansia	Kickxellales_core	RecA_RAD55	weak	O14129	gb|JANBTW010000001.1|	4.9e-07	50.8	27.481	0.337	1
+F5353C03	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTW010000002.1|	2.47e-26	109.0	26.165	0.718	1
+F5353C03	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F5353C03	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F53A5B42	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTE010000048.1|	0.0	745.0	33.558	0.92	2
+F53A5B42	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F53A5B42	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTE010000010.1|	2.93e-151	469.0	72.756	0.914	1
+F53A5B42	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTE010000048.1|	5.8e-38	156.0	28.833	0.218	1
+F53A5B42	Coemansia	Kickxellales_core	Ku	none						0	0
+F53A5B42	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTE010000005.1|	1.09e-58	219.0	35.167	0.434	1
+F53A5B42	Coemansia	Kickxellales_core	Pol4	none						0	0
+F53A5B42	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTE010000010.1|	3.21e-95	308.0	50.789	0.94	1
+F53A5B42	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F53A5B42	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTE010000242.1|	1.49e-26	110.0	26.198	0.805	1
+F53A5B42	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F53A5B42	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F55D1F1F	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBSI010000484.1|	4.69e-59	225.0	23.095	0.395	1
+F55D1F1F	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBSI010000008.1|	1.53e-06	47.4	26.0	0.61	1
+F55D1F1F	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSI010000253.1|	9.73e-151	468.0	71.795	0.914	1
+F55D1F1F	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSI010000430.1|	3.33e-35	146.0	28.479	0.154	1
+F55D1F1F	Coemansia	Kickxellales_core	Ku	none						0	0
+F55D1F1F	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSI010000031.1|	4.04e-60	224.0	35.084	0.433	1
+F55D1F1F	Coemansia	Kickxellales_core	Pol4	none						0	0
+F55D1F1F	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSI010000253.1|	5.79e-95	307.0	51.603	0.925	1
+F55D1F1F	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F55D1F1F	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSI010000253.1|	3.66e-17	81.6	27.402	0.785	1
+F55D1F1F	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F55D1F1F	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F56A3D5B	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBRS010000003.1|	0.0	836.0	30.437	0.994	1
+F56A3D5B	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F56A3D5B	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRS010000241.1|	5.58e-154	477.0	68.314	0.997	1
+F56A3D5B	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBRS010000003.1|	1.09e-36	152.0	32.353	0.153	1
+F56A3D5B	Coemansia	Kickxellales_core	Ku	none						0	0
+F56A3D5B	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRS010000009.1|	9.53e-59	219.0	35.407	0.434	1
+F56A3D5B	Coemansia	Kickxellales_core	Pol4	none						0	0
+F56A3D5B	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRS010000241.1|	1.1e-93	303.0	50.473	0.94	1
+F56A3D5B	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F56A3D5B	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRS010000003.1|	6.2e-25	105.0	26.198	0.805	1
+F56A3D5B	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F56A3D5B	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F5845C02	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBSN010000193.1|	0.0	788.0	32.251	0.552	1
+F5845C02	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F5845C02	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSN010000006.1|	4.56e-59	204.0	68.571	0.41	1
+F5845C02	Coemansia	Kickxellales_core	DNA-PKcs	weak	F3A2FF18_024235-T1	gb|JANBSN010000322.1|	1.22e-42	173.0	24.633	0.136	1
+F5845C02	Coemansia	Kickxellales_core	Ku	none						0	0
+F5845C02	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSN010000089.1|	1.78e-54	206.0	35.308	0.436	1
+F5845C02	Coemansia	Kickxellales_core	Pol4	none						0	0
+F5845C02	Coemansia	Kickxellales_core	RecA_DMC1	strong	O42634	gb|JANBSN010000006.1|	7.2e-37	140.0	51.449	0.413	1
+F5845C02	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F5845C02	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSN010000261.1|	8.68e-31	122.0	30.98	0.689	1
+F5845C02	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F5845C02	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F5AC56AA	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBRF010001280.1|	0.0	632.0	48.834	0.303	1
+F5AC56AA	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F5AC56AA	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRF010000650.1|	3.56e-155	477.0	68.314	0.997	1
+F5AC56AA	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBRF010001280.1|	3.9e-37	152.0	32.353	0.153	1
+F5AC56AA	Coemansia	Kickxellales_core	Ku	none						0	0
+F5AC56AA	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRF010000348.1|	6.75e-59	219.0	35.407	0.434	1
+F5AC56AA	Coemansia	Kickxellales_core	Pol4	none						0	0
+F5AC56AA	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRF010000650.1|	1e-93	303.0	50.473	0.94	1
+F5AC56AA	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F5AC56AA	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRF010000774.1|	5.09e-25	105.0	26.198	0.805	1
+F5AC56AA	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F5AC56AA	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F5BD664F	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBPD010000036.1|	0.0	701.0	37.04	0.931	2
+F5BD664F	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBPD010000002.1|	8.32e-06	45.4	25.175	0.573	1
+F5BD664F	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBPD010000067.1|	3.8e-152	471.0	72.756	0.914	1
+F5BD664F	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBPD010000036.1|	8.69e-38	155.0	32.119	0.151	1
+F5BD664F	Coemansia	Kickxellales_core	Ku	none						0	0
+F5BD664F	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBPD010000105.1|	5.74e-60	223.0	35.952	0.433	1
+F5BD664F	Coemansia	Kickxellales_core	Pol4	none						0	0
+F5BD664F	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBPD010000067.1|	1.12e-93	303.0	50.641	0.925	1
+F5BD664F	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F5BD664F	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBPD010000036.1|	6.81e-28	114.0	29.885	0.709	1
+F5BD664F	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F5BD664F	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F5E0444E	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBQN010000070.1|	0.0	893.0	29.399	0.737	1
+F5E0444E	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F5E0444E	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQN010000085.1|	1.97e-149	464.0	71.474	0.914	1
+F5E0444E	Coemansia	Kickxellales_core	DNA-PKcs	weak	FEF8F4D3_003986-T1	gb|JANBQN010000061.1|	1.97e-38	159.0	25.84	0.161	2
+F5E0444E	Coemansia	Kickxellales_core	Ku	none						0	0
+F5E0444E	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQN010000012.1|	3.22e-59	221.0	36.19	0.433	1
+F5E0444E	Coemansia	Kickxellales_core	Pol4	none						0	0
+F5E0444E	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQN010000085.1|	4.25e-95	308.0	52.244	0.925	1
+F5E0444E	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F5E0444E	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQN010000285.1|	6.13e-27	111.0	27.41	0.785	1
+F5E0444E	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F5E0444E	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F61EE814	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTR010000565.1|	0.0	758.0	37.81	0.837	3
+F61EE814	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F61EE814	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTR010000784.1|	3.64e-57	199.0	80.165	0.354	1
+F61EE814	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTR010000172.1|	8.62e-35	146.0	32.765	0.142	1
+F61EE814	Coemansia	Kickxellales_core	Ku	none						0	0
+F61EE814	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTR010001471.1|	6.95e-64	235.0	38.313	0.428	1
+F61EE814	Coemansia	Kickxellales_core	Pol4	none						0	0
+F61EE814	Coemansia	Kickxellales_core	RecA_DMC1	strong	O42634	gb|JANBTR010000744.1|	2.49e-30	120.0	46.622	0.44	1
+F61EE814	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBTR010000294.1|	0.00017	42.7	29.464	0.303	1
+F61EE814	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTR010001457.1|	8.28e-24	102.0	27.148	0.723	1
+F61EE814	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F61EE814	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F6545673	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBOI010000003.1|	0.0	885.0	28.903	0.74	1
+F6545673	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F6545673	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOI010000491.1|	3.76e-153	474.0	71.34	0.941	1
+F6545673	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBOI010001421.1|	3.78e-38	155.0	26.522	0.218	1
+F6545673	Coemansia	Kickxellales_core	Ku	none						0	0
+F6545673	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOI010000030.1|	2.16e-55	209.0	34.043	0.433	1
+F6545673	Coemansia	Kickxellales_core	Pol4	none						0	0
+F6545673	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOI010000491.1|	1.79e-93	303.0	50.641	0.925	1
+F6545673	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F6545673	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOI010000003.1|	1.75e-29	119.0	27.682	0.72	1
+F6545673	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F6545673	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F6CB2D58	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBSD010000002.1|	0.0	853.0	29.63	0.741	1
+F6CB2D58	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F6CB2D58	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSD010000034.1|	9e-157	485.0	68.328	0.997	1
+F6CB2D58	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSD010000404.1|	3.06e-37	153.0	30.199	0.168	1
+F6CB2D58	Coemansia	Kickxellales_core	Ku	none						0	0
+F6CB2D58	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSD010000251.1|	1.05e-60	225.0	35.971	0.433	1
+F6CB2D58	Coemansia	Kickxellales_core	Pol4	none						0	0
+F6CB2D58	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSD010000034.1|	8.01e-97	313.0	49.552	0.994	1
+F6CB2D58	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F6CB2D58	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSD010000008.1|	7.52e-32	125.0	27.273	0.814	1
+F6CB2D58	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F6CB2D58	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F6D48826	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBPC010000155.1|	0.0	745.0	33.558	0.92	2
+F6D48826	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F6D48826	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBPC010000035.1|	2.94e-151	469.0	72.756	0.914	1
+F6D48826	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBPC010000155.1|	5.62e-38	156.0	28.833	0.218	1
+F6D48826	Coemansia	Kickxellales_core	Ku	none						0	0
+F6D48826	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBPC010000120.1|	1.06e-58	219.0	35.167	0.434	1
+F6D48826	Coemansia	Kickxellales_core	Pol4	none						0	0
+F6D48826	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBPC010000035.1|	3.23e-95	308.0	50.789	0.94	1
+F6D48826	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F6D48826	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBPC010000258.1|	1.51e-26	110.0	26.198	0.805	1
+F6D48826	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F6D48826	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F6E9E45A	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBSZ010000009.1|	0.0	833.0	30.39	0.994	1
+F6E9E45A	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F6E9E45A	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSZ010000404.1|	5.25e-154	477.0	68.314	0.997	1
+F6E9E45A	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSZ010000126.1|	2.36e-38	157.0	26.782	0.218	1
+F6E9E45A	Coemansia	Kickxellales_core	Ku	none						0	0
+F6E9E45A	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSZ010000054.1|	8.29e-59	219.0	35.407	0.434	1
+F6E9E45A	Coemansia	Kickxellales_core	Pol4	none						0	0
+F6E9E45A	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSZ010000404.1|	1.04e-93	303.0	50.473	0.94	1
+F6E9E45A	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F6E9E45A	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSZ010000030.1|	5.79e-25	105.0	26.198	0.805	1
+F6E9E45A	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F6E9E45A	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F735041E	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTA010000779.1|	2.02e-34	144.0	22.286	0.615	2
+F735041E	Coemansia	Kickxellales_core	Aprataxin	weak	FCDD8027_000090-T1	gb|JANBTA010000406.1|	7.4e-07	48.9	31.579	0.378	1
+F735041E	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTA010002063.1|	8.79e-84	270.0	74.713	0.51	1
+F735041E	Coemansia	Kickxellales_core	DNA-PKcs	weak	F3A2FF18_024235-T1	gb|JANBTA010000077.1|	5.22e-41	167.0	26.143	0.133	1
+F735041E	Coemansia	Kickxellales_core	Ku	none						0	0
+F735041E	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTA010000224.1|	6.74e-58	217.0	35.492	0.433	1
+F735041E	Coemansia	Kickxellales_core	Pol4	none						0	0
+F735041E	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTA010002063.1|	8.31e-50	176.0	50.0	0.521	1
+F735041E	Coemansia	Kickxellales_core	RecA_RAD55	weak	O14129	gb|JANBTA010001184.1|	3.26e-07	51.2	33.333	0.294	1
+F735041E	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTA010000106.1|	7.82e-28	114.0	26.978	0.703	1
+F735041E	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F735041E	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F771CC9E	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBUO010001936.1|	0.0	665.0	48.722	0.328	1
+F771CC9E	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F771CC9E	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUO010000670.1|	3.36e-151	469.0	71.795	0.914	1
+F771CC9E	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUO010000081.1|	6.55e-35	146.0	28.218	0.189	1
+F771CC9E	Coemansia	Kickxellales_core	Ku	none						0	0
+F771CC9E	Coemansia	Kickxellales_core	Lig4	weak	F9A17E9D_003104-T1	gb|JANBUO010000838.1|	1.43e-23	107.0	32.42	0.227	1
+F771CC9E	Coemansia	Kickxellales_core	Pol4	none						0	0
+F771CC9E	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUO010000670.1|	1.15e-94	306.0	50.641	0.925	1
+F771CC9E	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F771CC9E	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUO010001302.1|	4.13e-27	111.0	27.465	0.732	1
+F771CC9E	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F771CC9E	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F7943FC0	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBON010001968.1|	0.0	669.0	45.213	0.356	1
+F7943FC0	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F7943FC0	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBON010000442.1|	1.17e-153	475.0	73.397	0.914	1
+F7943FC0	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBON010000514.1|	1.07e-38	157.0	26.566	0.218	1
+F7943FC0	Coemansia	Kickxellales_core	Ku	none						0	0
+F7943FC0	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBON010001722.1|	7.78e-56	207.0	35.396	0.419	1
+F7943FC0	Coemansia	Kickxellales_core	Pol4	none						0	0
+F7943FC0	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBON010000442.1|	1.83e-93	303.0	50.473	0.94	1
+F7943FC0	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F7943FC0	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBON010000442.1|	4.69e-16	78.2	27.338	0.782	1
+F7943FC0	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F7943FC0	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F7B5F16C	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBOR010001991.1|	0.0	667.0	45.213	0.356	1
+F7B5F16C	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F7B5F16C	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOR010000447.1|	1.17e-153	475.0	73.397	0.914	1
+F7B5F16C	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBOR010000520.1|	1.08e-38	157.0	26.566	0.218	1
+F7B5F16C	Coemansia	Kickxellales_core	Ku	none						0	0
+F7B5F16C	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOR010001742.1|	7.83e-56	207.0	35.396	0.419	1
+F7B5F16C	Coemansia	Kickxellales_core	Pol4	none						0	0
+F7B5F16C	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOR010000447.1|	1.84e-93	303.0	50.473	0.94	1
+F7B5F16C	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F7B5F16C	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOR010000447.1|	4.72e-16	78.2	27.338	0.782	1
+F7B5F16C	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F7B5F16C	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F7BBDC12	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBRW010000712.1|	0.0	641.0	35.72	0.537	1
+F7BBDC12	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F7BBDC12	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRW010000010.1|	2.02e-156	484.0	68.328	0.997	1
+F7BBDC12	Coemansia	Kickxellales_core	DNA-PKcs	weak	FEF8F4D3_003986-T1	gb|JANBRW010001450.1|	1.88e-39	161.0	24.747	0.161	1
+F7BBDC12	Coemansia	Kickxellales_core	Ku	none						0	0
+F7BBDC12	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRW010000596.1|	7.73e-61	226.0	35.971	0.433	1
+F7BBDC12	Coemansia	Kickxellales_core	Pol4	none						0	0
+F7BBDC12	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRW010000010.1|	7.48e-97	313.0	49.552	0.994	1
+F7BBDC12	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F7BBDC12	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRW010000342.1|	1e-31	125.0	28.354	0.814	1
+F7BBDC12	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F7BBDC12	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F7DF6513	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBRG010001347.1|	0.0	632.0	48.834	0.303	1
+F7DF6513	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F7DF6513	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRG010001018.1|	2.7e-151	459.0	73.913	0.876	1
+F7DF6513	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBRG010001347.1|	3.74e-37	152.0	32.353	0.153	1
+F7DF6513	Coemansia	Kickxellales_core	Ku	none						0	0
+F7DF6513	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRG010000041.1|	8.02e-59	219.0	35.407	0.434	1
+F7DF6513	Coemansia	Kickxellales_core	Pol4	none						0	0
+F7DF6513	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRG010001018.1|	9.34e-89	288.0	50.667	0.889	1
+F7DF6513	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F7DF6513	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRG010000682.1|	4.98e-25	105.0	26.198	0.805	1
+F7DF6513	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F7DF6513	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F8348CBD	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBRI010000578.1|	1.52e-132	465.0	25.203	0.606	1
+F8348CBD	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F8348CBD	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRI010000182.1|	5.62e-154	477.0	68.314	0.997	1
+F8348CBD	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBRI010000095.1|	4.62e-38	156.0	32.68	0.153	1
+F8348CBD	Coemansia	Kickxellales_core	Ku	none						0	0
+F8348CBD	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRI010000750.1|	5.61e-59	219.0	35.407	0.434	1
+F8348CBD	Coemansia	Kickxellales_core	Pol4	none						0	0
+F8348CBD	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRI010000182.1|	1.11e-93	303.0	50.473	0.94	1
+F8348CBD	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F8348CBD	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRI010000674.1|	9.4e-24	101.0	27.675	0.726	1
+F8348CBD	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F8348CBD	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F8384A64	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBRM010000836.1|	0.0	784.0	32.403	0.552	1
+F8384A64	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F8384A64	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRM010000930.1|	8.78e-152	469.0	73.226	0.909	1
+F8384A64	Coemansia	Kickxellales_core	DNA-PKcs	weak	FEF8F4D3_003986-T1	gb|JANBRM010000059.1|	8.42e-35	147.0	24.168	0.161	1
+F8384A64	Coemansia	Kickxellales_core	Ku	none						0	0
+F8384A64	Coemansia	Kickxellales_core	Lig4	weak	F359FEE0_014802-T1	gb|JANBRM010002477.1|	4.23e-13	72.8	34.286	0.134	1
+F8384A64	Coemansia	Kickxellales_core	Pol4	none						0	0
+F8384A64	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRM010000266.1|	8.63e-94	304.0	51.923	0.925	1
+F8384A64	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F8384A64	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRM010000930.1|	2.82e-15	76.6	27.046	0.785	1
+F8384A64	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F8384A64	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F8589389	Coemansia	Kickxellales_core	ATR_Mec1	weak	F1C9E2AA_003657-T1	gb|JANBTB010001747.1|	7.05e-162	515.0	54.237	0.221	1
+F8589389	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F8589389	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTB010000351.1|	9.14e-16	77.4	27.039	0.608	1
+F8589389	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTB010000298.1|	2.01e-38	157.0	26.782	0.218	1
+F8589389	Coemansia	Kickxellales_core	Ku	none						0	0
+F8589389	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTB010001175.1|	6.99e-48	184.0	35.588	0.353	1
+F8589389	Coemansia	Kickxellales_core	Pol4	none						0	0
+F8589389	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTB010000351.1|	3.11e-19	87.4	28.159	0.704	1
+F8589389	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F8589389	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTB010000351.1|	2.46e-25	106.0	26.198	0.805	1
+F8589389	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F8589389	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F889F3AF	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTO010000469.1|	0.0	699.0	37.04	0.537	1
+F889F3AF	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBTO010000138.1|	6.33e-06	45.4	25.175	0.573	1
+F889F3AF	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTO010000209.1|	7.06e-19	86.3	25.301	0.69	1
+F889F3AF	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTO010000469.1|	4.63e-38	155.0	32.119	0.151	1
+F889F3AF	Coemansia	Kickxellales_core	Ku	none						0	0
+F889F3AF	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTO010000764.1|	1.39e-60	223.0	35.952	0.433	1
+F889F3AF	Coemansia	Kickxellales_core	Pol4	none						0	0
+F889F3AF	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTO010000209.1|	6.58e-20	89.4	28.958	0.665	1
+F889F3AF	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F889F3AF	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTO010000209.1|	5.3e-28	114.0	29.885	0.709	1
+F889F3AF	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F889F3AF	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F897AC32	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBUT010000278.1|	0.0	828.0	30.382	0.994	1
+F897AC32	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F897AC32	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUT010000059.1|	2.59e-153	475.0	73.397	0.914	1
+F897AC32	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUT010000278.1|	9.29e-37	152.0	32.353	0.153	1
+F897AC32	Coemansia	Kickxellales_core	Ku	none						0	0
+F897AC32	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUT010000122.1|	8.79e-59	219.0	35.407	0.434	1
+F897AC32	Coemansia	Kickxellales_core	Pol4	none						0	0
+F897AC32	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUT010000059.1|	2.14e-93	303.0	50.473	0.94	1
+F897AC32	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F897AC32	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUT010000059.1|	5.47e-16	78.2	27.338	0.782	1
+F897AC32	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F897AC32	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F8C73C93	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQV010000100.1|	0.0	744.0	33.581	0.92	2
+F8C73C93	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F8C73C93	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQV010000002.1|	2.98e-151	469.0	72.756	0.914	1
+F8C73C93	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBQV010000100.1|	6.3e-38	156.0	28.833	0.218	1
+F8C73C93	Coemansia	Kickxellales_core	Ku	none						0	0
+F8C73C93	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQV010000013.1|	1.12e-58	219.0	35.167	0.434	1
+F8C73C93	Coemansia	Kickxellales_core	Pol4	none						0	0
+F8C73C93	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQV010000002.1|	3.28e-95	308.0	50.789	0.94	1
+F8C73C93	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F8C73C93	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQV010000051.1|	1.71e-26	110.0	26.198	0.805	1
+F8C73C93	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F8C73C93	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F8EA1BC9	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBSE010000033.1|	0.0	652.0	35.51	0.831	3
+F8EA1BC9	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBSE010000525.1|	8.17e-09	54.7	29.078	0.565	1
+F8EA1BC9	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSE010000243.1|	1.99e-153	476.0	73.077	0.914	1
+F8EA1BC9	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSE010001540.1|	4.34e-37	152.0	29.904	0.154	1
+F8EA1BC9	Coemansia	Kickxellales_core	Ku	none						0	0
+F8EA1BC9	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSE010000355.1|	8.25e-52	198.0	34.965	0.434	1
+F8EA1BC9	Coemansia	Kickxellales_core	Pol4	none						0	0
+F8EA1BC9	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSE010000243.1|	7.07e-97	313.0	52.564	0.925	1
+F8EA1BC9	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F8EA1BC9	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSE010000243.1|	2.81e-17	82.4	27.957	0.785	1
+F8EA1BC9	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F8EA1BC9	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F9025F8A	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBSU010000064.1|	0.0	899.0	30.189	0.739	1
+F9025F8A	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBSU010000050.1|	7.36e-07	48.9	26.667	0.61	1
+F9025F8A	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSU010000097.1|	4.4e-150	466.0	71.474	0.914	1
+F9025F8A	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSU010000064.1|	2.59e-35	147.0	27.829	0.157	1
+F9025F8A	Coemansia	Kickxellales_core	Ku	none						0	0
+F9025F8A	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSU010000005.1|	1.76e-58	219.0	34.928	0.433	1
+F9025F8A	Coemansia	Kickxellales_core	Pol4	none						0	0
+F9025F8A	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSU010000097.1|	1.29e-95	309.0	51.923	0.925	1
+F9025F8A	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F9025F8A	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSU010000260.1|	2.09e-29	118.0	27.444	0.689	1
+F9025F8A	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F9025F8A	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F90C8E1A	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBOM010001968.1|	0.0	669.0	45.213	0.356	1
+F90C8E1A	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F90C8E1A	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOM010000445.1|	1.17e-153	475.0	73.397	0.914	1
+F90C8E1A	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBOM010000511.1|	1.08e-38	157.0	26.566	0.218	1
+F90C8E1A	Coemansia	Kickxellales_core	Ku	none						0	0
+F90C8E1A	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOM010001730.1|	7.81e-56	207.0	35.396	0.419	1
+F90C8E1A	Coemansia	Kickxellales_core	Pol4	none						0	0
+F90C8E1A	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOM010000445.1|	1.83e-93	303.0	50.473	0.94	1
+F90C8E1A	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F90C8E1A	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOM010000445.1|	4.71e-16	78.2	27.338	0.782	1
+F90C8E1A	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F90C8E1A	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F9197CED	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBTU010000090.1|	0.0	891.0	29.605	0.74	1
+F9197CED	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F9197CED	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTU010000010.1|	2.99e-151	469.0	72.756	0.914	1
+F9197CED	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTU010000090.1|	3.77e-38	157.0	28.833	0.218	1
+F9197CED	Coemansia	Kickxellales_core	Ku	none						0	0
+F9197CED	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTU010000013.1|	6.23e-59	220.0	35.407	0.434	1
+F9197CED	Coemansia	Kickxellales_core	Pol4	none						0	0
+F9197CED	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTU010000010.1|	3.01e-95	308.0	50.789	0.94	1
+F9197CED	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F9197CED	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTU010000060.1|	1.32e-26	110.0	26.198	0.805	1
+F9197CED	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F9197CED	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F9735524	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTJ010000108.1|	0.0	678.0	41.822	0.807	3
+F9735524	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBTJ010000402.1|	7e-08	52.4	25.694	0.577	1
+F9735524	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTJ010000307.1|	2.64e-153	476.0	73.077	0.914	1
+F9735524	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBTJ010000321.1|	3.51e-38	159.0	26.301	0.162	1
+F9735524	Coemansia	Kickxellales_core	Ku	none						0	0
+F9735524	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTJ010000267.1|	5.16e-63	233.0	38.647	0.428	1
+F9735524	Coemansia	Kickxellales_core	Pol4	none						0	0
+F9735524	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTJ010000307.1|	3.87e-96	311.0	52.564	0.925	1
+F9735524	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBTJ010000193.1|	1.56e-05	46.2	25.781	0.323	1
+F9735524	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTJ010001779.1|	1.39e-22	98.2	30.677	0.692	1
+F9735524	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F9735524	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F97F055E	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBSV010000685.1|	0.0	893.0	29.491	0.739	1
+F97F055E	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F97F055E	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSV010001974.1|	1.32e-161	484.0	69.552	0.982	1
+F97F055E	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSV010000685.1|	5.95e-35	146.0	25.058	0.215	1
+F97F055E	Coemansia	Kickxellales_core	Ku	none						0	0
+F97F055E	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSV010000861.1|	1.74e-63	234.0	38.072	0.428	1
+F97F055E	Coemansia	Kickxellales_core	Pol4	none						0	0
+F97F055E	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSV010001974.1|	1.32e-96	310.0	49.844	0.952	1
+F97F055E	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBSV010000290.1|	0.000171	42.7	29.464	0.303	1
+F97F055E	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSV010001429.1|	2.09e-24	103.0	27.491	0.723	1
+F97F055E	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F97F055E	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F993D0AD	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBOK010001032.1|	0.0	743.0	38.397	0.512	1
+F993D0AD	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+F993D0AD	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOK010000308.1|	4.18e-157	486.0	69.851	0.982	1
+F993D0AD	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBOK010000523.1|	4.75e-35	146.0	32.423	0.142	1
+F993D0AD	Coemansia	Kickxellales_core	Ku	none						0	0
+F993D0AD	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOK010000066.1|	9.66e-64	235.0	38.313	0.428	1
+F993D0AD	Coemansia	Kickxellales_core	Pol4	none						0	0
+F993D0AD	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOK010000308.1|	2.14e-95	309.0	49.844	0.952	1
+F993D0AD	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBOK010000123.1|	0.000267	42.0	29.464	0.303	1
+F993D0AD	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOK010000009.1|	7.4e-24	102.0	27.148	0.723	1
+F993D0AD	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F993D0AD	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+F9A4B572	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBUM010000020.1|	0.0	661.0	35.866	0.857	3
+F9A4B572	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBUM010000361.1|	6.13e-07	48.9	29.286	0.557	1
+F9A4B572	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUM010000270.1|	3.35e-153	474.0	72.756	0.914	1
+F9A4B572	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUM010000020.1|	2.58e-37	154.0	29.882	0.168	1
+F9A4B572	Coemansia	Kickxellales_core	Ku	none						0	0
+F9A4B572	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUM010000004.1|	6.49e-53	201.0	32.85	0.429	1
+F9A4B572	Coemansia	Kickxellales_core	Pol4	none						0	0
+F9A4B572	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUM010000270.1|	3.42e-97	313.0	52.885	0.925	1
+F9A4B572	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+F9A4B572	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUM010000270.1|	3.22e-17	82.0	27.599	0.785	1
+F9A4B572	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+F9A4B572	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FA0999E6	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBOT010000122.1|	0.0	748.0	38.424	0.856	2
+FA0999E6	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FA0999E6	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOT010000462.1|	1.26e-156	484.0	69.552	0.982	1
+FA0999E6	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBOT010000122.1|	6.69e-37	152.0	26.45	0.215	1
+FA0999E6	Coemansia	Kickxellales_core	Ku	none						0	0
+FA0999E6	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOT010001872.1|	7.46e-47	180.0	38.889	0.334	1
+FA0999E6	Coemansia	Kickxellales_core	Pol4	none						0	0
+FA0999E6	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOT010000462.1|	2.46e-94	305.0	49.221	0.952	1
+FA0999E6	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FA0999E6	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOT010000462.1|	1.61e-17	83.2	28.674	0.785	1
+FA0999E6	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FA0999E6	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FA34ED10	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBPE010000040.1|	0.0	701.0	37.04	0.931	2
+FA34ED10	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBPE010000061.1|	8.28e-06	45.4	25.175	0.573	1
+FA34ED10	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBPE010000010.1|	3.82e-152	471.0	72.756	0.914	1
+FA34ED10	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBPE010000040.1|	8.68e-38	155.0	32.119	0.151	1
+FA34ED10	Coemansia	Kickxellales_core	Ku	none						0	0
+FA34ED10	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBPE010000201.1|	4.87e-60	223.0	35.952	0.433	1
+FA34ED10	Coemansia	Kickxellales_core	Pol4	none						0	0
+FA34ED10	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBPE010000010.1|	1.13e-93	303.0	50.641	0.925	1
+FA34ED10	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FA34ED10	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBPE010000040.1|	1.67e-27	112.0	29.885	0.709	1
+FA34ED10	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FA34ED10	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FA376F2E	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBOH010000179.1|	0.0	716.0	37.244	0.931	2
+FA376F2E	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBOH010000008.1|	3.51e-07	50.1	30.357	0.447	1
+FA376F2E	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOH010000444.1|	1.68e-153	476.0	72.698	0.923	1
+FA376F2E	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBOH010000288.1|	1.65e-38	159.0	25.072	0.162	1
+FA376F2E	Coemansia	Kickxellales_core	Ku	none						0	0
+FA376F2E	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOH010000002.1|	3.17e-64	237.0	39.286	0.433	1
+FA376F2E	Coemansia	Kickxellales_core	Pol4	none						0	0
+FA376F2E	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOH010000444.1|	6.85e-96	310.0	51.923	0.925	1
+FA376F2E	Coemansia	Kickxellales_core	RecA_RAD55	weak	O14129	gb|JANBOH010000123.1|	4.09e-07	50.8	35.165	0.254	1
+FA376F2E	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOH010000123.1|	2.62e-20	91.7	28.679	0.712	1
+FA376F2E	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FA376F2E	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FA99CC43	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBUH010001211.1|	0.0	593.0	41.388	0.362	1
+FA99CC43	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBUH010000258.1|	0.000766	39.7	25.333	0.61	1
+FA99CC43	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUH010000573.1|	1.32e-149	464.0	71.474	0.914	1
+FA99CC43	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUH010000609.1|	4.16e-36	149.0	28.834	0.163	1
+FA99CC43	Coemansia	Kickxellales_core	Ku	none						0	0
+FA99CC43	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUH010000193.1|	3.78e-58	218.0	35.167	0.433	1
+FA99CC43	Coemansia	Kickxellales_core	Pol4	none						0	0
+FA99CC43	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUH010000573.1|	3.44e-95	308.0	52.244	0.925	1
+FA99CC43	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FA99CC43	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUH010000455.1|	3.58e-26	108.0	27.798	0.689	1
+FA99CC43	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FA99CC43	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FA9ADEB3	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBSC010000903.1|	0.0	642.0	35.818	0.537	1
+FA9ADEB3	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FA9ADEB3	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSC010000626.1|	2.62e-156	484.0	68.328	0.997	1
+FA9ADEB3	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSC010000903.1|	1.82e-36	151.0	29.801	0.151	1
+FA9ADEB3	Coemansia	Kickxellales_core	Ku	none						0	0
+FA9ADEB3	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSC010000635.1|	1.47e-60	225.0	35.971	0.433	1
+FA9ADEB3	Coemansia	Kickxellales_core	Pol4	none						0	0
+FA9ADEB3	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSC010000626.1|	1.19e-96	313.0	49.552	0.994	1
+FA9ADEB3	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FA9ADEB3	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSC010001613.1|	4.24e-30	120.0	27.744	0.814	1
+FA9ADEB3	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FA9ADEB3	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FB3261E7	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBSP010000029.1|	0.0	706.0	36.74	0.931	2
+FB3261E7	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBSP010000015.1|	6.37e-07	48.5	26.573	0.573	1
+FB3261E7	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSP010000226.1|	3.38e-152	471.0	72.756	0.914	1
+FB3261E7	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSP010000029.1|	1.69e-38	157.0	32.119	0.151	1
+FB3261E7	Coemansia	Kickxellales_core	Ku	none						0	0
+FB3261E7	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSP010000094.1|	2.19e-61	228.0	37.17	0.428	1
+FB3261E7	Coemansia	Kickxellales_core	Pol4	none						0	0
+FB3261E7	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSP010000226.1|	9.98e-94	303.0	50.641	0.925	1
+FB3261E7	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FB3261E7	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSP010000230.1|	2.59e-32	127.0	29.097	0.805	1
+FB3261E7	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FB3261E7	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FB97D937	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQS010000143.1|	0.0	739.0	37.263	0.93	2
+FB97D937	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBQS010001874.1|	0.000372	41.2	26.0	0.606	1
+FB97D937	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQS010000603.1|	8.51e-151	469.0	73.226	0.909	1
+FB97D937	Coemansia	Kickxellales_core	DNA-PKcs	weak	P78527	gb|JANBQS010000699.1|	1.3e-38	160.0	25.079	0.147	1
+FB97D937	Coemansia	Kickxellales_core	Ku	none						0	0
+FB97D937	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQS010000747.1|	6.97e-58	218.0	35.952	0.433	1
+FB97D937	Coemansia	Kickxellales_core	Pol4	none						0	0
+FB97D937	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQS010000603.1|	1.3e-93	304.0	51.923	0.925	1
+FB97D937	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FB97D937	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQS010001571.1|	1.86e-27	113.0	28.727	0.689	1
+FB97D937	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FB97D937	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FB9A10E8	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBPA010000104.1|	0.0	857.0	29.719	0.741	1
+FB9A10E8	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBPA010000040.1|	6.78e-06	45.4	25.568	0.707	1
+FB9A10E8	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBPA010000137.1|	4.59e-157	486.0	68.328	0.997	1
+FB9A10E8	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBPA010000104.1|	1.34e-36	151.0	29.801	0.151	1
+FB9A10E8	Coemansia	Kickxellales_core	Ku	none						0	0
+FB9A10E8	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBPA010000003.1|	1.05e-60	226.0	35.971	0.433	1
+FB9A10E8	Coemansia	Kickxellales_core	Pol4	none	FCDD8027_009225-T1	gb|JANBPA010000105.1|	0.000596	43.5	29.457	0.067	1
+FB9A10E8	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBPA010000137.1|	6.95e-97	313.0	49.552	0.994	1
+FB9A10E8	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FB9A10E8	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBPA010000137.1|	2.89e-16	79.0	27.957	0.785	1
+FB9A10E8	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FB9A10E8	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FBC9CC9D	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBOL010000025.1|	0.0	841.0	29.57	0.739	1
+FBC9CC9D	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBOL010000253.1|	8.07e-06	45.4	25.175	0.573	1
+FBC9CC9D	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOL010000128.1|	3.75e-152	471.0	72.756	0.914	1
+FBC9CC9D	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBOL010000025.1|	8.66e-38	155.0	32.119	0.151	1
+FBC9CC9D	Coemansia	Kickxellales_core	Ku	none						0	0
+FBC9CC9D	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOL010000236.1|	6.46e-60	223.0	35.952	0.433	1
+FBC9CC9D	Coemansia	Kickxellales_core	Pol4	none						0	0
+FBC9CC9D	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOL010000128.1|	1.11e-93	303.0	50.641	0.925	1
+FBC9CC9D	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FBC9CC9D	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOL010000025.1|	7.25e-28	114.0	29.885	0.709	1
+FBC9CC9D	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FBC9CC9D	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FBF4A129	Coemansia	Kickxellales_core	ATR_Mec1	weak	F1C9E2AA_003657-T1	gb|JANBVA010000806.1|	0.0	627.0	50.984	0.276	1
+FBF4A129	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FBF4A129	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBVA010000362.1|	1.75e-149	464.0	71.474	0.914	1
+FBF4A129	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBVA010000806.1|	5.03e-37	152.0	29.836	0.149	1
+FBF4A129	Coemansia	Kickxellales_core	Ku	none						0	0
+FBF4A129	Coemansia	Kickxellales_core	Lig4	weak	F359FEE0_014802-T1	gb|JANBVA010000002.1|	3e-13	73.6	36.22	0.123	1
+FBF4A129	Coemansia	Kickxellales_core	Pol4	none						0	0
+FBF4A129	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBVA010000362.1|	2.08e-95	308.0	51.402	0.952	1
+FBF4A129	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FBF4A129	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBVA010000438.1|	6.81e-26	108.0	27.798	0.689	1
+FBF4A129	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FBF4A129	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FBF7F5A3	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBOJ010000340.1|	0.0	639.0	35.423	0.858	3
+FBF7F5A3	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBOJ010000064.1|	3.2e-07	50.1	28.261	0.553	1
+FBF7F5A3	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOJ010000431.1|	4.42e-153	474.0	72.756	0.914	1
+FBF7F5A3	Coemansia	Kickxellales_core	DNA-PKcs	weak	FEF8F4D3_003986-T1	gb|JANBOJ010000206.1|	1.42e-37	156.0	24.425	0.162	2
+FBF7F5A3	Coemansia	Kickxellales_core	Ku	none						0	0
+FBF7F5A3	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOJ010000253.1|	1.24e-48	188.0	32.048	0.43	1
+FBF7F5A3	Coemansia	Kickxellales_core	Pol4	none						0	0
+FBF7F5A3	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOJ010000431.1|	1.12e-96	312.0	52.244	0.925	1
+FBF7F5A3	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FBF7F5A3	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOJ010000431.1|	4.25e-17	82.0	27.599	0.785	1
+FBF7F5A3	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FBF7F5A3	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FC37F49D	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBSS010000103.1|	0.0	884.0	29.283	0.74	1
+FC37F49D	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FC37F49D	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSS010000011.1|	2.66e-151	469.0	72.756	0.914	1
+FC37F49D	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSS010000103.1|	2.53e-38	157.0	27.46	0.218	1
+FC37F49D	Coemansia	Kickxellales_core	Ku	none						0	0
+FC37F49D	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSS010000015.1|	3.97e-59	221.0	35.167	0.434	1
+FC37F49D	Coemansia	Kickxellales_core	Pol4	none						0	0
+FC37F49D	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSS010000011.1|	2.93e-95	308.0	50.789	0.94	1
+FC37F49D	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FC37F49D	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSS010000011.1|	9.71e-16	77.8	26.619	0.782	1
+FC37F49D	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FC37F49D	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FC546B88	Coemansia	Kickxellales_core	ATR_Mec1	weak	F1C9E2AA_003657-T1	gb|JANBSM010001526.1|	4.31e-143	471.0	55.854	0.191	1
+FC546B88	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FC546B88	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSM010001058.1|	3.83e-157	475.0	73.397	0.914	1
+FC546B88	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSM010000805.1|	1.08e-38	157.0	26.566	0.218	1
+FC546B88	Coemansia	Kickxellales_core	Ku	none						0	0
+FC546B88	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSM010000335.1|	6.52e-59	219.0	35.407	0.434	1
+FC546B88	Coemansia	Kickxellales_core	Pol4	none						0	0
+FC546B88	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSM010001058.1|	1.02e-93	303.0	50.473	0.94	1
+FC546B88	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FC546B88	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSM010000793.1|	1.18e-25	107.0	26.518	0.805	1
+FC546B88	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FC546B88	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FCE53DE3	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBSQ010000361.1|	0.0	734.0	38.628	0.515	1
+FCE53DE3	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FCE53DE3	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSQ010000048.1|	4.11e-151	469.0	69.846	0.953	1
+FCE53DE3	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSQ010000016.1|	1.25e-34	145.0	27.245	0.169	2
+FCE53DE3	Coemansia	Kickxellales_core	Ku	none						0	0
+FCE53DE3	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSQ010000061.1|	1.59e-60	225.0	36.407	0.435	1
+FCE53DE3	Coemansia	Kickxellales_core	Pol4	none						0	0
+FCE53DE3	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSQ010000048.1|	2.76e-94	305.0	50.779	0.952	1
+FCE53DE3	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBSQ010000180.1|	0.000105	42.7	32.911	0.209	1
+FCE53DE3	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSQ010000180.1|	4.3e-28	114.0	27.3	0.785	1
+FCE53DE3	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FCE53DE3	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FD12E2B4	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBQF010000037.1|	0.0	866.0	29.907	0.739	1
+FD12E2B4	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBQF010000026.1|	0.001	38.9	26.277	0.557	1
+FD12E2B4	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQF010000076.1|	4.52e-151	469.0	69.846	0.953	1
+FD12E2B4	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBQF010000242.1|	9.34e-35	145.0	31.438	0.144	1
+FD12E2B4	Coemansia	Kickxellales_core	Ku	none						0	0
+FD12E2B4	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQF010000032.1|	2.89e-60	224.0	36.407	0.435	1
+FD12E2B4	Coemansia	Kickxellales_core	Pol4	none						0	0
+FD12E2B4	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQF010000076.1|	3.04e-94	305.0	50.779	0.952	1
+FD12E2B4	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FD12E2B4	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQF010000076.1|	2.6e-17	82.4	27.046	0.785	1
+FD12E2B4	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FD12E2B4	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FD3FEA21	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBSW010000041.1|	0.0	719.0	38.054	0.934	2
+FD3FEA21	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FD3FEA21	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSW010000040.1|	1.3e-152	473.0	73.397	0.914	1
+FD3FEA21	Coemansia	Kickxellales_core	DNA-PKcs	weak	F574EFC1_006650-T1	gb|JANBSW010000114.1|	3.47e-41	168.0	25.073	0.162	1
+FD3FEA21	Coemansia	Kickxellales_core	Ku	none						0	0
+FD3FEA21	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSW010000014.1|	9.95e-59	219.0	35.407	0.434	1
+FD3FEA21	Coemansia	Kickxellales_core	Pol4	none						0	0
+FD3FEA21	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSW010000040.1|	1.58e-94	306.0	51.282	0.925	1
+FD3FEA21	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FD3FEA21	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSW010000135.1|	5.05e-25	105.0	26.471	0.805	1
+FD3FEA21	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FD3FEA21	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FD671B08	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBUY010000257.1|	0.0	742.0	37.417	0.93	2
+FD671B08	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBUY010000056.1|	0.000578	40.0	25.676	0.602	1
+FD671B08	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUY010000389.1|	1.69e-149	464.0	71.474	0.914	1
+FD671B08	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUY010000257.1|	5.71e-37	152.0	29.836	0.149	1
+FD671B08	Coemansia	Kickxellales_core	Ku	none						0	0
+FD671B08	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUY010000116.1|	4.04e-58	218.0	35.167	0.433	1
+FD671B08	Coemansia	Kickxellales_core	Pol4	none						0	0
+FD671B08	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUY010000389.1|	1.28e-95	309.0	51.242	0.955	1
+FD671B08	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FD671B08	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUY010000389.1|	9.06e-16	77.8	26.523	0.785	1
+FD671B08	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FD671B08	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FD7FFCA4	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBSX010000155.1|	0.0	753.0	37.81	0.864	3
+FD7FFCA4	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FD7FFCA4	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSX010000483.1|	2.37e-156	484.0	69.552	0.982	1
+FD7FFCA4	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSX010000155.1|	7.08e-35	146.0	25.058	0.215	1
+FD7FFCA4	Coemansia	Kickxellales_core	Ku	none						0	0
+FD7FFCA4	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSX010000559.1|	1.39e-63	235.0	38.313	0.428	1
+FD7FFCA4	Coemansia	Kickxellales_core	Pol4	none						0	0
+FD7FFCA4	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSX010000483.1|	8.04e-96	310.0	49.844	0.952	1
+FD7FFCA4	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBSX010000435.1|	0.000206	42.7	29.464	0.303	1
+FD7FFCA4	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSX010001414.1|	9.94e-24	102.0	27.148	0.723	1
+FD7FFCA4	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FD7FFCA4	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FD97B502	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBSR010000006.1|	0.0	866.0	29.907	0.739	1
+FD97B502	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBSR010000026.1|	0.001	38.9	26.277	0.557	1
+FD97B502	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSR010000074.1|	4.5e-151	469.0	69.846	0.953	1
+FD97B502	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBSR010000209.1|	9.3e-35	145.0	31.438	0.144	1
+FD97B502	Coemansia	Kickxellales_core	Ku	none						0	0
+FD97B502	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBSR010000045.1|	2.85e-60	224.0	36.407	0.435	1
+FD97B502	Coemansia	Kickxellales_core	Pol4	none						0	0
+FD97B502	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBSR010000074.1|	3.02e-94	305.0	50.779	0.952	1
+FD97B502	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FD97B502	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBSR010000074.1|	2.59e-17	82.4	27.046	0.785	1
+FD97B502	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FD97B502	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FDF042C1	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBUD010000034.1|	0.0	667.0	34.842	0.864	3
+FDF042C1	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBUD010000025.1|	5.62e-07	49.3	28.467	0.549	1
+FDF042C1	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUD010000165.1|	3.13e-151	469.0	71.154	0.914	1
+FDF042C1	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUD010000074.1|	2.01e-38	158.0	32.087	0.154	1
+FDF042C1	Coemansia	Kickxellales_core	Ku	none						0	0
+FDF042C1	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUD010000103.1|	4.67e-58	218.0	36.715	0.428	1
+FDF042C1	Coemansia	Kickxellales_core	Pol4	none						0	0
+FDF042C1	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUD010000165.1|	3.97e-95	308.0	50.645	0.925	1
+FDF042C1	Coemansia	Kickxellales_core	RecA_RAD55	weak	O14129	gb|JANBUD010000058.1|	8.6e-08	53.1	28.676	0.377	1
+FDF042C1	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUD010000058.1|	8.99e-24	102.0	28.87	0.675	1
+FDF042C1	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FDF042C1	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FDFF0B8B	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTV010000050.1|	0.0	701.0	37.04	0.931	2
+FDFF0B8B	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBTV010000009.1|	1.26e-05	44.7	24.476	0.573	1
+FDFF0B8B	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTV010000029.1|	3.81e-152	471.0	72.756	0.914	1
+FDFF0B8B	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTV010000050.1|	8.66e-38	155.0	32.119	0.151	1
+FDFF0B8B	Coemansia	Kickxellales_core	Ku	none						0	0
+FDFF0B8B	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTV010000080.1|	5.73e-60	223.0	35.952	0.433	1
+FDFF0B8B	Coemansia	Kickxellales_core	Pol4	none						0	0
+FDFF0B8B	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTV010000029.1|	1.13e-93	303.0	50.641	0.925	1
+FDFF0B8B	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FDFF0B8B	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTV010000050.1|	7.81e-28	114.0	29.885	0.709	1
+FDFF0B8B	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FDFF0B8B	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FE019C62	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTH010000979.1|	0.0	758.0	37.81	0.837	3
+FE019C62	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FE019C62	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTH010000614.1|	3.01e-156	484.0	69.552	0.982	1
+FE019C62	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTH010000625.1|	6.71e-35	146.0	25.058	0.215	1
+FE019C62	Coemansia	Kickxellales_core	Ku	none						0	0
+FE019C62	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTH010000309.1|	2.78e-63	234.0	38.072	0.428	1
+FE019C62	Coemansia	Kickxellales_core	Pol4	none						0	0
+FE019C62	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTH010000580.1|	8.29e-96	310.0	49.844	0.952	1
+FE019C62	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBTH010000372.1|	0.000214	42.7	29.464	0.303	1
+FE019C62	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTH010001519.1|	1.03e-23	102.0	27.148	0.723	1
+FE019C62	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FE019C62	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FE3CD348	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBUW010000007.1|	0.0	846.0	29.735	0.74	1
+FE3CD348	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FE3CD348	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUW010000019.1|	3.3e-152	471.0	72.756	0.914	1
+FE3CD348	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUW010000007.1|	7.6e-38	155.0	31.457	0.151	1
+FE3CD348	Coemansia	Kickxellales_core	Ku	none						0	0
+FE3CD348	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUW010000003.1|	1.41e-61	228.0	37.046	0.428	1
+FE3CD348	Coemansia	Kickxellales_core	Pol4	none						0	0
+FE3CD348	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUW010000019.1|	9.75e-94	303.0	50.641	0.925	1
+FE3CD348	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FE3CD348	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUW010000007.1|	6.67e-32	125.0	32.296	0.692	1
+FE3CD348	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FE3CD348	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FE3D2DE5	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBOO010000085.1|	0.0	841.0	29.57	0.739	1
+FE3D2DE5	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBOO010000042.1|	8.28e-06	45.4	25.175	0.573	1
+FE3D2DE5	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOO010000010.1|	3.81e-152	471.0	72.756	0.914	1
+FE3D2DE5	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBOO010000085.1|	8.49e-38	155.0	32.119	0.151	1
+FE3D2DE5	Coemansia	Kickxellales_core	Ku	none						0	0
+FE3D2DE5	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOO010000102.1|	8.04e-60	223.0	35.952	0.433	1
+FE3D2DE5	Coemansia	Kickxellales_core	Pol4	none						0	0
+FE3D2DE5	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOO010000010.1|	1.13e-93	303.0	50.641	0.925	1
+FE3D2DE5	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FE3D2DE5	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOO010000089.1|	3.5e-28	114.0	29.885	0.709	1
+FE3D2DE5	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FE3D2DE5	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FE4EB007	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBTG010000167.1|	0.0	832.0	30.39	0.994	1
+FE4EB007	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FE4EB007	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTG010000065.1|	2.55e-153	475.0	73.397	0.914	1
+FE4EB007	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBTG010000167.1|	9.59e-37	152.0	32.353	0.153	1
+FE4EB007	Coemansia	Kickxellales_core	Ku	none						0	0
+FE4EB007	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBTG010000184.1|	8.27e-59	219.0	35.407	0.434	1
+FE4EB007	Coemansia	Kickxellales_core	Pol4	none						0	0
+FE4EB007	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBTG010000065.1|	2.11e-93	303.0	50.473	0.94	1
+FE4EB007	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FE4EB007	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBTG010000370.1|	5.51e-25	105.0	26.198	0.805	1
+FE4EB007	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FE4EB007	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FE60C51C	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBOP010000002.1|	0.0	836.0	30.437	0.994	1
+FE60C51C	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FE60C51C	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOP010001107.1|	4.27e-159	475.0	73.397	0.914	1
+FE60C51C	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBOP010000392.1|	1.9e-38	157.0	26.782	0.218	1
+FE60C51C	Coemansia	Kickxellales_core	Ku	none						0	0
+FE60C51C	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBOP010000944.1|	3.85e-59	219.0	35.407	0.434	1
+FE60C51C	Coemansia	Kickxellales_core	Pol4	none						0	0
+FE60C51C	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBOP010001107.1|	2.27e-94	303.0	50.473	0.94	1
+FE60C51C	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FE60C51C	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBOP010000003.1|	5.7e-25	105.0	26.198	0.805	1
+FE60C51C	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FE60C51C	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FE668E47	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBRR010001310.1|	0.0	634.0	48.834	0.303	1
+FE668E47	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FE668E47	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRR010000273.1|	5.21e-154	477.0	68.314	0.997	1
+FE668E47	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBRR010001310.1|	9.27e-38	154.0	30.719	0.153	1
+FE668E47	Coemansia	Kickxellales_core	Ku	none						0	0
+FE668E47	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRR010001201.1|	7.06e-48	184.0	35.588	0.353	1
+FE668E47	Coemansia	Kickxellales_core	Pol4	none						0	0
+FE668E47	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRR010000273.1|	1.03e-93	303.0	50.473	0.94	1
+FE668E47	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FE668E47	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRR010001511.1|	4.16e-25	105.0	26.198	0.805	1
+FE668E47	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FE668E47	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FE83C30F	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBUB010000198.1|	0.0	827.0	30.429	0.994	1
+FE83C30F	Coemansia	Kickxellales_core	Aprataxin	none						0	0
+FE83C30F	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUB010000303.1|	2.49e-153	475.0	73.397	0.914	1
+FE83C30F	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUB010000614.1|	1.93e-38	157.0	26.782	0.218	1
+FE83C30F	Coemansia	Kickxellales_core	Ku	none						0	0
+FE83C30F	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUB010000785.1|	5.6e-59	219.0	35.407	0.434	1
+FE83C30F	Coemansia	Kickxellales_core	Pol4	none						0	0
+FE83C30F	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUB010000303.1|	2.06e-93	303.0	50.473	0.94	1
+FE83C30F	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FE83C30F	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUB010000190.1|	5.68e-25	105.0	26.198	0.805	1
+FE83C30F	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FE83C30F	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FE980263	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBRK010000172.1|	0.0	679.0	41.712	0.806	3
+FE980263	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBRK010000496.1|	7.48e-08	52.4	25.694	0.577	1
+FE980263	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRK010000884.1|	7.47e-154	477.0	73.718	0.914	1
+FE980263	Coemansia	Kickxellales_core	DNA-PKcs	strong	F8E635D0_004853-T1	gb|JANBRK010000078.1|	3.74e-35	147.0	24.295	0.327	2
+FE980263	Coemansia	Kickxellales_core	Ku	none						0	0
+FE980263	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBRK010001730.1|	1.1e-65	237.0	39.286	0.433	1
+FE980263	Coemansia	Kickxellales_core	Pol4	none						0	0
+FE980263	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBRK010000884.1|	4.41e-96	311.0	52.244	0.925	1
+FE980263	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBRK010000003.1|	5.38e-05	44.7	25.0	0.323	1
+FE980263	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBRK010000168.1|	3.5e-22	97.8	26.984	0.791	1
+FE980263	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FE980263	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FEDE47E1	Coemansia	Kickxellales_core	ATR_Mec1	strong	FCDD8027_008095-T1	gb|JANBQP010000126.1|	0.0	917.0	30.649	0.739	1
+FEDE47E1	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBQP010000085.1|	0.000849	39.7	26.0	0.606	1
+FEDE47E1	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQP010000656.1|	6.62e-151	469.0	73.226	0.909	1
+FEDE47E1	Coemansia	Kickxellales_core	DNA-PKcs	weak	P78527	gb|JANBQP010000023.1|	8.02e-39	160.0	25.079	0.147	1
+FEDE47E1	Coemansia	Kickxellales_core	Ku	none						0	0
+FEDE47E1	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQP010001942.1|	1.19e-58	219.0	35.167	0.433	1
+FEDE47E1	Coemansia	Kickxellales_core	Pol4	none						0	0
+FEDE47E1	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQP010000656.1|	1.01e-93	304.0	51.923	0.925	1
+FEDE47E1	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FEDE47E1	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQP010001370.1|	1.51e-27	113.0	28.727	0.689	1
+FEDE47E1	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FEDE47E1	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FEE0DDE5	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQQ010000337.1|	0.0	720.0	38.699	0.93	2
+FEE0DDE5	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBQQ010000386.1|	2.18e-07	50.4	25.269	0.72	1
+FEE0DDE5	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQQ010000302.1|	1.56e-151	470.0	72.492	0.906	1
+FEE0DDE5	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBQQ010000087.1|	5.46e-35	146.0	28.856	0.189	1
+FEE0DDE5	Coemansia	Kickxellales_core	Ku	none						0	0
+FEE0DDE5	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQQ010000353.1|	3.36e-56	211.0	35.351	0.428	1
+FEE0DDE5	Coemansia	Kickxellales_core	Pol4	none						0	0
+FEE0DDE5	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQQ010000302.1|	6.8e-95	307.0	50.467	0.952	1
+FEE0DDE5	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FEE0DDE5	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQQ010000046.1|	3.92e-26	108.0	25.338	0.732	1
+FEE0DDE5	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FEE0DDE5	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FF5D60B2	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBUA010000206.1|	0.0	682.0	41.932	0.876	3
+FF5D60B2	Coemansia	Kickxellales_core	Aprataxin	weak	FB5167BD_001770-T1	gb|JANBUA010000118.1|	1.5e-07	50.8	25.0	0.577	1
+FF5D60B2	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUA010000202.1|	5.68e-154	477.0	73.718	0.914	1
+FF5D60B2	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUA010000078.1|	2.68e-35	147.0	24.295	0.218	1
+FF5D60B2	Coemansia	Kickxellales_core	Ku	none						0	0
+FF5D60B2	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUA010000034.1|	1.19e-63	235.0	38.663	0.433	1
+FF5D60B2	Coemansia	Kickxellales_core	Pol4	none						0	0
+FF5D60B2	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUA010000202.1|	3.29e-96	311.0	52.244	0.925	1
+FF5D60B2	Coemansia	Kickxellales_core	RecA_RAD55	none	O14129	gb|JANBUA010000005.1|	3.86e-05	44.7	26.364	0.289	1
+FF5D60B2	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUA010000191.1|	1.39e-22	98.6	31.076	0.692	1
+FF5D60B2	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FF5D60B2	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FFBB50EB	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBQM010000002.1|	0.0	686.0	42.002	0.865	3
+FFBB50EB	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBQM010000561.1|	0.00027	41.2	26.0	0.606	1
+FFBB50EB	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQM010000870.1|	6.69e-151	469.0	73.226	0.909	1
+FFBB50EB	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBQM010000002.1|	1.56e-35	149.0	29.195	0.149	1
+FFBB50EB	Coemansia	Kickxellales_core	Ku	none						0	0
+FFBB50EB	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBQM010000895.1|	1.92e-57	216.0	36.058	0.428	1
+FFBB50EB	Coemansia	Kickxellales_core	Pol4	none						0	0
+FFBB50EB	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBQM010000870.1|	1.02e-93	304.0	51.923	0.925	1
+FFBB50EB	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FFBB50EB	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBQM010000766.1|	3.54e-27	112.0	28.727	0.689	1
+FFBB50EB	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FFBB50EB	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
+FFF4186D	Coemansia	Kickxellales_core	ATR_Mec1	strong	F1C9E2AA_003657-T1	gb|JANBUZ010000322.1|	0.0	742.0	37.417	0.93	2
+FFF4186D	Coemansia	Kickxellales_core	Aprataxin	none	FB5167BD_001770-T1	gb|JANBUZ010000041.1|	0.000579	40.0	25.676	0.602	1
+FFF4186D	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUZ010000407.1|	1.69e-149	464.0	71.474	0.914	1
+FFF4186D	Coemansia	Kickxellales_core	DNA-PKcs	weak	F8E635D0_004853-T1	gb|JANBUZ010000322.1|	5.59e-37	152.0	29.836	0.149	1
+FFF4186D	Coemansia	Kickxellales_core	Ku	none						0	0
+FFF4186D	Coemansia	Kickxellales_core	Lig4	strong	F9A17E9D_003104-T1	gb|JANBUZ010000117.1|	4.05e-58	218.0	35.167	0.433	1
+FFF4186D	Coemansia	Kickxellales_core	Pol4	none						0	0
+FFF4186D	Coemansia	Kickxellales_core	RecA_DMC1	strong	P25453	gb|JANBUZ010000407.1|	1.28e-95	309.0	51.242	0.955	1
+FFF4186D	Coemansia	Kickxellales_core	RecA_RAD55	none						0	0
+FFF4186D	Coemansia	Kickxellales_core	RecA_RAD57	strong	Q9UUL2	gb|JANBUZ010000407.1|	9.07e-16	77.8	26.523	0.785	1
+FFF4186D	Coemansia	Kickxellales_core	Sae2_CtIP	none						0	0
+FFF4186D	Coemansia	Kickxellales_core	XLF_Nej1	none						0	0
