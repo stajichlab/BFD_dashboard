@@ -9,6 +9,7 @@ compensate?
 |---|---|---|
 | Q1: are Ku-interacting proteins also lost, and where on the tree? | [`sql_coloss/`](sql_coloss/README.md) | 46 gene rules, presence matrix, Dollo parsimony on the first-pass backbone tree, control-based false-absence estimate, tblastn worklist |
 | Q2: alternative end joining, recombination and telomere changes? | [`sql_compensation/`](sql_compensation/README.md) | gene calls and copy numbers, telomere tables, replication test across Ku-negative lineages |
+| Follow-up: do other meiosis genes go with Dmc1? | [`meiosis_toolkit/`](meiosis_toolkit/README.md) | annotation rules, tblastn, MutS/MutL/kleisin/HORMA trees; Pch2 lost with Ku, Spo11/Hop2/Mnd1/Msh4 retained, Msh5 partial, Mlh3 not seen in Kickxellomycota |
 
 Each directory has numbered SQL files in run order, a README with the gene list and identification rules, and a verification record.
 The tree is the first-pass FastTree backbone in `workflows/phylo/README.md` (63 genus representatives, tips are LOCUSTAGs).

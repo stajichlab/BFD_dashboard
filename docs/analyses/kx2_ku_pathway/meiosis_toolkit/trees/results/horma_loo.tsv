@@ -1,0 +1,14 @@
+reference	clade	call	assigned_clade	correct
+REF_1	Hop1	ambiguous		False
+REF_2	Hop1	ambiguous		False
+REF_3	Mad2	assigned	Mad2	True
+REF_4	Mad2	assigned	Mad2	True
+REF_5	Mad2	assigned	Mad2	True
+REF_6	Mad2	assigned	Mad2	True
+REF_7	Mad2	assigned	Mad2	True
+REF_8	Mad2	assigned	Mad2	True
+REF_9	Rev7	assigned	Rev7	True
+REF_10	Rev7	assigned	Rev7	True
+REF_11	Rev7	assigned	Rev7	True
+REF_12	Rev7	assigned	Rev7	True
+REF_13	Rev7	assigned	Rev7	True

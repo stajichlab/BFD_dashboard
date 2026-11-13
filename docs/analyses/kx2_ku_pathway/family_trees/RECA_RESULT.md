@@ -60,6 +60,6 @@ described as reproducing sexually by zygospores, citation to verify; any link is
 
 ## Next
 
-Test whether other meiosis-specific genes (Spo11, Hop2/Mnd1, Mei5/Sae3, Msh4/Msh5, Mer3 and the synaptonemal complex genes that fungi
-lack) go with Dmc1 in core Kickxellales, run the classification for all 107 *Coemansia* strains, and check *Ramicandelaber* and
-*Spiromyces* with higher-quality assemblies.
+Done 2026-11-12: other meiosis genes were tested in [`../meiosis_toolkit/`](../meiosis_toolkit/README.md) (Pch2 lost earlier with Ku;
+Spo11, Hop2, Mnd1, Msh4 retained; Msh5 partial). Still open: run the RecA classification for all 107 *Coemansia* strains, and check
+*Ramicandelaber* and *Spiromyces* with higher-quality assemblies.

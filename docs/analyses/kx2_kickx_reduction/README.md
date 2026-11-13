@@ -10,6 +10,7 @@ this directory holds the SQL that produced them. A narrative report with figures
 | [`sql_h2/`](sql_h2/README.md) | Genome-size accounting: gene number vs intron vs intergenic compaction (UTR and overlap not measurable) | not supported |
 | [`sql_h3/`](sql_h3/README.md) | Selection vs drift proxies (ENC vs GC3, tRNA-codon match, amino acids, ortholog identity) | weak lean |
 | [`sql_h4/`](sql_h4/README.md) | Loss composition (complete loss vs contraction), scaling residuals, expansions | mixed |
+| [`intron_crosscheck/`](intron_crosscheck/README.md) | Follow-up: are the low intron counts a gene-model artifact? miniprot alignments of 1,122 BUSCO proteins on 83 genomes | deficit confirmed (pre-registered rule met) |
 
 Each directory has numbered SQL files in run order and a README with the dependency graph and a verification record. The verification
 re-ran later steps from the existing scratch tables and matched the reported numbers; the earlier steps are saved but were **not**
