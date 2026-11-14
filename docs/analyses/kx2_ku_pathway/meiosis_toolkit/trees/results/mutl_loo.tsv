@@ -1,0 +1,16 @@
+reference	clade	call	assigned_clade	correct
+REF_1	Mlh1	ambiguous		False
+REF_2	Mlh1	ambiguous		False
+REF_3	Mlh1	assigned	Mlh1	True
+REF_4	Mlh1	assigned	Mlh1	True
+REF_5	Mlh1	ambiguous		False
+REF_6	Pms1	assigned	Pms1	True
+REF_7	Pms1	assigned	Pms1	True
+REF_8	Pms1	assigned	Pms1	True
+REF_9	Pms1	assigned	Pms1	True
+REF_10	Pms1	assigned	Pms1	True
+REF_11	Mlh3	assigned	Mlh3	True
+REF_12	Mlh3	assigned	Mlh3	True
+REF_13	Mlh3	assigned	Mlh3	True
+REF_14	Mlh2	low_support	Mlh2	False
+REF_15	Mlh2	low_support	Mlh2	False

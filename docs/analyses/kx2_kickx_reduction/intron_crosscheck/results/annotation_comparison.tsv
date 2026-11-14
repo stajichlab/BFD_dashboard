@@ -1,0 +1,19 @@
+setting	metric	genomes	n	spearman_rho_vs_annotation_introns_per_tx
+A	per_kb	83 genomes	83	0.864636245329751
+A	per_kb	63 backbone	63	0.7220142089093703
+A	mean_introns	83 genomes	83	0.8564276943892839
+A	mean_introns	63 backbone	63	0.7061731950844855
+A	frac_ge1	83 genomes	83	0.8490121481911609
+A	frac_ge1	63 backbone	63	0.70933442163341
+B	per_kb	83 genomes	83	0.8971018067260007
+B	per_kb	63 backbone	63	0.7860023041474654
+B	mean_introns	83 genomes	83	0.8835620393087107
+B	mean_introns	63 backbone	63	0.7622590790185035
+B	frac_ge1	83 genomes	83	0.8481919368168912
+B	frac_ge1	63 backbone	63	0.7213748245386079
+C	per_kb	83 genomes	82	0.8658699840010449
+C	per_kb	63 backbone	62	0.7781471128906349
+C	mean_introns	83 genomes	82	0.8778855258432102
+C	mean_introns	63 backbone	62	0.757800105764146
+C	frac_ge1	83 genomes	82	0.8278846156432088
+C	frac_ge1	63 backbone	62	0.6950061903295711

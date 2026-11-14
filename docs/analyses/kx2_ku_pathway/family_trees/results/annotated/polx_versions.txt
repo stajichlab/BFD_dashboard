@@ -1,0 +1,3 @@
+mafft: v7.505 (2022/Apr/10)
+trimal: trimAl v1.5.rev1 build[2025-11-25]
+iqtree: IQ-TREE version 3.0.1 for Linux x86 64-bit built May 14 2025

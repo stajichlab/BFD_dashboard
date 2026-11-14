@@ -1,0 +1,4 @@
+muts: tree 401 leaves (0 members dropped by trimming); leave-one-out 24/27 references re-assigned; per clade Msh2 3/5, Msh3 6/6, Msh6 5/5, Msh4 4/4, Msh5 4/4, Msh1 2/3; long-branch threshold 0.857
+mutl: tree 190 leaves (0 members dropped by trimming); leave-one-out 10/15 references re-assigned; per clade Mlh1 2/5, Pms1 5/5, Mlh3 3/3, Mlh2 0/2; long-branch threshold 1.450
+kleisin: tree 146 leaves (0 members dropped by trimming); leave-one-out 2/8 references re-assigned; per clade Rad21 0/4, Rec8 2/4; long-branch threshold 1.391
+horma: tree 144 leaves (0 members dropped by trimming); leave-one-out 11/13 references re-assigned; per clade Hop1 0/2, Mad2 6/6, Rev7 5/5; long-branch threshold 1.567

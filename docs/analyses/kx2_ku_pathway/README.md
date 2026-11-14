@@ -9,6 +9,8 @@ compensate?
 |---|---|---|
 | Q1: are Ku-interacting proteins also lost, and where on the tree? | [`sql_coloss/`](sql_coloss/README.md) | 46 gene rules, presence matrix, Dollo parsimony on the first-pass backbone tree, control-based false-absence estimate, tblastn worklist |
 | Q2: alternative end joining, recombination and telomere changes? | [`sql_compensation/`](sql_compensation/README.md) | gene calls and copy numbers, telomere tables, replication test across Ku-negative lineages |
+| Follow-up: is the species tree robust? (dereplicated, LG+F+G and ASTRAL, rooting tests; PMSF runs still pending) | [`species_tree/`](species_tree/README.md) | Ku-negative genera form one clade (Kickxellales + Harpellales) on all four topologies; *Coemansia* non-monophyletic (weak); *Linderina* and *Basidiobolus* unstable |
+| Follow-up: do other meiosis genes go with Dmc1? | [`meiosis_toolkit/`](meiosis_toolkit/README.md) | annotation rules, tblastn, MutS/MutL/kleisin/HORMA trees; Pch2 lost with Ku, Spo11/Hop2/Mnd1/Msh4 retained, Msh5 partial, Mlh3 not seen in Kickxellomycota |
 
 Each directory has numbered SQL files in run order, a README with the gene list and identification rules, and a verification record.
 The tree is the first-pass FastTree backbone in `workflows/phylo/README.md` (63 genus representatives, tips are LOCUSTAGs).
@@ -22,19 +24,37 @@ The tree is the first-pass FastTree backbone in `workflows/phylo/README.md` (63 
    *Conidiobolus* (annotation misses), and not found in any of the 20 genomes of the 11 stem genera, with all four Ku positive
    controls recovered. *Piptocephalis* and *Neoconidiobolus* are also none and *Capillidium* weak, so further independent Ku losses
    or strong divergence are not excluded.
-2. **Much of the rest of classical end joining looks gone before Ku, by annotation, but tblastn only partly confirms it.** By Pfam, on the stem of
-   Entomophthorales + Kickxellomycota (18 genera) Lig4, XLF/Nej1, Pol4 and aprataxin are lost, and DNA-PKcs earlier still (27
-   genera), separately from the Dikarya-stem loss because Mucoromycota keep it. tblastn: **Pol4** is supported (strong in
-   *Rhizopus* and Zoopagales, none in all 24 Kickxellomycota and 4 Entomophthorales genomes; two queries only). **Lig4 is
-   unresolved**: strong hits appear in *Ramicandelaber*, Dimargaritales, Harpellales (2 of 4) and elsewhere, though none strong in
-   the 14 core Kickxellales, and a Lig4 query can match the LIG1-type ligase, so the Pfam result "Lig4 lost before Ku" is not
-   confirmed. XLF/Nej1, aprataxin and DNA-PKcs are uninformative by tblastn (controls fail, or only PIKK-like weak hits). ATR is
-   present in every genome. Nothing else is co-lost with Ku itself.
+2. **Much of the rest of classical end joining looks gone before Ku; tblastn and a gene-family tree confirm Lig4 and Pol4.** By Pfam,
+   on the stem of Entomophthorales + Kickxellomycota (18 genera) Lig4, XLF/Nej1, Pol4 and aprataxin are lost, and DNA-PKcs earlier
+   still (27 genera), separately from the Dikarya-stem loss because Mucoromycota keep it.
+   - **Pol4:** tblastn is supported (strong in *Rhizopus* and Zoopagales; none in all 107 *Coemansia* strains and the other
+     Kickxellomycota genomes, controls passing; few queries). The Pol X tree cannot separate Pol4 from Pol lambda/mu, and no
+     Kickxellomycota genome has an annotated Pol X protein.
+   - **Lig4:** the "strong" tblastn hits only reflected the LIG1-like ligase core. A ligase tree ([`family_trees/`](family_trees/README.md);
+     203 sequences, LG+R8, all 11 Lig4 references re-assigned correctly in leave-one-out) places **no annotated protein of any
+     Kickxellomycota genome in the Lig4 clade** (Dimargaritales 0/3, Harpellales 0/4, core Kickxellales 0/14, *Mycoemilia* and
+     *Spiromyces* 0/2, *Ramicandelaber* 0/1), and no Kickxellomycota ligase has the Lig4 domain or a BRCT. Annotated ligases in
+     *Dispira*, *Mycoemilia*, *Zancudomyces* and *Capniomyces* place with LIG1. Lig4 is present in Mucoromycota (20 of 21), the root
+     taxa (14 of 15), Zoopagales (4 of 8) and *Basidiobolus*. So Lig4 was lost on the Kickxellomycota stem, before Ku was lost on the
+     stem of Kickxellales + Harpellales. The C-terminal (BRCT-region) tblastn alignments seen in non-core genomes are probably other
+     BRCT-containing proteins (not checked). **Limits:** *Ramicandelaber* has no annotated ligase placed although tblastn is strong
+     there (unresolved); Entomophthorales are not covered by the classification; LIG1 does not resolve as one supported clade, so
+     LIG1/LIG3 calls are weak; the rescue layer (miniprot models) could not be placed (too few alignment columns), so it has not
+     excluded a Lig4 that annotation missed.
+   - XLF/Nej1, aprataxin and DNA-PKcs are uninformative by tblastn (controls fail, or only PIKK-like weak hits). ATR is present in
+     every genome. Nothing else is co-lost with Ku itself.
 3. **The other arms are retained:** MRN (Mre11, Rad50), Dna2, TERT, Est1, Ten1, PNKP, TDP1, and Rad51, Rad52, Mus81 and FEN1.
    Sae2 is lost in Kickxellales but kept in Harpellales; Rif1 is retained in core Kickxellales but absent from Harpellales.
 4. **No compensation was found.** POLQ, LIG3 and PARP1-like are absent in the Ku-retaining Dimargaritales and *Ramicandelaber* as well,
    so they were not available to compensate; only one LIG1-type ligase remains. HR genes are not expanded; the Rad51 family and
-   paralogs are slightly smaller. A possible Kickxellales-specific loss of Dmc1 (and Rad55/Rad57) is a later event than Ku loss.
+   paralogs are slightly smaller. **RecA-family tree** ([`family_trees/RECA_RESULT.md`](family_trees/RECA_RESULT.md); 327 sites, leave-one-out
+   19 of 31, Dmc1 5/5): the meiotic recombinase **Dmc1 is absent from the five core Kickxellales genera** (all 10 *Coemansia*
+   strains in the tree, *Kickxella*, *Linderina*, *Dipsacomyces*, *Martensiomyces*; also *Spiromyces* and *Ramicandelaber* with weaker
+   evidence) but present in *Mycoemilia*, Harpellales (4/4), Dimargaritales (3/3), Entomophthorales (4/4) and most Mucoromycota (18/21),
+   so it is a later event than Ku loss, on the stem of core Kickxellales (the clade with the strongest intron and size reduction).
+   A tblastn locus count supports one Rad51-like locus in 100 of 111 core Kickxellales genomes (the six with two are duplicated Rad51
+   loci), with limited sensitivity. The earlier hypothesis of a Rad55/Rad57 loss in Kickxellales is **not supported**: they are
+   absent from Mucoromycota too (0 of 21), and Rad55 is unrecoverable by the tree. Rad51 itself is present but not callable by the tree.
 5. **Telomeres: nothing Ku-specific.** Harpellales show canonical CCCTAA repeats; *Coemansia* shows no detected tract, but so do most
    Mortierellomycota and Glomeromycota, and the detector only scans canonical repeats.
 6. **Replication across fungi:** 6 independent Ku-negative lineages (5 usable); Lig4 is lower in 3 of 5 and never higher; no
@@ -73,9 +93,10 @@ gene-targeting efficiency and fewer random integrations in Harpellales and *Coem
 
 ## Next
 
-1. tblastn is done for 31 genomes (above). Still open: a reciprocal-best-hit check for Lig4 (is each hit Lig4 or LIG1?), more
-   query proteins per gene (Pol4 and Lig4 rest on one or two), the remaining *Coemansia* strains, Sae2 and the Dmc1/Rad55/Rad57
-   calls, and a long-read terminal-repeat scan for *Coemansia* telomeres.
+1. tblastn is done for 128 genomes (all 107 *Coemansia* strains) and the Lig4 identity question is answered by the ligase tree
+   (above). Still open: the RecA-family classification of Dmc1, Rad55 and Rad57 (the first RecA tree had only 41 alignment columns
+   and was not used; a re-trim is queued, job 32026340), a re-built rescue layer, Sae2 (uninformative by tblastn), a *Ramicandelaber*
+   ligase check, and a long-read terminal-repeat scan for *Coemansia* telomeres.
 2. Re-do the parsimony as a likelihood or Dollo reconstruction on the final tree (IQ-TREE, ASTRAL, rooted, strains dereplicated).
 3. Link to the reduction analyses: the tree puts Ku loss on the stem of Kickxellales + Harpellales, before the intron and size
    reduction of core Kickxellales, but this is a placement on a first-pass tree, not a causal test.

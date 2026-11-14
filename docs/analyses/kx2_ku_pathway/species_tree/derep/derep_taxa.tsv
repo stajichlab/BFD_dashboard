@@ -1,0 +1,77 @@
+role	LOCUSTAG	ASMID	PHYLUM	cls	ord	FAMILY	GENUS	SPECIES	STRAIN	complete_pct	duplicated_pct	single_pct	n_proteins	N50_bp	n50_ge_50kb	high_dup
+ingroup	F0DE0BF4	GCA_025766305.1_Coespi1	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia spiralis	RSA 1278	91.8	0.9	90.9	7377	991117	true	false
+ingroup	F0DB79EE	GCA_027578955.1_UCR_CoemRSA1250_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 1250	RSA 1250	91.4	2.0	89.4	6285	153715	true	false
+ingroup	F3D51D57	GCA_027579075.1_UCR_CoemBCRC34962_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. BCRC 34962	BCRC 34962	91.3	0.4	90.9	6580	98446	true	false
+ingroup	F80EB351	GCA_027577295.1_UCR_CoemRSA986_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 986	RSA 986	91.3	0.7	90.6	6966	174829	true	false
+ingroup	F35EFF3E	GCA_002705745.1_Coere1	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia reversa	NRRL 1564	90.7	0.8	89.9	6854	347177	true	false
+ingroup	F4DA7CFA	GCA_027578915.1_UCR_CoemRSA1200_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 1200	RSA 1200	90.7	0.5	90.2	6799	116424	true	false
+ingroup	F52B818A	GCA_027578995.1_UCR_CoemIMI209128_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. IMI 209128	IMI 209128	90.7	0.4	90.3	6846	59696	true	false
+ingroup	FDF042C1	GCA_027579155.1_UCR_CoemBennyD115_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. Benny D115	Benny D115	90.7	0.4	90.3	6285	85888	true	false
+ingroup	F5E0444E	GCA_027577175.1_UCR_CoemS146_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. S146	S146	90.6	0.4	90.2	7458	87899	true	false
+ingroup	FF5D60B2	GCA_027579175.1_UCR_CoemIMI203386_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. IMI 203386	IMI 203386	90.4	0.4	89.9	6612	85231	true	false
+ingroup	FA376F2E	GCA_027478445.1_UCR_CasiaNBRC105413_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia asiatica	NBRC 105413	90.1	0.2	89.9	6893	42541	false	false
+ingroup	F8C73C93	GCA_027577495.1_UCR_CoemRSA720_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 720	RSA 720	89.4	1.7	87.7	6847	131427	true	false
+ingroup	FD3FEA21	GCA_027578415.1_UCR_CoemRSA1972_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 1972	RSA 1972	89.4	1.5	87.9	6923	93551	true	false
+ingroup	F9197CED	GCA_027578755.1_UCR_CoemRSA1199_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 1199	RSA 1199	88.7	1.6	87.1	6819	109488	true	false
+ingroup	FE980263	GCA_027577815.1_UCR_CoemRSA485_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 485	RSA 485	88.5	23.8	64.7	9682	19268	false	true
+ingroup	FD7FFCA4	GCA_027578395.1_UCR_CoemRSA1939_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 1939	RSA 1939	87.5	27.1	60.4	9606	18575	false	true
+ingroup	F0D6C540	GCA_027577135.1_UCR_CoemS3946_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. S3946	S3946	87.3	18.4	68.9	10154	16178	false	true
+ingroup	FBF7F5A3	GCA_027574685.1_UCR_CereNBRC32514_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia erecta	NBRC 32514	87.1	0.4	86.6	6931	45773	false	false
+ingroup	F993D0AD	GCA_027595805.1_UCR_CoemD160_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. Benny D160-2	Benny D160-2	86.5	0.3	86.2	6639	18039	false	false
+ingroup	FB97D937	GCA_027577415.1_UCR_CoemRSA922_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 922	RSA 922	86.3	30.7	55.5	11450	17452	false	true
+ingroup	FB3261E7	GCA_027578295.1_UCR_CoemRSA2336_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2336	RSA 2336	86.3	1.8	84.5	5813	58557	true	false
+ingroup	FFF4186D	GCA_027579385.1_UCR_CoacNRRL2694_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia aciculifera	NRRL 2694	86.2	0.9	85.3	6775	45786	false	false
+ingroup	F24A7D8D	GCA_027578895.1_UCR_CoemCBS109367_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia spiralis	CBS 109367	86.1	0.4	85.7	6719	53278	true	false
+ingroup	FEE0DDE5	GCA_027577275.1_UCR_CoemRSA988_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 988	RSA 988	85.7	0.3	85.5	6045	48864	false	false
+ingroup	F1DEA344	GCA_027579235.1_UCR_CoemBCRC34301_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. BCRC 34301	BCRC 34301	84.9	0.3	84.7	6490	34756	false	false
+ingroup	F05FC232	GCA_027575325.1_UCR_CoemRSA2675_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2675	RSA 2675	84.4	0.3	84.1	6675	17353	false	false
+ingroup	F00A57ED	GCA_027579115.1_UCR_CojaNBRC105414_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia javaensis	NBRC 105414	82.8	0.3	82.5	5952	40877	false	false
+ingroup	FE4EB007	GCA_027578635.1_UCR_CoemRSA1807_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 1807	RSA 1807	82.5	1.4	81.1	5812	36028	false	false
+ingroup	F4CFDB08	GCA_027577535.1_UCR_CoemRSA552_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 552	RSA 552	82.5	0.9	81.6	5751	47232	false	false
+ingroup	FBF4A129	GCA_027579785.1_UCR_CoacCBS516.66_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia aciculifera	CBS 516.66	82.4	0.4	82.1	7074	27354	false	false
+ingroup	F897AC32	GCA_027579565.1_UCR_CoerCBS939.97_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia erecta	CBS 939.97	80.4	1.2	79.1	5761	34970	false	false
+ingroup	FB9A10E8	GCA_027575275.1_UCR_CoemRSA2711_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2711	RSA 2711	79.9	0.5	79.4	5388	38218	false	false
+ingroup	FC37F49D	GCA_027578375.1_UCR_CoemRSA2131_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2131	RSA 2131	78.0	0.7	77.3	6349	43425	false	false
+ingroup	F735041E	GCA_027578535.1_UCR_CoemRSA1933_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 1933	RSA 1933	77.4	0.4	77.0	6799	7884	false	false
+ingroup	FD12E2B4	GCA_027577035.1_UCR_CothIMI214461_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia thaxteri	IMI 214461	76.6	0.1	76.5	5948	22685	false	false
+ingroup	F1709B5F	GCA_027577115.1_UCR_CoemS680_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. S680	S680	76.6	0.2	76.4	6674	23526	false	false
+ingroup	F242D38C	GCA_027578695.1_UCR_CoemRSA1365_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 1365	RSA 1365	76.4	0.4	75.9	5179	30678	false	false
+ingroup	F6545673	GCA_027595825.1_UCR_CbifNCRC34381_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia biformis	BCRC 34381	75.9	0.3	75.7	6047	8421	false	false
+ingroup	FA99CC43	GCA_027579255.1_UCR_CopeBCRC34297_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia pectinata	BCRC 34297	75.9	0.3	75.7	6929	22064	false	false
+ingroup	F9A4B572	GCA_027579055.1_UCR_CoinBCRC34489_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia interrupta	BCRC 34489	75.5	0.3	75.2	5231	29428	false	false
+ingroup	FFBB50EB	GCA_027577215.1_UCR_CoemS155-1_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. S155-1	S155-1	75.2	9.0	66.2	9525	9634	false	false
+ingroup	FEDE47E1	GCA_027577255.1_UCR_CoemS100_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. S100	S100	72.5	7.8	64.8	9377	9159	false	false
+ingroup	FA0999E6	GCA_027575385.1_UCR_CoemRSA2399_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2399	RSA 2399	72.4	0.3	72.1	6312	7724	false	false
+ingroup	FA9ADEB3	GCA_027578055.1_UCR_CoemRSA2611_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2611	RSA 2611	70.7	13.7	57.0	10527	5257	false	true
+ingroup	F090F877	GCA_027575375.1_UCR_CoemRSA2523_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2523	RSA 2523	70.6	0.5	70.1	6118	8407	false	false
+ingroup	FE83C30F	GCA_027579035.1_UCR_CoemD1744_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. D1744	D1744	70.1	0.6	69.5	6560	7946	false	false
+ingroup	F6E9E45A	GCA_027578515.1_UCR_CoemRSA1935_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 1935	RSA 1935	68.4	0.5	67.8	6172	8659	false	false
+ingroup	F771CC9E	GCA_027579505.1_UCR_CoguNRRL1565_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia guatemalensis	NRRL 1565	67.6	2.6	65.1	6818	8768	false	false
+ingroup	F97F055E	GCA_027578335.1_UCR_CoemRSA2049_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2049	RSA 2049	67.6	10.3	57.2	8854	7778	false	true
+ingroup	F40251F8	GCA_027575405.1_UCR_CoemRSA2167_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2167	RSA 2167	67.1	0.7	66.4	6050	7862	false	false
+ingroup	F5845C02	GCA_027578275.1_UCR_CoemRSA2424_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2424	RSA 2424	66.9	9.4	57.6	9039	7654	false	false
+ingroup	F50540CB	GCA_027579345.1_UCR_CoerIMI279145_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia erecta	IMI 279145	66.8	2.3	64.4	6346	7508	false	false
+ingroup	F8EA1BC9	GCA_027578475.1_UCR_CoemRSA2607_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2607	RSA 2607	66.8	4.5	62.2	7014	8632	false	false
+ingroup	F90C8E1A	GCA_027575545.1_UCR_CoemRSA1591_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 1591	RSA 1591	65.8	0.6	65.2	5858	6334	false	false
+ingroup	FE3CD348	GCA_027579605.1_UCR_CobrNRRL1566_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia brasiliensis	NRRL 1566	65.8	0.5	65.2	5516	31969	false	false
+ingroup	F3E9A416	GCA_027578255.1_UCR_CoemRSA2337_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2337	RSA 2337	63.6	5.2	58.5	8681	7394	false	false
+ingroup	F8589389	GCA_027579465.1_UCR_CoemRSA1878_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 1878	RSA 1878	63.2	0.8	62.4	6015	7935	false	false
+ingroup	F340C8D3	GCA_027578015.1_UCR_CoemRSA2618_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2618	RSA 2618	62.9	2.0	61.0	6102	6623	false	false
+ingroup	F8384A64	GCA_027578215.1_UCR_CoemRSA455_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 455	RSA 455	62.2	1.9	60.3	8238	6970	false	false
+ingroup	F258DE34	GCA_027577835.1_UCR_CoemRSA2705_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2705	RSA 2705	61.4	1.4	60.0	6086	7885	false	false
+ingroup	FC546B88	GCA_027578235.1_UCR_CoemRSA2440_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2440	RSA 2440	61.1	0.7	60.4	6013	7228	false	false
+ingroup	F24CD14F	GCA_027578075.1_UCR_CoemRSA2559_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Coemansia	Coemansia sp. RSA 2559	RSA 2559	60.2	2.2	58.0	6889	6161	false	false
+outgroup	F3D937C5	GCA_001661515.1_ASM166151v1	Kickxellomycota	Harpellomycetes	Harpellales	Legeriomycetaceae	Capniomyces	Capniomyces stellatus	MIS-10-108	80.0	1.8	78.3	6822	595855	true	false
+outgroup	F1C537C3	GCA_027576995.1_UCR_DicrRSA1219_1.0	Kickxellomycota	Dimargaritomycetes	Dimargaritales	Dimargaritaceae	Dimargaris	Dimargaris cristalligena	RSA 1219	87.2	0.0	87.2	7249	40481	false	false
+outgroup	F4C3EFF5	GCA_027576915.1_UCR_DiacNRRL2925_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Dipsacomyces	Dipsacomyces acuminosporus	NRRL 2925	74.3	0.1	74.2	6078	15058	false	false
+outgroup	F1C9E2AA	GCA_027577015.1_UCR_DipaRSA1196_1.0	Kickxellomycota	Dimargaritomycetes	Dimargaritales	Dimargaritaceae	Dispira	Dispira parvispora	RSA 1196	68.3	0.1	68.2	6419	7941	false	false
+outgroup	F45BD9C7	GCA_003086725.1_ASM308672v1	Kickxellomycota	Harpellomycetes	Harpellales	Harpellaceae	Furculomyces	Furculomyces boomerangus	AUS-77-4	80.9	18.3	62.7	9866	45117	false	true
+outgroup	F9F51274	GCF_025024165.1_Kicala1	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Kickxella	Kickxella alabastrina	RSA 675	89.6	11.4	78.2	8462	607295	true	true
+outgroup	F43C8248	GCF_002104995.1_Linpe1	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Linderina	Linderina pennispora	ATCC 12442	91.1	24.1	67.0	10959	908848	true	true
+outgroup	FE0E32D4	GCA_025201845.1_Marpt1	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Martensiomyces	Martensiomyces pterosporus	CBS 209.56	93.7	0.4	93.2	7363	120991	true	false
+outgroup	F18CA942	GCA_027575805.1_UCR_MyscNBRC100468_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Mycoemilia	Mycoemilia scoparia	NBRC 100468	85.6	0.6	84.9	7339	67558	true	false
+outgroup	F7FE4923	GCA_025201865.1_Rambr1	Kickxellomycota		Ramicandelaberales	Ramicandelaberaceae	Ramicandelaber	Ramicandelaber brevisporus	CBS 109374	76.9	3.7	73.2	8671	41475	false	false
+outgroup	FCCDAB75	GCA_045269135.1_ASM4526913v1	Kickxellomycota	Harpellomycetes	Harpellales	Legeriomycetaceae	Smittium	Smittium minutisporum	WKRb	79.5	1.0	78.5	7085	1874082	true	false
+outgroup	F5C985FA	GCA_027478575.1_UCR_SaspiralisRSA2271_1.0	Kickxellomycota	Kickxellomycetes	Kickxellales	Kickxellaceae	Spiromyces	Spiromyces aspiralis	RSA 2271	44.1	0.1	44.0	4762	4204	false	false
+outgroup	F4FD0401	GCA_027575765.1_UCR_TipaRSA861_1.0	Kickxellomycota	Dimargaritomycetes	Dimargaritales	Dimargaritaceae	Tieghemiomyces	Tieghemiomyces parasiticus	RSA 861	87.3	55.0	32.4	12858	39667	false	true
+outgroup	F23D95F9	GCA_052426225.1_ASM5242622v1	Kickxellomycota	Harpellomycetes	Harpellales	Legeriomycetaceae	Zancudomyces	Zancudomyces culisetae	HAW-14-8	75.0	5.4	69.6	7684	2524970	true	false

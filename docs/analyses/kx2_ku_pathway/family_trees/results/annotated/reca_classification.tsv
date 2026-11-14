@@ -1,0 +1,332 @@
+label	kind	locustag	genus	group	id	length	call	clade	n_refs	ufboot	sh	nearest_ref	nearest_dist	terminal_bl	long_branch	mixed_labels	info
+ANN_1	annotated	F08FC5A1	Circinella	Mucoromycota_s.l.	F08FC5A1_002470-T1	367	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.616	0.147	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_2	annotated	F08FC5A1	Circinella	Mucoromycota_s.l.	F08FC5A1_002873-T1	362	ambiguous		4	None	None	Q9UUL2|Rad57	2.125	0.362	False	Rad57,XRCC3	Rad51:PF08423
+ANN_3	annotated	F08FC5A1	Circinella	Mucoromycota_s.l.	F08FC5A1_007037-T1	349	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.759	0.090	False	Dmc1	Rad51:PF08423
+ANN_4	annotated	F08FC5A1	Circinella	Mucoromycota_s.l.	F08FC5A1_008449-T1	452	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.094	0.426	False	Rad51C,Rad55	Rad51:PF08423
+ANN_5	annotated	F08FC5A1	Circinella	Mucoromycota_s.l.	F08FC5A1_010009-T1	335	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.534	0.085	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_6	annotated	F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	F0AFF821_007733-T1	341	assigned	Dmc1	4	100.0	95.9	Q39009|Dmc1	0.732	0.244	False	Dmc1	Rad51:PF08423
+ANN_7	annotated	F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	F0AFF821_008438-T1	324	low_support	XRCC3	2	17.0	34.7	O43542|XRCC3	2.349	0.996	False	Rad57,XRCC3	Rad51:PF08423
+ANN_8	annotated	F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	F0AFF821_008902-T1	252	low_support	Rad55	1	79.0	46.6	O14129|Rad55	2.431	1.297	True	Rad51C,Rad55	Rad51:PF08423
+ANN_9	annotated	F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	F0AFF821_010090-T1	341	ambiguous		25	None	None	Q06609|Rad51	0.754	0.383	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_10	annotated	F0DB79EE	Coemansia	Kickxellales_core	F0DB79EE_002507-T1	342	ambiguous		27	None	None	Q06609|Rad51	0.458	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_11	annotated	F0DB79EE	Coemansia	Kickxellales_core	F0DB79EE_004176-T1	409	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.660	0.000	False	Rad51C,Rad55	Rad51:PF08423
+ANN_12	annotated	F0DB79EE	Coemansia	Kickxellales_core	F0DB79EE_004390-T1	365	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.323	0.011	False	Rad57,XRCC3	Rad51:PF08423
+ANN_13	annotated	F0DE0BF4	Coemansia	Kickxellales_core	F0DE0BF4_000471-T1	385	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	3.547	0.000	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_14	annotated	F0DE0BF4	Coemansia	Kickxellales_core	F0DE0BF4_005217-T1	414	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.364	0.000	False	Rad57,XRCC3	Rad51:PF08423
+ANN_15	annotated	F0DE0BF4	Coemansia	Kickxellales_core	F0DE0BF4_006104-T1	289	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.591	0.005	False	Rad51C,Rad55	Rad51:PF08423
+ANN_16	annotated	F0DE0BF4	Coemansia	Kickxellales_core	F0DE0BF4_006244-T1	344	ambiguous		27	None	None	Q06609|Rad51	0.426	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_17	annotated	F104222C	Rhizomucor	Mucoromycota_s.l.	F104222C_004009-T1	358	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.747	0.061	False	Dmc1	Rad51:PF08423
+ANN_18	annotated	F104222C	Rhizomucor	Mucoromycota_s.l.	F104222C_005938-T1	369	ambiguous		4	None	None	Q9UUL2|Rad57	2.218	0.385	False	Rad57,XRCC3	Rad51:PF08423
+ANN_19	annotated	F104222C	Rhizomucor	Mucoromycota_s.l.	F104222C_007390-T1	301	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	3.236	1.014	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_20	annotated	F104222C	Rhizomucor	Mucoromycota_s.l.	F104222C_007558-T1	412	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.233	0.626	False	Rad51C,Rad55	Rad51:PF08423
+ANN_21	annotated	F104222C	Rhizomucor	Mucoromycota_s.l.	F104222C_009206-T1	382	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.504	0.085	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_22	annotated	F104222C	Rhizomucor	Mucoromycota_s.l.	F104222C_009230-T1	331	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.458	0.005	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_23	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_000100-T1	340	ambiguous		25	None	None	Q06609|Rad51	0.528	0.061	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_24	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_002053-T1	208	ambiguous		25	None	None	Q06609|Rad51	0.875	0.290	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_25	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_003636-T1	577	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.380	0.589	False	Rad57,XRCC3	Rad51:PF08423
+ANN_26	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_004550-T1	335	ambiguous		25	None	None	Q06609|Rad51	0.594	0.008	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_27	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_006012-T1	340	ambiguous		25	None	None	Q06609|Rad51	0.588	0.023	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_28	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_007475-T1	341	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.246	0.674	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_29	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_008052-T1	327	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.956	0.811	False	Rad51C	Rad51:PF08423
+ANN_30	annotated	F186E471	Stylopage	Zoopagales	F186E471_005078-T1	679	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.646	0.124	False	Dmc1	Rad51:PF08423
+ANN_31	annotated	F186E471	Stylopage	Zoopagales	F186E471_009179-T1	831	ambiguous		4	None	None	Q924H5|Rad51C	2.457	0.869	False	Rad51C,Rad55	Rad51:PF08423
+ANN_32	annotated	F186E471	Stylopage	Zoopagales	F186E471_009372-T1	325	assigned	Rad51B	1	97.0	89.4	Q9SK02|Rad51B	1.958	0.785	False	Rad51B	Rad51:PF08423
+ANN_33	annotated	F186E471	Stylopage	Zoopagales	F186E471_013039-T1	487	ambiguous		27	None	None	Q06609|Rad51	0.449	0.137	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_34	annotated	F18B6B82	Piromyces	Root	F18B6B82_001149-T1	339	ambiguous		28	None	None	Q06609|Rad51	0.207	0.065	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_35	annotated	F18B6B82	Piromyces	Root	F18B6B82_001463-T1	338	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.385	0.473	False	Rad51C	Rad51:PF08423
+ANN_36	annotated	F18B6B82	Piromyces	Root	F18B6B82_003066-T1	320	assigned	XRCC3	1	94.0	96.1	Q9FKM5|XRCC3	1.618	0.629	False	XRCC3	Rad51:PF08423
+ANN_37	annotated	F18B6B82	Piromyces	Root	F18B6B82_006375-T1	345	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.584	0.171	False	Dmc1	Rad51:PF08423
+ANN_38	annotated	F18B6B82	Piromyces	Root	F18B6B82_007932-T1	424	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.508	0.900	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_39	annotated	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	F18CA942_001007-T1	362	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.669	0.168	False	Dmc1	Rad51:PF08423
+ANN_40	annotated	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	F18CA942_002987-T1	559	low_support	Rad55	1	76.0	52.4	P94102|Rad51	2.957	1.435	True	Rad51C,Rad55	Rad51:PF08423
+ANN_41	annotated	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	F18CA942_004034-T1	501	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.261	0.489	False	Rad57,XRCC3	Rad51:PF08423
+ANN_42	annotated	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	F18CA942_004043-T1	351	ambiguous		27	None	None	Q06609|Rad51	0.301	0.037	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_43	annotated	F1C537C3	Dimargaris	Dimargaritales	F1C537C3_000832-T1	344	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.600	0.047	False	Dmc1	Rad51:PF08423
+ANN_44	annotated	F1C537C3	Dimargaris	Dimargaritales	F1C537C3_003189-T1	405	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	3.556	0.925	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_45	annotated	F1C537C3	Dimargaris	Dimargaritales	F1C537C3_003964-T1	304	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	1.545	0.353	False	Rad51C,Rad55	Rad51:PF08423
+ANN_46	annotated	F1C537C3	Dimargaris	Dimargaritales	F1C537C3_005100-T1	339	ambiguous		27	None	None	Q06609|Rad51	0.297	0.031	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_47	annotated	F1C537C3	Dimargaris	Dimargaritales	F1C537C3_006075-T1	306	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.118	0.319	False	Rad57,XRCC3	Rad51:PF08423
+ANN_48	annotated	F1C537C3	Dimargaris	Dimargaritales	F1C537C3_006081-T1	399	assigned	Rad51B	2	99.0	89.5	O15315|Rad51B	1.681	0.387	False	Rad51B	Rad51:PF08423
+ANN_49	annotated	F1C9E2AA	Dispira	Dimargaritales	F1C9E2AA_000254-T1	332	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	3.263	0.632	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_50	annotated	F1C9E2AA	Dispira	Dimargaritales	F1C9E2AA_000419-T1	339	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	1.558	0.592	False	Rad51C,Rad55	Rad51:PF08423
+ANN_51	annotated	F1C9E2AA	Dispira	Dimargaritales	F1C9E2AA_002226-T1	331	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.010	0.395	False	Rad57,XRCC3	Rad51:PF08423
+ANN_52	annotated	F1C9E2AA	Dispira	Dimargaritales	F1C9E2AA_003422-T1	345	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.628	0.109	False	Dmc1	Rad51:PF08423
+ANN_53	annotated	F1C9E2AA	Dispira	Dimargaritales	F1C9E2AA_005617-T1	338	ambiguous		27	None	None	Q06609|Rad51	0.320	0.054	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_54	annotated	F1D7B4F9	Spizellomyces	Root	F1D7B4F9_000427-T1	339	ambiguous		27	None	None	Q06609|Rad51	0.315	0.030	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_55	annotated	F1D7B4F9	Spizellomyces	Root	F1D7B4F9_001376-T1	324	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.278	0.211	False	Rad51C	Rad51:PF08423
+ANN_56	annotated	F1D7B4F9	Spizellomyces	Root	F1D7B4F9_002536-T1	299	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	1.918	0.480	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_57	annotated	F1D7B4F9	Spizellomyces	Root	F1D7B4F9_007164-T1	366	assigned	XRCC3	1	94.0	82.8	O43542|XRCC3	1.764	0.324	False	XRCC3	Rad51:PF08423
+ANN_58	annotated	F1D7B4F9	Spizellomyces	Root	F1D7B4F9_007568-T1	339	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.593	0.041	False	Dmc1	Rad51:PF08423
+ANN_59	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_001224-T1	337	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.235	0.025	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_60	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_002544-T1	366	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.059	0.561	False	Rad57,XRCC3	Rad51:PF08423
+ANN_61	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_006034-T1	337	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	1.712	0.744	False	Rad51C,Rad55	Rad51:PF08423
+ANN_62	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_006129-T1	346	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.547	0.098	False	Dmc1	Rad51:PF08423
+ANN_63	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_007163-T1	355	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.542	0.969	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_64	annotated	F23D95F9	Zancudomyces	Harpellales	F23D95F9_001405-T1	351	ambiguous		27	None	None	Q06609|Rad51	0.347	0.030	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_65	annotated	F23D95F9	Zancudomyces	Harpellales	F23D95F9_006941-T1	431	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.604	0.524	False	Rad57,XRCC3	Rad51:PF08423
+ANN_66	annotated	F23D95F9	Zancudomyces	Harpellales	F23D95F9_007303-T1	429	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.693	0.098	False	Dmc1	Rad51:PF08423
+ANN_67	annotated	F2470181	Coemansia	Kickxellales_core	F2470181_000031-T1	404	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.500	0.000	False	Rad57,XRCC3	Rad51:PF08423
+ANN_68	annotated	F2470181	Coemansia	Kickxellales_core	F2470181_000718-T1	344	ambiguous		27	None	None	Q06609|Rad51	0.435	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_69	annotated	F2470181	Coemansia	Kickxellales_core	F2470181_000786-T1	316	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.652	0.000	False	Rad51C,Rad55	Rad51:PF08423
+ANN_70	annotated	F2470181	Coemansia	Kickxellales_core	F2470181_002293-T1	391	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	3.668	0.000	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_71	annotated	F3253B6A	Synchytrium	Root	F3253B6A_003736-T1	391	assigned	XRCC3	1	94.0	82.8	O43542|XRCC3	1.859	0.615	False	XRCC3	Rad51:PF08423
+ANN_72	annotated	F3253B6A	Synchytrium	Root	F3253B6A_008554-T1	339	ambiguous		28	None	None	Q06609|Rad51	0.208	0.066	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_73	annotated	F3253B6A	Synchytrium	Root	F3253B6A_008786-T1	749	low_support	Rad55	1	79.0	46.6	O14129|Rad55	2.272	1.122	False	Rad51C,Rad55	Rad51:PF08423
+ANN_74	annotated	F333880B	Coemansia	Kickxellales_core	F333880B_000622-T1	414	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.364	0.000	False	Rad57,XRCC3	Rad51:PF08423
+ANN_75	annotated	F333880B	Coemansia	Kickxellales_core	F333880B_001523-T1	335	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.449	0.000	False	Rad51C,Rad55	Rad51:PF08423
+ANN_76	annotated	F333880B	Coemansia	Kickxellales_core	F333880B_001627-T1	344	ambiguous		27	None	None	Q06609|Rad51	0.426	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_77	annotated	F333880B	Coemansia	Kickxellales_core	F333880B_002862-T1	315	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	3.552	0.000	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_78	annotated	F333880B	Coemansia	Kickxellales_core	F333880B_003749-T1	287	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.586	0.000	False	Rad51C,Rad55	Rad51:PF08423
+ANN_79	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_012418-T1	342	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.293	0.163	False	Rad51C	Rad51:PF08423
+ANN_80	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_012679-T1	455	assigned	Rad51B	2	100.0	90.6	O15315|Rad51B	1.472	0.258	False	Rad51B	Rad51:PF08423
+ANN_81	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_016653-T1	343	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.684	0.054	False	Dmc1	Rad51:PF08423
+ANN_82	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_020235-T1	307	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.091	0.294	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_83	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_021765-T1	889	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.125	0.323	False	Rad57,XRCC3	Rad51:PF08423
+ANN_84	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_022749-T1	355	ambiguous		25	None	None	Q06609|Rad51	0.587	0.054	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_85	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_024617-T1	379	ambiguous		25	None	None	Q06609|Rad51	0.672	0.178	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_86	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_000806-T1	341	ambiguous		25	None	None	Q06609|Rad51	0.581	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_87	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_007217-T1	338	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.163	0.095	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_88	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_010401-T1	432	assigned	Rad51B	2	100.0	90.6	O15315|Rad51B	1.393	0.000	False	Rad51B	Rad51:PF08423
+ANN_89	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_013790-T1	345	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.628	0.000	False	Dmc1	Rad51:PF08423
+ANN_90	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_018964-T1	346	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.268	0.013	False	Rad51C	Rad51:PF08423
+ANN_91	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_021642-T1	365	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.066	0.011	False	Rad57,XRCC3	Rad51:PF08423
+ANN_92	annotated	F3D51D57	Coemansia	Kickxellales_core	F3D51D57_004801-T1	343	ambiguous		27	None	None	Q06609|Rad51	0.413	0.016	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_93	annotated	F3D51D57	Coemansia	Kickxellales_core	F3D51D57_004882-T1	329	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.496	0.377	False	Rad51C,Rad55	Rad51:PF08423
+ANN_94	annotated	F3D51D57	Coemansia	Kickxellales_core	F3D51D57_006487-T1	402	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.321	0.253	False	Rad57,XRCC3	Rad51:PF08423
+ANN_95	annotated	F3D937C5	Capniomyces	Harpellales	F3D937C5_002707-T1	411	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.682	0.087	False	Dmc1	Rad51:PF08423
+ANN_96	annotated	F3D937C5	Capniomyces	Harpellales	F3D937C5_002945-T1	348	ambiguous		27	None	None	Q06609|Rad51	0.342	0.006	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_97	annotated	F3D937C5	Capniomyces	Harpellales	F3D937C5_003348-T1	381	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.523	0.443	False	Rad57,XRCC3	Rad51:PF08423
+ANN_98	annotated	F3D937C5	Capniomyces	Harpellales	F3D937C5_005253-T1	296	low_support	Rad55	1	76.0	52.4	P38953|Rad55	3.069	0.671	False	Rad51C,Rad55	Rad51:PF08423
+ANN_99	annotated	F3F252DC	Caulochytrium	Root	F3F252DC_001702-T1	318	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.572	0.199	False	Dmc1	Rad51:PF08423
+ANN_100	annotated	F3F252DC	Caulochytrium	Root	F3F252DC_001739-T1	336	ambiguous		27	None	None	Q06609|Rad51	0.337	0.109	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_101	annotated	F3F252DC	Caulochytrium	Root	F3F252DC_004995-T1	552	ambiguous		4	None	None	Q9UUL2|Rad57	2.421	1.029	False	Rad57,XRCC3	Rad51:PF08423
+ANN_102	annotated	F43C8248	Linderina	Kickxellales_core	F43C8248_001318-T1	335	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	3.343	0.471	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_103	annotated	F43C8248	Linderina	Kickxellales_core	F43C8248_006447-T1	283	low_support	Rad55	1	76.0	52.4	P38953|Rad55	3.003	1.461	True	Rad51C,Rad55	Rad51:PF08423
+ANN_104	annotated	F43C8248	Linderina	Kickxellales_core	F43C8248_006597-T1	343	ambiguous		27	None	None	Q06609|Rad51	0.442	0.035	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_105	annotated	F43C8248	Linderina	Kickxellales_core	F43C8248_006767-T1	302	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.776	0.003	False	Rad51C,Rad55	Rad51:PF08423
+ANN_106	annotated	F43C8248	Linderina	Kickxellales_core	F43C8248_009736-T1	302	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.791	0.017	False	Rad51C,Rad55	Rad51:PF08423
+ANN_107	annotated	F45BD9C7	Furculomyces	Harpellales	F45BD9C7_002403-T1	327	low_support	Rad55	1	76.0	52.4	P38953|Rad55	3.237	0.839	False	Rad51C,Rad55	Rad51:PF08423
+ANN_108	annotated	F45BD9C7	Furculomyces	Harpellales	F45BD9C7_002751-T1	345	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.710	0.138	False	Dmc1	Rad51:PF08423
+ANN_109	annotated	F45BD9C7	Furculomyces	Harpellales	F45BD9C7_002938-T1	726	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.702	0.654	False	Rad57,XRCC3	Rad51:PF08423
+ANN_110	annotated	F45BD9C7	Furculomyces	Harpellales	F45BD9C7_004804-T1	344	ambiguous		27	None	None	Q06609|Rad51	0.364	0.029	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_111	annotated	F45BD9C7	Furculomyces	Harpellales	F45BD9C7_008034-T1	330	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	2.958	1.375	True	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_112	annotated	F4696F25	Umbelopsis	Mucoromycota_s.l.	F4696F25_001145-T1	333	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.444	0.108	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_113	annotated	F4696F25	Umbelopsis	Mucoromycota_s.l.	F4696F25_001259-T1	360	ambiguous		4	None	None	Q9UUL2|Rad57	1.961	0.591	False	Rad57,XRCC3	Rad51:PF08423
+ANN_114	annotated	F4696F25	Umbelopsis	Mucoromycota_s.l.	F4696F25_002355-T1	429	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.963	1.089	False	Rad51C	Rad51:PF08423
+ANN_115	annotated	F4696F25	Umbelopsis	Mucoromycota_s.l.	F4696F25_005608-T1	1059	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.733	0.233	False	Dmc1	Rad51:PF08423
+ANN_116	annotated	F46AF962	Acaulopage	Zoopagales	F46AF962_001540-T1	255	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.161	1.046	False	Rad51C,Rad55	Rad51:PF08423
+ANN_117	annotated	F46AF962	Acaulopage	Zoopagales	F46AF962_005282-T1	476	assigned	Rad51B	1	95.0	87.3	Q9SK02|Rad51B	2.396	0.939	False	Rad51B	Rad51:PF08423
+ANN_118	annotated	F46AF962	Acaulopage	Zoopagales	F46AF962_006451-T1	321	ambiguous		27	None	None	Q06609|Rad51	0.309	0.071	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_119	annotated	F4F8BFB2	Coemansia	Kickxellales_core	F4F8BFB2_000547-T1	386	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.500	0.000	False	Rad57,XRCC3	Rad51:PF08423
+ANN_120	annotated	F4F8BFB2	Coemansia	Kickxellales_core	F4F8BFB2_001429-T1	316	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.652	0.000	False	Rad51C,Rad55	Rad51:PF08423
+ANN_121	annotated	F4F8BFB2	Coemansia	Kickxellales_core	F4F8BFB2_001496-T1	344	ambiguous		27	None	None	Q06609|Rad51	0.435	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_122	annotated	F4F8BFB2	Coemansia	Kickxellales_core	F4F8BFB2_002255-T1	391	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	3.668	0.000	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_123	annotated	F4FD0401	Tieghemiomyces	Dimargaritales	F4FD0401_003194-T1	339	ambiguous		27	None	None	Q06609|Rad51	0.283	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_124	annotated	F4FD0401	Tieghemiomyces	Dimargaritales	F4FD0401_004463-T1	417	assigned	Rad51B	2	99.0	89.5	O15315|Rad51B	1.659	0.016	False	Rad51B	Rad51:PF08423
+ANN_125	annotated	F4FD0401	Tieghemiomyces	Dimargaritales	F4FD0401_005712-T1	365	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.149	0.025	False	Rad57,XRCC3	Rad51:PF08423
+ANN_126	annotated	F4FD0401	Tieghemiomyces	Dimargaritales	F4FD0401_005824-T1	345	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.633	0.000	False	Dmc1	Rad51:PF08423
+ANN_127	annotated	F4FD0401	Tieghemiomyces	Dimargaritales	F4FD0401_007423-T1	417	assigned	Rad51B	2	99.0	89.5	O15315|Rad51B	1.643	0.000	False	Rad51B	Rad51:PF08423
+ANN_128	annotated	F4FD0401	Tieghemiomyces	Dimargaritales	F4FD0401_009979-T1	225	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.633	0.000	False	Dmc1	Rad51:PF08423
+ANN_129	annotated	F4FD0401	Tieghemiomyces	Dimargaritales	F4FD0401_011767-T1	351	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	1.421	0.002	False	Rad51C,Rad55	Rad51:PF08423
+ANN_130	annotated	F4FD0401	Tieghemiomyces	Dimargaritales	F4FD0401_012271-T1	351	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	1.427	0.008	False	Rad51C,Rad55	Rad51:PF08423
+ANN_131	annotated	F4FD0401	Tieghemiomyces	Dimargaritales	F4FD0401_012983-T1	358	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.141	0.017	False	Rad57,XRCC3	Rad51:PF08423
+ANN_132	annotated	F4FD0401	Tieghemiomyces	Dimargaritales	F4FD0401_013203-T1	339	ambiguous		27	None	None	Q06609|Rad51	0.283	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_133	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_001404-T1	313	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.317	0.494	False	Rad51C	Rad51:PF08423
+ANN_134	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_002473-T1	369	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.047	0.773	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_135	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_003668-T1	360	assigned	Rad51B	2	99.0	89.5	O15315|Rad51B	1.833	0.959	False	Rad51B	Rad51:PF08423
+ANN_136	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_008884-T1	344	assigned	Rad51	1	98.0	98.9	Q06609|Rad51	0.382	0.181	False	Rad51	Rad51:PF08423
+ANN_137	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_011895-T1	328	assigned	XRCC3	1	93.0	89.8	O43542|XRCC3	1.850	0.721	False	XRCC3	Rad51:PF08423
+ANN_138	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_012548-T1	341	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.610	0.117	False	Dmc1	Rad51:PF08423
+ANN_139	annotated	F574EFC1	Actinomortierella	Mucoromycota_s.l.	F574EFC1_001037-T1	403	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.630	0.612	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_140	annotated	F574EFC1	Actinomortierella	Mucoromycota_s.l.	F574EFC1_005767-T1	520	ambiguous		4	None	None	Q9UUL2|Rad57	2.034	0.300	False	Rad57,XRCC3	Rad51:PF08423
+ANN_141	annotated	F574EFC1	Actinomortierella	Mucoromycota_s.l.	F574EFC1_006758-T1	342	ambiguous		25	None	None	Q06609|Rad51	0.361	0.066	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_142	annotated	F574EFC1	Actinomortierella	Mucoromycota_s.l.	F574EFC1_008897-T1	453	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	1.746	0.512	False	Rad51C,Rad55	Rad51:PF08423
+ANN_143	annotated	F58B3FB2	Nowakowskiella	Root	F58B3FB2_000385-T1	465	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.116	0.584	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_144	annotated	F58B3FB2	Nowakowskiella	Root	F58B3FB2_006891-T1	341	ambiguous		27	None	None	Q06609|Rad51	0.283	0.135	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_145	annotated	F58B3FB2	Nowakowskiella	Root	F58B3FB2_008893-T1	407	ambiguous		4	None	None	Q9UUL2|Rad57	2.612	1.112	False	Rad57,XRCC3	Rad51:PF08423
+ANN_146	annotated	F5931C4A	Paraglomus	Mucoromycota_s.l.	F5931C4A_002515-T1	344	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.266	0.234	False	Rad51C	Rad51:PF08423
+ANN_147	annotated	F5931C4A	Paraglomus	Mucoromycota_s.l.	F5931C4A_002546-T1	382	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	1.938	0.443	False	Rad57,XRCC3	Rad51:PF08423
+ANN_148	annotated	F5931C4A	Paraglomus	Mucoromycota_s.l.	F5931C4A_003870-T1	338	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.728	0.119	False	Dmc1	Rad51:PF08423
+ANN_149	annotated	F5931C4A	Paraglomus	Mucoromycota_s.l.	F5931C4A_005653-T1	396	assigned	Rad51B	2	100.0	90.6	O15315|Rad51B	1.463	0.478	False	Rad51B	Rad51:PF08423
+ANN_150	annotated	F5931C4A	Paraglomus	Mucoromycota_s.l.	F5931C4A_006772-T1	336	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.311	0.135	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_151	annotated	F5931C4A	Paraglomus	Mucoromycota_s.l.	F5931C4A_011256-T1	438	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.436	0.621	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_152	annotated	F5A4E39E	Phlyctochytrium	Root	F5A4E39E_000466-T1	344	ambiguous		27	None	None	Q06609|Rad51	0.311	0.026	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_153	annotated	F5A4E39E	Phlyctochytrium	Root	F5A4E39E_000837-T1	352	assigned	XRCC3	1	94.0	82.8	O43542|XRCC3	2.022	0.582	False	XRCC3	Rad51:PF08423
+ANN_154	annotated	F5A4E39E	Phlyctochytrium	Root	F5A4E39E_001307-T1	376	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	1.933	0.000	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_155	annotated	F5A4E39E	Phlyctochytrium	Root	F5A4E39E_002690-T1	342	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.619	0.067	False	Dmc1	Rad51:PF08423
+ANN_156	annotated	F5A4E39E	Phlyctochytrium	Root	F5A4E39E_005979-T1	359	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.412	0.345	False	Rad51C	Rad51:PF08423
+ANN_157	annotated	F5A4E39E	Phlyctochytrium	Root	F5A4E39E_009708-T1	376	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	1.933	0.000	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_158	annotated	F5C4F326	Sorochytrium	Root	F5C4F326_000918-T1	377	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	2.952	1.411	True	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_159	annotated	F5C4F326	Sorochytrium	Root	F5C4F326_002093-T1	337	low_support	Rad51	1	48.0	65.9	Q06609|Rad51	0.274	0.103	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_160	annotated	F5C4F326	Sorochytrium	Root	F5C4F326_004771-T1	307	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.174	1.170	True	Rad51C,Rad55	Rad51:PF08423
+ANN_161	annotated	F5C4F326	Sorochytrium	Root	F5C4F326_004926-T1	627	ambiguous		4	None	None	P94102|Rad51	2.601	1.157	True	Rad57,XRCC3	Rad51:PF08423
+ANN_162	annotated	F5C4F326	Sorochytrium	Root	F5C4F326_005076-T1	650	ambiguous		4	None	None	Q9UUL2|Rad57	2.142	0.517	False	Rad57,XRCC3	Rad51:PF08423
+ANN_163	annotated	F6C0647F	Cryptocalciella	Mucoromycota_s.l.	F6C0647F_001321-T1	402	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	1.526	0.292	False	Rad51C,Rad55	Rad51:PF08423
+ANN_164	annotated	F6C0647F	Cryptocalciella	Mucoromycota_s.l.	F6C0647F_001480-T1	341	ambiguous		25	None	None	Q06609|Rad51	0.396	0.102	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_165	annotated	F6C0647F	Cryptocalciella	Mucoromycota_s.l.	F6C0647F_005956-T1	459	ambiguous		4	None	None	Q9UUL2|Rad57	1.984	0.250	False	Rad57,XRCC3	Rad51:PF08423
+ANN_166	annotated	F6C0647F	Cryptocalciella	Mucoromycota_s.l.	F6C0647F_007573-T1	333	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.561	0.109	False	Dmc1	Rad51:PF08423
+ANN_167	annotated	F6C0647F	Cryptocalciella	Mucoromycota_s.l.	F6C0647F_010009-T1	386	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.803	0.784	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_168	annotated	F6FD6BCA	Hesseltinella	Mucoromycota_s.l.	F6FD6BCA_003554-T1	352	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.800	0.056	False	Dmc1	Rad51:PF08423
+ANN_169	annotated	F6FD6BCA	Hesseltinella	Mucoromycota_s.l.	F6FD6BCA_005837-T1	327	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.618	0.053	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_170	annotated	F6FD6BCA	Hesseltinella	Mucoromycota_s.l.	F6FD6BCA_007665-T1	345	ambiguous		4	None	None	Q9UUL2|Rad57	2.345	0.341	False	Rad57,XRCC3	Rad51:PF08423
+ANN_171	annotated	F6FD6BCA	Hesseltinella	Mucoromycota_s.l.	F6FD6BCA_008079-T1	440	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.740	0.631	False	Rad51C,Rad55	Rad51:PF08423
+ANN_172	annotated	F797C73E	Zygophlyctis	Root	F797C73E_000141-T1	340	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.587	0.121	False	Dmc1	Rad51:PF08423
+ANN_173	annotated	F797C73E	Zygophlyctis	Root	F797C73E_000715-T1	221	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	2.136	1.028	False	Rad51C	Rad51:PF08423
+ANN_174	annotated	F797C73E	Zygophlyctis	Root	F797C73E_002187-T1	342	ambiguous		27	None	None	Q06609|Rad51	0.345	0.173	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_175	annotated	F797C73E	Zygophlyctis	Root	F797C73E_002965-T1	468	low_support	XRCC3	2	17.0	34.7	O43542|XRCC3	2.461	1.108	False	Rad57,XRCC3	Rad51:PF08423
+ANN_176	annotated	F7A7AA4C	Coemansia	Kickxellales_core	F7A7AA4C_000340-T1	404	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.500	0.000	False	Rad57,XRCC3	Rad51:PF08423
+ANN_177	annotated	F7A7AA4C	Coemansia	Kickxellales_core	F7A7AA4C_000903-T1	344	ambiguous		27	None	None	Q06609|Rad51	0.435	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_178	annotated	F7A7AA4C	Coemansia	Kickxellales_core	F7A7AA4C_000971-T1	316	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.652	0.000	False	Rad51C,Rad55	Rad51:PF08423
+ANN_179	annotated	F7A7AA4C	Coemansia	Kickxellales_core	F7A7AA4C_004905-T1	391	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	3.668	0.000	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_180	annotated	F7F7C035	Gongronella	Mucoromycota_s.l.	F7F7C035_003504-T1	365	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.826	0.082	False	Dmc1	Rad51:PF08423
+ANN_181	annotated	F7F7C035	Gongronella	Mucoromycota_s.l.	F7F7C035_003789-T1	338	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.580	0.016	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_182	annotated	F7F7C035	Gongronella	Mucoromycota_s.l.	F7F7C035_003975-T1	360	ambiguous		4	None	None	Q9UUL2|Rad57	2.276	0.271	False	Rad57,XRCC3	Rad51:PF08423
+ANN_183	annotated	F7F7C035	Gongronella	Mucoromycota_s.l.	F7F7C035_008631-T1	470	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.509	0.399	False	Rad51C,Rad55	Rad51:PF08423
+ANN_184	annotated	F7FE4923	Ramicandelaber	Ramicandelaber	F7FE4923_000762-T1	328	ambiguous		25	None	None	Q06609|Rad51	0.548	0.261	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_185	annotated	F7FE4923	Ramicandelaber	Ramicandelaber	F7FE4923_004163-T1	370	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.173	1.240	True	Rad51C,Rad55	Rad51:PF08423
+ANN_186	annotated	F80EB351	Coemansia	Kickxellales_core	F80EB351_000068-T1	386	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.500	0.000	False	Rad57,XRCC3	Rad51:PF08423
+ANN_187	annotated	F80EB351	Coemansia	Kickxellales_core	F80EB351_000259-T1	344	ambiguous		27	None	None	Q06609|Rad51	0.435	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_188	annotated	F80EB351	Coemansia	Kickxellales_core	F80EB351_000325-T1	316	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.652	0.000	False	Rad51C,Rad55	Rad51:PF08423
+ANN_189	annotated	F80EB351	Coemansia	Kickxellales_core	F80EB351_002945-T1	391	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	3.668	0.000	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_190	annotated	F8E635D0	Rhizopus	Mucoromycota_s.l.	F8E635D0_000614-T1	354	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.756	0.176	False	Dmc1	Rad51:PF08423
+ANN_191	annotated	F8E635D0	Rhizopus	Mucoromycota_s.l.	F8E635D0_001374-T1	294	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	3.224	1.002	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_192	annotated	F8E635D0	Rhizopus	Mucoromycota_s.l.	F8E635D0_001429-T1	333	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.534	0.125	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_193	annotated	F8E635D0	Rhizopus	Mucoromycota_s.l.	F8E635D0_003607-T1	345	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.612	0.252	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_194	annotated	F8E635D0	Rhizopus	Mucoromycota_s.l.	F8E635D0_006151-T1	360	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.205	0.483	False	Rad51C,Rad55	Rad51:PF08423
+ANN_195	annotated	F8E635D0	Rhizopus	Mucoromycota_s.l.	F8E635D0_009843-T1	360	ambiguous		4	None	None	Q9UUL2|Rad57	2.110	0.449	False	Rad57,XRCC3	Rad51:PF08423
+ANN_196	annotated	F9368871	Thamnocephalis	Zoopagales	F9368871_000556-T1	395	assigned	Rad51B	2	100.0	97.9	O15315|Rad51B	1.471	0.178	False	Rad51B	Rad51:PF08423
+ANN_197	annotated	F9368871	Thamnocephalis	Zoopagales	F9368871_002596-T1	294	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.354	0.223	False	Rad51C	Rad51:PF08423
+ANN_198	annotated	F9368871	Thamnocephalis	Zoopagales	F9368871_003081-T1	335	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.473	0.668	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_199	annotated	F9368871	Thamnocephalis	Zoopagales	F9368871_003376-T1	340	ambiguous		27	None	None	Q06609|Rad51	0.255	0.028	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_200	annotated	F9A17E9D	Zoophagus	Zoopagales	F9A17E9D_001042-T1	454	assigned	Rad51B	3	97.0	87.9	O15315|Rad51B	2.043	0.917	False	Rad51B	Rad51:PF08423
+ANN_201	annotated	F9A17E9D	Zoophagus	Zoopagales	F9A17E9D_001996-T1	334	ambiguous		27	None	None	Q06609|Rad51	0.414	0.102	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_202	annotated	F9A17E9D	Zoophagus	Zoopagales	F9A17E9D_003433-T1	343	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.655	0.133	False	Dmc1	Rad51:PF08423
+ANN_203	annotated	F9A17E9D	Zoophagus	Zoopagales	F9A17E9D_006309-T1	257	ambiguous		4	None	None	Q924H5|Rad51C	2.622	1.033	False	Rad51C,Rad55	Rad51:PF08423
+ANN_204	annotated	F9F51274	Kickxella	Kickxellales_core	F9F51274_000716-T1	342	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.449	0.558	False	Rad57,XRCC3	Rad51:PF08423
+ANN_205	annotated	F9F51274	Kickxella	Kickxellales_core	F9F51274_002440-T1	255	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.618	0.024	False	Rad51C,Rad55	Rad51:PF08423
+ANN_206	annotated	F9F51274	Kickxella	Kickxellales_core	F9F51274_004498-T1	344	ambiguous		27	None	None	Q06609|Rad51	0.493	0.092	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_207	annotated	F9F51274	Kickxella	Kickxellales_core	F9F51274_007019-T1	320	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.616	0.019	False	Rad51C,Rad55	Rad51:PF08423
+ANN_208	annotated	F9F51274	Kickxella	Kickxellales_core	F9F51274_008303-T1	320	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.599	0.002	False	Rad51C,Rad55	Rad51:PF08423
+ANN_209	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_001065-T1	764	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.327	0.336	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_210	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_002591-T1	515	assigned	Rad51B	2	100.0	90.6	O15315|Rad51B	1.351	0.208	False	Rad51B	Rad51:PF08423
+ANN_211	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_003261-T1	348	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.627	0.068	False	Dmc1	Rad51:PF08423
+ANN_212	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_004194-T1	369	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.194	0.137	False	Rad51C	Rad51:PF08423
+ANN_213	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_006964-T1	363	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.013	0.323	False	Rad57,XRCC3	Rad51:PF08423
+ANN_214	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_010336-T1	300	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	4.139	0.101	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_215	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_010851-T1	299	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	4.107	0.069	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_216	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_014286-T1	342	ambiguous		25	None	None	Q06609|Rad51	0.733	0.242	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_217	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_012582-T1	356	ambiguous		25	None	None	Q06609|Rad51	0.744	0.187	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_218	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_019640-T1	332	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.279	0.481	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_219	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_036888-T1	343	ambiguous		25	None	None	Q06609|Rad51	0.638	0.082	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_220	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_043880-T1	334	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.555	0.425	False	Rad51C	Rad51:PF08423
+ANN_221	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_045189-T1	349	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.661	0.031	False	Dmc1	Rad51:PF08423
+ANN_222	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_058692-T1	387	assigned	Rad51B	2	100.0	90.6	O15315|Rad51B	1.554	0.340	False	Rad51B	Rad51:PF08423
+ANN_223	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_071244-T1	360	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.249	0.447	False	Rad57,XRCC3	Rad51:PF08423
+ANN_224	annotated	FAC8BA67	Syncephalastrum	Mucoromycota_s.l.	FAC8BA67_002472-T1	352	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.724	0.105	False	Dmc1	Rad51:PF08423
+ANN_225	annotated	FAC8BA67	Syncephalastrum	Mucoromycota_s.l.	FAC8BA67_003644-T1	340	ambiguous		4	None	None	Q9UUL2|Rad57	2.241	0.327	False	Rad57,XRCC3	Rad51:PF08423
+ANN_226	annotated	FAC8BA67	Syncephalastrum	Mucoromycota_s.l.	FAC8BA67_009069-T1	334	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.588	0.123	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_227	annotated	FAC8BA67	Syncephalastrum	Mucoromycota_s.l.	FAC8BA67_009409-T1	421	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.376	0.612	False	Rad51C,Rad55	Rad51:PF08423
+ANN_228	annotated	FB5167BD	Syncephalis	Zoopagales	FB5167BD_000311-T1	349	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.604	0.031	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_229	annotated	FB5167BD	Syncephalis	Zoopagales	FB5167BD_000740-T1	344	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.470	0.007	False	Rad51C	Rad51:PF08423
+ANN_230	annotated	FB5167BD	Syncephalis	Zoopagales	FB5167BD_001835-T1	362	assigned	Rad51B	2	100.0	97.9	O15315|Rad51B	1.530	0.007	False	Rad51B	Rad51:PF08423
+ANN_231	annotated	FB5167BD	Syncephalis	Zoopagales	FB5167BD_003014-T1	645	ambiguous		27	None	None	Q06609|Rad51	0.249	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_232	annotated	FB5167BD	Syncephalis	Zoopagales	FB5167BD_003019-T1	435	ambiguous		27	None	None	Q06609|Rad51	0.249	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_233	annotated	FB5167BD	Syncephalis	Zoopagales	FB5167BD_009093-T1	327	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.591	0.017	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_234	annotated	FB5167BD	Syncephalis	Zoopagales	FB5167BD_009317-T1	325	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.462	0.000	False	Rad51C	Rad51:PF08423
+ANN_235	annotated	FB5167BD	Syncephalis	Zoopagales	FB5167BD_009665-T1	362	assigned	Rad51B	2	100.0	97.9	O15315|Rad51B	1.524	0.000	False	Rad51B	Rad51:PF08423
+ANN_236	annotated	FBAB06C3	Thermomucor	Mucoromycota_s.l.	FBAB06C3_000213-T1	456	ambiguous		4	None	None	Q9UUL2|Rad57	2.320	0.406	False	Rad57,XRCC3	Rad51:PF08423
+ANN_237	annotated	FBAB06C3	Thermomucor	Mucoromycota_s.l.	FBAB06C3_000259-T1	346	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.748	0.063	False	Dmc1	Rad51:PF08423
+ANN_238	annotated	FBAB06C3	Thermomucor	Mucoromycota_s.l.	FBAB06C3_002217-T1	338	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.463	0.011	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_239	annotated	FBAB06C3	Thermomucor	Mucoromycota_s.l.	FBAB06C3_002286-T1	395	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.123	0.358	False	Rad51C,Rad55	Rad51:PF08423
+ANN_240	annotated	FBAB06C3	Thermomucor	Mucoromycota_s.l.	FBAB06C3_007896-T1	1238	assigned	XRCC2	2	90.0	87.9	P94102|Rad51	2.645	1.279	True	XRCC2	Rad51:PF08423
+ANN_241	annotated	FBAB06C3	Thermomucor	Mucoromycota_s.l.	FBAB06C3_008044-T1	374	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.589	0.121	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_242	annotated	FBDB2FE6	Rhizophlyctis	Root	FBDB2FE6_005008-T1	369	assigned	XRCC3	1	94.0	82.8	O43542|XRCC3	1.823	0.578	False	XRCC3	Rad51:PF08423
+ANN_243	annotated	FBDB2FE6	Rhizophlyctis	Root	FBDB2FE6_007892-T1	340	low_support	Rad51	1	48.0	65.9	Q06609|Rad51	0.275	0.114	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_244	annotated	FBDB2FE6	Rhizophlyctis	Root	FBDB2FE6_012597-T1	342	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.548	0.041	False	Dmc1	Rad51:PF08423
+ANN_245	annotated	FC1174D9	Coemansia	Kickxellales_core	FC1174D9_000113-T1	365	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.311	0.000	False	Rad57,XRCC3	Rad51:PF08423
+ANN_246	annotated	FC1174D9	Coemansia	Kickxellales_core	FC1174D9_001237-T1	342	ambiguous		27	None	None	Q06609|Rad51	0.458	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_247	annotated	FC1174D9	Coemansia	Kickxellales_core	FC1174D9_006016-T1	302	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.681	0.020	False	Rad51C,Rad55	Rad51:PF08423
+ANN_248	annotated	FC303ED2	Geosiphon	Mucoromycota_s.l.	FC303ED2_001471-T1	611	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.655	0.096	False	Dmc1	Rad51:PF08423
+ANN_249	annotated	FC303ED2	Geosiphon	Mucoromycota_s.l.	FC303ED2_002630-T1	491	ambiguous		25	None	None	Q06609|Rad51	0.665	0.174	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_250	annotated	FC303ED2	Geosiphon	Mucoromycota_s.l.	FC303ED2_003422-T1	1001	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	1.988	0.297	False	Rad57,XRCC3	Rad51:PF08423
+ANN_251	annotated	FC303ED2	Geosiphon	Mucoromycota_s.l.	FC303ED2_006663-T1	347	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.315	0.258	False	Rad51C	Rad51:PF08423
+ANN_252	annotated	FC303ED2	Geosiphon	Mucoromycota_s.l.	FC303ED2_010235-T1	421	assigned	Rad51B	2	100.0	90.6	O15315|Rad51B	1.439	0.297	False	Rad51B	Rad51:PF08423
+ANN_253	annotated	FC303ED2	Geosiphon	Mucoromycota_s.l.	FC303ED2_018112-T1	359	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.367	0.376	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_254	annotated	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	FC345CF7_000227-T1	301	ambiguous		4	None	None	Q9UUL2|Rad57	2.385	0.755	False	Rad57,XRCC3	Rad51:PF08423
+ANN_255	annotated	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	FC345CF7_003461-T1	453	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.757	1.487	True	Rad51C,Rad55	Rad51:PF08423
+ANN_256	annotated	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	FC345CF7_006447-T1	339	assigned	Dmc1	4	100.0	95.9	Q39009|Dmc1	0.688	0.163	False	Dmc1	Rad51:PF08423
+ANN_257	annotated	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	FC345CF7_007472-T1	323	assigned	XRCC2	2	90.0	87.9	O43543|XRCC2	2.618	1.340	True	XRCC2	Rad51:PF08423
+ANN_258	annotated	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	FC345CF7_008603-T1	355	ambiguous		25	None	None	Q06609|Rad51	0.678	0.222	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_259	annotated	FC8B8027	Gonapodya	Root	FC8B8027_001768-T1	1390	low_support	Rad55	1	76.0	52.4	P94102|Rad51	2.378	0.966	False	Rad51C,Rad55	Rad51:PF08423
+ANN_260	annotated	FC8B8027	Gonapodya	Root	FC8B8027_002005-T1	453	assigned	XRCC3	1	93.0	89.8	O43542|XRCC3	2.176	1.047	False	XRCC3	Rad51:PF08423
+ANN_261	annotated	FC8B8027	Gonapodya	Root	FC8B8027_009814-T1	1149	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.615	0.122	False	Dmc1	Rad51:PF08423
+ANN_262	annotated	FC8B8027	Gonapodya	Root	FC8B8027_011874-T1	340	assigned	Rad51	1	98.0	98.9	Q06609|Rad51	0.314	0.006	False	Rad51	Rad51:PF08423
+ANN_263	annotated	FC8B8027	Gonapodya	Root	FC8B8027_011982-T1	304	assigned	Rad51	1	98.0	98.9	Q06609|Rad51	0.395	0.087	False	Rad51	Rad51:PF08423
+ANN_264	annotated	FCCDAB75	Smittium	Harpellales	FCCDAB75_002281-T1	319	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.671	0.099	False	Dmc1	Rad51:PF08423
+ANN_265	annotated	FCCDAB75	Smittium	Harpellales	FCCDAB75_002661-T1	675	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	2.621	0.846	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_266	annotated	FCCDAB75	Smittium	Harpellales	FCCDAB75_005210-T1	339	ambiguous		27	None	None	Q06609|Rad51	0.370	0.046	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_267	annotated	FCCDAB75	Smittium	Harpellales	FCCDAB75_007162-T1	363	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.480	0.431	False	Rad57,XRCC3	Rad51:PF08423
+ANN_268	annotated	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	FCDD8027_000025-T1	339	ambiguous		27	None	None	Q06609|Rad51	0.226	0.003	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_269	annotated	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	FCDD8027_000226-T1	339	ambiguous		27	None	None	Q06609|Rad51	0.223	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_270	annotated	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	FCDD8027_000554-T1	341	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	1.846	0.568	False	Rad57,XRCC3	Rad51:PF08423
+ANN_271	annotated	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	FCDD8027_004777-T1	339	assigned	Dmc1	4	100.0	95.9	Q39009|Dmc1	0.579	0.152	False	Dmc1	Rad51:PF08423
+ANN_272	annotated	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	FCDD8027_009879-T1	415	assigned	Rad51B	2	100.0	90.6	O15315|Rad51B	1.088	0.373	False	Rad51B	Rad51:PF08423
+ANN_273	annotated	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	FCDD8027_010157-T1	253	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.176	0.356	False	Rad51C	Rad51:PF08423
+ANN_274	annotated	FD4B4AC6	Paraphysoderma	Root	FD4B4AC6_002037-T1	302	ambiguous		4	None	None	Q9UUL2|Rad57	1.841	0.721	False	Rad57,XRCC3	Rad51:PF08423
+ANN_275	annotated	FD4B4AC6	Paraphysoderma	Root	FD4B4AC6_003051-T1	379	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.175	0.459	False	Rad51C	Rad51:PF08423
+ANN_276	annotated	FD4B4AC6	Paraphysoderma	Root	FD4B4AC6_003528-T1	339	low_support	Rad51	1	48.0	65.9	Q06609|Rad51	0.220	0.050	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_277	annotated	FD4B4AC6	Paraphysoderma	Root	FD4B4AC6_006260-T1	387	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.307	1.063	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_278	annotated	FD4B4AC6	Paraphysoderma	Root	FD4B4AC6_007999-T1	343	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.432	0.156	False	Dmc1	Rad51:PF08423
+ANN_279	annotated	FD8916FB	Coemansia	Kickxellales_core	FD8916FB_000240-T1	414	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.364	0.000	False	Rad57,XRCC3	Rad51:PF08423
+ANN_280	annotated	FD8916FB	Coemansia	Kickxellales_core	FD8916FB_001581-T1	673	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.469	0.020	False	Rad51C,Rad55	Rad51:PF08423
+ANN_281	annotated	FD8916FB	Coemansia	Kickxellales_core	FD8916FB_001684-T1	344	ambiguous		27	None	None	Q06609|Rad51	0.426	0.000	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_282	annotated	FD8916FB	Coemansia	Kickxellales_core	FD8916FB_002799-T1	315	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	3.552	0.000	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_283	annotated	FD8916FB	Coemansia	Kickxellales_core	FD8916FB_004598-T1	287	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.586	0.000	False	Rad51C,Rad55	Rad51:PF08423
+ANN_284	annotated	FDAC0301	Capillidium	Entomophthorales_Basidiobolus	FDAC0301_001671-T1	386	assigned	Dmc1	4	100.0	95.9	Q39009|Dmc1	0.761	0.237	False	Dmc1	Rad51:PF08423
+ANN_285	annotated	FDAC0301	Capillidium	Entomophthorales_Basidiobolus	FDAC0301_004200-T1	340	ambiguous		4	None	None	Q9UUL2|Rad57	2.926	1.296	True	Rad57,XRCC3	Rad51:PF08423
+ANN_286	annotated	FDAC0301	Capillidium	Entomophthorales_Basidiobolus	FDAC0301_008461-T1	360	ambiguous		25	None	None	Q06609|Rad51	0.718	0.262	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_287	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_008177-T1	346	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.254	0.000	False	Rad51C	Rad51:PF08423
+ANN_288	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_015618-T1	365	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.056	0.000	False	Rad57,XRCC3	Rad51:PF08423
+ANN_289	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_016888-T1	432	assigned	Rad51B	2	100.0	90.6	O15315|Rad51B	1.396	0.003	False	Rad51B	Rad51:PF08423
+ANN_290	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_024608-T1	341	ambiguous		25	None	None	Q06609|Rad51	0.594	0.013	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_291	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_025230-T1	343	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.628	0.000	False	Dmc1	Rad51:PF08423
+ANN_292	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_033132-T1	339	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.071	0.003	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_293	annotated	FE0E32D4	Martensiomyces	Kickxellales_core	FE0E32D4_000458-T1	342	ambiguous		27	None	None	Q06609|Rad51	0.413	0.006	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_294	annotated	FE0E32D4	Martensiomyces	Kickxellales_core	FE0E32D4_001127-T1	387	low_support	Rad51D	3	68.0	90.3	P94102|Rad51	3.402	0.343	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_295	annotated	FE0E32D4	Martensiomyces	Kickxellales_core	FE0E32D4_002881-T1	319	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.612	0.395	False	Rad51C,Rad55	Rad51:PF08423
+ANN_296	annotated	FE0E32D4	Martensiomyces	Kickxellales_core	FE0E32D4_005689-T1	398	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.328	0.196	False	Rad57,XRCC3	Rad51:PF08423
+ANN_297	annotated	FE0E7C3D	Cochlonema	Zoopagales	FE0E7C3D_002386-T1	1168	ambiguous		4	None	None	Q9UUL2|Rad57	4.232	2.607	True	Rad57,XRCC3	Rad51:PF08423
+ANN_298	annotated	FE0E7C3D	Cochlonema	Zoopagales	FE0E7C3D_003321-T1	332	ambiguous		4	None	None	Q924H5|Rad51C	2.369	0.916	False	Rad51C,Rad55	Rad51:PF08423
+ANN_299	annotated	FE0E7C3D	Cochlonema	Zoopagales	FE0E7C3D_003973-T1	353	ambiguous		27	None	None	Q06609|Rad51	0.293	0.040	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_300	annotated	FE0E7C3D	Cochlonema	Zoopagales	FE0E7C3D_005133-T1	509	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.610	0.125	False	Dmc1	Rad51:PF08423
+ANN_301	annotated	FE719DCE	Blyttiomyces	Root	FE719DCE_005800-T1	482	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.080	0.817	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_302	annotated	FE719DCE	Blyttiomyces	Root	FE719DCE_006211-T1	385	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.577	0.547	False	Rad51C	Rad51:PF08423
+ANN_303	annotated	FE719DCE	Blyttiomyces	Root	FE719DCE_009911-T1	353	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.712	0.268	False	Dmc1	Rad51:PF08423
+ANN_304	annotated	FE719DCE	Blyttiomyces	Root	FE719DCE_012918-T1	353	low_support	Rad51	1	48.0	65.9	Q06609|Rad51	0.288	0.126	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_305	annotated	FEACB2E7	Cunninghamella	Mucoromycota_s.l.	FEACB2E7_002101-T1	361	assigned	Dmc1	4	100.0	95.9	O42634|Dmc1	0.751	0.108	False	Dmc1	Rad51:PF08423
+ANN_306	annotated	FEACB2E7	Cunninghamella	Mucoromycota_s.l.	FEACB2E7_004748-T1	332	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.530	0.045	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_307	annotated	FEACB2E7	Cunninghamella	Mucoromycota_s.l.	FEACB2E7_007889-T1	366	ambiguous		4	None	None	Q9UUL2|Rad57	2.082	0.393	False	Rad57,XRCC3	Rad51:PF08423
+ANN_308	annotated	FEACB2E7	Cunninghamella	Mucoromycota_s.l.	FEACB2E7_010597-T1	476	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.288	0.566	False	Rad51C,Rad55	Rad51:PF08423
+ANN_309	annotated	FEB493EF	Piptocephalis	Zoopagales	FEB493EF_001033-T1	653	low_support	Rad51B	3	80.0	92.9	O15315|Rad51B	2.518	1.028	False	Rad51B,Rad57,XRCC3	Rad51:PF08423
+ANN_310	annotated	FEB493EF	Piptocephalis	Zoopagales	FEB493EF_002088-T1	349	ambiguous		27	None	None	Q06609|Rad51	0.314	0.075	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_311	annotated	FEB493EF	Piptocephalis	Zoopagales	FEB493EF_002563-T1	333	low_support	Rad51C	3	84.0	89.3	Q924H5|Rad51C	2.397	1.429	True	Rad51C,Rad55	Rad51:PF08423
+ANN_312	annotated	FEB493EF	Piptocephalis	Zoopagales	FEB493EF_004760-T1	270	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	3.178	1.397	True	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_313	annotated	FEC49E8E	Endogone	Mucoromycota_s.l.	FEC49E8E_006192-T1	285	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.464	0.000	False	Rad57,XRCC3	Rad51:PF08423
+ANN_314	annotated	FEC49E8E	Endogone	Mucoromycota_s.l.	FEC49E8E_007173-T1	446	low_support	Rad51	2	78.0	62.9	P36601|Rad51	0.390	0.191	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_315	annotated	FEC49E8E	Endogone	Mucoromycota_s.l.	FEC49E8E_008978-T1	285	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.464	0.000	False	Rad57,XRCC3	Rad51:PF08423
+ANN_316	annotated	FEF8F4D3	Polyrhizophydium	Root	FEF8F4D3_000663-T1	257	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.701	0.671	False	Rad51C	Rad51:PF08423
+ANN_317	annotated	FEF8F4D3	Polyrhizophydium	Root	FEF8F4D3_001436-T1	368	ambiguous		27	None	None	Q06609|Rad51	0.311	0.117	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_318	annotated	FEF8F4D3	Polyrhizophydium	Root	FEF8F4D3_001557-T1	287	assigned	XRCC3	1	93.0	89.8	O43542|XRCC3	2.094	1.154	False	XRCC3	Rad51:PF08423
+ANN_319	annotated	FEF8F4D3	Polyrhizophydium	Root	FEF8F4D3_003070-T1	355	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.684	0.245	False	Dmc1	Rad51:PF08423
+ANN_320	annotated	FEF8F4D3	Polyrhizophydium	Root	FEF8F4D3_008728-T1	405	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.292	0.008	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_321	annotated	FEF8F4D3	Polyrhizophydium	Root	FEF8F4D3_008734-T1	409	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.284	0.000	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_322	annotated	FF74C8A6	Lobulomyces	Root	FF74C8A6_001433-T1	342	assigned	Dmc1	4	100.0	95.9	Q14565|Dmc1	0.631	0.188	False	Dmc1	Rad51:PF08423
+ANN_323	annotated	FF74C8A6	Lobulomyces	Root	FF74C8A6_002609-T1	272	low_support	Rad51D	3	68.0	90.3	Q9LQQ2|Rad51D	2.667	1.135	False	Rad51B,Rad51C,Rad51D,Rad55,Rad57,XRCC3	Rad51:PF08423
+ANN_324	annotated	FF74C8A6	Lobulomyces	Root	FF74C8A6_004964-T1	339	ambiguous		27	None	None	Q06609|Rad51	0.365	0.163	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_325	annotated	FF74C8A6	Lobulomyces	Root	FF74C8A6_005333-T1	278	assigned	Rad51C	3	92.0	87.8	Q924H5|Rad51C	1.477	0.370	False	Rad51C	Rad51:PF08423
+ANN_326	annotated	FF74C8A6	Lobulomyces	Root	FF74C8A6_007817-T1	316	ambiguous		4	None	None	Q9UUL2|Rad57	2.489	0.989	False	Rad57,XRCC3	Rad51:PF08423
+ANN_327	annotated	FF98D640	Zoopage	Zoopagales	FF98D640_000784-T1	339	ambiguous		27	None	None	Q06609|Rad51	0.394	0.155	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_328	annotated	FF98D640	Zoopage	Zoopagales	FF98D640_001204-T1	341	ambiguous		4	None	None	Q924H5|Rad51C	2.898	1.384	True	Rad51C,Rad55	Rad51:PF08423
+ANN_329	annotated	FF98D640	Zoopage	Zoopagales	FF98D640_002385-T1	380	assigned	Rad51B	3	97.0	87.9	O15315|Rad51B	2.062	0.745	False	Rad51B	Rad51:PF08423
+ANN_330	annotated	F5C985FA	Spiromyces	Mycoemilia_Spiromyces	F5C985FA_000202-T1	351	ambiguous		27	None	None	Q06609|Rad51	0.341	0.077	False	Dmc1,Rad51,Rad51B,Rad51C,Rad51D,Rad55,Rad57,RadA,XRCC2,XRCC3	Rad51:PF08423
+ANN_331	annotated	F5C985FA	Spiromyces	Mycoemilia_Spiromyces	F5C985FA_002588-T1	425	low_support	XRCC3	2	17.0	34.7	Q9UUL2|Rad57	2.301	0.529	False	Rad57,XRCC3	Rad51:PF08423

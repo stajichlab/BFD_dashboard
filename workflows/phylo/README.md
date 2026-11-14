@@ -52,8 +52,24 @@ unrooted as printed; the redundancy numbers below do not depend on rooting.
 - **Well resolved:** 66 nested all-*Coemansia* clades have support >= 0.95 (largest 25, 21, 19, 19, 15, 13 strains), and only
   7 of 84 internal nodes among strains are below 0.70.
 
-Not yet done: site-heterogeneous IQ-TREE, a marker-count sensitivity run without the flagged taxa, ASTRAL for the *Coemansia*
-tree, rooting on the outgroups, and an ANI or Mash dereplication to define lineages.
+**Update 2026-11-14:** ANI dereplication, LG+F+G (UFBoot) trees, ASTRAL gene-tree summaries and rooting tests are done for both trees; the
+first-pass findings hold (Kickxella still nests inside Coemansia, weakly; Linderina and Basidiobolus still unstable, following concatenation vs
+ASTRAL). Results, methods and the Ku-loss placement: [`docs/analyses/kx2_ku_pathway/species_tree/`](../../docs/analyses/kx2_ku_pathway/species_tree/README.md).
+The site-heterogeneous (LG+C60+F+G, PMSF) trees are still running. Still not done: a marker-count sensitivity run without the flagged taxa.
+
+### Improved-tree scripts (run on the HPCC; outputs in the purgeable `bench/kickx_tree/iq/`)
+
+| Script | Step |
+|---|---|
+| `kickx_derep.sh`, `kickx_derep.py` | fastANI all-vs-all of the 107 *Coemansia* assemblies; clusters at >= 99 % ANI (97 and 95 % as sensitivity); retained-taxa table |
+| `kickx_subset_aln.py` | restrict the nf_phyling per-marker alignments to a taxa list and rebuild the concatenated alignment |
+| `kickx_iqtree.sh`, `kickx_iq_submit.sh` | stages `subset`, `guide` (LG+F+G, UFBoot), `pmsf` (LG+C60+F+G bootstrap), `pmsfml` (PMSF ML tree), `gene` (per-marker trees), `astral` |
+| `kickx_tree_tools.py`, `kickx_tree_report.py` | own rerooting, Robinson-Foulds, clade tests, rooting sensitivity, figures |
+| `test_kickx_phylo.py` | fixture tests (`/usr/bin/python3.12 -m unittest test_kickx_phylo`; 7 tests pass) |
+
+Two pitfalls found: (1) with `-b`, IQ-TREE 3.0.1 overwrites `<prefix>.treefile` with every bootstrap replicate's tree, so run the ML tree separately (`pmsfml`); (2) Bio.Phylo's
+`root_with_outgroup` and `root_at_midpoint` mislabel branch supports on IQ-TREE/FastTree trees (trifurcating root), so use `kickx_tree_tools.root_on`.
+The LG+F+G guide fit needs about 2 GB and the C60 mixture 92-110 GB; epyc and stajichlab memory was the scheduling bottleneck, so request what is needed (`--mem 160gb`), not hundreds of GB.
 
 ## Lessons from the first runs
 
@@ -99,13 +115,11 @@ marker count inspected, and the topology reported with and without them.
 
 ## Still to do before this answers the questions
 
-1. **Second method.** FastTree is a first pass. Run IQ-TREE on the phyling concatenated alignment with a
-   site-heterogeneous model (for example LG+C60+F+G with ultrafast bootstrap) and a gene-tree summary method
-   (ASTRAL on per-marker trees). Exact IQ-TREE module and the phyling alignment file names must be confirmed on the
-   HPCC, so no script is drafted for this step yet. Compare backbones: the order of the zygomycete groups is
-   contested (citation to verify) and changes loss counts.
+1. **Second method.** Done for LG+F+G and ASTRAL (see the update above); the site-heterogeneous PMSF trees (LG+C60+F+G) are
+   still running (`docs/analyses/kx2_ku_pathway/species_tree/README.md`, "What is still running"). The order of the zygomycete groups is
+   contested (citation to verify) and changes loss counts: *Basidiobolus* is placed differently by concatenation and by ASTRAL.
 2. **Marker coverage filter.** Drop taxa or markers below a coverage cutoff and report topology stability.
-3. **Dereplicate Coemansia** by ANI or Mash distance so near-clonal strains count once (the sketches may already
-   exist in the PopSeq project; check before computing new ones).
+3. **Dereplicate Coemansia**: done with fastANI (62 representatives at >= 99 % ANI; `derep/` in the results folder). Mash sketches from the
+   PopSeq project were not checked for reuse.
 4. **Fixture test** for the selection SQL (a small parquet fixture) and a check that every selected LOCUSTAG has a
    proteome in `locustag_to_pep.tsv` (the script already fails loudly when one is missing).

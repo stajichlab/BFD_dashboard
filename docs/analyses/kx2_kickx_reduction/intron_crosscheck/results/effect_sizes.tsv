@@ -1,0 +1,55 @@
+setting	ident_thr	group	cliff_median_introns	cliff_frac_ge1	cliff_per_kb	cliff_mean_introns	cliff_canon_per_kb	cliff_frac_canon_ge1
+A	0.4	Kickxellales core (5)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+A	0.4	Kickxellales all (7)	-1.0	-1.0	-0.9642857142857143	-1.0	-0.9642857142857143	-1.0
+A	0.4	Harpellales (4)	-1.0	-1.0	-0.875	-0.9375	-0.9375	-1.0
+A	0.4	Dimargaritales+Ramicandelaber (4)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+A	0.4	Zoopagales (8)	-0.484375	-0.875	-0.4375	-0.5	-0.46875	-0.84375
+A	0.4	Entomophthorales+Basidiobolus (4)	-0.8125	-1.0	-0.8125	-0.8125	-0.8125	-1.0
+A	0.5	Kickxellales core (5)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+A	0.5	Kickxellales all (7)	-0.9642857142857143	-1.0	-0.9285714285714286	-0.9642857142857143	-0.9285714285714286	-1.0
+A	0.5	Harpellales (4)	-0.875	-1.0	-0.875	-0.9375	-0.875	-1.0
+A	0.5	Dimargaritales+Ramicandelaber (4)	-0.9375	-1.0	-1.0	-1.0	-1.0	-1.0
+A	0.5	Zoopagales (8)	-0.40625	-0.90625	-0.46875	-0.53125	-0.46875	-0.90625
+A	0.5	Entomophthorales+Basidiobolus (4)	-0.65625	-1.0	-0.8125	-0.8125	-0.8125	-1.0
+A	0.6	Kickxellales core (5)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+A	0.6	Kickxellales all (7)	-1.0	-1.0	-0.9583333333333334	-1.0	-0.9583333333333334	-1.0
+A	0.6	Harpellales (4)	-1.0	-1.0	-0.875	-0.9375	-0.875	-1.0
+A	0.6	Dimargaritales+Ramicandelaber (4)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+A	0.6	Zoopagales (8)	-0.875	-0.90625	-0.59375	-0.59375	-0.59375	-0.9375
+A	0.6	Entomophthorales+Basidiobolus (4)	-1.0	-1.0	-0.9375	-0.875	-0.9375	-1.0
+B	0.4	Kickxellales core (5)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+B	0.4	Kickxellales all (7)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+B	0.4	Harpellales (4)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+B	0.4	Dimargaritales+Ramicandelaber (4)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+B	0.4	Zoopagales (8)	-0.3125	-0.84375	-0.21875	-0.25	-0.28125	-0.9375
+B	0.4	Entomophthorales+Basidiobolus (4)	-0.53125	-1.0	-0.75	-0.8125	-0.4375	-1.0
+B	0.5	Kickxellales core (5)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+B	0.5	Kickxellales all (7)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+B	0.5	Harpellales (4)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+B	0.5	Dimargaritales+Ramicandelaber (4)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+B	0.5	Zoopagales (8)	-0.1875	-0.84375	-0.25	-0.34375	-0.28125	-0.9375
+B	0.5	Entomophthorales+Basidiobolus (4)	-0.1875	-0.875	-0.3125	-0.5	-0.25	-1.0
+B	0.6	Kickxellales core (5)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+B	0.6	Kickxellales all (7)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+B	0.6	Harpellales (4)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+B	0.6	Dimargaritales+Ramicandelaber (4)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+B	0.6	Zoopagales (8)	-0.625	-0.78125	-0.34375	-0.375	-0.34375	-0.9375
+B	0.6	Entomophthorales+Basidiobolus (4)	-0.5	-1.0	-0.3125	-0.1875	-0.25	-1.0
+C	0.4	Kickxellales core (5)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+C	0.4	Kickxellales all (7)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+C	0.4	Harpellales (4)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+C	0.4	Dimargaritales+Ramicandelaber (4)	-0.9375	-1.0	-1.0	-1.0	-1.0	-1.0
+C	0.4	Zoopagales (8)	-0.375	-0.4375	0.0	-0.25	-0.03125	-0.625
+C	0.4	Entomophthorales+Basidiobolus (4)	-0.6875	-0.5625	-0.6875	-0.75	-0.3125	-0.9375
+C	0.5	Kickxellales core (5)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+C	0.5	Kickxellales all (7)	-1.0	-0.8928571428571429	-1.0	-1.0	-1.0	-1.0
+C	0.5	Harpellales (4)	-0.9375	-1.0	-1.0	-1.0	-1.0	-1.0
+C	0.5	Dimargaritales+Ramicandelaber (4)	-0.9375	-1.0	-1.0	-1.0	-1.0	-1.0
+C	0.5	Zoopagales (8)	-0.390625	-0.3125	-0.0625	-0.375	-0.15625	-0.59375
+C	0.5	Entomophthorales+Basidiobolus (4)	-0.53125	-0.5	-0.5625	-0.6875	-0.375	-0.875
+C	0.6	Kickxellales core (5)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+C	0.6	Kickxellales all (7)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+C	0.6	Harpellales (4)	-1.0	-0.875	-0.9375	-1.0	-1.0	-1.0
+C	0.6	Dimargaritales+Ramicandelaber (4)	-1.0	-1.0	-1.0	-1.0	-1.0	-1.0
+C	0.6	Zoopagales (8)	-0.359375	-0.34375	-0.1875	-0.375	-0.25	-0.46875
+C	0.6	Entomophthorales+Basidiobolus (4)	-0.4375	-0.625	-0.5625	-0.375	-0.375	-0.625
