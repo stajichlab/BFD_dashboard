@@ -8,3 +8,6 @@ explorer.html
 # summary atlas: large intermediates and local Python env (rebuild via workflows/atlas/)
 atlas_data/
 atlas_env/
+
+# local DuckDB files (build with workflows/build_bfd_db.sh; scratch via bin/bfd_scratch.py)
+db/
