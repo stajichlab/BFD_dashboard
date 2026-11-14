@@ -14,15 +14,17 @@ Outputs: ../data/th_*.tsv and ../figs/*.png.
 from __future__ import annotations
 import numpy as np
 import pandas as pd
+import os
 from pathlib import Path
 from scipy import stats
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE.parent / "data"
-FIGS = HERE.parent / "figs"
-FIGS.mkdir(exist_ok=True)
-ATLAS = Path("/Users/jstajich/projects/BFD_dashboard/docs/summary_atlas/tables")
-KXDIR = Path("/Users/jstajich/projects/BFD_dashboard/docs/analyses/kickxellomycota/data")
+REPO = HERE.parents[3]                                   # docs/analyses/trehalose/scripts -> repo root
+DATA = Path(os.environ.get("TH_DATA", HERE.parent / "data"))
+FIGS = Path(os.environ.get("TH_FIGS", HERE.parent / "figs"))
+FIGS.mkdir(parents=True, exist_ok=True)
+ATLAS = REPO / "docs/summary_atlas/tables"
+KXDIR = REPO / "docs/analyses/kickxellomycota/data"
 RNG = np.random.default_rng(1)
 N_BOOT = 5000
 
@@ -61,7 +63,7 @@ MODULES = {
     "DIT1":     ("PF05141", "ascospore wall maturation DIT1/PvcA"),
     "SPO7":     ("PF03907", "Spo7 (spore cortex, meiosis exit)"),
 }
-N_UNIV = 1409  # size of the near-universal family set in scr.th_univ
+N_UNIV = 1409  # fallback: size of the near-universal family set of the first (MotherDuck) run; overwritten from th_univ.csv
 
 # --- dessication-associated genus sets (curated, see README section 6) -------
 XERO_GENERA = {  # free-living xerophiles / osmo-halotolerant / rock-inhabiting
@@ -105,7 +107,8 @@ def load():
     X["n_prot_hit"] = X.n_prot_hit.fillna(0)
     X["frac_pfam"] = X.n_prot_hit / X.n_prot
     X["prot_per_mb"] = X.n_prot / (X.total_length_bp / 1e6)
-    X["qcov"] = X.n_univ_found / N_UNIV
+    n_univ = len(pd.read_csv(DATA / "th_univ.csv")) if (DATA / "th_univ.csv").exists() else N_UNIV
+    X["qcov"] = X.n_univ_found / n_univ
     # atlas Q-busco-rel: BUSCO complete at or above the 25th percentile of its own
     # class, so that real gene loss in reduced lineages is not treated as poor data
     X["busco_class_p25"] = X.groupby("CLASS").complete_pct.transform(lambda s: s.quantile(0.25))
@@ -122,8 +125,12 @@ def load():
     # credible absence: neither a Pfam record at any e-value nor a SwissProt best
     # hit to the named enzyme, in a genome whose annotation is essentially complete
     X["tps_any"] = X.TPS > 0
-    X["credible_TPS_loss"] = (X.qcov >= 0.985) & (X.complete_pct >= 85) & (X.TPS == 0) & (X.n_tps.fillna(0) == 0)
-    X["credible_TPP_loss"] = (X.qcov >= 0.985) & (X.complete_pct >= 85) & (X.TPP == 0) & (X.n_tpp.fillna(0) == 0)
+    # The credible set originally used absolute BUSCO >= 85, which is not the atlas filter (Q-busco-rel); it now uses
+    # class-relative BUSCO like `keep`. The absolute version is kept as *_absbusco for the old-vs-new comparison.
+    X["credible_TPS_loss_absbusco"] = (X.qcov >= 0.985) & (X.complete_pct >= 85) & (X.TPS == 0) & (X.n_tps.fillna(0) == 0)
+    X["credible_TPP_loss_absbusco"] = (X.qcov >= 0.985) & (X.complete_pct >= 85) & (X.TPP == 0) & (X.n_tpp.fillna(0) == 0)
+    X["credible_TPS_loss"] = (X.qcov >= 0.985) & (X.complete_pct >= X.busco_class_p25) & (X.TPS == 0) & (X.n_tps.fillna(0) == 0)
+    X["credible_TPP_loss"] = (X.qcov >= 0.985) & (X.complete_pct >= X.busco_class_p25) & (X.TPP == 0) & (X.n_tpp.fillna(0) == 0)
     X["keep"] = (X.qcov >= 0.98) & (X.complete_pct >= X.busco_class_p25)
     X["keep_strict"] = X.keep & (X.complete_pct >= 90)
     return X.reset_index()
@@ -143,13 +150,8 @@ def genus_table(X):
 
 
 def main():
-    cache = DATA / ".cache.pkl"
-    if cache.exists():
-        X, G = pd.read_pickle(cache)
-    else:
-        X = load()
-        G = genus_table(X)
-        pd.to_pickle((X, G), cache)
+    X = load()                  # no pickle cache: it served stale results after input changes (Opus review)
+    G = genus_table(X)
     X.to_csv(DATA / "th_genome_matrix.tsv", sep="\t", index=False)
     print(f"genomes {len(X)}  quality-kept {int(X.keep.sum())}  genera {X.GENUS.nunique()}")
 

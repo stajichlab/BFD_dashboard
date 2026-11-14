@@ -12,12 +12,15 @@ called for in docs/FUNCTIONAL_ANALYSES.md (agenda item C4 / A2).
 from __future__ import annotations
 import numpy as np
 import pandas as pd
+import os
+import sys
 from pathlib import Path
-from scipy import stats
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE.parent / "data"
-N_UNIV = 1409
+sys.path.insert(0, str(HERE))
+from stats_util import bh_qvalues, expected_coabsence  # noqa: E402
+
+DATA = Path(os.environ.get("TH_DATA", HERE.parent / "data"))
 
 
 def main():
@@ -43,37 +46,31 @@ def main():
                    "PF05693": "GSY", "PF00343": "GPH"}
     abs_extra = {k: (key.loc[genomes, v].values == 0) for k, v in focal_extra.items()}
 
+    cls = np.array([key.loc[g, "CLASS"] for g in genomes])
+
     def stratified(focal_acc, target_acc):
+        """Both nulls: n_missing bins only (first version) and n_missing bins x class (added after the Opus review)."""
         f = abs_extra[focal_acc] if focal_acc in abs_extra else M[:, fi[focal_acc]]
         t = abs_extra[target_acc] if target_acc in abs_extra else M[:, fi[target_acc]]
-        if f.sum() < 3:
+        a = expected_coabsence(f, t, n_missing)
+        b = expected_coabsence(f, t, n_missing, group=cls)
+        if a is None:
             return None
-        bins = np.digitize(n_missing, [1, 2, 3, 5, 8, 12, 20, 40])
-        obs = int((f & t).sum())
-        exp = 0.0
-        for b in np.unique(bins):
-            inb = bins == b
-            denom = (~f & inb).sum()
-            if denom < 5:
-                continue
-            rate = (t & ~f & inb).sum() / denom
-            exp += rate * (f & inb).sum()
-        if exp <= 0:
-            return None
-        # exact Poisson test: is obs greater than exp?
-        p_hi = stats.poisson.sf(obs - 1, exp)
-        p_lo = stats.poisson.cdf(obs, exp)
-        return dict(focal=focal_acc, target=target_acc, n_focal_absent=int(f.sum()),
-                    obs_coabsent=obs, expected=round(exp, 2), obs_exp=round(obs / exp, 1) if exp else np.nan,
-                    p_two=round(2 * min(p_hi, p_lo, 1.0), 6))
+        row = dict(focal=focal_acc, target=target_acc, n_focal_absent=int(f.sum()),
+                   obs_coabsent=a["obs"], expected=round(a["exp"], 2),
+                   obs_exp=round(a["obs"] / a["exp"], 1), p_two=round(a["p_two"], 6))
+        row.update(expected_class=round(b["exp"], 2) if b else np.nan,
+                   obs_exp_class=round(b["obs"] / b["exp"], 1) if b else np.nan,
+                   p_two_class=round(b["p_two"], 6) if b else np.nan)
+        return row
 
     # 1. focal = TPS, every other family as target (near-universal set + pathway genes)
     targets = sorted((set(fams) | set(focal_extra)) - {"PF00982"})
     rows = [r for r in (stratified("PF00982", a) for a in targets) if r]
     R = pd.DataFrame(rows).sort_values("obs_exp", ascending=False)
-    k = len(R)
-    R["q_BH"] = np.minimum.accumulate((R.p_two.values * k / np.arange(1, k + 1))[::-1])[::-1]
-    R["rank"] = np.arange(1, k + 1)
+    R["q_BH"] = bh_qvalues(R.p_two.values)                # BH on p in input order (was applied to effect-size order: all q = 0)
+    R["q_BH_class"] = bh_qvalues(R.p_two_class.values)
+    R["rank"] = np.arange(1, len(R) + 1)
     R.to_csv(DATA / "th_coloss_vs_TPS.tsv", sep="\t", index=False)
     ids = {"PF02358": "TPP", "PF01204": "NTH", "PF05693": "GSY", "PF00343": "GPH", "PF01704": "UGP",
            "PF03632": "ATH", "PF07479": "GPD", "PF02878": "PGM", "PF00342": "PGI", "PF00128": "GH13",
@@ -82,7 +79,8 @@ def main():
     print(R.head(12).assign(module=lambda d: d.target.map(ids).fillna("")).to_string(index=False))
     print("\nwhere the other trehalose/glycogen genes rank:")
     print(R[R.target.isin(ids)].assign(module=lambda d: d.target.map(ids))[
-        ["target", "module", "n_focal_absent", "obs_coabsent", "expected", "obs_exp", "p_two", "rank"]
+        ["target", "module", "n_focal_absent", "obs_coabsent", "expected", "obs_exp", "p_two", "q_BH",
+         "expected_class", "obs_exp_class", "p_two_class", "q_BH_class", "rank"]
     ].to_string(index=False))
 
     # 2. symmetric: focal = TPP

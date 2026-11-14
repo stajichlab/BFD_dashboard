@@ -7,10 +7,11 @@ docs/FUNCTIONAL_ANALYSES.md.
 """
 from __future__ import annotations
 import pandas as pd
+import os
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE.parent / "data"
+DATA = Path(os.environ.get("TH_DATA", HERE.parent / "data"))
 
 
 def main():

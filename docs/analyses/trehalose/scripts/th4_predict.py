@@ -10,11 +10,16 @@ from names, so this is screening, not inference.
 from __future__ import annotations
 import numpy as np
 import pandas as pd
+import os
+import sys
 from pathlib import Path
 from scipy import stats
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE.parent / "data"
+sys.path.insert(0, str(HERE))
+from stats_util import bh_qvalues  # noqa: E402
+
+DATA = Path(os.environ.get("TH_DATA", HERE.parent / "data"))
 
 XERO = {"Wallemia", "Xeromyces", "Baudoinia", "Knufia", "Cryomyces", "Antarctomyces",
         "Cryoendolithus", "Friedmanniomyces", "Hortaea", "Exophiala", "Aureobasidium",
@@ -54,9 +59,7 @@ def main():
                              auc=u.statistic / (len(a) * len(b)), p=u.pvalue,
                              med_focal_classpct=a.median(), med_ctrl_classpct=b.median()))
     R = pd.DataFrame(rows)
-    k = len(R)
-    R["q_BH"] = np.sort(R.p.values) * k / np.arange(1, k + 1)
-    R["q_BH"] = np.minimum.accumulate(R.q_BH.values[::-1])[::-1]
+    R["q_BH"] = bh_qvalues(R.p.values)    # was: q computed on sorted p and assigned to unsorted rows (wrong rows)
     R = R.sort_values("auc", ascending=False)
     R.to_csv(DATA / "th_predictive_auc.tsv", sep="\t", index=False)
     pd.set_option("display.width", 200)

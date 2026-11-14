@@ -9,12 +9,19 @@ docs/analyses/kickxellomycota/data/genus_medians_all.tsv (proteome size per genu
 from __future__ import annotations
 import numpy as np
 import pandas as pd
+import os
+import sys
 from pathlib import Path
 from scipy import stats
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE.parent / "data"
-FIGS = HERE.parent / "figs"
+sys.path.insert(0, str(HERE))
+from stats_util import bh_qvalues  # noqa: E402
+
+REPO = HERE.parents[3]
+DATA = Path(os.environ.get("TH_DATA", HERE.parent / "data"))
+FIGS = Path(os.environ.get("TH_FIGS", HERE.parent / "figs"))
+FIGS.mkdir(parents=True, exist_ok=True)
 RNG = np.random.default_rng(7)
 
 
@@ -43,9 +50,7 @@ def contrast(focal, sisters, name, out, extra=""):
 def main():
     G = pd.read_csv(DATA / "th_genus_medians.tsv", sep="\t")
     X = pd.read_csv(DATA / "th_genome_matrix.tsv", sep="\t")
-    L = pd.read_csv(DATA / "th_loose_genus.csv")           # genus x PF00982/PF02358 hit counts
-    strc = pd.read_csv("/Users/jstajich/projects/BFD_dashboard/docs/analyses/kickxellomycota/data/"
-                       "genus_medians_all.tsv", sep="\t")  # 1,441 genera: structural metrics
+    strc = pd.read_csv(REPO / "docs/analyses/kickxellomycota/data/genus_medians_all.tsv", sep="\t")  # 1,441 genera: structural metrics
     G = G.merge(strc[["GENUS", "introns_per_transcript", "gene_density", "median_protein_len",
                       "masked_pct", "median_intergenic"]], on="GENUS", how="left")
 
@@ -110,6 +115,7 @@ def main():
                 sib = G[(G.CLASS == cls) & (~mask)]
                 contrast(fsub[m].dropna(), sib[m].dropna(), m, res, extra=f"{label} | {cls}")
     R = pd.DataFrame(res)
+    R["q_BH"] = bh_qvalues(R.mannwhitney_p.values)       # added: the first version reported p only
     R.to_csv(DATA / "th_trait_contrasts.tsv", sep="\t", index=False)
     print("\n== trait contrasts (genus medians, class-matched sisters; |delta|>=0.4 and CI excluding 0) ==")
     keep = R[(R.cliffs_delta.abs() >= 0.4) & ((R.ci_lo > 0) | (R.ci_hi < 0))].sort_values("cliffs_delta")
