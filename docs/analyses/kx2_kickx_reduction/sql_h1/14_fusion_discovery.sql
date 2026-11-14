@@ -1,0 +1,6 @@
+-- Purpose: exploratory query used to choose the fusion-probe Pfam markers (SwissProt best-hit names -> modal Pfam architecture). Result query only.
+-- Inputs: kx2_h1_genomes, kx2_h1_prot, bfd.swissprot_best. Filter: neg_log10_evalue>=30, groups Mucorales/core Kickx/yeast_other, >=20 proteins.
+-- A second exploratory lookup (Pfam accession -> name, from bfd.pfam on one genome) was run by hand and is not saved as a separate file:
+--   SELECT split_part(pfam_acc,'.',1) acc, any_value(pfam_id) nm FROM bfd.pfam WHERE protein_id LIKE 'F0780881_%' AND split_part(pfam_acc,'.',1) IN (...) GROUP BY 1;
+WITH H AS (SELECT s.protein_id, s.protein_name, s.org_code FROM bfd.swissprot_best s JOIN kx2_h1_genomes g ON g.LOCUSTAG=s.species_prefix WHERE g.grp IN ('Mucorales','core_Kickxellales','yeast_other') AND s.neg_log10_evalue>=30 AND (s.protein_name ILIKE 'Fatty acid synthase%' OR s.protein_name ILIKE 'Pentafunctional AROM%' OR s.protein_name ILIKE 'Multifunctional protein ura2%' OR s.protein_name ILIKE 'CAD protein%' OR s.protein_name ILIKE 'Aromatic amino acid biosynthesis%'))
+SELECT g.grp, H.protein_name, count(*) n, round(avg(p.length)) len, mode(p.arch) arch FROM H JOIN kx2_h1_prot p ON p.protein_id=H.protein_id JOIN kx2_h1_genomes g ON g.LOCUSTAG=p.lt GROUP BY 1,2 HAVING count(*)>=20 ORDER BY 2,1;

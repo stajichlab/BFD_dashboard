@@ -1,0 +1,129 @@
+locustag	genus	grp	strain	cterm_cov_best	nterm_half_cov_best	cterm_query
+F1C537C3	Dimargaris	Dimargaritales	NA	0.459	0.623	Lig4|F9A17E9D_003104-T1
+F1C9E2AA	Dispira	Dimargaritales	NA	0.725	0.968	Lig4|F9A17E9D_003104-T1
+F4FD0401	Tieghemiomyces	Dimargaritales	NA	0.684	0.777	Lig4|F9A17E9D_003104-T1
+F3D937C5	Capniomyces	Harpellales	NA	0.922	0.696	Lig4|F9A17E9D_003104-T1
+F45BD9C7	Furculomyces	Harpellales	NA	0.055	0.799	Lig4|O74833
+FCCDAB75	Smittium	Harpellales	NA	0.055	0.166	Lig4|O74833
+F23D95F9	Zancudomyces	Harpellales	NA	0.725	0.872	Lig4|F9A17E9D_003104-T1
+FD8916FB	Coemansia	Kickxellales_core	RSA 1358	0.117	0.865	Lig4|O74833
+F0DE0BF4	Coemansia	Kickxellales_core	RSA 1278	0.117	0.865	Lig4|O74833
+F3D51D57	Coemansia	Kickxellales_core	BCRC 34962	0.161	0.865	Lig4|O74833
+FC1174D9	Coemansia	Kickxellales_core	RSA 71	0.117	0.865	Lig4|O74833
+F7A7AA4C	Coemansia	Kickxellales_core	RSA 1813	0.117	0.865	Lig4|O74833
+F2470181	Coemansia	Kickxellales_core	RSA 487	0.117	0.865	Lig4|O74833
+F4F8BFB2	Coemansia	Kickxellales_core	RSA 1646	0.117	0.865	Lig4|O74833
+F0DB79EE	Coemansia	Kickxellales_core	RSA 1250	0.117	0.865	Lig4|O74833
+F333880B	Coemansia	Kickxellales_core	BCRC 34882	0.117	0.865	Lig4|O74833
+F80EB351	Coemansia	Kickxellales_core	RSA 986	0.117	0.865	Lig4|O74833
+F4C3EFF5	Dipsacomyces	Kickxellales_core	NA	0.0	0.0	
+F9F51274	Kickxella	Kickxellales_core	NA	0.117	0.857	Lig4|O74833
+F43C8248	Linderina	Kickxellales_core	NA	0.175	0.857	Lig4|O74833
+FE0E32D4	Martensiomyces	Kickxellales_core	NA	0.117	0.857	Lig4|O74833
+F8E635D0	Rhizopus	Mucoromycota_s.l.	NA	0.78	0.925	Lig4|F4696F25_002989-T1
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	NA	0.56	0.872	Lig4|F9A17E9D_003104-T1
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	NA	0.0	0.0	
+F7FE4923	Ramicandelaber	Ramicandelaber	NA	0.725	0.967	Lig4|F9A17E9D_003104-T1
+F3F252DC	Caulochytrium	Root	NA	0.984	0.957	Lig4|F9A17E9D_003104-T1
+FEB493EF	Piptocephalis	Zoopagales	NA	0.736	0.874	Lig4|F9A17E9D_003104-T1
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	NA	0.889	0.948	Lig4|F9A17E9D_003104-T1
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	NA	0.518	0.695	Lig4|F9A17E9D_003104-T1
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	NA	0.725	0.532	Lig4|F9A17E9D_003104-T1
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	NA	0.056	0.548	Lig4|F4696F25_002989-T1
+F00A57ED	Coemansia	Kickxellales_core	NBRC 105414	0.117	0.865	Lig4|O74833
+F023BB0A	Coemansia	Kickxellales_core	RSA 2526	0.117	0.867	Lig4|O74833
+F02CB1ED	Coemansia	Kickxellales_core	RSA 1853	0.117	0.867	Lig4|O74833
+F05FC232	Coemansia	Kickxellales_core	RSA 2675	0.161	0.865	Lig4|O74833
+F090F877	Coemansia	Kickxellales_core	RSA 2523	0.117	0.867	Lig4|O74833
+F097EC52	Coemansia	Kickxellales_core	RSA 637	0.117	0.867	Lig4|O74833
+F0A69C67	Coemansia	Kickxellales_core	RSA 1843	0.117	0.865	Lig4|O74833
+F0D6C540	Coemansia	Kickxellales_core	S3946	0.117	0.865	Lig4|O74833
+F0DFB354	Coemansia	Kickxellales_core	IMI 214463	0.117	0.396	Lig4|O74833
+F0E0ADB2	Coemansia	Kickxellales_core	S16	0.117	0.865	Lig4|O74833
+F1649C35	Coemansia	Kickxellales_core	RSA 371	0.117	0.705	Lig4|O74833
+F1709B5F	Coemansia	Kickxellales_core	S680	0.0	0.865	
+F1C72083	Coemansia	Kickxellales_core	RSA 564	0.117	0.867	Lig4|O74833
+F1DEA344	Coemansia	Kickxellales_core	BCRC 34301	0.117	0.865	Lig4|O74833
+F235E971	Coemansia	Kickxellales_core	RSA 562	0.117	0.867	Lig4|O74833
+F242D38C	Coemansia	Kickxellales_core	RSA 1365	0.0	0.857	
+F24A7D8D	Coemansia	Kickxellales_core	CBS 109367	0.107	0.865	Lig4|O74833
+F24CD14F	Coemansia	Kickxellales_core	RSA 2559	0.183	0.857	Lig4|O74833
+F258DE34	Coemansia	Kickxellales_core	RSA 2705	0.0	0.865	
+F26DD490	Coemansia	Kickxellales_core	IMI 209127	0.0	0.668	
+F340C8D3	Coemansia	Kickxellales_core	RSA 2618	0.0	0.189	
+F35EFF3E	Coemansia	Kickxellales_core	NRRL 1564	0.117	0.857	Lig4|O74833
+F3E9A416	Coemansia	Kickxellales_core	RSA 2337	0.117	0.865	Lig4|O74833
+F3F357F6	Coemansia	Kickxellales_core	RSA 451	0.117	0.867	Lig4|O74833
+F40251F8	Coemansia	Kickxellales_core	RSA 2167	0.117	0.867	Lig4|O74833
+F4A7DF8C	Coemansia	Kickxellales_core	RSA 532	0.117	0.867	Lig4|O74833
+F4CFDB08	Coemansia	Kickxellales_core	RSA 552	0.112	0.871	Lig4|O74833
+F4DA7CFA	Coemansia	Kickxellales_core	RSA 1200	0.117	0.857	Lig4|O74833
+F50540CB	Coemansia	Kickxellales_core	IMI 279145	0.0	0.865	
+F52B818A	Coemansia	Kickxellales_core	IMI 209128	0.107	0.865	Lig4|O74833
+F5353C03	Coemansia	Kickxellales_core	NRRL 3115	0.117	0.865	Lig4|O74833
+F53A5B42	Coemansia	Kickxellales_core	RSA 1822	0.117	0.867	Lig4|O74833
+F55D1F1F	Coemansia	Kickxellales_core	RSA 2530	0.204	0.865	Lig4|F5655B54_010178-T1
+F56A3D5B	Coemansia	Kickxellales_core	RSA 355	0.117	0.867	Lig4|O74833
+F5845C02	Coemansia	Kickxellales_core	RSA 2424	0.117	0.871	Lig4|O74833
+F5AC56AA	Coemansia	Kickxellales_core	RSA 522	0.117	0.867	Lig4|O74833
+F5BD664F	Coemansia	Kickxellales_core	RSA 989	0.117	0.865	Lig4|O74833
+F5E0444E	Coemansia	Kickxellales_core	S146	0.107	0.865	Lig4|O74833
+F61EE814	Coemansia	Kickxellales_core	RSA 1285	0.117	0.857	Lig4|O74833
+F6545673	Coemansia	Kickxellales_core	BCRC 34381	0.0	0.865	
+F6CB2D58	Coemansia	Kickxellales_core	RSA 2610	0.0	0.865	
+F6D48826	Coemansia	Kickxellales_core	RSA 638	0.117	0.867	Lig4|O74833
+F6E9E45A	Coemansia	Kickxellales_core	RSA 1935	0.0	0.867	
+F735041E	Coemansia	Kickxellales_core	RSA 1933	0.117	0.865	Lig4|O74833
+F771CC9E	Coemansia	Kickxellales_core	NRRL 1565	0.0	0.605	
+F7943FC0	Coemansia	Kickxellales_core	RSA 1752	0.117	0.838	Lig4|O74833
+F7B5F16C	Coemansia	Kickxellales_core	RSA 1938	0.117	0.838	Lig4|O74833
+F7BBDC12	Coemansia	Kickxellales_core	RSA 2704	0.117	0.865	Lig4|O74833
+F7DF6513	Coemansia	Kickxellales_core	RSA 521	0.117	0.867	Lig4|O74833
+F8348CBD	Coemansia	Kickxellales_core	RSA 518	0.117	0.867	Lig4|O74833
+F8384A64	Coemansia	Kickxellales_core	RSA 455	0.117	0.118	Lig4|O74833
+F8589389	Coemansia	Kickxellales_core	RSA 1878	0.117	0.705	Lig4|O74833
+F889F3AF	Coemansia	Kickxellales_core	RSA 1290	0.0	0.865	
+F897AC32	Coemansia	Kickxellales_core	CBS 939.97	0.117	0.867	Lig4|O74833
+F8C73C93	Coemansia	Kickxellales_core	RSA 720	0.117	0.867	Lig4|O74833
+F8EA1BC9	Coemansia	Kickxellales_core	RSA 2607	0.0	0.867	
+F9025F8A	Coemansia	Kickxellales_core	RSA 2050	0.161	0.865	Lig4|O74833
+F90C8E1A	Coemansia	Kickxellales_core	RSA 1591	0.117	0.838	Lig4|O74833
+F9197CED	Coemansia	Kickxellales_core	RSA 1199	0.117	0.867	Lig4|O74833
+F9735524	Coemansia	Kickxellales_core	RSA 1722	0.117	0.857	Lig4|O74833
+F97F055E	Coemansia	Kickxellales_core	RSA 2049	0.117	0.857	Lig4|O74833
+F993D0AD	Coemansia	Kickxellales_core	Benny D160-2	0.117	0.857	Lig4|O74833
+F9A4B572	Coemansia	Kickxellales_core	BCRC 34489	0.117	0.859	Lig4|O74833
+FA0999E6	Coemansia	Kickxellales_core	RSA 2399	0.0	0.668	
+FA34ED10	Coemansia	Kickxellales_core	RSA 990	0.117	0.865	Lig4|O74833
+FA376F2E	Coemansia	Kickxellales_core	NBRC 105413	0.117	0.865	Lig4|O74833
+FA99CC43	Coemansia	Kickxellales_core	BCRC 34297	0.107	0.865	Lig4|O74833
+FA9ADEB3	Coemansia	Kickxellales_core	RSA 2611	0.204	0.865	Lig4|F5655B54_010178-T1
+FB3261E7	Coemansia	Kickxellales_core	RSA 2336	0.117	0.857	Lig4|O74833
+FB97D937	Coemansia	Kickxellales_core	RSA 922	0.0	0.865	
+FB9A10E8	Coemansia	Kickxellales_core	RSA 2711	0.117	0.865	Lig4|O74833
+FBC9CC9D	Coemansia	Kickxellales_core	RSA 1086	0.117	0.865	Lig4|O74833
+FBF4A129	Coemansia	Kickxellales_core	CBS 516.66	0.107	0.096	Lig4|O74833
+FBF7F5A3	Coemansia	Kickxellales_core	NBRC 32514	0.117	0.861	Lig4|O74833
+FC37F49D	Coemansia	Kickxellales_core	RSA 2131	0.117	0.867	Lig4|O74833
+FC546B88	Coemansia	Kickxellales_core	RSA 2440	0.117	0.867	Lig4|O74833
+FCE53DE3	Coemansia	Kickxellales_core	RSA 2322	0.117	0.869	Lig4|O74833
+FD12E2B4	Coemansia	Kickxellales_core	IMI 214461	0.117	0.869	Lig4|O74833
+FD3FEA21	Coemansia	Kickxellales_core	RSA 1972	0.117	0.867	Lig4|O74833
+FD671B08	Coemansia	Kickxellales_core	RSA 476	0.107	0.865	Lig4|O74833
+FD7FFCA4	Coemansia	Kickxellales_core	RSA 1939	0.117	0.857	Lig4|O74833
+FD97B502	Coemansia	Kickxellales_core	RSA 2320	0.117	0.869	Lig4|O74833
+FDF042C1	Coemansia	Kickxellales_core	Benny D115	0.189	0.857	Lig4|O74833
+FDFF0B8B	Coemansia	Kickxellales_core	RSA 1085	0.117	0.865	Lig4|O74833
+FE019C62	Coemansia	Kickxellales_core	RSA 1804	0.117	0.857	Lig4|O74833
+FE3CD348	Coemansia	Kickxellales_core	NRRL 1566	0.117	0.857	Lig4|O74833
+FE3D2DE5	Coemansia	Kickxellales_core	RSA 1821	0.117	0.865	Lig4|O74833
+FE4EB007	Coemansia	Kickxellales_core	RSA 1807	0.117	0.867	Lig4|O74833
+FE60C51C	Coemansia	Kickxellales_core	RSA 1824	0.117	0.867	Lig4|O74833
+FE668E47	Coemansia	Kickxellales_core	RSA 370	0.117	0.705	Lig4|O74833
+FE83C30F	Coemansia	Kickxellales_core	D1744	0.117	0.867	Lig4|O74833
+FE980263	Coemansia	Kickxellales_core	RSA 485	0.0	0.865	
+FEDE47E1	Coemansia	Kickxellales_core	S100	0.117	0.865	Lig4|O74833
+FEE0DDE5	Coemansia	Kickxellales_core	RSA 988	0.117	0.857	Lig4|O74833
+FF5D60B2	Coemansia	Kickxellales_core	IMI 203386	0.117	0.865	Lig4|O74833
+FFBB50EB	Coemansia	Kickxellales_core	S155-1	0.0	0.857	
+FFF4186D	Coemansia	Kickxellales_core	NRRL 2694	0.107	0.865	Lig4|O74833

@@ -13,16 +13,13 @@ Started: 2026-11-10. This page tracks the exploratory analyses run against the f
   | `ao_` | *Antarctolithica obscura* characterization (C) |
   | `rf_` | Functional classifier (D) |
   | `th_` | Trehalose survey (G) |
-  | `kx2_` | Kickxellomycota reduction hypotheses H1–H4 (E, on the unmerged branch below) |
-  | none | Kickxellomycota and research agenda (A) |
+  | `kx2_h1_` … `kx2_h4_` | Kickxellomycota reduction hypotheses H1–H4 (E) |
+  | `kx_` or none | Kickxellomycota and research agenda (A) |
 
-  > **Branch note.** Sections F and G were written in the `j11-intron-position`
-  > worktree. The unmerged branch `worktree-analysis-e-kickx-reduction` adds a
-  > section **E** (hypotheses H1–H4 on Kickxellomycota reduction: multidomain
-  > proteins, size accounting, codon usage/tRNA, loss composition) with SQL run
-  > inline and no report directory. Renumber on merge, and reconcile E's H1/H4
-  > with F1/F3 — they address the same questions and E's stratified null partly
-  > overturns A's yeast-convergence claim.
+  > **Note on sections.** E (H1–H4, merged in PR #1) and G (trehalose) are analyses with
+  > results. F is now an agenda only (see `analyses/trehalose/AGENDA_F.md`); E's H1/H4 address
+  > the same questions as F1/F3, and E's stratified null partly overturns A's
+  > yeast-convergence claim.
 
 - **Client note:** the system `duckdb` (v2.0.0) is rejected by MotherDuck; use a
   v1.5.x CLI. `bfd.pfam` does retain sub-1e-5 hits (8.4 % of 368 M rows, to E = 1.8),
@@ -223,118 +220,63 @@ From these it distills 6–10 patterns worth deeper study.
 
 **Findings:** pending.
 
-## F. Separating gain, loss and shrinkage pressure in reduced genomes
+## E. What was lost, gained and reshaped in Kickxellomycota reduction, and how it compares with yeasts
 
-**Status:** plan (written 2026-11-10, in the `j11-intron-position` worktree). No new
-compute for this section; every item names the table or column it needs.
+**Status:** first pass done 2026-11-10 (four parallel agents, exploration in MotherDuck). No narrative report yet. The SQL is saved in [analyses/kx2_kickx_reduction/](analyses/kx2_kickx_reduction/README.md) as `sql_h1/` to `sql_h4/` (numbered in run order, with a README per directory giving dependencies and a verification record); see "Reproducibility" below for what was and was not re-run. Scratch tables: `bfd_scratch.kx2_h1_*` to `kx2_h4_*`.
 
-**Frame.** Analysis A established the phenotype (core Kickxellales: −16.2 Mb,
-−4,096 genes, 0.65 against 3.83 introns per transcript, CDS length unchanged,
-41 of 2,471 core domains lost, only 4 shared with budding yeasts) and analysis E
-(on the unmerged branch) found against multidomain enrichment (28.2 % of proteins
-with ≥2 Pfam domains against 33.2 % in Mucorales, δ −0.58) and against yeast-like
-loss convergence once the null is stratified by per-family dispensability
-(0.93× expected). What neither could do is separate **gene loss** from **annotation
-loss**, or **selection on size** from **relaxed constraint**. F1–F12 are the analyses
-that can, in the order I would run them.
+**Scope and conventions:** genus medians over species representatives. Quality filter BUSCO ≥ 85 and N50 ≥ 50 kb for main comparisons, unfiltered shown alongside. No genus has passed the filter in Harpellales or Dimargaritales, so those rows are unfiltered only. Core Kickxellales is 3–5 genera, almost all *Coemansia* (146 of 169 species). Baselines: Mucorales for Kickxellomycota and Zoopagales; Pezizomycotina for yeasts. Nothing is phylogenetically corrected.
 
-### Cheap and decisive now (no tree, no new annotation)
+**Hypotheses and outcomes**
 
-**F1. Make every absence call quantitative: a per-genome false-absence model.**
-The 1,409 near-universal families in `bfd_scratch.th_univ` give each genome an
-empirical absence-propensity score (median 1,407/1,409 found, 5th pct 1,275). Fit
-`presence ~ clade + log10(N50) + partial_fraction + busco_complete + qcov + gene_length_bias`
-per family (logistic, genus random effect) and report, for each candidate loss, the
-predicted false-absence probability next to the observation. Deliverable: a
-`pfam_absence_credibility(genome, pfam_acc, p_false_absent)` table. This is agenda
-A2's first half and a prerequisite for every other claim in this section.
-*Falsifier:* none — it can only lower confidence, never raise it falsely.
+| | Hypothesis | Outcome |
+|---|---|---|
+| H1 | Reduction removed or simplified multidomain proteins | **Not supported** |
+| H2 | Kickxellales shrank by gene number and introns, yeasts by non-coding compaction | **Not supported** |
+| H3 | Reduction pressure differs in kind: streamlining versus drift | **Weak lean**: core Kickxellales yeast-like, Harpellales drift-like |
+| H4 | Kickxellales contracted multi-copy families, yeasts lost whole modules | **Mixed** |
 
-**F2. Co-absence modules with a propensity-stratified null (the method that worked in G).**
-Obs/exp computed Mantel-Haenszel style across strata of each genome's total missing-family
-count, instead of the naive 2×2 Fisher that A used. Apply to the 41 "core losses" of the
-Kickxellales, to B's 58 co-absence modules, and to the Ku pair specifically.
-*Why it matters:* A's Ku70/Ku80 result is the mechanistic linchpin of the "intron loss was
-permissive" story, and A itself notes domains are not independent (Ku + Ku_N lost together).
-The stratified null will either firm Ku up or dissolve it.
-*Falsifier:* Ku co-absence obs/exp ≤ 3 on the same genome set.
+**Findings**
+1. **H1, architecture.** Mean protein length is unchanged (455 vs 447 aa in Mucorales, δ +0.09), and distinct architectures per 1,000 proteins are about 800–860 in every group. FAS (fused α+β), AROM and CAD are intact, and PKS, multi-NBD ABC and proteins ≥ 2,000 aa are retained. Proteins with ≥ 2 Pfam domains are 28.2% vs 33.2% in Mucorales (δ −0.58; −0.30 on non-partial genes), but Harpellales and Dimargaritales, which are not reduced, show the same direction, and the difference against 19 unreduced relatives is small. Only Microsporidia simplify (−148 aa; ABC and fusion enzymes lost). Within core Kickxellales the multidomain fraction correlates with BUSCO (r = 0.72) and partial-gene fraction (r = −0.70), so part of the deficit is assembly-dependent.
+2. **H2, accounting.** About 70% of the size deficit is gene number and about 22% is tighter intergenic space per gene, for core Kickxellales vs Mucorales (15 Mb) and Saccharomycotina vs Pezizomycotina (27.5 Mb) alike. Introns are 9% and 2%; intron number fell about 8-fold but intron bp per gene only 48% (yeasts 71%). Convergent spacers shrank to the yeast value (189 vs 185 bp), but divergent (promoter-side) spacers stayed wider (825 vs 561 bp). **Not measurable here:** UTR is not annotated (exon length equals CDS length everywhere) and gene overlaps are absent from the table, so "intergenic" includes UTRs.
+3. **H3, codon signature (genome-wide data only).** At matched GC3, core Kickxellales show more codon bias than expected (ENC-departure residual +0.054; yeasts +0.039, Mucorales +0.008), but tRNA supply matches codon demand less well than in yeasts (0.47 vs 0.61), and GC3 is high (67%, +14 points off the kingdom trend), so GC-biased gene conversion or mutation bias is not excluded. Harpellales are AT-rich (GC3 35%) with an AT-driven amino-acid profile and no excess bias, a drift-like pattern. No per-gene codon data exist in `bfd`, so there is no per-gene ENC or CAI and no ribosomal-protein subset, and no effective-population-size estimates are made.
+4. **H4, loss composition.** Against the same Pezizomycotina baseline, Kickxellales lose 41% of gene copies (59% by contraction) and Saccharomycetes 44% (61%); about 30% of single-copy families are lost in each. Observed complete-loss families over the count expected under uniform thinning is 0.62–0.89 for Kickxellales and 0.75–0.92 for yeasts, so only Microsporidia look like targeted whole-family loss. Overlap of lost sets with Saccharomycetes is 0.93 of expected after stratifying the null by how many other lineages lost each family, so gene-content convergence disappears once dispensability is controlled. Overlap with Harpellales is 1.87, but shared ancestry cannot be excluded without a tree. Scaling: Kickxellales are near the proportional curve for CAZy, kinase, TF total and secretome; AKR is over-contracted; serine peptidases, GATA, HMG and Myb TFs are expanded. Yeasts are off the curve in P450 (0.07× the Pezizomycotina fraction), CE (0.08×), AA (0.25×) and SDR (0.37×).
+5. **Gains (copy number only, no tree).** [PF00089](https://www.ebi.ac.uk/interpro/entry/pfam/PF00089/) trypsin: 21.5 copies in core Kickxellales (Harpellales 72.5) vs 2 in Mucorales; architecture is the same as Mucorales, so more copies, not new architectures. Also [PF00188](https://www.ebi.ac.uk/interpro/entry/pfam/PF00188/) (10 vs 3), [PF02458](https://www.ebi.ac.uk/interpro/entry/pfam/PF02458/) (17 vs 2–4), [GH46](https://cazy.org/famGH46) (6 vs 2). AA9, laccase ([PF00394](https://www.ebi.ac.uk/interpro/entry/pfam/PF00394/)) and tyrosinase ([PF00264](https://www.ebi.ac.uk/interpro/entry/pfam/PF00264/)) are **not** gained.
 
-**F3. Are the surviving proteomes *simpler*, or just *smaller*? The dilution test.**
-Decompose the proteome-size difference between each reduced lineage and its sister into
-(i) families absent, (ii) copies per shared family, (iii) proteins with no Pfam domain.
-This is B's un-built G2; E ran a version of it (`kx2_h4_*`: Kickxellales lose 41 % of gene
-copies, 59 % of that by contraction; yeasts 44 %, 61 %). F3's addition is to report
-**absolute counts of multi-domain proteins vs domain-less proteins**, the framing
-HYPOTHESES §P3 wants and E did not: if the multi-domain count is roughly constant while the
-domain-less count rises, "simplification" is dilution by orphan and TE-derived models, not
-loss of complexity. Needs only `A3/protein_core.parquet`.
+**Reading (interpretation)**
+- Reduction in both lineages is mostly fewer genes with each gene's content preserved. Intron loss is the visible phenotype but a small share of the size deficit.
+- The Mucorales baseline may overstate "reduction": Mucorales carry 2.5× the repeat fraction and 2.4× the intron bp per gene, and Zoopagales already have Kickxellales-sized genomes (about 19.7 Mb). Reduction is relative to an uncertain ancestral state until a tree exists.
 
-**F4. Multidomain, done properly.** E's −5 pp result is confounded both ways: the
-multidomain fraction correlates r = +0.72 with BUSCO and −0.70 with partial fraction, and the
-comparison group (Mucorales) is post-WGD. Run P3 as designed on
-`A3/protein_pfam_arch.parquet` (1.4 GB, chunk like J2b): distinct architectures per 1,000
-proteins, distinct unordered domain **pairs** per 1,000, mean distinct domains per Q-model
-protein (`n_distinct_domains`, in A3 but dropped from `protein_core`), and a promiscuity
-index (mean distinct partner domains per domain, over domains in ≥2 architectures). Controls:
-exclude architectures made only of TE domains, stratify by `qcov`, report the
-domain-less fraction alongside. *Readout that matters:* if Kickxellales re-pair the same
-domain set more often while making fewer proteins, that is genuine architecture-level
-compaction; if not, P3 is closed.
+**Caveats:** BUSCO of about 71% in Kickxellomycota inflates complete-loss calls, so those are upper bounds. The family decomposition (H1) and Pfam function assignment (H4, GO keyword argmax; 6,310 of 20,084 Pfams, 31%, are in SwissProt subjects, and the first report of 41% unclassified was wrong) are crude. In H1, `arch_per1000` and `bigram_per1000` are per 1,000 Pfam-annotated proteins in the 2,000-protein rarefied sample (annotated count 53–1,867), so groups with low Pfam hit rates such as Microsporidia rest on fewer proteins. Pfam e-value was not varied beyond 1e-5, and the Mucorales matrix includes recent expansions. Codon indices are genome-wide and confounded by GC. The tAI wobble weights and the ENC formula are marked citation to verify.
 
-**F5. Test shrinkage pressure where shrinkage can be measured within a gene.**
-A's `med_cds_ratio ≈ 1.00` is the ortholog-level answer (no CDS shrinkage). The atlas answer
-for yeasts is a −2.0 % within-family offset that correlates with genome size *only inside
-Saccharomycotina* (ρ +0.44 there, −0.16 in filamentous Pezizomycotina). Run the same V50–V52
-machinery (`bin/atlas/h2b_build.py`, `A4/fam_sp_genome`, `A4/genome_family_offset`) on the
-Kickxellales and Harpellales, and on Zoopagales as the contrasting route. Two quantities A
-and E never separated:
- (a) **within-family CDS length ratio vs genome size within lineage** — is there any slope in
-     a lineage whose only remaining lever is protein length?
- (b) **the intergenic half of the story.** E found ~70 % of the −16 Mb is gene number and
-     ~22 % tighter intergenic space, and could not measure UTRs because exon length = CDS
-     length here. Its convergent-189 bp against divergent-825→561 bp asymmetry is the closest
-     thing in the whole Kickxellomycota story to a direct measure of selection on genome size.
-     Split every intergenic gap into promoter-side and gene-body-side using
-     `gene_intergenic_distances` × `gene_info.strand`, per genus, against Saccharomycotina and
-     Mucorales. Promoter spacers compressing more than gene-body spacers = size selection, not
-     drift.
+**Next, in priority order**
+1. Species tree and orthogroups (Analysis A, item A1), then ancestral reconstruction of genome size, intron density and gene count against a phylogenetic baseline. This gates H3, H4 and the baseline issue. **Status 2026-11-11:** the atlas genus tree (1,654 genera) is *not* running: its Nov 9 nf_phyling run failed (`PHYLING_ALIGN` exit 137 after 4 h 25 min, then terminated at the maintenance drain) and has not been resubmitted. A cheaper Kickxellomycota-focused pair of trees (65-taxon backbone with outgroups, and 107 *Coemansia* genomes) is drafted in `workflows/phylo/` (taxa in `bin/phylo/kickx_tree_taxa.sql`); the first-pass backbone (63 taxa, `fungi_odb12`, FastTree and ASTRAL) and a *Coemansia* tree (121 taxa, FastTree) ran on the HPCC on 2026-11-11. In the *Coemansia* tree the genus is not monophyletic (*Kickxella* nests inside it, weakly placed) and the strains are redundant (20 of 29 closest pairs differ by under 0.005 substitutions per site), so lineages need ANI dereplication. In both trees Kickxellomycota is monophyletic with Dimargaritales earliest and Kickxellales sister to the unreduced Harpellales, so Ku loss may be a single stem event preceding the intron and size reduction (a hypothesis, untested); *Linderina* and *Basidiobolus* are unstable, and the zygomycete backbone is not resolved. Details and caveats are in `workflows/phylo/README.md`. The atlas genus tree is being built on another machine and must be reconciled with it (tip labels are LOCUSTAGs here), and IQ-TREE with a site-heterogeneous model and a marker-sensitivity run are still to do.
+2. tblastn checks of the lost single-copy families in good *Coemansia* assemblies (the check on H4's complete-loss calls).
+3. Per-gene codon usage from CDS on the HPCC (ribosomal proteins as the high-expression set) and GC4 tests, to separate selection from GC bias.
+4. Trypsin tandem-array and repeat check, and a MEROPS family map.
+5. RNA-seq UTR annotation for a few genomes, and repeat coordinates, to open the UTR and masked terms of the accounting.
 
-### Needs the genus tree (running; PLAN build log 31890419)
+**Reproducibility** (SQL in `docs/analyses/kx2_kickx_reduction/sql_h1/` to `sql_h4/`, MotherDuck dialect, plain SQL, nothing done in Python or by hand; each README has the dependency graph). Verification was done by re-running the later steps from the existing upstream scratch tables into temporary tables and diffing against the originals:
 
-**F6. Orthogroups + CAFE/Dollo/Count** (agenda A1) — the only way to get gains, and the only
-way to stop calling a contraction a loss. Blocked on `atlas_data/phylo/`.
-**F7. PGLS / phylogenetic logistic for Ku presence vs intron density** kingdom-wide (B2),
-with independent Ku-loss origins as the effective n.
-**F8. Ancestral reconstruction of intron density and of the trehalose/carbon block** — G §4.3
-shows the block moves together within class; only a tree says whether it moves together in
-time.
+| | Re-run and matched | Saved but **not** re-run |
+|---|---|---|
+| H1 | steps 03–07 (genome metrics, arch metrics, genus medians, Cliff's δ; 0 of 300 δ rows differ) | 01, 02 (genome list, 5M-row protein table), 09–12 (family decomposition, fusion, long families), 13–14 |
+| H2 | 05 lineage terms (37 rows), 06 decomposition (both orderings), 08 genus table (row count only), 09 δ (119 rows identical) | 01–04 and 07 (genome list, per-gene table, intergenic distances, orientation) |
+| H3 | 07–09 and the `resid` step of 10 (0 differing rows); ENC and GC3 recomputed independently (max difference 3e-14) | 04 (tRNA and tAI), 05 (amino acid, disorder), 06 (protein-rate proxy), `resid2` |
+| H4 | loss split, lost-set overlap, gains (0 row differences) | 01, 02, 04–06 (medians, class counts, scaling fits, Pfam categories) |
 
-### Needs new data
+- H2 and H3 start from the Analysis A scratch table `kx_genomes` (1,919 genomes), whose SQL is in [analyses/kickxellomycota/](analyses/kickxellomycota/README.md); it was not rebuilt.
+- H2's lineage list is hand-defined over `kx_genomes.grp`, not derived from taxonomy.
+- Some reporting queries (H4 leverage and candidate listings; H3 display queries) are comments, not tables. Exploratory design queries that only informed choices are not saved.
+- A full end-to-end rebuild from empty scratch has not been done, so "saved" is not yet "proven to rebuild".
 
-**F9. Repeat classes** (`repeats(genome, class, bp)`, B4). Without it, "genome size reduction"
-cannot be split into less DNA per gene versus fewer TEs; `masked_pct` is post-mask and A
-already called it weakly informative.
-**F10. RNA-seq-supported intron subset** (B3) — A's splice-site and phase table is its least
-reliable result, and its spurious-intron worry means the true *Coemansia* count is probably
-*below* 0.43.
-**F11. tblastn validation queue**, cheapest first: TPS+TPP in Lecanoromycetes and
-*Scedosporium* (G §4.5); Ku70/Ku80 in *Coemansia* and Harpellales (A's central claim, at
-BUSCO ~71 %); the 41 core Kickxellales losses; then the AA9/tyrosinase/laccase "gains" that E
-says are not gains.
-**F12. Per-gene codon usage from `gene_CDS`.** E stopped at "no per-gene codon data in `bfd`",
-but `gene_CDS` × `gene_transcripts` has everything needed for per-gene GC3, ENC and CAI in one
-HPCC job. That turns the tRNA supply-vs-demand result (0.47 against 0.61 in yeasts) into a
-test of whether highly expressed gene classes were re-optimized — the actual signature of
-translational selection, and the one quantity that distinguishes selection on size from drift.
+**Follow-up: Ku loss and its pathway (2026-11-11).** First pass, report and SQL in [analyses/kx2_ku_pathway/](analyses/kx2_ku_pathway/README.md). On the first-pass backbone tree Ku is lost once, on the stem of Kickxellales + Harpellales; tblastn on 31 genomes (all four Ku positive controls recovered) confirms Ku is absent from all 20 genomes of the 11 stem genera and shows three Pfam "absences" were annotation misses. By Pfam, Lig4, XLF, Pol4, aprataxin and DNA-PKcs were already lost earlier, which would make Ku loss a late step in an already-dismantled NHEJ rather than its trigger; tblastn supports this only for Pol4, leaves Lig4 unresolved (strong hits in several lineages, possibly the LIG1-type ligase) and is uninformative for XLF, aprataxin and DNA-PKcs. MRN, Dna2, TERT, Rad51/52, Mus81 and FEN1 are retained. No compensation was found: POLQ, LIG3 and PARP1-like were absent before Ku loss, HR genes are not expanded, and no Ku-specific telomere change is detectable. The tblastn round 2 queries were chosen after round 1 (post hoc), many genes still need a reciprocal-best-hit check, and the tree is first-pass.
 
-### What I expect this to leave standing
+**Production path:** add a `workflows/atlas/J12*.sh` job that rebuilds these metrics from the parquet tables on HPCC (reusing `A3/protein_pfam_arch.parquet` from J2b), with a fixture test and the full rebuild above. This is not done yet. The numbers are exploratory until the end-to-end rebuild agrees with them.
 
-Reduction in core Kickxellales is mostly **gene number plus intergenic space**, with unchanged
-CDS length and no architecture simplification (F3–F5). Yeasts did the same thing with a
-different gene set; A and E disagree about convergence only because convergence in *which*
-genes is a weaker signal than convergence in *how much*. If that holds, the question stops
-being "what did they lose" and becomes "why is the promoter spacer compressible in some
-lineages and not others" — which is what F5(b) measures.
+## F. Separating gain, loss and shrinkage pressure in reduced genomes (agenda)
+
+**Status:** plan only, no compute. The full plan (items F1..., each naming the table or column it needs) is in
+[analyses/trehalose/AGENDA_F.md](analyses/trehalose/AGENDA_F.md); open items are listed in `TODO.md`. Findings are not claimed.
 
 ## G. Trehalose synthesis across the kingdom (first pass)
 
@@ -405,7 +347,7 @@ To do when HPCC is back online. These are also in `TODO.md`.
 
 | Issue | Evidence | Action |
 |---|---|---|
-| Gene annotation under-calls | Analysis C: 33 of 44 near-universal families absent from all 6 annotated *Antarctolithica* proteomes are found in the assemblies by blastx, including ribosomal proteins L22e, L34e and S21e. Mars-9.1 and Mars-19.38 were not annotated (too small) | Find out why gene prediction missed them: training set, filtering, contig edges, short or single-exon genes. Check other small or fragmented genomes for the same problem. Treat single-gene absences as weak evidence until this is fixed |
+| Gene annotation under-calls | Analysis C: 33 of 44 near-universal families absent from all 6 annotated *Antarctolithica* proteomes are found in the assemblies by blastx, including ribosomal proteins L22e, L34e and S21e. Mars-9.1 and Mars-19.38 were not annotated (too small) | Find out why gene prediction missed them: training set, filtering, contig edges, short or single-exon genes. Check other small or fragmented genomes for the same problem. Treat single-gene absences as weak evidence until this is fixed. **Added 2026-11-11:** misses are genome-specific (Ku missed in *Tieghemiomyces*, *Caulochytrium*, *Conidiobolus*; *Massospora* has 415 proteins), while in 107 *Coemansia* strains protein-mode BUSCO equals genome-mode (median gap -0.2 points; [analyses/kx2_kickx_reduction/annotation_check/](analyses/kx2_kickx_reduction/annotation_check/README.md)), so no systematic loss is indicated there for conserved genes. Proposed remedy: a validated, source-tagged miniprot gap-filling step after predict for genomes with a large BUSCO gap, a tiny proteome or a MAG, extending the existing `do_annotation_busco_gap` diagnostic (details in `TODO.md`); not to be adopted until the rescue passes its validation |
 | `gene_introns.codon_position`, `codon_frame` | Off by one exon; confirmed 2026-11-10 | Fix the table builder and rebuild `gene_introns` |
 | "Saccharomycotina sp. YJ-2025a/b" (FF90B97F, F6EB82EF) | Group with Basidiomycota in the analysis C tree | Check and correct the phylum. Excluded from analyses C and D |
 | Uneven per-genome Pfam scan coverage | Analysis G: 80 species reps have <30 % of their own proteins carrying a Pfam hit (kingdom median 74 %), 21 at BUSCO ≥ 90; 40 have 0 of 1,409 near-universal families; 22 are `annotation_status='annotated'` with no `gene_proteins` rows. List in `docs/analyses/trehalose/data/th_qc_suspect_genomes.tsv` (worst: *Tricholoma* FD6195C5, BUSCO 99.8 %, 265/3,744 proteins with a hit) | Find out whether the hmmsearch job failed or was run on a different protein set than `gene_proteins`, and re-scan. Separately, the inflated-proteome genomes (*Phakopsora* 108 k, *Gigaspora* 96 k, *Massospora* 89 k models) need a prediction-quality filter. Until fixed, no presence/absence claim should use BUSCO as its only quality gate |
