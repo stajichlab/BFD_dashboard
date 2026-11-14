@@ -1,0 +1,37 @@
+genomes 4123  families with >=1 absence 968  median missing/genome 4  max 30
+
+== co-absence with TPS, ranked by obs/expected (annotation-propensity-stratified) ==
+  focal  target  n_focal_absent  obs_coabsent  expected  obs_exp    p_two  q_BH  rank module
+PF00982 PF05648              78             2      0.01    159.2 0.000156   0.0     1       
+PF00982 PF02358              78            54      0.54    100.5 0.000000   0.0     2    TPP
+PF00982 PF00887              78             2      0.04     46.4 0.001808   0.0     3       
+PF00982 PF03946              78             1      0.03     30.6 0.064232   0.0     4       
+PF00982 PF00456              78             3      0.10     30.6 0.000291   0.0     5       
+PF00982 PF04147              78             2      0.07     27.7 0.004959   0.0     6       
+PF00982 PF01042              78             5      0.20     25.3 0.000004   0.0     7       
+PF00982 PF01026              78             2      0.09     23.2 0.006990   0.0     8       
+PF00982 PF03224              78             4      0.19     21.2 0.000091   0.0     9       
+PF00982 PF30495              78             3      0.16     18.5 0.001264   0.0    10       
+PF00982 PF03600              78             1      0.06     16.5 0.117745   0.0    11       
+PF00982 PF07741              78            12      0.87     13.7 0.000000   0.0    12       
+
+where the other trehalose/glycogen genes rank:
+ target module  n_focal_absent  obs_coabsent  expected  obs_exp    p_two  rank
+PF02358    TPP              78            54      0.54    100.5 0.000000     2
+PF01204    NTH              78             3      0.45      6.6 0.021944    31
+PF07479    GPD              78             6      2.38      2.5 0.068687   117
+PF00342    PGI              78             2      0.85      2.4 0.417945   124
+PF05693    GSY              78             3      2.58      1.2 0.953345   249
+PF00343    GPH              78             3      5.60      0.5 0.380347   364
+PF03632    ATH              78             7     44.63      0.2 0.000000   388
+PF00128   GH13              78             0      1.38      0.0 0.502091   539
+
+== focal = TPP: co-absence of TPS ==
+{'focal': 'PF02358', 'target': 'PF00982', 'n_focal_absent': 60, 'obs_coabsent': 54, 'expected': 1.22, 'obs_exp': 44.4, 'p_two': 0.0}
+
+78 quality-kept genomes (of 3139) with no gated PF00982 record; they sit in 49 genera and 3 classes
+Lecanoromycetes      72
+Sordariomycetes       5
+Candelariomycetes     1
+
+TPS-absent genomes missing >=5 universal families (i.e. gap-prone): 58 of 78

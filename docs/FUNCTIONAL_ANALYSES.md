@@ -12,8 +12,19 @@ Started: 2026-11-10. This page tracks the exploratory analyses run against the f
   | `kw_` | Kingdom-wide domain survey (B) |
   | `ao_` | *Antarctolithica obscura* characterization (C) |
   | `rf_` | Functional classifier (D) |
+  | `th_` | Trehalose survey (G) |
   | `kx2_h1_` … `kx2_h4_` | Kickxellomycota reduction hypotheses H1–H4 (E) |
   | `kx_` or none | Kickxellomycota and research agenda (A) |
+
+  > **Note on sections.** E (H1–H4, merged in PR #1) and G (trehalose) are analyses with
+  > results. F is now an agenda only (see `analyses/trehalose/AGENDA_F.md`); E's H1/H4 address
+  > the same questions as F1/F3, and E's stratified null partly overturns A's
+  > yeast-convergence claim.
+
+- **Client note:** the system `duckdb` (v2.0.0) is rejected by MotherDuck; use a
+  v1.5.x CLI. `bfd.pfam` does retain sub-1e-5 hits (8.4 % of 368 M rows, to E = 1.8),
+  but its `full_seq_e_value` never exceeds 0.026, so the upstream hmmsearch ran near
+  the Pfam report threshold: absence from the table is not absence from the proteome.
 
 - **Statistics:** follow the atlas conventions in [summary_atlas/index.md](summary_atlas/index.md):
   - species representatives (7,435) and genus representatives (1,669);
@@ -25,6 +36,7 @@ Started: 2026-11-10. This page tracks the exploratory analyses run against the f
   | Item | Caveat |
   |---|---|
   | `tmhmm` | Lists only proteins with at least one TM helix (about 20% of proteins) |
+  | **per-genome Pfam coverage** | Not every genome was scanned equally well: 80 representatives have <30% of their own proteins carrying a Pfam hit (kingdom median 74%), 21 of those at BUSCO ≥90, and 22 have no `gene_proteins` rows at all. BUSCO does not catch this. Filter on `frac_pfam` / universal-family coverage (`qcov`), not BUSCO — see [analyses/trehalose §4.8](analyses/trehalose/README.md) and `data/th_qc_suspect_genomes.tsv` |
   | `targetP` | 125 genomes; may be replaced by DeepLoc |
   | `infernal_rfam` | 14 genomes |
   | `pfam` | 23,410 genomes; 42 genomes with proteins have no Pfam rows |
@@ -261,6 +273,76 @@ From these it distills 6–10 patterns worth deeper study.
 
 **Production path:** add a `workflows/atlas/J12*.sh` job that rebuilds these metrics from the parquet tables on HPCC (reusing `A3/protein_pfam_arch.parquet` from J2b), with a fixture test and the full rebuild above. This is not done yet. The numbers are exploratory until the end-to-end rebuild agrees with them.
 
+## F. Separating gain, loss and shrinkage pressure in reduced genomes (agenda)
+
+**Status:** plan only, no compute. The full plan (items F1..., each naming the table or column it needs) is in
+[analyses/trehalose/AGENDA_F.md](analyses/trehalose/AGENDA_F.md); open items are listed in `TODO.md`. Findings are not claimed.
+
+## G. Trehalose synthesis across the kingdom (first pass)
+
+**Review update (2026-11-13).** The first pass was reviewed and rebuilt on the HPCC (job J13, [report section 0](analyses/trehalose/README.md), results in `analyses/trehalose/data_j13/`, atlas page [H9](summary_atlas/H9_trehalose_carbon_block.md)). Two code bugs in the Benjamini-Hochberg q-values were fixed (they had assigned q-values to the wrong rows; 388 of 907 co-absence q-values were exactly 0) and a class-stratified co-absence null was added. Headline results hold (pathway near-universal; TPS-TPP co-absence in Lecanoromycetes survives the class-stratified null, obs/exp 109 falling to 32), but the "neutral trehalase is dropped" reading does not (xerophile q = 0.75) and no other trehalose or glycogen gene is co-absent with TPS beyond expectation. The Lecanoromycetes/*Scedosporium* absence remains a candidate until tblastn is run. The numbers quoted in the text below are the first run unless stated.
+
+**Status:** done 2026-11-10, exploratory. Report with 4 figures:
+[analyses/trehalose/](analyses/trehalose/README.md). Scratch prefix `th_`.
+
+**Questions:** how is the pathway distributed; does it evolve with other pathways; does it
+predict desiccation lifestyles?
+
+**Findings**
+1. **Near-universal, so "who has trehalose" is not a question.** In 5,107 quality
+   representatives: TPS 98.2 %, TPP 98.7 %, neutral trehalase 99.6 %, glycogen synthase
+   98.8 %. What varies is copy number and the GH65 acid trehalase — 57 % of genera, 0 % in
+   Mucoromycetes and Tremellomycetes, 3 % in Agaricomycetes, 95–100 % in the Eurotiomycetes,
+   Pezizomycetes, Saccharomycetes and Pichiomycetes.
+2. **The module does not vary on its own.** Class-demeaned correlations across genera:
+   TPS–TPP 0.86, and 0.65–0.75 between TPS/TPP and GSY/GPH/UGP/PGM/GPD. Against the
+   protectant and spore modules (sHSP, HSP12, hydrophobin, DIT1) it is within ±0.1. Trehalose
+   co-evolves with the carbon-storage block, not with desiccation protection.
+3. **Against a kingdom-wide allometry null (4,954 families) TPS is ordinary** — 53rd
+   percentile, same as the PGI control. Glycerol synthesis is disproportionately *retained* in
+   small genomes (13th percentile) and neutral trehalase disproportionately *dropped* (91st).
+   "Compact genomes concentrate on trehalose" is a density artefact for the synthase, and
+   true only for the glycerol branch.
+4. **A clustered, specific TPS+TPP absence — the one surprising result.** 46 of 122
+   Lecanoromycetes genera (38 %) and 6 Sordariomycetes genera (*Scedosporium*,
+   *Parascedosporium*, *Lomentospora*, *Cephalotrichum*, *Scopulariopsis*, *Basipetospora*)
+   have no [PF00982](https://www.ebi.ac.uk/interpro/entry/pfam/PF00982/) record at any e-value, against 0.7 % of all other genera. TPP is co-absent
+   in 54 of 78 quality TPS-negative genomes where 0.54 is expected under a
+   propensity-stratified null (obs/exp 100, rank 2 of 970 families); NTH, GSY and PGM are
+   retained in the same genomes; and a Pfam-independent check (best SwissProt hit by name)
+   finds no TPS in any of them while rescuing 82 % of equivalent glycogen-synthase
+   "absences". Still requires tblastn: missing gene models (the C precedent) fit as well as
+   real loss, and *Scedosporium* is hard to explain as an adaptation. Controls: 0 of 1,252
+   quality representatives in Dothideomycetes/Eurotiomycetes/Leotiomycetes/Pezizomycetes are
+   TPS-negative, and the loss genomes' own domain-annotation rate is normal (0.702 against a
+   kingdom median of 0.741).
+5. **Weak-to-moderate, not diagnostic, as a desiccation predictor.** Within-class percentile
+   AUCs for curated xerophile genera: TPS 0.69, TPP 0.68, GH65 0.66, GSY/GPH 0.68–0.70,
+   NTH 0.46 (n = 11 genera). Case studies are stronger than the aggregate: *Xeromyces* 7 TPS
+   copies (99.9th percentile kingdom-wide), *Wallemia* with no detectable glycogen
+   phosphorylase and sHSP 5× the median, and the cleanest signal is entomopathogen
+   **balance** — TPS/GSY +0.81, δ 0.91, with class I hydrophobin +0.18, δ 0.66, against other
+   Sordariomycetes. FungalTraits carries no xerophily trait; the trait table, not the
+   genomics, is the binding constraint.
+6. **For the Kickxellomycota story the pathway is a control region:** *Coemansia* keeps TPS,
+   TPP and trehalase at 0.44/0.29/0.44 per 1,000 proteins against Mucorales 0.67/0.65/0.42,
+   i.e. relatively retained while 4,100 genes and 3.2 introns per transcript went. Its GH65
+   absence is a Mucoromycota-wide character, not part of the reduction.
+
+7. **Side finding worth fixing upstream:** per-genome Pfam scan coverage is uneven. 80
+   representatives have <30 % of their own proteins domain-annotated (median 74 %), 21 of
+   those at BUSCO ≥ 90 (mostly *Amanita*, *Tuber*, *Tricholoma*, *Lactarius*, *Russula*:
+   worst case *Tricholoma* FD6195C5 at 29 of 1,409 universal families), 40 have zero
+   universal families, and 22 have `annotation_status = 'annotated'` but no `gene_proteins`
+   rows. A second, distinct group has inflated proteomes (*Phakopsora* 108 k, *Gigaspora*
+   96 k, *Massospora* 89 k models). Neither pattern is caught by BUSCO.
+
+**Method notes worth reusing:** the `qcov` completeness control (1,409 near-universal
+families), the `frac_pfam` per-genome scan check, and the propensity-stratified co-absence
+null came out of this survey and generalize to F1/F2. Note also that BUSCO ≥ 90 as a quality
+filter silently deletes every budding yeast (Saccharomycetes median 75 %) — F and G both use
+class-relative BUSCO instead.
+
 ## Upstream follow-ups (BFD/Fungi_BFD_runs)
 
 To do when HPCC is back online. These are also in `TODO.md`.
@@ -270,4 +352,5 @@ To do when HPCC is back online. These are also in `TODO.md`.
 | Gene annotation under-calls | Analysis C: 33 of 44 near-universal families absent from all 6 annotated *Antarctolithica* proteomes are found in the assemblies by blastx, including ribosomal proteins L22e, L34e and S21e. Mars-9.1 and Mars-19.38 were not annotated (too small) | Find out why gene prediction missed them: training set, filtering, contig edges, short or single-exon genes. Check other small or fragmented genomes for the same problem. Treat single-gene absences as weak evidence until this is fixed. **Added 2026-11-11:** misses are genome-specific (Ku missed in *Tieghemiomyces*, *Caulochytrium*, *Conidiobolus*; *Massospora* has 415 proteins), while in 107 *Coemansia* strains protein-mode BUSCO equals genome-mode (median gap -0.2 points; [analyses/kx2_kickx_reduction/annotation_check/](analyses/kx2_kickx_reduction/annotation_check/README.md)), so no systematic loss is indicated there for conserved genes. Proposed remedy: a validated, source-tagged miniprot gap-filling step after predict for genomes with a large BUSCO gap, a tiny proteome or a MAG, extending the existing `do_annotation_busco_gap` diagnostic (details in `TODO.md`); not to be adopted until the rescue passes its validation |
 | `gene_introns.codon_position`, `codon_frame` | Off by one exon; confirmed 2026-11-10 | Fix the table builder and rebuild `gene_introns` |
 | "Saccharomycotina sp. YJ-2025a/b" (FF90B97F, F6EB82EF) | Group with Basidiomycota in the analysis C tree | Check and correct the phylum. Excluded from analyses C and D |
+| Uneven per-genome Pfam scan coverage | Analysis G: 80 species reps have <30 % of their own proteins carrying a Pfam hit (kingdom median 74 %), 21 at BUSCO ≥ 90; 40 have 0 of 1,409 near-universal families; 22 are `annotation_status='annotated'` with no `gene_proteins` rows. List in `docs/analyses/trehalose/data/th_qc_suspect_genomes.tsv` (worst: *Tricholoma* FD6195C5, BUSCO 99.8 %, 265/3,744 proteins with a hit) | Find out whether the hmmsearch job failed or was run on a different protein set than `gene_proteins`, and re-scan. Separately, the inflated-proteome genomes (*Phakopsora* 108 k, *Gigaspora* 96 k, *Massospora* 89 k models) need a prediction-quality filter. Until fixed, no presence/absence claim should use BUSCO as its only quality gate |
 

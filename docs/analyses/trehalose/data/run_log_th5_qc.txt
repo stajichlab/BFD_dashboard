@@ -1,0 +1,26 @@
+species reps 7186; median share of proteins with >=1 Pfam hit 0.741 (q05 0.508)
+
+reps with no gene_proteins rows at all: 22
+reps with 0 of the 1,409 near-universal families: 40
+
+<30 % of proteins domain-annotated: 80 reps (21 of them at BUSCO >= 90)
+Agaricomycetes       41
+Kickxellomycetes     12
+Glomeromycetes        5
+Pezizomycetes         5
+Pucciniomycetes       4
+Endogonomycetes       2
+Aphelidea             1
+Malasseziomycetes     1
+
+wrote data/th_qc_suspect_genomes.tsv (21 rows): low domain coverage despite BUSCO >= 90
+
+  mode (i) partly scanned: 17 genomes, n_univ_found median 194, worst 29
+  mode (ii) inflated proteome: 4 genomes (Phakopsora 108,051, Polystigma 31,825, Gigaspora 95,809, Puccinia 34,622), n_univ_found median 1386
+
+quality-kept TPS-absent genomes: 91, of which frac_pfam < 0.6: 7
+credible TPS-loss genomes (n=89): median frac_pfam 0.702 vs kingdom 0.741; minimum 0.477
+  Lecanoromycetes                n=  246 frac_pfam 0.696 N50     44310 BUSCO  94.3 TPS-negative  32.1%
+  Dothio/Eurotio/Leotio/Peziza   n= 1252 frac_pfam 0.756 N50   1165662 BUSCO  99.3 TPS-negative   0.0%
+
+Note: proteins/Mb is NOT a defect marker on its own. Rusts and ectomycorrhizal Agaricomycetes genuinely have 100-200 kb-scale gene-poor genomes (297 reps below 200 proteins/Mb, most of them real biology). Domain-annotation fraction is the usable signal because it is measured against the genome's own proteins.
