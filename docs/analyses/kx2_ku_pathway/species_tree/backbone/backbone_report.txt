@@ -1,0 +1,114 @@
+mode backbone; tree set LG+F+G (UFBoot) has 63 tips; trees compared: LG+F+G (UFBoot) (63 tips); ASTRAL (gene trees) (63 tips); ASTRAL (UFBoot<50 collapsed) (63 tips); first-pass FastTree (63 tips)
+primary outgroup: 15 taxa: Blyttiomyces, Caulochytrium, Gonapodya, Hyaloraphidium, Lobulomyces, Nowakowskiella, Paraphysoderma, Phlyctochytrium, Piromyces, Polyrhizophydium, Rhizophlyctis, Sorochytrium, Spizellomyces, Synchytrium, Zygophlyctis
+
+== Rooting of the primary tree ==
+LG+F+G (UFBoot): outgroup monophyletic in the unrooted tree = True
+
+== Clade tests per tree (rooted on the primary outgroup) ==
+-- Coemansia monophyletic
+   LG+F+G (UFBoot)                      True
+   ASTRAL (gene trees)                  True
+   ASTRAL (UFBoot<50 collapsed)         True
+   first-pass FastTree                  True
+-- sister of Kickxella
+   LG+F+G (UFBoot)                      Coemansia (support 100)
+   ASTRAL (gene trees)                  Coemansia (support 1)
+   ASTRAL (UFBoot<50 collapsed)         Coemansia (support 1)
+   first-pass FastTree                  Coemansia (support 1)
+-- sister of Linderina
+   LG+F+G (UFBoot)                      Coemansia, Kickxella, Dipsacomyces, Martensiomyces (support 100)
+   ASTRAL (gene trees)                  Dipsacomyces, Martensiomyces (support 0.85)
+   ASTRAL (UFBoot<50 collapsed)         Dipsacomyces, Martensiomyces (support 0.94)
+   first-pass FastTree                  Coemansia, Kickxella, Dipsacomyces, Martensiomyces (support 1)
+-- sister of Dipsacomyces
+   LG+F+G (UFBoot)                      Martensiomyces (support 100)
+   ASTRAL (gene trees)                  Martensiomyces (support 1)
+   ASTRAL (UFBoot<50 collapsed)         Martensiomyces (support 1)
+   first-pass FastTree                  Martensiomyces (support 1)
+-- sister of Martensiomyces
+   LG+F+G (UFBoot)                      Dipsacomyces (support 100)
+   ASTRAL (gene trees)                  Dipsacomyces (support 1)
+   ASTRAL (UFBoot<50 collapsed)         Dipsacomyces (support 1)
+   first-pass FastTree                  Dipsacomyces (support 1)
+-- sister of Ramicandelaber
+   LG+F+G (UFBoot)                      Capniomyces, Zancudomyces, Furculomyces, Smittium, Coemansia, Kickxella, Dipsacomyces, Martensiomyces, Linderina, Mycoemilia, Spiromyces (support 100)
+   ASTRAL (gene trees)                  Linderina, Dipsacomyces, Martensiomyces, Kickxella, Coemansia, Mycoemilia, Spiromyces, Furculomyces, Smittium, Capniomyces, Zancudomyces (support 1)
+   ASTRAL (UFBoot<50 collapsed)         Kickxella, Coemansia, Linderina, Dipsacomyces, Martensiomyces, Mycoemilia, Spiromyces, Furculomyces, Smittium, Capniomyces, Zancudomyces (support 0.99)
+   first-pass FastTree                  Furculomyces, Smittium, Zancudomyces, Capniomyces, Coemansia, Kickxella, Dipsacomyces, Martensiomyces, Linderina, Mycoemilia, Spiromyces (support 1)
+-- sister of Basidiobolus
+   LG+F+G (UFBoot)                      Acaulopage, Stylopage, Zoophagus, Cochlonema, Zoopage, Piptocephalis, Syncephalis, Thamnocephalis, Capillidium, Neoconidiobolus, Conidiobolus, Capniomyces, Zancudomyces, Furculomyces, Smittium, Coemansia, Kickxella, Dipsacomyces, Martensiomyces, Linderina, Mycoemilia, Spiromyces, Ramicandelaber, Dispira, Dimargaris, Tieghemiomyces (support 98)
+   ASTRAL (gene trees)                  Endogone, Bifiguratus, Umbelopsis, Rhizopus, Circinella, Syncephalastrum, Rhizomucor, Thermomucor, Cunninghamella, Gongronella, Hesseltinella, Paraglomus, Entrophospora, Oehlia, Rhizophagus, Diversispora, Gigaspora, Ambispora, Geosiphon, Actinomortierella, Cryptocalciella (support 0.86)
+   ASTRAL (UFBoot<50 collapsed)         Endogone, Bifiguratus, Umbelopsis, Rhizopus, Circinella, Syncephalastrum, Rhizomucor, Thermomucor, Cunninghamella, Gongronella, Hesseltinella, Paraglomus, Entrophospora, Diversispora, Gigaspora, Oehlia, Rhizophagus, Ambispora, Geosiphon, Actinomortierella, Cryptocalciella (support 0.86)
+   first-pass FastTree                  Thamnocephalis, Syncephalis, Piptocephalis, Acaulopage, Stylopage, Zoophagus, Cochlonema, Zoopage, Conidiobolus, Neoconidiobolus, Capillidium, Dispira, Dimargaris, Tieghemiomyces, Ramicandelaber, Furculomyces, Smittium, Zancudomyces, Capniomyces, Coemansia, Kickxella, Dipsacomyces, Martensiomyces, Linderina, Mycoemilia, Spiromyces (support 0.429)
+-- Kickxellomycota monophyletic
+   LG+F+G (UFBoot)                      True (support 100)
+   ASTRAL (gene trees)                  True (support 1)
+   ASTRAL (UFBoot<50 collapsed)         True (support 1)
+   first-pass FastTree                  True (support 1)
+-- sister of Kickxellomycota
+   LG+F+G (UFBoot)                      Capillidium, Neoconidiobolus, Conidiobolus
+   ASTRAL (gene trees)                  Conidiobolus, Capillidium, Neoconidiobolus
+   ASTRAL (UFBoot<50 collapsed)         Conidiobolus, Capillidium, Neoconidiobolus
+   first-pass FastTree                  Conidiobolus, Neoconidiobolus, Capillidium
+-- Kickxellales+Harpellales monophyletic
+   LG+F+G (UFBoot)                      True (support 100)
+   ASTRAL (gene trees)                  True (support 1)
+   ASTRAL (UFBoot<50 collapsed)         True (support 1)
+   first-pass FastTree                  True (support 1)
+-- Kickxellales monophyletic
+   LG+F+G (UFBoot)                      True
+   ASTRAL (gene trees)                  True
+   ASTRAL (UFBoot<50 collapsed)         True
+   first-pass FastTree                  True
+-- Harpellales monophyletic
+   LG+F+G (UFBoot)                      True
+   ASTRAL (gene trees)                  True
+   ASTRAL (UFBoot<50 collapsed)         True
+   first-pass FastTree                  True
+-- stem sister of Kickxellales+Harpellales
+   LG+F+G (UFBoot)                      Ramicandelaber
+   ASTRAL (gene trees)                  Ramicandelaber
+   ASTRAL (UFBoot<50 collapsed)         Ramicandelaber
+   first-pass FastTree                  Ramicandelaber
+-- Kickxellales+Harpellales+Ramicandelaber monophyletic
+   LG+F+G (UFBoot)                      True
+   ASTRAL (gene trees)                  True
+   ASTRAL (UFBoot<50 collapsed)         True
+   first-pass FastTree                  True
+-- sister of Kickxellales+Harpellales+Ramicandelaber
+   LG+F+G (UFBoot)                      Dispira, Dimargaris, Tieghemiomyces
+   ASTRAL (gene trees)                  Dispira, Tieghemiomyces, Dimargaris
+   ASTRAL (UFBoot<50 collapsed)         Dispira, Tieghemiomyces, Dimargaris
+   first-pass FastTree                  Dispira, Dimargaris, Tieghemiomyces
+
+== Robinson-Foulds distance between trees (unrooted, shared tips; normalized = RF / (splits1 + splits2)) ==
+LG+F+G (UFBoot)                      vs ASTRAL (gene trees)                   RF   14 /  120 = 0.117   (63 shared tips)
+LG+F+G (UFBoot)                      vs ASTRAL (UFBoot<50 collapsed)          RF   12 /  120 = 0.100   (63 shared tips)
+LG+F+G (UFBoot)                      vs first-pass FastTree                   RF   10 /  120 = 0.083   (63 shared tips)
+ASTRAL (gene trees)                  vs ASTRAL (UFBoot<50 collapsed)          RF    2 /  120 = 0.017   (63 shared tips)
+ASTRAL (gene trees)                  vs first-pass FastTree                   RF   16 /  120 = 0.133   (63 shared tips)
+ASTRAL (UFBoot<50 collapsed)         vs first-pass FastTree                   RF   14 /  120 = 0.117   (63 shared tips)
+
+== Support in the primary tree ==
+60 internal branches; support >= 95: 51; >= 70: 56; < 50: 0
+
+== Rooting sensitivity (primary tree, alternative outgroups) ==
+root-role taxa (primary): outgroup monophyletic in the unrooted tree = True
+   Coemansia monophyletic: True
+   Kickxellales+Harpellales monophyletic: True (support 100)
+   Kickxellales monophyletic: True
+   stem sister of Kickxellales+Harpellales: Ramicandelaber
+   sister of Kickxellales+Harpellales+Ramicandelaber: Dispira, Dimargaris, Tieghemiomyces
+root-role taxa without Blastocladiomycota: outgroup monophyletic in the unrooted tree = True
+   Coemansia monophyletic: True
+   Kickxellales+Harpellales monophyletic: True (support 100)
+   Kickxellales monophyletic: True
+   stem sister of Kickxellales+Harpellales: Ramicandelaber
+   sister of Kickxellales+Harpellales+Ramicandelaber: Dispira, Dimargaris, Tieghemiomyces
+midpoint root:
+   Coemansia monophyletic: True
+   Kickxellales+Harpellales monophyletic: True (support 100)
+   Kickxellales monophyletic: True
+   stem sister of Kickxellales+Harpellales: Ramicandelaber
+   sister of Kickxellales+Harpellales+Ramicandelaber: Dispira, Dimargaris, Tieghemiomyces
+   root splits: Acaulopage, Actinomortierella, Ambispora, Basidiobolus, Bifiguratus, Blyttiomyces (48 tips) | Capniomyces, Coemansia, Dimargaris, Dipsacomyces, Dispira, Furculomyces (15 tips)

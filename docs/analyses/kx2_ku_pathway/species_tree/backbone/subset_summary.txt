@@ -1,0 +1,3 @@
+taxa 63; markers kept 80 of 80; dropped 0 (fewer than 8 taxa); concatenated sites 51761
+taxa per kept marker: min 8, median 52, max 61
+gap fraction per taxon: median 0.296; highest F4FD0401 0.84, F43C8248 0.66, F5C985FA 0.65, FCDD8027 0.58, FC8B8027 0.54
