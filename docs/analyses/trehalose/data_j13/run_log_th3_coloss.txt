@@ -1,0 +1,39 @@
+genomes 4234  families with >=1 absence 1003  median missing/genome 4  max 29
+
+== co-absence with TPS, ranked by obs/expected (annotation-propensity-stratified) ==
+  focal  target  n_focal_absent  obs_coabsent  expected  obs_exp    p_two  expected_class  obs_exp_class  p_two_class     q_BH  q_BH_class  rank module
+PF00982 PF02358              75            50      0.46    109.0 0.000000            1.55           32.2     0.000000 0.000000    0.000000     1    TPP
+PF00982 PF05648              75             1      0.01    103.2 0.019292             NaN            NaN          NaN 0.406847         NaN     2       
+PF00982 PF00887              75             2      0.04     54.8 0.001299             NaN            NaN          NaN 0.063809         NaN     3       
+PF00982 PF00456              75             3      0.08     36.6 0.000173             NaN            NaN          NaN 0.016279         NaN     4       
+PF00982 PF04147              75             2      0.06     31.3 0.003902             NaN            NaN          NaN 0.142423         NaN     5       
+PF00982 PF01042              75             5      0.17     28.8 0.000002            0.45           11.1     0.000210 0.000316    0.010332     6       
+PF00982 PF30495              75             3      0.14     21.4 0.000832            0.65            4.6     0.057536 0.045868    0.461845     7       
+PF00982 PF00398              75             4      0.24     17.0 0.000212            0.45            8.9     0.002371 0.016279    0.066557     8       
+PF00982 PF16543              75            19      1.28     14.8 0.000000            5.07            3.8     0.000003 0.000000    0.000369     9       
+PF00982 PF07741              75            12      0.82     14.6 0.000000            2.65            4.5     0.000045 0.000000    0.003690    10       
+PF00982 PF10585              75             2      0.15     13.3 0.020609            0.45            4.5     0.150293 0.408742    0.803741    11       
+PF00982 PF01026              75             2      0.15     13.3 0.020420             NaN            NaN          NaN 0.408742         NaN    12       
+
+where the other trehalose/glycogen genes rank:
+ target module  n_focal_absent  obs_coabsent  expected  obs_exp    p_two    q_BH  expected_class  obs_exp_class  p_two_class  q_BH_class  rank
+PF02358    TPP              75            50      0.46    109.0 0.000000 0.00000            1.55           32.2     0.000000    0.000000     1
+PF01204    NTH              75             3      0.42      7.2 0.017775 0.39229             NaN            NaN          NaN         NaN    25
+PF07479    GPD              75             4      1.79      2.2 0.214541 1.00000            2.41            1.7     0.446957    1.000000   159
+PF00342    PGI              75             1      0.67      1.5 0.972683 1.00000             NaN            NaN          NaN         NaN   210
+PF05693    GSY              75             3      2.32      1.3 0.816327 1.00000            0.65            4.6     0.057536    0.461845   246
+PF00343    GPH              75             2      5.21      0.4 0.215566 1.00000             NaN            NaN          NaN         NaN   375
+PF03632    ATH              75             6     42.14      0.1 0.000000 0.00000            7.63            0.8     0.721142    1.000000   384
+PF00128   GH13              75             0      1.22      0.0 0.592392 1.00000             NaN            NaN          NaN         NaN   712
+
+== focal = TPP: co-absence of TPS ==
+{'focal': 'PF02358', 'target': 'PF00982', 'n_focal_absent': 56, 'obs_coabsent': 50, 'expected': 1.08, 'obs_exp': 46.2, 'p_two': 0.0, 'expected_class': 6.98, 'obs_exp_class': 7.2, 'p_two_class': 0.0}
+
+75 quality-kept genomes (of 3264) with no gated PF00982 record; they sit in 48 genera and 4 classes
+CLASS
+Lecanoromycetes      69
+Sordariomycetes       4
+Coniocybomycetes      1
+Candelariomycetes     1
+
+TPS-absent genomes missing >=5 universal families (i.e. gap-prone): 55 of 75

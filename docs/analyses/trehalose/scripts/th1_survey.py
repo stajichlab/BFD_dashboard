@@ -160,7 +160,7 @@ def main():
     print(f"TPS absent in {len(miss)} species reps ({miss.GENUS.nunique()} genera); "
           f"present genomes qcov median {X[X.TPS > 0].qcov.median():.4f}, absent {miss.qcov.median():.4f}")
     print(f"TPS absent AND SwissProt-anchored absent: {int(((X.TPS==0)&(X.n_tps.fillna(0)==0)).sum())} genomes")
-    print(f"  of those, credible (qcov>=0.985 & BUSCO>=85): {int(X.credible_TPS_loss.sum())} genomes, "
+    print(f"  of those, credible (qcov>=0.985 & class-relative BUSCO): {int(X.credible_TPS_loss.sum())} genomes, "
           f"{X.loc[X.credible_TPS_loss,'GENUS'].nunique()} genera")
     cl = X[X.credible_TPS_loss].groupby(["PHYLUM", "CLASS"]).GENUS.nunique().sort_values(ascending=False)
     print(cl.head(10).to_string())

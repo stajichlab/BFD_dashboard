@@ -26,6 +26,7 @@ Genomes: 23,680. Species representatives (one per species, best BUSCO then N50):
 | [H6_codon_usage](H6_codon_usage.md) | H6. Codon usage tracks taxonomy more than growth form; GC3 follows genomic GC | V33 (ok), V34 (ok), V35 (ok), V36 (ok), V37 (ok), V38 (ok) |
 | [H7_paralogs](H7_paralogs.md) | H7. Recent paralog retention is lower in yeasts; large identical-copy groups mark assembly artefacts | V39 (ok), V40 (ok) |
 | H8 (P3) | Telomere repeat monomer is conserved within classes | V41, V42 (P3, not built) |
+| [H9_trehalose_carbon_block](H9_trehalose_carbon_block.md) | H9. Trehalose synthesis is near-universal and moves with the carbon-storage block | V57-V61 (pilot, planned; first-pass numbers; rebuild job J13) |
 
 ## Size-transition hypotheses
 

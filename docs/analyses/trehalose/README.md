@@ -12,6 +12,43 @@ because the trehalose genes are near-universal and their absences are clustered.
 **Status.** Observational first pass, one afternoon, MotherDuck only. No tree, no
 tblastn, no wet-lab validation. Nothing here should be quoted as a loss call yet.
 
+## 0. Review corrections and the HPCC rebuild (2026-11-13)
+
+The first pass (sections 1-8 below, tables in `data/`, figures in `figs/`) was computed on a laptop from MotherDuck and was reviewed before merging.
+Three kinds of change were made on the branch `trehalose-integration`; the rebuild is `workflows/atlas/J13_trehalose.sh` (HPCC job 32074641, 8.5 minutes,
+inputs `scripts/th0_inputs.sql`, outputs in `data_j13/` and `figs_j13/`, slurm log `data_j13/slurm_J13.log`). **Where a number below differs from `data_j13/`, `data_j13/` is the current one; the text of sections 1-8 was not rewritten and still quotes the first run.**
+
+**Code fixes (with fixture tests, `scripts/test_stats_util.py`, run as step 0 of J13):**
+1. *Benjamini-Hochberg q-values were wrong in two scripts.* `th4_predict.py` computed q on sorted p and assigned them to unsorted rows (for example neutral trehalase in xerophiles, AUC 0.46, p 0.68, was reported with q = 0.017, which belongs to another row); `th3_coloss.py` applied the step-up to rows ordered by effect size (388 of 907 co-absence q-values were exactly 0, including rows with p = 0.95). Both now use `stats_util.bh_qvalues` (verified against `scipy.stats.false_discovery_control`, and a test shows the old formula differs). `th2_stats.py` now also reports q for the trait contrasts.
+2. *A class-stratified co-absence null was added.* The first null stratified only by how many universal families a genome misses, so a trait shared within a clade looks like co-absence (69 of 75 TPS-absent genomes are Lecanoromycetes). `stats_util.expected_coabsence` now also stratifies by class; a fixture test shows a clade-wide trait that the first null calls a signal (p < 1e-6) and the class-stratified null does not (p > 0.5).
+3. *Hygiene:* hard-coded `/Users/...` paths removed (repo-relative, `TH_DATA`/`TH_FIGS` override); the `.cache.pkl` that could serve stale results was removed; the "credible loss" set now uses class-relative BUSCO (Q-busco-rel) like `keep`, not absolute BUSCO >= 85; the missing input producers (`th_pfprot`, the allometry table, `genus_prot`) are now in `th0_inputs.sql`; `qcov` is gated at 1e-5 everywhere (the first version counted ungated hits in one table and gated hits in another). Literature statements are marked "citation to verify" and method references are listed in [H9](../../summary_atlas/H9_trehalose_carbon_block.md) (details from memory, to verify).
+
+**What the rebuild changes (old = first run, new = J13; `scripts/compare_runs.py` prints these):**
+
+| Item | Old | New |
+|---|---|---|
+| Species representatives / genera | 7,186 / 1,669 | 7,186 / 1,669 (identical) |
+| Quality-kept genomes / genera | 5,107 / 1,290 | 5,088 / 1,280 |
+| Near-universal families | 1,409 | 1,458 (see caveat) |
+| TPS, TPP, NTH, GH65 presence among kept genomes | 98.2, 98.7, 99.6, 57.3 % | 98.3, 98.8, 99.6, 57.3 % |
+| Class-demeaned rho TPS-TPP, GPH-GSY, GSY-UGP | 0.86, 0.74, 0.74 | 0.86, 0.75, 0.74 |
+| Allometry percentile: TPS, NTH, glycerol (GPD), PGI control, HSP70 control | 53, 91, 13, 53, 91 | 77, 85, 6, 43, 89 |
+| TPS-absent kept genomes (Lecanoromycetes) | 78 (72) | 75 (69) |
+| Credible TPS-loss genomes / genera | 88 / 51 | 74 / 42 (class-relative BUSCO) |
+| TPS-absent genomes missing >= 5 universal families | 58 of 78 | 55 of 75 |
+| Reps with < 30 % of proteins Pfam-annotated (of those at BUSCO >= 90) | 80 (21) | 67 (23) |
+| TPS-TPP co-absence: observed / expected, obs/exp | 54 / 0.54, 100 | 50 / 0.46, 109 (class-stratified: expected 1.55, obs/exp 32; q ~ 0) |
+| Other pathway genes co-absent with TPS | NTH, GSY, GH65 had q = 0.0 (bug) | NTH q = 0.39, GSY q = 1.0 (class null 0.46), GH65 depleted (obs/exp 0.1; class null 0.8, q = 1.0) |
+| Co-absence rows with q < 0.1 (all 907 or 949 families) | 889 (bug) | 21 (class null: 19 of 492 testable families) |
+| AUC table rows with q < 0.1 (of 87) | 4 (wrong rows) | 4 (right rows; for example entomopathogen TPS/GSY AUC 0.91, q = 0.017; xerophile NTH AUC 0.46, q = 0.75) |
+
+**What stays and what does not (observed):**
+- *Stays:* the pathway is near-universal and the module correlations, the GH65 patchiness, the TPS-TPP co-absence in Lecanoromycetes (it survives the class-stratified null, obs/exp 32 with 50 observed against 1.55 expected) and the weak desiccation prediction.
+- *Does not stand as written:* "neutral trehalase is dropped" rested on its percentile in the allometry null (91 first, 85 now) and on a q-value that belonged to another row; the xerophile NTH result is not significant (q = 0.75). Of the other trehalose and glycogen genes none is co-absent with TPS beyond expectation once the q-values are correct.
+- *Unresolved:* the TPS-absent genomes are gap-prone (55 of 75 miss >= 5 universal families, against a median of 4), so even the surviving TPS-TPP co-absence in Lecanoromycetes is consistent with a lineage-wide annotation gap (metagenome-derived, fragmented assemblies, N50 about 38 kb) and remains a **candidate**; the tblastn check (T1, queue in `TODO.md`) has not been run.
+
+**Caveats of the rebuild.** (i) The allometry null and the near-universal set depend on analysis B's `kw_genus_pfam`, which has no saved SQL; it was rebuilt from the atlas A7 Pfam matrix and differs from the MotherDuck copy (Coemansia: 161 genomes and 145 with PF00982 now against 146 and 131 in the MotherDuck table, probably the newer snapshot; 1,458 universal families against 1,409; `data_j13/th_check_kw.csv`), so shifts in the allometry percentiles (TPS 53 to 77, glycerol 13 to 6) mix the effect of the rebuilt table with the effect of the code fixes and are not separated. (ii) p-values are rounded to six decimals in `th3`, so five q-values are exactly 0. (iii) The `mumm` word in the dry-habitat epithet list of `th1` is absent from `th2`/`th4` (not reconciled). (iv) The rebuild used the current BFD parquet snapshot on the HPCC; the first run used a 2026-11-06 MotherDuck copy. (v) Two log labels were not regenerated: `data_j13/run_log_th1_survey.txt` still says "BUSCO>=85" for the credible set (the values use class-relative BUSCO; the label is fixed in the script) and `run_log_th5_qc.txt` says "1,409 near-universal families" (the set is now 1,458). (vi) Everything else in the Limitations section (no tree, no tblastn, genus medians treated as independent) still applies.
+
 ## 1. Data and reproducibility
 
 | Item | Value |
@@ -106,7 +143,7 @@ Ustilaginomycetes, Chytridiomycetes and Glomeromycetes genera.
 A Dikarya-stem gain followed by many losses (or an earlier origin, given
 Mortierellomycetes, with losses in Mucorales and Tremellomycetes) both fit. This
 matters for the trehalose story but not only: PF03632/GH65 also contains
-arbutinases, α-xylosidases and 6-phospho-β-galactosidases, so some of these
+arbutinases, α-xylosidases and 6-phospho-β-galactosidases (family membership from general knowledge of GH65, citation to verify), so some of these
 proteins are not acid trehalases at all. Treat the GH65 column as "GH65 family",
 not "ATH1 orthologue", until a curated seed alignment is used.
 
@@ -356,7 +393,7 @@ curation task, not a query.
 | T1 | TPS+TPP are genuinely absent in Lecanoromycetes and the Microascales clade, i.e. de novo trehalose synthesis lost ≥2× | tblastn/blastx as §4.5; then profile HMM built from lichen six-frame translations | any full-length model in the assemblies |
 | T2 | Loss of trehalose synthesis is tolerated only in symbioses where the partner supplies carbon, so it should also occur in *Biatoridiaceae*/lichenicolous and in some mycoparasites | presence/absence of TPS vs lichenicolous + mycoparasitic genera, with T1 validation | losses in free-living saprotrophs with no sugar-rich niche |
 | T3 | The xerophile signal is in the balance, not the dose: TPS/(GSY+GPH) rises with desiccation tolerance | curated water-activity table; within-genus (species-level) contrasts in *Aspergillus*, *Saccharomyces*, *Penicillium* where xerophily varies within genus | no within-genus shift between xerophilic and non-xerophilic congeners |
-| T4 | Entomopathogen trehalose expansion reflects harvesting **host** trehalose (insect haemolymph is trehalose-rich), so TPS, GH65/ATH and trehalose transport should co-expand and correlate with the animal-parasite label | co-expansion test with the class-demeaned block from §4.3 as the null; MEROPS/chitinase co-variation as a positive control | ATH absent in the same genomes (it is, in *Beauveria*: 0 copies) |
+| T4 | Entomopathogen trehalose expansion reflects harvesting **host** trehalose (insect haemolymph is trehalose-rich, citation to verify), so TPS, GH65/ATH and trehalose transport should co-expand and correlate with the animal-parasite label | co-expansion test with the class-demeaned block from §4.3 as the null; MEROPS/chitinase co-variation as a positive control | ATH absent in the same genomes (it is, in *Beauveria*: 0 copies) |
 | T5 | GH65 acid trehalase is a Dikarya-stem innovation with repeated losses (0 % in Mucoromycetes, 3 % in Agaricomycetes), not a single gain | gene tree from a curated seed alignment over all genera + a genus tree; also test the HGT alternative (bacterial GH65 sisters, near-identical GC to host) | GH65 proteins that are arbutinases/α-xylosidases rather than trehalases → family is mis-assigned |
 | T6 | Neutral trehalase is preferentially dropped from reduced genomes (91st percentile of the allometry null, and 0.46 AUC in xerophiles) because storage rather than scavenging matters in a stable niche | ortholog-matched retention rate as in analysis A table 4 for NTH vs TPS vs a housekeeping control | the same pattern in a lineage without genome reduction |
 

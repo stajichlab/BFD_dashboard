@@ -280,6 +280,8 @@ From these it distills 6–10 patterns worth deeper study.
 
 ## G. Trehalose synthesis across the kingdom (first pass)
 
+**Review update (2026-11-13).** The first pass was reviewed and rebuilt on the HPCC (job J13, [report section 0](analyses/trehalose/README.md), results in `analyses/trehalose/data_j13/`, atlas page [H9](summary_atlas/H9_trehalose_carbon_block.md)). Two code bugs in the Benjamini-Hochberg q-values were fixed (they had assigned q-values to the wrong rows; 388 of 907 co-absence q-values were exactly 0) and a class-stratified co-absence null was added. Headline results hold (pathway near-universal; TPS-TPP co-absence in Lecanoromycetes survives the class-stratified null, obs/exp 109 falling to 32), but the "neutral trehalase is dropped" reading does not (xerophile q = 0.75) and no other trehalose or glycogen gene is co-absent with TPS beyond expectation. The Lecanoromycetes/*Scedosporium* absence remains a candidate until tblastn is run. The numbers quoted in the text below are the first run unless stated.
+
 **Status:** done 2026-11-10, exploratory. Report with 4 figures:
 [analyses/trehalose/](analyses/trehalose/README.md). Scratch prefix `th_`.
 
