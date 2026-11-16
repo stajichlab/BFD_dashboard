@@ -1,0 +1,20 @@
+{
+ "quality_genomes": {
+  "genomes": 586,
+  "genomes_beyond_2sd": 4,
+  "share_beyond_2sd": 0.006825938566552901,
+  "median_z": -0.31120955443565645,
+  "median_max_abs_z": 0.5839699871573796
+ },
+ "all_genomes": {
+  "genomes": 809,
+  "genomes_beyond_2sd": 4,
+  "share_beyond_2sd": 0.004944375772558714,
+  "median_z": -0.30978405095727024,
+  "median_max_abs_z": 0.5574687930371461
+ },
+ "n_proteins": 921,
+ "clade_intronless_share": 0.30727470141150925,
+ "genome_intronless_share_median": 0.241,
+ "verdict": "inconclusive: tree says \"tree cannot decide (gate failed)\", GC share beyond 2 sd = 0.01"
+}

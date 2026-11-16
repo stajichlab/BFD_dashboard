@@ -1,0 +1,3 @@
+tree	scoring	tips_in_table	tips_ignored	outgroup_jaccard	present	absent	unknown	gain_clade_tips	losses	classes_touched	perm_mean	perm_sd	share_perm_le_observed
+atlas_genus	scored	1643	0	0.961	803	618	222	1592	132	35	514.2	9.3	0.0
+atlas_genus	unfiltered	1643	0	0.961	803	840	0	1592	162	47	665.4	11.7	0.0

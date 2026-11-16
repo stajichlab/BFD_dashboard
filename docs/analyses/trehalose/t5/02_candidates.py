@@ -63,7 +63,7 @@ COPY (
 con.execute(f"""
 COPY (
   SELECT r.locustag, r.genus, s.PHYLUM, s."CLASS" AS class, s."ORDER" AS ord, s.FAMILY, s.SPECIES,
-         b.complete_pct AS busco_complete, a.N50_bp, a.total_length_bp, a.gc_pct, a.contig_count,
+         b.complete_pct AS busco_complete, a.N50_bp, a.TOTAL_LENGTH AS total_length_bp, a.GC_PERCENT AS gc_pct, a.contig_count,
          coalesce(g.n_gh65, 0) AS n_gh65, coalesce(g.n_full, 0) AS n_gh65_full_arch
   FROM reps r
   JOIN species s ON s.LOCUSTAG = r.locustag

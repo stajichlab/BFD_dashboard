@@ -71,4 +71,41 @@ holding them has UFBoot >= 90. If the gate fails, no test below is evaluated and
 ---
 ## Results
 
-(added after the runs)
+Date of runs: 2026-11-16. Pre-registration above is unchanged since commit `41be39d`; the only edit to a committed script afterwards is a column-name fix in `02_candidates.py` (no design change).
+
+### What ran
+
+| Step | Job (HPCC) | Result |
+|---|---|---|
+| 1 references | `01_fetch_references.py` | 27 references (5 `TREHALASE_FUNGI`, 4 `ATHL1_METAZOA`, 18 others) + 150 context taxa. The five fungal trehalase accessions (D4B5H9, M1RNJ8, N1P212, P78617, Q5AAU5) and the animal one (A0JMP0) were re-queried at UniProt on 2026-11-16: EC number, organism and length agree with the stored table |
+| 2 candidates | 32103204 | 926 proteins with PF03632 (`domain_i_evalue <= 1e-5`) in 813 of 1,654 genus representatives |
+| 3-4 inputs, tests | 32112427 (6 min 54 s) | 924 candidates kept (2 shorter than 400 aa excluded) + 177 references/context = 1,101 sequences; 12 fixture tests passed |
+| 5 tree | 32112452 (1 h 44 min) | mafft 7.505 `--auto`; trimAl 1.5.1: 14,280 columns to 1,006, all 1,101 sequences kept; IQ-TREE 3.0.1, Q.PFAM+R8, 1,000 UFBoot + 1,000 SH-aLRT; warning: 8 sequences with >50% gaps. No errors |
+| 6-8 analysis | 32113579 (5 min 40 s) | classification, Dollo, composition |
+
+Files: `results/`, `trees/gh65.treefile`, `trees/gh65_members.tsv`, `logs/`. The alignment (16 MB) and the IQ-TREE report stay in the bench folder on the HPCC.
+
+### Verdict against the pre-registered rules: the gate FAILED, so the tree cannot decide R1, R2, R3 or R5
+
+| Gate condition | Observed | Met? |
+|---|---|---|
+| all `TREHALASE_FUNGI` references re-assigned to their own group in leave-one-out | 5 of 5 | yes |
+| smallest clade holding them has UFBoot >= 90 | UFBoot 22.1, SH-aLRT 31.0 | **no** |
+
+Leave-one-out over all references: 19 of 22 correct (two kojibiose hydrolase references ambiguous; one `GH65_OTHER` reference placed with trehalose-6-phosphate phosphorylase).
+R1, R2, R3, R4 and R5 are **not evaluated** (rule: "if the gate fails, no test below is evaluated"). `results/dollo_verdict.txt` prints "R4 supported"; that is the script's own line and does not override the gate. T5 is **neither supported nor rejected** by this run. The gate failed on support alone; why was not tested (deep-split conflict, 1,006-column alignment, fixed model).
+
+### Descriptive observations (post hoc, not decisive)
+
+- 924 fungal PF03632 proteins: 921 assigned to `TREHALASE_FUNGI`, none to another group, 3 unresolved. The R1 threshold would have been 30%; observed 0%. Not a test (same references that failed the gate; only five fungal references).
+- The classifier's fungal clade (926 tips) holds no non-fungal tip, root UFBoot 99.8 / SH-aLRT 100; its first non-fungal neighbour is one eukaryotic context sequence (A0A4D9CYH5; 98.8 / 90). Not the gated clade, so no "vertical rather than HGT" conclusion.
+- 809 genera in the clade: 795 Ascomycota/Basidiomycota, 14 Mortierellomycota/Mucoromycota, none with full PF03636+PF03632+PF03633 architecture (what R3 would have counted).
+- Composition: 4 of 586 quality genomes (0.7%) have a clade gene beyond +-2 sd in whole-CDS GC (chance about 5%); clade genes intronless 30.7% vs genome median 24.1%. R5 verdict "inconclusive".
+- Dollo on the atlas genus tree: 803 present, 618 absent (quality), 222 unknown; gain at a node with 1,592 of 1,643 tips; 132 loss clades in 35 classes (162 / 47 unfiltered); permutation mean 514 (sd 9.3), 0 of 1,000 as low. Presence here is nearly "has PF03632" (809 of 813), so this largely restates the Pfam map; the root-level gain is forced by single Mortierellomycota genera counting as present.
+
+### Limits
+
+- Gate failure is a tree-support limit, not a finding about trehalase origin. Untried options (would be new labelled analyses): more fungal references, larger alignment, site-heterogeneous model on a subset.
+- Reviewed fungal references are all Ascomycota. Context taxa are a spread, not a complete bacterial sample.
+- A gene tree places proteins, it does not measure activity; function claims are **citation to verify**.
+

@@ -1,0 +1,1479 @@
+Loading iqtree/3.0.1
+  Loading requirement: gcc/12.2.0
+sequences: 1101
+alignment columns: 14280 -> trimmed: 1006
+sequences after trimming: 1101
+IQ-TREE version 3.0.1 for Linux x86 64-bit built May 14 2025
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    r23 (AVX2, FMA3, 1007 GB RAM)
+Command: iqtree3 -s trim.fa -m Q.PFAM+R8 -B 1000 --alrt 1000 -T 32 --prefix gh65 -seed 20261113 --mem 90G
+Seed:    20261113 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Mon Nov 16 07:57:44 2026
+Kernel:  AVX+FMA - 32 threads (32 CPU cores detected)
+
+Reading alignment file trim.fa ... Fasta format detected
+Reading fasta file: done in 0.0189847 secs using 92.52% CPU
+Alignment most likely contains protein sequences
+Constructing alignment: done in 0.013473 secs using 1587% CPU
+Alignment has 1101 sequences with 1006 columns, 1006 distinct patterns
+1004 parsimony-informative, 2 singleton sites, 0 constant sites
+         Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 0.0139317 secs using 1557% CPU
+   1  REF_1     41.45%    failed      0.01%
+   2  REF_2     40.16%    failed      0.00%
+   3  REF_3     41.15%    failed      0.00%
+   4  REF_4     38.17%    failed      0.00%
+   5  REF_5     39.76%    failed      0.00%
+   6  REF_6     36.78%    failed      0.00%
+   7  REF_7      2.09%    passed     93.73%
+   8  REF_8     37.57%    failed      0.00%
+   9  REF_9     35.59%    failed      0.00%
+  10  REF_10    37.28%    failed      0.00%
+  11  REF_11    10.54%    failed      0.00%
+  12  REF_12    10.04%    failed      0.00%
+  13  REF_13    35.59%    failed      0.00%
+  14  REF_14    37.38%    failed      0.00%
+  15  REF_15     2.49%    passed     76.83%
+  16  REF_16    35.09%    failed      0.00%
+  17  REF_17    33.30%    failed      0.00%
+  18  REF_18    34.29%    failed      0.00%
+  19  REF_19    34.59%    failed      0.00%
+  20  REF_20    39.07%    failed      0.03%
+  21  REF_21    10.83%    passed      6.83%
+  22  REF_22    37.87%    failed      0.05%
+  23  REF_23    37.18%    failed      0.00%
+  24  REF_24    36.98%    failed      0.00%
+  25  REF_25    36.18%    failed      0.00%
+  26  REF_26    37.08%    failed      0.00%
+  27  REF_27    37.77%    failed      0.00%
+  28  CTX_1     37.77%    failed      0.00%
+  29  CTX_2     33.80%    failed      0.00%
+  30  CTX_3     37.87%    failed      0.00%
+  31  CTX_4     42.15%    failed      0.00%
+  32  CTX_5     38.67%    failed      0.00%
+  33  CTX_6     35.59%    failed      0.00%
+  34  CTX_7     34.89%    failed      0.00%
+  35  CTX_8     35.29%    failed      0.00%
+  36  CTX_9     35.29%    failed      0.00%
+  37  CTX_10    34.79%    failed      0.00%
+  38  CTX_11    35.39%    failed      0.00%
+  39  CTX_12    34.19%    failed      0.00%
+  40  CTX_13    33.10%    failed      0.00%
+  41  CTX_14    32.21%    failed      0.00%
+  42  CTX_15    32.31%    failed      0.00%
+  43  CTX_16    34.89%    failed      0.00%
+  44  CTX_17    35.19%    failed      0.00%
+  45  CTX_18    34.99%    failed      0.00%
+  46  CTX_19    35.29%    failed      0.00%
+  47  CTX_20    35.19%    failed      0.00%
+  48  CTX_21    35.98%    failed      0.00%
+  49  CTX_22    41.95%    failed      0.00%
+  50  CTX_23    35.79%    failed      0.00%
+  51  CTX_24    35.19%    failed      0.00%
+  52  CTX_25    35.09%    failed      0.00%
+  53  CTX_26    35.19%    failed      0.00%
+  54  CTX_27    35.19%    failed      0.00%
+  55  CTX_28    35.09%    failed      0.00%
+  56  CTX_29    35.19%    failed      0.00%
+  57  CTX_30    35.19%    failed      0.00%
+  58  CTX_31    35.29%    failed      0.00%
+  59  CTX_32    35.19%    failed      0.00%
+  60  CTX_33    35.49%    failed      0.00%
+  61  CTX_34    33.90%    failed      0.00%
+  62  CTX_35    40.06%    failed      0.00%
+  63  CTX_36    39.26%    failed      0.00%
+  64  CTX_37    34.59%    failed      0.00%
+  65  CTX_38    34.10%    failed      0.00%
+  66  CTX_39    40.26%    failed      0.00%
+  67  CTX_40    32.01%    failed      0.00%
+  68  CTX_41    39.46%    failed      0.00%
+  69  CTX_42    39.86%    failed      0.00%
+  70  CTX_43    39.86%    failed      0.00%
+  71  CTX_44    35.98%    failed      0.00%
+  72  CTX_45    39.07%    failed      0.00%
+  73  CTX_46    38.87%    failed      0.00%
+  74  CTX_47    34.99%    failed      0.00%
+  75  CTX_48    36.18%    failed      0.00%
+  76  CTX_49    40.95%    failed      0.00%
+  77  CTX_50    38.37%    failed      0.00%
+  78  CTX_51    37.67%    failed      0.00%
+  79  CTX_52    38.07%    failed      0.00%
+  80  CTX_53    40.95%    failed      0.00%
+  81  CTX_54    37.57%    failed      0.00%
+  82  CTX_55    36.38%    failed      0.00%
+  83  CTX_56    35.09%    failed      0.00%
+  84  CTX_57    50.50%    failed      0.03%
+  85  CTX_58    33.50%    failed      0.00%
+  86  CTX_59    34.69%    failed      0.00%
+  87  CTX_60    36.68%    failed      0.00%
+  88  CTX_61    34.10%    failed      0.00%
+  89  CTX_62    36.18%    failed      0.00%
+  90  CTX_63    36.48%    failed      0.00%
+  91  CTX_64    25.25%    failed      0.00%
+  92  CTX_65    25.15%    failed      0.00%
+  93  CTX_66    35.79%    failed      0.00%
+  94  CTX_67    37.28%    failed      0.00%
+  95  CTX_68    32.60%    failed      0.00%
+  96  CTX_69    25.05%    failed      0.00%
+  97  CTX_70    35.69%    failed      0.00%
+  98  CTX_71    36.88%    failed      0.00%
+  99  CTX_72    37.08%    failed      0.00%
+ 100  CTX_73    42.64%    failed      0.00%
+ 101  CTX_74    38.27%    failed      0.00%
+ 102  CTX_75    35.69%    failed      0.00%
+ 103  CTX_76    37.28%    failed      0.00%
+ 104  CTX_77    35.79%    failed      0.00%
+ 105  CTX_78    35.79%    failed      0.00%
+ 106  CTX_79    36.68%    failed      0.00%
+ 107  CTX_80    35.49%    failed      0.00%
+ 108  CTX_81    28.63%    failed      0.00%
+ 109  CTX_82    35.09%    failed      0.00%
+ 110  CTX_83    37.48%    failed      0.06%
+ 111  CTX_84    39.36%    failed      0.00%
+ 112  CTX_85    36.18%    failed      0.00%
+ 113  CTX_86    40.06%    failed      0.00%
+ 114  CTX_87    30.62%    failed      0.00%
+ 115  CTX_88    26.04%    failed      0.00%
+ 116  CTX_89    27.63%    failed      0.00%
+ 117  CTX_90    37.57%    failed      0.00%
+ 118  CTX_91    36.98%    failed      0.00%
+ 119  CTX_92    36.68%    failed      0.00%
+ 120  CTX_93    37.38%    failed      0.00%
+ 121  CTX_94    39.56%    failed      0.00%
+ 122  CTX_95    37.18%    failed      0.00%
+ 123  CTX_96    37.77%    failed      0.00%
+ 124  CTX_97    37.48%    failed      0.00%
+ 125  CTX_98    32.60%    failed      0.00%
+ 126  CTX_99    36.08%    failed      0.00%
+ 127  CTX_100   36.68%    failed      0.00%
+ 128  CTX_101   42.05%    failed      0.00%
+ 129  CTX_102   35.79%    failed      0.00%
+ 130  CTX_103   36.68%    failed      0.00%
+ 131  CTX_104   35.39%    failed      0.00%
+ 132  CTX_105   35.79%    failed      0.00%
+ 133  CTX_106   35.98%    failed      0.00%
+ 134  CTX_107   39.76%    failed      0.00%
+ 135  CTX_108   34.29%    failed      0.00%
+ 136  CTX_109   47.02%    failed      0.00%
+ 137  CTX_110   37.87%    failed      0.00%
+ 138  CTX_111   50.89%    failed      0.00%
+ 139  CTX_112   37.57%    failed      0.08%
+ 140  CTX_113   33.00%    failed      0.00%
+ 141  CTX_114   50.80%    failed      0.01%
+ 142  CTX_115   37.08%    failed      0.00%
+ 143  CTX_116   37.77%    failed      0.00%
+ 144  CTX_117   36.08%    passed      9.44%
+ 145  CTX_118   37.87%    failed      0.00%
+ 146  CTX_119   33.80%    failed      0.02%
+ 147  CTX_120   37.57%    failed      0.00%
+ 148  CTX_121   37.67%    failed      0.00%
+ 149  CTX_122   34.89%    failed      4.73%
+ 150  CTX_123   26.84%    failed      0.00%
+ 151  CTX_124   25.84%    failed      0.00%
+ 152  CTX_125   24.65%    failed      0.00%
+ 153  CTX_126   38.07%    failed      0.00%
+ 154  CTX_127   38.97%    failed      0.11%
+ 155  CTX_128   25.05%    failed      0.00%
+ 156  CTX_129   24.45%    failed      0.00%
+ 157  CTX_130   42.54%    failed      0.00%
+ 158  CTX_131   41.95%    failed      0.00%
+ 159  CTX_132   24.75%    failed      0.00%
+ 160  CTX_133   30.82%    failed      0.67%
+ 161  CTX_134   39.17%    failed      0.02%
+ 162  CTX_135   26.84%    failed      0.00%
+ 163  CTX_136   39.46%    passed     59.21%
+ 164  CTX_137   38.07%    failed      0.03%
+ 165  CTX_138   47.51%    failed      0.18%
+ 166  CTX_139   37.28%    failed      0.00%
+ 167  CTX_140   40.85%    failed      0.00%
+ 168  CTX_141   41.15%    failed      0.00%
+ 169  CTX_142   39.46%    failed      0.69%
+ 170  CTX_143   29.62%    failed      0.00%
+ 171  CTX_144   23.46%    failed      0.00%
+ 172  CTX_145   34.89%    failed      1.90%
+ 173  CTX_146   54.67%    failed      0.14%
+ 174  CTX_147   26.84%    failed      0.00%
+ 175  CTX_148   55.27%    failed      0.00%
+ 176  CTX_149   37.57%    failed      0.00%
+ 177  CTX_150   38.17%    failed      0.00%
+ 178  ANN_1      2.68%    passed     40.87%
+ 179  ANN_2      2.88%    passed     98.05%
+ 180  ANN_3      7.55%    passed      5.36%
+ 181  ANN_4     11.33%    failed      0.41%
+ 182  ANN_5      3.18%    passed     37.34%
+ 183  ANN_6      3.88%    failed      0.18%
+ 184  ANN_7      9.15%    failed      0.10%
+ 185  ANN_8     10.93%    failed      0.00%
+ 186  ANN_9     10.04%    failed      0.00%
+ 187  ANN_10    24.45%    failed      0.00%
+ 188  ANN_11     4.57%    passed     40.85%
+ 189  ANN_12     5.57%    failed      1.13%
+ 190  ANN_13    11.13%    failed      0.47%
+ 191  ANN_14     5.86%    failed      0.83%
+ 192  ANN_15    12.13%    failed      0.56%
+ 193  ANN_16    11.93%    passed      7.02%
+ 194  ANN_17     2.88%    passed     91.63%
+ 195  ANN_18     1.89%    passed     42.24%
+ 196  ANN_19     3.08%    passed     88.37%
+ 197  ANN_20     3.28%    passed     67.01%
+ 198  ANN_21     1.79%    failed      1.82%
+ 199  ANN_22    18.79%    failed      0.00%
+ 200  ANN_23    11.83%    failed      0.19%
+ 201  ANN_24    11.33%    failed      0.47%
+ 202  ANN_25    11.73%    failed      0.14%
+ 203  ANN_26    10.44%    passed     22.92%
+ 204  ANN_27    10.54%    passed     20.88%
+ 205  ANN_28    11.53%    passed     44.42%
+ 206  ANN_29     2.68%    passed     58.44%
+ 207  ANN_30    10.44%    passed     38.15%
+ 208  ANN_31     2.49%    passed     21.77%
+ 209  ANN_32     3.48%    failed      0.01%
+ 210  ANN_33    11.33%    passed     22.31%
+ 211  ANN_34     3.18%    passed     85.54%
+ 212  ANN_35     5.27%    failed      1.11%
+ 213  ANN_36     8.75%    failed      2.50%
+ 214  ANN_37    51.69%    passed     14.36%
+ 215  ANN_38     1.59%    passed     25.40%
+ 216  ANN_39     9.24%    passed      6.50%
+ 217  ANN_40     1.99%    passed     86.13%
+ 218  ANN_41    14.02%    failed      3.02%
+ 219  ANN_42     5.37%    failed      2.46%
+ 220  ANN_43     5.77%    failed      2.04%
+ 221  ANN_44     3.28%    passed     96.30%
+ 222  ANN_45     1.39%    failed      0.11%
+ 223  ANN_46    21.97%    passed     26.07%
+ 224  ANN_47    12.43%    failed      0.51%
+ 225  ANN_48     1.69%    failed      0.03%
+ 226  ANN_49     4.87%    passed     35.67%
+ 227  ANN_50    13.72%    failed      0.43%
+ 228  ANN_51     8.55%    failed      0.86%
+ 229  ANN_52     3.28%    passed     97.84%
+ 230  ANN_53     1.99%    passed     95.30%
+ 231  ANN_54     3.88%    passed     41.13%
+ 232  ANN_55     2.29%    failed      4.52%
+ 233  ANN_56     2.98%    passed     97.98%
+ 234  ANN_57    10.34%    failed      0.00%
+ 235  ANN_58     3.98%    passed     31.02%
+ 236  ANN_59     5.17%    failed      1.08%
+ 237  ANN_60     1.99%    passed     99.34%
+ 238  ANN_61     5.27%    failed      1.37%
+ 239  ANN_62     5.37%    passed     11.34%
+ 240  ANN_63     3.28%    passed     98.32%
+ 241  ANN_64     4.37%    passed     70.21%
+ 242  ANN_65     1.79%    failed      0.23%
+ 243  ANN_66    11.83%    failed      0.00%
+ 244  ANN_67     9.54%    failed      0.00%
+ 245  ANN_68    24.45%    failed      0.04%
+ 246  ANN_69     3.58%    passed     95.57%
+ 247  ANN_70    11.43%    failed      3.94%
+ 248  ANN_71     2.19%    passed     36.47%
+ 249  ANN_72     4.57%    passed     27.25%
+ 250  ANN_73     8.95%    failed      0.08%
+ 251  ANN_74     2.98%    passed     49.80%
+ 252  ANN_75     1.99%    passed     94.73%
+ 253  ANN_76     3.18%    passed     63.78%
+ 254  ANN_77    14.91%    failed      0.70%
+ 255  ANN_78     3.68%    failed      4.71%
+ 256  ANN_79     1.39%    failed      0.17%
+ 257  ANN_80     8.45%    passed      7.44%
+ 258  ANN_81     2.09%    passed     26.54%
+ 259  ANN_82    10.54%    passed      6.64%
+ 260  ANN_83     9.84%    passed      5.47%
+ 261  ANN_84     3.48%    passed     68.27%
+ 262  ANN_85    21.57%    passed     43.61%
+ 263  ANN_86    28.03%    passed     69.86%
+ 264  ANN_87     2.09%    passed     10.13%
+ 265  ANN_88     3.38%    passed     76.45%
+ 266  ANN_89     2.09%    passed     95.38%
+ 267  ANN_90     3.88%    passed     37.49%
+ 268  ANN_91     4.47%    passed     92.02%
+ 269  ANN_92     1.89%    passed     76.22%
+ 270  ANN_93    12.43%    failed      0.39%
+ 271  ANN_94     4.37%    passed     98.20%
+ 272  ANN_95     1.39%    failed      0.16%
+ 273  ANN_96     1.59%    failed      0.00%
+ 274  ANN_97     5.37%    passed     87.06%
+ 275  ANN_98     2.78%    passed     20.06%
+ 276  ANN_99     3.28%    passed     29.20%
+ 277  ANN_100    2.88%    passed     68.87%
+ 278  ANN_101    3.38%    passed     85.34%
+ 279  ANN_102    2.09%    passed     99.61%
+ 280  ANN_103    4.37%    passed     90.11%
+ 281  ANN_104    3.88%    passed     75.37%
+ 282  ANN_105    1.39%    failed      1.22%
+ 283  ANN_106   10.34%    failed      0.04%
+ 284  ANN_107    3.68%    passed     97.01%
+ 285  ANN_108    1.79%    failed      2.41%
+ 286  ANN_109    2.68%    passed     25.51%
+ 287  ANN_110   11.43%    failed      0.00%
+ 288  ANN_111   11.43%    failed      0.00%
+ 289  ANN_112    2.98%    passed     37.62%
+ 290  ANN_113   12.43%    failed      2.28%
+ 291  ANN_114   13.82%    passed     33.52%
+ 292  ANN_115   13.82%    passed     33.52%
+ 293  ANN_116    5.27%    passed     11.98%
+ 294  ANN_117   11.13%    failed      0.09%
+ 295  ANN_118    3.18%    failed      1.86%
+ 296  ANN_119   44.14%    passed     76.76%
+ 297  ANN_120    2.88%    passed     93.07%
+ 298  ANN_121    5.07%    passed     29.37%
+ 299  ANN_122    2.98%    passed     82.77%
+ 300  ANN_123   29.92%    passed     97.37%
+ 301  ANN_124    5.86%    passed     78.27%
+ 302  ANN_125    3.88%    passed     82.50%
+ 303  ANN_126    2.58%    passed     13.22%
+ 304  ANN_127    6.06%    passed     35.56%
+ 305  ANN_128    9.94%    passed     54.17%
+ 306  ANN_129    3.78%    failed      2.80%
+ 307  ANN_130    5.47%    passed     37.34%
+ 308  ANN_131    6.46%    failed      0.02%
+ 309  ANN_132    5.07%    passed     31.22%
+ 310  ANN_133   11.43%    failed      0.52%
+ 311  ANN_134   10.93%    passed      6.34%
+ 312  ANN_135    2.98%    passed     80.78%
+ 313  ANN_136    1.79%    failed      0.38%
+ 314  ANN_137    3.08%    passed     30.93%
+ 315  ANN_138   11.83%    passed     29.65%
+ 316  ANN_139    5.07%    passed     37.90%
+ 317  ANN_140    3.68%    passed     99.11%
+ 318  ANN_141    2.78%    passed     96.15%
+ 319  ANN_142    4.08%    passed     84.74%
+ 320  ANN_143    7.16%    failed      0.47%
+ 321  ANN_144   11.43%    passed      6.05%
+ 322  ANN_145    7.95%    passed     36.86%
+ 323  ANN_146    4.87%    passed      8.35%
+ 324  ANN_147    9.34%    passed     91.83%
+ 325  ANN_148    5.07%    passed     10.76%
+ 326  ANN_149   10.14%    passed     32.47%
+ 327  ANN_150    3.68%    passed     90.43%
+ 328  ANN_151    9.84%    failed      0.68%
+ 329  ANN_152    9.94%    failed      1.70%
+ 330  ANN_153    5.27%    passed     94.03%
+ 331  ANN_154    9.15%    passed     44.88%
+ 332  ANN_155    2.58%    failed      0.00%
+ 333  ANN_156    1.99%    passed     25.79%
+ 334  ANN_157    2.09%    passed     91.90%
+ 335  ANN_158    9.15%    failed      4.92%
+ 336  ANN_159    3.28%    passed     83.91%
+ 337  ANN_160   10.54%    passed     56.41%
+ 338  ANN_161    9.64%    passed     35.36%
+ 339  ANN_162    2.98%    passed     86.58%
+ 340  ANN_163    5.77%    passed     79.46%
+ 341  ANN_164    3.48%    passed     95.42%
+ 342  ANN_165    3.08%    passed     94.77%
+ 343  ANN_166    5.77%    passed     74.02%
+ 344  ANN_167    6.96%    passed     27.41%
+ 345  ANN_168   10.93%    failed      0.22%
+ 346  ANN_169   11.13%    failed      3.58%
+ 347  ANN_170   10.93%    failed      3.05%
+ 348  ANN_171   12.03%    passed     12.22%
+ 349  ANN_172    5.47%    passed     23.36%
+ 350  ANN_173    7.85%    passed     20.65%
+ 351  ANN_174    1.39%    failed      0.01%
+ 352  ANN_175    1.49%    passed      7.35%
+ 353  ANN_176    1.49%    passed     11.11%
+ 354  ANN_177    2.88%    passed     20.12%
+ 355  ANN_178    3.48%    passed     62.89%
+ 356  ANN_179   11.83%    passed     41.41%
+ 357  ANN_180    5.96%    failed      1.33%
+ 358  ANN_181    5.86%    passed     16.85%
+ 359  ANN_182   10.74%    failed      0.06%
+ 360  ANN_183    3.98%    passed     94.89%
+ 361  ANN_184    2.98%    passed     77.17%
+ 362  ANN_185    3.28%    failed      0.14%
+ 363  ANN_186    3.38%    passed     77.15%
+ 364  ANN_187   10.74%    failed      0.17%
+ 365  ANN_188    3.68%    passed     27.75%
+ 366  ANN_189    7.26%    passed      5.16%
+ 367  ANN_190    2.58%    passed     99.85%
+ 368  ANN_191    2.98%    passed     25.23%
+ 369  ANN_192   10.24%    failed      0.05%
+ 370  ANN_193   10.54%    passed     14.46%
+ 371  ANN_194    3.38%    passed     38.22%
+ 372  ANN_195    4.97%    failed      0.03%
+ 373  ANN_196    1.99%    passed      5.29%
+ 374  ANN_197    5.07%    passed     54.38%
+ 375  ANN_198   18.79%    passed     45.03%
+ 376  ANN_199    2.78%    passed     85.03%
+ 377  ANN_200    7.85%    passed     27.66%
+ 378  ANN_201    8.65%    passed     23.49%
+ 379  ANN_202    4.67%    passed     17.44%
+ 380  ANN_203    8.05%    passed     16.01%
+ 381  ANN_204   10.24%    failed      1.31%
+ 382  ANN_205    8.75%    passed      9.77%
+ 383  ANN_206    2.68%    passed     86.00%
+ 384  ANN_207    8.75%    passed     29.42%
+ 385  ANN_208    2.98%    passed     39.59%
+ 386  ANN_209    1.99%    passed     38.89%
+ 387  ANN_210    2.88%    failed      4.56%
+ 388  ANN_211    2.88%    passed     61.80%
+ 389  ANN_212    1.39%    failed      0.02%
+ 390  ANN_213    7.75%    passed     13.67%
+ 391  ANN_214   10.44%    failed      2.73%
+ 392  ANN_215   10.54%    failed      0.00%
+ 393  ANN_216    5.57%    failed      0.58%
+ 394  ANN_217    2.88%    passed     74.33%
+ 395  ANN_218    2.98%    passed     55.26%
+ 396  ANN_219    3.08%    passed     58.16%
+ 397  ANN_220    5.86%    passed     16.71%
+ 398  ANN_221    2.09%    passed     63.97%
+ 399  ANN_222    1.39%    failed      0.36%
+ 400  ANN_223    4.27%    passed     79.48%
+ 401  ANN_224   15.41%    failed      0.41%
+ 402  ANN_225    8.45%    failed      0.02%
+ 403  ANN_226    5.27%    failed      1.11%
+ 404  ANN_227   10.14%    passed     69.38%
+ 405  ANN_228    2.29%    passed     57.78%
+ 406  ANN_229    9.44%    passed     82.34%
+ 407  ANN_230    8.55%    failed      0.23%
+ 408  ANN_231    2.09%    passed     63.75%
+ 409  ANN_232    1.39%    failed      0.07%
+ 410  ANN_233    2.88%    passed     48.14%
+ 411  ANN_234    3.78%    passed     85.00%
+ 412  ANN_235   27.04%    passed     14.62%
+ 413  ANN_236    2.19%    passed      6.59%
+ 414  ANN_237    4.87%    passed     10.02%
+ 415  ANN_238    5.17%    passed     30.81%
+ 416  ANN_239    5.17%    passed     52.01%
+ 417  ANN_240    9.84%    failed      0.00%
+ 418  ANN_241   10.24%    failed      1.10%
+ 419  ANN_242    9.84%    failed      0.00%
+ 420  ANN_243   11.63%    passed     20.37%
+ 421  ANN_244   26.24%    passed     62.60%
+ 422  ANN_245    2.78%    passed     92.92%
+ 423  ANN_246    8.15%    passed     93.71%
+ 424  ANN_247    3.48%    passed     84.59%
+ 425  ANN_248   13.62%    passed      9.77%
+ 426  ANN_249    3.08%    passed     51.75%
+ 427  ANN_250    1.89%    passed     84.98%
+ 428  ANN_251    1.79%    passed     25.98%
+ 429  ANN_252    4.57%    passed     30.34%
+ 430  ANN_253    5.37%    passed     10.94%
+ 431  ANN_254    8.45%    passed     10.42%
+ 432  ANN_255   22.76%    failed      2.46%
+ 433  ANN_256    3.48%    passed     97.52%
+ 434  ANN_257    2.88%    failed      2.94%
+ 435  ANN_258    7.95%    passed     23.41%
+ 436  ANN_259   11.23%    passed      5.10%
+ 437  ANN_260    2.09%    passed     27.16%
+ 438  ANN_261   10.83%    failed      2.09%
+ 439  ANN_262   15.21%    passed     93.11%
+ 440  ANN_263    1.89%    passed     66.87%
+ 441  ANN_264   12.72%    failed      2.12%
+ 442  ANN_265    3.88%    passed     85.69%
+ 443  ANN_266    5.37%    passed     87.16%
+ 444  ANN_267    7.65%    passed     48.76%
+ 445  ANN_268    6.06%    passed     92.57%
+ 446  ANN_269    5.77%    passed     93.18%
+ 447  ANN_270    1.59%    failed      0.13%
+ 448  ANN_271    8.25%    failed      3.02%
+ 449  ANN_272    2.19%    passed     45.67%
+ 450  ANN_273    1.99%    passed     95.76%
+ 451  ANN_274    6.36%    passed      9.31%
+ 452  ANN_275    3.88%    passed     98.12%
+ 453  ANN_276    1.89%    failed      1.27%
+ 454  ANN_277    2.78%    passed     10.79%
+ 455  ANN_278    2.88%    passed     81.50%
+ 456  ANN_279    3.78%    failed      0.59%
+ 457  ANN_280    4.67%    passed     22.21%
+ 458  ANN_281    2.88%    passed     70.78%
+ 459  ANN_282    8.15%    passed     18.10%
+ 460  ANN_283    1.99%    passed     70.15%
+ 461  ANN_284   39.36%    passed     12.86%
+ 462  ANN_285    2.68%    passed     68.40%
+ 463  ANN_286    3.08%    passed     20.92%
+ 464  ANN_287    2.88%    passed     79.21%
+ 465  ANN_288    1.79%    passed      5.25%
+ 466  ANN_289    3.48%    passed     97.23%
+ 467  ANN_290   23.26%    passed     11.40%
+ 468  ANN_291   23.26%    passed     10.91%
+ 469  ANN_292    3.58%    passed     82.32%
+ 470  ANN_293    2.19%    passed     97.75%
+ 471  ANN_294    8.15%    passed     43.02%
+ 472  ANN_295    3.38%    passed     76.31%
+ 473  ANN_296    3.78%    passed     99.54%
+ 474  ANN_297    1.39%    failed      0.10%
+ 475  ANN_298    8.45%    passed     23.53%
+ 476  ANN_299    8.45%    failed      3.68%
+ 477  ANN_300    2.09%    passed     88.47%
+ 478  ANN_301    1.39%    failed      0.00%
+ 479  ANN_302    9.74%    failed      0.59%
+ 480  ANN_303    1.59%    passed      9.96%
+ 481  ANN_304    3.18%    failed      0.24%
+ 482  ANN_305    1.89%    failed      1.57%
+ 483  ANN_306    5.57%    failed      2.39%
+ 484  ANN_307   18.39%    failed      4.12%
+ 485  ANN_308    3.18%    failed      0.09%
+ 486  ANN_309   11.33%    passed     23.14%
+ 487  ANN_310    3.18%    passed     89.54%
+ 488  ANN_311    3.48%    passed     26.75%
+ 489  ANN_312    1.79%    failed      0.60%
+ 490  ANN_313    1.79%    failed      3.93%
+ 491  ANN_314   11.53%    passed     44.33%
+ 492  ANN_315    2.09%    failed      4.76%
+ 493  ANN_316    6.96%    passed     64.69%
+ 494  ANN_317   11.03%    failed      0.00%
+ 495  ANN_318    2.19%    passed     62.41%
+ 496  ANN_319   28.43%    passed     43.80%
+ 497  ANN_320    1.69%    passed     64.91%
+ 498  ANN_321    1.99%    passed     18.56%
+ 499  ANN_322   27.53%    passed     53.50%
+ 500  ANN_323    2.29%    passed     62.36%
+ 501  ANN_324    1.49%    failed      2.20%
+ 502  ANN_325   48.61%    passed     66.85%
+ 503  ANN_326   14.61%    failed      0.00%
+ 504  ANN_327    1.59%    failed      1.90%
+ 505  ANN_328    2.88%    passed     97.61%
+ 506  ANN_329    3.28%    passed     86.49%
+ 507  ANN_330    1.99%    passed     85.23%
+ 508  ANN_331   10.44%    passed     55.80%
+ 509  ANN_332    1.29%    failed      1.46%
+ 510  ANN_333    4.08%    passed     75.72%
+ 511  ANN_334    5.17%    passed     11.11%
+ 512  ANN_335    5.37%    passed     66.84%
+ 513  ANN_336    9.54%    passed     22.35%
+ 514  ANN_337    9.44%    passed     11.90%
+ 515  ANN_338   18.49%    passed     44.21%
+ 516  ANN_339    1.69%    failed      0.91%
+ 517  ANN_340    1.79%    failed      4.09%
+ 518  ANN_341    5.86%    passed     15.61%
+ 519  ANN_342   20.48%    passed     32.81%
+ 520  ANN_343    3.28%    passed     94.96%
+ 521  ANN_344    5.67%    failed      3.91%
+ 522  ANN_345    2.88%    passed     43.11%
+ 523  ANN_346   15.01%    failed      0.00%
+ 524  ANN_347   11.43%    passed     51.30%
+ 525  ANN_348   13.02%    failed      0.08%
+ 526  ANN_349    3.28%    passed     98.53%
+ 527  ANN_350    9.84%    passed     76.63%
+ 528  ANN_351    1.59%    failed      1.57%
+ 529  ANN_352    5.47%    passed     24.30%
+ 530  ANN_353    4.77%    passed     64.34%
+ 531  ANN_354    8.45%    passed     25.87%
+ 532  ANN_355    3.48%    passed     88.27%
+ 533  ANN_356    4.67%    passed     86.89%
+ 534  ANN_357   14.61%    failed      1.19%
+ 535  ANN_358    1.79%    failed      3.78%
+ 536  ANN_359    3.68%    passed     67.08%
+ 537  ANN_360   12.62%    failed      0.00%
+ 538  ANN_361    9.84%    failed      2.69%
+ 539  ANN_362    6.16%    passed     57.03%
+ 540  ANN_363    2.58%    passed     15.68%
+ 541  ANN_364    9.94%    passed     36.58%
+ 542  ANN_365    2.98%    passed      5.81%
+ 543  ANN_366   36.48%    passed     87.17%
+ 544  ANN_367    4.87%    passed     48.80%
+ 545  ANN_368    2.98%    failed      0.85%
+ 546  ANN_369    8.15%    failed      0.07%
+ 547  ANN_370    5.86%    passed     50.89%
+ 548  ANN_371   11.03%    failed      4.84%
+ 549  ANN_372   22.56%    failed      0.05%
+ 550  ANN_373    3.58%    passed     71.97%
+ 551  ANN_374    2.88%    passed     22.74%
+ 552  ANN_375    9.54%    failed      1.95%
+ 553  ANN_376   12.33%    failed      0.05%
+ 554  ANN_377    3.78%    passed      9.95%
+ 555  ANN_378    7.36%    failed      0.00%
+ 556  ANN_379    3.88%    passed     68.26%
+ 557  ANN_380    3.38%    passed     68.06%
+ 558  ANN_381    3.08%    passed      5.06%
+ 559  ANN_382   10.93%    passed     48.70%
+ 560  ANN_383    2.78%    passed     55.73%
+ 561  ANN_384    9.84%    passed     66.92%
+ 562  ANN_385    9.84%    passed     51.74%
+ 563  ANN_386    3.28%    failed      1.83%
+ 564  ANN_387    5.37%    passed     87.65%
+ 565  ANN_388    1.39%    failed      0.02%
+ 566  ANN_389    2.88%    passed     60.35%
+ 567  ANN_390    2.98%    passed     54.43%
+ 568  ANN_391    4.57%    passed     57.95%
+ 569  ANN_392    9.54%    passed     14.38%
+ 570  ANN_393    9.34%    passed     53.30%
+ 571  ANN_394    2.39%    passed     73.35%
+ 572  ANN_395    4.77%    passed     19.77%
+ 573  ANN_396    5.57%    passed     20.91%
+ 574  ANN_397    1.49%    failed      0.56%
+ 575  ANN_398   11.53%    passed     26.15%
+ 576  ANN_399   10.74%    failed      0.01%
+ 577  ANN_400   10.74%    failed      0.07%
+ 578  ANN_401    3.38%    passed     91.16%
+ 579  ANN_402    9.74%    passed     76.95%
+ 580  ANN_403    1.49%    failed      0.02%
+ 581  ANN_404    3.38%    passed     18.21%
+ 582  ANN_405   12.03%    passed      8.30%
+ 583  ANN_406    4.87%    passed     73.99%
+ 584  ANN_407    8.25%    failed      2.20%
+ 585  ANN_408    5.67%    passed     51.55%
+ 586  ANN_409    5.17%    passed     25.57%
+ 587  ANN_410    8.95%    passed     70.76%
+ 588  ANN_411    5.27%    passed     22.03%
+ 589  ANN_412   42.45%    passed     17.47%
+ 590  ANN_413    5.07%    passed     71.59%
+ 591  ANN_414    5.57%    passed     84.91%
+ 592  ANN_415    1.49%    failed      0.04%
+ 593  ANN_416    1.29%    failed      0.05%
+ 594  ANN_417   10.24%    failed      0.00%
+ 595  ANN_418   11.63%    failed      2.88%
+ 596  ANN_419    2.09%    passed     98.12%
+ 597  ANN_420    4.27%    passed     78.49%
+ 598  ANN_421    2.39%    passed     12.63%
+ 599  ANN_422    1.39%    failed      0.25%
+ 600  ANN_423   26.74%    passed     21.92%
+ 601  ANN_424    2.09%    passed      5.49%
+ 602  ANN_425    1.79%    passed     46.64%
+ 603  ANN_426    8.35%    passed     30.24%
+ 604  ANN_427   14.41%    failed      4.24%
+ 605  ANN_428    2.09%    passed     25.01%
+ 606  ANN_429    3.38%    passed     22.80%
+ 607  ANN_430    4.77%    passed     35.97%
+ 608  ANN_431    1.99%    failed      4.03%
+ 609  ANN_432    3.78%    failed      0.06%
+ 610  ANN_433   25.94%    passed     95.68%
+ 611  ANN_434    6.76%    passed     13.98%
+ 612  ANN_435    5.27%    passed     23.58%
+ 613  ANN_436    2.98%    passed     33.63%
+ 614  ANN_437    2.98%    passed     50.93%
+ 615  ANN_438   12.52%    failed      0.48%
+ 616  ANN_439    4.67%    passed     98.85%
+ 617  ANN_440    2.88%    passed     67.62%
+ 618  ANN_441    3.68%    passed     42.91%
+ 619  ANN_442    1.99%    passed     98.03%
+ 620  ANN_443    1.79%    passed     13.75%
+ 621  ANN_444    6.26%    passed     13.21%
+ 622  ANN_445    4.87%    failed      3.81%
+ 623  ANN_446    1.39%    failed      0.24%
+ 624  ANN_447    2.58%    passed     61.69%
+ 625  ANN_448   10.44%    passed     12.12%
+ 626  ANN_449    9.84%    passed     37.25%
+ 627  ANN_450    7.06%    failed      0.29%
+ 628  ANN_451    5.96%    passed     52.59%
+ 629  ANN_452    3.48%    failed      0.19%
+ 630  ANN_453    2.78%    passed     91.37%
+ 631  ANN_454    9.84%    passed     13.94%
+ 632  ANN_455    3.18%    passed     19.42%
+ 633  ANN_456    2.19%    passed     67.17%
+ 634  ANN_457    1.39%    failed      0.02%
+ 635  ANN_458   12.82%    failed      0.73%
+ 636  ANN_459    4.67%    passed     42.92%
+ 637  ANN_460    9.94%    failed      0.40%
+ 638  ANN_461    1.99%    passed     34.75%
+ 639  ANN_462    3.68%    passed     79.03%
+ 640  ANN_463   10.74%    passed     39.00%
+ 641  ANN_464   28.53%    passed     85.57%
+ 642  ANN_465    2.19%    passed     34.95%
+ 643  ANN_466    1.59%    failed      0.38%
+ 644  ANN_467    3.98%    passed     20.23%
+ 645  ANN_468    2.09%    passed     50.84%
+ 646  ANN_469    9.54%    failed      0.25%
+ 647  ANN_470   11.43%    failed      0.38%
+ 648  ANN_471    1.19%    failed      1.06%
+ 649  ANN_472    1.39%    failed      0.91%
+ 650  ANN_473    6.06%    passed     19.10%
+ 651  ANN_474    6.76%    passed      6.41%
+ 652  ANN_475    3.68%    passed     61.20%
+ 653  ANN_476    5.67%    passed     14.97%
+ 654  ANN_477   32.31%    passed     56.04%
+ 655  ANN_478    9.44%    passed     77.76%
+ 656  ANN_479    5.86%    passed     55.57%
+ 657  ANN_480   11.23%    passed      5.17%
+ 658  ANN_481   10.24%    failed      0.00%
+ 659  ANN_482   10.04%    failed      0.00%
+ 660  ANN_483    9.84%    failed      0.27%
+ 661  ANN_484   27.93%    failed      1.85%
+ 662  ANN_485   24.75%    passed     98.62%
+ 663  ANN_486    4.27%    passed     86.02%
+ 664  ANN_487   10.64%    failed      2.62%
+ 665  ANN_488    3.38%    passed     17.51%
+ 666  ANN_489    1.39%    failed      0.04%
+ 667  ANN_490    6.66%    failed      3.00%
+ 668  ANN_491    9.94%    passed     10.70%
+ 669  ANN_492    8.85%    failed      0.44%
+ 670  ANN_493   11.53%    failed      0.00%
+ 671  ANN_494    3.48%    passed     99.94%
+ 672  ANN_495    2.78%    passed     24.36%
+ 673  ANN_496    4.37%    passed     29.21%
+ 674  ANN_497    4.67%    passed     21.36%
+ 675  ANN_498   36.38%    passed     13.01%
+ 676  ANN_499    5.27%    passed     44.66%
+ 677  ANN_500    1.99%    passed     91.03%
+ 678  ANN_501    9.24%    failed      4.42%
+ 679  ANN_502    3.08%    passed     78.33%
+ 680  ANN_503    1.69%    passed     63.19%
+ 681  ANN_504    3.18%    passed     59.25%
+ 682  ANN_505    8.55%    passed      9.50%
+ 683  ANN_506    2.88%    passed     75.42%
+ 684  ANN_507    5.27%    failed      2.10%
+ 685  ANN_508    4.97%    passed     18.80%
+ 686  ANN_509    7.95%    passed     10.80%
+ 687  ANN_510    5.37%    failed      0.00%
+ 688  ANN_511    1.99%    passed     65.66%
+ 689  ANN_512   12.72%    failed      0.04%
+ 690  ANN_513    3.18%    failed      1.42%
+ 691  ANN_514    1.89%    failed      1.95%
+ 692  ANN_515    4.67%    passed     90.01%
+ 693  ANN_516    3.38%    passed     39.22%
+ 694  ANN_517    4.97%    passed     54.22%
+ 695  ANN_518    9.24%    failed      1.58%
+ 696  ANN_519    4.77%    passed     19.70%
+ 697  ANN_520    5.47%    passed     30.83%
+ 698  ANN_521   13.02%    failed      0.57%
+ 699  ANN_522    1.39%    passed      7.95%
+ 700  ANN_523   45.33%    passed     54.20%
+ 701  ANN_524    2.98%    passed     52.88%
+ 702  ANN_525    5.86%    passed      5.52%
+ 703  ANN_526    2.49%    passed     73.44%
+ 704  ANN_527    1.29%    passed      5.45%
+ 705  ANN_528    4.37%    passed     95.64%
+ 706  ANN_529    1.39%    failed      0.40%
+ 707  ANN_530    5.47%    failed      3.71%
+ 708  ANN_531    4.87%    passed     42.26%
+ 709  ANN_532    7.95%    passed     41.63%
+ 710  ANN_533   20.38%    passed     33.49%
+ 711  ANN_534    1.69%    passed     36.16%
+ 712  ANN_535    6.66%    failed      0.32%
+ 713  ANN_536    3.18%    passed     26.27%
+ 714  ANN_537    1.69%    passed     97.87%
+ 715  ANN_538    2.78%    passed     66.52%
+ 716  ANN_539    8.25%    failed      1.11%
+ 717  ANN_540    5.67%    passed     41.03%
+ 718  ANN_541    1.39%    failed      0.11%
+ 719  ANN_542   10.64%    failed      3.12%
+ 720  ANN_543    9.74%    passed     57.98%
+ 721  ANN_544    3.18%    passed     96.18%
+ 722  ANN_545    9.44%    failed      3.41%
+ 723  ANN_546    3.48%    passed     22.84%
+ 724  ANN_547   11.33%    failed      0.03%
+ 725  ANN_548    2.78%    passed     35.59%
+ 726  ANN_549    1.79%    passed     41.96%
+ 727  ANN_550    5.47%    passed     56.09%
+ 728  ANN_551    2.88%    failed      0.01%
+ 729  ANN_552    1.79%    passed     99.26%
+ 730  ANN_553   12.33%    failed      0.00%
+ 731  ANN_554    2.68%    passed     16.08%
+ 732  ANN_555    4.67%    passed     70.15%
+ 733  ANN_556    1.39%    failed      0.02%
+ 734  ANN_557    1.79%    passed     72.28%
+ 735  ANN_558    7.36%    failed      0.78%
+ 736  ANN_559    1.89%    passed     31.90%
+ 737  ANN_560    5.07%    passed     41.15%
+ 738  ANN_561   13.02%    passed     98.25%
+ 739  ANN_562    9.44%    passed     55.79%
+ 740  ANN_563    1.99%    passed     33.64%
+ 741  ANN_564    1.79%    passed     39.17%
+ 742  ANN_565    2.98%    passed     77.99%
+ 743  ANN_566    3.98%    failed      3.31%
+ 744  ANN_567    3.28%    passed     88.73%
+ 745  ANN_568    2.78%    passed     45.71%
+ 746  ANN_569    6.26%    passed     70.75%
+ 747  ANN_570    3.18%    passed     95.71%
+ 748  ANN_571   12.23%    failed      1.81%
+ 749  ANN_572    8.45%    failed      2.01%
+ 750  ANN_573    2.09%    passed     96.18%
+ 751  ANN_574    2.09%    passed     89.60%
+ 752  ANN_575   11.13%    passed     62.34%
+ 753  ANN_576    3.68%    passed      5.48%
+ 754  ANN_577    7.85%    failed      0.20%
+ 755  ANN_578    5.37%    passed     69.08%
+ 756  ANN_579    5.17%    passed      6.05%
+ 757  ANN_580    2.09%    failed      1.17%
+ 758  ANN_581    1.89%    passed     41.70%
+ 759  ANN_582    1.99%    passed     99.42%
+ 760  ANN_583    5.27%    failed      0.11%
+ 761  ANN_584    5.27%    passed     24.92%
+ 762  ANN_585   10.54%    passed     13.76%
+ 763  ANN_586   10.24%    failed      0.01%
+ 764  ANN_587   10.34%    failed      0.00%
+ 765  ANN_588    1.39%    failed      2.14%
+ 766  ANN_589   11.33%    passed     21.56%
+ 767  ANN_590   10.54%    failed      0.25%
+ 768  ANN_591    3.48%    passed     96.77%
+ 769  ANN_592   11.03%    failed      0.16%
+ 770  ANN_593   11.03%    failed      0.12%
+ 771  ANN_594   11.03%    failed      0.05%
+ 772  ANN_595    1.99%    passed     29.91%
+ 773  ANN_596    3.08%    passed     84.37%
+ 774  ANN_597   52.68%    failed      0.00%
+ 775  ANN_598   10.24%    failed      4.83%
+ 776  ANN_599    4.67%    passed     26.04%
+ 777  ANN_600    5.77%    passed      6.69%
+ 778  ANN_601    6.86%    failed      2.26%
+ 779  ANN_602   10.44%    failed      0.00%
+ 780  ANN_603    1.39%    passed     29.77%
+ 781  ANN_604    9.84%    passed     28.61%
+ 782  ANN_605    1.49%    failed      0.06%
+ 783  ANN_606    3.48%    failed      0.20%
+ 784  ANN_607    7.75%    passed     17.39%
+ 785  ANN_608    3.28%    passed     36.32%
+ 786  ANN_609    3.28%    passed     40.97%
+ 787  ANN_610    4.97%    passed     23.10%
+ 788  ANN_611    4.97%    passed      5.72%
+ 789  ANN_612    1.79%    passed     10.70%
+ 790  ANN_613    1.69%    passed      6.97%
+ 791  ANN_614    4.87%    passed      8.96%
+ 792  ANN_615   15.01%    failed      0.46%
+ 793  ANN_616    2.78%    passed     92.88%
+ 794  ANN_617    3.28%    failed      0.89%
+ 795  ANN_618    1.39%    failed      0.03%
+ 796  ANN_619    3.18%    failed      0.13%
+ 797  ANN_620    7.16%    failed      0.04%
+ 798  ANN_621    1.49%    failed      2.43%
+ 799  ANN_622    4.57%    passed     24.30%
+ 800  ANN_623    9.74%    passed     87.26%
+ 801  ANN_624    1.89%    passed     42.44%
+ 802  ANN_625    4.37%    passed     26.21%
+ 803  ANN_626   34.39%    failed      4.31%
+ 804  ANN_627    3.68%    passed     78.30%
+ 805  ANN_628    8.25%    failed      0.23%
+ 806  ANN_629    4.67%    passed     23.71%
+ 807  ANN_630    8.45%    passed     15.32%
+ 808  ANN_631    5.47%    passed     17.84%
+ 809  ANN_632    1.49%    failed      0.05%
+ 810  ANN_633    4.87%    passed     88.74%
+ 811  ANN_634   13.22%    failed      0.12%
+ 812  ANN_635    3.08%    passed     99.49%
+ 813  ANN_636   12.62%    failed      0.00%
+ 814  ANN_637   13.72%    failed      0.00%
+ 815  ANN_638    4.87%    passed     47.19%
+ 816  ANN_639    2.88%    failed      0.05%
+ 817  ANN_640    9.84%    passed     43.80%
+ 818  ANN_641    3.98%    passed     84.59%
+ 819  ANN_642    2.29%    passed     10.46%
+ 820  ANN_643    2.88%    passed     55.94%
+ 821  ANN_644    3.18%    failed      0.27%
+ 822  ANN_645    3.48%    failed      0.07%
+ 823  ANN_646    8.05%    passed     13.98%
+ 824  ANN_647   11.03%    failed      0.01%
+ 825  ANN_648   38.87%    passed     21.42%
+ 826  ANN_649    9.74%    failed      0.66%
+ 827  ANN_650    3.58%    passed     96.13%
+ 828  ANN_651    2.19%    passed     83.82%
+ 829  ANN_652    2.29%    passed     96.28%
+ 830  ANN_653    2.29%    passed     96.28%
+ 831  ANN_654   16.50%    passed     25.06%
+ 832  ANN_655   10.24%    passed     88.51%
+ 833  ANN_656   11.43%    failed      0.49%
+ 834  ANN_657    5.67%    passed     19.06%
+ 835  ANN_658    2.09%    passed     74.33%
+ 836  ANN_659    2.09%    passed      8.56%
+ 837  ANN_660    1.79%    passed      6.51%
+ 838  ANN_661    7.06%    passed     15.27%
+ 839  ANN_662    2.09%    passed     86.95%
+ 840  ANN_663   11.63%    failed      0.01%
+ 841  ANN_664   13.62%    failed      2.63%
+ 842  ANN_665    2.09%    failed      4.14%
+ 843  ANN_666    3.18%    passed     73.00%
+ 844  ANN_667   10.64%    passed     10.81%
+ 845  ANN_668   10.74%    failed      0.00%
+ 846  ANN_669    6.36%    failed      0.06%
+ 847  ANN_670    6.46%    failed      0.07%
+ 848  ANN_671    4.77%    passed     77.42%
+ 849  ANN_672    2.88%    passed     93.81%
+ 850  ANN_673   13.22%    passed      6.73%
+ 851  ANN_674    4.87%    passed     29.08%
+ 852  ANN_675   41.65%    passed     71.56%
+ 853  ANN_676    9.94%    passed     22.22%
+ 854  ANN_677    3.38%    passed     68.02%
+ 855  ANN_678   11.33%    passed     81.02%
+ 856  ANN_679    2.58%    passed     29.68%
+ 857  ANN_680    9.74%    failed      0.84%
+ 858  ANN_681   11.63%    failed      0.07%
+ 859  ANN_682    2.68%    passed     42.55%
+ 860  ANN_683   10.14%    failed      0.21%
+ 861  ANN_684   11.63%    passed     32.85%
+ 862  ANN_685    5.86%    failed      1.53%
+ 863  ANN_686    5.07%    passed     15.09%
+ 864  ANN_687    2.68%    passed     56.24%
+ 865  ANN_688    3.68%    passed     76.77%
+ 866  ANN_689   37.18%    passed     28.99%
+ 867  ANN_690   36.98%    passed     53.09%
+ 868  ANN_691    1.29%    passed     41.09%
+ 869  ANN_692    2.49%    passed     89.57%
+ 870  ANN_693    8.55%    failed      1.82%
+ 871  ANN_694    4.67%    passed     88.39%
+ 872  ANN_695    9.54%    passed     33.68%
+ 873  ANN_696   10.44%    failed      0.80%
+ 874  ANN_697    3.18%    passed     69.82%
+ 875  ANN_698    1.59%    failed      0.60%
+ 876  ANN_699    5.57%    passed     12.74%
+ 877  ANN_700    3.38%    passed     79.48%
+ 878  ANN_701    2.29%    passed     37.23%
+ 879  ANN_702    6.46%    passed     52.28%
+ 880  ANN_703    7.75%    failed      0.04%
+ 881  ANN_704    8.65%    failed      0.09%
+ 882  ANN_705   10.54%    passed      5.00%
+ 883  ANN_706   10.54%    passed      5.55%
+ 884  ANN_707    9.24%    failed      0.37%
+ 885  ANN_708    1.79%    passed      8.86%
+ 886  ANN_709    2.49%    passed     67.41%
+ 887  ANN_710    2.88%    passed     91.93%
+ 888  ANN_711    3.28%    passed     15.84%
+ 889  ANN_712    2.09%    passed      8.79%
+ 890  ANN_713    2.39%    passed     73.09%
+ 891  ANN_714    2.58%    passed     84.84%
+ 892  ANN_715    2.58%    passed     85.98%
+ 893  ANN_716    3.68%    passed     66.61%
+ 894  ANN_717    1.89%    passed     92.48%
+ 895  ANN_718    2.58%    failed      4.11%
+ 896  ANN_719    4.77%    passed     46.99%
+ 897  ANN_720   12.62%    failed      0.03%
+ 898  ANN_721    5.17%    passed     20.89%
+ 899  ANN_722    1.79%    passed      6.51%
+ 900  ANN_723    2.19%    passed     94.46%
+ 901  ANN_724    3.48%    passed     48.08%
+ 902  ANN_725    2.39%    passed     14.31%
+ 903  ANN_726    1.59%    failed      2.11%
+ 904  ANN_727    9.84%    passed     85.58%
+ 905  ANN_728    8.65%    passed     15.21%
+ 906  ANN_729    9.54%    passed     17.42%
+ 907  ANN_730   10.34%    failed      0.01%
+ 908  ANN_731   12.62%    failed      0.39%
+ 909  ANN_732    3.38%    passed     70.29%
+ 910  ANN_733    2.88%    passed     43.71%
+ 911  ANN_734    5.47%    passed      8.59%
+ 912  ANN_735    2.49%    passed     98.97%
+ 913  ANN_736    1.99%    passed     15.14%
+ 914  ANN_737    1.99%    failed      1.22%
+ 915  ANN_738   14.91%    failed      0.00%
+ 916  ANN_739    3.18%    passed     41.62%
+ 917  ANN_740    1.39%    failed      0.05%
+ 918  ANN_741    4.97%    passed     19.98%
+ 919  ANN_742    7.16%    failed      4.31%
+ 920  ANN_743    1.79%    failed      0.13%
+ 921  ANN_744    2.49%    passed     10.02%
+ 922  ANN_745   10.34%    failed      0.60%
+ 923  ANN_746    1.89%    passed     31.03%
+ 924  ANN_747   10.83%    passed     94.21%
+ 925  ANN_748   11.53%    failed      0.00%
+ 926  ANN_749    9.05%    passed     47.59%
+ 927  ANN_750    3.08%    passed     20.62%
+ 928  ANN_751    9.84%    failed      4.68%
+ 929  ANN_752    2.88%    passed      7.69%
+ 930  ANN_753   13.12%    failed      1.03%
+ 931  ANN_754   10.54%    failed      0.16%
+ 932  ANN_755    8.45%    passed     82.34%
+ 933  ANN_756    7.65%    passed     34.20%
+ 934  ANN_757    4.67%    passed     64.84%
+ 935  ANN_758    4.67%    passed     88.49%
+ 936  ANN_759    9.54%    passed     36.42%
+ 937  ANN_760    4.77%    passed     23.52%
+ 938  ANN_761    8.85%    passed      6.11%
+ 939  ANN_762   18.69%    failed      0.84%
+ 940  ANN_763    1.59%    failed      4.57%
+ 941  ANN_764    8.15%    passed     19.64%
+ 942  ANN_765    2.19%    passed     78.39%
+ 943  ANN_766    5.37%    passed     39.40%
+ 944  ANN_767    4.67%    passed     76.86%
+ 945  ANN_768    8.15%    passed     58.97%
+ 946  ANN_769    2.78%    passed     68.97%
+ 947  ANN_770    7.95%    passed     65.37%
+ 948  ANN_771   12.43%    passed      9.02%
+ 949  ANN_772    3.18%    passed     25.62%
+ 950  ANN_773    1.19%    failed      0.37%
+ 951  ANN_774    2.88%    passed     90.93%
+ 952  ANN_775    7.85%    passed     13.06%
+ 953  ANN_776    3.68%    passed     81.18%
+ 954  ANN_777    3.38%    passed     79.22%
+ 955  ANN_778    1.69%    passed     26.65%
+ 956  ANN_779    2.88%    passed     88.41%
+ 957  ANN_780   13.62%    failed      0.11%
+ 958  ANN_781    6.06%    passed      5.17%
+ 959  ANN_782    4.87%    failed      4.79%
+ 960  ANN_783    4.57%    passed     23.28%
+ 961  ANN_784   10.74%    failed      2.19%
+ 962  ANN_785    9.54%    passed     91.64%
+ 963  ANN_786    1.89%    passed     94.23%
+ 964  ANN_787    2.49%    passed     85.85%
+ 965  ANN_788    7.95%    passed     12.89%
+ 966  ANN_789    5.37%    passed     85.69%
+ 967  ANN_790    8.65%    failed      1.12%
+ 968  ANN_791    8.15%    failed      1.93%
+ 969  ANN_792   10.34%    failed      0.13%
+ 970  ANN_793    9.84%    passed     80.14%
+ 971  ANN_794    2.88%    passed     98.35%
+ 972  ANN_795    2.88%    passed     86.67%
+ 973  ANN_796    3.08%    passed     88.70%
+ 974  ANN_797    2.88%    passed     60.26%
+ 975  ANN_798   66.50%    failed      0.00%
+ 976  ANN_799    3.48%    passed     34.60%
+ 977  ANN_800    2.39%    passed     31.63%
+ 978  ANN_801    2.09%    passed     21.83%
+ 979  ANN_802    3.28%    passed     73.24%
+ 980  ANN_803    1.49%    failed      0.62%
+ 981  ANN_804    3.28%    passed     82.86%
+ 982  ANN_805    4.37%    failed      3.44%
+ 983  ANN_806   12.43%    failed      0.00%
+ 984  ANN_807    3.68%    passed     44.11%
+ 985  ANN_808    3.68%    passed     52.00%
+ 986  ANN_809    3.48%    passed     97.57%
+ 987  ANN_810    7.06%    passed     26.75%
+ 988  ANN_811    5.07%    passed     41.27%
+ 989  ANN_812    1.39%    failed      0.19%
+ 990  ANN_813    3.48%    passed     75.71%
+ 991  ANN_814    3.48%    passed     64.94%
+ 992  ANN_815   13.72%    passed     12.27%
+ 993  ANN_816    5.07%    passed     30.10%
+ 994  ANN_817   10.44%    passed     12.41%
+ 995  ANN_818   25.75%    failed      0.00%
+ 996  ANN_819    3.48%    passed     52.42%
+ 997  ANN_820    5.17%    passed      5.63%
+ 998  ANN_821    3.78%    passed     10.85%
+ 999  ANN_822    1.49%    passed      6.52%
+1000  ANN_823    4.67%    passed     83.30%
+1001  ANN_824    5.86%    failed      3.56%
+1002  ANN_825    3.08%    passed     26.21%
+1003  ANN_826   10.34%    passed     36.82%
+1004  ANN_827    2.19%    passed     87.12%
+1005  ANN_828   11.83%    failed      0.04%
+1006  ANN_829    9.64%    failed      1.60%
+1007  ANN_830    1.99%    passed     60.18%
+1008  ANN_831   11.83%    failed      3.68%
+1009  ANN_832    7.36%    passed     20.77%
+1010  ANN_833    7.95%    failed      1.40%
+1011  ANN_834    1.79%    failed      3.78%
+1012  ANN_835    2.88%    passed     82.99%
+1013  ANN_836    3.48%    passed     49.04%
+1014  ANN_837   47.61%    passed     20.08%
+1015  ANN_838   10.34%    failed      0.00%
+1016  ANN_839   10.64%    failed      1.13%
+1017  ANN_840    5.37%    passed     18.36%
+1018  ANN_841    5.47%    failed      1.81%
+1019  ANN_842    2.68%    passed     89.78%
+1020  ANN_843   10.24%    passed      5.26%
+1021  ANN_844    3.18%    passed     89.00%
+1022  ANN_845    1.79%    passed     77.15%
+1023  ANN_846    2.49%    passed     80.53%
+1024  ANN_847    5.77%    failed      4.80%
+1025  ANN_848    5.37%    passed     15.13%
+1026  ANN_849    4.77%    passed     60.56%
+1027  ANN_850    4.87%    passed     47.63%
+1028  ANN_851   31.41%    failed      0.00%
+1029  ANN_852    2.09%    failed      3.83%
+1030  ANN_853    1.59%    failed      0.11%
+1031  ANN_854    3.68%    failed      0.00%
+1032  ANN_855    2.68%    passed     97.19%
+1033  ANN_856   12.92%    failed      0.00%
+1034  ANN_857    5.47%    passed     43.16%
+1035  ANN_858    3.58%    passed     34.36%
+1036  ANN_859   13.62%    failed      0.01%
+1037  ANN_860    4.67%    passed     38.58%
+1038  ANN_861    3.18%    passed     34.06%
+1039  ANN_862    4.77%    passed     64.45%
+1040  ANN_863    1.49%    passed     13.43%
+1041  ANN_864   11.73%    failed      3.79%
+1042  ANN_865   40.06%    passed     42.24%
+1043  ANN_866    2.68%    passed     14.12%
+1044  ANN_867    2.98%    failed      1.94%
+1045  ANN_868   12.13%    failed      1.65%
+1046  ANN_869   37.28%    passed     53.74%
+1047  ANN_870    1.39%    failed      1.00%
+1048  ANN_871   10.54%    failed      0.49%
+1049  ANN_872    2.58%    passed     10.65%
+1050  ANN_873    9.64%    passed     11.04%
+1051  ANN_874    1.59%    passed     31.87%
+1052  ANN_875   11.63%    failed      0.03%
+1053  ANN_876    3.78%    passed     71.85%
+1054  ANN_877    3.58%    passed     12.22%
+1055  ANN_878    3.48%    passed     44.59%
+1056  ANN_879   11.43%    failed      1.15%
+1057  ANN_880    6.16%    passed     53.97%
+1058  ANN_881    2.88%    passed     33.78%
+1059  ANN_882    4.67%    passed     53.01%
+1060  ANN_883    8.15%    passed     26.79%
+1061  ANN_884    9.64%    passed      9.19%
+1062  ANN_885    3.08%    passed     52.49%
+1063  ANN_886    2.98%    passed     67.44%
+1064  ANN_887    8.45%    failed      4.39%
+1065  ANN_888   11.43%    passed     51.14%
+1066  ANN_889    7.55%    passed     21.12%
+1067  ANN_890    2.98%    passed     74.81%
+1068  ANN_891    1.89%    failed      1.43%
+1069  ANN_892    1.69%    failed      3.48%
+1070  ANN_893    1.99%    passed     72.16%
+1071  ANN_894   11.63%    failed      0.00%
+1072  ANN_895   13.22%    passed     34.95%
+1073  ANN_896    5.27%    passed     60.13%
+1074  ANN_897    5.47%    passed     14.87%
+1075  ANN_898    9.44%    failed      0.00%
+1076  ANN_899   12.33%    failed      0.00%
+1077  ANN_900    9.54%    failed      0.00%
+1078  ANN_901    2.49%    passed     21.77%
+1079  ANN_902    3.98%    passed     57.49%
+1080  ANN_903    2.39%    passed     90.20%
+1081  ANN_904   12.52%    passed     21.07%
+1082  ANN_905    8.45%    failed      3.98%
+1083  ANN_906    4.97%    passed      5.71%
+1084  ANN_907    4.87%    passed     16.80%
+1085  ANN_908    5.07%    passed      7.39%
+1086  ANN_909    3.28%    passed     64.11%
+1087  ANN_910   11.53%    failed      0.72%
+1088  ANN_911    8.55%    passed     13.42%
+1089  ANN_912    9.74%    passed      5.32%
+1090  ANN_913    1.79%    passed      7.71%
+1091  ANN_914    1.39%    failed      0.09%
+1092  ANN_915    2.98%    passed     58.46%
+1093  ANN_916    3.08%    passed     74.01%
+1094  ANN_917    3.88%    failed      1.36%
+1095  ANN_918    1.39%    failed      0.01%
+1096  ANN_919    8.25%    failed      0.00%
+1097  ANN_920   11.63%    failed      0.03%
+1098  ANN_921   25.94%    passed     89.53%
+1099  ANN_922    2.88%    passed     95.22%
+1100  ANN_923    7.85%    passed      9.93%
+1101  ANN_924    4.77%    passed     32.10%
+WARNING: 8 sequences contain more than 50% gaps/ambiguity
+****  TOTAL     11.63%  475 sequences failed composition chi2 test (p-value<5%; df=19)
+NOTE: ANN_482 is identical to REF_12 but kept for subsequent analysis
+NOTE: ANN_901 is identical to ANN_31 but kept for subsequent analysis
+NOTE: ANN_115 is identical to ANN_114 but kept for subsequent analysis
+NOTE: ANN_653 is identical to ANN_652 but kept for subsequent analysis
+NOTE: ANN_722 is identical to ANN_660 but kept for subsequent analysis
+Checking for duplicate sequences: done in 0.0190542 secs using 1947% CPU
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 1.863 seconds
+Generating 1000 samples for ultrafast bootstrap (seed: 20261113)...
+
+NOTE: 1402 MB RAM (1 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -925676.118
+2. Current log-likelihood: -911471.749
+3. Current log-likelihood: -911256.002
+4. Current log-likelihood: -911208.810
+5. Current log-likelihood: -911150.251
+6. Current log-likelihood: -911146.061
+Optimal log-likelihood: -911146.030
+Site proportion and rates:  (0.052,0.056) (0.081,0.188) (0.134,0.343) (0.193,0.550) (0.166,0.853) (0.166,1.281) (0.120,1.921) (0.088,2.784)
+Parameters optimization took 6 rounds (62.815 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 16.0399 secs using 3174% CPU
+Computing ML distances took 16.043841 sec (of wall-clock time) 509.157649 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.0109406 secs using 362.8% CPU
+Constructing RapidNJ tree: done in 11.7991 secs using 47.99% CPU
+Computing RapidNJ tree took 11.810387 sec (of wall-clock time) 5.703377 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -914585.625
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 199.703 second
+Computing log-likelihood of 98 initial trees ... 115.154 seconds
+Current best score: -911146.030
+
+Do NNI search on 20 best initial trees
+Optimizing NNI: done in 27.0994 secs using 3127% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -909793.533
+Optimizing NNI: done in 30.9069 secs using 3172% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 2: -909743.198
+Optimizing NNI: done in 29.2086 secs using 3171% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 3: -909712.170
+Optimizing NNI: done in 20.9947 secs using 3172% CPU
+Optimizing NNI: done in 31.288 secs using 3172% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 5: -909703.803
+Optimizing NNI: done in 32.4902 secs using 3171% CPU
+Optimizing NNI: done in 28.5056 secs using 3171% CPU
+Optimizing NNI: done in 27.233 secs using 3171% CPU
+Optimizing NNI: done in 25.7957 secs using 3173% CPU
+Optimizing NNI: done in 31.2881 secs using 3171% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 10: -909657.110
+Iteration 10 / LogL: -909657.110 / Time: 0h:12m:56s
+Optimizing NNI: done in 27.0461 secs using 3172% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 11: -909613.175
+Optimizing NNI: done in 25.8669 secs using 3173% CPU
+Optimizing NNI: done in 24.3548 secs using 3173% CPU
+Optimizing NNI: done in 31.7592 secs using 3171% CPU
+Optimizing NNI: done in 27.4607 secs using 3173% CPU
+Optimizing NNI: done in 30.7074 secs using 3172% CPU
+Optimizing NNI: done in 29.6282 secs using 3173% CPU
+Optimizing NNI: done in 33.6637 secs using 3174% CPU
+Optimizing NNI: done in 30.236 secs using 3173% CPU
+Optimizing NNI: done in 29.628 secs using 3173% CPU
+Iteration 20 / LogL: -909776.036 / Time: 0h:18m:2s
+Finish initializing candidate tree set (20)
+Current best tree score: -909613.175 / CPU time: 969.954
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Optimizing NNI: done in 26.0538 secs using 3168% CPU
+Optimizing NNI: done in 25.4895 secs using 3169% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 22: -909611.409
+Optimizing NNI: done in 23.0684 secs using 3169% CPU
+Optimizing NNI: done in 21.1788 secs using 3170% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 24: -909604.949
+Optimizing NNI: done in 24.4053 secs using 3169% CPU
+Optimizing NNI: done in 23.4501 secs using 3167% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 26: -909570.575
+Optimizing NNI: done in 24.2531 secs using 3170% CPU
+Optimizing NNI: done in 27.1462 secs using 3169% CPU
+Optimizing NNI: done in 24.332 secs using 3169% CPU
+Optimizing NNI: done in 25.5843 secs using 3165% CPU
+Iteration 30 / LogL: -909592.952 / Time: 0h:22m:44s (1h:15m:11s left)
+Optimizing NNI: done in 25.3885 secs using 3164% CPU
+Optimizing NNI: done in 23.0348 secs using 3164% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 32: -909560.409
+Optimizing NNI: done in 25.5147 secs using 3162% CPU
+Optimizing NNI: done in 22.1048 secs using 3165% CPU
+Optimizing NNI: done in 25.3275 secs using 3167% CPU
+Optimizing NNI: done in 24.5003 secs using 3170% CPU
+Optimizing NNI: done in 23.3024 secs using 3170% CPU
+Optimizing NNI: done in 21.8175 secs using 3170% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 38: -909518.053
+Optimizing NNI: done in 22.9385 secs using 3171% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 39: -909499.936
+Optimizing NNI: done in 24.6564 secs using 3170% CPU
+Iteration 40 / LogL: -909511.985 / Time: 0h:27m:14s (1h:9m:5s left)
+Optimizing NNI: done in 22.5181 secs using 3171% CPU
+Optimizing NNI: done in 24.4033 secs using 3171% CPU
+Optimizing NNI: done in 25.6627 secs using 3171% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 43: -909498.226
+Optimizing NNI: done in 21.6101 secs using 3170% CPU
+Optimizing NNI: done in 25.0782 secs using 3169% CPU
+Optimizing NNI: done in 23.7879 secs using 3170% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 46: -909465.595
+Optimizing NNI: done in 21.2213 secs using 3171% CPU
+Optimizing NNI: done in 20.2699 secs using 3170% CPU
+Optimizing NNI: done in 25.9927 secs using 3170% CPU
+Optimizing NNI: done in 22.94 secs using 3170% CPU
+Iteration 50 / LogL: -909527.022 / Time: 0h:31m:29s (1h:1m:37s left)
+Log-likelihood cutoff on original alignment: -909908.366
+Optimizing NNI: done in 21.9732 secs using 3169% CPU
+Optimizing NNI: done in 24.9065 secs using 3170% CPU
+Optimizing NNI: done in 24.6821 secs using 3170% CPU
+Optimizing NNI: done in 26.3669 secs using 3170% CPU
+Optimizing NNI: done in 25.1733 secs using 3170% CPU
+Optimizing NNI: done in 24.0754 secs using 3169% CPU
+Optimizing NNI: done in 23.2208 secs using 3170% CPU
+Optimizing NNI: done in 22.3131 secs using 3169% CPU
+Optimizing NNI: done in 23.7064 secs using 3168% CPU
+Optimizing NNI: done in 25.2754 secs using 3167% CPU
+Iteration 60 / LogL: -909515.509 / Time: 0h:35m:38s (0h:51m:54s left)
+Optimizing NNI: done in 21.2243 secs using 3169% CPU
+Optimizing NNI: done in 23.6213 secs using 3167% CPU
+Optimizing NNI: done in 24.0207 secs using 3169% CPU
+Optimizing NNI: done in 24.1776 secs using 3169% CPU
+Optimizing NNI: done in 27.0382 secs using 3169% CPU
+Optimizing NNI: done in 28.1163 secs using 3169% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 66: -909459.626
+Optimizing NNI: done in 21.7841 secs using 3171% CPU
+Optimizing NNI: done in 23.6816 secs using 3169% CPU
+Optimizing NNI: done in 24.3386 secs using 3169% CPU
+Optimizing NNI: done in 23.7715 secs using 3170% CPU
+Iteration 70 / LogL: -909485.550 / Time: 0h:39m:54s (0h:55m:28s left)
+Optimizing NNI: done in 26.4925 secs using 3169% CPU
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 71: -909395.306
+Optimizing NNI: done in 24.0386 secs using 3168% CPU
+Optimizing NNI: done in 24.7681 secs using 3170% CPU
+Optimizing NNI: done in 22.2754 secs using 3166% CPU
+Optimizing NNI: done in 23.9569 secs using 3165% CPU
+Optimizing NNI: done in 23.3732 secs using 3164% CPU
+Optimizing NNI: done in 23.5806 secs using 3166% CPU
+Optimizing NNI: done in 22.4243 secs using 3161% CPU
+Optimizing NNI: done in 23.3652 secs using 3161% CPU
+Optimizing NNI: done in 22.9513 secs using 3164% CPU
+Iteration 80 / LogL: -909495.980 / Time: 0h:44m:6s (0h:50m:46s left)
+Optimizing NNI: done in 22.0253 secs using 3169% CPU
+Optimizing NNI: done in 22.6967 secs using 3170% CPU
+Optimizing NNI: done in 20.4109 secs using 3168% CPU
+Optimizing NNI: done in 21.3709 secs using 3165% CPU
+Optimizing NNI: done in 25.8983 secs using 3168% CPU
+Optimizing NNI: done in 24.412 secs using 3168% CPU
+Optimizing NNI: done in 24.3805 secs using 3168% CPU
+Optimizing NNI: done in 24.4224 secs using 3168% CPU
+Optimizing NNI: done in 21.9855 secs using 3166% CPU
+Optimizing NNI: done in 25.33 secs using 3167% CPU
+Iteration 90 / LogL: -909483.996 / Time: 0h:48m:2s (0h:43m:41s left)
+Optimizing NNI: done in 23.9307 secs using 3166% CPU
+Optimizing NNI: done in 25.6448 secs using 3168% CPU
+Optimizing NNI: done in 22.3441 secs using 3167% CPU
+Optimizing NNI: done in 22.562 secs using 3168% CPU
+Optimizing NNI: done in 23.1529 secs using 3168% CPU
+Optimizing NNI: done in 27.8965 secs using 3168% CPU
+Optimizing NNI: done in 23.61 secs using 3167% CPU
+Optimizing NNI: done in 25.1704 secs using 3168% CPU
+Optimizing NNI: done in 23.1006 secs using 3168% CPU
+Optimizing NNI: done in 21.5907 secs using 3167% CPU
+Iteration 100 / LogL: -909472.142 / Time: 0h:52m:4s (0h:37m:19s left)
+Log-likelihood cutoff on original alignment: -909764.739
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.973
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Optimizing NNI: done in 22.8066 secs using 3166% CPU
+Optimizing NNI: done in 20.8768 secs using 3169% CPU
+Optimizing NNI: done in 22.9994 secs using 3166% CPU
+Optimizing NNI: done in 21.1943 secs using 3167% CPU
+Optimizing NNI: done in 24.5443 secs using 3167% CPU
+Optimizing NNI: done in 24.734 secs using 3167% CPU
+Optimizing NNI: done in 30.8516 secs using 3151% CPU
+Optimizing NNI: done in 28.3961 secs using 3169% CPU
+Optimizing NNI: done in 23.7567 secs using 3169% CPU
+Optimizing NNI: done in 29.6852 secs using 3167% CPU
+Iteration 110 / LogL: -909434.912 / Time: 0h:56m:22s (0h:46m:31s left)
+Optimizing NNI: done in 22.6554 secs using 3168% CPU
+Optimizing NNI: done in 26.0684 secs using 3168% CPU
+Optimizing NNI: done in 23.6277 secs using 3169% CPU
+Optimizing NNI: done in 24.3504 secs using 3168% CPU
+Optimizing NNI: done in 23.3841 secs using 3168% CPU
+Optimizing NNI: done in 23.2024 secs using 3165% CPU
+Optimizing NNI: done in 24.123 secs using 3164% CPU
+Optimizing NNI: done in 23.9887 secs using 3162% CPU
+Optimizing NNI: done in 23.914 secs using 3168% CPU
+Optimizing NNI: done in 26.2104 secs using 3165% CPU
+Iteration 120 / LogL: -909478.886 / Time: 1h:0m:27s (0h:40m:37s left)
+Optimizing NNI: done in 26.9978 secs using 3166% CPU
+Optimizing NNI: done in 26.2412 secs using 3163% CPU
+Optimizing NNI: done in 25.6123 secs using 3164% CPU
+Optimizing NNI: done in 28.9199 secs using 3164% CPU
+Optimizing NNI: done in 25.7013 secs using 3162% CPU
+Optimizing NNI: done in 28.9424 secs using 3162% CPU
+Optimizing NNI: done in 30.2272 secs using 3162% CPU
+Optimizing NNI: done in 32.5926 secs using 3164% CPU
+Optimizing NNI: done in 29.1297 secs using 3164% CPU
+Optimizing NNI: done in 27.5221 secs using 3165% CPU
+Iteration 130 / LogL: -909456.070 / Time: 1h:5m:12s (0h:35m:22s left)
+Optimizing NNI: done in 26.4574 secs using 3165% CPU
+Optimizing NNI: done in 28.0778 secs using 3165% CPU
+Optimizing NNI: done in 30.8255 secs using 3163% CPU
+Optimizing NNI: done in 30.8668 secs using 3163% CPU
+Optimizing NNI: done in 29.0695 secs using 3166% CPU
+Optimizing NNI: done in 31.717 secs using 3160% CPU
+Optimizing NNI: done in 31.7352 secs using 3160% CPU
+Optimizing NNI: done in 28.5288 secs using 3162% CPU
+Optimizing NNI: done in 33.439 secs using 3162% CPU
+Optimizing NNI: done in 31.8688 secs using 3155% CPU
+Iteration 140 / LogL: -909486.251 / Time: 1h:10m:19s (0h:30m:20s left)
+Optimizing NNI: done in 30.1625 secs using 3161% CPU
+Optimizing NNI: done in 31.9768 secs using 3155% CPU
+Optimizing NNI: done in 31.1762 secs using 3162% CPU
+Optimizing NNI: done in 26.5992 secs using 3148% CPU
+Optimizing NNI: done in 26.3888 secs using 3159% CPU
+Optimizing NNI: done in 29.537 secs using 3162% CPU
+Optimizing NNI: done in 31.3201 secs using 3165% CPU
+Optimizing NNI: done in 29.0037 secs using 3154% CPU
+Optimizing NNI: done in 31.7659 secs using 3156% CPU
+Optimizing NNI: done in 35.8062 secs using 3148% CPU
+Iteration 150 / LogL: -909405.143 / Time: 1h:15m:27s (0h:25m:18s left)
+Log-likelihood cutoff on original alignment: -909753.246
+Optimizing NNI: done in 31.7437 secs using 3145% CPU
+Optimizing NNI: done in 32.4844 secs using 3162% CPU
+Optimizing NNI: done in 35.2253 secs using 3164% CPU
+Optimizing NNI: done in 27.8841 secs using 3165% CPU
+Optimizing NNI: done in 29.2782 secs using 3168% CPU
+Optimizing NNI: done in 27.5982 secs using 3162% CPU
+Optimizing NNI: done in 26.6742 secs using 3163% CPU
+Optimizing NNI: done in 30.9787 secs using 3165% CPU
+Optimizing NNI: done in 30.0688 secs using 3162% CPU
+Optimizing NNI: done in 32.4949 secs using 3160% CPU
+Iteration 160 / LogL: -909517.908 / Time: 1h:20m:42s (0h:20m:17s left)
+Optimizing NNI: done in 24.0535 secs using 3165% CPU
+Optimizing NNI: done in 28.8052 secs using 3163% CPU
+Optimizing NNI: done in 33.2518 secs using 3165% CPU
+Optimizing NNI: done in 32.1714 secs using 3163% CPU
+Optimizing NNI: done in 30.1705 secs using 3162% CPU
+Optimizing NNI: done in 34.2463 secs using 3162% CPU
+Optimizing NNI: done in 26.175 secs using 3162% CPU
+Optimizing NNI: done in 27.3388 secs using 3164% CPU
+Optimizing NNI: done in 31.7223 secs using 3163% CPU
+Optimizing NNI: done in 30.9203 secs using 3164% CPU
+Iteration 170 / LogL: -909475.008 / Time: 1h:25m:45s (0h:15m:12s left)
+Optimizing NNI: done in 36.2638 secs using 3159% CPU
+Optimizing NNI: done in 31.5936 secs using 3153% CPU
+Optimizing NNI: done in 32.3937 secs using 3157% CPU
+Optimizing NNI: done in 31.0641 secs using 3163% CPU
+Optimizing NNI: done in 31.9114 secs using 3162% CPU
+Optimizing NNI: done in 32.1398 secs using 3164% CPU
+Optimizing NNI: done in 32.2899 secs using 3165% CPU
+Optimizing NNI: done in 31.8872 secs using 3165% CPU
+Optimizing NNI: done in 33.4117 secs using 3165% CPU
+Optimizing NNI: done in 27.4594 secs using 3163% CPU
+Iteration 180 / LogL: -909457.093 / Time: 1h:31m:9s (0h:10m:10s left)
+Optimizing NNI: done in 34.0318 secs using 3160% CPU
+Optimizing NNI: done in 33.2228 secs using 3163% CPU
+Optimizing NNI: done in 28.2294 secs using 3166% CPU
+Optimizing NNI: done in 26.9165 secs using 3163% CPU
+Optimizing NNI: done in 31.5885 secs using 3163% CPU
+Optimizing NNI: done in 31.1911 secs using 3162% CPU
+Optimizing NNI: done in 30.231 secs using 3164% CPU
+Optimizing NNI: done in 32.2207 secs using 3165% CPU
+Optimizing NNI: done in 33.4819 secs using 3162% CPU
+Optimizing NNI: done in 29.8978 secs using 3162% CPU
+Iteration 190 / LogL: -909459.951 / Time: 1h:36m:25s (0h:5m:6s left)
+Optimizing NNI: done in 31.8503 secs using 3164% CPU
+Optimizing NNI: done in 33.8127 secs using 3159% CPU
+Optimizing NNI: done in 29.766 secs using 3148% CPU
+Optimizing NNI: done in 36.5576 secs using 3149% CPU
+Optimizing NNI: done in 28.8823 secs using 3161% CPU
+Optimizing NNI: done in 31.8936 secs using 3164% CPU
+Optimizing NNI: done in 35.4845 secs using 3161% CPU
+Optimizing NNI: done in 33.8709 secs using 3160% CPU
+Optimizing NNI: done in 33.958 secs using 3162% CPU
+Optimizing NNI: done in 27.8748 secs using 3165% CPU
+Iteration 200 / LogL: -909467.023 / Time: 1h:41m:54s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -909753.246
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.993
+TREE SEARCH COMPLETED AFTER 200 ITERATIONS / Time: 1h:41m:59s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -909395.306
+Optimal log-likelihood: -909395.305
+Site proportion and rates:  (0.052,0.056) (0.078,0.185) (0.131,0.337) (0.194,0.540) (0.168,0.844) (0.169,1.275) (0.121,1.924) (0.087,2.790)
+Parameters optimization took 1 rounds (3.643 sec)
+BEST SCORE FOUND : -909395.305
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+Alternative NNI shows better log-likelihood -909393.445 > -909395.305
+Alternative NNI shows better log-likelihood -909395.286 > -909395.305
+Alternative NNI shows better log-likelihood -909395.264 > -909395.305
+Alternative NNI shows better log-likelihood -909395.168 > -909395.305
+Alternative NNI shows better log-likelihood -909394.302 > -909395.305
+Alternative NNI shows better log-likelihood -909393.527 > -909395.305
+5.951 sec.
+Creating bootstrap support values...
+Split supports printed to NEXUS file gh65.splits.nex
+Total tree length: 354.373
+
+Total number of iterations: 200
+CPU time used for tree search: 182006.764 sec (50h:33m:26s)
+Wall-clock time used for tree search: 6007.200 sec (1h:40m:7s)
+Total CPU time used: 185341.655 sec (51h:29m:1s)
+Total wall-clock time used: 6134.468 sec (1h:42m:14s)
+
+Computing bootstrap consensus tree...
+Reading input file gh65.splits.nex...
+1101 taxa and 4092 splits.
+Consensus tree written to gh65.contree
+Reading input trees file gh65.contree
+Log-likelihood of consensus tree: -909385.707
+
+Analysis results written to: 
+  IQ-TREE report:                gh65.iqtree
+  Maximum-likelihood tree:       gh65.treefile
+  Likelihood distances:          gh65.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          gh65.splits.nex
+  Consensus tree:                gh65.contree
+  Screen log file:               gh65.log
+
+Date and Time: Mon Nov 16 09:40:16 2026
+done

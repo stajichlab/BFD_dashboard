@@ -1,0 +1,5 @@
+genus representatives: 1654
+Pfam ids: []
+domain hits: 2221
+GH65 (PF03632) proteins: 926 in 813 of 1654 genus representatives
+cazy tables/views: ['cazy', 'cazy_cazymes_hmm', 'cazy_overview', 'v_cazy_family_counts']
