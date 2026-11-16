@@ -1,0 +1,56 @@
+---
+title: "Functional areas"
+---
+
+```{python}
+import sys
+sys.path.insert(0, ".")
+from pathlib import Path
+from _helpers import fig, table, HERE
+```
+
+Each panel shows the mean number of proteins carrying a domain per genome, per phylum, on a log2(x + 1) scale, with the share of genomes that carry the domain printed in each cell. Accessions are linked to InterPro in the table at the end. **The panel accessions were written from memory and are to be verified against InterPro before publication.**
+
+## Carbohydrate-active enzymes (CAZy)
+
+```{python}
+fig("F18_cazy_classes", "CAZy proteins per gene for the six classes (GH, GT, PL, CE, AA, CBM), by phylum.")
+fig("F19_cazy_families", "Thirty most abundant CAZy families, median proteins per genome by phylum.", "80%")
+```
+
+## Peptidases (MEROPS)
+
+```{python}
+fig("F20_merops_classes", "MEROPS best-hit proteins per gene by peptidase class (first letter of the MEROPS identifier).")
+```
+
+## Transcription factors
+
+```{python}
+fig("F21_tf_families", "Transcription-factor families, median proteins per genome by phylum.", "80%")
+table("T08_tf_family_medians")
+```
+
+## Curated domain panels
+
+Kinases and signalling, transporters, cytochrome P450 and redox, transcription factors, scaffolds, chromatin and DNA metabolism, carbohydrate-active domains, peptidases, secondary metabolism, lipid metabolism, secreted and effector-like domains, and trehalose and carbon storage.
+
+```{python}
+for p in sorted((HERE / "figures").glob("F22_*.png")):
+    fig(p.stem, p.stem.split("_panel_", 1)[-1].replace("_", " ").capitalize(), "70%")
+```
+
+```{python}
+table("T09_functional_panel", link_pfam="pfam_acc", max_rows=60)
+```
+
+The full panel table is `tables/T09_functional_panel.tsv`.
+
+## Intrinsic disorder
+
+```{python}
+fig("F23_idp_fraction", "Mean fraction of each protein predicted as intrinsically disordered, per genome, by phylum.")
+fig("F23b_idp_gt03", "Share of proteins with an intrinsic-disorder fraction above 0.3.")
+```
+
+Disorder scores exist for roughly 60% of proteins; a protein with no row is read as "no disordered region", which fits the pattern with protein length but has not been confirmed against the predictor's rules. Residue counts are not used here for that reason.

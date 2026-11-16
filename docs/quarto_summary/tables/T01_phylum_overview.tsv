@@ -1,0 +1,10 @@
+phylum	genomes	genome_Mb	genes	protein_len	gc_pct	busco
+Ascomycota	5162	32.37	10305.0	486.58	48.58	98.8
+Basidiomycota	1654	38.29	10974.5	471.4	49.67	96.6
+Kickxellomycota	157	14.83	6316.0	466.17	49.83	73.4
+Mucoromycota	118	35.31	11884.0	445.15	38.18	97.6
+Microsporidia	93	5.86	2686.0	329.55	31.59	10.2
+Chytridiomycota	59	27.14	9766.0	503.35	47.89	83.2
+Mortierellomycota	55	38.37	12444.0	526.99	48.06	93.9
+Glomeromycota	31	132.69	27456.0	340.85	27.09	90.1
+Other	64	46.43	13183.5	432.09	40.86	79.0

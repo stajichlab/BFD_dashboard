@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: _site
+website:
+  title: "BFD summary"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Overview
+      - href: 01_gene_content.qmd
+        text: Gene content
+      - href: 02_domains.qmd
+        text: Domains
+      - href: 03_localization.qmd
+        text: Localization
+      - href: 04_phylum_patterns.qmd
+        text: Phylum patterns
+      - href: 05_functional_domains.qmd
+        text: Functional areas
+      - href: 06_data_notes.qmd
+        text: Data and methods
+format:
+  html:
+    theme: cosmo
+    toc: true
+    fig-align: center
+    code-fold: true
+execute:
+  echo: false
+  warning: false
+jupyter: python3

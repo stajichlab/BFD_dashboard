@@ -1,0 +1,22 @@
+family	Ascomycota	Basidiomycota	Kickxellomycota	Mucoromycota	Microsporidia	Chytridiomycota	Mortierellomycota	Glomeromycota	Other
+Fungal-specific transcription factor domain (C-terminal to Zn_clus)	88.0	39.0	16.0	41.0	0.0	15.0	27.0	13.0	14.0
+Zn(II)2Cys6 zinc cluster	90.0	24.0	18.0	46.0	0.0	15.0	27.0	21.0	16.0
+C6H2-type zinc finger	30.0	2.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
+Myb-like DNA-binding domain	12.0	10.0	18.0	28.0	5.0	12.0	32.0	38.0	15.0
+Basic helix-loop-helix	10.0	9.0	11.0	43.5	0.0	11.0	24.0	12.0	12.0
+High mobility group box	7.0	14.0	18.0	23.0	1.0	12.0	15.0	109.0	14.0
+Myb-like DNA-binding domain variant	9.0	7.0	12.0	20.0	3.0	8.0	23.0	33.0	8.5
+Basic leucine zipper	9.0	6.0	7.0	34.0	1.0	11.0	19.0	11.0	13.0
+GATA zinc finger	6.0	9.0	10.0	35.0	2.0	15.0	22.0	21.0	15.0
+C2H2 zinc finger	8.0	4.0	8.0	27.0	1.0	7.0	13.0	9.0	9.0
+Homeodomain	6.0	8.0	6.0	27.0	8.0	9.0	11.0	9.0	11.5
+CCCH zinc finger	6.0	6.0	6.0	12.0	3.0	8.0	8.0	10.0	9.0
+Basic leucine zipper variant	4.0	5.0	8.0	28.0	1.0	9.0	15.0	11.0	12.0
+Forkhead / winged-helix domain	4.0	5.0	4.0	10.0	3.0	2.0	7.0	5.0	5.0
+Heat shock factor DNA-binding domain	3.0	4.0	8.0	19.0	2.0	4.0	7.0	6.0	9.0
+Homeobox KN domain	3.0	3.0	3.0	6.5	2.0	3.0	2.0	2.0	5.0
+MADS-box (SRF-type)	2.0	2.0	3.0	9.0	1.0	2.0	4.0	3.0	4.0
+RNA Pol I transcription factor Rrn7-type	1.0	1.0	1.0	2.0	0.0	1.0	1.0	1.0	1.0
+C2H2 zinc finger variant	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
+Nuclear hormone receptor C4 zinc finger	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
+POU-specific domain	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
