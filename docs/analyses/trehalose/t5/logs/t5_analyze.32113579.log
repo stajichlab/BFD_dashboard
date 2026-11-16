@@ -1,0 +1,35 @@
+== 06
+gate: LOO 19/22; fungal trehalase references 5/5 re-assigned; their smallest clade support (22.1, 31.0); passed=False
+R1: tree cannot decide (gate failed)
+R2: tree cannot decide (gate failed)
+R3: tree cannot decide (gate failed)
+R5a: tree cannot decide (gate failed)
+rc06=0
+== 07
+{'tree': 'atlas_genus', 'scoring': 'scored', 'tips_in_table': 1643, 'tips_ignored': 0, 'outgroup_jaccard': 0.961, 'present': 803, 'absent': 618, 'unknown': 222, 'gain_clade_tips': 1592, 'losses': 132, 'classes_touched': 35, 'perm_mean': 514.2, 'perm_sd': 9.3, 'share_perm_le_observed': 0.0}
+{'tree': 'atlas_genus', 'scoring': 'unfiltered', 'tips_in_table': 1643, 'tips_ignored': 0, 'outgroup_jaccard': 0.961, 'present': 803, 'absent': 840, 'unknown': 0, 'gain_clade_tips': 1592, 'losses': 162, 'classes_touched': 47, 'perm_mean': 665.4, 'perm_sd': 11.7, 'share_perm_le_observed': 0.0}
+R4 supported: 132 losses touching 35 classes (scored genera, tree atlas_genus)
+rc07=0
+== 08
+genomes with a protein in the fungal trehalase clade: 809
+{
+ "quality_genomes": {
+  "genomes": 586,
+  "genomes_beyond_2sd": 4,
+  "share_beyond_2sd": 0.006825938566552901,
+  "median_z": -0.31120955443565645,
+  "median_max_abs_z": 0.5839699871573796
+ },
+ "all_genomes": {
+  "genomes": 809,
+  "genomes_beyond_2sd": 4,
+  "share_beyond_2sd": 0.004944375772558714,
+  "median_z": -0.30978405095727024,
+  "median_max_abs_z": 0.5574687930371461
+ },
+ "n_proteins": 921,
+ "clade_intronless_share": 0.30727470141150925,
+ "genome_intronless_share_median": 0.241,
+ "verdict": "inconclusive: tree says \"tree cannot decide (gate failed)\", GC share beyond 2 sd = 0.01"
+}
+rc08=0

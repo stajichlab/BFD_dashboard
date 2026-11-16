@@ -1,0 +1,16 @@
+(xref:cazy-GH65 OR xref:pfam-PF03632) AND reviewed:true AND length:[500 TO 1500] AND fragment:false	30
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:1239	2000
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:976	1493
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:201174	2000
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:1224	667
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:200795	44
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:203691	28
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:203682	3
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:74201	15
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:57723	0
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:200918	17
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:2157	10
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:33208	1014
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:33090	5
+xref:pfam-PF03632 AND reviewed:false AND length:[500 TO 1500] AND fragment:false AND taxonomy_id:2759 NOT taxonomy_id:4751 NOT taxonomy_id:33208 NOT taxonomy_id:33090	94
+selected 177: 27 references, 150 context; seed 20261113
