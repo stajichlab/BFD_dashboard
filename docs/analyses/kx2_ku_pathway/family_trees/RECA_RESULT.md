@@ -54,12 +54,12 @@ described as reproducing sexually by zygospores, citation to verify; any link is
 
 - Annotated layer only; the rescued models were not usable at tree level. A Dmc1 missed by annotation in every core genome is
   possible but unlikely given the tblastn locus pattern and the earlier name-based result (1 of 101 genomes).
-- Only 10 of the 107 *Coemansia* strains are in the tree (the 97 others were not run); the Dmc1 call for them rests on tblastn
-  loci (one locus in nearly all).
+- This tree has 10 of the 107 *Coemansia* strains. **The pipeline was re-run on all 107 strains (2026-11-15; 624 sequences, 128 genomes): Dmc1 is not seen in any of them, and the tblastn loci agree**
+  (one locus in 97, a duplicated Rad51 locus in 6, no hit in 4). See [`reca_all_coemansia/`](reca_all_coemansia/README.md); it also records a misleading "uncertain" label in the per-strain table.
 - Single ML tree; Rad51 is not callable, and Rad55 and XRCC3 are weak.
 
 ## Next
 
 Done 2026-11-12: other meiosis genes were tested in [`../meiosis_toolkit/`](../meiosis_toolkit/README.md) (Pch2 lost earlier with Ku;
-Spo11, Hop2, Mnd1, Msh4 retained; Msh5 partial). Still open: run the RecA classification for all 107 *Coemansia* strains, and check
+Spo11, Hop2, Mnd1, Msh4 retained; Msh5 partial). Done 2026-11-15: the RecA classification for all 107 *Coemansia* strains ([`reca_all_coemansia/`](reca_all_coemansia/README.md)). Still open: check
 *Ramicandelaber* and *Spiromyces* with higher-quality assemblies.

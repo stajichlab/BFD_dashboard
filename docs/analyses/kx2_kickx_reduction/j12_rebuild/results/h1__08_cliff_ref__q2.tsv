@@ -1,0 +1,11 @@
+m	n_ref_genera	cliff_core_vs_ref	ref_median	core_median
+arch_per1000	19	-0.26	821.487	818.462
+bigram_per1000	19	-0.26	596.591	592.98
+dom_per100aa	19	0.09	0.304	0.304
+f_anypfam	19	0.3	0.707	0.708
+f_gt1000	19	-0.09	0.088	0.08
+f_multi	19	-0.16	0.316	0.282
+f_multi_np	19	-0.16	0.316	0.282
+f_res_in_dom	19	0.37	0.401	0.42
+mean_len	19	-0.23	470.218	455.076
+promisc	19	-0.33	1.617	1.588

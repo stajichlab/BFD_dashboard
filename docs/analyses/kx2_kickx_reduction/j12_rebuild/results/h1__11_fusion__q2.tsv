@@ -1,0 +1,12 @@
+grp	ngen	ngenomes	fas_fused	fas_split	arom_fused	arom_split	cad_fused	cad_split
+Dimargaritales	3	6	1.0	0.0	1.0	0.0	1.0	0.0
+Harpellales	4	9	1.0	0.0	1.0	0.0	1.0	0.0
+Microsporidia	21	55	0.0	0.0	0.0	0.0	0.0	0.0
+Mucorales	35	78	1.0	0.0	1.0	0.0	1.0	0.0
+Pneumocystis	1	7	0.0	0.0	0.86	0.0	0.86	0.0
+Taphrinales	3	17	0.0	1.0	1.0	0.0	1.0	0.0
+Zoopagales	1	2	0.0	0.0	1.0	0.0	1.0	0.0
+core_Kickxellales	3	32	1.0	0.0	1.0	0.0	1.0	0.0
+other_Kickxellales	2	2	0.5	0.0	1.0	0.0	1.0	0.0
+yeast_Hanseniaspora	1	20	0.0	1.0	1.0	0.0	1.0	0.0
+yeast_other	42	310	0.0	1.0	1.0	0.0	1.0	0.0

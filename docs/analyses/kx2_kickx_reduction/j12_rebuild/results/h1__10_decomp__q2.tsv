@@ -1,0 +1,5 @@
+grp	dMean	within_shared	comp_shared	unassigned	lost_fams	gained_fams	lost_long	lost_share_M	lostlong_share_M	sh_c	sh_m
+Microsporidia	-148.2	-63.7	60.4	5.6	-206.6	61.7	-40.1	0.422	0.029	0.077	0.077
+Taphrinales	16.9	14.3	29.5	-40.2	-120.9	94.0	-23.5	0.248	0.0165	0.42	0.251
+core_Kickxellales	7.5	13.1	36.7	2.7	-88.3	46.0	-14.1	0.188	0.0102	0.414	0.311
+yeast_other	61.9	22.0	-107.9	-123.9	-172.0	319.8	-36.5	0.34	0.0266	0.221	0.159

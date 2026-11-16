@@ -49,7 +49,8 @@ for r in csv.DictReader(open(bb_tsv), delimiter='\t'):
     info[r['LOCUSTAG']] = (r['GENUS'], group_of(r['GENUS'], r['ord'], r['PHYLUM'], r['role']))
 searched = set()
 for r in csv.DictReader(open(st_tsv), delimiter='\t'):
-    searched.add(r['locustag'])
+    if not os.environ.get('NO_RESCUE'):     # NO_RESCUE=1: annotated layer only, nothing was searched with miniprot, so no 'absent' call
+        searched.add(r['locustag'])
     info.setdefault(r['locustag'], (r['genus'], r['grp']))
 genomes = sorted(info)
 

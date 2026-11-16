@@ -1,7 +1,8 @@
 # Improved Kickxellomycota species trees: ANI dereplication, site-heterogeneous model, gene-tree summary, rooting
 
-Date: 2026-11-13/14. Status: **partly complete.** Done: ANI dereplication, LG+F+G trees with UFBoot, ASTRAL gene-tree summaries, rooting tests,
-comparison with the first-pass FastTree trees. **Not finished: the site-heterogeneous (LG+C60+F+G, PMSF) trees** — see "What is still running".
+Date: 2026-11-13/15. Status: **complete except bootstrap support for the 76-taxon PMSF tree.** Done: ANI dereplication, LG+F+G trees with UFBoot, ASTRAL gene-tree summaries, rooting tests,
+comparison with the first-pass FastTree trees, and the site-heterogeneous (LG+C60+F+G, PMSF) ML trees (see "PMSF trees"). The PMSF bootstrap is partial
+(86 of 100 replicates for the backbone, 13 for the 76-taxon set, still running), so the 76-taxon PMSF tree has no PMSF support.
 Scripts: `workflows/phylo/` (`kickx_derep.sh/.py`, `kickx_subset_aln.py`, `kickx_iqtree.sh`, `kickx_iq_submit.sh`, `kickx_tree_tools.py`,
 `kickx_tree_report.py`, test `test_kickx_phylo.py`; run on the HPCC, purgeable bench folder `bench/kickx_tree/iq/`).
 Inputs are the nf_phyling alignments of the first-pass run (80 `fungi_odb12` markers; the same per-marker alignments, only taxa are removed).
@@ -11,6 +12,7 @@ Inputs are the nf_phyling alignments of the first-pass run (80 `fungi_odb12` mar
 | [`derep/`](derep/) | fastANI output, clusters at 99, 97 and 95 % ANI, retained taxa table, summary |
 | [`coemansia/`](coemansia/) | 76-taxon tree set (62 dereplicated *Coemansia* + 14 other Kickxellomycota genera): report, clade tests, rooted Newick files, figure (PDF/PNG), LG+F+G tree, ASTRAL trees |
 | [`backbone/`](backbone/) | 63-taxon backbone, same set of files (outgroup: chytrid-grade fungi) |
+| [`pmsf/`](pmsf/) | site-heterogeneous (LG+C60+F+G, PMSF) ML trees for both sets, with reports, rooted Newick files, figures and clade tests; backbone with support from 86 bootstrap replicates |
 
 ## Methods and choices (fixed before the trees were viewed unless marked)
 
@@ -24,7 +26,8 @@ Inputs are the nf_phyling alignments of the first-pass run (80 `fungi_odb12` mar
    (*Tieghemiomyces*). 63 taxa (backbone): 80 markers, 51,761 sites, median gap 29.6 %.
 3. **Concatenated ML trees.** IQ-TREE 3.0.1. Guide model **LG+F+G** with 1,000 UFBoot and 1,000 SH-aLRT replicates (seed 20261112). Site-heterogeneous
    model **LG+C60+F+G with PMSF on the guide tree** (C60 chosen because memory allowed: about 92 GB for 76 taxa and 110 GB for 63 taxa, not the 250-400 GB
-   first assumed), 100 nonparametric bootstrap replicates — **unfinished, see below**.
+   first assumed). The ML tree is its own run (`kickx_iqtree.sh pmsfml`); 100 nonparametric bootstrap replicates are a separate, slow run (about 35 min per replicate),
+   still running, so support comes from the replicates that exist when `kickx_finalize.sh` runs (only if at least 50 exist; 86 for the backbone, 13 for the 76-taxon set).
 4. **Gene-tree summary.** One IQ-TREE per marker (ModelFinder among LG, WAG, JTT, Q.PFAM; 1,000 UFBoot), ASTRAL 5.15.5 on all gene trees
    (79 trees for the 76-taxon set, 80 for the backbone; branch support = local posterior probability). Sensitivity: the same with gene-tree branches
    of UFBoot < 50 collapsed (threshold chosen in advance). ASTRAL's full-annotation output is kept as `astral_t2.tre`.
@@ -88,25 +91,35 @@ therefore explains the pattern parsimoniously on all four topologies, and the pl
 This is a placement of one loss on a species tree, not a reconstruction: the gene-presence matrix was not re-run on these trees (Dollo or likelihood on the final tree is still to do), and further
 independent losses elsewhere (for example the weak or absent tblastn calls in *Piptocephalis*, *Neoconidiobolus* and *Capillidium*) are outside this test.
 
-## What is still running (finalize recipe)
+## PMSF trees (LG+C60+F+G; files in [`pmsf/`](pmsf/))
 
-The site-heterogeneous tree is the one planned step not delivered. With `-b`, IQ-TREE 3.0.1 overwrites `pmsf.treefile` with each bootstrap replicate's tree and keeps no copy of the ML tree
-(found the hard way: an intermediate version of this analysis used that file and was discarded), so the ML tree needs its own run. Submitted on the HPCC (all in `bench/kickx_tree/iq/<name>/`):
+With `-b`, IQ-TREE 3.0.1 overwrites `pmsf.treefile` with each bootstrap replicate's tree and keeps no copy of the ML tree (found the hard way: an intermediate version of this analysis used that file
+and was discarded), so the ML tree has its own run (jobs 32083430 backbone, 32083431 76-taxon; both completed). `workflows/phylo/kickx_finalize.sh` (job 32102349 plus a rerun of the 76-taxon report, 32102359) copies the files, adds bootstrap
+support from the PMSF replicates that exist (`iqtree3 -sup`), and runs `kickx_tree_report.py`. Files: `pmsf/<mode>/<mode>_report.txt` (clade tests, RF distances, rooting sensitivity), rooted Newick files, `*_tree.pdf/.png`, `*_clades.tsv`,
+`pmsf_ml.treefile` (the ML tree), and for the backbone `pmsf_ml_sup.suptree` (support from 86 replicates).
 
-| Job | What | State when this was written |
+| Question | Backbone (63 taxa), PMSF ML tree with support from 86 replicates | *Coemansia* set (76 taxa), PMSF ML tree, no PMSF support |
 |---|---|---|
-| 32083430 | backbone PMSF ML tree, no bootstrap (`kickx_iqtree.sh pmsfml`) | running, mixture-model fit iteration 2 |
-| 32083431 | 76-taxon PMSF ML tree, no bootstrap | queued |
-| 32079503 | backbone PMSF bootstrap (writes `pmsf.boottrees`) | running; 6 of 100 replicates after 3.5 h (about 35 min each) |
-| 32080666 | 76-taxon PMSF bootstrap | running; mixture fit still iterating after 3 h; bootstrap not started |
+| Distance to LG+F+G tree (normalized RF) | 0.017 (2 of 120) | 0.014 (2 of 146) |
+| Distance to ASTRAL | 0.10 (0.08 with collapsed gene trees) | 0.23 (0.22 collapsed) |
+| Distance to first-pass FastTree | 0.07 | 0.15 |
+| Kickxellomycota monophyletic; sister | yes (support 100); sister Entomophthorales (*Conidiobolus*, *Capillidium*, *Neoconidiobolus*) | not tested |
+| Kickxellales + Harpellales monophyletic; sister *Ramicandelaber*; Dimargaritales earliest | yes (support 100); same in all five trees | same |
+| ***Coemansia* monophyletic** | trivial (one genome) | **no: *Kickxella* nested inside, as in every other tree** |
+| ***Linderina*** | sister to (*Coemansia*, *Kickxella*, *Dipsacomyces*, *Martensiomyces*) (support 100), like LG+F+G and FastTree; ASTRAL differs | sister to (*Dipsacomyces*, *Martensiomyces*), like LG+F+G and both ASTRAL trees; only the first-pass FastTree differs |
+| ***Basidiobolus*** | with Zoopagomycota + Entomophthoromycota + Kickxellomycota (support 99), like LG+F+G; ASTRAL (0.86) puts it sister to the Mucoromycota-group clade | n/a |
+| Internal branches with PMSF support >= 95 / >= 70 / < 50 | 53 / 58 / 1 of 60 | not computed |
 
-When the ML jobs finish, per dataset: `iqtree3 -sup pmsf_ml.treefile -t pmsf.boottrees --prefix pmsf_ml_sup` (only when enough replicates exist; with a few replicates leave support off), then rerun
-`workflows/phylo/kickx_tree_report.py <mode> <iq dir> <taxa.tsv> <first-pass treefile> <outdir>`; it picks up `pmsf_ml.treefile` (or `pmsf_ml_sup.suptree`) automatically as the primary tree, and the tables and
-figures here regenerate. The 100-replicate PMSF bootstrap needs about 2-3 days per dataset on the epyc/batch nodes; fewer replicates, or UFBoot on the guide model (already done), are the cheaper support options.
+1. **The site-heterogeneous model changes almost nothing.** The PMSF ML trees differ from the LG+F+G trees by two splits in each dataset, so the early-branch order, the non-monophyletic *Coemansia* with *Kickxella* inside, and
+   the Ku-negative clade (Kickxellales + Harpellales, support 100 on the backbone) do not depend on a single-matrix model. The remaining disagreements are between concatenation and ASTRAL, as before.
+2. **The *Linderina* instability depends on the taxon set as well as the method.** In the backbone, concatenation (both models) and ASTRAL disagree. In the 76-taxon set, concatenation (both models) and ASTRAL agree with each other and only the first-pass FastTree differs.
+   *Linderina* is a single flagged genome, so neither placement should be used where it matters.
+3. **Support for the 76-taxon PMSF tree is missing.** Only 13 of 100 replicates exist (each replicate takes about 35 min); fewer than 50 are not used for support. The jobs (32079503 backbone, 32080666 76-taxon) were still running and are
+   not touched by the finalize step; rerun `kickx_finalize.sh` (with `MIN_REPS` set as needed) when they finish or are stopped.
 
 ## Limits
 
-- No site-heterogeneous tree is reported (above). LG+F+G is a single-matrix model and can mislead where compositional heterogeneity or long branches matter (the *Kickxella* and *Linderina* placements are the likely cases).
+- The 76-taxon PMSF tree has no bootstrap support (13 replicates), and the backbone PMSF support uses 86 replicates, not 100. C60 is a fixed mixture of 60 classes (not tested against other mixtures), so "the model changes almost nothing" is for this one site-heterogeneous model.
 - ASTRAL with 79-80 gene trees from alignments of 12-71 taxa each (median 61 for the 76-taxon set); gene-tree error is large for short alignments, and ASTRAL support is a local posterior probability.
 - One genome each of *Kickxella*, *Linderina* and *Basidiobolus*; flagged by high gap fraction or duplication in the first pass.
 - Dereplication uses ANI at one pre-stated threshold; strain pairs below fastANI's reporting range are treated as not redundant.

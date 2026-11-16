@@ -1,0 +1,674 @@
+table	column	type	n_nonnull	sum
+kw_pfam_matrix	genome	VARCHAR	32265977	
+kw_pfam_matrix	pfam_acc	VARCHAR	32265977	
+kw_pfam_matrix	pfam_id	VARCHAR	32265977	
+kw_pfam_matrix	n_proteins	BIGINT	32265977	9.4713e+07
+kw_pfam_matrix	n_domains	BIGINT	32265977	1.05307e+08
+kw_rep_genomes	ASMID	VARCHAR	7435	
+kw_rep_genomes	LOCUSTAG	VARCHAR	7435	
+kw_rep_genomes	PHYLUM	VARCHAR	7432	
+kw_rep_genomes	CLASS	VARCHAR	7299	
+kw_rep_genomes	ORDER_	VARCHAR	7231	
+kw_rep_genomes	FAMILY	VARCHAR	7151	
+kw_rep_genomes	GENUS	VARCHAR	7186	
+kw_rep_genomes	SPECIES	VARCHAR	7435	
+kw_rep_genomes	complete_pct	DOUBLE	7435	671175
+kw_rep_genomes	duplicated_pct	DOUBLE	7435	21852.8
+kw_rep_genomes	N50_bp	BIGINT	7435	8.68448e+09
+kw_rep_genomes	total_length_bp	BIGINT	7435	2.67649e+11
+kx2_h1_arch_metrics	LOCUSTAG	VARCHAR	727	
+kx2_h1_arch_metrics	ns	BIGINT	727	1.10282e+06
+kx2_h1_arch_metrics	n_arch	BIGINT	727	897362
+kx2_h1_arch_metrics	n_arch_multi	BIGINT	727	443760
+kx2_h1_arch_metrics	n_bigram	BIGINT	727	662106
+kx2_h1_arch_metrics	promisc	DOUBLE	727	1166.7
+kx2_h1_arch_metrics	n_dom_types	BIGINT	727	823468
+kx2_h1_cliff	mode	VARCHAR	280	
+kx2_h1_cliff	grp	VARCHAR	280	
+kx2_h1_cliff	m	VARCHAR	280	
+kx2_h1_cliff	n_gen	BIGINT	280	2520
+kx2_h1_cliff	cliff_vs_Mucorales	DOUBLE	280	-3.83
+kx2_h1_cliff_ref	m	VARCHAR	10	
+kx2_h1_cliff_ref	n_ref_genera	BIGINT	10	190
+kx2_h1_cliff_ref	cliff_core_vs_ref	DOUBLE	10	-0.73
+kx2_h1_cliff_ref	ref_median	DOUBLE	10	1892.05
+kx2_h1_cliff_ref	core_median	DOUBLE	10	1870.18
+kx2_h1_decomp	grp	VARCHAR	104183	
+kx2_h1_decomp	fam	VARCHAR	104183	
+kx2_h1_decomp	sc	DOUBLE	104183	3.91146
+kx2_h1_decomp	sm	DOUBLE	104183	4
+kx2_h1_decomp	lc	DOUBLE	42768	1.90024e+07
+kx2_h1_decomp	lm	DOUBLE	80052	3.49556e+07
+kx2_h1_decomp	cls	VARCHAR	104183	
+kx2_h1_decomp	within_c	DOUBLE	18637	-14.2485
+kx2_h1_decomp	comp_c	DOUBLE	18637	18.6623
+kx2_h1_decomp	tot	DOUBLE	104183	-61.8942
+kx2_h1_fam_gen	grp	VARCHAR	62781	
+kx2_h1_fam_gen	fam	VARCHAR	62781	
+kx2_h1_fam_gen	fshare	DOUBLE	62781	4.91146
+kx2_h1_fam_gen	fL	DOUBLE	62781	2.77413e+07
+kx2_h1_fusion	LOCUSTAG	VARCHAR	727	
+kx2_h1_fusion	fas_fused	BIGINT	727	632
+kx2_h1_fusion	fas_alpha_only	BIGINT	727	814
+kx2_h1_fusion	fas_beta_only	BIGINT	727	1020
+kx2_h1_fusion	arom_fused	BIGINT	727	674
+kx2_h1_fusion	arom_module_split	BIGINT	727	1488
+kx2_h1_fusion	arom_3	BIGINT	727	23
+kx2_h1_fusion	cad_fused	BIGINT	727	697
+kx2_h1_fusion	cps_only	BIGINT	727	3867
+kx2_h1_fusion	atc_only	BIGINT	727	751
+kx2_h1_genome_all	LOCUSTAG	VARCHAR	728	
+kx2_h1_genome_all	ASMID	VARCHAR	728	
+kx2_h1_genome_all	GENUS	VARCHAR	728	
+kx2_h1_genome_all	ORDER_	VARCHAR	654	
+kx2_h1_genome_all	CLASS	VARCHAR	654	
+kx2_h1_genome_all	PHYLUM	VARCHAR	728	
+kx2_h1_genome_all	SPECIES	VARCHAR	728	
+kx2_h1_genome_all	complete_pct	DOUBLE	728	52413.9
+kx2_h1_genome_all	N50_bp	BIGINT	728	3.439e+08
+kx2_h1_genome_all	total_length_bp	BIGINT	728	1.26027e+10
+kx2_h1_genome_all	grp	VARCHAR	728	
+kx2_h1_genome_all	q	BOOLEAN	728	
+kx2_h1_genome_all	q_strict	BOOLEAN	728	
+kx2_h1_genome_all	n_prot	BIGINT	728	4.95497e+06
+kx2_h1_genome_all	tot_aa	HUGEINT	728	2.29947e+09
+kx2_h1_genome_all	mean_len	DOUBLE	728	337596
+kx2_h1_genome_all	med_len	DOUBLE	728	272473
+kx2_h1_genome_all	f_gt1000	DOUBLE	728	53.1503
+kx2_h1_genome_all	f_multi	DOUBLE	728	239.533
+kx2_h1_genome_all	f_anypfam	DOUBLE	728	553.613
+kx2_h1_genome_all	dom_per100aa	DOUBLE	728	234.587
+kx2_h1_genome_all	f_res_in_dom	DOUBLE	728	326.026
+kx2_h1_genome_all	f_partial	DOUBLE	728	0.116203
+kx2_h1_genome_all	idp_cov	DOUBLE	728	0
+kx2_h1_genome_all	f_disorder	DOUBLE	0	
+kx2_h1_genome_all	f_multi_300_600	DOUBLE	728	252.53
+kx2_h1_genome_all	f_multi_600_1000	DOUBLE	728	386.442
+kx2_h1_genome_all	f_multi_nonpartial	DOUBLE	728	239.54
+kx2_h1_genome_all	mean_len_nonpartial	DOUBLE	728	337595
+kx2_h1_genome_all	ns	BIGINT	727	1.10282e+06
+kx2_h1_genome_all	n_arch	BIGINT	727	897362
+kx2_h1_genome_all	n_arch_multi	BIGINT	727	443760
+kx2_h1_genome_all	n_bigram	BIGINT	727	662106
+kx2_h1_genome_all	promisc	DOUBLE	727	1166.7
+kx2_h1_genome_all	n_dom_types	BIGINT	727	823468
+kx2_h1_genome_all	arch_per1000	DOUBLE	727	590442
+kx2_h1_genome_all	bigram_per1000	DOUBLE	727	431529
+kx2_h1_genome_metrics	LOCUSTAG	VARCHAR	728	
+kx2_h1_genome_metrics	n_prot	BIGINT	728	4.95497e+06
+kx2_h1_genome_metrics	tot_aa	HUGEINT	728	2.29947e+09
+kx2_h1_genome_metrics	mean_len	DOUBLE	728	337596
+kx2_h1_genome_metrics	med_len	DOUBLE	728	272473
+kx2_h1_genome_metrics	f_gt1000	DOUBLE	728	53.1503
+kx2_h1_genome_metrics	f_multi	DOUBLE	728	239.533
+kx2_h1_genome_metrics	f_anypfam	DOUBLE	728	553.613
+kx2_h1_genome_metrics	dom_per100aa	DOUBLE	728	234.587
+kx2_h1_genome_metrics	f_res_in_dom	DOUBLE	728	326.026
+kx2_h1_genome_metrics	f_partial	DOUBLE	728	0.116203
+kx2_h1_genome_metrics	idp_cov	DOUBLE	728	0
+kx2_h1_genome_metrics	f_disorder	DOUBLE	0	
+kx2_h1_genome_metrics	f_multi_300_600	DOUBLE	728	252.53
+kx2_h1_genome_metrics	f_multi_600_1000	DOUBLE	728	386.442
+kx2_h1_genome_metrics	f_multi_nonpartial	DOUBLE	728	239.54
+kx2_h1_genome_metrics	mean_len_nonpartial	DOUBLE	728	337595
+kx2_h1_genomes	LOCUSTAG	VARCHAR	751	
+kx2_h1_genomes	ASMID	VARCHAR	751	
+kx2_h1_genomes	GENUS	VARCHAR	751	
+kx2_h1_genomes	ORDER_	VARCHAR	668	
+kx2_h1_genomes	CLASS	VARCHAR	668	
+kx2_h1_genomes	PHYLUM	VARCHAR	751	
+kx2_h1_genomes	SPECIES	VARCHAR	751	
+kx2_h1_genomes	complete_pct	DOUBLE	751	52961.3
+kx2_h1_genomes	N50_bp	BIGINT	751	3.45124e+08
+kx2_h1_genomes	total_length_bp	BIGINT	751	1.27494e+10
+kx2_h1_genomes	grp	VARCHAR	751	
+kx2_h1_genomes	q	BOOLEAN	751	
+kx2_h1_genomes	q_strict	BOOLEAN	751	
+kx2_h1_genus	mode	VARCHAR	251	
+kx2_h1_genus	grp	VARCHAR	251	
+kx2_h1_genus	GENUS	VARCHAR	251	
+kx2_h1_genus	n_genomes	BIGINT	251	1267
+kx2_h1_genus	n_prot	DOUBLE	251	1.78492e+06
+kx2_h1_genus	mean_len	DOUBLE	251	112440
+kx2_h1_genus	med_len	DOUBLE	251	89929.8
+kx2_h1_genus	f_gt1000	DOUBLE	251	17.2139
+kx2_h1_genus	f_multi	DOUBLE	251	78.0995
+kx2_h1_genus	f_anypfam	DOUBLE	251	178.111
+kx2_h1_genus	dom_per100aa	DOUBLE	251	79.1317
+kx2_h1_genus	f_res_in_dom	DOUBLE	251	106.381
+kx2_h1_genus	f_disorder	DOUBLE	0	
+kx2_h1_genus	f_partial	DOUBLE	251	0.0509059
+kx2_h1_genus	arch_per1000	DOUBLE	251	203066
+kx2_h1_genus	bigram_per1000	DOUBLE	251	148694
+kx2_h1_genus	promisc	DOUBLE	251	405.956
+kx2_h1_genus	f_multi_300_600	DOUBLE	251	84.3112
+kx2_h1_genus	f_multi_600_1000	DOUBLE	251	130.976
+kx2_h1_genus	f_multi_np	DOUBLE	251	78.1087
+kx2_h1_genus	mean_len_np	DOUBLE	251	112446
+kx2_h1_genus	busco	DOUBLE	251	17484.7
+kx2_h1_genus	n50	DOUBLE	251	1.40223e+08
+kx2_h1_genus	idp_cov	DOUBLE	251	0
+kx2_h1_longfam	LOCUSTAG	VARCHAR	728	
+kx2_h1_longfam	n_prot	BIGINT	728	4.95497e+06
+kx2_h1_longfam	pks	BIGINT	728	248
+kx2_h1_longfam	nrps	BIGINT	728	477
+kx2_h1_longfam	abc_ge2nbd	BIGINT	728	15427
+kx2_h1_longfam	n_ge2000	BIGINT	728	40592
+kx2_h1_longfam	n_ge1000	BIGINT	728	361788
+kx2_h1_longfam	n_ge4dist	BIGINT	728	343551
+kx2_h1_longfam	n_ge2dist	BIGINT	728	1.64312e+06
+kx2_h1_prot	protein_id	VARCHAR	4954966	
+kx2_h1_prot	lt	VARCHAR	4954966	
+kx2_h1_prot	gene_id	VARCHAR	4954966	
+kx2_h1_prot	transcript_id	VARCHAR	4954966	
+kx2_h1_prot	length	BIGINT	4954966	2.29947e+09
+kx2_h1_prot	is_partial	BOOLEAN	4954966	
+kx2_h1_prot	CDS_length	BIGINT	4954966	6.91328e+09
+kx2_h1_prot	n_dom	BIGINT	4954966	7.51575e+06
+kx2_h1_prot	n_dist	BIGINT	4954966	6.81417e+06
+kx2_h1_prot	arch	VARCHAR	3755222	
+kx2_h1_prot	dom_res	HUGEINT	4954966	1.03967e+09
+kx2_h1_prot	IDP_residues	BIGINT	2591210	5.37376e+08
+kx2_h1_prot	idp_res	BIGINT	0	
+kx2_h2_acct	LOCUSTAG	VARCHAR	1295	
+kx2_h2_acct	ASMID	VARCHAR	1295	
+kx2_h2_acct	GENUS	VARCHAR	1273	
+kx2_h2_acct	SPECIES	VARCHAR	1295	
+kx2_h2_acct	grp	VARCHAR	1295	
+kx2_h2_acct	lineage	VARCHAR	1295	
+kx2_h2_acct	busco_complete	DOUBLE	1295	111266
+kx2_h2_acct	N50_bp	BIGINT	1295	1.66548e+09
+kx2_h2_acct	contig_count	BIGINT	1295	844472
+kx2_h2_acct	total_length_bp	BIGINT	1295	3.99815e+10
+kx2_h2_acct	masked_bases	BIGINT	1295	7.03888e+09
+kx2_h2_acct	total_n_bases	BIGINT	1295	1.34512e+08
+kx2_h2_acct	n_gap_count	BIGINT	1295	791144
+kx2_h2_acct	t2t_scaffolds	BIGINT	1295	1489
+kx2_h2_acct	telomere_fwd	BIGINT	1295	7300
+kx2_h2_acct	telomere_rev	BIGINT	1295	7676
+kx2_h2_acct	q	BOOLEAN	1295	
+kx2_h2_acct	n_genes	BIGINT	1295	1.248e+07
+kx2_h2_acct	cds_bp	HUGEINT	1295	1.73256e+10
+kx2_h2_acct	intron_bp	HUGEINT	1295	2.09706e+09
+kx2_h2_acct	utr_bp	HUGEINT	1295	1156
+kx2_h2_acct	span_bp	HUGEINT	1295	1.94388e+10
+kx2_h2_acct	f_intron	DOUBLE	1295	756.135
+kx2_h2_acct	mean_cds	DOUBLE	1295	1.81674e+06
+kx2_h2_acct	mean_span	DOUBLE	1295	1.98365e+06
+kx2_h2_acct	ipt	DOUBLE	1295	1942.39
+kx2_h2_acct	f_partial	DOUBLE	1295	0.239031
+kx2_h2_acct	n_gaps	BIGINT	1295	1.17603e+07
+kx2_h2_acct	gap_bp	HUGEINT	1295	1.75921e+10
+kx2_h2_acct	overlap_bp	HUGEINT	1295	7
+kx2_h2_acct	f_ov	DOUBLE	1295	0.000246395
+kx2_h2_acct	f_lt100	DOUBLE	1295	95.5944
+kx2_h2_acct	ig_med	DOUBLE	1295	987050
+kx2_h2_acct	ig_q25	DOUBLE	1295	510662
+kx2_h2_acct	remainder_bp	HUGEINT	1295	2.95064e+09
+kx2_h2_delta	filt	VARCHAR	119	
+kx2_h2_delta	foc	VARCHAR	119	
+kx2_h2_delta	reflin	VARCHAR	119	
+kx2_h2_delta	metric	VARCHAR	119	
+kx2_h2_delta	nf	BIGINT	119	3536
+kx2_h2_delta	nr	BIGINT	119	27438
+kx2_h2_delta	med_f	DOUBLE	119	97500.4
+kx2_h2_delta	cliffs_delta	DOUBLE	119	-25.31
+kx2_h2_genomes	LOCUSTAG	VARCHAR	1945	
+kx2_h2_genomes	ASMID	VARCHAR	1945	
+kx2_h2_genomes	GENUS	VARCHAR	1919	
+kx2_h2_genomes	SPECIES	VARCHAR	1945	
+kx2_h2_genomes	grp	VARCHAR	1945	
+kx2_h2_genomes	lineage	VARCHAR	1321	
+kx2_h2_genomes	busco_complete	DOUBLE	1945	168909
+kx2_h2_genomes	N50_bp	BIGINT	1945	2.43925e+09
+kx2_h2_genomes	contig_count	BIGINT	1945	2.63578e+06
+kx2_h2_genomes	total_length_bp	BIGINT	1945	7.77457e+10
+kx2_h2_genomes	masked_bases	BIGINT	1945	1.90743e+10
+kx2_h2_genomes	total_n_bases	BIGINT	1945	5.52336e+08
+kx2_h2_genomes	n_gap_count	BIGINT	1945	1.55632e+06
+kx2_h2_genomes	t2t_scaffolds	BIGINT	1945	2394
+kx2_h2_genomes	telomere_fwd	BIGINT	1945	19091
+kx2_h2_genomes	telomere_rev	BIGINT	1945	19945
+kx2_h2_genomes	q	BOOLEAN	1945	
+kx2_h2_genus	filt	VARCHAR	1655	
+kx2_h2_genus	lineage	VARCHAR	1655	
+kx2_h2_genus	GENUS	VARCHAR	1650	
+kx2_h2_genus	nsp	BIGINT	1655	2168
+kx2_h2_genus	mb	DOUBLE	1655	61608.9
+kx2_h2_genus	genes	DOUBLE	1655	1.81172e+07
+kx2_h2_genus	genes_per_mb	DOUBLE	1655	544219
+kx2_h2_genus	coding_frac	DOUBLE	1655	771.301
+kx2_h2_genus	intron_frac	DOUBLE	1655	81.622
+kx2_h2_genus	ig_frac	DOUBLE	1655	720.398
+kx2_h2_genus	f_with_intron	DOUBLE	1655	1105.6
+kx2_h2_genus	gene_span	DOUBLE	1655	2.62206e+06
+kx2_h2_genus	intron_per_gene	DOUBLE	1655	271260
+kx2_h2_genus	ig_per_gene	DOUBLE	1655	2.58265e+06
+kx2_h2_genus	mean_cds	DOUBLE	1655	2.38578e+06
+kx2_h2_genus	masked_frac	DOUBLE	1655	243.228
+kx2_h2_genus	ig_med	DOUBLE	1655	1.47807e+06
+kx2_h2_genus	f_lt100	DOUBLE	1655	63.4252
+kx2_h2_genus	conv_med	DOUBLE	1655	990182
+kx2_h2_genus	div_med	DOUBLE	1655	1.71101e+06
+kx2_h2_genus	tand_med	DOUBLE	1655	1.7111e+06
+kx2_h2_genus	contigs	DOUBLE	1655	659502
+kx2_h2_genus	n50	DOUBLE	1655	2.88877e+09
+kx2_h2_ig	genome	VARCHAR	11760258	
+kx2_h2_ig	distance	BIGINT	11760258	1.75921e+10
+kx2_h2_ig	orient	VARCHAR	11760258	
+kx2_h2_igorient	genome	VARCHAR	3885	
+kx2_h2_igorient	lineage	VARCHAR	3885	
+kx2_h2_igorient	GENUS	VARCHAR	3819	
+kx2_h2_igorient	q	BOOLEAN	3885	
+kx2_h2_igorient	busco_complete	DOUBLE	3885	333797
+kx2_h2_igorient	N50_bp	BIGINT	3885	4.99645e+09
+kx2_h2_igorient	orient	VARCHAR	3885	
+kx2_h2_igorient	n	BIGINT	3885	1.17603e+07
+kx2_h2_igorient	med	DOUBLE	3885	2.9617e+06
+kx2_h2_igorient	mode25	BIGINT	3885	1.31955e+06
+kx2_h2_igorient	f_lt100	DOUBLE	3885	306.41
+kx2_h2_igorient	f_ov	DOUBLE	3885	0.000519086
+kx2_h2_igorient	f_le20	DOUBLE	3885	12.9592
+kx2_h2_lin	filt	VARCHAR	37	
+kx2_h2_lin	lineage	VARCHAR	37	
+kx2_h2_lin	n_genera	BIGINT	37	2523
+kx2_h2_lin	n_sp	HUGEINT	37	3225
+kx2_h2_lin	mb	DOUBLE	37	754.446
+kx2_h2_lin	genes	DOUBLE	37	271063
+kx2_h2_lin	cds_mb	DOUBLE	37	378.903
+kx2_h2_lin	intron_mb	DOUBLE	37	52.1608
+kx2_h2_lin	ig_mb	DOUBLE	37	272.338
+kx2_h2_lin	rem_mb	DOUBLE	37	50.4055
+kx2_h2_lin	masked_mb	DOUBLE	37	133.429
+kx2_h2_lin	n_mb	DOUBLE	37	5.40408
+kx2_h2_lin	f_intron	DOUBLE	37	21.7361
+kx2_h2_lin	ipt	DOUBLE	37	71.7207
+kx2_h2_lin	mean_cds	DOUBLE	37	53039.9
+kx2_h2_lin	mean_span	DOUBLE	37	58547.6
+kx2_h2_lin	ig_med	DOUBLE	37	20051.2
+kx2_h2_lin	f_lt100	DOUBLE	37	4.96442
+kx2_h2_lin	f_ov	DOUBLE	37	5.24291e-07
+kx2_h2_lin	contigs	DOUBLE	37	17787.9
+kx2_h2_tx	genome	VARCHAR	12479951	
+kx2_h2_tx	gene_id	VARCHAR	12479951	
+kx2_h2_tx	transcript_id	VARCHAR	12479951	
+kx2_h2_tx	span	BIGINT	12479951	1.94388e+10
+kx2_h2_tx	cds	BIGINT	12288444	1.73256e+10
+kx2_h2_tx	exon_len	HUGEINT	12479951	1.73417e+10
+kx2_h2_tx	n_exon	BIGINT	12479951	3.39465e+07
+kx2_h2_tx	is_partial	BOOLEAN	12479951	
+kx2_h3_aa	g	VARCHAR	1952	
+kx2_h3_aa	fymink	DOUBLE	1952	461.53
+kx2_h3_aa	garp	DOUBLE	1952	504.498
+kx2_h3_aa	asn	DOUBLE	1952	81.439
+kx2_h3_aa	lys	DOUBLE	1952	104.027
+kx2_h3_aa	ile	DOUBLE	1952	102.904
+kx2_h3_aa	cys	DOUBLE	1952	24.4761
+kx2_h3_aa	gln	DOUBLE	1952	78.4252
+kx2_h3_aa	polar_ns	DOUBLE	1952	441.028
+kx2_h3_aa	lowcomp	DOUBLE	1952	673.917
+kx2_h3_anchor	accession	VARCHAR	802	
+kx2_h3_anchor	org_code	VARCHAR	802	
+kx2_h3_anchor	n	BIGINT	802	770893
+kx2_h3_anchor	med_pid	DOUBLE	802	37002.5
+kx2_h3_anchor	aset	VARCHAR	802	
+kx2_h3_cliff	filt	VARCHAR	836	
+kx2_h3_cliff	focal	VARCHAR	836	
+kx2_h3_cliff	ref	VARCHAR	836	
+kx2_h3_cliff	metric	VARCHAR	836	
+kx2_h3_cliff	nx	BIGINT	836	4672
+kx2_h3_cliff	ny	BIGINT	836	255740
+kx2_h3_cliff	cliffs_delta	DOUBLE	836	-37.68
+kx2_h3_cod	g	VARCHAR	1952	
+kx2_h3_cod	enc	DOUBLE	1952	102701
+kx2_h3_cod	F2	DOUBLE	1952	1086.64
+kx2_h3_cod	F4	DOUBLE	1952	569.082
+kx2_h3_cod	gc3s	DOUBLE	1952	1034.94
+kx2_h3_cod	gc_cds	DOUBLE	1952	990.116
+kx2_h3_cod	gc12	DOUBLE	1952	952.591
+kx2_h3_cod	rscu_skew	DOUBLE	1952	682.151
+kx2_h3_cod	enc_exp	DOUBLE	1952	109698
+kx2_h3_codmap	codon	VARCHAR	64	
+kx2_h3_codmap	aa	VARCHAR	64	
+kx2_h3_codmap	nf	BIGINT	64	244
+kx2_h3_codmap	box	VARCHAR	64	
+kx2_h3_codmap	n3	VARCHAR	64	
+kx2_h3_genome	g	VARCHAR	1952	
+kx2_h3_genome	GENUS	VARCHAR	1926	
+kx2_h3_genome	grp	VARCHAR	1952	
+kx2_h3_genome	mb	DOUBLE	1952	77877.1
+kx2_h3_genome	gc_pct	DOUBLE	1952	90834.9
+kx2_h3_genome	busco_complete	DOUBLE	1952	169852
+kx2_h3_genome	N50_bp	BIGINT	1952	2.45364e+09
+kx2_h3_genome	masked_pct	DOUBLE	1952	32506.6
+kx2_h3_genome	hgrp	VARCHAR	1952	
+kx2_h3_genome	enc	DOUBLE	1952	102701
+kx2_h3_genome	enc_exp	DOUBLE	1952	109698
+kx2_h3_genome	enc_dep	DOUBLE	1952	126.788
+kx2_h3_genome	gc3s	DOUBLE	1952	1034.94
+kx2_h3_genome	gc_cds	DOUBLE	1952	990.116
+kx2_h3_genome	gc12	DOUBLE	1952	952.591
+kx2_h3_genome	rscu_skew	DOUBLE	1952	682.151
+kx2_h3_genome	F2	DOUBLE	1952	1086.64
+kx2_h3_genome	F4	DOUBLE	1952	569.082
+kx2_h3_genome	n_trna	BIGINT	1952	319032
+kx2_h3_genome	n_antic	BIGINT	1952	80518
+kx2_h3_genome	tai	DOUBLE	1935	668.24
+kx2_h3_genome	rscu_supply_r	DOUBLE	1935	738.611
+kx2_h3_genome	trna_per_mb	DOUBLE	1952	11185.6
+kx2_h3_genome	fymink	DOUBLE	1952	461.53
+kx2_h3_genome	garp	DOUBLE	1952	504.498
+kx2_h3_genome	asn	DOUBLE	1952	81.439
+kx2_h3_genome	lys	DOUBLE	1952	104.027
+kx2_h3_genome	ile	DOUBLE	1952	102.904
+kx2_h3_genome	cys	DOUBLE	1952	24.4761
+kx2_h3_genome	gln	DOUBLE	1952	78.4252
+kx2_h3_genome	lowcomp	DOUBLE	1952	673.917
+kx2_h3_genome	idp_res_frac	DOUBLE	1935	775.86
+kx2_h3_genome	idp_med_prot	DOUBLE	1935	754.533
+kx2_h3_genome	n_prot	BIGINT	1935	1.2127e+07
+kx2_h3_genome	med_len	DOUBLE	1935	899012
+kx2_h3_genome	d_schpo	DOUBLE	1928	-2392.95
+kx2_h3_genome	pid_schpo	DOUBLE	1928	83901.3
+kx2_h3_genome	f60_schpo	DOUBLE	1928	304.079
+kx2_h3_genome	cov_schpo	DOUBLE	1928	975.059
+kx2_h3_genome	d_outgrp	DOUBLE	1861	-1307.5
+kx2_h3_genome	cov_outgrp	DOUBLE	1861	769.113
+kx2_h3_genus	hgrp	VARCHAR	1432	
+kx2_h3_genus	GENUS	VARCHAR	1428	
+kx2_h3_genus	n_sp	BIGINT	1432	1952
+kx2_h3_genus	any85	BOOLEAN	1432	
+kx2_h3_genus	busco	DOUBLE	1432	132491
+kx2_h3_genus	mb	DOUBLE	1432	62125.8
+kx2_h3_genus	gc	DOUBLE	1432	68202.8
+kx2_h3_genus	gc3	DOUBLE	1432	782.987
+kx2_h3_genus	gc12	DOUBLE	1432	709.846
+kx2_h3_genus	enc	DOUBLE	1432	76364.8
+kx2_h3_genus	enc_dep	DOUBLE	1432	84.492
+kx2_h3_genus	rscu_skew	DOUBLE	1432	469.689
+kx2_h3_genus	n_trna	DOUBLE	1432	241122
+kx2_h3_genus	n_antic	DOUBLE	1432	60387.5
+kx2_h3_genus	trna_per_mb	DOUBLE	1432	7431.69
+kx2_h3_genus	tai	DOUBLE	1432	494.968
+kx2_h3_genus	rscu_supply_r	DOUBLE	1432	579.837
+kx2_h3_genus	fymink	DOUBLE	1432	328.868
+kx2_h3_genus	garp	DOUBLE	1432	380.456
+kx2_h3_genus	asn	DOUBLE	1432	57.2823
+kx2_h3_genus	lys	DOUBLE	1432	74.0496
+kx2_h3_genus	cys	DOUBLE	1432	17.3031
+kx2_h3_genus	gln	DOUBLE	1432	56.8264
+kx2_h3_genus	lowcomp	DOUBLE	1432	498.673
+kx2_h3_genus	idp	DOUBLE	1432	586.2
+kx2_h3_genus	d_schpo	DOUBLE	1428	-1226.14
+kx2_h3_genus	f60_schpo	DOUBLE	1428	224.099
+kx2_h3_genus	cov_schpo	DOUBLE	1428	787.51
+kx2_h3_genus	d_outgrp	DOUBLE	1404	-1228
+kx2_h3_genus_f	hgrp	VARCHAR	1208	
+kx2_h3_genus_f	GENUS	VARCHAR	1206	
+kx2_h3_genus_f	n_sp	BIGINT	1208	1469
+kx2_h3_genus_f	busco	DOUBLE	1208	118041
+kx2_h3_genus_f	mb	DOUBLE	1208	54468.5
+kx2_h3_genus_f	gc	DOUBLE	1208	59181.7
+kx2_h3_genus_f	gc3	DOUBLE	1208	689.187
+kx2_h3_genus_f	gc12	DOUBLE	1208	613.722
+kx2_h3_genus_f	enc	DOUBLE	1208	65298.8
+kx2_h3_genus_f	enc_dep	DOUBLE	1208	64.8015
+kx2_h3_genus_f	rscu_skew	DOUBLE	1208	370.689
+kx2_h3_genus_f	n_trna	DOUBLE	1208	204797
+kx2_h3_genus_f	n_antic	DOUBLE	1208	51500.5
+kx2_h3_genus_f	trna_per_mb	DOUBLE	1208	5244.74
+kx2_h3_genus_f	tai	DOUBLE	1208	414.96
+kx2_h3_genus_f	rscu_supply_r	DOUBLE	1208	486.901
+kx2_h3_genus_f	fymink	DOUBLE	1208	265.107
+kx2_h3_genus_f	garp	DOUBLE	1208	333.089
+kx2_h3_genus_f	asn	DOUBLE	1208	44.7774
+kx2_h3_genus_f	lys	DOUBLE	1208	58.8623
+kx2_h3_genus_f	cys	DOUBLE	1208	14.3408
+kx2_h3_genus_f	gln	DOUBLE	1208	48.2525
+kx2_h3_genus_f	lowcomp	DOUBLE	1208	423.323
+kx2_h3_genus_f	idp	DOUBLE	1208	507.044
+kx2_h3_genus_f	d_schpo	DOUBLE	1207	-306.875
+kx2_h3_genus_f	f60_schpo	DOUBLE	1207	197.96
+kx2_h3_genus_f	cov_schpo	DOUBLE	1207	750.144
+kx2_h3_genus_f	d_outgrp	DOUBLE	1206	-439.112
+kx2_h3_grpmed	filt	VARCHAR	28	
+kx2_h3_grpmed	hgrp	VARCHAR	28	
+kx2_h3_grpmed	ng	BIGINT	28	2640
+kx2_h3_grpmed	nsp	HUGEINT	28	3421
+kx2_h3_grpmed	mb	DOUBLE	28	634.3
+kx2_h3_grpmed	gc	DOUBLE	28	1236.7
+kx2_h3_grpmed	gc3	DOUBLE	28	1329.2
+kx2_h3_grpmed	enc	DOUBLE	28	1437.3
+kx2_h3_grpmed	enc_dep	DOUBLE	28	2.014
+kx2_h3_grpmed	rscu_skew	DOUBLE	28	10.75
+kx2_h3_grpmed	n_trna	DOUBLE	28	3472.5
+kx2_h3_grpmed	n_antic	DOUBLE	28	1178.5
+kx2_h3_grpmed	tai	DOUBLE	28	10.388
+kx2_h3_grpmed	r_supply	DOUBLE	28	10.67
+kx2_h3_grpmed	fymink	DOUBLE	28	694.3
+kx2_h3_grpmed	asn	DOUBLE	28	125.38
+kx2_h3_grpmed	lys	DOUBLE	28	156.55
+kx2_h3_grpmed	cys	DOUBLE	28	36.72
+kx2_h3_grpmed	gln	DOUBLE	28	115.58
+kx2_h3_grpmed	idp	DOUBLE	28	1055.2
+kx2_h3_grpmed	d_schpo	DOUBLE	28	-6.5
+kx2_h3_grpmed	f60	DOUBLE	28	5.511
+kx2_h3_grpmed	cov	DOUBLE	28	12.86
+kx2_h3_grpmed	d_out	DOUBLE	28	-10.85
+kx2_h3_idp	g	VARCHAR	1935	
+kx2_h3_idp	idp_res_frac	DOUBLE	1935	775.86
+kx2_h3_idp	idp_med_prot	DOUBLE	1935	754.533
+kx2_h3_idp	n_prot	BIGINT	1935	1.2127e+07
+kx2_h3_idp	med_len	DOUBLE	1935	899012
+kx2_h3_long	filt	VARCHAR	50125	
+kx2_h3_long	hgrp	VARCHAR	50125	
+kx2_h3_long	GENUS	VARCHAR	50011	
+kx2_h3_long	metric	VARCHAR	50125	
+kx2_h3_long	val	DOUBLE	50125	848458
+kx2_h3_prot	g	VARCHAR	3789	
+kx2_h3_prot	aset	VARCHAR	3789	
+kx2_h3_prot	n_anchor_hit	BIGINT	3789	770893
+kx2_h3_prot	med_pid	DOUBLE	3789	167076
+kx2_h3_prot	med_delta	DOUBLE	3789	-3700.45
+kx2_h3_prot	f_ge60	DOUBLE	3789	614.678
+kx2_h3_prot	f_ge70	DOUBLE	3789	272.162
+kx2_h3_resid	hgrp	VARCHAR	1432	
+kx2_h3_resid	GENUS	VARCHAR	1428	
+kx2_h3_resid	gc3	DOUBLE	1432	782.987
+kx2_h3_resid	mb	DOUBLE	1432	62125.8
+kx2_h3_resid	enc_dep	DOUBLE	1432	84.492
+kx2_h3_resid	enc_dep_res_gc3	DOUBLE	1418	10.4976
+kx2_h3_resid	skew_res_gc3	DOUBLE	1418	13.2277
+kx2_h3_resid	tai_res_gc3	DOUBLE	1418	-29.7287
+kx2_h3_resid	enc_dep_res_size	DOUBLE	1403	6.22492
+kx2_h3_resid	gc3_res_size	DOUBLE	1403	-0.21446
+kx2_h3_resid	tai_res_size	DOUBLE	1403	-22.478
+kx2_h3_resid2	hgrp	VARCHAR	1432	
+kx2_h3_resid2	GENUS	VARCHAR	1428	
+kx2_h3_resid2	idp_res	DOUBLE	1418	-2.65958
+kx2_h3_resid2	dout_res	DOUBLE	1390	-458.75
+kx2_h3_resid2	lc_res	DOUBLE	1418	-1.45071
+kx2_h3_resid2	cys_res	DOUBLE	1418	0.30575
+kx2_h3_resid2	supply_res	DOUBLE	1418	-70.1424
+kx2_h3_set	g	VARCHAR	1952	
+kx2_h3_set	GENUS	VARCHAR	1926	
+kx2_h3_set	grp	VARCHAR	1952	
+kx2_h3_set	mb	DOUBLE	1952	77877.1
+kx2_h3_set	gc_pct	DOUBLE	1952	90834.9
+kx2_h3_set	busco_complete	DOUBLE	1952	169852
+kx2_h3_set	N50_bp	BIGINT	1952	2.45364e+09
+kx2_h3_set	masked_pct	DOUBLE	1952	32506.6
+kx2_h3_set	hgrp	VARCHAR	1952	
+kx2_h3_trna	g	VARCHAR	1952	
+kx2_h3_trna	n_trna	BIGINT	1952	319032
+kx2_h3_trna	n_antic	BIGINT	1952	80518
+kx2_h3_trna	tai	DOUBLE	1935	668.24
+kx2_h3_trna	rscu_supply_r	DOUBLE	1935	738.611
+kx2_h4_cazy_fam	genome	VARCHAR	688151	
+kx2_h4_cazy_fam	fam	VARCHAR	688151	
+kx2_h4_cazy_fam	n	BIGINT	688151	2.62249e+06
+kx2_h4_cls	genome	VARCHAR	243969	
+kx2_h4_cls	cls	VARCHAR	243969	
+kx2_h4_cls	n	HUGEINT	243969	2.32417e+07
+kx2_h4_fit	cls	VARCHAR	32	
+kx2_h4_fit	n	BIGINT	32	41888
+kx2_h4_fit	ols_slope	DOUBLE	32	25.4145
+kx2_h4_fit	ols_int	DOUBLE	32	-51.8809
+kx2_h4_fit	r2	DOUBLE	32	7.76382
+kx2_h4_fit	sma_slope	DOUBLE	32	55.8633
+kx2_h4_fit	xbar	DOUBLE	32	129.446
+kx2_h4_fit	ybar	DOUBLE	32	50.9251
+kx2_h4_fit	sdx	DOUBLE	32	4.32214
+kx2_h4_fit	sdy	DOUBLE	32	7.54528
+kx2_h4_fit	sd0	DOUBLE	32	7.54528
+kx2_h4_gains	flt	VARCHAR	103	
+kx2_h4_gains	grp	VARCHAR	103	
+kx2_h4_gains	pfam_acc	VARCHAR	103	
+kx2_h4_gains	kmed	DOUBLE	103	786.5
+kx2_h4_gains	muc_med	DOUBLE	103	253
+kx2_h4_gains	muc_q95	DOUBLE	103	395
+kx2_h4_gains	pez_med	DOUBLE	103	186
+kx2_h4_gains	pez_q95	DOUBLE	103	341.775
+kx2_h4_gains	pfam_id	VARCHAR	103	
+kx2_h4_gains	delta	DOUBLE	103	513.5
+kx2_h4_gains	ratio	DOUBLE	103	436.051
+kx2_h4_gcls	genus	VARCHAR	52928	
+kx2_h4_gcls	grp	VARCHAR	52928	
+kx2_h4_gcls	cls	VARCHAR	52928	
+kx2_h4_gcls	n	DOUBLE	52928	4.98591e+06
+kx2_h4_gcls	n_genes	DOUBLE	52928	5.73997e+08
+kx2_h4_gcls	busco	DOUBLE	52928	4.8468e+06
+kx2_h4_gcls	n_sp	BIGINT	52928	228736
+kx2_h4_gen	genus	VARCHAR	1654	
+kx2_h4_gen	grp	VARCHAR	1659	
+kx2_h4_gen	n_sp	BIGINT	1659	7393
+kx2_h4_gen	n_genes	DOUBLE	1659	1.79694e+07
+kx2_h4_gen	busco	DOUBLE	1659	151822
+kx2_h4_gen	n50	DOUBLE	1659	1.84107e+09
+kx2_h4_gm	flt	VARCHAR	138927	
+kx2_h4_gm	grp	VARCHAR	138927	
+kx2_h4_gm	pfam_acc	VARCHAR	138927	
+kx2_h4_gm	n_gen	BIGINT	138927	3.31695e+07
+kx2_h4_gm	prev	DOUBLE	138927	92720.4
+kx2_h4_gm	med	DOUBLE	138927	234192
+kx2_h4_gp_all	genus	VARCHAR	7479899	
+kx2_h4_gp_all	grp	VARCHAR	7479899	
+kx2_h4_gp_all	pfam_acc	VARCHAR	7479899	
+kx2_h4_gp_all	n_sp	BIGINT	7479899	3.50074e+07
+kx2_h4_gp_all	n_pos	BIGINT	7479899	3.12899e+07
+kx2_h4_gp_all	med_copies	DOUBLE	7479899	2.08479e+07
+kx2_h4_loss	flt	VARCHAR	120	
+kx2_h4_loss	grp	VARCHAR	120	
+kx2_h4_loss	bgrp	VARCHAR	120	
+kx2_h4_loss	bclass	VARCHAR	120	
+kx2_h4_loss	n_fam	BIGINT	120	188872
+kx2_h4_loss	base_copies	DOUBLE	120	557308
+kx2_h4_loss	loss_copies	DOUBLE	120	250561
+kx2_h4_loss	complete_copies	DOUBLE	120	88337.5
+kx2_h4_loss	contract_copies	DOUBLE	120	162223
+kx2_h4_loss	n_complete	HUGEINT	120	50665
+kx2_h4_loss	n_contract	HUGEINT	120	40048
+kx2_h4_loss	n_kept	HUGEINT	120	98159
+kx2_h4_loss	gain_copies	DOUBLE	120	43778.5
+kx2_h4_lostset	grp	VARCHAR	39150	
+kx2_h4_lostset	pfam_acc	VARCHAR	39150	
+kx2_h4_lostset	mb_m	DOUBLE	39150	140490
+kx2_h4_lostset	mb_p	DOUBLE	39150	112452
+kx2_h4_lostset	med	DOUBLE	39150	71395
+kx2_h4_lostset	prev	DOUBLE	39150	29486.5
+kx2_h4_lostset	lost	BOOLEAN	39150	
+kx2_h4_meta	genome	VARCHAR	7393	
+kx2_h4_meta	genus	VARCHAR	7148	
+kx2_h4_meta	CLASS	VARCHAR	7268	
+kx2_h4_meta	ORDER_	VARCHAR	7202	
+kx2_h4_meta	PHYLUM	VARCHAR	7391	
+kx2_h4_meta	busco	DOUBLE	7393	670086
+kx2_h4_meta	n50	BIGINT	7393	8.68224e+09
+kx2_h4_meta	total_length_bp	BIGINT	7393	2.66623e+11
+kx2_h4_meta	n_genes	BIGINT	7393	7.77211e+07
+kx2_h4_meta	grp	VARCHAR	7393	
+kx2_h4_nprot	genome	VARCHAR	7393	
+kx2_h4_nprot	n_genes	BIGINT	7393	7.77211e+07
+kx2_h4_overlap	a	VARCHAR	9	
+kx2_h4_overlap	b	VARCHAR	9	
+kx2_h4_overlap	obs_overlap	HUGEINT	9	2282
+kx2_h4_overlap	exp_stratified	DOUBLE	9	1891.7
+kx2_h4_overlap	enrich	DOUBLE	9	11.62
+kx2_h4_overlap	lostA	HUGEINT	9	3915
+kx2_h4_overlap	lostB	HUGEINT	9	7481
+kx2_h4_overlap	jaccard_obs	DOUBLE	9	2.669
+kx2_h4_overlap	jaccard_null	DOUBLE	9	1.901
+kx2_h4_pfcat	pfam_acc	VARCHAR	20084	
+kx2_h4_pfcat	n_sp	BIGINT	20084	883229
+kx2_h4_pfcat	cat	VARCHAR	20084	
+kx2_h4_pfcat	k	BIGINT	20084	1.54932e+06
+kx2_h4_pfcat	tot	HUGEINT	20084	2.10862e+06
+kx2_h4_rep_gen	genome	VARCHAR	4052	
+kx2_h4_rep_gen	genus	VARCHAR	3924	
+kx2_h4_rep_gen	grp	VARCHAR	4052	
+kx2_h4_rep_gen	rn	BIGINT	4052	145969
+kx2_h4_resid	genus	VARCHAR	52928	
+kx2_h4_resid	grp	VARCHAR	52928	
+kx2_h4_resid	cls	VARCHAR	52928	
+kx2_h4_resid	n	DOUBLE	52928	4.98591e+06
+kx2_h4_resid	n_genes	DOUBLE	52928	5.73997e+08
+kx2_h4_resid	busco	DOUBLE	52928	4.8468e+06
+kx2_h4_resid	n_sp	BIGINT	52928	228736
+kx2_h4_resid	y	DOUBLE	52928	80366.7
+kx2_h4_resid	x	DOUBLE	52928	211610
+kx2_h4_resid	res_ols	DOUBLE	52928	-1883.47
+kx2_h4_resid	res_sma	DOUBLE	52928	488.662
+kx2_h4_resid_grp	flt	VARCHAR	768	
+kx2_h4_resid_grp	grp	VARCHAR	768	
+kx2_h4_resid_grp	cls	VARCHAR	768	
+kx2_h4_resid_grp	n_gen	BIGINT	768	96192
+kx2_h4_resid_grp	res_ols	DOUBLE	768	-94.5014
+kx2_h4_resid_grp	res_sma	DOUBLE	768	45.406
+kx2_h4_resid_grp	z_ols	DOUBLE	768	-341.586
+kx2_h4_resid_grp	z_sma	DOUBLE	768	262.654
+kx2_h4_resid_grp	fold_ols	DOUBLE	768	728.546
+kx2_h4_resid_grp	fold_sma	DOUBLE	768	1123.37
+kx2_h4_resid_grp	med_n	DOUBLE	768	46902
+kx2_h4_resid_grp	med_genes	DOUBLE	768	5.94534e+06
+kx2_h4_scaling_summary	grp	VARCHAR	416	
+kx2_h4_scaling_summary	cls	VARCHAR	416	
+kx2_h4_scaling_summary	n_gen	BIGINT	416	35328
+kx2_h4_scaling_summary	med_n	DOUBLE	416	21960.8
+kx2_h4_scaling_summary	fold_ols	DOUBLE	416	377.06
+kx2_h4_scaling_summary	z_ols	DOUBLE	416	-244.5
+kx2_h4_scaling_summary	fold_sma	DOUBLE	416	653.04
+kx2_h4_scaling_summary	z_sma	DOUBLE	416	171.9
+kx2_h4_scaling_summary	frac_vs_muc	DOUBLE	416	418.87
+kx2_h4_scaling_summary	frac_vs_pez	DOUBLE	416	389.52
+kx2_h4_scaling_summary	lab	VARCHAR	416	
+kx2_h4_sp	genome	VARCHAR	7392	
+kx2_h4_sp	n_sp	BIGINT	7392	5.69752e+06
+kx2_h4_tf	genome	VARCHAR	136159	
+kx2_h4_tf	tf_family	VARCHAR	136159	
+kx2_h4_tf	n	BIGINT	136159	2.71686e+06
+kx2_h4_trypsin_arch	grp	VARCHAR	57	
+kx2_h4_trypsin_arch	acc	VARCHAR	57	
+kx2_h4_trypsin_arch	n_prot	BIGINT	57	688
+kx2_h4_trypsin_arch	n_tryp_prot	BIGINT	57	10876
+kx_genomes	ASMID	VARCHAR	1945	
+kx_genomes	LOCUSTAG	VARCHAR	1945	
+kx_genomes	PHYLUM	VARCHAR	1945	
+kx_genomes	CLASS	VARCHAR	1840	
+kx_genomes	ORDER_	VARCHAR	1814	
+kx_genomes	FAMILY	VARCHAR	1839	
+kx_genomes	GENUS	VARCHAR	1919	
+kx_genomes	SPECIES	VARCHAR	1945	
+kx_genomes	STRAIN	VARCHAR	1823	
+kx_genomes	total_length_bp	BIGINT	1945	7.77457e+10
+kx_genomes	N50_bp	BIGINT	1945	2.43925e+09
+kx_genomes	contig_count	BIGINT	1945	2.63578e+06
+kx_genomes	gc_pct	DOUBLE	1945	90690.2
+kx_genomes	masked_pct	DOUBLE	1945	32255.5
+kx_genomes	annotation_status	VARCHAR	1945	
+kx_genomes	busco_complete	DOUBLE	1945	168909
+kx_genomes	busco_dup	DOUBLE	1945	8769.9
+kx_genomes	busco_frag	DOUBLE	1945	4122.7
+kx_genomes	busco_missing	DOUBLE	1945	21478
+kx_genomes	grp	VARCHAR	1945	
+kx_genomes	is_sp_rep	BOOLEAN	1945	
+kx_genomes	is_genus_rep	BOOLEAN	1945	

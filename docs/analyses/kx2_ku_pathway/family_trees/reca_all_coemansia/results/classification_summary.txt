@@ -1,0 +1,3 @@
+lig: tree not finished, skipped
+reca: tree 624 leaves (0 members dropped by trimming); leave-one-out 17/31 references re-assigned to their own clade; long-branch threshold 1.016
+polx: tree not finished, skipped

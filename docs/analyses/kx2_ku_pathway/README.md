@@ -9,7 +9,7 @@ compensate?
 |---|---|---|
 | Q1: are Ku-interacting proteins also lost, and where on the tree? | [`sql_coloss/`](sql_coloss/README.md) | 46 gene rules, presence matrix, Dollo parsimony on the first-pass backbone tree, control-based false-absence estimate, tblastn worklist |
 | Q2: alternative end joining, recombination and telomere changes? | [`sql_compensation/`](sql_compensation/README.md) | gene calls and copy numbers, telomere tables, replication test across Ku-negative lineages |
-| Follow-up: is the species tree robust? (dereplicated, LG+F+G and ASTRAL, rooting tests; PMSF runs still pending) | [`species_tree/`](species_tree/README.md) | Ku-negative genera form one clade (Kickxellales + Harpellales) on all four topologies; *Coemansia* non-monophyletic (weak); *Linderina* and *Basidiobolus* unstable |
+| Follow-up: is the species tree robust? (dereplicated, LG+F+G, site-heterogeneous PMSF and ASTRAL, rooting tests) | [`species_tree/`](species_tree/README.md) | Ku-negative genera form one clade (Kickxellales + Harpellales) on all four topologies; *Coemansia* non-monophyletic (weak); *Linderina* and *Basidiobolus* unstable |
 | Follow-up: do other meiosis genes go with Dmc1? | [`meiosis_toolkit/`](meiosis_toolkit/README.md) | annotation rules, tblastn, MutS/MutL/kleisin/HORMA trees; Pch2 lost with Ku, Spo11/Hop2/Mnd1/Msh4 retained, Msh5 partial, Mlh3 not seen in Kickxellomycota |
 
 Each directory has numbered SQL files in run order, a README with the gene list and identification rules, and a verification record.
@@ -48,8 +48,8 @@ The tree is the first-pass FastTree backbone in `workflows/phylo/README.md` (63 
 4. **No compensation was found.** POLQ, LIG3 and PARP1-like are absent in the Ku-retaining Dimargaritales and *Ramicandelaber* as well,
    so they were not available to compensate; only one LIG1-type ligase remains. HR genes are not expanded; the Rad51 family and
    paralogs are slightly smaller. **RecA-family tree** ([`family_trees/RECA_RESULT.md`](family_trees/RECA_RESULT.md); 327 sites, leave-one-out
-   19 of 31, Dmc1 5/5): the meiotic recombinase **Dmc1 is absent from the five core Kickxellales genera** (all 10 *Coemansia*
-   strains in the tree, *Kickxella*, *Linderina*, *Dipsacomyces*, *Martensiomyces*; also *Spiromyces* and *Ramicandelaber* with weaker
+   19 of 31, Dmc1 5/5): the meiotic recombinase **Dmc1 is absent from the five core Kickxellales genera** (all 107 *Coemansia*
+   strains, re-run 2026-11-15 in [`family_trees/reca_all_coemansia/`](family_trees/reca_all_coemansia/README.md); *Kickxella*, *Linderina*, *Dipsacomyces*, *Martensiomyces*; also *Spiromyces* and *Ramicandelaber* with weaker
    evidence) but present in *Mycoemilia*, Harpellales (4/4), Dimargaritales (3/3), Entomophthorales (4/4) and most Mucoromycota (18/21),
    so it is a later event than Ku loss, on the stem of core Kickxellales (the clade with the strongest intron and size reduction).
    A tblastn locus count supports one Rad51-like locus in 100 of 111 core Kickxellales genomes (the six with two are duplicated Rad51
