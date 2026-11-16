@@ -12,9 +12,9 @@ export AO_BASE=$(cd "$AO_BASE" && pwd) BFD_DATA=${BFD_DATA:-/bigdata/stajichlab/
 export AO_COMMIT=$(git -C "$AO_REPO" rev-parse --short HEAD 2>/dev/null || echo "${AO_COMMIT:-unknown}")
 SB=$AO_REPO/docs/analyses/antarctolithica/run_hpcc.sbatch
 cd "$AO_BASE"
-p=$(sbatch --parsable --export=ALL --job-name=aoC_prep  --cpus-per-task=16 --mem=96G  --time=8:00:00  "$SB" prep)
-r=$(sbatch --parsable --export=ALL --job-name=aoC_rf    --cpus-per-task=32 --mem=64G  --time=24:00:00 --dependency=afterok:$p "$SB" rf)
-f=$(sbatch --parsable --export=ALL --job-name=aoC_phylo --cpus-per-task=32 --mem=64G  --time=24:00:00 --dependency=afterok:$p "$SB" phylo)
-o=$(sbatch --parsable --export=ALL --job-name=aoC_report --cpus-per-task=4 --mem=32G  --time=2:00:00  --dependency=afterok:$r:$f "$SB" report)
+p=$(sbatch --parsable --export=ALL --job-name=aoC_prep  --cpus-per-task=16 --mem=48G  --time=8:00:00  "$SB" prep)
+r=$(sbatch --parsable --export=ALL --job-name=aoC_rf    --cpus-per-task=16 --mem=32G  --time=24:00:00 --dependency=afterok:$p "$SB" rf)
+f=$(sbatch --parsable --export=ALL --job-name=aoC_phylo --cpus-per-task=16 --mem=16G  --time=24:00:00 --dependency=afterok:$p "$SB" phylo)
+o=$(sbatch --parsable --export=ALL --job-name=aoC_report --cpus-per-task=4 --mem=16G  --time=2:00:00  --dependency=afterok:$r:$f "$SB" report)
 echo "commit $AO_COMMIT  AO_BASE $AO_BASE"
 echo "jobs: prep=$p rf=$r phylo=$f report=$o"

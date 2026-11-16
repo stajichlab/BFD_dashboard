@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=16
-#SBATCH --mem=96G
+#SBATCH --mem=48G
 #SBATCH --time=24:00:00
 #SBATCH --output=logs/aoC_%x_%j.log
 # Analysis C (Antarctolithica obscura) on the UCR HPCC, one stage per job. Submit all stages, chained, with run_hpcc.sh.
@@ -20,7 +20,7 @@ export BFD_DATA=${BFD_DATA:-/bigdata/stajichlab/shared/projects/BFD}
 AN=${AO_REPO:?set AO_REPO}/docs/analyses/antarctolithica
 S=$AN/scripts
 export NCPU=${SLURM_CPUS_PER_TASK:-4}
-export PYTHONNOUSERSITE=1   # keep ~/.local site-packages out of the pixi environment
+export PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1   # keep ~/.local site-packages out of the env; stream logs
 # pixi environment (one-time: cd $AN && pixi install); call its python directly so a job never re-solves the env
 PY=$AN/.pixi/envs/default/bin/python
 [ -x "$PY" ] || PY="pixi run --manifest-path $AN/pixi.toml python"
@@ -55,7 +55,9 @@ rf)     # random forests: CV per block, thinning, permutation importance, leave-
     ;;
 phylo)  # BUSCO odb10 markers -> MAFFT -> trimAl -> concatenation -> FastTree LG+G; jackknife/WAG/reduced-taxon robustness trees
     module load hmmer/3.3.2 mafft/7.505 trimal/1.4.1 fasttree/2.1.11
-    export FASTTREE=$(command -v FastTreeMP || command -v FastTree)
+    # double-precision FastTree: the single-precision FastTreeMP of the module aborts on this matrix
+    # ("PairLogLk: Assertion lkAB > 0 failed", job 32115798)
+    export FASTTREE=${FASTTREE:-$(command -v FastTree.dp || command -v FastTree)}
     # decompressed proteomes are temporary: keep them on node-local $SCRATCH
     FA=${SCRATCH:-$AO_BASE/phylo}/fa; mkdir -p "$FA"; rm -rf phylo/fa; ln -s "$FA" phylo/fa
     step bash $S/03_phylo_search.sh
