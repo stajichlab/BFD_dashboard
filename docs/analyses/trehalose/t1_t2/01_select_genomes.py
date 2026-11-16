@@ -20,6 +20,8 @@ N50_MIN = 50_000
 N_LECAN_PRIMARY, N_LECAN_FRAG, N_SCEDO, N_OTHER = 10, 4, 5, 4
 MAX_PER_GENUS = 2
 UNIPROT_TPS = ["TPS1A_ASPFU", "TPS1_BOTFB", "TPS1_EMENI", "TPS1_CANAL", "TPS1_YEAST", "TPS1_SCHPO"]
+# TPS2-type proteins carry both the TPS-like and the TPP domain, so a TPS gene would cross-hit them: they are searched
+# for context under the key TPS2like and are NOT used for the TPS or TPP calls (README, "Queries")
 UNIPROT_TPP = ["TPS2_YEAST", "TPS2_SCHPO", "TPS2_ZYGRO"]
 
 
@@ -91,21 +93,23 @@ def main():
     sp = con.execute(f"select entry_name, accession, s_len from swissprot_subject where entry_name in ({names})").df().set_index("entry_name")
     missing = [n for n in UNIPROT_TPS + UNIPROT_TPP if n not in sp.index]
     assert not missing, f"not in swissprot_subject: {missing}"
-    q = [("TPS", "uniprot", sp.loc[n, "accession"], int(sp.loc[n, "s_len"])) for n in UNIPROT_TPS]
-    q += [("TPP", "uniprot", sp.loc[n, "accession"], int(sp.loc[n, "s_len"])) for n in UNIPROT_TPP]
+    q = [("TPS", "uniprot", sp.loc[n, "accession"], int(sp.loc[n, "s_len"]), "", "") for n in UNIPROT_TPS]
+    q += [("TPS2like", "uniprot", sp.loc[n, "accession"], int(sp.loc[n, "s_len"]), "", "") for n in UNIPROT_TPP]
     rad = pd.read_csv(REPO / "docs/analyses/kx2_ku_pathway/tblastn/queries.tsv", sep="\t")
-    rad = rad[rad.key == "Rad51"].iloc[0]
-    q.append(("Rad51", "uniprot", rad.accession, int(rad.expected_len)))
+    rad = rad[rad.key == "CTRL_Rad51"].iloc[0]   # P25454, the Rad51 control of the Ku check
+    q.append(("Rad51", "uniprot", rad.accession, int(rad.expected_len), "", ""))
     ctrl = g[g.grp == "control_pos"]
     bfd_genomes = list(ctrl[ctrl["class"] == "Lecanoromycetes"].locustag[:2]) + \
         list(ctrl[ctrl["class"] == "Sordariomycetes"].locustag[:2]) + list(ctrl[ctrl["class"] == "Eurotiomycetes"].locustag[:1])
     for loc in bfd_genomes:
         for key, acc in (("TPS_bfd", "PF00982"), ("TPP_bfd", "PF02358")):
-            p = con.execute(f"""select protein_id from pfam where species_prefix = '{loc}' and split_part(pfam_acc, '.', 1) = '{acc}'
-                                and domain_i_evalue <= 1e-5 order by domain_score desc limit 1""").fetchone()
+            p = con.execute(f"""select protein_id, env_from, env_to from pfam where species_prefix = '{loc}'
+                                and split_part(pfam_acc, '.', 1) = '{acc}' and domain_i_evalue <= 1e-5
+                                order by domain_score desc limit 1""").fetchone()
             assert p, f"no {acc} protein in {loc}"
-            q.append((key, "bfd", p[0], "NA"))
-    pd.DataFrame(q, columns=["key", "source", "accession", "expected_len"]).to_csv(out_dir / "queries.tsv", sep="\t", index=False)
+            # trimmed to the Pfam domain envelope (+-5 aa) so a fused TPS-TPP protein does not cross-hit the other family
+            q.append((key, "bfd", p[0], "NA", max(1, int(p[1]) - 5), int(p[2]) + 5))
+    pd.DataFrame(q, columns=["key", "source", "accession", "expected_len", "start", "end"]).to_csv(out_dir / "queries.tsv", sep="\t", index=False)
     log.append(f"queries: {len(q)} ({sum(x[1] == 'uniprot' for x in q)} UniProt, {sum(x[1] == 'bfd' for x in q)} BFD)")
     (out_dir / "selection_log.txt").write_text("\n".join(log) + "\n")
     print("\n".join(log))

@@ -22,15 +22,23 @@ searched directly. Three explanations were listed in the parent README: (a) the 
   e-value 1e-3, up to 50 targets, default masking. `tblastn` already searches the six translated frames of the contigs, so no
   separate six-frame search is needed; a hit is a protein-to-contig alignment. Same machinery and thresholds as
   [`../../kx2_ku_pathway/tblastn/`](../../kx2_ku_pathway/tblastn/README.md).
-- **Queries** (`queries.tsv`, fixed before the run): reviewed fungal SwissProt TPS (`TPS1A_ASPFU`, `TPS1_BOTFB`, `TPS1_EMENI`,
-  `TPS1_CANAL`, `TPS1_YEAST`, `TPS1_SCHPO`) and TPP/TPS2-type proteins (`TPS2_YEAST`, `TPS2_SCHPO`, `TPS2_ZYGRO`), each length-checked
-  against `bfd.swissprot_subject`; one BFD TPS and TPP protein from each Pfam-positive control genome (closer relatives); Rad51
-  as a does-the-search-work control. A query that comes from the genome being searched is dropped (leave-one-out).
+- **Queries** (`queries.tsv`, fixed before the run): reviewed fungal SwissProt TPS1 proteins (`TPS1A_ASPFU`, `TPS1_BOTFB`,
+  `TPS1_EMENI`, `TPS1_CANAL`, `TPS1_YEAST`, `TPS1_SCHPO`), each length-checked against `bfd.swissprot_subject`; for closer relatives,
+  the best PF00982 and the best PF02358 protein of five Pfam-positive control genomes (2 Lecanoromycetes, 2 Sordariomycetes,
+  1 Eurotiomycetes), **trimmed to the Pfam domain envelope (+-5 aa)**; Rad51 as a does-the-search-work control. Calls: **TPS** =
+  the TPS1 references plus the PF00982-trimmed BFD queries; **TPP** = the PF02358-trimmed BFD queries only. The TPS2-type
+  references (`TPS2_YEAST`, `TPS2_SCHPO`, `TPS2_ZYGRO`) carry both domains, so a true TPS gene would hit them over half their
+  length and look like a TPP hit; they are searched under the key `TPS2like` for context and are **not** used in any call.
+  *Amendment, made before any tblastn was run:* the first draft of this README used the TPS2-type proteins as TPP queries and
+  untrimmed BFD proteins; that was changed once the cross-hit problem was seen. A query that comes from the genome being
+  searched is dropped (leave-one-out).
 - **Genome strata** (`genomes.tsv`, chosen by the rules in `01_select_genomes.py`, not by looking at hits):
   1. `lecan_primary`: 10 Lecanoromycetes with no Pfam TPS and no Pfam TPP, N50 >= 50 kb, best BUSCO, at most 2 per genus.
   2. `lecan_fragmented`: up to 4 more with N50 < 50 kb (weak evidence by design; reported separately).
   3. `scedo`: 5 *Scedosporium*/*Lomentospora*, one per species, best BUSCO then N50.
-  4. `other_loss`: the remaining genomes in the credible-loss list (Candelariomycetes, Coniocybomycetes).
+  4. `other_loss`: up to 4 other genomes of the credible-loss list outside Lecanoromycetes and *Scedosporium*, one per genus,
+     best BUSCO (the rule picked relatives of *Scedosporium* in Microascales, which sit in the same clade as the `scedo` stratum;
+     these are reported separately and are not counted in the clade verdict).
   5. `control_pos`: 10 Pfam-positive genomes (5 Lecanoromycetes of different genera, 3 Sordariomycetes close to *Scedosporium*,
      2 Eurotiomycetes), N50 >= 50 kb.
 
