@@ -1,0 +1,34 @@
+locustag	genus	grp	min_priority	asmid	species	class	order	busco	n50_bp	contigs	tps_pfam	tpp_pfam
+F741EBA0	Letrouitia	lecan_primary	1	GCA_023646045.1_KEW_Ltra1	Letrouitia transgressa	Lecanoromycetes	Teloschistales	99.4	302837	236	0	0
+F631E679	Letrouitia	lecan_primary	1	GCA_023645855.1_KEW_Ltra2	Letrouitia transgressa	Lecanoromycetes	Teloschistales	98.9	212444	427	0	0
+F2AC92A6	Gallowayella	lecan_primary	1	GCA_023646365.1_KEW_Xful	Gallowayella cf. fulva	Lecanoromycetes	Teloschistales	98.9	128710	707	0	0
+FA787783	Pseudocyphellaria	lecan_primary	1	GCA_022814125.1_ASM2281412v1	Pseudocyphellaria aurata	Lecanoromycetes	Peltigerales	98.3	74990	978	0	0
+F94AC2FC	Physciella	lecan_primary	1	GCA_964257145.1_public_SRR12240182_metabat2_bin.7	Physciella chloantha	Lecanoromycetes	Caliciales	98.0	198594	243	0	0
+F34DEB74	Physcia	lecan_primary	1	GCA_018902385.1_ASM1890238v1	Physcia stellaris	Lecanoromycetes	Caliciales	97.9	643737	155	0	0
+F55DF0F5	Peltigera	lecan_primary	1	GCA_964256605.1_public_SRR11456921_metabat2_merged.0	Peltigera evansiana	Lecanoromycetes	Peltigerales	97.6	95171	2350	0	0
+FF9A2F21	Mobergia	lecan_primary	1	GCA_964255985.1_public_SRR12240185_concoct_bin.1	Mobergia calculiformis	Lecanoromycetes	Caliciales	97.5	107703	573	0	0
+FE576E6E	Solorina	lecan_primary	1	GCA_964257125.1_public_SRR11456919_metabat2_bin.15	Solorina crocea	Lecanoromycetes	Peltigerales	97.5	50471	3348	0	0
+FCE9DAA1	Heterodermia	lecan_primary	1	GCA_964255885.1_private_GTX0163_concoct_bin.14	Heterodermia speciosa	Lecanoromycetes	Caliciales	97.2	255290	195	0	0
+F876F828	Peltigera	lecan_fragmented	1	GCA_964257155.1_public_SRR11456918_metabat2_merged.0	Peltigera dolichorrhiza	Lecanoromycetes	Peltigerales	98.0	34013	3392	0	0
+F30091C6	Peltigera	lecan_fragmented	1	GCA_964256585.1_public_SRR11456917_metabat2_merged.0	Peltigera phyllidiosa	Lecanoromycetes	Peltigerales	97.8	24562	4792	0	0
+FB336C86	Flavoplaca	lecan_fragmented	1	GCA_023646635.1_KEW_Foas	Flavoplaca oasis	Lecanoromycetes	Teloschistales	95.4	28634	2121	0	0
+F5CA16A7	Caloplaca	lecan_fragmented	1	GCA_023646255.1_KEW_Caet	Caloplaca aetnensis	Lecanoromycetes	Teloschistales	94.3	25292	2026	0	0
+F0000039	Scedosporium	scedo	1	GCA_052249765.1_ASM5224976v1	Scedosporium aurantiacum	Sordariomycetes	Microascales	99.8	4772094	11	0	0
+F38FD470	Lomentospora	scedo	1	GCA_055860905.1_UMB_LProlif482_1.0	Lomentospora prolificans	Sordariomycetes	Microascales	99.8	1953216	41	0	0
+F571167B	Scedosporium	scedo	1	GCA_058131905.1_UMB_ScApio476_1.0	Scedosporium apiospermum	Sordariomycetes	Microascales	99.8	1622362	70	0	0
+FF06588D	Scedosporium	scedo	1	GCA_058095755.1_UMB_ScBoyd479_1.0	Scedosporium boydii	Sordariomycetes	Microascales	99.6	3355078	34	0	0
+F177A194	Scedosporium	scedo	1	GCA_002812735.1_ASM281273v1	Scedosporium dehoogii	Sordariomycetes	Microascales	98.9	169552	427	0	0
+FB9D1802	Scopulariopsis	other_loss	1	GCA_982397445.1_T5-F	Scopulariopsis alboflavescens	Sordariomycetes	Microascales	99.5	181288	304	0	0
+FDF60022	Basipetospora	other_loss	1	GCA_001599675.1_JCM_23157_assembly_v001	Basipetospora chlamydospora	Sordariomycetes	Microascales	99.2	5489246	16	0	0
+FB60EBFD	Cephalotrichum	other_loss	1	GCA_900312665.1_Dor_NG_p51_version_1_1	Cephalotrichum gorgonifer	Sordariomycetes	Microascales	99.2	2038231	48	0	0
+FCA1EBEE	Pycnora	other_loss	1	GCA_026026765.1_ASM2602676v1	Pycnora praestabilis	Candelariomycetes	Candelariales	99.2	466469	90	0	0
+F93970D6	Umbilicaria	control_pos	1	GCA_053477905.1_ASM5347790v1	Umbilicaria phaea	Lecanoromycetes	Umbilicariales	99.9	1567018	26	3	2
+F7164EF4	Ptychographa	control_pos	1	GCA_022814105.1_ASM2281410v1	Ptychographa xylographoides	Lecanoromycetes	Baeomycetales	99.7	343217	132	3	2
+FE751814	Stereocaulon	control_pos	1	GCA_018257865.1_ASM1825786v1	Stereocaulon alpinum	Lecanoromycetes	Lecanorales	99.7	289189	545	1	1
+FA57834A	Acarospora	control_pos	1	GCA_025617375.2_glAcaSoci1.1	Acarospora socialis	Lecanoromycetes	Acarosporales	99.6	2402664	38	3	2
+FD0AD664	Lambiella	control_pos	1	GCA_022814265.1_ASM2281426v1	Lambiella insularis	Lecanoromycetes	Baeomycetales	99.6	574903	143	4	3
+F35C3FF1	Graphium	control_pos	1	GCA_048165025.1_ASM4816502v1	Graphium basitruncatum	Sordariomycetes	Microascales	99.5	276610	263	3	2
+F77F16E8	Ceratocystis	control_pos	1	GCA_032173455.1_Cf_hybrid	Ceratocystis fimbriata	Sordariomycetes	Microascales	99.3	4871631	9	4	3
+F496409D	Knoxdaviesia	control_pos	1	GCA_001510575.1_ASM151057v1	Knoxdaviesia capensis	Sordariomycetes	Microascales	99.2	4176071	28	3	2
+FC36CB78	Penicillium	control_pos	1	GCA_019827475.1_ASM1982747v1	Penicillium cf. chrysogenum	Eurotiomycetes	Eurotiales	99.8	692322	623	16	8
+FE548AFF	Aspergillus	control_pos	1	GCF_009193445.1_Asppset1	Aspergillus pseudotamarii	Eurotiomycetes	Eurotiales	99.8	410003	202	6	3

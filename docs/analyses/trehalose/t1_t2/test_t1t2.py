@@ -30,7 +30,7 @@ def test_best_hit_merges_hsps_on_best_scaffold():
     rows = [hit("TPS|A", "s1", 1e-40, 200, 1, 200, 500), hit("TPS|A", "s1", 1e-30, 150, 250, 450, 500),
             hit("TPS|A", "s2", 1e-5, 30, 1, 40, 500)]
     q, e, cov = summ.best_hit(rows)
-    assert q == "TPS|A" and e == 1e-40 and abs(cov - 0.8) < 1e-9
+    assert q == "TPS|A" and e == 1e-40 and abs(cov - 401 / 500) < 1e-9   # 200 + 201 residues (inclusive intervals)
 
 
 def test_genome_outcomes():
@@ -72,3 +72,17 @@ def test_end_to_end(tmp_path):
     res = pd.read_csv(tmp_path / "out_genomes.tsv", sep="\t").set_index("locustag")
     assert res.loc["L1", "outcome"] == "candidate_loss" and res.loc["S1", "outcome"] == "annotation_gap"
     assert "T1 overall: NOT supported" in (tmp_path / "out_verdicts.txt").read_text()
+
+
+def test_t2_rule():
+    spec2 = importlib.util.spec_from_file_location("life", Path(__file__).with_name("05_lifestyle.py"))
+    life = importlib.util.module_from_spec(spec2)
+    spec2.loader.exec_module(life)
+    ft = pd.DataFrame({"GENUS": ["Peltigera", "Scopulariopsis"], "primary_lifestyle": ["lichenized", "soil_saprotroph"],
+                       "Secondary_lifestyle": [None, None]})
+    cand = pd.DataFrame({"genus": ["Peltigera", "Scopulariopsis", "Nolabel"]})
+    lab = life.label_genomes(cand, ft)
+    assert list(lab.primary_lifestyle) == ["lichenized", "soil_saprotroph", "no label"]
+    assert list(lab.free_living_saprotroph) == [False, True, False]
+    assert life.t2_verdict(lab).startswith("T2 KILLED")
+    assert life.t2_verdict(lab.iloc[[0, 2]]).startswith("T2 not killed")

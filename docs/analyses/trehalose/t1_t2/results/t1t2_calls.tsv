@@ -1,0 +1,100 @@
+locustag	genus	stratum	gene	call	best_query	best_evalue	query_coverage
+F741EBA0	Letrouitia	lecan_primary	TPS	none			
+F741EBA0	Letrouitia	lecan_primary	TPP	none			
+F741EBA0	Letrouitia	lecan_primary	Rad51	full-length	Rad51|P25454	9.22e-130	0.78
+F631E679	Letrouitia	lecan_primary	TPS	none			
+F631E679	Letrouitia	lecan_primary	TPP	none			
+F631E679	Letrouitia	lecan_primary	Rad51	full-length	Rad51|P25454	4.05e-134	0.715
+F2AC92A6	Gallowayella	lecan_primary	TPS	none			
+F2AC92A6	Gallowayella	lecan_primary	TPP	none			
+F2AC92A6	Gallowayella	lecan_primary	Rad51	strong	Rad51|P25454	2.45e-129	0.662
+FA787783	Pseudocyphellaria	lecan_primary	TPS	none			
+FA787783	Pseudocyphellaria	lecan_primary	TPP	none			
+FA787783	Pseudocyphellaria	lecan_primary	Rad51	full-length	Rad51|P25454	1.16e-129	0.75
+F94AC2FC	Physciella	lecan_primary	TPS	none			
+F94AC2FC	Physciella	lecan_primary	TPP	none			
+F94AC2FC	Physciella	lecan_primary	Rad51	strong	Rad51|P25454	8.14e-126	0.66
+F34DEB74	Physcia	lecan_primary	TPS	none			
+F34DEB74	Physcia	lecan_primary	TPP	none			
+F34DEB74	Physcia	lecan_primary	Rad51	full-length	Rad51|P25454	9.6e-126	0.805
+F55DF0F5	Peltigera	lecan_primary	TPS	none			
+F55DF0F5	Peltigera	lecan_primary	TPP	none			
+F55DF0F5	Peltigera	lecan_primary	Rad51	full-length	Rad51|P25454	2.09e-131	0.715
+FF9A2F21	Mobergia	lecan_primary	TPS	none			
+FF9A2F21	Mobergia	lecan_primary	TPP	none			
+FF9A2F21	Mobergia	lecan_primary	Rad51	strong	Rad51|P25454	1.47e-126	0.665
+FE576E6E	Solorina	lecan_primary	TPS	none			
+FE576E6E	Solorina	lecan_primary	TPP	none			
+FE576E6E	Solorina	lecan_primary	Rad51	full-length	Rad51|P25454	1.06e-132	0.718
+FCE9DAA1	Heterodermia	lecan_primary	TPS	none			
+FCE9DAA1	Heterodermia	lecan_primary	TPP	none			
+FCE9DAA1	Heterodermia	lecan_primary	Rad51	strong	Rad51|P25454	1.84e-127	0.67
+F876F828	Peltigera	lecan_fragmented	TPS	none			
+F876F828	Peltigera	lecan_fragmented	TPP	none			
+F876F828	Peltigera	lecan_fragmented	Rad51	full-length	Rad51|P25454	1.8e-131	0.715
+F30091C6	Peltigera	lecan_fragmented	TPS	none			
+F30091C6	Peltigera	lecan_fragmented	TPP	none			
+F30091C6	Peltigera	lecan_fragmented	Rad51	strong	Rad51|P25454	1.62e-126	0.667
+FB336C86	Flavoplaca	lecan_fragmented	TPS	none			
+FB336C86	Flavoplaca	lecan_fragmented	TPP	full-length	TPP_bfd|F93970D6_001306-T1	1.76e-29	0.992
+FB336C86	Flavoplaca	lecan_fragmented	Rad51	strong	Rad51|P25454	8.77e-129	0.66
+F5CA16A7	Caloplaca	lecan_fragmented	TPS	none			
+F5CA16A7	Caloplaca	lecan_fragmented	TPP	none			
+F5CA16A7	Caloplaca	lecan_fragmented	Rad51	strong	Rad51|P25454	1.54e-129	0.66
+F0000039	Scedosporium	scedo	TPS	none			
+F0000039	Scedosporium	scedo	TPP	none			
+F0000039	Scedosporium	scedo	Rad51	full-length	Rad51|P25454	3.54e-129	0.775
+F38FD470	Lomentospora	scedo	TPS	none			
+F38FD470	Lomentospora	scedo	TPP	none			
+F38FD470	Lomentospora	scedo	Rad51	full-length	Rad51|P25454	6.75e-137	0.765
+F571167B	Scedosporium	scedo	TPS	none			
+F571167B	Scedosporium	scedo	TPP	none			
+F571167B	Scedosporium	scedo	Rad51	full-length	Rad51|P25454	2e-128	0.775
+FF06588D	Scedosporium	scedo	TPS	none			
+FF06588D	Scedosporium	scedo	TPP	none			
+FF06588D	Scedosporium	scedo	Rad51	full-length	Rad51|P25454	8.21e-140	0.775
+F177A194	Scedosporium	scedo	TPS	none			
+F177A194	Scedosporium	scedo	TPP	none			
+F177A194	Scedosporium	scedo	Rad51	full-length	Rad51|P25454	6e-129	0.775
+FB9D1802	Scopulariopsis	other_loss	TPS	none			
+FB9D1802	Scopulariopsis	other_loss	TPP	none			
+FB9D1802	Scopulariopsis	other_loss	Rad51	full-length	Rad51|P25454	7.2e-137	0.775
+FDF60022	Basipetospora	other_loss	TPS	none			
+FDF60022	Basipetospora	other_loss	TPP	none			
+FDF60022	Basipetospora	other_loss	Rad51	full-length	Rad51|P25454	8.51e-127	0.775
+FB60EBFD	Cephalotrichum	other_loss	TPS	none			
+FB60EBFD	Cephalotrichum	other_loss	TPP	none			
+FB60EBFD	Cephalotrichum	other_loss	Rad51	full-length	Rad51|P25454	6.05e-125	0.78
+FCA1EBEE	Pycnora	other_loss	TPS	none			
+FCA1EBEE	Pycnora	other_loss	TPP	none			
+FCA1EBEE	Pycnora	other_loss	Rad51	full-length	Rad51|P25454	1.46e-115	0.78
+F93970D6	Umbilicaria	control_pos	TPS	full-length	TPS_bfd|F7164EF4_006054-T1	0.0	0.983
+F93970D6	Umbilicaria	control_pos	TPP	full-length	TPP_bfd|F7164EF4_006100-T1	2.84e-124	1.0
+F93970D6	Umbilicaria	control_pos	Rad51	strong	Rad51|P25454	9.16e-129	0.66
+F7164EF4	Ptychographa	control_pos	TPS	full-length	TPS_bfd|F93970D6_001448-T1	0.0	0.998
+F7164EF4	Ptychographa	control_pos	TPP	full-length	TPP_bfd|F93970D6_001306-T1	4.03e-145	1.0
+F7164EF4	Ptychographa	control_pos	Rad51	full-length	Rad51|P25454	2.15e-123	0.78
+FE751814	Stereocaulon	control_pos	TPS	full-length	TPS|O59921	9.16e-92	0.944
+FE751814	Stereocaulon	control_pos	TPP	full-length	TPP_bfd|F93970D6_001306-T1	1.55e-42	0.988
+FE751814	Stereocaulon	control_pos	Rad51	full-length	Rad51|P25454	4.3e-133	0.733
+FA57834A	Acarospora	control_pos	TPS	full-length	TPS_bfd|F93970D6_001448-T1	0.0	0.996
+FA57834A	Acarospora	control_pos	TPP	full-length	TPP_bfd|F93970D6_001306-T1	1.07e-129	1.0
+FA57834A	Acarospora	control_pos	Rad51	full-length	Rad51|P25454	7.18e-128	0.78
+FD0AD664	Lambiella	control_pos	TPS	full-length	TPS_bfd|F7164EF4_006054-T1	1.09e-170	0.998
+FD0AD664	Lambiella	control_pos	TPP	full-length	TPP_bfd|F7164EF4_006100-T1	1.13e-152	1.0
+FD0AD664	Lambiella	control_pos	Rad51	strong	Rad51|P25454	6.08e-127	0.67
+F35C3FF1	Graphium	control_pos	TPS	full-length	TPS_bfd|F77F16E8_001687-T1	1.28e-150	0.979
+F35C3FF1	Graphium	control_pos	TPP	full-length	TPP_bfd|F77F16E8_004966-T1	5.68e-99	0.988
+F35C3FF1	Graphium	control_pos	Rad51	full-length	Rad51|P25454	7.55e-128	0.78
+F77F16E8	Ceratocystis	control_pos	TPS	full-length	TPS_bfd|F35C3FF1_000643-T1	0.0	0.983
+F77F16E8	Ceratocystis	control_pos	TPP	full-length	TPP_bfd|F35C3FF1_010566-T1	5.22e-103	0.996
+F77F16E8	Ceratocystis	control_pos	Rad51	full-length	Rad51|P25454	1.93e-126	0.78
+F496409D	Knoxdaviesia	control_pos	TPS	full-length	TPS_bfd|F35C3FF1_000643-T1	0.0	0.983
+F496409D	Knoxdaviesia	control_pos	TPP	full-length	TPP_bfd|F77F16E8_004966-T1	5.92e-128	0.996
+F496409D	Knoxdaviesia	control_pos	Rad51	full-length	Rad51|P25454	5.75e-126	0.78
+FC36CB78	Penicillium	control_pos	TPS	full-length	TPS_bfd|F93970D6_001448-T1	0.0	0.994
+FC36CB78	Penicillium	control_pos	TPP	full-length	TPP_bfd|F93970D6_001306-T1	3.11e-118	1.0
+FC36CB78	Penicillium	control_pos	Rad51	full-length	Rad51|P25454	2.4e-134	0.725
+FE548AFF	Aspergillus	control_pos	TPS	full-length	TPS_bfd|FC36CB78_002261-T1	7.82e-104	1.0
+FE548AFF	Aspergillus	control_pos	TPP	full-length	TPP_bfd|FC36CB78_016517-T1	1.98e-153	0.992
+FE548AFF	Aspergillus	control_pos	Rad51	strong	Rad51|P25454	1.1e-129	0.66

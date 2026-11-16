@@ -1,0 +1,13 @@
+assay TPS: strong in 10 of 10 positive-control genomes -> passes
+assay TPP: strong in 10 of 10 positive-control genomes -> passes
+Rad51 strong in 33 of 33 genomes
+
+lecan_primary: 10 genomes, 10 informative; {'candidate_loss': 10, 'annotation_gap': 0, 'ambiguous': 0}
+  clade verdict lecan_primary: supported (10 of 10 informative genomes are candidate losses, none an annotation gap)
+lecan_fragmented: 4 genomes, 0 informative; {'candidate_loss': 0, 'annotation_gap': 1, 'ambiguous': 3}
+scedo: 5 genomes, 5 informative; {'candidate_loss': 5, 'annotation_gap': 0, 'ambiguous': 0}
+  clade verdict scedo: supported (5 of 5 informative genomes are candidate losses, none an annotation gap)
+other_loss: 4 genomes, 4 informative; {'candidate_loss': 4, 'annotation_gap': 0, 'ambiguous': 0}
+
+T1 overall: supported (supported only if both clades are supported; a candidate loss is not proof)
+T2: evaluated only on the 19 candidate-loss genomes; lifestyle labels are joined in a separate step
