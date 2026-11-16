@@ -1,6 +1,7 @@
 """Compare a rerun (AO_BASE/results) with a reference results directory (default: the committed laptop results next to this script).
 Usage: python 18_compare_runs.py [reference_results_dir]   (run from AO_BASE)
-Writes results/rerun_vs_reference.csv (section, item, reference, rerun, diff) and prints it."""
+Writes results/rerun_vs_reference.csv (section, item, reference, rerun, diff) and results/rerun_vs_reference_files.csv
+(per result CSV: shapes, largest relative difference of numeric columns, equality of text columns), and prints both."""
 import os, sys, numpy as np, pandas as pd
 from pathlib import Path
 
@@ -61,14 +62,15 @@ for blk in ['struct', 'codon', 'pfam_ab', 'pfam_pa', 'trna']:
     nb = b[(b.block == blk) & (b.n_genera >= 3)].sort_values('dist_to_centroid').CLASS.head(3).tolist()
     add('position', f'{blk}: 3 nearest class centroids', ', '.join(na), ', '.join(nb))
 # --- phylogeny
-a, b = both('phylo_robustness.csv')
-for i in range(len(a)):
-    add('phylogeny', f'{a.tree[i]}: placement', a.placement[i], b.placement[i] if i < len(b) else None)
-    add('phylogeny', f'{a.tree[i]}: support AO+sister', a.support_of_AO_plus_sister[i], b.support_of_AO_plus_sister[i] if i < len(b) else np.nan)
-    add('phylogeny', f'{a.tree[i]}: AO monophyletic', a.AO_monophyletic[i], b.AO_monophyletic[i] if i < len(b) else None)
-a, b = both('phylo_patristic.csv', index_col=0)
-add('phylogeny', 'nearest 5 tips (patristic)', '; '.join(a.SPECIES.head(5)), '; '.join(b.SPECIES.head(5)))
-add('phylogeny', 'nearest tip distance', a.patristic_from_AO.iloc[0], b.patristic_from_AO.iloc[0])
+if (NEW / 'phylo_robustness.csv').exists():
+  a, b = both('phylo_robustness.csv')
+  for i in range(len(a)):
+      add('phylogeny', f'{a.tree[i]}: placement', a.placement[i], b.placement[i] if i < len(b) else None)
+      add('phylogeny', f'{a.tree[i]}: support AO+sister', a.support_of_AO_plus_sister[i], b.support_of_AO_plus_sister[i] if i < len(b) else np.nan)
+      add('phylogeny', f'{a.tree[i]}: AO monophyletic', a.AO_monophyletic[i], b.AO_monophyletic[i] if i < len(b) else None)
+  a, b = both('phylo_patristic.csv', index_col=0)
+  add('phylogeny', 'nearest 5 tips (patristic)', '; '.join(a.SPECIES.head(5)), '; '.join(b.SPECIES.head(5)))
+  add('phylogeny', 'nearest tip distance', a.patristic_from_AO.iloc[0], b.patristic_from_AO.iloc[0])
 # --- MAG QC
 a, b = both('mag_contam_summary.csv'); a, b = a.set_index('strain'), b.set_index('strain')
 for s in a.index: add('MAG QC', f'{s}: flagged % bp', a.at[s, 'flagged_pct_bp'], b.at[s, 'flagged_pct_bp'] if s in b.index else np.nan)
@@ -81,5 +83,18 @@ a, b = both('sprot_class_table.csv')
 for c in ['frac_SCHPO', 'frac_YEAST', 'frac_NEUCR', 'frac_Fungi', 'frac_prok_like', 'pid_SCHPO', 'pidcov_SCHPO', 'pid_NEUCR']:
     add('SwissProt', f'A. obscura {c}', a[c].iloc[0], b[c].iloc[0])
 R = pd.DataFrame(rows); R.to_csv(NEW / 'rerun_vs_reference.csv', index=False)
+# --- every result CSV: how far apart are the two runs?
+F = []
+for f in sorted(p.name for p in REF.glob('*.csv')):
+    if not (NEW / f).exists(): F.append(dict(file=f, note='not produced by the rerun')); continue
+    a, b = pd.read_csv(REF / f), pd.read_csv(NEW / f)
+    if a.shape != b.shape or list(a.columns) != list(b.columns): F.append(dict(file=f, shape_ref=str(a.shape), shape_rerun=str(b.shape), note='shape/columns differ')); continue
+    num = a.select_dtypes('number').columns.intersection(b.select_dtypes('number').columns); txt = [c for c in a.columns if c not in num]
+    x, y = a[num].to_numpy(float), b[num].to_numpy(float)
+    rel = np.abs(x - y) / np.maximum(np.abs(x), 1e-12)
+    F.append(dict(file=f, shape_ref=str(a.shape), shape_rerun=str(b.shape), identical_bytes=(REF / f).read_bytes() == (NEW / f).read_bytes(),
+                  max_rel_diff=np.nanmax(rel) if rel.size and np.isfinite(rel).any() else 0.0, n_cells_rel_gt_1e6=int(np.nansum(rel > 1e-6)),
+                  nan_pattern_equal=bool((np.isnan(x) == np.isnan(y)).all()), text_columns_equal=all((a[c].astype(str) == b[c].astype(str)).all() for c in txt)))
+F = pd.DataFrame(F); F.to_csv(NEW / 'rerun_vs_reference_files.csv', index=False)
 pd.set_option('display.width', 250); pd.set_option('display.max_rows', 1000); pd.set_option('display.max_colwidth', 90)
-print('reference:', REF); print(R.to_string(index=False))
+print('reference:', REF); print(R.to_string(index=False)); print(F.to_string(index=False))
