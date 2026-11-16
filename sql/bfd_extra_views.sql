@@ -262,6 +262,44 @@ FROM gene_transcripts t;
 COMMENT ON VIEW v_gene_transcripts IS 'gene_transcripts plus has_start and has_stop (BOOLEAN; NULL where the table holds the text NULL) and q_model (complete model: not partial, start and stop codon present; the atlas Q-model flag). In gene_transcripts itself has_start_codon and has_stop_codon are VARCHAR TRUE/FALSE/NULL. Filter with transcript_id = or in_genome(transcript_id, LOCUSTAG).';
 
 -- ---------------------------------------------------------------------------
+-- v_genome_truncation: per-genome partial-gene rate next to assembly contiguity
+-- ---------------------------------------------------------------------------
+-- Why (2026-11-16): after gene_stats was rebuilt with the upper-case fix (Fungi_BFD fb1d7cd), 0.14% of
+-- 249,366,496 transcripts are partial. The genomes that still have a high partial rate are fragmented
+-- assemblies, so the partial calls are real truncation at contig ends, not a soft-masking artifact:
+--   partial rate   genomes   median contigs   median N50 (bp)   median masked_pct
+--   <= 1%           22,976        208            329,909             10.4
+--   1-5%               348      3,458             13,717             12.8
+--   5-10%               58      4,761              9,264              9.6
+--   > 10%               30      3,596              4,185              8.8
+-- (Same 250 genomes before the fix: 14.23% partial; after: 0.19%.) This is a correlation across genomes.
+-- Individual genes were not checked against contig ends.
+-- truncation_class thresholds on pct_partial are a descriptive choice: high > 10, moderate > 5, low > 1, else none.
+-- q_truncated = pct_partial > 5 (moderate or high): flag genomes whose gene counts and protein sets are
+-- affected by truncation, e.g. when documenting problems in gene-level analyses.
+-- Scans gene_transcripts (249 M rows, 3 columns): about a minute. One row per genome with transcripts
+-- (23,412 on 2026-11-16; suppressed genomes are not in the tables).
+CREATE OR REPLACE VIEW v_genome_truncation AS
+WITH t AS (
+  SELECT split_part(transcript_id, '_', 1) AS LOCUSTAG,
+         count(*) AS n_transcripts,
+         count(*) FILTER (WHERE is_partial) AS n_partial,
+         count(*) FILTER (WHERE has_start_codon = 'FALSE') AS n_no_start,
+         count(*) FILTER (WHERE has_stop_codon = 'FALSE') AS n_no_stop
+  FROM gene_transcripts GROUP BY 1
+), p AS (
+  SELECT t.*, round(100.0 * n_partial / n_transcripts, 2) AS pct_partial FROM t
+)
+SELECT p.LOCUSTAG, s.ASMID, s.SPECIES, s.STRAIN, p.n_transcripts, p.n_partial, p.pct_partial,
+       p.n_no_start, p.n_no_stop, a.contig_count, a.N50_bp, a.masked_pct,
+       CASE WHEN p.pct_partial > 10 THEN 'high' WHEN p.pct_partial > 5 THEN 'moderate'
+            WHEN p.pct_partial > 1 THEN 'low' ELSE 'none' END AS truncation_class,
+       p.pct_partial > 5 AS q_truncated
+FROM p LEFT JOIN species s ON s.LOCUSTAG = p.LOCUSTAG
+       LEFT JOIN asm_stats a ON a.LOCUSTAG = p.LOCUSTAG;
+COMMENT ON VIEW v_genome_truncation IS 'One row per genome: n_transcripts, n_partial, pct_partial, n_no_start, n_no_stop from gene_transcripts, plus contig_count, N50_bp, masked_pct. truncation_class = high (>10% partial), moderate (>5), low (>1), none. q_truncated = pct_partial > 5. High-partial genomes are fragmented assemblies (median N50 4,185 bp for >10%, 329,909 bp for <=1%); masked_pct is similar across classes, so the partials are real truncation, not a masking artifact. Scans gene_transcripts (about a minute).';
+
+-- ---------------------------------------------------------------------------
 -- v_gene_introns_phase: intron position and phase recomputed from gene_CDS
 -- ---------------------------------------------------------------------------
 -- STILL NEEDED on 2026-11-11: gene_introns.parquet (written 2026-11-08) has the off-by-one bug. In it,
