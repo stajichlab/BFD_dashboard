@@ -21,7 +21,9 @@ AN=${AO_REPO:?set AO_REPO}/docs/analyses/antarctolithica
 S=$AN/scripts
 export NCPU=${SLURM_CPUS_PER_TASK:-4}
 export PYTHONNOUSERSITE=1   # keep ~/.local site-packages out of the pixi environment
-PY="pixi run --manifest-path $AN/pixi.toml python"
+# pixi environment (one-time: cd $AN && pixi install); call its python directly so a job never re-solves the env
+PY=$AN/.pixi/envs/default/bin/python
+[ -x "$PY" ] || PY="pixi run --manifest-path $AN/pixi.toml python"
 cd "$AO_BASE"
 echo "stage=$STAGE host=$(hostname) start=$(date -Is) commit=${AO_COMMIT:-unknown} AO_BASE=$AO_BASE BFD_DATA=$BFD_DATA NCPU=$NCPU"
 t0=$(date +%s)
@@ -31,6 +33,8 @@ case $STAGE in
 prep)   # data staging, comparison set, features, ordination/PERMANOVA, univariate, SwissProt + contamination, AAI, gene content, composition
     module load diamond/2.1.12
     step $PY $S/00_prep_data.py
+    # not rerun (needs hand-picked Saitoella queries): carry the committed translated-search check forward for the report
+    cp $AN/results/loss_check_blastx.csv results/
     step $PY $S/01_build_set.py                       | tee results/build_set.log
     step $PY $S/01b_swissprot_extract.py
     # phylogeny taxa: re-derive and report, but use the published 159-taxon set (AO_PHYLO_TAXA) so the tree is comparable
