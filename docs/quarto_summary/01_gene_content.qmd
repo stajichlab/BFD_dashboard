@@ -17,7 +17,7 @@ fig("F03_genome_size_vs_genes", "Genome size against protein-coding gene number 
 fig("F02_gene_count", "Protein-coding genes per genome by phylum (log scale).")
 ```
 
-Gene number scales with genome size within each lineage, but lineages differ in intercept (gene density, intron content and repeat content). Compaction and expansion are examined as hypotheses in the [atlas](../summary_atlas/H2b_compaction_extremes.md).
+Gene number scales with genome size within each lineage, but lineages differ in intercept (gene density, intron content and repeat content). Compaction and expansion are examined as hypotheses in the [atlas](https://github.com/stajichlab/BFD_dashboard/blob/main/docs/summary_atlas/H2b_compaction_extremes.md).
 
 ## Protein length and composition
 
@@ -26,7 +26,7 @@ fig("F04_protein_length", "Mean protein length per genome by phylum.")
 fig("F05b_gc", "Genome GC content by phylum.")
 ```
 
-Mean protein length is sensitive to gene-model quality (partial and fused models), see the quality panel below and the [H1 quality page](../summary_atlas/H1_quality.md).
+Mean protein length is sensitive to gene-model quality (partial and fused models), see the quality panel below and the [H1 quality page](https://github.com/stajichlab/BFD_dashboard/blob/main/docs/summary_atlas/H1_quality.md).
 
 ## Assembly and annotation quality context
 

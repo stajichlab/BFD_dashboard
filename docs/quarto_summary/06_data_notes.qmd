@@ -12,7 +12,10 @@ title: "Data and methods"
 
 1. `workflows/summary/build_summary.sh` runs `bin/summary/build_summary_tables.py` on the HPCC and writes small per-genome parquet tables.
 2. `bin/summary/make_figures.py DATA OUT` writes the PNG and SVG figures and TSV tables used by these pages.
-3. `quarto render docs/quarto_summary` builds the site (Quarto is not installed on the HPCC; render locally or after installing it).
+3. Render on the laptop (Quarto is not installed on the HPCC; rendering only formats the finished figures and tables). Needs `quarto` plus a Python with `pandas tabulate jupyter`; set `QUARTO_PYTHON` to it. **Render from a copy or checkout that is not under a hidden folder** (for example not under `.claude/worktrees/`): Quarto skips files whose path contains a dot-folder and then renders 0 files without an error.
+   ```
+   cd docs/quarto_summary && quarto render      # writes _site/
+   ```
 4. Test: `bin/summary/test_make_figures.py` runs the figure code on synthetic tables.
 
 ## Definitions
