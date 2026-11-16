@@ -1,6 +1,6 @@
 # J12: end-to-end rebuild of Analysis E (H1-H4) from the local BFD database
 
-Date: 2026-11-15. Status: **rebuild ran; headline H1 and H2 numbers reproduce, most other tables differ slightly, and two input differences were found.**
+Date: 2026-11-15. Status: **rebuild ran; headline H1 and H2 numbers reproduce, most other tables differ slightly; one input difference (a reconstructed genome set) and one fixed bug in the old copy (the partial-transcript flag) explain the rest.** MotherDuck is being phased out, so the local `BFD.duckdb` is the reference and the MotherDuck tables below are the historical originals.
 The earlier Analysis E numbers had never been reproduced from empty scratch (only later steps were re-run). J12 does that on the HPCC, from the saved SQL.
 
 ## What was run
@@ -38,7 +38,7 @@ Identical in row count to the MotherDuck originals: `kw_pfam_matrix` (32,265,977
 | H2: Saccharomycotina vs Pezizomycotina 27.5 Mb, introns 2% | 27.5 Mb; 72% gene number, 23% intergenic, 2% introns | **reproduced** |
 | H1: mean protein length unchanged in core Kickxellales (delta +0.09) | `mean_len` +0.09 | **reproduced** |
 | H1: multidomain fraction, core Kickxellales vs Mucorales delta -0.58 | `f_multi` -0.58; Harpellales -0.64, Dimargaritales -0.33, Microsporidia -1.00 | **reproduced** |
-| H1: -0.30 "on non-partial genes" | `f_multi_np` is identical to `f_multi` (-0.58) in every group | **not reproduced; cause below (partial flag)** |
+| H1: -0.30 "on non-partial genes" | `f_multi_np` is identical to `f_multi` (-0.58) in every group | **superseded**: the original used a partial flag with a case bug (below); with the corrected flag, non-partial and all proteins give the same result |
 | H4: copy loss in Kickxellales/yeasts, overlap enrichment (41% / 59%, 0.62-0.89 observed over expected, overlap 1.87 with Harpellales) | table-level sums only (see next paragraph); the J12 result queries for H3/H4 were not written out as separate files | **consistent, not checked number by number** |
 | H3: ENC residual +0.054, tRNA match 0.47 vs 0.61, GC3 67% | table-level sums only | **consistent, not checked number by number** |
 
@@ -50,13 +50,15 @@ These are sums over a few dozen to a few hundred rows, so they show the tables a
 
 1. **The genome set was reconstructed, not saved.** The original `kx_genomes` definition was only described in prose. The rebuilt table matches the MotherDuck counts in every group relevant to the Kickxellomycota questions (Kickxellomycota groups, Mucorales, Zoopagales, Saccharomycotina classes, Pezizomycotina classes except one), but has **26 more genomes** in four unrelated groups:
    Microsporidia 102 vs 83 (+19), chytrids + Monoblepharidomycota 63 vs 60 (+3), *Malassezia* 24 vs 21 (+3), Pezizomycotina Sordariomycetes 280 vs 279 (+1). The reason (annotation-status or species-deduplication rule) was not found. Microsporidia enter Analysis E only as the one lineage with whole-family simplification, so this affects H1 and H4 for them, not the Kickxellomycota comparisons.
-2. **`gene_transcripts.is_partial` is very different in the two databases.** In MotherDuck `bfd`, 36,237,955 of 249,546,610 transcripts (14.5%) are partial, and the flag is exactly "missing start or stop codon". In the local `BFD.duckdb`, **357,764 of 249,366,496 (0.14%)** are partial (again identical to missing start or stop). The rebuild's non-partial metrics therefore equal the all-protein metrics, which explains the non-reproduced `f_multi_np` and the small `mean_len_np` shifts, and it also changes the H1 partial-gene
-   fractions. The local copy also has 180,114 fewer transcripts (249,366,496 vs 249,546,610), so the two databases are different snapshots or builds. Which copy has the right partial flags was not determined; `gene_transcripts` is loaded from the shared parquet, not built by `workflows/build_bfd_db.sh`. This should go to the owner of the BFD build as an issue.
+2. **The partial-transcript flag differs because MotherDuck had a case bug, which was fixed before the local database was built (resolved 2026-11-15).** In MotherDuck `bfd`, 36,237,955 of 249,546,610 transcripts (14.5%) are partial, in almost every genome (16,262 of 23,452 genomes at 10-50% partial, one genome at or below 2%), and the flag is exactly "missing start or stop codon". In the shared parquet and the local `BFD.duckdb`, 357,764 of 249,366,496 (0.14%) are partial
+   (median per-genome partial fraction 0.0001; 23,322 of 23,412 genomes below 5%, 30 at 10% or more, maximum 38%). The cause: `nextflow/bin/build_genestats_table.py` compared the first CDS codon with `"ATG"` and the last with the stop codons on text read from the genome, so any soft-masked (lower-case) start or stop made the transcript "partial". Commit `fb1d7cd` in `stajichlab/Fungi_BFD` (2026-11-11 12:00, now on `main`) reads the genome upper-case
+   (`Fasta(dna, sequence_always_upper=True)`). All 23,412 per-genome `gene_transcripts` and `gene_introns` caches were regenerated on 2026-11-11 between 15:02 and 18:31 (none older than the fix), the merged `gene_*` parquet files are dated 23:26 and `BFD.duckdb` 23:41; all `gene_introns` splice sites are upper-case (508,436,782 rows, none lower-case). **The local database is the corrected one and the MotherDuck copy is stale.** The rebuild's non-partial metrics therefore equal the all-protein metrics
+   (the earlier "non-partial" restriction had removed the 14.5% of proteins that were only "partial" because of lower-case start or stop codons). The local copy also has 180,114 fewer transcripts than MotherDuck (249,366,496 vs 249,546,610) and 23,412 genomes vs 23,452, so the two were also different snapshots.
 3. **Not separated:** how much of each remaining shift comes from the extra genomes (1) versus the transcript snapshot (2).
 
 ## Interpretation (not shown by the data)
 
-The structure of Analysis E reproduces from saved SQL: the H2 accounting and the H1 architecture results are stable to a different database build and a reconstructed genome set. The one claim that depends on the partial-gene flag (-0.30 on non-partial genes) cannot be checked until the flag question is settled; section E should keep it, marked as unreproduced.
+The structure of Analysis E reproduces from saved SQL: the H2 accounting and the H1 architecture results are stable to a different database build and a reconstructed genome set. The one claim that depended on the partial-gene flag, "-0.30 on non-partial genes", and the H1 correlation of the multidomain fraction with the partial-gene fraction (r = -0.70) were computed with the buggy flag, so they are **superseded**, not just unreproduced: they should be recomputed on the corrected flag (the first is already answered by the rebuild: -0.58, the same as all proteins).
 
 ## Limits
 
@@ -66,6 +68,6 @@ The structure of Analysis E reproduces from saved SQL: the H2 accounting and the
 
 ## Next
 
-1. Open an issue for the BFD build owner: `gene_transcripts.is_partial` (and `has_start_codon`/`has_stop_codon`) differ between MotherDuck and the local `BFD.duckdb` (14.5% vs 0.14% partial).
+1. Recompute the H1 correlation with the partial-gene fraction (r = -0.70 in section E) on the corrected flag; the 14.5% partial rate it was computed on was a case artifact. Check the 30 genomes that still have 10% or more partial transcripts (maximum 38%); they are probably real (fragmentary gene models), but this was not tested.
 2. Find why 26 more genomes enter the rebuilt `kx_genomes`, then freeze the definition in the repo.
 3. Write the H3 and H4 result queries to files in J12, so the headline numbers can be compared directly, and re-run after the partial-flag question is answered.

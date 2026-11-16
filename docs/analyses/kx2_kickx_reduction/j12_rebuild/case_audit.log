@@ -1,0 +1,18 @@
+gene_transcripts [('gene_id', 'VARCHAR'), ('transcript_id', 'VARCHAR'), ('chrom', 'VARCHAR'), ('start', 'BIGINT'), ('end', 'BIGINT'), ('strand', 'BIGINT'), ('is_partial', 'BOOLEAN'), ('has_start_codon', 'VARCHAR'), ('has_stop_codon', 'VARCHAR'), ('CDS_length', 'BIGINT'), ('md5checksum', 'VARCHAR')]
+gene_introns [('intron_id', 'VARCHAR'), ('transcript_id', 'VARCHAR'), ('intron_number', 'BIGINT'), ('chrom', 'VARCHAR'), ('start', 'BIGINT'), ('end', 'BIGINT'), ('strand', 'BIGINT'), ('splice_5', 'VARCHAR'), ('splice_3', 'VARCHAR'), ('GC_content', 'DOUBLE'), ('codon_position', 'BIGINT'), ('codon_frame', 'BIGINT')]
+gene_proteins [('gene_id', 'VARCHAR'), ('protein_id', 'VARCHAR'), ('transcript_id', 'VARCHAR'), ('length', 'BIGINT'), ('md5checksum', 'VARCHAR')]
+gene_CDS [('cds_id', 'VARCHAR'), ('transcript_id', 'VARCHAR'), ('order', 'BIGINT'), ('chrom', 'VARCHAR'), ('start', 'BIGINT'), ('end', 'BIGINT'), ('strand', 'BIGINT'), ('GC_content', 'DOUBLE')]
+gene_exons [('exon_id', 'VARCHAR'), ('transcript_id', 'VARCHAR'), ('order', 'BIGINT'), ('chrom', 'VARCHAR'), ('start', 'BIGINT'), ('end', 'BIGINT'), ('strand', 'BIGINT'), ('GC_content', 'DOUBLE')]
+gene_info [('gene_id', 'VARCHAR'), ('LOCUSTAG', 'VARCHAR'), ('chrom', 'VARCHAR'), ('start', 'BIGINT'), ('end', 'BIGINT'), ('strand', 'BIGINT'), ('gene_type', 'VARCHAR')]
+gene_trnas [('gene_id', 'VARCHAR'), ('amino_acid', 'VARCHAR'), ('codon', 'VARCHAR')]
+
+== per-genome partial fraction (gene_transcripts) ==
+[(23412, 0, 10, 20, 60, 23322, 0.0001, 0.38, 249366496)]
+genomes with partial fraction >= 0.10 (first 25):
+[('F7EF265E', 4086, 0.38, 0.174, 0.239), ('F441D06F', 3196, 0.333, 0.159, 0.192), ('FAEFFB7C', 888, 0.297, 0.175, 0.234), ('F6D72B27', 5417, 0.297, 0.173, 0.154), ('FF63F19C', 1972, 0.285, 0.142, 0.164), ('F0D6E831', 2044, 0.256, 0.131, 0.134), ('F628CD9B', 6055, 0.251, 0.098, 0.164), ('F03184AB', 4318, 0.243, 0.093, 0.163), ('F4CF94BB', 2218, 0.218, 0.129, 0.104), ('F25D2459', 1967, 0.211, 0.104, 0.118), ('F2A2A24C', 480, 0.198, 0.1, 0.163), ('FE9450BB', 6097, 0.177, 0.049, 0.131), ('F64AD3CA', 683, 0.161, 0.095, 0.101), ('F92633E0', 1026, 0.16, 0.1, 0.13), ('F1FC4D32', 3560, 0.155, 0.057, 0.104), ('F2D6BDBB', 3586, 0.154, 0.057, 0.102), ('F96776E2', 3415, 0.152, 0.058, 0.1), ('F32A3C71', 3897, 0.148, 0.056, 0.097), ('FEB5CE7F', 14952, 0.141, 0.037, 0.106), ('FF335B0F', 3680, 0.14, 0.05, 0.094), ('F395675B', 3588, 0.14, 0.051, 0.093), ('FB86E209', 3791, 0.14, 0.052, 0.094), ('F1FD4C15', 3701, 0.139, 0.05, 0.092), ('F8A60E32', 3713, 0.138, 0.049, 0.092), ('F70654B3', 3499, 0.128, 0.046, 0.086)]
+
+== lower-case in sequence-derived columns ==
+gene_transcripts distinct has_start_codon / has_stop_codon values: [('TRUE', 'TRUE', 244455154), ('NULL', 'NULL', 4553578), ('TRUE', 'FALSE', 218615), ('FALSE', 'TRUE', 131225), ('FALSE', 'FALSE', 7924)]
+gene_introns splice_5 lower-case rows: [(0, 508436782)]
+gene_introns splice_3 lower-case rows: [(0, 508436782)]
+gene_introns top splice_5 / splice_3 pairs: [('GT', 'AG', 502448643), ('GC', 'AG', 5988094), ('CT', 'AC', 44), ('CT', 'GC', 1)]
