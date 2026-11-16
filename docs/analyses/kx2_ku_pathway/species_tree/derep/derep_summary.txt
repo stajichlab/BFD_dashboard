@@ -1,0 +1,7 @@
+ingroup strains: 107; pairs with a fastANI value: 1403
+threshold 99% : 62 clusters; sizes [12, 8, 5, 4, 4, 4, 3, 3, 2, 2, 2, 2] ...; singletons 44
+threshold 97% : 38 clusters; sizes [24, 8, 8, 6, 5, 5, 4, 4, 4, 4, 4, 2] ...; singletons 23
+threshold 95% : 36 clusters; sizes [24, 8, 8, 6, 5, 5, 5, 4, 4, 4, 4, 3] ...; singletons 21
+primary threshold 99%: 62 Coemansia representatives + 14 outgroup taxa retained
+highest pairwise ANI values: 99.98, 99.97, 99.96, 99.96, 99.96, 99.95, 99.92, 99.92, 99.91, 99.91
+pairs >= 99: 116; >= 97: 395; >= 95: 407; >= 90: 488

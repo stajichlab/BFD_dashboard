@@ -1,0 +1,129 @@
+locustag	genus	grp	n_loci	locus_bits
+F1C537C3	Dimargaris	Dimargaritales	2	R51=504/DMC=313 | R51=0/DMC=120
+F1C9E2AA	Dispira	Dimargaritales	2	R51=503/DMC=308 | R51=0/DMC=114
+F4FD0401	Tieghemiomyces	Dimargaritales	2	R51=507/DMC=309 | R51=507/DMC=309
+F3D937C5	Capniomyces	Harpellales	1	R51=397/DMC=237
+F45BD9C7	Furculomyces	Harpellales	2	R51=238/DMC=291 | R51=263/DMC=154
+FCCDAB75	Smittium	Harpellales	2	R51=281/DMC=296 | R51=253/DMC=140
+F23D95F9	Zancudomyces	Harpellales	1	R51=249/DMC=142
+FD8916FB	Coemansia	Kickxellales_core	1	R51=469/DMC=305
+F0DE0BF4	Coemansia	Kickxellales_core	1	R51=469/DMC=305
+F3D51D57	Coemansia	Kickxellales_core	1	R51=466/DMC=309
+FC1174D9	Coemansia	Kickxellales_core	1	R51=471/DMC=303
+F7A7AA4C	Coemansia	Kickxellales_core	1	R51=486/DMC=308
+F2470181	Coemansia	Kickxellales_core	1	R51=486/DMC=308
+F4F8BFB2	Coemansia	Kickxellales_core	1	R51=486/DMC=308
+F0DB79EE	Coemansia	Kickxellales_core	1	R51=471/DMC=303
+F333880B	Coemansia	Kickxellales_core	1	R51=469/DMC=305
+F80EB351	Coemansia	Kickxellales_core	1	R51=486/DMC=308
+F4C3EFF5	Dipsacomyces	Kickxellales_core	0	
+F9F51274	Kickxella	Kickxellales_core	1	R51=461/DMC=301
+F43C8248	Linderina	Kickxellales_core	1	R51=464/DMC=308
+FE0E32D4	Martensiomyces	Kickxellales_core	1	R51=464/DMC=303
+F8E635D0	Rhizopus	Mucoromycota_s.l.	2	R51=431/DMC=292 | R51=130/DMC=182
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	1	R51=513/DMC=311
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	1	R51=509/DMC=322
+F7FE4923	Ramicandelaber	Ramicandelaber	1	R51=447/DMC=314
+F3F252DC	Caulochytrium	Root	2	R51=503/DMC=306 | R51=170/DMC=212
+FEB493EF	Piptocephalis	Zoopagales	1	R51=449/DMC=268
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	1	R51=132/DMC=183
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	2	R51=420/DMC=313 | R51=294/DMC=337
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	1	R51=165/DMC=114
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	2	R51=412/DMC=306 | R51=182/DMC=215
+F00A57ED	Coemansia	Kickxellales_core	1	R51=470/DMC=308
+F023BB0A	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+F02CB1ED	Coemansia	Kickxellales_core	1	R51=469/DMC=308
+F05FC232	Coemansia	Kickxellales_core	0	
+F090F877	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+F097EC52	Coemansia	Kickxellales_core	1	R51=478/DMC=303
+F0A69C67	Coemansia	Kickxellales_core	1	R51=486/DMC=308
+F0D6C540	Coemansia	Kickxellales_core	1	R51=469/DMC=304
+F0DFB354	Coemansia	Kickxellales_core	1	R51=469/DMC=305
+F0E0ADB2	Coemansia	Kickxellales_core	1	R51=469/DMC=304
+F1649C35	Coemansia	Kickxellales_core	1	R51=477/DMC=303
+F1709B5F	Coemansia	Kickxellales_core	1	R51=469/DMC=304
+F1C72083	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+F1DEA344	Coemansia	Kickxellales_core	1	R51=467/DMC=308
+F235E971	Coemansia	Kickxellales_core	1	R51=477/DMC=303
+F242D38C	Coemansia	Kickxellales_core	1	R51=469/DMC=306
+F24A7D8D	Coemansia	Kickxellales_core	1	R51=468/DMC=307
+F24CD14F	Coemansia	Kickxellales_core	1	R51=486/DMC=308
+F258DE34	Coemansia	Kickxellales_core	1	R51=484/DMC=313
+F26DD490	Coemansia	Kickxellales_core	1	R51=484/DMC=305
+F340C8D3	Coemansia	Kickxellales_core	1	R51=470/DMC=308
+F35EFF3E	Coemansia	Kickxellales_core	1	R51=469/DMC=306
+F3E9A416	Coemansia	Kickxellales_core	2	R51=469/DMC=304 | R51=469/DMC=304
+F3F357F6	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+F40251F8	Coemansia	Kickxellales_core	1	R51=477/DMC=303
+F4A7DF8C	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+F4CFDB08	Coemansia	Kickxellales_core	1	R51=462/DMC=308
+F4DA7CFA	Coemansia	Kickxellales_core	1	R51=484/DMC=310
+F50540CB	Coemansia	Kickxellales_core	1	R51=470/DMC=308
+F52B818A	Coemansia	Kickxellales_core	1	R51=468/DMC=307
+F5353C03	Coemansia	Kickxellales_core	1	R51=469/DMC=305
+F53A5B42	Coemansia	Kickxellales_core	1	R51=469/DMC=308
+F55D1F1F	Coemansia	Kickxellales_core	1	R51=468/DMC=307
+F56A3D5B	Coemansia	Kickxellales_core	1	R51=477/DMC=303
+F5845C02	Coemansia	Kickxellales_core	0	
+F5AC56AA	Coemansia	Kickxellales_core	1	R51=477/DMC=303
+F5BD664F	Coemansia	Kickxellales_core	1	R51=471/DMC=303
+F5E0444E	Coemansia	Kickxellales_core	1	R51=464/DMC=308
+F61EE814	Coemansia	Kickxellales_core	1	R51=191/DMC=0
+F6545673	Coemansia	Kickxellales_core	1	R51=474/DMC=303
+F6CB2D58	Coemansia	Kickxellales_core	1	R51=485/DMC=313
+F6D48826	Coemansia	Kickxellales_core	1	R51=469/DMC=308
+F6E9E45A	Coemansia	Kickxellales_core	1	R51=477/DMC=303
+F735041E	Coemansia	Kickxellales_core	1	R51=270/DMC=176
+F771CC9E	Coemansia	Kickxellales_core	1	R51=469/DMC=306
+F7943FC0	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+F7B5F16C	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+F7BBDC12	Coemansia	Kickxellales_core	1	R51=484/DMC=313
+F7DF6513	Coemansia	Kickxellales_core	1	R51=459/DMC=288
+F8348CBD	Coemansia	Kickxellales_core	1	R51=477/DMC=303
+F8384A64	Coemansia	Kickxellales_core	2	R51=469/DMC=302 | R51=469/DMC=304
+F8589389	Coemansia	Kickxellales_core	0	
+F889F3AF	Coemansia	Kickxellales_core	0	
+F897AC32	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+F8C73C93	Coemansia	Kickxellales_core	1	R51=469/DMC=308
+F8EA1BC9	Coemansia	Kickxellales_core	1	R51=476/DMC=313
+F9025F8A	Coemansia	Kickxellales_core	1	R51=466/DMC=309
+F90C8E1A	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+F9197CED	Coemansia	Kickxellales_core	1	R51=469/DMC=308
+F9735524	Coemansia	Kickxellales_core	1	R51=476/DMC=311
+F97F055E	Coemansia	Kickxellales_core	1	R51=484/DMC=310
+F993D0AD	Coemansia	Kickxellales_core	1	R51=486/DMC=309
+F9A4B572	Coemansia	Kickxellales_core	1	R51=474/DMC=313
+FA0999E6	Coemansia	Kickxellales_core	1	R51=484/DMC=305
+FA34ED10	Coemansia	Kickxellales_core	1	R51=471/DMC=303
+FA376F2E	Coemansia	Kickxellales_core	1	R51=476/DMC=310
+FA99CC43	Coemansia	Kickxellales_core	1	R51=464/DMC=308
+FA9ADEB3	Coemansia	Kickxellales_core	2	R51=484/DMC=313 | R51=468/DMC=307
+FB3261E7	Coemansia	Kickxellales_core	1	R51=471/DMC=303
+FB97D937	Coemansia	Kickxellales_core	2	R51=469/DMC=304 | R51=469/DMC=304
+FB9A10E8	Coemansia	Kickxellales_core	1	R51=486/DMC=313
+FBC9CC9D	Coemansia	Kickxellales_core	1	R51=471/DMC=303
+FBF4A129	Coemansia	Kickxellales_core	1	R51=464/DMC=308
+FBF7F5A3	Coemansia	Kickxellales_core	1	R51=474/DMC=312
+FC37F49D	Coemansia	Kickxellales_core	1	R51=469/DMC=308
+FC546B88	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+FCE53DE3	Coemansia	Kickxellales_core	1	R51=469/DMC=305
+FD12E2B4	Coemansia	Kickxellales_core	1	R51=469/DMC=305
+FD3FEA21	Coemansia	Kickxellales_core	1	R51=473/DMC=306
+FD671B08	Coemansia	Kickxellales_core	1	R51=464/DMC=309
+FD7FFCA4	Coemansia	Kickxellales_core	2	R51=484/DMC=310 | R51=484/DMC=310
+FD97B502	Coemansia	Kickxellales_core	1	R51=469/DMC=305
+FDF042C1	Coemansia	Kickxellales_core	1	R51=469/DMC=308
+FDFF0B8B	Coemansia	Kickxellales_core	1	R51=471/DMC=303
+FE019C62	Coemansia	Kickxellales_core	2	R51=484/DMC=310 | R51=484/DMC=310
+FE3CD348	Coemansia	Kickxellales_core	1	R51=471/DMC=303
+FE3D2DE5	Coemansia	Kickxellales_core	1	R51=471/DMC=303
+FE4EB007	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+FE60C51C	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+FE668E47	Coemansia	Kickxellales_core	1	R51=477/DMC=303
+FE83C30F	Coemansia	Kickxellales_core	1	R51=475/DMC=303
+FE980263	Coemansia	Kickxellales_core	1	R51=477/DMC=311
+FEDE47E1	Coemansia	Kickxellales_core	1	R51=469/DMC=304
+FEE0DDE5	Coemansia	Kickxellales_core	1	R51=470/DMC=307
+FF5D60B2	Coemansia	Kickxellales_core	1	R51=477/DMC=311
+FFBB50EB	Coemansia	Kickxellales_core	1	R51=469/DMC=304
+FFF4186D	Coemansia	Kickxellales_core	1	R51=464/DMC=309

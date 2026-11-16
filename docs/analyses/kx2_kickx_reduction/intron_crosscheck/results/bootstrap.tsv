@@ -1,0 +1,13 @@
+setting	group	metric	delta_median	delta_2.5	delta_97.5	share_le_minus0.5
+A	Harpellales	mean_introns	-0.9375	-1.0	-0.875	1.0
+A	Harpellales	per_kb	-0.875	-0.9375	-0.75	1.0
+A	Kickxellales all	mean_introns	-0.9642857142857143	-1.0	-0.9285714285714286	1.0
+A	Kickxellales all	per_kb	-0.9285714285714286	-1.0	-0.8928571428571429	1.0
+A	Kickxellales core	mean_introns	-1.0	-1.0	-1.0	1.0
+A	Kickxellales core	per_kb	-1.0	-1.0	-1.0	1.0
+C	Harpellales	mean_introns	-1.0	-1.0	-1.0	1.0
+C	Harpellales	per_kb	-1.0	-1.0	-0.75	1.0
+C	Kickxellales all	mean_introns	-1.0	-1.0	-1.0	1.0
+C	Kickxellales all	per_kb	-1.0	-1.0	-0.9642857142857143	1.0
+C	Kickxellales core	mean_introns	-1.0	-1.0	-1.0	1.0
+C	Kickxellales core	per_kb	-1.0	-1.0	-1.0	1.0

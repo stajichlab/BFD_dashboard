@@ -1,0 +1,27 @@
+Distinct Rad51/Dmc1-like loci per genome (tblastn round 3; e<=1e-25, >=150 aa, HSPs merged within 20 kb)
+Dimargaritales                   n=  3 median=2.0 dist={2: 3}
+Entomophthorales_Basidiobolus    n=  4 median=1.5 dist={1: 2, 2: 2}
+Harpellales                      n=  4 median=1.5 dist={1: 2, 2: 2}
+Kickxellales_core                n=111 median=1.0 dist={0: 5, 1: 100, 2: 6}
+Mucoromycota_s.l.                n=  1 median=2.0 dist={2: 1}
+Mycoemilia_Spiromyces            n=  2 median=1.0 dist={1: 2}
+Ramicandelaber                   n=  1 median=1.0 dist={1: 1}
+Root                             n=  1 median=2.0 dist={2: 1}
+Zoopagales                       n=  1 median=1.0 dist={1: 1}
+genomes searched 128 of 128
+loci in genomes with 2+ loci: best bit score per query key (R51=Rad51 queries, DMC=Dmc1 queries); locus is Dmc1-like if DMC >> R51
+Dimargaritales     Dimargaris      F1C537C3 R51=504/DMC=313 | R51=0/DMC=120
+Dimargaritales     Dispira         F1C9E2AA R51=503/DMC=308 | R51=0/DMC=114
+Dimargaritales     Tieghemiomyces  F4FD0401 R51=507/DMC=309 | R51=507/DMC=309
+Harpellales        Furculomyces    F45BD9C7 R51=263/DMC=154 | R51=238/DMC=291
+Harpellales        Smittium        FCCDAB75 R51=253/DMC=140 | R51=281/DMC=296
+Mucoromycota_s.l.  Rhizopus        F8E635D0 R51=431/DMC=292 | R51=130/DMC=182
+Root               Caulochytrium   F3F252DC R51=503/DMC=306 | R51=170/DMC=212
+Entomophthorales_B Capillidium     FDAC0301 R51=420/DMC=313 | R51=294/DMC=337
+Entomophthorales_B Neoconidiobolus FC345CF7 R51=412/DMC=306 | R51=182/DMC=215
+Kickxellales_core  Coemansia       F3E9A416 R51=469/DMC=304 | R51=469/DMC=304
+Kickxellales_core  Coemansia       F8384A64 R51=469/DMC=302 | R51=469/DMC=304
+Kickxellales_core  Coemansia       FA9ADEB3 R51=484/DMC=313 | R51=468/DMC=307
+Kickxellales_core  Coemansia       FB97D937 R51=469/DMC=304 | R51=469/DMC=304
+Kickxellales_core  Coemansia       FD7FFCA4 R51=484/DMC=310 | R51=484/DMC=310
+Kickxellales_core  Coemansia       FE019C62 R51=484/DMC=310 | R51=484/DMC=310

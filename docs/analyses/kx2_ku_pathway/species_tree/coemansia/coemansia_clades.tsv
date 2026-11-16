@@ -1,0 +1,13 @@
+question	LG+F+G (UFBoot)	ASTRAL (gene trees)	ASTRAL (UFBoot<50 collapsed)	first-pass FastTree
+Coemansia monophyletic	False (MRCA also holds: Kickxella)	False (MRCA also holds: Kickxella)	False (MRCA also holds: Kickxella)	False (MRCA also holds: Kickxella)
+sister of Kickxella	Coemansia (support 67)	Coemansia (support 0.49)	Coemansia (support 0.44)	Coemansia (support 0.534)
+sister of Linderina	Dipsacomyces, Martensiomyces (support 67)	Martensiomyces, Dipsacomyces (support 0.99)	Martensiomyces, Dipsacomyces (support 1)	Coemansia x107, Dipsacomyces, Martensiomyces, Kickxella (support 1)
+sister of Dipsacomyces	Martensiomyces (support 100)	Martensiomyces (support 1)	Martensiomyces (support 1)	Martensiomyces (support 1)
+sister of Martensiomyces	Dipsacomyces (support 100)	Dipsacomyces (support 1)	Dipsacomyces (support 1)	Dipsacomyces (support 1)
+sister of Ramicandelaber	Coemansia x62, Capniomyces, Zancudomyces, Furculomyces, Smittium, Mycoemilia, Spiromyces, Dipsacomyces, Martensiomyces, Linderina, Kickxella (support 100)	Coemansia x62, Smittium, Furculomyces, Capniomyces, Zancudomyces, Mycoemilia, Spiromyces, Linderina, Martensiomyces, Dipsacomyces, Kickxella (support 1)	Coemansia x62, Capniomyces, Zancudomyces, Smittium, Furculomyces, Mycoemilia, Spiromyces, Linderina, Martensiomyces, Dipsacomyces, Kickxella (support 1)	Coemansia x107, Furculomyces, Smittium, Zancudomyces, Capniomyces, Mycoemilia, Spiromyces, Linderina, Dipsacomyces, Martensiomyces, Kickxella (support 1)
+Kickxellales+Harpellales monophyletic	True (support 100)	True (support 1)	True (support 1)	True (support 1)
+Kickxellales monophyletic	True	True	True	True
+Harpellales monophyletic	True	True	True	True
+stem sister of Kickxellales+Harpellales	Ramicandelaber	Ramicandelaber	Ramicandelaber	Ramicandelaber
+Kickxellales+Harpellales+Ramicandelaber monophyletic	True	True	True	True
+sister of Kickxellales+Harpellales+Ramicandelaber	Dimargaris, Tieghemiomyces, Dispira	Dispira, Dimargaris, Tieghemiomyces	Dispira, Dimargaris, Tieghemiomyces	Dispira, Dimargaris, Tieghemiomyces

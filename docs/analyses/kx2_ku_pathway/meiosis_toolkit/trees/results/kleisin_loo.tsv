@@ -1,0 +1,9 @@
+reference	clade	call	assigned_clade	correct
+REF_1	Rad21	ambiguous		False
+REF_2	Rad21	ambiguous		False
+REF_3	Rad21	ambiguous		False
+REF_4	Rad21	assigned	Rec8	False
+REF_5	Rec8	assigned	Rec8	True
+REF_6	Rec8	assigned	Rec8	True
+REF_7	Rec8	low_support	Rec8	False
+REF_8	Rec8	low_support	Rec8	False

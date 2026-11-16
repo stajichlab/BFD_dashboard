@@ -1,0 +1,28 @@
+reference	clade	call	assigned_clade	correct
+REF_1	Msh2	ambiguous		False
+REF_2	Msh2	ambiguous		False
+REF_3	Msh2	assigned	Msh2	True
+REF_4	Msh2	assigned	Msh2	True
+REF_5	Msh2	assigned	Msh2	True
+REF_6	Msh3	assigned	Msh3	True
+REF_7	Msh3	assigned	Msh3	True
+REF_8	Msh3	assigned	Msh3	True
+REF_9	Msh3	assigned	Msh3	True
+REF_10	Msh3	assigned	Msh3	True
+REF_11	Msh3	assigned	Msh3	True
+REF_12	Msh6	assigned	Msh6	True
+REF_13	Msh6	assigned	Msh6	True
+REF_14	Msh6	assigned	Msh6	True
+REF_15	Msh6	assigned	Msh6	True
+REF_16	Msh6	assigned	Msh6	True
+REF_17	Msh4	assigned	Msh4	True
+REF_18	Msh4	assigned	Msh4	True
+REF_19	Msh4	assigned	Msh4	True
+REF_20	Msh4	assigned	Msh4	True
+REF_21	Msh5	assigned	Msh5	True
+REF_22	Msh5	assigned	Msh5	True
+REF_23	Msh5	assigned	Msh5	True
+REF_24	Msh5	assigned	Msh5	True
+REF_25	Msh1	assigned	Msh1	True
+REF_26	Msh1	assigned	Msh1	True
+REF_27	Msh1	ambiguous		False

@@ -1,0 +1,33 @@
+group	ident_lo	ident_hi	n_genera	median_mean_introns
+Kickxellales core	0.4	0.5	5	0.559322033898305
+Kickxellales core	0.5	0.6	5	0.4
+Kickxellales core	0.6	0.7	5	0.3559322033898305
+Kickxellales core	0.7	1.01	5	0.3
+Harpellales	0.4	0.5	4	1.8283841626538255
+Harpellales	0.5	0.6	4	1.5420148006684173
+Harpellales	0.6	0.7	4	1.3060606060606061
+Harpellales	0.7	1.01	4	1.5863970588235294
+Dimargaritales+Ramicandelaber	0.4	0.5	4	0.9674582726559875
+Dimargaritales+Ramicandelaber	0.5	0.6	4	0.7625281531531531
+Dimargaritales+Ramicandelaber	0.6	0.7	4	0.5499198075380914
+Dimargaritales+Ramicandelaber	0.7	1.01	2	1.1547619047619047
+Zoopagales	0.4	0.5	8	2.132056451612903
+Zoopagales	0.5	0.6	8	1.3174603174603174
+Zoopagales	0.6	0.7	8	1.338888888888889
+Zoopagales	0.7	1.01	6	1.3529411764705883
+Mucorales	0.4	0.5	8	3.6975092777619185
+Mucorales	0.5	0.6	8	3.274814814814815
+Mucorales	0.6	0.7	8	2.348790322580645
+Mucorales	0.7	1.01	8	2.3206521739130435
+Other Mucoromycota group	0.4	0.5	13	6.079207920792079
+Other Mucoromycota group	0.5	0.6	13	5.1625
+Other Mucoromycota group	0.6	0.7	13	3.962962962962963
+Other Mucoromycota group	0.7	1.01	13	3.3333333333333335
+Saccharomycetes anchors	0.4	0.5	4	0.2962642684192321
+Saccharomycetes anchors	0.5	0.6	4	0.20830033264691905
+Saccharomycetes anchors	0.6	0.7	4	0.1825749167591565
+Saccharomycetes anchors	0.7	1.01	4	0.2830923248053393
+Pezizomycotina anchors	0.4	0.5	4	1.4265592706888253
+Pezizomycotina anchors	0.5	0.6	4	1.6075866188769417
+Pezizomycotina anchors	0.6	0.7	4	1.621828867520996
+Pezizomycotina anchors	0.7	1.01	4	1.8523809523809525

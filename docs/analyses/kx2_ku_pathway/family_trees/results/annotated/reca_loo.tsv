@@ -1,0 +1,32 @@
+reference	clade	call	assigned_clade	correct	acc
+REF_1	Rad51	ambiguous		False	Q06609
+REF_2	Rad51	ambiguous		False	Q08297
+REF_3	Rad51	low_support	Rad51	False	P25454
+REF_4	Rad51	low_support	Rad51	False	P36601
+REF_5	Rad51	ambiguous		False	P94102
+REF_6	Rad51	ambiguous		False	Q91918
+REF_7	Rad51	ambiguous		False	Q27297
+REF_8	Dmc1	assigned	Dmc1	True	Q14565
+REF_9	Dmc1	assigned	Dmc1	True	Q61880
+REF_10	Dmc1	assigned	Dmc1	True	P25453
+REF_11	Dmc1	assigned	Dmc1	True	O42634
+REF_12	Dmc1	assigned	Dmc1	True	Q39009
+REF_13	Rad55	ambiguous		False	P38953
+REF_14	Rad55	low_support	Rad51C	False	O14129
+REF_15	Rad57	assigned	Rad57	True	P25301
+REF_16	Rad57	assigned	Rad57	True	Q9UUL2
+REF_17	Rad51B	assigned	Rad51B	True	O15315
+REF_18	Rad51B	assigned	Rad51B	True	O35719
+REF_19	Rad51B	assigned	Rad51B	True	Q9SK02
+REF_20	Rad51C	assigned	Rad51C	True	O43502
+REF_21	Rad51C	assigned	Rad51C	True	Q924H5
+REF_22	Rad51C	assigned	Rad51C	True	Q8GXF0
+REF_23	Rad51D	assigned	Rad51D	True	O75771
+REF_24	Rad51D	assigned	Rad51D	True	O55230
+REF_25	Rad51D	low_support	Rad51D	False	Q9LQQ2
+REF_26	XRCC2	assigned	XRCC2	True	O43543
+REF_27	XRCC2	assigned	XRCC2	True	Q682D3
+REF_28	XRCC3	low_support	XRCC3	False	O43542
+REF_29	XRCC3	low_support	XRCC3	False	Q9FKM5
+REF_30	RadA	assigned	RadA	True	Q49593
+REF_31	RadA	assigned	RadA	True	O74036

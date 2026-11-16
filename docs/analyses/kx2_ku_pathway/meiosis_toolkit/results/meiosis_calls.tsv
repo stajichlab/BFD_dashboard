@@ -1,0 +1,1793 @@
+locustag	genus	grp	gene	call	query	scaffold	best_evalue	best_bits	pident_best_hsp	query_cov	n_hsps
+F1C537C3	Dimargaris	Dimargaritales	CTRL_Mlh1	strong	P40692	gb|JANBQC010000079.1|	1.86e-142	463.0	56.77	0.77	3
+F1C537C3	Dimargaris	Dimargaritales	CTRL_Msh2	strong	P43246	gb|JANBQC010000009.1|	1.83e-140	464.0	40.887	0.897	4
+F1C537C3	Dimargaris	Dimargaritales	CTRL_Rad21	strong	P30776	gb|JANBQC010000447.1|	1.32e-43	168.0	60.741	0.338	2
+F1C537C3	Dimargaris	Dimargaritales	CTRL_Rad51	strong	Q99133	gb|JANBQC010000400.1|	4.59e-163	504.0	75.385	0.947	1
+F1C537C3	Dimargaris	Dimargaritales	Hop1	none						0	0
+F1C537C3	Dimargaris	Dimargaritales	Hop2	strong	FCDD8027_008807-T1	gb|JANBQC010000158.1|	5.8e-13	61.6	41.25	0.746	4
+F1C537C3	Dimargaris	Dimargaritales	Mer3	strong	Q5D892	gb|JANBQC010000157.1|	2.45e-85	305.0	32.65	0.637	2
+F1C537C3	Dimargaris	Dimargaritales	Mlh3	weak	Q9UHC1	gb|JANBQC010000079.1|	1.33e-21	102.0	26.536	0.239	1
+F1C537C3	Dimargaris	Dimargaritales	Mnd1	strong	FCDD8027_008933-T1	gb|JANBQC010000300.1|	1.03e-18	83.6	42.52	0.534	2
+F1C537C3	Dimargaris	Dimargaritales	Msh4	strong	O15457	gb|JANBQC010000027.1|	1.37e-46	182.0	26.1	0.661	1
+F1C537C3	Dimargaris	Dimargaritales	Msh5	strong	F4JEP5	gb|JANBQC010000027.1|	4.04e-47	182.0	25.463	0.768	1
+F1C537C3	Dimargaris	Dimargaritales	Pch2	strong	Q15645	gb|JANBQC010000002.1|	7.21e-15	77.0	31.285	0.451	3
+F1C537C3	Dimargaris	Dimargaritales	Rec8	weak	O95072	gb|JANBQC010000447.1|	2.63e-11	66.6	30.612	0.269	1
+F1C537C3	Dimargaris	Dimargaritales	Spo11	none						0	0
+F1C9E2AA	Dispira	Dimargaritales	CTRL_Mlh1	strong	P40692	gb|JANBPY010002466.1|	1.88e-133	417.0	48.33	0.509	1
+F1C9E2AA	Dispira	Dimargaritales	CTRL_Msh2	strong	P43246	gb|JANBPY010000075.1|	0.0	816.0	47.661	0.943	1
+F1C9E2AA	Dispira	Dimargaritales	CTRL_Rad21	strong	O60216	gb|JANBPY010000021.1|	2.85e-41	160.0	52.353	0.409	2
+F1C9E2AA	Dispira	Dimargaritales	CTRL_Rad51	strong	Q99133	gb|JANBPY010002153.1|	5.09e-171	503.0	77.492	0.914	1
+F1C9E2AA	Dispira	Dimargaritales	Hop1	none						0	0
+F1C9E2AA	Dispira	Dimargaritales	Hop2	none	F1C537C3_003027-T1	gb|JANBPY010001809.1|	0.00015	41.6	72.0	0.113	1
+F1C9E2AA	Dispira	Dimargaritales	Mer3	strong	F4FD0401_003824-T1	gb|JANBPY010001149.1|	1.5e-91	323.0	57.706	0.705	6
+F1C9E2AA	Dispira	Dimargaritales	Mlh3	strong	Q12083	gb|JANBPY010001193.1|	1.01e-12	71.2	34.545	0.466	2
+F1C9E2AA	Dispira	Dimargaritales	Mnd1	strong	F1C537C3_004375-T1	gb|JANBPY010001927.1|	1.44e-50	174.0	48.598	0.887	2
+F1C9E2AA	Dispira	Dimargaritales	Msh4	strong	O15457	gb|JANBPY010000075.1|	5.92e-60	223.0	28.316	0.803	1
+F1C9E2AA	Dispira	Dimargaritales	Msh5	strong	Q12175	gb|JANBPY010000075.1|	1.74e-41	165.0	25.343	0.858	1
+F1C9E2AA	Dispira	Dimargaritales	Pch2	strong	F4FD0401_005454-T1	gb|JANBPY010000422.1|	3.68e-99	325.0	46.081	0.907	1
+F1C9E2AA	Dispira	Dimargaritales	Rec8	weak	P36626	gb|JANBPY010000076.1|	2.87e-22	101.0	44.898	0.175	1
+F1C9E2AA	Dispira	Dimargaritales	Spo11	strong	F7FE4923_004084-T1	gb|JANBPY010000034.1|	3.36e-23	102.0	38.608	0.33	1
+F4FD0401	Tieghemiomyces	Dimargaritales	CTRL_Mlh1	strong	P40692	gb|JANBPT010000098.1|	1.59e-48	186.0	31.236	0.919	5
+F4FD0401	Tieghemiomyces	Dimargaritales	CTRL_Msh2	strong	P43246	gb|JANBPT010000297.1|	9.71e-90	315.0	46.087	0.974	5
+F4FD0401	Tieghemiomyces	Dimargaritales	CTRL_Rad21	strong	O60216	gb|JANBPT010001694.1|	6.69e-50	187.0	34.491	0.567	1
+F4FD0401	Tieghemiomyces	Dimargaritales	CTRL_Rad51	strong	Q99133	gb|JANBPT010001906.1|	1.45e-171	507.0	76.489	0.938	1
+F4FD0401	Tieghemiomyces	Dimargaritales	Hop1	none						0	0
+F4FD0401	Tieghemiomyces	Dimargaritales	Hop2	strong	F1C537C3_003027-T1	gb|JANBPT010001078.1|	1.07e-22	96.3	42.336	0.602	2
+F4FD0401	Tieghemiomyces	Dimargaritales	Mer3	strong	F5C4F326_001532-T1	gb|JANBPT010000058.1|	6.39e-86	308.0	35.008	0.648	2
+F4FD0401	Tieghemiomyces	Dimargaritales	Mlh3	strong	Q12083	gb|JANBPT010001345.1|	2.87e-14	60.1	23.396	0.649	3
+F4FD0401	Tieghemiomyces	Dimargaritales	Mnd1	strong	F1C537C3_004375-T1	gb|JANBPT010000416.1|	1.81e-13	68.9	80.0	0.745	4
+F4FD0401	Tieghemiomyces	Dimargaritales	Msh4	strong	Q99MT2	gb|JANBPT010000016.1|	2.04e-18	92.0	23.361	0.563	4
+F4FD0401	Tieghemiomyces	Dimargaritales	Msh5	strong	Q9QUM7	gb|JANBPT010000239.1|	3.75e-37	152.0	25.851	0.873	1
+F4FD0401	Tieghemiomyces	Dimargaritales	Pch2	strong	FCDD8027_005517-T1	gb|JANBPT010000268.1|	4.33e-72	247.0	44.272	0.7	1
+F4FD0401	Tieghemiomyces	Dimargaritales	Rec8	weak	O95072	gb|JANBPT010001704.1|	1.75e-09	61.2	29.53	0.272	1
+F4FD0401	Tieghemiomyces	Dimargaritales	Spo11	none						0	0
+F3D937C5	Capniomyces	Harpellales	CTRL_Mlh1	strong	P40692	gb|LUVW01000013.1|	6.25e-67	192.0	37.024	0.761	4
+F3D937C5	Capniomyces	Harpellales	CTRL_Msh2	strong	P43246	gb|LUVW01000013.1|	1.11e-93	326.0	54.574	0.669	6
+F3D937C5	Capniomyces	Harpellales	CTRL_Rad21	weak	P30776	gb|LUVW01000015.1|	6.75e-25	110.0	49.038	0.229	2
+F3D937C5	Capniomyces	Harpellales	CTRL_Rad51	strong	Q99133	gb|LUVW01000012.1|	4.46e-126	397.0	63.777	0.914	2
+F3D937C5	Capniomyces	Harpellales	Hop1	none						0	0
+F3D937C5	Capniomyces	Harpellales	Hop2	weak	FCDD8027_008807-T1	gb|LUVW01000027.1|	4.29e-11	61.6	56.522	0.205	1
+F3D937C5	Capniomyces	Harpellales	Mer3	strong	Q5D892	gb|LUVW01000001.1|	1.44e-79	287.0	28.608	0.726	2
+F3D937C5	Capniomyces	Harpellales	Mlh3	weak	Q12083	gb|LUVW01000013.1|	5.78e-07	52.8	47.273	0.213	3
+F3D937C5	Capniomyces	Harpellales	Mnd1	strong	F45BD9C7_003372-T1	gb|LUVW01000015.1|	2.09e-26	105.0	68.966	0.882	2
+F3D937C5	Capniomyces	Harpellales	Msh4	strong	Q99MT2	gb|LUVW01000012.1|	8.5e-41	164.0	47.619	0.699	4
+F3D937C5	Capniomyces	Harpellales	Msh5	strong	F23D95F9_002434-T1	gb|LUVW01000001.1|	3.97e-69	215.0	45.353	0.888	6
+F3D937C5	Capniomyces	Harpellales	Pch2	strong	Q15645	gb|LUVW01000027.1|	3.6e-14	74.7	28.358	0.456	3
+F3D937C5	Capniomyces	Harpellales	Rec8	none						0	0
+F3D937C5	Capniomyces	Harpellales	Spo11	strong	F18CA942_004849-T1	gb|LUVW01000007.1|	5.86e-46	169.0	33.333	0.732	1
+F45BD9C7	Furculomyces	Harpellales	CTRL_Mlh1	strong	Q9P7W6	gb|MBFT01000092.1|	1.29e-35	145.0	40.291	0.89	6
+F45BD9C7	Furculomyces	Harpellales	CTRL_Msh2	strong	P43246	gb|MBFT01000158.1|	9.15e-43	170.0	65.649	0.747	10
+F45BD9C7	Furculomyces	Harpellales	CTRL_Rad21	weak	O60216	gb|MBFT01000108.1|	1.14e-28	122.0	34.513	0.281	1
+F45BD9C7	Furculomyces	Harpellales	CTRL_Rad51	strong	Q99133	gb|MBFT01000380.1|	6.19e-125	263.0	78.049	0.914	3
+F45BD9C7	Furculomyces	Harpellales	Hop1	none						0	0
+F45BD9C7	Furculomyces	Harpellales	Hop2	strong	F3D937C5_005458-T1	gb|MBFT01000217.1|	4.81e-29	113.0	60.87	0.736	2
+F45BD9C7	Furculomyces	Harpellales	Mer3	strong	F5C4F326_001532-T1	gb|MBFT01000397.1|	2.12e-86	309.0	31.017	0.647	2
+F45BD9C7	Furculomyces	Harpellales	Mlh3	weak	Q9UHC1	gb|MBFT01000158.1|	4.91e-08	57.8	30.07	0.239	3
+F45BD9C7	Furculomyces	Harpellales	Mnd1	strong	FBDB2FE6_004986-T1	gb|MBFT01000206.1|	1.35e-29	85.5	32.903	0.951	3
+F45BD9C7	Furculomyces	Harpellales	Msh4	strong	Q99MT2	gb|MBFT01000285.1|	1.01e-59	223.0	39.474	0.543	3
+F45BD9C7	Furculomyces	Harpellales	Msh5	strong	F23D95F9_002434-T1	gb|MBFT01000381.1|	4.4e-81	184.0	40.711	0.946	5
+F45BD9C7	Furculomyces	Harpellales	Pch2	strong	FCDD8027_005517-T1	gb|MBFT01000081.1|	8.66e-17	82.8	32.584	0.417	2
+F45BD9C7	Furculomyces	Harpellales	Rec8	none						0	0
+F45BD9C7	Furculomyces	Harpellales	Spo11	strong	F18CA942_004849-T1	gb|MBFT01000704.1|	6.67e-28	115.0	30.603	0.551	1
+FCCDAB75	Smittium	Harpellales	CTRL_Mlh1	strong	P40692	gb|JBJCJL010000039.1|	3.23e-109	366.0	32.718	0.991	2
+FCCDAB75	Smittium	Harpellales	CTRL_Msh2	strong	P43246	gb|JBJCJL010000039.1|	3.15e-89	313.0	51.775	0.701	6
+FCCDAB75	Smittium	Harpellales	CTRL_Rad21	weak	O60216	gb|JBJCJL010000023.1|	3.1e-18	89.7	44.853	0.266	2
+FCCDAB75	Smittium	Harpellales	CTRL_Rad51	strong	Q99133	gb|JBJCJL010000033.1|	1.51e-121	253.0	67.895	0.909	3
+FCCDAB75	Smittium	Harpellales	Hop1	none						0	0
+FCCDAB75	Smittium	Harpellales	Hop2	strong	F3D937C5_005458-T1	gb|JBJCJL010000022.1|	2.95e-29	114.0	49.6	0.778	2
+FCCDAB75	Smittium	Harpellales	Mer3	strong	F5C4F326_001532-T1	gb|JBJCJL010000010.1|	5.16e-87	311.0	28.723	0.757	2
+FCCDAB75	Smittium	Harpellales	Mlh3	strong	Q12083	gb|JBJCJL010000039.1|	2.25e-14	77.4	40.816	0.438	2
+FCCDAB75	Smittium	Harpellales	Mnd1	strong	F45BD9C7_003372-T1	gb|JBJCJL010000039.1|	1.45e-33	126.0	77.778	0.739	3
+FCCDAB75	Smittium	Harpellales	Msh4	strong	O15457	gb|JBJCJL010000033.1|	1.16e-46	138.0	43.293	0.54	4
+FCCDAB75	Smittium	Harpellales	Msh5	strong	F23D95F9_002434-T1	gb|JBJCJL010000038.1|	1.64e-61	210.0	43.609	0.915	5
+FCCDAB75	Smittium	Harpellales	Pch2	strong	FCDD8027_005517-T1	gb|JBJCJL010000035.1|	4.42e-16	80.9	30.588	0.7	5
+FCCDAB75	Smittium	Harpellales	Rec8	none						0	0
+FCCDAB75	Smittium	Harpellales	Spo11	strong	F18CA942_004849-T1	gb|JBJCJL010000035.1|	1.54e-29	121.0	25.749	0.732	1
+F23D95F9	Zancudomyces	Harpellales	CTRL_Mlh1	strong	P40692	gb|JBNJNM010000021.1|	3.51e-127	419.0	31.584	0.991	1
+F23D95F9	Zancudomyces	Harpellales	CTRL_Msh2	strong	P25847	gb|JBNJNM010000021.1|	1.73e-92	315.0	44.246	0.683	6
+F23D95F9	Zancudomyces	Harpellales	CTRL_Rad21	weak	P30776	gb|JBNJNM010000011.1|	4.48e-41	160.0	55.319	0.218	1
+F23D95F9	Zancudomyces	Harpellales	CTRL_Rad51	strong	Q99133	gb|JBNJNM010000008.1|	3.03e-74	249.0	64.615	0.914	2
+F23D95F9	Zancudomyces	Harpellales	Hop1	none						0	0
+F23D95F9	Zancudomyces	Harpellales	Hop2	strong	F3D937C5_005458-T1	gb|JBNJNM010000021.1|	1.06e-14	72.0	54.098	0.486	2
+F23D95F9	Zancudomyces	Harpellales	Mer3	strong	F4FD0401_003824-T1	gb|JBNJNM010000011.1|	4.57e-94	332.0	36.699	0.695	5
+F23D95F9	Zancudomyces	Harpellales	Mlh3	strong	Q12083	gb|JBNJNM010000021.1|	3.83e-24	108.0	35.227	0.392	3
+F23D95F9	Zancudomyces	Harpellales	Mnd1	strong	F45BD9C7_003372-T1	gb|JBNJNM010000021.1|	8.94e-26	84.3	56.338	0.911	5
+F23D95F9	Zancudomyces	Harpellales	Msh4	strong	Q99MT2	gb|JBNJNM010000008.1|	1.21e-111	380.0	32.516	0.725	1
+F23D95F9	Zancudomyces	Harpellales	Msh5	strong	FD4B4AC6_007013-T1	gb|JBNJNM010000010.1|	1.01e-55	210.0	44.528	0.546	2
+F23D95F9	Zancudomyces	Harpellales	Pch2	strong	FCDD8027_005517-T1	gb|JBNJNM010000011.1|	7.92e-15	76.6	32.512	0.55	9
+F23D95F9	Zancudomyces	Harpellales	Rec8	weak	O95072	gb|JBNJNM010000011.1|	7.32e-07	52.0	29.091	0.201	1
+F23D95F9	Zancudomyces	Harpellales	Spo11	strong	F18CA942_004849-T1	gb|JBNJNM010000013.1|	3.75e-28	116.0	31.119	0.592	1
+FD8916FB	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTN010000031.1|	1.21e-122	405.0	56.268	0.783	2
+FD8916FB	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTN010000003.1|	0.0	772.0	44.963	0.987	1
+FD8916FB	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBTN010000004.1|	1.21e-43	168.0	60.294	0.331	2
+FD8916FB	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTN010000011.1|	3.13e-151	469.0	71.924	0.929	2
+FD8916FB	Coemansia	Kickxellales_core	Hop1	none						0	0
+FD8916FB	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBTN010000056.1|	6.62e-34	92.4	58.904	0.894	2
+FD8916FB	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBTN010000009.1|	5.35e-89	316.0	29.119	0.667	2
+FD8916FB	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTN010000047.1|	5.17e-13	72.0	23.92	0.706	2
+FD8916FB	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBTN010000131.1|	1.25e-45	160.0	42.945	0.966	2
+FD8916FB	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTN010000144.1|	2.42e-44	100.0	30.769	0.646	4
+FD8916FB	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBTN010000003.1|	4.23e-50	191.0	26.059	0.721	1
+FD8916FB	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBTN010000008.1|	3.42e-15	77.8	32.022	0.565	6
+FD8916FB	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBTN010000003.1|	8.3e-11	64.3	25.185	0.387	2
+FD8916FB	Coemansia	Kickxellales_core	Spo11	none						0	0
+F0DE0BF4	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JAIXMV010000014.1|	1.24e-122	405.0	56.268	0.783	2
+F0DE0BF4	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JAIXMV010000002.1|	0.0	772.0	44.963	0.987	1
+F0DE0BF4	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JAIXMV010000014.1|	1.23e-43	168.0	60.294	0.331	2
+F0DE0BF4	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JAIXMV010000015.1|	3.18e-151	469.0	71.924	0.929	3
+F0DE0BF4	Coemansia	Kickxellales_core	Hop1	none						0	0
+F0DE0BF4	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JAIXMV010000007.1|	8.09e-34	92.4	58.904	0.894	2
+F0DE0BF4	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JAIXMV010000003.1|	5.83e-89	316.0	29.481	0.657	2
+F0DE0BF4	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JAIXMV010000013.1|	1.59e-13	73.9	24.252	0.706	2
+F0DE0BF4	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JAIXMV010000003.1|	1.29e-45	160.0	42.945	0.966	2
+F0DE0BF4	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JAIXMV010000019.1|	2.41e-44	100.0	30.769	0.58	4
+F0DE0BF4	Coemansia	Kickxellales_core	Msh5	strong	Q9QUM7	gb|JAIXMV010000005.1|	6.34e-35	143.0	24.463	0.652	2
+F0DE0BF4	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JAIXMV010000006.1|	4.07e-15	77.8	32.022	0.565	8
+F0DE0BF4	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JAIXMV010000002.1|	8.36e-11	64.3	25.185	0.387	2
+F0DE0BF4	Coemansia	Kickxellales_core	Spo11	none						0	0
+F3D51D57	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBUE010000186.1|	9.51e-120	396.0	50.131	0.79	2
+F3D51D57	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBUE010000026.1|	0.0	782.0	45.339	0.987	1
+F3D51D57	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBUE010000040.1|	4.07e-43	166.0	59.701	0.279	2
+F3D51D57	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUE010000098.1|	4.39e-150	466.0	71.474	0.914	1
+F3D51D57	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBUE010000085.1|	7.21e-07	51.6	24.615	0.317	1
+F3D51D57	Coemansia	Kickxellales_core	Hop2	strong	F1C537C3_003027-T1	gb|JANBUE010000165.1|	2.51e-33	91.3	40.152	0.9	2
+F3D51D57	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBUE010000030.1|	4.38e-93	328.0	30.013	0.625	2
+F3D51D57	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBUE010000005.1|	2.04e-28	121.0	22.868	0.985	1
+F3D51D57	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBUE010000181.1|	1.29e-50	161.0	46.012	0.966	2
+F3D51D57	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBUE010000046.1|	4.05e-99	211.0	37.415	0.755	2
+F3D51D57	Coemansia	Kickxellales_core	Msh5	strong	F23D95F9_002434-T1	gb|JANBUE010000008.1|	8.67e-33	136.0	23.328	0.679	4
+F3D51D57	Coemansia	Kickxellales_core	Pch2	strong	Q15645	gb|JANBUE010000011.1|	2.43e-18	87.0	36.196	0.407	4
+F3D51D57	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBUE010000025.1|	4.73e-13	71.2	27.206	0.364	2
+F3D51D57	Coemansia	Kickxellales_core	Spo11	none						0	0
+FC1174D9	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JAIXMU010000012.1|	3.58e-173	551.0	40.0	0.991	1
+FC1174D9	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JAIXMU010000008.1|	0.0	784.0	45.192	0.987	1
+FC1174D9	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JAIXMU010000012.1|	5.06e-38	150.0	49.032	0.242	1
+FC1174D9	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JAIXMU010000002.1|	4.18e-152	471.0	72.756	0.914	1
+FC1174D9	Coemansia	Kickxellales_core	Hop1	none						0	0
+FC1174D9	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JAIXMU010000009.1|	1.2e-37	100.0	41.912	0.942	2
+FC1174D9	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JAIXMU010000022.1|	3.98e-86	307.0	28.814	0.651	2
+FC1174D9	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JAIXMU010000007.1|	4.51e-16	81.6	28.151	0.652	2
+FC1174D9	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JAIXMU010000017.1|	3.58e-60	201.0	50.754	0.98	1
+FC1174D9	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JAIXMU010000002.1|	1.8e-50	112.0	31.696	0.724	3
+FC1174D9	Coemansia	Kickxellales_core	Msh5	strong	F23D95F9_002434-T1	gb|JAIXMU010000005.1|	6.14e-34	140.0	22.769	0.7	3
+FC1174D9	Coemansia	Kickxellales_core	Pch2	strong	F4FD0401_005454-T1	gb|JAIXMU010000007.1|	1.86e-13	71.6	30.055	0.567	2
+FC1174D9	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JAIXMU010000012.1|	8.58e-07	50.8	31.373	0.186	1
+FC1174D9	Coemansia	Kickxellales_core	Spo11	weak	F18CA942_004849-T1	gb|JAIXMU010000013.1|	3.23e-06	42.7	33.871	0.452	4
+F7A7AA4C	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTF010000028.1|	4.19e-130	426.0	57.02	0.837	2
+F7A7AA4C	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTF010000040.1|	0.0	764.0	44.526	0.995	1
+F7A7AA4C	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBTF010000038.1|	1.2e-42	165.0	54.545	0.306	2
+F7A7AA4C	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTF010000006.1|	4.19e-157	486.0	69.851	0.982	2
+F7A7AA4C	Coemansia	Kickxellales_core	Hop1	none						0	0
+F7A7AA4C	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBTF010000023.1|	3.33e-38	94.4	53.782	0.893	2
+F7A7AA4C	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTF010000009.1|	9.83e-88	312.0	28.293	0.691	2
+F7A7AA4C	Coemansia	Kickxellales_core	Mlh3	strong	Q9UHC1	gb|JANBTF010000004.1|	1.78e-15	81.6	24.573	0.333	2
+F7A7AA4C	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBTF010000131.1|	3.75e-60	202.0	47.5	0.976	1
+F7A7AA4C	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTF010000143.1|	3.09e-48	110.0	32.828	0.652	4
+F7A7AA4C	Coemansia	Kickxellales_core	Msh5	strong	Q9QUM7	gb|JANBTF010000035.1|	1.16e-37	152.0	25.815	0.86	1
+F7A7AA4C	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBTF010000064.1|	3.46e-17	83.6	33.54	0.384	3
+F7A7AA4C	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBTF010000045.1|	1.48e-09	60.5	29.63	0.374	2
+F7A7AA4C	Coemansia	Kickxellales_core	Spo11	none						0	0
+F2470181	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRJ010000053.1|	4.15e-130	426.0	57.02	0.837	2
+F2470181	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBRJ010000045.1|	0.0	764.0	44.526	0.995	1
+F2470181	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBRJ010000040.1|	1.2e-42	165.0	54.545	0.306	2
+F2470181	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRJ010000005.1|	4.19e-157	486.0	69.851	0.982	2
+F2470181	Coemansia	Kickxellales_core	Hop1	none						0	0
+F2470181	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBRJ010000076.1|	3.36e-38	94.4	53.782	0.893	2
+F2470181	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRJ010000007.1|	9.81e-88	312.0	28.293	0.691	2
+F2470181	Coemansia	Kickxellales_core	Mlh3	strong	Q9UHC1	gb|JANBRJ010000008.1|	1.77e-15	81.6	24.573	0.333	2
+F2470181	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBRJ010000156.1|	3.72e-60	202.0	47.5	0.976	1
+F2470181	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBRJ010000005.1|	3.01e-48	110.0	32.828	0.652	4
+F2470181	Coemansia	Kickxellales_core	Msh5	strong	Q9QUM7	gb|JANBRJ010000047.1|	1.16e-37	152.0	25.815	0.86	1
+F2470181	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBRJ010000066.1|	3.45e-17	83.6	33.54	0.384	3
+F2470181	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBRJ010000049.1|	1.48e-09	60.5	29.63	0.374	2
+F2470181	Coemansia	Kickxellales_core	Spo11	none						0	0
+F4F8BFB2	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANJYS010000053.1|	4.16e-130	426.0	57.02	0.837	2
+F4F8BFB2	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANJYS010000041.1|	0.0	764.0	44.526	0.995	1
+F4F8BFB2	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANJYS010000039.1|	1.2e-42	165.0	54.545	0.306	2
+F4F8BFB2	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANJYS010000010.1|	5.13e-157	486.0	69.851	0.982	2
+F4F8BFB2	Coemansia	Kickxellales_core	Hop1	none						0	0
+F4F8BFB2	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANJYS010000002.1|	3.3e-38	94.4	53.782	0.893	2
+F4F8BFB2	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANJYS010000008.1|	9.83e-88	312.0	28.293	0.691	2
+F4F8BFB2	Coemansia	Kickxellales_core	Mlh3	strong	Q9UHC1	gb|JANJYS010000035.1|	1.77e-15	81.6	24.573	0.333	2
+F4F8BFB2	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANJYS010000130.1|	3.74e-60	202.0	47.5	0.976	1
+F4F8BFB2	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANJYS010000151.1|	3.09e-48	131.0	28.15	0.652	3
+F4F8BFB2	Coemansia	Kickxellales_core	Msh5	strong	Q9QUM7	gb|JANJYS010000006.1|	1.17e-37	152.0	25.815	0.86	1
+F4F8BFB2	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANJYS010000068.1|	3.46e-17	83.6	33.54	0.384	3
+F4F8BFB2	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANJYS010000045.1|	1.48e-09	60.5	29.63	0.374	2
+F4F8BFB2	Coemansia	Kickxellales_core	Spo11	none						0	0
+F0DB79EE	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTS010000012.1|	1.18e-173	552.0	39.926	0.991	1
+F0DB79EE	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTS010000004.1|	0.0	783.0	45.192	0.987	1
+F0DB79EE	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBTS010000012.1|	4.73e-38	150.0	49.032	0.242	1
+F0DB79EE	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTS010000018.1|	3.83e-152	471.0	72.756	0.914	1
+F0DB79EE	Coemansia	Kickxellales_core	Hop1	none						0	0
+F0DB79EE	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBTS010000028.1|	1.2e-37	100.0	41.912	0.942	2
+F0DB79EE	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTS010000066.1|	1.08e-91	324.0	31.457	0.614	2
+F0DB79EE	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTS010000082.1|	1.03e-15	80.5	28.151	0.722	2
+F0DB79EE	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBTS010000073.1|	3.28e-60	201.0	50.754	0.98	1
+F0DB79EE	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBTS010000034.1|	3.79e-46	110.0	25.526	0.643	3
+F0DB79EE	Coemansia	Kickxellales_core	Msh5	strong	F23D95F9_002434-T1	gb|JANBTS010000009.1|	4.9e-34	140.0	22.769	0.7	3
+F0DB79EE	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBTS010000005.1|	9.02e-19	88.6	32.367	0.467	3
+F0DB79EE	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBTS010000012.1|	7.83e-07	50.8	31.373	0.186	1
+F0DB79EE	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBTS010000133.1|	3.59e-07	50.8	29.545	0.255	1
+F333880B	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQD010000048.1|	1.2e-122	405.0	56.268	0.783	2
+F333880B	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQD010000007.1|	0.0	772.0	44.963	0.987	1
+F333880B	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBQD010000002.1|	1.2e-43	168.0	60.294	0.331	2
+F333880B	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQD010000011.1|	3.11e-151	469.0	71.924	0.929	2
+F333880B	Coemansia	Kickxellales_core	Hop1	none						0	0
+F333880B	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBQD010000046.1|	6.58e-34	92.4	58.904	0.894	2
+F333880B	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBQD010000009.1|	5.31e-89	316.0	29.119	0.667	2
+F333880B	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQD010000031.1|	5.15e-13	72.0	23.92	0.706	2
+F333880B	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBQD010000145.1|	1.24e-45	160.0	42.945	0.966	2
+F333880B	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQD010000178.1|	2.42e-44	100.0	30.769	0.646	4
+F333880B	Coemansia	Kickxellales_core	Msh5	strong	Q9QUM7	gb|JANBQD010000004.1|	5.39e-35	144.0	24.298	0.652	2
+F333880B	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBQD010000006.1|	3.4e-15	77.8	32.022	0.565	6
+F333880B	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBQD010000104.1|	8.15e-11	64.3	25.185	0.387	2
+F333880B	Coemansia	Kickxellales_core	Spo11	none						0	0
+F80EB351	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQR010000038.1|	4.18e-130	426.0	57.02	0.837	2
+F80EB351	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQR010000042.1|	0.0	765.0	44.526	0.995	1
+F80EB351	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBQR010000039.1|	1.2e-42	165.0	54.545	0.306	2
+F80EB351	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQR010000002.1|	5.15e-157	486.0	69.851	0.982	2
+F80EB351	Coemansia	Kickxellales_core	Hop1	none						0	0
+F80EB351	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBQR010000021.1|	3.33e-38	94.4	53.782	0.893	2
+F80EB351	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBQR010000011.1|	9.84e-88	312.0	28.293	0.691	2
+F80EB351	Coemansia	Kickxellales_core	Mlh3	strong	Q9UHC1	gb|JANBQR010000006.1|	1.28e-15	82.4	24.573	0.333	2
+F80EB351	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBQR010000123.1|	3.75e-60	202.0	47.5	0.976	1
+F80EB351	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQR010000142.1|	3.09e-48	110.0	32.828	0.652	4
+F80EB351	Coemansia	Kickxellales_core	Msh5	strong	Q9QUM7	gb|JANBQR010000047.1|	1.16e-37	152.0	25.815	0.86	1
+F80EB351	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBQR010000062.1|	3.46e-17	83.6	33.54	0.384	3
+F80EB351	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBQR010000045.1|	1.32e-09	60.5	29.63	0.374	2
+F80EB351	Coemansia	Kickxellales_core	Spo11	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBPZ010000001.1|	5.83e-120	397.0	54.354	0.77	2
+F4C3EFF5	Dipsacomyces	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBPZ010000562.1|	0.0	768.0	44.549	0.985	1
+F4C3EFF5	Dipsacomyces	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBPZ010000093.1|	4.3e-42	162.0	60.0	0.283	2
+F4C3EFF5	Dipsacomyces	Kickxellales_core	CTRL_Rad51	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Hop1	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Hop2	none						0	0
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBPZ010000243.1|	8.6e-88	311.0	29.574	0.678	2
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Mlh3	weak	Q9UHC1	gb|JANBPZ010000560.1|	2.21e-19	94.0	31.78	0.274	3
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBPZ010000697.1|	1.49e-63	211.0	50.0	0.985	1
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBPZ010000583.1|	3.82e-44	102.0	33.696	0.589	4
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Msh5	strong	O43196	gb|JANBPZ010000562.1|	1.25e-40	160.0	25.251	0.674	1
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBPZ010000734.1|	3.69e-16	79.7	28.079	0.472	2
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Rec8	weak	P36626	gb|JANBPZ010000297.1|	4.14e-12	68.2	27.778	0.255	1
+F4C3EFF5	Dipsacomyces	Kickxellales_core	Spo11	none						0	0
+F9F51274	Kickxella	Kickxellales_core	CTRL_Mlh1	strong	Q9P7W6	ref|NW_026251479.1|	4.83e-55	144.0	58.929	0.839	4
+F9F51274	Kickxella	Kickxellales_core	CTRL_Msh2	strong	P25847	ref|NW_026251598.1|	0.0	681.0	41.82	0.888	1
+F9F51274	Kickxella	Kickxellales_core	CTRL_Rad21	weak	O60216	ref|NW_026251479.1|	4.32e-42	163.0	49.444	0.265	1
+F9F51274	Kickxella	Kickxellales_core	CTRL_Rad51	strong	Q99133	ref|NW_026251484.1|	1.97e-148	461.0	71.935	0.909	1
+F9F51274	Kickxella	Kickxellales_core	Hop1	none						0	0
+F9F51274	Kickxella	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	ref|NW_026251503.1|	5.31e-34	127.0	46.591	0.815	1
+F9F51274	Kickxella	Kickxellales_core	Mer3	strong	Q5D892	ref|NW_026251490.1|	5.02e-85	304.0	28.778	0.644	2
+F9F51274	Kickxella	Kickxellales_core	Mlh3	weak	Q12083	ref|NW_026251476.1|	3.62e-10	63.2	22.874	0.677	2
+F9F51274	Kickxella	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	ref|NW_026251495.1|	7.55e-62	207.0	49.01	0.995	1
+F9F51274	Kickxella	Kickxellales_core	Msh4	strong	Q99MT2	ref|NW_026251505.1|	8.85e-63	101.0	31.677	0.693	5
+F9F51274	Kickxella	Kickxellales_core	Msh5	strong	F23D95F9_002434-T1	ref|NW_026251476.1|	2.35e-21	100.0	34.896	0.327	3
+F9F51274	Kickxella	Kickxellales_core	Pch2	strong	Q15645	ref|NW_026251472.1|	1.09e-14	76.3	35.333	0.572	7
+F9F51274	Kickxella	Kickxellales_core	Rec8	weak	P36626	ref|NW_026251536.1|	1.1e-11	67.4	28.148	0.241	1
+F9F51274	Kickxella	Kickxellales_core	Spo11	none						0	0
+F43C8248	Linderina	Kickxellales_core	CTRL_Mlh1	strong	P40692	ref|NW_024468250.1|	1.89e-103	276.0	58.091	0.795	5
+F43C8248	Linderina	Kickxellales_core	CTRL_Msh2	strong	P25847	ref|NW_024468259.1|	1.35e-124	220.0	55.495	0.864	6
+F43C8248	Linderina	Kickxellales_core	CTRL_Rad21	weak	P30776	ref|NW_024468436.1|	2.72e-43	167.0	58.621	0.229	1
+F43C8248	Linderina	Kickxellales_core	CTRL_Rad51	strong	Q99133	ref|NW_024468260.1|	2.06e-149	464.0	71.154	0.914	2
+F43C8248	Linderina	Kickxellales_core	Hop1	none						0	0
+F43C8248	Linderina	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	ref|NW_024468249.1|	1.11e-40	147.0	44.131	0.986	1
+F43C8248	Linderina	Kickxellales_core	Mer3	strong	F104222C_005983-T1	ref|NW_024468300.1|	1.56e-83	301.0	35.39	0.661	3
+F43C8248	Linderina	Kickxellales_core	Mlh3	strong	Q12083	ref|NW_024468250.1|	9.14e-17	85.1	29.648	0.305	3
+F43C8248	Linderina	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	ref|NW_024468377.1|	9.98e-53	181.0	51.63	0.902	1
+F43C8248	Linderina	Kickxellales_core	Msh4	strong	O15457	ref|NW_024468251.1|	3.29e-44	174.0	27.273	0.626	4
+F43C8248	Linderina	Kickxellales_core	Msh5	strong	F23D95F9_002434-T1	ref|NW_024468251.1|	1.26e-54	182.0	31.224	0.769	5
+F43C8248	Linderina	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	ref|NW_024468249.1|	5.24e-15	77.4	27.103	0.597	6
+F43C8248	Linderina	Kickxellales_core	Rec8	weak	P36626	ref|NW_024468347.1|	5.67e-12	68.6	35.165	0.162	1
+F43C8248	Linderina	Kickxellales_core	Spo11	weak	F8E635D0_000954-T1	ref|NW_024468249.1|	7.5e-06	48.1	23.894	0.228	1
+FE0E32D4	Martensiomyces	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|MU604061.1|	1.83e-123	407.0	55.072	0.873	2
+FE0E32D4	Martensiomyces	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|MU603996.1|	0.0	733.0	42.389	0.984	1
+FE0E32D4	Martensiomyces	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|MU604095.1|	1.5e-42	164.0	59.259	0.274	2
+FE0E32D4	Martensiomyces	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|MU603932.1|	1.93e-149	464.0	72.313	0.9	1
+FE0E32D4	Martensiomyces	Kickxellales_core	Hop1	none						0	0
+FE0E32D4	Martensiomyces	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|MU604073.1|	1.58e-38	140.0	40.26	0.912	1
+FE0E32D4	Martensiomyces	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|MU603970.1|	1.83e-89	318.0	29.084	0.65	2
+FE0E32D4	Martensiomyces	Kickxellales_core	Mlh3	strong	Q12083	gb|MU604033.1|	4.51e-16	82.4	26.51	0.706	2
+FE0E32D4	Martensiomyces	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|MU604085.1|	3.46e-63	210.0	50.251	0.98	1
+FE0E32D4	Martensiomyces	Kickxellales_core	Msh4	strong	O15457	gb|MU603995.1|	2.78e-21	100.0	43.564	0.536	4
+FE0E32D4	Martensiomyces	Kickxellales_core	Msh5	strong	O43196	gb|MU604065.1|	2.16e-41	164.0	24.689	0.625	1
+FE0E32D4	Martensiomyces	Kickxellales_core	Pch2	strong	Q8H1F9	gb|MU603951.1|	3.83e-18	87.0	33.523	0.454	5
+FE0E32D4	Martensiomyces	Kickxellales_core	Rec8	weak	O95072	gb|MU604095.1|	2.09e-07	53.5	31.373	0.186	1
+FE0E32D4	Martensiomyces	Kickxellales_core	Spo11	none	F5A4E39E_005593-T1	gb|MU604023.1|	3.91e-05	35.8	30.909	0.189	2
+F8E635D0	Rhizopus	Mucoromycota_s.l.	CTRL_Mlh1	strong	P40692	gb|JARGYL010000199.1|	6.37e-64	232.0	45.62	0.599	4
+F8E635D0	Rhizopus	Mucoromycota_s.l.	CTRL_Msh2	strong	P43246	gb|JARGYL010000012.1|	7.28e-124	359.0	33.994	0.955	3
+F8E635D0	Rhizopus	Mucoromycota_s.l.	CTRL_Rad21	weak	O60216	gb|JARGYL010000035.1|	2.97e-14	76.3	40.708	0.217	2
+F8E635D0	Rhizopus	Mucoromycota_s.l.	CTRL_Rad51	strong	Q99133	gb|JARGYL010000096.1|	9.72e-54	132.0	53.488	0.906	6
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Hop1	none						0	0
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Hop2	strong	FCDD8027_008807-T1	gb|JARGYL010000013.1|	5.88e-15	73.2	37.069	0.808	2
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Mer3	strong	F4FD0401_003824-T1	gb|JARGYL010000140.1|	2.16e-88	315.0	28.862	0.683	2
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Mlh3	weak	Q12083	gb|JARGYL010000037.1|	4.76e-06	49.7	46.341	0.21	2
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Mnd1	strong	FCDD8027_008933-T1	gb|JARGYL010000219.1|	1.33e-41	120.0	45.679	0.912	3
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Msh4	strong	O15457	gb|JARGYL010000172.1|	3.63e-45	167.0	33.033	0.652	5
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Msh5	strong	F23D95F9_002434-T1	gb|JARGYL010000242.1|	2.13e-40	161.0	28.916	0.533	1
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Pch2	strong	FCDD8027_005517-T1	gb|JARGYL010000043.1|	1.15e-16	82.4	27.57	0.498	2
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Rec8	none						0	0
+F8E635D0	Rhizopus	Mucoromycota_s.l.	Spo11	weak	Q9WTK8	gb|JARGYL010000023.1|	6.54e-09	57.8	30.0	0.407	3
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	CTRL_Mlh1	strong	P40692	gb|JANBPU010000010.1|	1.87e-65	211.0	29.241	0.991	7
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	CTRL_Msh2	strong	P25847	gb|JANBPU010000010.1|	2.8e-129	306.0	45.355	0.776	7
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	CTRL_Rad21	strong	P30776	gb|JANBPU010000003.1|	1.83e-36	146.0	34.091	0.484	2
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	CTRL_Rad51	strong	Q99133	gb|JANBPU010000092.1|	2e-166	513.0	74.375	0.941	1
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Hop1	strong	P20050	gb|JANBPU010000061.1|	2.85e-11	66.2	26.943	0.304	1
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Hop2	strong	FCDD8027_008807-T1	gb|JANBPU010000006.1|	1.43e-12	65.9	39.13	0.643	4
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Mer3	strong	F5C4F326_001532-T1	gb|JANBPU010000091.1|	6.11e-88	313.0	29.638	0.701	2
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Mlh3	strong	Q12083	gb|JANBPU010000221.1|	8.15e-15	78.2	26.984	0.47	2
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Mnd1	strong	Q9BWT6	gb|JANBPU010000003.1|	4.17e-20	87.4	27.719	0.8	1
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Msh4	strong	F4JP48	gb|JANBPU010000006.1|	4.35e-36	147.0	34.661	0.359	2
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Msh5	strong	F23D95F9_002434-T1	gb|JANBPU010000017.1|	3.83e-11	64.7	28.125	0.443	7
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Pch2	strong	FF98D640_005040-T1	gb|JANBPU010000157.1|	4.41e-13	71.2	25.07	0.737	2
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Rec8	weak	O95072	gb|JANBPU010000003.1|	1.63e-07	53.9	28.244	0.207	1
+F18CA942	Mycoemilia	Mycoemilia_Spiromyces	Spo11	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	CTRL_Mlh1	strong	P40692	gb|JAMZIH010000634.1|	2.47e-23	104.0	32.609	0.519	4
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	CTRL_Msh2	strong	P43246	gb|JAMZIH010005712.1|	4.36e-15	70.1	28.788	0.306	4
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	CTRL_Rad21	strong	O60216	gb|JAMZIH010005148.1|	1.92e-36	111.0	42.767	0.317	2
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	CTRL_Rad51	strong	Q99133	gb|JAMZIH010000016.1|	1.89e-165	509.0	74.085	0.965	1
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Hop1	none						0	0
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Hop2	strong	F18CA942_000891-T1	gb|JAMZIH010005704.1|	1.46e-21	80.9	77.273	0.75	4
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Mer3	strong	F4FD0401_003824-T1	gb|JAMZIH010005171.1|	3.76e-91	322.0	29.283	0.641	2
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Mlh3	strong	Q12083	gb|JAMZIH010005981.1|	1.61e-24	108.0	27.389	0.429	1
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Mnd1	strong	F1C537C3_004375-T1	gb|JAMZIH010000370.1|	9.59e-15	58.5	76.471	0.882	4
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Msh4	weak	O15457	gb|JAMZIH010000046.1|	4.46e-37	88.6	48.193	0.204	3
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Msh5	strong	F23D95F9_002434-T1	gb|JAMZIH010005868.1|	2.62e-15	54.3	22.101	0.495	5
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Pch2	strong	Q8H1F9	gb|JAMZIH010006129.1|	5.15e-18	85.5	32.683	0.42	2
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Rec8	weak	O95072	gb|JAMZIH010005148.1|	4.76e-07	42.0	40.0	0.17	2
+F5C985FA	Spiromyces	Mycoemilia_Spiromyces	Spo11	none						0	0
+F7FE4923	Ramicandelaber	Ramicandelaber	CTRL_Mlh1	strong	P40692	gb|MU602828.1|	1.02e-111	373.0	48.837	0.794	2
+F7FE4923	Ramicandelaber	Ramicandelaber	CTRL_Msh2	strong	P43246	gb|MU602681.1|	0.0	790.0	45.605	0.958	1
+F7FE4923	Ramicandelaber	Ramicandelaber	CTRL_Rad21	weak	O60216	gb|MU602815.1|	6.26e-27	117.0	49.558	0.176	1
+F7FE4923	Ramicandelaber	Ramicandelaber	CTRL_Rad51	strong	Q99133	gb|MU602683.1|	1.96e-143	447.0	67.405	0.932	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Hop1	strong	P20050	gb|MU602703.1|	8.95e-12	68.2	24.202	0.564	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Hop2	strong	F1C537C3_003027-T1	gb|MU603102.1|	5.69e-17	79.0	48.148	0.362	2
+F7FE4923	Ramicandelaber	Ramicandelaber	Mer3	strong	F45BD9C7_007162-T1	gb|MU602762.1|	4.91e-96	337.0	37.342	0.666	2
+F7FE4923	Ramicandelaber	Ramicandelaber	Mlh3	strong	Q12083	gb|MU603033.1|	2.42e-14	77.0	28.986	0.627	3
+F7FE4923	Ramicandelaber	Ramicandelaber	Mnd1	strong	FCDD8027_008933-T1	gb|MU602796.1|	3.16e-61	205.0	49.261	0.995	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Msh4	strong	O15457	gb|MU602826.1|	3.57e-77	276.0	25.134	0.745	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Msh5	strong	F4JEP5	gb|MU602681.1|	5.59e-46	178.0	26.692	0.903	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Pch2	strong	FCDD8027_005517-T1	gb|MU602760.1|	6.51e-90	297.0	51.205	0.712	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Rec8	weak	P36626	gb|MU602811.1|	8.78e-12	67.8	35.417	0.166	1
+F7FE4923	Ramicandelaber	Ramicandelaber	Spo11	strong	Q9Y5K1	gb|MU602959.1|	1.36e-30	124.0	29.655	0.689	1
+F3F252DC	Caulochytrium	Root	CTRL_Mlh1	strong	Q9P7W6	gb|ML014187.1|	1.63e-66	238.0	38.071	0.991	2
+F3F252DC	Caulochytrium	Root	CTRL_Msh2	strong	P43246	gb|ML014331.1|	0.0	711.0	43.022	0.907	1
+F3F252DC	Caulochytrium	Root	CTRL_Rad21	weak	P30776	gb|ML014142.1|	2.43e-20	95.9	45.918	0.215	2
+F3F252DC	Caulochytrium	Root	CTRL_Rad51	strong	Q99133	gb|ML014140.1|	5.7e-163	503.0	75.0	0.932	1
+F3F252DC	Caulochytrium	Root	Hop1	strong	P20050	gb|ML014150.1|	3.78e-18	88.6	26.984	0.37	1
+F3F252DC	Caulochytrium	Root	Hop2	strong	FCDD8027_008807-T1	gb|ML014279.1|	1.6e-42	152.0	38.739	0.951	1
+F3F252DC	Caulochytrium	Root	Mer3	strong	F4FD0401_003824-T1	gb|ML014150.1|	0.0	610.0	40.428	0.721	1
+F3F252DC	Caulochytrium	Root	Mlh3	strong	Q12083	gb|ML014201.1|	3.09e-16	82.8	26.482	0.694	2
+F3F252DC	Caulochytrium	Root	Mnd1	strong	FBDB2FE6_004986-T1	gb|ML014251.1|	9.64e-34	126.0	76.316	0.966	3
+F3F252DC	Caulochytrium	Root	Msh4	strong	O15457	gb|ML014120.1|	3.47e-131	436.0	34.993	0.723	1
+F3F252DC	Caulochytrium	Root	Msh5	strong	FD4B4AC6_007013-T1	gb|ML014354.1|	8.7e-59	219.0	37.273	0.475	3
+F3F252DC	Caulochytrium	Root	Pch2	strong	F5C4F326_006434-T1	gb|ML014133.1|	3.07e-61	216.0	46.693	0.522	2
+F3F252DC	Caulochytrium	Root	Rec8	strong	P36626	gb|ML014116.1|	9.91e-21	96.7	34.463	0.301	1
+F3F252DC	Caulochytrium	Root	Spo11	strong	F5A4E39E_005593-T1	gb|ML014115.1|	9.35e-38	145.0	47.468	0.705	2
+FEB493EF	Piptocephalis	Zoopagales	CTRL_Mlh1	strong	P40692	gb|MU626057.1|	5.47e-41	162.0	46.114	0.675	5
+FEB493EF	Piptocephalis	Zoopagales	CTRL_Msh2	strong	P25847	gb|MU626200.1|	8.56e-144	474.0	37.393	0.79	1
+FEB493EF	Piptocephalis	Zoopagales	CTRL_Rad21	weak	P30776	gb|MU626051.1|	5.51e-26	70.9	38.144	0.213	2
+FEB493EF	Piptocephalis	Zoopagales	CTRL_Rad51	strong	Q99133	gb|MU626071.1|	2.67e-144	449.0	80.0	0.935	3
+FEB493EF	Piptocephalis	Zoopagales	Hop1	none						0	0
+FEB493EF	Piptocephalis	Zoopagales	Hop2	none						0	0
+FEB493EF	Piptocephalis	Zoopagales	Mer3	strong	F4FD0401_003824-T1	gb|MU626222.1|	1.56e-77	281.0	32.457	0.467	2
+FEB493EF	Piptocephalis	Zoopagales	Mlh3	weak	Q12083	gb|MU626057.1|	7.75e-15	78.2	35.294	0.165	1
+FEB493EF	Piptocephalis	Zoopagales	Mnd1	strong	F1C537C3_004375-T1	gb|MU626069.1|	1.89e-26	72.4	30.0	0.98	3
+FEB493EF	Piptocephalis	Zoopagales	Msh4	strong	O15457	gb|MU626200.1|	9.88e-44	172.0	25.637	0.564	1
+FEB493EF	Piptocephalis	Zoopagales	Msh5	strong	FD4B4AC6_007013-T1	gb|MU626200.1|	2.83e-32	135.0	22.276	0.638	1
+FEB493EF	Piptocephalis	Zoopagales	Pch2	strong	Q8H1F9	gb|MU626080.1|	2.84e-69	201.0	60.39	0.636	2
+FEB493EF	Piptocephalis	Zoopagales	Rec8	none						0	0
+FEB493EF	Piptocephalis	Zoopagales	Spo11	none						0	0
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	CTRL_Mlh1	strong	P40692	gb|JBLKGV010000088.1|	4.82e-103	185.0	53.684	0.778	10
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	CTRL_Msh2	strong	P43246	gb|JBLKGV010000268.1|	3.32e-75	118.0	39.286	0.764	10
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	CTRL_Rad21	strong	O60216	gb|JBLKGV010001983.1|	4.74e-32	134.0	43.429	0.323	2
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	CTRL_Rad51	strong	Q99133	gb|JBLKGV010000001.1|	2.81e-81	209.0	76.515	0.914	4
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Hop1	none	Q9P7P2	gb|JBLKGV010000032.1|	2.26e-05	48.5	32.5	0.144	1
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Hop2	strong	F1C537C3_003027-T1	gb|JBLKGV010000848.1|	1.38e-13	58.5	50.82	0.928	4
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Mer3	strong	F5C4F326_001532-T1	gb|JBLKGV010000528.1|	1.71e-88	317.0	31.308	0.645	2
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Mlh3	strong	Q12083	gb|JBLKGV010000016.1|	3.09e-21	76.3	30.804	0.49	5
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Mnd1	strong	FBDB2FE6_004986-T1	gb|JBLKGV010000464.1|	3.35e-31	97.1	33.051	0.976	2
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Msh4	strong	O15457	gb|JBLKGV010000119.1|	1.47e-55	166.0	40.928	0.399	4
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Msh5	strong	FD4B4AC6_007013-T1	gb|JBLKGV010000461.1|	1.63e-41	84.3	38.406	0.67	8
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Pch2	strong	FF98D640_005040-T1	gb|JBLKGV010000229.1|	3.39e-57	155.0	33.428	0.772	4
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Rec8	weak	P36626	gb|JBLKGV010000058.1|	1.56e-18	91.3	39.37	0.157	1
+FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	Spo11	weak	F8E635D0_000954-T1	gb|JBLKGV010000107.1|	1.64e-06	42.7	33.01	0.403	4
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	CTRL_Mlh1	strong	P40692	gb|WBMQ01000001.1|	1.39e-98	212.0	67.763	0.693	3
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	CTRL_Msh2	strong	P43246	gb|WBMQ01000004.1|	5.19e-107	169.0	30.233	0.849	7
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	CTRL_Rad21	weak	P30776	gb|WBMQ01000005.1|	5.59e-29	119.0	56.075	0.221	2
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	CTRL_Rad51	strong	Q99133	gb|WBMQ01000012.1|	9.72e-134	420.0	64.353	0.926	1
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Hop1	none						0	0
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Hop2	none						0	0
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Mer3	strong	F104222C_005983-T1	gb|WBMQ01000007.1|	1.84e-84	304.0	28.79	0.661	3
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Mlh3	strong	Q12083	gb|WBMQ01000001.1|	8.06e-18	83.2	31.852	0.481	2
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Mnd1	none	F46AF962_001538-T1	gb|WBMQ01000007.1|	0.000581	30.0	61.111	0.38	2
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Msh4	strong	O15457	gb|WBMQ01000004.1|	6.4e-53	110.0	24.938	0.689	8
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Msh5	strong	FC345CF7_003271-T1	gb|WBMQ01000004.1|	2.58e-24	110.0	28.67	0.499	7
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Pch2	weak	FCDD8027_005517-T1	gb|WBMQ01000002.1|	5.65e-08	55.1	26.984	0.427	3
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Rec8	none	O95072	gb|WBMQ01000005.1|	7.92e-05	45.4	26.05	0.197	1
+FDAC0301	Capillidium	Entomophthorales_Basidiobolus	Spo11	none						0	0
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	CTRL_Mlh1	strong	P40692	gb|JBNZCG010000034.1|	5.25e-63	130.0	61.458	0.63	7
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	CTRL_Msh2	strong	P43246	gb|JBNZCG010000014.1|	0.0	588.0	47.833	0.864	5
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	CTRL_Rad21	weak	P30776	gb|JBNZCG010000027.1|	3.57e-24	74.7	63.462	0.223	3
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	CTRL_Rad51	strong	Q99133	gb|JBNZCG010000024.1|	1.31e-87	188.0	70.4	0.929	2
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Hop1	none						0	0
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Hop2	strong	F1C537C3_003027-T1	gb|JBNZCG010000007.1|	5.21e-13	46.6	25.123	0.882	3
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Mer3	strong	F4FD0401_003824-T1	gb|JBNZCG010000009.1|	2.34e-89	318.0	32.023	0.614	2
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Mlh3	weak	Q12083	gb|JBNZCG010000034.1|	4.51e-10	63.9	38.776	0.136	1
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Mnd1	strong	F3A2FF18_021206-T1	gb|JBNZCG010000024.1|	2.44e-15	69.3	49.383	0.825	3
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Msh4	strong	O15457	gb|JBNZCG010000014.1|	4.82e-53	203.0	28.72	0.603	3
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Msh5	strong	O43196	gb|JBNZCG010000014.1|	1.27e-46	182.0	24.746	0.691	3
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Pch2	strong	FCDD8027_005517-T1	gb|JBNZCG010000028.1|	2.15e-12	69.7	27.757	0.613	4
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Rec8	weak	P36626	gb|JBNZCG010000043.1|	1.62e-06	51.6	30.0	0.132	1
+F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	Spo11	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	CTRL_Mlh1	strong	P40692	gb|MU626364.1|	9.68e-72	256.0	41.854	0.677	3
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	CTRL_Msh2	strong	P43246	gb|MU626416.1|	1.25e-70	203.0	44.656	0.784	7
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	CTRL_Rad21	weak	P30776	gb|MU626312.1|	1.72e-21	99.8	44.66	0.223	2
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	CTRL_Rad51	strong	Q99133	gb|MU626635.1|	3.98e-131	412.0	62.264	0.929	1
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Hop1	none						0	0
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Hop2	none	FCDD8027_008807-T1	gb|MU626282.1|	0.000382	39.3	39.535	0.429	2
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Mer3	strong	F5C4F326_001532-T1	gb|MU626260.1|	1.74e-86	309.0	31.026	0.66	2
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Mlh3	strong	Q9UHC1	gb|MU626318.1|	1.83e-17	88.6	24.13	0.416	2
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Mnd1	weak	F3A2FF18_021206-T1	gb|MU626327.1|	5.84e-08	45.1	56.667	0.355	2
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Msh4	strong	Q99MT2	gb|MU626361.1|	5.75e-60	104.0	27.511	0.608	5
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Msh5	strong	F4JEP5	gb|MU626352.1|	5.7e-22	63.5	30.275	0.503	3
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Pch2	strong	Q8H1F9	gb|MU626263.1|	2.39e-12	69.3	30.508	0.422	2
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Rec8	none	O95072	gb|MU626312.1|	6.05e-05	34.3	48.276	0.144	2
+FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	Spo11	none						0	0
+F00A57ED	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBUL010000365.1|	5.81e-134	437.0	59.475	0.792	2
+F00A57ED	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P25847	gb|JANBUL010000170.1|	6.39e-66	241.0	29.525	0.565	1
+F00A57ED	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBUL010000393.1|	1.28e-44	170.0	42.4	0.389	1
+F00A57ED	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUL010000111.1|	1.7e-151	470.0	72.115	0.914	1
+F00A57ED	Coemansia	Kickxellales_core	Hop1	none						0	0
+F00A57ED	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBUL010000331.1|	1.62e-41	148.0	47.208	0.912	1
+F00A57ED	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBUL010000001.1|	1.62e-85	305.0	29.581	0.675	2
+F00A57ED	Coemansia	Kickxellales_core	Mlh3	strong	Q9UHC1	gb|JANBUL010000320.1|	2.42e-19	94.0	23.14	0.385	2
+F00A57ED	Coemansia	Kickxellales_core	Mnd1	strong	F5C985FA_001010-T1	gb|JANBUL010000168.1|	1.81e-54	185.0	51.515	0.966	1
+F00A57ED	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBUL010000211.1|	1.7e-27	119.0	30.332	0.553	4
+F00A57ED	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBUL010000170.1|	5.79e-43	168.0	33.236	0.405	1
+F00A57ED	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBUL010000049.1|	1.99e-12	68.2	30.909	0.498	2
+F00A57ED	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBUL010000340.1|	1.15e-11	66.6	30.769	0.162	1
+F00A57ED	Coemansia	Kickxellales_core	Spo11	none	F5A4E39E_005593-T1	gb|JANBUL010000295.1|	5.26e-05	44.3	31.579	0.187	1
+F023BB0A	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P38920	gb|JANBSJ010000095.1|	1.95e-132	433.0	35.138	0.995	1
+F023BB0A	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSJ010000089.1|	0.0	744.0	43.876	0.987	1
+F023BB0A	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBSJ010000168.1|	9.95e-43	164.0	46.893	0.355	2
+F023BB0A	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSJ010000039.1|	2.51e-153	475.0	73.397	0.914	1
+F023BB0A	Coemansia	Kickxellales_core	Hop1	none						0	0
+F023BB0A	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBSJ010000161.1|	4.02e-37	135.0	37.405	0.986	1
+F023BB0A	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBSJ010000400.1|	4.38e-92	325.0	28.505	0.685	2
+F023BB0A	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSJ010000392.1|	2.61e-16	82.4	25.939	0.457	2
+F023BB0A	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBSJ010000178.1|	1.78e-59	199.0	49.246	0.98	1
+F023BB0A	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSJ010000263.1|	1.12e-49	191.0	37.966	0.629	3
+F023BB0A	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBSJ010000089.1|	1.75e-42	167.0	26.466	0.721	1
+F023BB0A	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBSJ010000271.1|	3.29e-15	77.0	26.606	0.507	2
+F023BB0A	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBSJ010000168.1|	1.39e-06	50.1	31.373	0.186	1
+F023BB0A	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBSJ010000074.1|	8.69e-07	50.1	31.068	0.253	1
+F02CB1ED	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTC010000037.1|	1.66e-128	422.0	57.02	0.802	2
+F02CB1ED	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTC010000073.1|	0.0	767.0	44.574	0.987	1
+F02CB1ED	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBTC010000061.1|	8.58e-44	168.0	55.063	0.248	1
+F02CB1ED	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTC010000245.1|	2.78e-151	469.0	72.756	0.914	1
+F02CB1ED	Coemansia	Kickxellales_core	Hop1	none						0	0
+F02CB1ED	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBTC010000165.1|	7.76e-41	147.0	40.889	0.902	1
+F02CB1ED	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBTC010000127.1|	3.13e-89	316.0	29.531	0.668	2
+F02CB1ED	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTC010000036.1|	3.17e-12	69.3	24.661	0.772	3
+F02CB1ED	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBTC010000058.1|	1.93e-59	199.0	48.744	0.98	1
+F02CB1ED	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBTC010000012.1|	1.21e-44	105.0	49.505	0.569	4
+F02CB1ED	Coemansia	Kickxellales_core	Msh5	strong	FEACB2E7_006734-T1	gb|JANBTC010000001.1|	7.74e-28	120.0	32.258	0.774	3
+F02CB1ED	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBTC010000001.1|	4.32e-15	76.6	26.606	0.507	2
+F02CB1ED	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBTC010000061.1|	1.19e-06	50.4	31.373	0.186	1
+F02CB1ED	Coemansia	Kickxellales_core	Spo11	none	P40384	gb|JANBTC010000098.1|	0.000221	42.0	27.381	0.243	1
+F05FC232	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOX010000156.1|	7.8e-116	385.0	54.859	0.751	2
+F05FC232	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOX010000019.1|	0.0	778.0	44.315	0.987	1
+F05FC232	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBOX010000205.1|	4.49e-43	166.0	59.701	0.271	2
+F05FC232	Coemansia	Kickxellales_core	CTRL_Rad51	weak	Q99133	gb|JANBOX010001313.1|	4.74e-30	119.0	62.353	0.251	1
+F05FC232	Coemansia	Kickxellales_core	Hop1	none	P20050	gb|JANBOX010000699.1|	0.00029	42.7	23.077	0.317	1
+F05FC232	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBOX010000185.1|	1.49e-33	125.0	38.912	0.968	1
+F05FC232	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBOX010000075.1|	3.87e-92	325.0	28.822	0.641	2
+F05FC232	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBOX010000501.1|	5.23e-17	84.7	25.484	0.852	2
+F05FC232	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBOX010000170.1|	1.48e-50	165.0	46.012	0.966	2
+F05FC232	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBOX010000019.1|	1.85e-56	212.0	28.212	0.74	1
+F05FC232	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBOX010000019.1|	3.84e-40	160.0	26.102	0.673	1
+F05FC232	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBOX010000288.1|	7.95e-16	79.0	27.523	0.507	2
+F05FC232	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBOX010000104.1|	4.13e-12	68.2	26.471	0.242	1
+F05FC232	Coemansia	Kickxellales_core	Spo11	none						0	0
+F090F877	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOU010000291.1|	3.95e-176	559.0	39.42	0.991	1
+F090F877	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOU010000042.1|	0.0	747.0	44.089	0.987	1
+F090F877	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBOU010000075.1|	1.06e-42	164.0	46.893	0.355	2
+F090F877	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOU010001048.1|	4.48e-159	475.0	73.397	0.914	1
+F090F877	Coemansia	Kickxellales_core	Hop1	none						0	0
+F090F877	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBOU010000555.1|	3.88e-37	135.0	37.405	0.986	1
+F090F877	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBOU010000178.1|	4.37e-92	325.0	28.505	0.685	2
+F090F877	Coemansia	Kickxellales_core	Mlh3	weak	Q12083	gb|JANBOU010000291.1|	2.79e-19	92.0	32.184	0.241	1
+F090F877	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBOU010001557.1|	1.79e-40	144.0	47.945	0.719	1
+F090F877	Coemansia	Kickxellales_core	Msh4	strong	P40965	gb|JANBOU010000042.1|	1.36e-34	142.0	26.48	0.695	1
+F090F877	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBOU010000042.1|	1.41e-42	167.0	26.466	0.721	1
+F090F877	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBOU010000559.1|	3.06e-15	77.0	26.606	0.507	2
+F090F877	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBOU010000075.1|	1.16e-06	50.4	31.373	0.186	1
+F090F877	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBOU010000751.1|	7.73e-07	50.1	31.068	0.253	1
+F097EC52	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQX010000329.1|	4.49e-176	558.0	39.708	0.991	1
+F097EC52	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQX010000008.1|	0.0	746.0	43.996	0.987	1
+F097EC52	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBQX010000756.1|	7.87e-43	164.0	46.893	0.355	2
+F097EC52	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQX010000531.1|	3.41e-155	478.0	68.314	0.997	1
+F097EC52	Coemansia	Kickxellales_core	Hop1	none						0	0
+F097EC52	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBQX010001109.1|	3.62e-37	135.0	37.405	0.986	1
+F097EC52	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBQX010000226.1|	5.45e-92	324.0	28.505	0.685	2
+F097EC52	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQX010000661.1|	8.62e-16	80.5	25.939	0.457	2
+F097EC52	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBQX010000008.1|	1.84e-59	199.0	49.246	0.98	1
+F097EC52	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQX010000078.1|	2.07e-50	193.0	30.467	0.683	2
+F097EC52	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBQX010000008.1|	8.19e-42	165.0	25.873	0.721	1
+F097EC52	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBQX010000073.1|	3.35e-15	77.0	26.606	0.507	2
+F097EC52	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBQX010000756.1|	1.05e-06	50.4	31.373	0.186	1
+F097EC52	Coemansia	Kickxellales_core	Spo11	none						0	0
+F0A69C67	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOQ010000028.1|	4.19e-130	426.0	57.02	0.837	2
+F0A69C67	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOQ010000093.1|	0.0	764.0	44.526	0.995	1
+F0A69C67	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBOQ010000009.1|	1.21e-42	165.0	54.545	0.306	2
+F0A69C67	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOQ010000021.1|	4.2e-157	486.0	69.851	0.982	1
+F0A69C67	Coemansia	Kickxellales_core	Hop1	none						0	0
+F0A69C67	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBOQ010000072.1|	3.37e-38	94.4	53.782	0.893	2
+F0A69C67	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBOQ010000021.1|	9.78e-88	312.0	28.293	0.691	2
+F0A69C67	Coemansia	Kickxellales_core	Mlh3	strong	Q9UHC1	gb|JANBOQ010000001.1|	1.79e-15	81.6	24.573	0.333	2
+F0A69C67	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBOQ010000062.1|	3.79e-60	202.0	47.5	0.976	1
+F0A69C67	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBOQ010000101.1|	3.07e-48	110.0	32.828	0.652	4
+F0A69C67	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBOQ010000093.1|	3.87e-47	182.0	25.719	0.711	1
+F0A69C67	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBOQ010000009.1|	1.22e-15	79.0	29.73	0.429	2
+F0A69C67	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBOQ010000127.1|	1.47e-09	60.5	29.63	0.374	2
+F0A69C67	Coemansia	Kickxellales_core	Spo11	none						0	0
+F0D6C540	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQJ010001454.1|	2.5e-115	382.0	53.012	0.769	2
+F0D6C540	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQJ010000238.1|	0.0	739.0	46.318	0.885	1
+F0D6C540	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBQJ010001021.1|	4.5e-40	157.0	45.902	0.257	1
+F0D6C540	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQJ010000065.1|	7.96e-151	469.0	73.226	0.909	1
+F0D6C540	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBQJ010000155.1|	7.48e-08	55.5	25.381	0.321	1
+F0D6C540	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBQJ010001918.1|	1.04e-20	89.4	42.308	0.903	2
+F0D6C540	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBQJ010000721.1|	2.77e-92	326.0	28.856	0.641	2
+F0D6C540	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQJ010001454.1|	3.1e-20	95.9	25.078	0.439	1
+F0D6C540	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBQJ010001563.1|	5.62e-33	124.0	45.395	0.62	1
+F0D6C540	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQJ010000783.1|	5.26e-111	377.0	30.393	0.755	1
+F0D6C540	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBQJ010000238.1|	3.4e-41	163.0	25.366	0.742	1
+F0D6C540	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBQJ010000069.1|	3.29e-18	87.8	30.288	0.555	2
+F0D6C540	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBQJ010001021.1|	6.94e-06	48.5	31.373	0.186	1
+F0D6C540	Coemansia	Kickxellales_core	Spo11	none						0	0
+F0DFB354	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQE010000002.1|	9.95e-113	375.0	52.711	0.769	2
+F0DFB354	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQE010000417.1|	0.0	758.0	43.88	0.987	1
+F0DFB354	Coemansia	Kickxellales_core	CTRL_Rad21	none						0	0
+F0DFB354	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQE010000032.1|	4.25e-151	469.0	69.846	0.953	1
+F0DFB354	Coemansia	Kickxellales_core	Hop1	none						0	0
+F0DFB354	Coemansia	Kickxellales_core	Hop2	none						0	0
+F0DFB354	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBQE010000474.1|	7.27e-85	303.0	32.169	0.661	2
+F0DFB354	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQE010000040.1|	8.87e-17	84.0	26.861	0.734	2
+F0DFB354	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBQE010000046.1|	5.83e-59	198.0	50.0	0.971	1
+F0DFB354	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQE010000048.1|	7.63e-46	169.0	25.537	0.67	3
+F0DFB354	Coemansia	Kickxellales_core	Msh5	strong	Q12175	gb|JANBQE010000417.1|	2.23e-34	141.0	25.151	0.701	1
+F0DFB354	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBQE010000118.1|	1.54e-19	90.9	35.227	0.375	2
+F0DFB354	Coemansia	Kickxellales_core	Rec8	none	P36626	gb|JANBQE010000079.1|	2.78e-05	45.8	32.967	0.162	1
+F0DFB354	Coemansia	Kickxellales_core	Spo11	none						0	0
+F0E0ADB2	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQL010001147.1|	6.56e-115	382.0	53.012	0.769	2
+F0E0ADB2	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQL010000188.1|	0.0	780.0	44.233	0.987	1
+F0E0ADB2	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBQL010000264.1|	5e-40	157.0	45.902	0.257	1
+F0E0ADB2	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQL010001011.1|	7.35e-151	469.0	73.226	0.909	1
+F0E0ADB2	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBQL010000034.1|	7.46e-08	55.5	25.381	0.321	1
+F0E0ADB2	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBQL010001520.1|	7.98e-21	89.7	42.308	0.903	2
+F0E0ADB2	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBQL010000457.1|	2.96e-92	326.0	28.856	0.641	2
+F0E0ADB2	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQL010001147.1|	3.31e-20	95.9	25.078	0.439	1
+F0E0ADB2	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBQL010001533.1|	5.58e-33	124.0	45.395	0.62	1
+F0E0ADB2	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQL010000103.1|	6.12e-111	377.0	30.393	0.755	1
+F0E0ADB2	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBQL010000814.1|	4.56e-39	157.0	25.734	0.625	1
+F0E0ADB2	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBQL010001649.1|	2.1e-18	88.2	30.288	0.555	2
+F0E0ADB2	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBQL010000264.1|	7.14e-06	48.5	31.373	0.186	1
+F0E0ADB2	Coemansia	Kickxellales_core	Spo11	none						0	0
+F1649C35	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRQ010001886.1|	2.31e-127	396.0	59.177	0.409	1
+F1649C35	Coemansia	Kickxellales_core	CTRL_Msh2	strong	O74773	gb|JANBRQ010001218.1|	4.56e-160	503.0	43.302	0.64	1
+F1649C35	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBRQ010000045.1|	1.04e-42	164.0	46.893	0.355	2
+F1649C35	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRQ010000990.1|	4.27e-157	477.0	68.314	0.997	1
+F1649C35	Coemansia	Kickxellales_core	Hop1	none						0	0
+F1649C35	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBRQ010000606.1|	3.86e-37	135.0	37.405	0.986	1
+F1649C35	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRQ010000051.1|	2.1e-89	317.0	30.218	0.678	2
+F1649C35	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBRQ010001141.1|	2.17e-16	82.4	25.939	0.457	2
+F1649C35	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBRQ010000040.1|	1.78e-59	199.0	49.246	0.98	1
+F1649C35	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBRQ010000088.1|	4.22e-50	192.0	38.305	0.629	3
+F1649C35	Coemansia	Kickxellales_core	Msh5	strong	Q9QUM7	gb|JANBRQ010001002.1|	2.39e-36	147.0	26.14	0.719	1
+F1649C35	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBRQ010000197.1|	3.22e-15	77.0	26.606	0.507	2
+F1649C35	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBRQ010000045.1|	1.14e-06	50.4	31.373	0.186	1
+F1649C35	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBRQ010000966.1|	2.73e-07	51.6	31.068	0.253	1
+F1709B5F	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQH010000230.1|	5.09e-115	382.0	53.012	0.769	2
+F1709B5F	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQH010000069.1|	0.0	778.0	44.221	0.987	1
+F1709B5F	Coemansia	Kickxellales_core	CTRL_Rad21	none						0	0
+F1709B5F	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQH010000433.1|	4.76e-151	469.0	73.226	0.909	1
+F1709B5F	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBQH010000108.1|	4.72e-08	55.5	25.381	0.321	1
+F1709B5F	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBQH010000064.1|	1.4e-20	88.6	42.308	0.903	2
+F1709B5F	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBQH010000002.1|	7.24e-92	325.0	28.856	0.641	2
+F1709B5F	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQH010000013.1|	9.89e-23	103.0	21.236	0.985	1
+F1709B5F	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBQH010000582.1|	1.12e-57	194.0	45.536	0.98	1
+F1709B5F	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQH010000053.1|	4.01e-111	377.0	30.393	0.755	1
+F1709B5F	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBQH010000069.1|	2.33e-43	169.0	25.44	0.755	1
+F1709B5F	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBQH010000317.1|	1.65e-18	87.8	30.288	0.555	2
+F1709B5F	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBQH010000104.1|	2.66e-11	65.9	27.941	0.376	2
+F1709B5F	Coemansia	Kickxellales_core	Spo11	none						0	0
+F1C72083	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P38920	gb|JANBQY010000103.1|	1.05e-132	434.0	35.138	0.995	1
+F1C72083	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQY010000099.1|	0.0	742.0	43.77	0.987	1
+F1C72083	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBQY010000167.1|	1.02e-42	164.0	46.893	0.355	2
+F1C72083	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQY010000051.1|	2.56e-153	475.0	73.397	0.914	1
+F1C72083	Coemansia	Kickxellales_core	Hop1	none						0	0
+F1C72083	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBQY010000148.1|	4.1e-37	135.0	37.405	0.986	1
+F1C72083	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBQY010000413.1|	4.71e-92	325.0	28.505	0.685	2
+F1C72083	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQY010000398.1|	3.35e-16	82.0	25.939	0.457	2
+F1C72083	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBQY010000236.1|	1.81e-59	199.0	49.246	0.98	1
+F1C72083	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQY010000279.1|	1.7e-50	193.0	38.305	0.639	2
+F1C72083	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBQY010000099.1|	1.18e-42	167.0	26.466	0.721	1
+F1C72083	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBQY010000286.1|	3.36e-15	77.0	26.606	0.507	2
+F1C72083	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBQY010000167.1|	1.16e-06	50.4	31.373	0.186	1
+F1C72083	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBQY010000082.1|	3.09e-07	51.6	31.068	0.253	1
+F1DEA344	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBUG010000215.1|	1.55e-119	395.0	55.891	0.767	2
+F1DEA344	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBUG010000269.1|	0.0	783.0	44.798	0.987	1
+F1DEA344	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBUG010000256.1|	1.14e-43	167.0	60.448	0.275	2
+F1DEA344	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUG010000312.1|	1.83e-150	467.0	66.092	0.941	1
+F1DEA344	Coemansia	Kickxellales_core	Hop1	none						0	0
+F1DEA344	Coemansia	Kickxellales_core	Hop2	none						0	0
+F1DEA344	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBUG010000373.1|	4.99e-88	313.0	32.475	0.656	2
+F1DEA344	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBUG010000055.1|	1.86e-15	79.7	23.432	0.787	2
+F1DEA344	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBUG010000216.1|	3.87e-47	164.0	49.39	0.98	2
+F1DEA344	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBUG010000209.1|	1.3e-111	378.0	31.373	0.757	1
+F1DEA344	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBUG010000269.1|	2.12e-44	172.0	25.61	0.789	1
+F1DEA344	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBUG010000033.1|	2.65e-19	90.5	30.769	0.43	2
+F1DEA344	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBUG010000130.1|	2.48e-10	62.4	29.67	0.162	1
+F1DEA344	Coemansia	Kickxellales_core	Spo11	weak	F18CA942_004849-T1	gb|JANBUG010000036.1|	7.53e-10	59.7	29.57	0.398	1
+F235E971	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQZ010001118.1|	2.42e-124	396.0	58.861	0.409	1
+F235E971	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQZ010000018.1|	0.0	741.0	43.77	0.987	1
+F235E971	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBQZ010000165.1|	8.71e-43	164.0	46.893	0.355	2
+F235E971	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQZ010000409.1|	2.2e-154	477.0	68.314	0.997	1
+F235E971	Coemansia	Kickxellales_core	Hop1	none						0	0
+F235E971	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBQZ010001142.1|	3.56e-37	135.0	37.405	0.986	1
+F235E971	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBQZ010000125.1|	4.36e-92	325.0	28.505	0.685	2
+F235E971	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQZ010000012.1|	1.03e-15	80.5	25.939	0.457	2
+F235E971	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBQZ010000018.1|	1.81e-59	199.0	49.246	0.98	1
+F235E971	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQZ010000064.1|	2.09e-50	193.0	30.467	0.683	2
+F235E971	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBQZ010000018.1|	1.19e-42	167.0	26.466	0.721	1
+F235E971	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBQZ010000004.1|	3.45e-15	77.0	26.606	0.507	2
+F235E971	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBQZ010000165.1|	1.35e-06	50.1	31.373	0.186	1
+F235E971	Coemansia	Kickxellales_core	Spo11	none						0	0
+F242D38C	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P38920	gb|JANBTM010000442.1|	3.64e-135	441.0	35.706	0.995	1
+F242D38C	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTM010000023.1|	0.0	758.0	43.882	0.991	1
+F242D38C	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBTM010000024.1|	3.47e-40	157.0	43.781	0.29	1
+F242D38C	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTM010000285.1|	3.62e-151	469.0	71.795	0.914	1
+F242D38C	Coemansia	Kickxellales_core	Hop1	none						0	0
+F242D38C	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBTM010000111.1|	7.84e-33	92.4	45.082	0.879	2
+F242D38C	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBTM010000089.1|	1.35e-87	312.0	31.275	0.661	2
+F242D38C	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTM010000273.1|	6.51e-17	84.3	25.084	0.453	2
+F242D38C	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBTM010000211.1|	2.66e-52	179.0	39.662	0.995	1
+F242D38C	Coemansia	Kickxellales_core	Msh4	strong	F4JP48	gb|JANBTM010000023.1|	1.14e-43	170.0	35.249	0.4	2
+F242D38C	Coemansia	Kickxellales_core	Msh5	strong	Q12175	gb|JANBTM010000023.1|	2.14e-35	145.0	26.799	0.7	1
+F242D38C	Coemansia	Kickxellales_core	Pch2	strong	Q15645	gb|JANBTM010000175.1|	1.04e-12	69.3	25.725	0.634	2
+F242D38C	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBTM010000069.1|	2.75e-08	55.8	37.363	0.283	2
+F242D38C	Coemansia	Kickxellales_core	Spo11	none						0	0
+F24A7D8D	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTX010000326.1|	1.35e-115	384.0	54.859	0.751	2
+F24A7D8D	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTX010000038.1|	0.0	778.0	44.208	0.987	1
+F24A7D8D	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBTX010000145.1|	3.77e-43	166.0	59.701	0.271	2
+F24A7D8D	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTX010000020.1|	1.24e-150	468.0	71.795	0.914	1
+F24A7D8D	Coemansia	Kickxellales_core	Hop1	none						0	0
+F24A7D8D	Coemansia	Kickxellales_core	Hop2	strong	F1C537C3_003027-T1	gb|JANBTX010000176.1|	2.18e-35	131.0	35.537	0.959	1
+F24A7D8D	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTX010000002.1|	8.68e-92	325.0	28.697	0.641	2
+F24A7D8D	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTX010000030.1|	1.44e-16	83.6	25.407	0.848	2
+F24A7D8D	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBTX010000222.1|	1.01e-47	166.0	46.626	0.966	2
+F24A7D8D	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTX010000037.1|	6.65e-110	373.0	30.612	0.755	1
+F24A7D8D	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBTX010000038.1|	3.53e-40	160.0	26.102	0.673	1
+F24A7D8D	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBTX010000012.1|	8.93e-16	79.0	27.523	0.507	2
+F24A7D8D	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBTX010000282.1|	1.59e-09	60.1	28.676	0.242	1
+F24A7D8D	Coemansia	Kickxellales_core	Spo11	none	F8E635D0_000954-T1	gb|JANBTX010000292.1|	0.000329	35.0	29.032	0.198	2
+F24CD14F	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSG010000812.1|	3.54e-129	421.0	55.874	0.791	2
+F24CD14F	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSG010000253.1|	0.0	586.0	45.322	0.718	1
+F24CD14F	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBSG010001175.1|	6.77e-43	165.0	54.545	0.306	2
+F24CD14F	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSG010000179.1|	3.69e-157	486.0	69.851	0.982	1
+F24CD14F	Coemansia	Kickxellales_core	Hop1	none						0	0
+F24CD14F	Coemansia	Kickxellales_core	Hop2	strong	F9368871_005447-T1	gb|JANBSG010001565.1|	1.85e-33	85.9	39.844	0.928	2
+F24CD14F	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBSG010000379.1|	2.37e-84	301.0	29.286	0.684	1
+F24CD14F	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSG010001228.1|	1.37e-15	80.1	28.814	0.462	2
+F24CD14F	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBSG010001919.1|	1e-64	214.0	51.0	0.976	1
+F24CD14F	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSG010000115.1|	5.47e-49	116.0	33.945	0.596	4
+F24CD14F	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBSG010000253.1|	7.37e-46	177.0	26.821	0.719	1
+F24CD14F	Coemansia	Kickxellales_core	Pch2	strong	F5C4F326_006434-T1	gb|JANBSG010000960.1|	4.54e-14	73.9	30.29	0.522	2
+F24CD14F	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBSG010001175.1|	2.66e-06	49.3	31.373	0.186	1
+F24CD14F	Coemansia	Kickxellales_core	Spo11	none						0	0
+F258DE34	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRV010000305.1|	1.88e-129	424.0	57.714	0.791	2
+F258DE34	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P25847	gb|JANBRV010000593.1|	2.62e-66	243.0	28.505	0.639	1
+F258DE34	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBRV010000861.1|	1.87e-41	160.0	46.448	0.271	1
+F258DE34	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRV010000007.1|	2.08e-156	484.0	68.328	0.997	1
+F258DE34	Coemansia	Kickxellales_core	Hop1	none						0	0
+F258DE34	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBRV010000327.1|	7.51e-36	88.6	55.405	0.894	2
+F258DE34	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRV010000283.1|	9.13e-92	324.0	28.822	0.641	2
+F258DE34	Coemansia	Kickxellales_core	Mlh3	weak	Q9UHC1	gb|JANBRV010000305.1|	4.89e-27	119.0	27.635	0.233	1
+F258DE34	Coemansia	Kickxellales_core	Mnd1	strong	F1C537C3_004375-T1	gb|JANBRV010000002.1|	4.73e-58	195.0	51.01	0.971	1
+F258DE34	Coemansia	Kickxellales_core	Msh4	strong	F4JP48	gb|JANBRV010000006.1|	7.68e-37	94.7	40.777	0.588	5
+F258DE34	Coemansia	Kickxellales_core	Msh5	strong	Q9QUM7	gb|JANBRV010000593.1|	6.71e-33	136.0	27.859	0.538	1
+F258DE34	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBRV010000323.1|	2.15e-15	77.4	26.606	0.507	2
+F258DE34	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBRV010000226.1|	5.68e-11	64.3	30.159	0.344	2
+F258DE34	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBRV010002040.1|	2.41e-06	48.1	34.524	0.243	1
+F26DD490	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBPH010000832.1|	6.01e-131	426.0	56.447	0.791	2
+F26DD490	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBPH010000640.1|	0.0	787.0	45.261	0.987	1
+F26DD490	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBPH010000949.1|	4.32e-38	150.0	58.594	0.202	1
+F26DD490	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBPH010001316.1|	1.51e-162	484.0	69.552	0.982	1
+F26DD490	Coemansia	Kickxellales_core	Hop1	none						0	0
+F26DD490	Coemansia	Kickxellales_core	Hop2	strong	F1C537C3_003027-T1	gb|JANBPH010000221.1|	6.9e-38	138.0	39.149	0.9	1
+F26DD490	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBPH010000203.1|	4.35e-86	308.0	32.644	0.618	2
+F26DD490	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBPH010001075.1|	3.12e-16	82.0	29.452	0.722	2
+F26DD490	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBPH010000026.1|	2.16e-63	211.0	50.0	0.976	1
+F26DD490	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBPH010000640.1|	3.22e-47	182.0	34.516	0.549	2
+F26DD490	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBPH010000171.1|	3.92e-38	153.0	26.821	0.665	1
+F26DD490	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBPH010000256.1|	7.59e-16	79.0	29.73	0.429	2
+F26DD490	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBPH010000334.1|	4.75e-10	61.6	30.556	0.178	1
+F26DD490	Coemansia	Kickxellales_core	Spo11	none						0	0
+F340C8D3	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P38920	gb|JANBSB010000449.1|	1.6e-134	439.0	35.372	0.995	1
+F340C8D3	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P25847	gb|JANBSB010001048.1|	5.18e-55	207.0	34.091	0.358	1
+F340C8D3	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBSB010002032.1|	1.03e-40	157.0	47.222	0.263	1
+F340C8D3	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSB010000002.1|	1.35e-151	470.0	72.436	0.914	1
+F340C8D3	Coemansia	Kickxellales_core	Hop1	none						0	0
+F340C8D3	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBSB010000962.1|	1.77e-37	137.0	44.206	0.92	1
+F340C8D3	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBSB010000003.1|	6.59e-93	328.0	29.703	0.641	2
+F340C8D3	Coemansia	Kickxellales_core	Mlh3	strong	Q9UHC1	gb|JANBSB010000004.1|	8.99e-18	89.0	25.0	0.379	2
+F340C8D3	Coemansia	Kickxellales_core	Mnd1	strong	FBDB2FE6_004986-T1	gb|JANBSB010000097.1|	4.44e-63	210.0	50.505	0.961	1
+F340C8D3	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBSB010000002.1|	1.88e-25	113.0	35.106	0.533	4
+F340C8D3	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBSB010001048.1|	9e-40	158.0	32.615	0.424	1
+F340C8D3	Coemansia	Kickxellales_core	Pch2	strong	F5C4F326_006434-T1	gb|JANBSB010001548.1|	1.72e-14	75.1	30.242	0.501	2
+F340C8D3	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBSB010000951.1|	3.35e-11	65.1	30.556	0.305	2
+F340C8D3	Coemansia	Kickxellales_core	Spo11	weak	F18CA942_004849-T1	gb|JANBSB010001006.1|	1.97e-07	52.0	35.366	0.571	3
+F35EFF3E	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|KZ303502.1|	1.51e-125	414.0	55.874	0.81	2
+F35EFF3E	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|KZ303498.1|	0.0	776.0	43.856	0.987	1
+F35EFF3E	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|KZ303502.1|	1.39e-43	168.0	60.584	0.277	2
+F35EFF3E	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|KZ303493.1|	6.55e-151	469.0	71.795	0.914	1
+F35EFF3E	Coemansia	Kickxellales_core	Hop1	none						0	0
+F35EFF3E	Coemansia	Kickxellales_core	Hop2	strong	F1C537C3_003027-T1	gb|KZ303494.1|	2.98e-40	145.0	40.351	0.905	1
+F35EFF3E	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|KZ303488.1|	2.62e-87	312.0	33.432	0.661	2
+F35EFF3E	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|KZ303508.1|	7.21e-15	78.6	24.15	0.453	2
+F35EFF3E	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|KZ303547.1|	6.57e-46	150.0	41.718	0.995	2
+F35EFF3E	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|KZ303493.1|	2.11e-46	103.0	48.246	0.575	4
+F35EFF3E	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|KZ303489.1|	1e-30	130.0	24.168	0.633	2
+F35EFF3E	Coemansia	Kickxellales_core	Pch2	strong	F4FD0401_005454-T1	gb|KZ303496.1|	4.02e-14	74.3	30.396	0.5	2
+F35EFF3E	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|KZ303498.1|	6.94e-09	58.5	37.363	0.162	1
+F35EFF3E	Coemansia	Kickxellales_core	Spo11	none	F5A4E39E_005593-T1	gb|KZ303505.1|	0.000198	43.1	25.806	0.236	1
+F3E9A416	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSO010001247.1|	2.03e-115	382.0	53.012	0.769	2
+F3E9A416	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSO010001411.1|	1.91e-119	398.0	39.35	0.587	1
+F3E9A416	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBSO010001503.1|	8.7e-40	155.0	45.355	0.257	1
+F3E9A416	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSO010000334.1|	5.98e-151	469.0	73.226	0.909	1
+F3E9A416	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBSO010000106.1|	5.82e-08	55.5	25.381	0.321	1
+F3E9A416	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBSO010001326.1|	1.62e-20	88.6	42.308	0.903	2
+F3E9A416	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBSO010000884.1|	7.04e-84	301.0	31.959	0.655	2
+F3E9A416	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSO010001065.1|	1.5e-22	102.0	21.236	0.985	1
+F3E9A416	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBSO010001049.1|	1.88e-57	194.0	45.536	0.98	1
+F3E9A416	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSO010002105.1|	5.87e-116	381.0	30.665	0.755	1
+F3E9A416	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBSO010000021.1|	2.98e-38	154.0	25.734	0.625	1
+F3E9A416	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBSO010003072.1|	1.34e-18	87.8	30.288	0.555	2
+F3E9A416	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBSO010001503.1|	4.42e-06	48.9	31.373	0.186	1
+F3E9A416	Coemansia	Kickxellales_core	Spo11	none						0	0
+F3F357F6	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P38920	gb|JANBRO010000825.1|	1.65e-109	365.0	35.912	0.809	1
+F3F357F6	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBRO010001020.1|	0.0	746.0	43.983	0.987	1
+F3F357F6	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBRO010000286.1|	9.64e-43	164.0	46.893	0.355	2
+F3F357F6	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRO010000020.1|	2.56e-153	475.0	73.397	0.914	1
+F3F357F6	Coemansia	Kickxellales_core	Hop1	none						0	0
+F3F357F6	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBRO010001413.1|	3.8e-37	135.0	37.405	0.986	1
+F3F357F6	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRO010000454.1|	8.7e-92	323.0	28.505	0.685	2
+F3F357F6	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBRO010000551.1|	2.76e-16	82.0	25.939	0.457	2
+F3F357F6	Coemansia	Kickxellales_core	Mnd1	none						0	0
+F3F357F6	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBRO010001020.1|	2.27e-49	189.0	34.234	0.335	1
+F3F357F6	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBRO010001020.1|	9.48e-43	167.0	26.466	0.721	1
+F3F357F6	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBRO010001265.1|	2.8e-15	77.0	26.606	0.507	2
+F3F357F6	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBRO010000286.1|	1.12e-06	50.4	31.373	0.186	1
+F3F357F6	Coemansia	Kickxellales_core	Spo11	none						0	0
+F40251F8	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOS010000013.1|	7.56e-176	558.0	39.708	0.991	1
+F40251F8	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOS010000009.1|	0.0	746.0	43.996	0.987	1
+F40251F8	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBOS010000123.1|	1.01e-42	164.0	46.893	0.355	2
+F40251F8	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOS010000005.1|	5.55e-154	477.0	68.314	0.997	1
+F40251F8	Coemansia	Kickxellales_core	Hop1	none						0	0
+F40251F8	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBOS010000567.1|	3.93e-37	135.0	37.405	0.986	1
+F40251F8	Coemansia	Kickxellales_core	Mer3	strong	F5C4F326_001532-T1	gb|JANBOS010000009.1|	8.23e-85	303.0	30.13	0.705	2
+F40251F8	Coemansia	Kickxellales_core	Mlh3	weak	Q12083	gb|JANBOS010000013.1|	3.26e-19	91.7	32.184	0.241	1
+F40251F8	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBOS010000027.1|	1.79e-59	199.0	49.246	0.98	1
+F40251F8	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBOS010000010.1|	2.16e-50	193.0	30.467	0.683	2
+F40251F8	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBOS010000009.1|	8.01e-42	165.0	25.873	0.721	1
+F40251F8	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBOS010000024.1|	8.19e-19	88.6	32.039	0.422	2
+F40251F8	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBOS010000123.1|	1.12e-06	50.4	31.373	0.186	1
+F40251F8	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBOS010000145.1|	2.95e-07	51.6	31.068	0.253	1
+F4A7DF8C	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRD010001805.1|	3.48e-127	396.0	58.861	0.409	1
+F4A7DF8C	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBRD010000010.1|	0.0	741.0	43.77	0.987	1
+F4A7DF8C	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBRD010000037.1|	1.09e-42	164.0	46.893	0.355	2
+F4A7DF8C	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRD010000578.1|	6.6e-154	475.0	73.397	0.914	1
+F4A7DF8C	Coemansia	Kickxellales_core	Hop1	none						0	0
+F4A7DF8C	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBRD010002007.1|	2.46e-37	135.0	37.405	0.986	1
+F4A7DF8C	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRD010000012.1|	1.55e-89	317.0	30.218	0.678	2
+F4A7DF8C	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBRD010000624.1|	8.95e-16	80.5	25.939	0.457	2
+F4A7DF8C	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBRD010000010.1|	1.86e-59	199.0	49.246	0.98	1
+F4A7DF8C	Coemansia	Kickxellales_core	Msh4	weak	O15457	gb|JANBRD010000444.1|	3.77e-50	192.0	38.732	0.275	1
+F4A7DF8C	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBRD010000010.1|	1.23e-42	167.0	26.466	0.721	1
+F4A7DF8C	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBRD010000089.1|	3.37e-15	77.0	26.606	0.507	2
+F4A7DF8C	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBRD010000037.1|	1.17e-06	50.4	31.373	0.186	1
+F4A7DF8C	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBRD010000935.1|	2.81e-07	51.6	31.068	0.253	1
+F4CFDB08	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRB010000088.1|	6.57e-127	417.0	55.172	0.892	2
+F4CFDB08	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBRB010000011.1|	0.0	760.0	43.598	0.984	1
+F4CFDB08	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBRB010000132.1|	3.56e-39	154.0	46.369	0.347	2
+F4CFDB08	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRB010000276.1|	4.47e-149	462.0	71.474	0.914	1
+F4CFDB08	Coemansia	Kickxellales_core	Hop1	none						0	0
+F4CFDB08	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBRB010000149.1|	3.07e-20	87.4	36.478	0.933	2
+F4CFDB08	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBRB010000134.1|	3.9e-87	311.0	32.429	0.661	2
+F4CFDB08	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBRB010000316.1|	6.76e-16	80.9	22.542	0.617	2
+F4CFDB08	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBRB010000155.1|	6.28e-57	192.0	48.744	0.98	1
+F4CFDB08	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBRB010000035.1|	2.19e-48	187.0	39.608	0.565	3
+F4CFDB08	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBRB010000011.1|	4.79e-40	159.0	26.878	0.711	1
+F4CFDB08	Coemansia	Kickxellales_core	Pch2	strong	F5C4F326_006434-T1	gb|JANBRB010000028.1|	7.24e-13	70.1	29.965	0.586	2
+F4CFDB08	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBRB010000132.1|	2.38e-07	52.8	31.373	0.186	1
+F4CFDB08	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBRB010000015.1|	8.66e-07	49.7	32.558	0.249	1
+F4DA7CFA	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTT010000020.1|	2.41e-125	413.0	56.196	0.788	2
+F4DA7CFA	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTT010000188.1|	0.0	755.0	44.421	0.987	1
+F4DA7CFA	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBTT010000070.1|	6.16e-40	157.0	41.667	0.287	1
+F4DA7CFA	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTT010000009.1|	2.25e-156	484.0	69.552	0.982	2
+F4DA7CFA	Coemansia	Kickxellales_core	Hop1	none						0	0
+F4DA7CFA	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBTT010000085.1|	1.55e-38	140.0	44.13	0.915	1
+F4DA7CFA	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTT010000108.1|	1.83e-86	308.0	28.111	0.691	2
+F4DA7CFA	Coemansia	Kickxellales_core	Mlh3	strong	Q9UHC1	gb|JANBTT010000006.1|	8.9e-17	86.3	23.677	0.377	2
+F4DA7CFA	Coemansia	Kickxellales_core	Mnd1	strong	FBDB2FE6_004986-T1	gb|JANBTT010000037.1|	3.93e-59	199.0	47.475	0.961	1
+F4DA7CFA	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTT010000041.1|	3.95e-23	105.0	36.913	0.517	4
+F4DA7CFA	Coemansia	Kickxellales_core	Msh5	strong	Q12175	gb|JANBTT010000188.1|	2.32e-34	142.0	24.697	0.701	1
+F4DA7CFA	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBTT010000113.1|	6.89e-17	82.8	31.844	0.458	3
+F4DA7CFA	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBTT010000061.1|	1.25e-10	63.9	36.264	0.162	1
+F4DA7CFA	Coemansia	Kickxellales_core	Spo11	none						0	0
+F50540CB	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P38920	gb|JANBUS010000247.1|	1.86e-134	439.0	35.372	0.995	1
+F50540CB	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P25847	gb|JANBUS010000714.1|	1.55e-55	209.0	34.091	0.548	2
+F50540CB	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBUS010000679.1|	1.98e-40	157.0	47.222	0.263	1
+F50540CB	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUS010000041.1|	1.38e-151	470.0	72.436	0.914	1
+F50540CB	Coemansia	Kickxellales_core	Hop1	none						0	0
+F50540CB	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBUS010002336.1|	2.07e-31	87.8	52.703	0.894	2
+F50540CB	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBUS010000098.1|	2.78e-84	301.0	34.57	0.68	2
+F50540CB	Coemansia	Kickxellales_core	Mlh3	strong	Q9UHC1	gb|JANBUS010000632.1|	8.19e-18	89.0	24.39	0.379	2
+F50540CB	Coemansia	Kickxellales_core	Mnd1	strong	FBDB2FE6_004986-T1	gb|JANBUS010000116.1|	4.69e-63	210.0	50.505	0.961	1
+F50540CB	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBUS010000001.1|	1.97e-25	113.0	35.106	0.533	4
+F50540CB	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBUS010000714.1|	4.08e-39	156.0	32.88	0.421	1
+F50540CB	Coemansia	Kickxellales_core	Pch2	strong	F5C4F326_006434-T1	gb|JANBUS010000418.1|	2.16e-14	75.1	30.242	0.501	2
+F50540CB	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBUS010000083.1|	8.72e-11	63.9	29.63	0.305	2
+F50540CB	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBUS010002081.1|	1.04e-09	58.9	36.145	0.241	1
+F52B818A	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTZ010000224.1|	5.14e-116	385.0	54.859	0.751	2
+F52B818A	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTZ010000032.1|	0.0	778.0	44.421	0.987	1
+F52B818A	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBTZ010000031.1|	4.23e-43	166.0	59.701	0.271	2
+F52B818A	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTZ010000095.1|	1.25e-150	468.0	71.795	0.914	1
+F52B818A	Coemansia	Kickxellales_core	Hop1	none	P20050	gb|JANBTZ010000171.1|	0.000353	42.7	23.077	0.317	1
+F52B818A	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBTZ010000119.1|	5.5e-34	127.0	38.912	0.968	1
+F52B818A	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTZ010000173.1|	3.82e-92	325.0	28.822	0.641	2
+F52B818A	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTZ010000200.1|	7.95e-17	84.3	25.484	0.852	2
+F52B818A	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBTZ010000223.1|	5.12e-50	165.0	46.012	0.966	2
+F52B818A	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTZ010000218.1|	1.15e-111	378.0	30.612	0.755	1
+F52B818A	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBTZ010000032.1|	4.52e-40	159.0	26.102	0.673	1
+F52B818A	Coemansia	Kickxellales_core	Pch2	strong	Q15645	gb|JANBTZ010000008.1|	6.61e-19	89.0	36.81	0.407	4
+F52B818A	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBTZ010000034.1|	1.45e-12	69.7	27.206	0.242	1
+F52B818A	Coemansia	Kickxellales_core	Spo11	none						0	0
+F5353C03	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTW010000051.1|	1.2e-122	405.0	56.268	0.783	2
+F5353C03	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTW010000020.1|	0.0	772.0	44.963	0.987	1
+F5353C03	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBTW010000004.1|	1.21e-43	168.0	60.294	0.331	2
+F5353C03	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTW010000044.1|	3.11e-151	469.0	71.924	0.929	1
+F5353C03	Coemansia	Kickxellales_core	Hop1	none						0	0
+F5353C03	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBTW010000048.1|	6.61e-34	92.4	58.904	0.894	2
+F5353C03	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBTW010000009.1|	5.34e-89	316.0	29.119	0.667	2
+F5353C03	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTW010000114.1|	5.09e-13	72.0	23.92	0.706	2
+F5353C03	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBTW010000089.1|	1.26e-45	160.0	42.945	0.966	2
+F5353C03	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTW010000155.1|	2.42e-44	100.0	30.769	0.646	4
+F5353C03	Coemansia	Kickxellales_core	Msh5	strong	Q9QUM7	gb|JANBTW010000005.1|	5.42e-35	144.0	24.298	0.652	2
+F5353C03	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBTW010000022.1|	3.41e-15	77.8	32.022	0.565	6
+F5353C03	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBTW010000115.1|	8.16e-11	64.3	25.185	0.387	2
+F5353C03	Coemansia	Kickxellales_core	Spo11	none						0	0
+F53A5B42	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTE010000041.1|	1.89e-128	421.0	57.02	0.802	2
+F53A5B42	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTE010000088.1|	0.0	766.0	44.574	0.987	1
+F53A5B42	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBTE010000071.1|	8.62e-44	168.0	55.063	0.248	1
+F53A5B42	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTE010000010.1|	2.93e-151	469.0	72.756	0.914	1
+F53A5B42	Coemansia	Kickxellales_core	Hop1	none						0	0
+F53A5B42	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBTE010000185.1|	7.78e-41	147.0	40.889	0.902	1
+F53A5B42	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTE010000005.1|	7.45e-91	322.0	28.271	0.685	2
+F53A5B42	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTE010000044.1|	3.21e-12	69.3	24.661	0.772	3
+F53A5B42	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBTE010000220.1|	1.91e-59	199.0	48.744	0.98	1
+F53A5B42	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTE010000032.1|	4.25e-46	107.0	49.505	0.507	4
+F53A5B42	Coemansia	Kickxellales_core	Msh5	strong	FEACB2E7_006734-T1	gb|JANBTE010000002.1|	7.77e-28	120.0	32.258	0.774	3
+F53A5B42	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBTE010000002.1|	4.34e-15	76.6	26.606	0.507	2
+F53A5B42	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBTE010000071.1|	1.2e-06	50.4	31.373	0.186	1
+F53A5B42	Coemansia	Kickxellales_core	Spo11	none	P40384	gb|JANBTE010000039.1|	0.000223	42.0	27.381	0.243	1
+F55D1F1F	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSI010000832.1|	5.7e-118	385.0	54.859	0.751	2
+F55D1F1F	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSI010000048.1|	0.0	777.0	44.315	0.987	1
+F55D1F1F	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBSI010000477.1|	3.67e-43	166.0	59.701	0.271	2
+F55D1F1F	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSI010000253.1|	9.73e-151	468.0	71.795	0.914	1
+F55D1F1F	Coemansia	Kickxellales_core	Hop1	none	P20050	gb|JANBSI010000110.1|	0.000284	42.7	23.077	0.317	1
+F55D1F1F	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBSI010001363.1|	2.6e-34	127.0	38.912	0.968	1
+F55D1F1F	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBSI010000123.1|	3.07e-92	325.0	28.822	0.641	2
+F55D1F1F	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSI010000131.1|	6.38e-17	84.3	25.484	0.852	2
+F55D1F1F	Coemansia	Kickxellales_core	Mnd1	none						0	0
+F55D1F1F	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSI010000048.1|	1.42e-56	212.0	28.212	0.74	1
+F55D1F1F	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBSI010000048.1|	3.53e-40	159.0	26.102	0.673	1
+F55D1F1F	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBSI010000008.1|	6.08e-16	79.3	27.523	0.507	2
+F55D1F1F	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBSI010000193.1|	1.13e-12	69.7	27.206	0.242	1
+F55D1F1F	Coemansia	Kickxellales_core	Spo11	none						0	0
+F56A3D5B	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRS010001248.1|	1.22e-127	397.0	59.177	0.409	1
+F56A3D5B	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBRS010000028.1|	0.0	741.0	43.77	0.987	1
+F56A3D5B	Coemansia	Kickxellales_core	CTRL_Rad21	none	O60216	gb|JANBRS010000474.1|	0.001	41.2	33.962	0.084	1
+F56A3D5B	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRS010000241.1|	5.58e-154	477.0	68.314	0.997	1
+F56A3D5B	Coemansia	Kickxellales_core	Hop1	none						0	0
+F56A3D5B	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBRS010000524.1|	4.11e-37	135.0	37.405	0.986	1
+F56A3D5B	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRS010000062.1|	5.46e-92	325.0	28.505	0.685	2
+F56A3D5B	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBRS010000016.1|	1.1e-15	80.5	25.939	0.457	2
+F56A3D5B	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBRS010000028.1|	1.94e-59	199.0	49.246	0.98	1
+F56A3D5B	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBRS010000137.1|	4.43e-50	192.0	38.305	0.629	3
+F56A3D5B	Coemansia	Kickxellales_core	Msh5	strong	F23D95F9_002434-T1	gb|JANBRS010000010.1|	5.29e-29	124.0	39.175	0.654	5
+F56A3D5B	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBRS010000087.1|	3.56e-15	77.0	26.606	0.507	2
+F56A3D5B	Coemansia	Kickxellales_core	Rec8	none	P36626	gb|JANBRS010000007.1|	1.33e-05	47.0	28.571	0.162	1
+F56A3D5B	Coemansia	Kickxellales_core	Spo11	none	F7FE4923_004084-T1	gb|JANBRS010001015.1|	4.45e-05	44.7	36.232	0.287	2
+F5845C02	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSN010000072.1|	1.62e-120	399.0	52.747	0.772	2
+F5845C02	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSN010000118.1|	0.0	785.0	45.137	0.987	1
+F5845C02	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBSN010001682.1|	1.12e-39	155.0	44.92	0.257	1
+F5845C02	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSN010000006.1|	4.56e-59	204.0	68.571	0.41	1
+F5845C02	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBSN010000453.1|	2.71e-07	53.1	24.352	0.314	1
+F5845C02	Coemansia	Kickxellales_core	Hop2	strong	F9368871_005447-T1	gb|JANBSN010000907.1|	9.37e-19	83.6	32.124	0.689	1
+F5845C02	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBSN010000242.1|	5.46e-82	295.0	31.683	0.691	2
+F5845C02	Coemansia	Kickxellales_core	Mlh3	weak	Q9UHC1	gb|JANBSN010000072.1|	1.1e-23	108.0	26.647	0.222	1
+F5845C02	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBSN010001474.1|	5.73e-49	160.0	45.399	0.966	2
+F5845C02	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSN010002318.1|	5.91e-102	341.0	30.638	0.65	1
+F5845C02	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBSN010000118.1|	7.91e-45	174.0	26.038	0.745	1
+F5845C02	Coemansia	Kickxellales_core	Pch2	strong	F4FD0401_005454-T1	gb|JANBSN010001142.1|	8.63e-15	76.3	31.034	0.447	1
+F5845C02	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBSN010001682.1|	1.7e-06	50.1	31.373	0.186	1
+F5845C02	Coemansia	Kickxellales_core	Spo11	none						0	0
+F5AC56AA	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRF010001700.1|	2.41e-127	396.0	59.177	0.409	1
+F5AC56AA	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBRF010000001.1|	0.0	741.0	43.77	0.987	1
+F5AC56AA	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBRF010000052.1|	1.03e-42	164.0	46.893	0.355	2
+F5AC56AA	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRF010000650.1|	3.56e-155	477.0	68.314	0.997	1
+F5AC56AA	Coemansia	Kickxellales_core	Hop1	none						0	0
+F5AC56AA	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBRF010001248.1|	3.85e-37	135.0	37.405	0.986	1
+F5AC56AA	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRF010000016.1|	1.57e-89	317.0	30.218	0.678	2
+F5AC56AA	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBRF010001172.1|	2.15e-16	82.4	25.939	0.457	2
+F5AC56AA	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBRF010000001.1|	1.89e-59	199.0	49.246	0.98	1
+F5AC56AA	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBRF010000081.1|	4.46e-50	192.0	38.305	0.629	3
+F5AC56AA	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBRF010000001.1|	1.27e-42	167.0	26.466	0.721	1
+F5AC56AA	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBRF010000076.1|	3.45e-15	77.0	26.606	0.507	2
+F5AC56AA	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBRF010000052.1|	1.44e-06	50.1	31.373	0.186	1
+F5AC56AA	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBRF010000846.1|	2.94e-07	51.6	31.068	0.253	1
+F5BD664F	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBPD010000006.1|	8.42e-170	541.0	39.431	0.991	1
+F5BD664F	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBPD010000049.1|	0.0	784.0	45.192	0.987	1
+F5BD664F	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBPD010000006.1|	4.64e-38	150.0	49.032	0.242	1
+F5BD664F	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBPD010000067.1|	3.8e-152	471.0	72.756	0.914	1
+F5BD664F	Coemansia	Kickxellales_core	Hop1	none						0	0
+F5BD664F	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBPD010000133.1|	1.14e-37	100.0	41.912	0.942	2
+F5BD664F	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBPD010000096.1|	6.22e-86	306.0	28.683	0.651	2
+F5BD664F	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBPD010000102.1|	4.07e-16	81.6	28.151	0.652	2
+F5BD664F	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBPD010000110.1|	3.27e-60	201.0	50.754	0.98	1
+F5BD664F	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBPD010000016.1|	5.49e-51	113.0	32.143	0.724	3
+F5BD664F	Coemansia	Kickxellales_core	Msh5	strong	F23D95F9_002434-T1	gb|JANBPD010000002.1|	5.61e-34	140.0	22.769	0.7	3
+F5BD664F	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBPD010000031.1|	9.29e-19	88.6	32.367	0.467	3
+F5BD664F	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBPD010000006.1|	7.88e-07	50.8	31.373	0.186	1
+F5BD664F	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBPD010000232.1|	3.72e-07	50.8	29.545	0.255	1
+F5E0444E	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQN010000146.1|	1.01e-114	382.0	52.711	0.769	2
+F5E0444E	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQN010000016.1|	0.0	780.0	44.351	0.987	1
+F5E0444E	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBQN010000042.1|	2.02e-43	167.0	60.448	0.268	2
+F5E0444E	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQN010000085.1|	1.97e-149	464.0	71.474	0.914	1
+F5E0444E	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBQN010000034.1|	8.25e-06	48.1	23.958	0.314	1
+F5E0444E	Coemansia	Kickxellales_core	Hop2	strong	F1C537C3_003027-T1	gb|JANBQN010000206.1|	2.93e-20	87.8	39.706	0.615	1
+F5E0444E	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBQN010000003.1|	3.76e-91	323.0	28.446	0.641	2
+F5E0444E	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQN010000114.1|	4.07e-12	54.7	23.671	0.592	3
+F5E0444E	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBQN010000228.1|	3.08e-47	164.0	49.693	0.98	2
+F5E0444E	Coemansia	Kickxellales_core	Msh4	strong	F4JP48	gb|JANBQN010000037.1|	5.97e-69	182.0	39.116	0.91	2
+F5E0444E	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBQN010000118.1|	1.57e-39	158.0	26.079	0.625	1
+F5E0444E	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBQN010000012.1|	2.42e-18	87.8	30.288	0.555	4
+F5E0444E	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBQN010000142.1|	4.19e-13	71.6	29.412	0.364	2
+F5E0444E	Coemansia	Kickxellales_core	Spo11	none						0	0
+F61EE814	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTR010001037.1|	5.78e-128	420.0	56.734	0.791	2
+F61EE814	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTR010000187.1|	0.0	756.0	44.526	0.987	1
+F61EE814	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBTR010000348.1|	3.72e-42	163.0	57.353	0.304	2
+F61EE814	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTR010000784.1|	3.64e-57	199.0	80.165	0.354	1
+F61EE814	Coemansia	Kickxellales_core	Hop1	none						0	0
+F61EE814	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBTR010000644.1|	2.98e-38	140.0	45.992	0.875	1
+F61EE814	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTR010002544.1|	5.43e-57	213.0	27.751	0.641	2
+F61EE814	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTR010000656.1|	1.35e-24	109.0	27.577	0.485	1
+F61EE814	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBTR010000122.1|	7.22e-57	192.0	53.061	0.961	1
+F61EE814	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTR010000115.1|	1.88e-22	103.0	38.462	0.542	4
+F61EE814	Coemansia	Kickxellales_core	Msh5	strong	FD4B4AC6_007013-T1	gb|JANBTR010000187.1|	2.96e-41	164.0	24.188	0.667	1
+F61EE814	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBTR010000149.1|	1.1e-14	75.9	30.901	0.54	2
+F61EE814	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBTR010001551.1|	1.18e-10	63.9	36.264	0.162	1
+F61EE814	Coemansia	Kickxellales_core	Spo11	none						0	0
+F6545673	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOI010000559.1|	5.49e-129	422.0	57.778	0.804	2
+F6545673	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOI010000143.1|	0.0	749.0	45.682	0.925	1
+F6545673	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBOI010001240.1|	6.53e-43	165.0	60.0	0.275	2
+F6545673	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOI010000491.1|	3.76e-153	474.0	71.34	0.941	1
+F6545673	Coemansia	Kickxellales_core	Hop1	none						0	0
+F6545673	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBOI010000531.1|	1.55e-41	149.0	49.51	0.911	1
+F6545673	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBOI010000130.1|	6.02e-85	303.0	31.152	0.718	2
+F6545673	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBOI010000501.1|	3.86e-17	85.1	24.161	0.699	2
+F6545673	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBOI010000207.1|	3.64e-54	184.0	39.407	0.966	1
+F6545673	Coemansia	Kickxellales_core	Msh4	strong	P40965	gb|JANBOI010000143.1|	1.3e-37	152.0	25.806	0.699	1
+F6545673	Coemansia	Kickxellales_core	Msh5	strong	FD4B4AC6_007013-T1	gb|JANBOI010000132.1|	3.12e-37	150.0	25.253	0.629	1
+F6545673	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBOI010000099.1|	1.43e-18	88.2	34.659	0.373	2
+F6545673	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBOI010001240.1|	2.52e-06	49.3	31.313	0.181	1
+F6545673	Coemansia	Kickxellales_core	Spo11	none						0	0
+F6CB2D58	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSD010000783.1|	6.88e-130	424.0	57.714	0.791	2
+F6CB2D58	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSD010000055.1|	0.0	773.0	44.208	0.987	1
+F6CB2D58	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBSD010000256.1|	2.29e-41	160.0	46.448	0.271	1
+F6CB2D58	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSD010000034.1|	9e-157	485.0	68.328	0.997	1
+F6CB2D58	Coemansia	Kickxellales_core	Hop1	none						0	0
+F6CB2D58	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBSD010000547.1|	7.74e-36	88.6	55.405	0.894	2
+F6CB2D58	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBSD010000139.1|	1.25e-88	315.0	33.286	0.661	2
+F6CB2D58	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSD010000004.1|	5.01e-17	85.1	25.667	0.457	2
+F6CB2D58	Coemansia	Kickxellales_core	Mnd1	strong	F1C537C3_004375-T1	gb|JANBSD010000508.1|	4.62e-58	195.0	51.01	0.971	1
+F6CB2D58	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSD010000018.1|	3.91e-49	110.0	36.842	0.479	3
+F6CB2D58	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBSD010000055.1|	5.29e-43	169.0	25.543	0.683	1
+F6CB2D58	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBSD010001567.1|	1.78e-15	77.4	26.606	0.507	2
+F6CB2D58	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBSD010000185.1|	1.02e-10	63.5	30.159	0.344	2
+F6CB2D58	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBSD010002183.1|	1.94e-06	48.1	34.524	0.243	1
+F6D48826	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBPC010000274.1|	1.65e-128	421.0	57.02	0.802	2
+F6D48826	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBPC010000074.1|	0.0	766.0	44.574	0.987	1
+F6D48826	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBPC010000118.1|	8.6e-44	168.0	55.063	0.248	1
+F6D48826	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBPC010000035.1|	2.94e-151	469.0	72.756	0.914	1
+F6D48826	Coemansia	Kickxellales_core	Hop1	none						0	0
+F6D48826	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBPC010000175.1|	7.86e-41	147.0	40.889	0.902	1
+F6D48826	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBPC010000132.1|	7.06e-91	322.0	28.271	0.685	2
+F6D48826	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBPC010000039.1|	3.22e-12	69.3	24.661	0.772	3
+F6D48826	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBPC010000210.1|	1.93e-59	199.0	48.744	0.98	1
+F6D48826	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBPC010000048.1|	1.24e-44	105.0	49.505	0.569	4
+F6D48826	Coemansia	Kickxellales_core	Msh5	strong	FEACB2E7_006734-T1	gb|JANBPC010000002.1|	7.84e-28	120.0	32.258	0.774	3
+F6D48826	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBPC010000002.1|	4.38e-15	76.6	26.606	0.507	2
+F6D48826	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBPC010000118.1|	1.2e-06	50.4	31.373	0.186	1
+F6D48826	Coemansia	Kickxellales_core	Spo11	none	P40384	gb|JANBPC010000242.1|	0.00022	42.0	27.381	0.243	1
+F6E9E45A	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSZ010000413.1|	4.54e-176	558.0	39.708	0.991	1
+F6E9E45A	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSZ010000002.1|	0.0	746.0	43.996	0.987	1
+F6E9E45A	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBSZ010000905.1|	7.97e-43	164.0	46.893	0.355	2
+F6E9E45A	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSZ010000404.1|	5.25e-154	477.0	68.314	0.997	1
+F6E9E45A	Coemansia	Kickxellales_core	Hop1	none						0	0
+F6E9E45A	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBSZ010000878.1|	4.11e-37	135.0	37.405	0.986	1
+F6E9E45A	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBSZ010000267.1|	3.72e-92	325.0	28.505	0.685	2
+F6E9E45A	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSZ010000530.1|	9.21e-16	80.5	25.939	0.457	2
+F6E9E45A	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBSZ010000002.1|	1.86e-59	199.0	49.246	0.98	1
+F6E9E45A	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSZ010000241.1|	4.06e-50	192.0	38.305	0.525	2
+F6E9E45A	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBSZ010000002.1|	8.29e-42	165.0	25.873	0.721	1
+F6E9E45A	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBSZ010000079.1|	3.41e-15	77.0	26.606	0.507	2
+F6E9E45A	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBSZ010000905.1|	1.06e-06	50.4	31.373	0.186	1
+F6E9E45A	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBSZ010001128.1|	2.73e-07	51.6	31.068	0.253	1
+F735041E	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTA010001483.1|	3.87e-170	524.0	36.655	0.991	1
+F735041E	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTA010000089.1|	0.0	762.0	44.374	0.987	1
+F735041E	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBTA010000177.1|	1.48e-42	164.0	58.824	0.304	2
+F735041E	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTA010002063.1|	8.79e-84	270.0	74.713	0.51	1
+F735041E	Coemansia	Kickxellales_core	Hop1	none						0	0
+F735041E	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBTA010001320.1|	2.47e-39	142.0	46.473	0.915	1
+F735041E	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBTA010000720.1|	9.82e-87	309.0	30.058	0.661	2
+F735041E	Coemansia	Kickxellales_core	Mlh3	strong	Q9UHC1	gb|JANBTA010000881.1|	5.75e-18	89.4	24.581	0.402	2
+F735041E	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBTA010001820.1|	1.71e-61	205.0	54.5	0.98	1
+F735041E	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTA010000089.1|	2.17e-60	224.0	27.91	0.741	1
+F735041E	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBTA010000089.1|	1.38e-51	195.0	27.656	0.76	1
+F735041E	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBTA010000205.1|	7.31e-16	79.7	30.275	0.473	2
+F735041E	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBTA010000278.1|	2.49e-09	59.3	28.704	0.178	1
+F735041E	Coemansia	Kickxellales_core	Spo11	none	F7FE4923_004084-T1	gb|JANBTA010001233.1|	2.06e-05	46.2	28.319	0.176	1
+F771CC9E	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBUO010000688.1|	8.58e-112	373.0	55.063	0.545	2
+F771CC9E	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBUO010000465.1|	0.0	767.0	43.843	0.987	1
+F771CC9E	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBUO010001328.1|	4.74e-45	171.0	60.87	0.277	2
+F771CC9E	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUO010000670.1|	3.36e-151	469.0	71.795	0.914	1
+F771CC9E	Coemansia	Kickxellales_core	Hop1	none						0	0
+F771CC9E	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBUO010001593.1|	8.96e-18	80.5	51.351	0.343	1
+F771CC9E	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBUO010000141.1|	5.47e-88	314.0	31.38	0.714	2
+F771CC9E	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBUO010001260.1|	2.55e-16	82.4	26.246	0.706	2
+F771CC9E	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBUO010000831.1|	2.85e-46	162.0	50.943	0.97	2
+F771CC9E	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBUO010000962.1|	1.07e-50	194.0	42.972	0.527	3
+F771CC9E	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBUO010000465.1|	2.73e-38	154.0	25.738	0.693	1
+F771CC9E	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBUO010001194.1|	2.06e-15	77.8	26.636	0.498	1
+F771CC9E	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBUO010001328.1|	1.13e-06	50.4	31.373	0.186	1
+F771CC9E	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBUO010001227.1|	2.61e-07	51.6	36.905	0.243	1
+F7943FC0	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBON010001903.1|	6.01e-137	422.0	57.02	0.452	1
+F7943FC0	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBON010000020.1|	0.0	671.0	44.753	0.872	1
+F7943FC0	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBON010000100.1|	9.78e-43	164.0	46.893	0.355	2
+F7943FC0	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBON010000442.1|	1.17e-153	475.0	73.397	0.914	1
+F7943FC0	Coemansia	Kickxellales_core	Hop1	none						0	0
+F7943FC0	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBON010000058.1|	4.03e-37	135.0	37.405	0.986	1
+F7943FC0	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBON010000351.1|	3.04e-90	318.0	29.658	0.668	1
+F7943FC0	Coemansia	Kickxellales_core	Mlh3	weak	Q12083	gb|JANBON010001903.1|	1.77e-19	91.7	32.184	0.241	1
+F7943FC0	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBON010001257.1|	1.47e-59	199.0	49.246	0.98	1
+F7943FC0	Coemansia	Kickxellales_core	Msh4	strong	F4JP48	gb|JANBON010000020.1|	1.91e-43	169.0	36.822	0.312	1
+F7943FC0	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBON010000020.1|	1.87e-42	167.0	26.466	0.721	1
+F7943FC0	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBON010000037.1|	8.27e-19	88.6	32.039	0.422	2
+F7943FC0	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBON010000100.1|	1.09e-06	50.4	31.373	0.186	1
+F7943FC0	Coemansia	Kickxellales_core	Spo11	none						0	0
+F7B5F16C	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOR010001919.1|	2.52e-136	421.0	57.02	0.452	1
+F7B5F16C	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOR010000017.1|	1.86e-176	567.0	45.914	0.707	1
+F7B5F16C	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBOR010000097.1|	9.84e-43	164.0	46.893	0.355	2
+F7B5F16C	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOR010000447.1|	1.17e-153	475.0	73.397	0.914	1
+F7B5F16C	Coemansia	Kickxellales_core	Hop1	none						0	0
+F7B5F16C	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBOR010000057.1|	4.06e-37	135.0	37.405	0.986	1
+F7B5F16C	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBOR010000366.1|	4.21e-90	318.0	29.658	0.668	1
+F7B5F16C	Coemansia	Kickxellales_core	Mlh3	weak	Q12083	gb|JANBOR010001919.1|	1.43e-19	92.0	32.184	0.241	1
+F7B5F16C	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBOR010001273.1|	1.48e-59	199.0	49.246	0.98	1
+F7B5F16C	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBOR010002243.1|	5.1e-52	193.0	30.467	0.33	1
+F7B5F16C	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBOR010000017.1|	1.59e-42	167.0	26.624	0.721	1
+F7B5F16C	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBOR010000630.1|	2.9e-15	77.0	26.606	0.507	2
+F7B5F16C	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBOR010000097.1|	1.1e-06	50.4	31.373	0.186	1
+F7B5F16C	Coemansia	Kickxellales_core	Spo11	none						0	0
+F7BBDC12	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRW010000187.1|	1.89e-129	424.0	57.714	0.791	2
+F7BBDC12	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P25847	gb|JANBRW010000530.1|	2.57e-66	243.0	28.505	0.639	1
+F7BBDC12	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBRW010001736.1|	7.52e-42	161.0	46.448	0.271	1
+F7BBDC12	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRW010000010.1|	2.02e-156	484.0	68.328	0.997	1
+F7BBDC12	Coemansia	Kickxellales_core	Hop1	none						0	0
+F7BBDC12	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBRW010000428.1|	7.35e-36	88.6	55.405	0.894	2
+F7BBDC12	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRW010000479.1|	7.57e-92	324.0	28.822	0.641	2
+F7BBDC12	Coemansia	Kickxellales_core	Mlh3	weak	Q9UHC1	gb|JANBRW010000187.1|	4.9e-27	119.0	27.635	0.233	1
+F7BBDC12	Coemansia	Kickxellales_core	Mnd1	strong	F1C537C3_004375-T1	gb|JANBRW010000002.1|	4.63e-58	195.0	51.01	0.971	1
+F7BBDC12	Coemansia	Kickxellales_core	Msh4	strong	F4JP48	gb|JANBRW010000102.1|	7.65e-37	94.7	40.777	0.588	5
+F7BBDC12	Coemansia	Kickxellales_core	Msh5	strong	Q9QUM7	gb|JANBRW010000530.1|	6.57e-33	136.0	27.859	0.538	1
+F7BBDC12	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBRW010001619.1|	1.7e-15	77.4	26.606	0.507	2
+F7BBDC12	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBRW010000198.1|	5.56e-11	64.3	30.159	0.344	2
+F7BBDC12	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBRW010002086.1|	2.36e-06	48.1	34.524	0.243	1
+F7DF6513	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRG010001787.1|	3.38e-127	396.0	58.861	0.409	1
+F7DF6513	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBRG010000009.1|	0.0	741.0	43.77	0.987	1
+F7DF6513	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBRG010000118.1|	9.5e-43	164.0	46.893	0.355	2
+F7DF6513	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRG010001018.1|	2.7e-151	459.0	73.913	0.876	1
+F7DF6513	Coemansia	Kickxellales_core	Hop1	none						0	0
+F7DF6513	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBRG010001043.1|	3.7e-37	135.0	37.405	0.986	1
+F7DF6513	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRG010000011.1|	1.51e-89	317.0	30.218	0.678	2
+F7DF6513	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBRG010001292.1|	7.35e-16	80.5	25.939	0.457	2
+F7DF6513	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBRG010000009.1|	1.81e-59	199.0	49.246	0.98	1
+F7DF6513	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBRG010000152.1|	1.13e-49	190.0	38.732	0.618	3
+F7DF6513	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBRG010000009.1|	1.19e-42	167.0	26.466	0.721	1
+F7DF6513	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBRG010000103.1|	3.27e-15	77.0	26.606	0.507	2
+F7DF6513	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBRG010000118.1|	1.12e-06	50.4	31.373	0.186	1
+F7DF6513	Coemansia	Kickxellales_core	Spo11	none	F7FE4923_004084-T1	gb|JANBRG010000867.1|	4.41e-05	44.7	36.232	0.287	2
+F8348CBD	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRI010001844.1|	1.37e-127	397.0	59.177	0.409	1
+F8348CBD	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBRI010000008.1|	0.0	741.0	43.77	0.987	1
+F8348CBD	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBRI010000040.1|	1.05e-42	164.0	46.893	0.355	2
+F8348CBD	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRI010000182.1|	5.62e-154	477.0	68.314	0.997	1
+F8348CBD	Coemansia	Kickxellales_core	Hop1	none						0	0
+F8348CBD	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBRI010001470.1|	3.74e-37	135.0	37.405	0.986	1
+F8348CBD	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRI010000009.1|	1.6e-89	317.0	30.218	0.678	2
+F8348CBD	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBRI010000768.1|	2.5e-16	82.4	25.939	0.457	2
+F8348CBD	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBRI010000008.1|	1.92e-59	199.0	49.246	0.98	1
+F8348CBD	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBRI010000246.1|	4.17e-50	192.0	38.305	0.629	3
+F8348CBD	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBRI010000008.1|	1.27e-42	167.0	26.466	0.721	1
+F8348CBD	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBRI010000028.1|	3.57e-15	77.0	26.606	0.507	2
+F8348CBD	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBRI010000040.1|	1.47e-06	50.1	31.373	0.186	1
+F8348CBD	Coemansia	Kickxellales_core	Spo11	none	F7FE4923_004084-T1	gb|JANBRI010000506.1|	4.88e-05	44.7	36.232	0.287	2
+F8384A64	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRM010002047.1|	5.57e-122	391.0	49.347	0.79	2
+F8384A64	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P25847	gb|JANBRM010000001.1|	9.63e-50	192.0	28.597	0.564	2
+F8384A64	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBRM010001464.1|	3.67e-33	135.0	73.034	0.14	1
+F8384A64	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRM010000266.1|	5.67e-151	469.0	73.226	0.909	1
+F8384A64	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBRM010000012.1|	2.17e-08	56.6	25.0	0.321	1
+F8384A64	Coemansia	Kickxellales_core	Hop2	none						0	0
+F8384A64	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRM010001158.1|	4.01e-92	325.0	28.856	0.641	2
+F8384A64	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBRM010000011.1|	1.17e-22	103.0	21.236	0.985	1
+F8384A64	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBRM010000355.1|	1.74e-57	194.0	45.089	0.98	1
+F8384A64	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBRM010000167.1|	1.83e-111	378.0	30.801	0.755	1
+F8384A64	Coemansia	Kickxellales_core	Msh5	strong	F23D95F9_002434-T1	gb|JANBRM010000001.1|	1.03e-29	127.0	22.145	0.664	3
+F8384A64	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBRM010000001.1|	2.62e-15	77.8	27.064	0.507	2
+F8384A64	Coemansia	Kickxellales_core	Rec8	none	O95072	gb|JANBRM010001464.1|	5.08e-05	45.4	32.0	0.183	1
+F8384A64	Coemansia	Kickxellales_core	Spo11	none						0	0
+F8589389	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTB010000950.1|	5.33e-131	421.0	56.734	0.452	1
+F8589389	Coemansia	Kickxellales_core	CTRL_Msh2	strong	O74773	gb|JANBTB010001368.1|	1.8e-130	418.0	45.773	0.48	1
+F8589389	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBTB010000381.1|	1.14e-44	170.0	55.556	0.398	2
+F8589389	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTB010000351.1|	9.14e-16	77.4	27.039	0.608	1
+F8589389	Coemansia	Kickxellales_core	Hop1	none						0	0
+F8589389	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBTB010000569.1|	3.94e-37	135.0	37.405	0.986	1
+F8589389	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTB010000328.1|	3.98e-92	325.0	28.505	0.685	2
+F8589389	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTB010000083.1|	2.06e-16	82.8	25.597	0.727	2
+F8589389	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBTB010000391.1|	6.44e-59	197.0	48.744	0.98	1
+F8589389	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTB010000645.1|	2.48e-49	189.0	38.38	0.599	3
+F8589389	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBTB010000507.1|	1.49e-35	144.0	31.322	0.406	1
+F8589389	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBTB010000022.1|	3.37e-15	77.0	26.606	0.507	2
+F8589389	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBTB010000381.1|	1.08e-06	50.4	31.373	0.186	1
+F8589389	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBTB010001832.1|	6.61e-07	50.1	31.068	0.253	1
+F889F3AF	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTO010000002.1|	1.01e-173	552.0	39.926	0.991	1
+F889F3AF	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTO010000220.1|	0.0	785.0	45.192	0.987	1
+F889F3AF	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBTO010000002.1|	3.67e-38	150.0	49.032	0.242	1
+F889F3AF	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTO010000209.1|	7.06e-19	86.3	25.301	0.69	1
+F889F3AF	Coemansia	Kickxellales_core	Hop1	none						0	0
+F889F3AF	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBTO010000414.1|	3.16e-37	99.0	41.176	0.942	2
+F889F3AF	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTO010000014.1|	7.75e-92	324.0	31.457	0.614	2
+F889F3AF	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTO010000040.1|	7.95e-16	80.5	28.151	0.722	2
+F889F3AF	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBTO010000616.1|	2.35e-60	201.0	50.754	0.98	1
+F889F3AF	Coemansia	Kickxellales_core	Msh4	strong	F4JP48	gb|JANBTO010000350.1|	1.48e-40	160.0	38.397	0.381	2
+F889F3AF	Coemansia	Kickxellales_core	Msh5	strong	Q12175	gb|JANBTO010000220.1|	2.37e-41	163.0	25.649	0.701	1
+F889F3AF	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBTO010000006.1|	6.98e-19	88.6	32.367	0.467	3
+F889F3AF	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBTO010000002.1|	6.09e-07	50.8	31.373	0.186	1
+F889F3AF	Coemansia	Kickxellales_core	Spo11	none						0	0
+F897AC32	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBUT010000101.1|	7.97e-177	561.0	39.659	0.991	1
+F897AC32	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBUT010000225.1|	0.0	746.0	44.089	0.987	1
+F897AC32	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBUT010000050.1|	3.36e-42	163.0	46.328	0.355	2
+F897AC32	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUT010000059.1|	2.59e-153	475.0	73.397	0.914	1
+F897AC32	Coemansia	Kickxellales_core	Hop1	none						0	0
+F897AC32	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBUT010000184.1|	4.15e-37	135.0	37.405	0.986	1
+F897AC32	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBUT010000398.1|	3.91e-92	325.0	28.505	0.685	2
+F897AC32	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBUT010000099.1|	1.81e-16	82.8	25.597	0.727	2
+F897AC32	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBUT010000217.1|	2.02e-59	199.0	48.744	0.98	1
+F897AC32	Coemansia	Kickxellales_core	Msh4	strong	P40965	gb|JANBUT010000225.1|	6.94e-35	143.0	26.636	0.695	1
+F897AC32	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBUT010000225.1|	2.53e-42	166.0	26.424	0.721	1
+F897AC32	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBUT010000121.1|	3.47e-15	77.0	26.606	0.507	2
+F897AC32	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBUT010000050.1|	1.42e-06	50.1	31.373	0.186	1
+F897AC32	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBUT010000216.1|	3.2e-07	51.6	31.068	0.253	1
+F8C73C93	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQV010000018.1|	7.64e-129	422.0	57.307	0.802	2
+F8C73C93	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQV010000071.1|	0.0	772.0	44.787	0.987	1
+F8C73C93	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBQV010000026.1|	8.89e-44	168.0	55.063	0.248	1
+F8C73C93	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQV010000002.1|	2.98e-151	469.0	72.756	0.914	1
+F8C73C93	Coemansia	Kickxellales_core	Hop1	none						0	0
+F8C73C93	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBQV010000135.1|	4.49e-41	147.0	40.889	0.902	1
+F8C73C93	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBQV010000013.1|	9.72e-91	321.0	28.271	0.685	2
+F8C73C93	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQV010000056.1|	3.24e-12	69.3	24.661	0.772	3
+F8C73C93	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBQV010000065.1|	1.91e-59	199.0	48.744	0.98	1
+F8C73C93	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBQV010000029.1|	1.03e-44	105.0	49.505	0.567	4
+F8C73C93	Coemansia	Kickxellales_core	Msh5	strong	FEACB2E7_006734-T1	gb|JANBQV010000003.1|	7.92e-28	120.0	32.258	0.774	3
+F8C73C93	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBQV010000003.1|	5.27e-15	76.6	26.636	0.498	2
+F8C73C93	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBQV010000026.1|	1.23e-06	50.4	31.373	0.186	1
+F8C73C93	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBQV010000024.1|	7.63e-07	50.4	33.333	0.192	1
+F8EA1BC9	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSE010002340.1|	8.76e-137	422.0	57.307	0.452	1
+F8EA1BC9	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSE010000750.1|	0.0	723.0	43.284	0.984	1
+F8EA1BC9	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBSE010001319.1|	2.3e-42	163.0	48.0	0.246	1
+F8EA1BC9	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSE010000243.1|	1.99e-153	476.0	73.077	0.914	1
+F8EA1BC9	Coemansia	Kickxellales_core	Hop1	none						0	0
+F8EA1BC9	Coemansia	Kickxellales_core	Hop2	weak	F3D937C5_005458-T1	gb|JANBSE010001513.1|	1.63e-07	50.1	69.697	0.153	1
+F8EA1BC9	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBSE010000001.1|	2.2e-87	311.0	29.358	0.611	2
+F8EA1BC9	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSE010000180.1|	3.02e-18	89.0	25.397	0.748	2
+F8EA1BC9	Coemansia	Kickxellales_core	Mnd1	none						0	0
+F8EA1BC9	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSE010000750.1|	7.41e-58	216.0	27.577	0.739	1
+F8EA1BC9	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBSE010000750.1|	5.92e-48	184.0	27.186	0.746	1
+F8EA1BC9	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBSE010000525.1|	5.17e-15	76.6	30.387	0.42	2
+F8EA1BC9	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBSE010000895.1|	2.11e-10	62.8	34.211	0.305	2
+F8EA1BC9	Coemansia	Kickxellales_core	Spo11	none						0	0
+F9025F8A	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSU010000185.1|	1.05e-119	396.0	50.131	0.79	2
+F9025F8A	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSU010000020.1|	0.0	782.0	45.339	0.987	1
+F9025F8A	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBSU010000047.1|	4.08e-43	166.0	59.701	0.279	2
+F9025F8A	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSU010000097.1|	4.4e-150	466.0	71.474	0.914	1
+F9025F8A	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBSU010000083.1|	6.86e-07	51.6	24.615	0.317	1
+F9025F8A	Coemansia	Kickxellales_core	Hop2	strong	F1C537C3_003027-T1	gb|JANBSU010000162.1|	2.14e-33	91.7	40.152	0.9	2
+F9025F8A	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBSU010000030.1|	4.39e-93	328.0	30.013	0.625	2
+F9025F8A	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSU010000003.1|	2.05e-28	121.0	22.868	0.985	1
+F9025F8A	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBSU010000180.1|	1.38e-50	161.0	46.012	0.966	2
+F9025F8A	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSU010000051.1|	4.05e-99	211.0	37.415	0.755	2
+F9025F8A	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBSU010000190.1|	2.37e-40	160.0	25.342	0.627	1
+F9025F8A	Coemansia	Kickxellales_core	Pch2	strong	Q15645	gb|JANBSU010000005.1|	2.44e-18	87.0	36.196	0.407	4
+F9025F8A	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBSU010000016.1|	4.75e-13	71.2	27.206	0.364	2
+F9025F8A	Coemansia	Kickxellales_core	Spo11	none						0	0
+F90C8E1A	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOM010001898.1|	6.58e-137	422.0	57.02	0.452	1
+F90C8E1A	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOM010000017.1|	0.0	670.0	44.632	0.872	1
+F90C8E1A	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBOM010000100.1|	9.82e-43	164.0	46.893	0.355	2
+F90C8E1A	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOM010000445.1|	1.17e-153	475.0	73.397	0.914	1
+F90C8E1A	Coemansia	Kickxellales_core	Hop1	none						0	0
+F90C8E1A	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBOM010000040.1|	3.95e-37	135.0	37.405	0.986	1
+F90C8E1A	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBOM010000363.1|	3.05e-90	318.0	29.658	0.668	1
+F90C8E1A	Coemansia	Kickxellales_core	Mlh3	weak	Q12083	gb|JANBOM010001898.1|	2.09e-19	91.7	32.184	0.241	1
+F90C8E1A	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBOM010001263.1|	1.47e-59	199.0	49.246	0.98	1
+F90C8E1A	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBOM010002211.1|	5.09e-52	193.0	30.467	0.33	1
+F90C8E1A	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBOM010000017.1|	1.85e-42	167.0	26.466	0.721	1
+F90C8E1A	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBOM010000624.1|	2.86e-15	77.0	26.606	0.507	2
+F90C8E1A	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBOM010000100.1|	1.09e-06	50.4	31.373	0.186	1
+F90C8E1A	Coemansia	Kickxellales_core	Spo11	none						0	0
+F9197CED	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P38920	gb|JANBTU010000018.1|	4.49e-130	427.0	34.532	0.995	1
+F9197CED	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTU010000159.1|	0.0	771.0	44.787	0.987	1
+F9197CED	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBTU010000213.1|	7.76e-44	168.0	55.063	0.248	1
+F9197CED	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTU010000010.1|	2.99e-151	469.0	72.756	0.914	1
+F9197CED	Coemansia	Kickxellales_core	Hop1	none						0	0
+F9197CED	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBTU010000152.1|	1.04e-41	149.0	41.333	0.902	1
+F9197CED	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTU010000013.1|	6.02e-92	325.0	28.388	0.685	2
+F9197CED	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTU010000013.1|	1.32e-17	87.0	27.425	0.46	2
+F9197CED	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBTU010000065.1|	5.3e-59	198.0	48.744	0.98	1
+F9197CED	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTU010000063.1|	2.57e-46	108.0	49.505	0.51	4
+F9197CED	Coemansia	Kickxellales_core	Msh5	strong	FD4B4AC6_007013-T1	gb|JANBTU010000003.1|	8.89e-39	155.0	42.995	0.595	4
+F9197CED	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBTU010000003.1|	4.44e-15	76.6	26.606	0.507	2
+F9197CED	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBTU010000213.1|	1.17e-06	50.4	31.373	0.186	1
+F9197CED	Coemansia	Kickxellales_core	Spo11	none	P40384	gb|JANBTU010000025.1|	0.000386	41.6	27.381	0.243	1
+F9735524	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTJ010000373.1|	4.44e-126	415.0	55.714	0.791	2
+F9735524	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTJ010000533.1|	0.0	758.0	43.83	0.987	1
+F9735524	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBTJ010000705.1|	9.64e-41	159.0	45.856	0.255	1
+F9735524	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTJ010000307.1|	2.64e-153	476.0	73.077	0.914	1
+F9735524	Coemansia	Kickxellales_core	Hop1	none						0	0
+F9735524	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBTJ010000014.1|	3.11e-42	151.0	52.97	0.902	1
+F9735524	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTJ010001057.1|	2.17e-88	314.0	28.607	0.663	2
+F9735524	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTJ010000588.1|	1.06e-18	90.9	23.478	0.538	2
+F9735524	Coemansia	Kickxellales_core	Mnd1	strong	FBDB2FE6_004986-T1	gb|JANBTJ010000185.1|	4.11e-64	213.0	50.505	0.961	1
+F9735524	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTJ010000649.1|	2.47e-83	231.0	30.561	0.671	2
+F9735524	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBTJ010000533.1|	3.04e-49	188.0	28.964	0.739	1
+F9735524	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBTJ010000878.1|	1.13e-18	89.0	34.135	0.448	2
+F9735524	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBTJ010000705.1|	5.08e-07	52.4	32.353	0.186	1
+F9735524	Coemansia	Kickxellales_core	Spo11	none	F18CA942_004849-T1	gb|JANBTJ010001004.1|	0.000262	42.7	36.508	0.161	1
+F97F055E	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P38920	gb|JANBSV010000357.1|	2.21e-117	390.0	33.839	0.995	1
+F97F055E	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSV010000383.1|	0.0	756.0	44.316	0.987	1
+F97F055E	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBSV010000090.1|	4.37e-42	163.0	57.353	0.304	2
+F97F055E	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSV010001974.1|	1.32e-161	484.0	69.552	0.982	1
+F97F055E	Coemansia	Kickxellales_core	Hop1	none						0	0
+F97F055E	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBSV010001762.1|	2.85e-38	140.0	45.992	0.875	1
+F97F055E	Coemansia	Kickxellales_core	Mer3	strong	F5C4F326_001532-T1	gb|JANBSV010000733.1|	2.7e-88	314.0	33.816	0.654	2
+F97F055E	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSV010000357.1|	1.44e-24	109.0	27.577	0.485	1
+F97F055E	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBSV010000012.1|	2.24e-57	194.0	53.571	0.961	1
+F97F055E	Coemansia	Kickxellales_core	Msh4	strong	P40965	gb|JANBSV010000377.1|	1.14e-34	81.3	41.0	0.689	4
+F97F055E	Coemansia	Kickxellales_core	Msh5	strong	FD4B4AC6_007013-T1	gb|JANBSV010000383.1|	9.07e-41	162.0	24.188	0.667	1
+F97F055E	Coemansia	Kickxellales_core	Pch2	strong	Q15645	gb|JANBSV010000248.1|	5.37e-13	70.5	26.217	0.613	2
+F97F055E	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBSV010000070.1|	1.66e-10	63.5	35.165	0.162	1
+F97F055E	Coemansia	Kickxellales_core	Spo11	none						0	0
+F993D0AD	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOK010000237.1|	4.54e-127	417.0	56.447	0.791	2
+F993D0AD	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOK010001072.1|	0.0	756.0	44.121	0.994	1
+F993D0AD	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBOK010000132.1|	3.72e-42	163.0	57.353	0.304	2
+F993D0AD	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOK010000308.1|	4.18e-157	486.0	69.851	0.982	1
+F993D0AD	Coemansia	Kickxellales_core	Hop1	none						0	0
+F993D0AD	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBOK010000086.1|	4.47e-39	142.0	44.309	0.915	1
+F993D0AD	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBOK010000121.1|	2.61e-82	295.0	27.711	0.774	2
+F993D0AD	Coemansia	Kickxellales_core	Mlh3	strong	Q9UHC1	gb|JANBOK010000433.1|	1.25e-17	88.6	23.955	0.393	2
+F993D0AD	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBOK010001186.1|	2.92e-58	196.0	53.03	0.971	1
+F993D0AD	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBOK010000285.1|	3.79e-45	103.0	42.188	0.557	4
+F993D0AD	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBOK010001072.1|	2.17e-38	154.0	23.447	0.722	1
+F993D0AD	Coemansia	Kickxellales_core	Pch2	strong	Q15645	gb|JANBOK010000012.1|	4.34e-13	70.9	26.217	0.613	2
+F993D0AD	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBOK010000010.1|	2.01e-10	63.2	35.165	0.162	1
+F993D0AD	Coemansia	Kickxellales_core	Spo11	none						0	0
+F9A4B572	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBUM010000360.1|	4e-125	411.0	54.571	0.971	2
+F9A4B572	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBUM010000025.1|	0.0	741.0	43.511	0.991	1
+F9A4B572	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBUM010000387.1|	7.79e-43	165.0	48.0	0.246	1
+F9A4B572	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUM010000270.1|	3.35e-153	474.0	72.756	0.914	1
+F9A4B572	Coemansia	Kickxellales_core	Hop1	none						0	0
+F9A4B572	Coemansia	Kickxellales_core	Hop2	strong	F9368871_005447-T1	gb|JANBUM010000267.1|	1.13e-45	160.0	43.434	0.892	1
+F9A4B572	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBUM010000037.1|	4.44e-90	318.0	30.598	0.611	2
+F9A4B572	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBUM010000209.1|	1.55e-14	76.6	25.786	0.747	2
+F9A4B572	Coemansia	Kickxellales_core	Mnd1	strong	F1C537C3_004375-T1	gb|JANBUM010000470.1|	1.04e-60	203.0	49.495	0.971	1
+F9A4B572	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBUM010000067.1|	7.49e-111	377.0	32.623	0.764	1
+F9A4B572	Coemansia	Kickxellales_core	Msh5	strong	FF98D640_003108-T1	gb|JANBUM010000025.1|	2.21e-46	180.0	28.006	0.661	1
+F9A4B572	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBUM010000004.1|	1.31e-20	94.4	36.275	0.43	5
+F9A4B572	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBUM010000205.1|	4.51e-11	64.7	33.333	0.328	2
+F9A4B572	Coemansia	Kickxellales_core	Spo11	none						0	0
+FA0999E6	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOT010000865.1|	8.44e-131	425.0	56.447	0.791	2
+FA0999E6	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOT010000689.1|	0.0	787.0	45.261	0.987	1
+FA0999E6	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBOT010000985.1|	4.41e-38	150.0	58.594	0.202	1
+FA0999E6	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOT010000462.1|	1.26e-156	484.0	69.552	0.982	1
+FA0999E6	Coemansia	Kickxellales_core	Hop1	none						0	0
+FA0999E6	Coemansia	Kickxellales_core	Hop2	strong	F1C537C3_003027-T1	gb|JANBOT010000115.1|	7.15e-38	138.0	39.149	0.9	1
+FA0999E6	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBOT010000078.1|	4.38e-86	308.0	32.644	0.618	2
+FA0999E6	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBOT010001094.1|	3.01e-16	82.0	28.956	0.722	2
+FA0999E6	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBOT010000028.1|	2.21e-63	211.0	50.0	0.976	1
+FA0999E6	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBOT010000358.1|	2.66e-45	177.0	36.918	0.526	3
+FA0999E6	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBOT010000198.1|	4.29e-38	153.0	26.821	0.665	1
+FA0999E6	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBOT010000302.1|	7.75e-16	79.0	29.73	0.429	2
+FA0999E6	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBOT010000372.1|	4.86e-10	61.6	30.556	0.178	1
+FA0999E6	Coemansia	Kickxellales_core	Spo11	none						0	0
+FA34ED10	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBPE010000008.1|	8.4e-170	541.0	39.431	0.991	1
+FA34ED10	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBPE010000052.1|	0.0	784.0	45.192	0.987	1
+FA34ED10	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBPE010000008.1|	4.62e-38	150.0	49.032	0.242	1
+FA34ED10	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBPE010000010.1|	3.82e-152	471.0	72.756	0.914	1
+FA34ED10	Coemansia	Kickxellales_core	Hop1	none						0	0
+FA34ED10	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBPE010000145.1|	1.14e-37	100.0	41.912	0.942	2
+FA34ED10	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBPE010000090.1|	6.68e-86	306.0	28.683	0.651	2
+FA34ED10	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBPE010000099.1|	7e-16	80.9	28.151	0.652	2
+FA34ED10	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBPE010000106.1|	3.27e-60	201.0	50.754	0.98	1
+FA34ED10	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBPE010000027.1|	1.68e-50	112.0	31.696	0.724	3
+FA34ED10	Coemansia	Kickxellales_core	Msh5	strong	Q12175	gb|JANBPE010000052.1|	3.54e-41	163.0	25.649	0.701	1
+FA34ED10	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBPE010000061.1|	7.49e-15	75.9	27.982	0.507	2
+FA34ED10	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBPE010000008.1|	7.87e-07	50.8	31.373	0.186	1
+FA34ED10	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBPE010000228.1|	3.71e-07	50.8	29.545	0.255	1
+FA376F2E	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOH010000266.1|	1.75e-127	419.0	57.349	0.804	2
+FA376F2E	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOH010000139.1|	0.0	759.0	43.704	0.99	1
+FA376F2E	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBOH010000269.1|	1.17e-39	155.0	44.681	0.26	1
+FA376F2E	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOH010000444.1|	1.68e-153	476.0	72.698	0.923	1
+FA376F2E	Coemansia	Kickxellales_core	Hop1	none						0	0
+FA376F2E	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBOH010000077.1|	6.66e-44	156.0	52.451	0.911	1
+FA376F2E	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBOH010000209.1|	1.06e-89	318.0	28.356	0.701	2
+FA376F2E	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBOH010000270.1|	8.39e-22	100.0	24.855	0.544	2
+FA376F2E	Coemansia	Kickxellales_core	Mnd1	strong	FBDB2FE6_004986-T1	gb|JANBOH010000205.1|	1.91e-63	211.0	50.505	0.961	1
+FA376F2E	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBOH010000274.1|	2e-75	271.0	30.517	0.76	2
+FA376F2E	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBOH010000139.1|	1.3e-48	186.0	27.741	0.711	1
+FA376F2E	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBOH010000002.1|	1.35e-18	88.6	33.654	0.43	3
+FA376F2E	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBOH010000269.1|	1.04e-06	50.8	33.333	0.186	1
+FA376F2E	Coemansia	Kickxellales_core	Spo11	none						0	0
+FA99CC43	Coemansia	Kickxellales_core	CTRL_Mlh1	weak	P40692	gb|JANBUH010000759.1|	9.82e-12	67.8	27.876	0.288	1
+FA99CC43	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBUH010000155.1|	0.0	780.0	44.28	0.987	1
+FA99CC43	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBUH010000028.1|	7.58e-40	156.0	43.617	0.271	1
+FA99CC43	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUH010000573.1|	1.32e-149	464.0	71.474	0.914	1
+FA99CC43	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBUH010000135.1|	5.29e-06	48.5	23.958	0.314	1
+FA99CC43	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBUH010000202.1|	2.11e-32	88.2	50.42	0.888	2
+FA99CC43	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBUH010000005.1|	2.38e-91	323.0	28.553	0.641	2
+FA99CC43	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBUH010000147.1|	6.86e-12	52.4	23.188	0.592	3
+FA99CC43	Coemansia	Kickxellales_core	Mnd1	none						0	0
+FA99CC43	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBUH010000937.1|	4.19e-78	276.0	30.435	0.507	1
+FA99CC43	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBUH010000155.1|	1.47e-43	170.0	25.6	0.755	1
+FA99CC43	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBUH010000053.1|	1.82e-18	87.8	30.288	0.555	2
+FA99CC43	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBUH010000237.1|	5.14e-13	71.2	29.412	0.364	2
+FA99CC43	Coemansia	Kickxellales_core	Spo11	none						0	0
+FA9ADEB3	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSC010000518.1|	2.97e-129	424.0	57.714	0.791	2
+FA9ADEB3	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSC010000886.1|	0.0	773.0	44.208	0.987	1
+FA9ADEB3	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBSC010000074.1|	3.96e-41	160.0	46.448	0.271	1
+FA9ADEB3	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSC010000626.1|	2.62e-156	484.0	68.328	0.997	1
+FA9ADEB3	Coemansia	Kickxellales_core	Hop1	none	P20050	gb|JANBSC010001391.1|	0.000494	42.7	23.077	0.317	1
+FA9ADEB3	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBSC010000907.1|	1.21e-35	88.6	55.405	0.894	2
+FA9ADEB3	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBSC010000345.1|	1.78e-88	315.0	33.286	0.661	2
+FA9ADEB3	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSC010000001.1|	8.26e-17	85.1	25.667	0.457	2
+FA9ADEB3	Coemansia	Kickxellales_core	Mnd1	strong	FBDB2FE6_004986-T1	gb|JANBSC010000587.1|	3.3e-58	196.0	47.98	0.961	1
+FA9ADEB3	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSC010004691.1|	5.57e-86	186.0	27.404	0.628	2
+FA9ADEB3	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBSC010000886.1|	6.67e-43	169.0	25.543	0.683	1
+FA9ADEB3	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBSC010002905.1|	2.93e-15	77.4	26.606	0.507	2
+FA9ADEB3	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBSC010003892.1|	3.03e-10	62.4	29.365	0.344	2
+FA9ADEB3	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBSC010000184.1|	4.56e-06	48.1	34.524	0.243	1
+FB3261E7	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSP010000018.1|	2.73e-175	557.0	39.851	0.991	1
+FB3261E7	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSP010000104.1|	0.0	777.0	45.117	0.987	1
+FB3261E7	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBSP010000151.1|	1.71e-37	149.0	48.408	0.246	1
+FB3261E7	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSP010000226.1|	3.38e-152	471.0	72.756	0.914	1
+FB3261E7	Coemansia	Kickxellales_core	Hop1	none						0	0
+FB3261E7	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBSP010000108.1|	1.76e-44	157.0	40.678	0.96	1
+FB3261E7	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBSP010000017.1|	6.86e-86	306.0	28.776	0.651	2
+FB3261E7	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSP010000184.1|	2.85e-16	82.0	26.148	0.744	2
+FB3261E7	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBSP010000130.1|	8.06e-61	203.0	51.759	0.98	1
+FB3261E7	Coemansia	Kickxellales_core	Msh4	strong	F4JP48	gb|JANBSP010000140.1|	2.25e-33	86.3	39.604	0.625	4
+FB3261E7	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBSP010000015.1|	3.78e-40	159.0	25.494	0.632	2
+FB3261E7	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBSP010000015.1|	1.99e-17	84.0	28.44	0.507	2
+FB3261E7	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBSP010000151.1|	1.16e-06	50.1	31.373	0.186	1
+FB3261E7	Coemansia	Kickxellales_core	Spo11	none						0	0
+FB97D937	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQS010001233.1|	9.3e-115	382.0	53.012	0.769	2
+FB97D937	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQS010001434.1|	0.0	778.0	44.221	0.987	1
+FB97D937	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBQS010001384.1|	4.16e-40	157.0	45.902	0.257	1
+FB97D937	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQS010000603.1|	8.51e-151	469.0	73.226	0.909	1
+FB97D937	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBQS010000101.1|	2.66e-07	53.5	24.873	0.321	1
+FB97D937	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBQS010001633.1|	6.02e-17	70.1	48.75	0.692	2
+FB97D937	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBQS010000328.1|	4.69e-92	326.0	28.856	0.641	2
+FB97D937	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQS010001233.1|	5.92e-20	95.1	25.267	0.387	1
+FB97D937	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBQS010001482.1|	2.61e-57	194.0	45.536	0.98	1
+FB97D937	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQS010000025.1|	8.16e-112	380.0	30.529	0.755	1
+FB97D937	Coemansia	Kickxellales_core	Msh5	strong	FF98D640_003108-T1	gb|JANBQS010000012.1|	1.55e-39	159.0	26.232	0.622	1
+FB97D937	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBQS010000749.1|	3.39e-18	87.8	30.288	0.555	2
+FB97D937	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBQS010000651.1|	3.01e-11	66.2	27.941	0.376	2
+FB97D937	Coemansia	Kickxellales_core	Spo11	none						0	0
+FB9A10E8	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBPA010000119.1|	2.06e-129	424.0	57.714	0.791	2
+FB9A10E8	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBPA010000180.1|	0.0	773.0	44.208	0.987	1
+FB9A10E8	Coemansia	Kickxellales_core	CTRL_Rad21	none						0	0
+FB9A10E8	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBPA010000137.1|	4.59e-157	486.0	68.328	0.997	1
+FB9A10E8	Coemansia	Kickxellales_core	Hop1	none						0	0
+FB9A10E8	Coemansia	Kickxellales_core	Hop2	strong	F1C537C3_003027-T1	gb|JANBPA010000027.1|	5.74e-34	84.7	37.879	0.932	2
+FB9A10E8	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBPA010000027.1|	7.63e-92	324.0	28.822	0.641	2
+FB9A10E8	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBPA010000155.1|	4.75e-17	84.7	25.667	0.457	2
+FB9A10E8	Coemansia	Kickxellales_core	Mnd1	strong	F1C537C3_004375-T1	gb|JANBPA010000084.1|	4.15e-58	195.0	51.01	0.971	1
+FB9A10E8	Coemansia	Kickxellales_core	Msh4	strong	F4JP48	gb|JANBPA010000274.1|	4.94e-36	94.7	40.777	0.535	3
+FB9A10E8	Coemansia	Kickxellales_core	Msh5	strong	Q9QUM7	gb|JANBPA010000248.1|	8.37e-36	145.0	25.13	0.86	1
+FB9A10E8	Coemansia	Kickxellales_core	Pch2	strong	Q15645	gb|JANBPA010000003.1|	4.83e-17	82.8	33.333	0.463	4
+FB9A10E8	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBPA010000129.1|	5.23e-11	64.3	30.159	0.344	2
+FB9A10E8	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBPA010000042.1|	2.24e-06	48.1	34.524	0.243	1
+FBC9CC9D	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOL010000153.1|	1.27e-173	552.0	40.0	0.991	1
+FBC9CC9D	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOL010000037.1|	0.0	784.0	45.192	0.987	1
+FBC9CC9D	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBOL010000058.1|	4.53e-38	150.0	49.032	0.242	1
+FBC9CC9D	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOL010000128.1|	3.75e-152	471.0	72.756	0.914	1
+FBC9CC9D	Coemansia	Kickxellales_core	Hop1	none						0	0
+FBC9CC9D	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBOL010000155.1|	1.14e-37	100.0	41.912	0.942	2
+FBC9CC9D	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBOL010000081.1|	1.34e-92	327.0	31.602	0.614	2
+FBC9CC9D	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBOL010000094.1|	4.05e-16	81.6	28.151	0.652	2
+FBC9CC9D	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBOL010000104.1|	3.26e-60	201.0	50.754	0.98	1
+FBC9CC9D	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBOL010000009.1|	1.06e-73	187.0	26.331	0.753	2
+FBC9CC9D	Coemansia	Kickxellales_core	Msh5	strong	FF98D640_003108-T1	gb|JANBOL010000102.1|	4.94e-47	182.0	28.264	0.624	1
+FBC9CC9D	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBOL010000253.1|	7.13e-15	75.9	27.982	0.507	2
+FBC9CC9D	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBOL010000058.1|	7.8e-07	50.8	31.373	0.186	1
+FBC9CC9D	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBOL010000277.1|	3.7e-07	50.8	29.545	0.255	1
+FBF4A129	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBVA010000204.1|	7.01e-115	382.0	53.03	0.766	2
+FBF4A129	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBVA010000194.1|	0.0	778.0	44.28	0.987	1
+FBF4A129	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBVA010000044.1|	7.1e-40	156.0	43.617	0.271	1
+FBF4A129	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBVA010000362.1|	1.75e-149	464.0	71.474	0.914	1
+FBF4A129	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBVA010000685.1|	3.65e-06	49.3	23.958	0.314	1
+FBF4A129	Coemansia	Kickxellales_core	Hop2	none						0	0
+FBF4A129	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBVA010000050.1|	8.19e-81	291.0	28.966	0.682	2
+FBF4A129	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBVA010000052.1|	3.48e-12	52.4	23.188	0.592	3
+FBF4A129	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBVA010000703.1|	4.6e-48	167.0	50.307	0.98	2
+FBF4A129	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBVA010000004.1|	6.28e-103	213.0	38.435	0.755	2
+FBF4A129	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBVA010000194.1|	3.01e-38	154.0	24.876	0.693	1
+FBF4A129	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBVA010000069.1|	1.74e-18	88.2	30.288	0.555	2
+FBF4A129	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBVA010000048.1|	5.78e-13	71.2	29.412	0.364	2
+FBF4A129	Coemansia	Kickxellales_core	Spo11	none						0	0
+FBF7F5A3	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOJ010000014.1|	3.5e-40	159.0	33.533	0.425	1
+FBF7F5A3	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOJ010000109.1|	0.0	739.0	43.162	0.984	1
+FBF7F5A3	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBOJ010000274.1|	1.43e-41	161.0	46.486	0.26	1
+FBF7F5A3	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOJ010000431.1|	4.42e-153	474.0	72.756	0.914	1
+FBF7F5A3	Coemansia	Kickxellales_core	Hop1	none						0	0
+FBF7F5A3	Coemansia	Kickxellales_core	Hop2	strong	F9368871_005447-T1	gb|JANBOJ010000181.1|	3.79e-45	159.0	42.929	0.892	1
+FBF7F5A3	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBOJ010000166.1|	5.34e-108	374.0	43.975	0.537	3
+FBF7F5A3	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBOJ010000014.1|	4.13e-17	85.5	26.923	0.747	2
+FBF7F5A3	Coemansia	Kickxellales_core	Mnd1	strong	F1C537C3_004375-T1	gb|JANBOJ010000083.1|	5.12e-59	198.0	48.99	0.971	1
+FBF7F5A3	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBOJ010000396.1|	1.48e-117	396.0	33.287	0.765	1
+FBF7F5A3	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBOJ010000109.1|	1.39e-43	171.0	25.857	0.767	1
+FBF7F5A3	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBOJ010000053.1|	3.46e-20	93.6	36.275	0.424	3
+FBF7F5A3	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBOJ010000235.1|	1.89e-10	63.2	33.333	0.253	2
+FBF7F5A3	Coemansia	Kickxellales_core	Spo11	none	FB5167BD_002642-T1	gb|JANBOJ010000073.1|	0.000755	40.8	26.733	0.191	1
+FC37F49D	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSS010000022.1|	4.22e-129	423.0	57.307	0.802	2
+FC37F49D	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSS010000078.1|	0.0	768.0	44.681	0.987	1
+FC37F49D	Coemansia	Kickxellales_core	CTRL_Rad21	weak	P30776	gb|JANBSS010000384.1|	9.95e-38	149.0	59.843	0.199	1
+FC37F49D	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSS010000011.1|	2.66e-151	469.0	72.756	0.914	1
+FC37F49D	Coemansia	Kickxellales_core	Hop1	none						0	0
+FC37F49D	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBSS010000140.1|	4.33e-41	147.0	40.889	0.902	1
+FC37F49D	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBSS010000015.1|	2.72e-91	323.0	28.271	0.685	2
+FC37F49D	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSS010000015.1|	1.16e-17	87.0	27.425	0.73	2
+FC37F49D	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBSS010000037.1|	3.47e-59	199.0	53.03	0.971	1
+FC37F49D	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBSS010000107.1|	2.28e-43	104.0	49.505	0.613	4
+FC37F49D	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBSS010000078.1|	3.43e-44	172.0	27.09	0.711	1
+FC37F49D	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBSS010000081.1|	2.59e-19	90.5	32.524	0.422	2
+FC37F49D	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBSS010000384.1|	2.05e-06	49.7	31.373	0.186	1
+FC37F49D	Coemansia	Kickxellales_core	Spo11	none						0	0
+FC546B88	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	Q9P7W6	gb|JANBSM010000699.1|	1.03e-32	134.0	30.46	0.494	1
+FC546B88	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSM010000229.1|	0.0	747.0	44.089	0.987	1
+FC546B88	Coemansia	Kickxellales_core	CTRL_Rad21	none						0	0
+FC546B88	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSM010001058.1|	3.83e-157	475.0	73.397	0.914	1
+FC546B88	Coemansia	Kickxellales_core	Hop1	none						0	0
+FC546B88	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBSM010001720.1|	3.51e-37	135.0	37.405	0.986	1
+FC546B88	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBSM010000566.1|	2.37e-92	325.0	28.505	0.685	2
+FC546B88	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSM010000699.1|	2.37e-16	82.4	25.939	0.457	2
+FC546B88	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBSM010000523.1|	1.71e-59	199.0	49.246	0.98	1
+FC546B88	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSM010000028.1|	4.19e-48	111.0	39.241	0.611	4
+FC546B88	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBSM010000229.1|	1.21e-42	167.0	26.466	0.721	1
+FC546B88	Coemansia	Kickxellales_core	Pch2	strong	F5C4F326_006434-T1	gb|JANBSM010000010.1|	8.4e-13	69.7	29.461	0.491	2
+FC546B88	Coemansia	Kickxellales_core	Rec8	none	P36626	gb|JANBSM010000657.1|	2.13e-05	46.2	28.571	0.162	1
+FC546B88	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBSM010000214.1|	3.02e-07	51.6	31.068	0.253	1
+FCE53DE3	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSQ010000001.1|	9.69e-113	375.0	52.711	0.769	2
+FCE53DE3	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSQ010000470.1|	0.0	758.0	43.88	0.987	1
+FCE53DE3	Coemansia	Kickxellales_core	CTRL_Rad21	none						0	0
+FCE53DE3	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSQ010000048.1|	4.11e-151	469.0	69.846	0.953	1
+FCE53DE3	Coemansia	Kickxellales_core	Hop1	none						0	0
+FCE53DE3	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBSQ010000370.1|	5.39e-40	144.0	48.78	0.915	1
+FCE53DE3	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBSQ010000783.1|	1.17e-83	299.0	27.829	0.661	2
+FCE53DE3	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSQ010000020.1|	8.68e-17	84.0	26.861	0.734	2
+FCE53DE3	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBSQ010000120.1|	5.63e-59	198.0	50.0	0.971	1
+FCE53DE3	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBSQ010000470.1|	3.37e-51	195.0	27.704	0.644	1
+FCE53DE3	Coemansia	Kickxellales_core	Msh5	strong	Q12175	gb|JANBSQ010000470.1|	2.08e-34	141.0	25.151	0.701	1
+FCE53DE3	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBSQ010000192.1|	1.47e-19	90.9	35.227	0.375	2
+FCE53DE3	Coemansia	Kickxellales_core	Rec8	none	P36626	gb|JANBSQ010000074.1|	2.67e-05	45.8	32.967	0.162	1
+FCE53DE3	Coemansia	Kickxellales_core	Spo11	none						0	0
+FD12E2B4	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQF010000080.1|	1.02e-112	375.0	52.711	0.769	2
+FD12E2B4	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQF010000053.1|	0.0	758.0	43.88	0.987	1
+FD12E2B4	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBQF010000241.1|	1.84e-41	161.0	48.851	0.246	1
+FD12E2B4	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQF010000076.1|	4.52e-151	469.0	69.846	0.953	1
+FD12E2B4	Coemansia	Kickxellales_core	Hop1	none						0	0
+FD12E2B4	Coemansia	Kickxellales_core	Hop2	none						0	0
+FD12E2B4	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBQF010000103.1|	6.77e-85	304.0	32.169	0.661	2
+FD12E2B4	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQF010000003.1|	5.74e-17	84.7	26.861	0.734	2
+FD12E2B4	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBQF010000002.1|	6.29e-59	198.0	50.0	0.971	1
+FD12E2B4	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQF010000051.1|	1.16e-45	157.0	25.879	0.647	3
+FD12E2B4	Coemansia	Kickxellales_core	Msh5	strong	Q12175	gb|JANBQF010000053.1|	2.79e-34	141.0	25.151	0.701	1
+FD12E2B4	Coemansia	Kickxellales_core	Pch2	strong	Q15645	gb|JANBQF010000026.1|	8.7e-13	69.3	27.568	0.454	2
+FD12E2B4	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBQF010000241.1|	5.84e-07	51.6	31.373	0.186	1
+FD12E2B4	Coemansia	Kickxellales_core	Spo11	none	F7FE4923_004084-T1	gb|JANBQF010000531.1|	1.32e-05	38.1	26.923	0.333	2
+FD3FEA21	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSW010000017.1|	6.5e-128	420.0	57.02	0.808	2
+FD3FEA21	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSW010000032.1|	0.0	753.0	44.149	0.987	1
+FD3FEA21	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBSW010000042.1|	2.77e-42	164.0	46.893	0.271	1
+FD3FEA21	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSW010000040.1|	1.3e-152	473.0	73.397	0.914	1
+FD3FEA21	Coemansia	Kickxellales_core	Hop1	none						0	0
+FD3FEA21	Coemansia	Kickxellales_core	Hop2	strong	F1C537C3_003027-T1	gb|JANBSW010000164.1|	1.56e-37	137.0	38.428	0.932	1
+FD3FEA21	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBSW010000014.1|	8.7e-92	325.0	28.621	0.685	2
+FD3FEA21	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSW010000073.1|	3.62e-13	72.4	26.543	0.72	2
+FD3FEA21	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBSW010000177.1|	1.1e-59	200.0	54.04	0.971	1
+FD3FEA21	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSW010000071.1|	4.32e-45	106.0	48.515	0.511	4
+FD3FEA21	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBSW010000032.1|	2.44e-41	164.0	26.341	0.721	1
+FD3FEA21	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBSW010000008.1|	4.36e-15	76.6	26.606	0.507	2
+FD3FEA21	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBSW010000042.1|	1.5e-06	50.4	31.373	0.186	1
+FD3FEA21	Coemansia	Kickxellales_core	Spo11	none	P40384	gb|JANBSW010000028.1|	0.000153	42.7	26.19	0.243	1
+FD671B08	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBUY010000302.1|	7.16e-115	382.0	53.03	0.766	2
+FD671B08	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBUY010000012.1|	0.0	779.0	44.28	0.987	1
+FD671B08	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBUY010000071.1|	6.72e-40	156.0	43.617	0.271	1
+FD671B08	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUY010000389.1|	1.69e-149	464.0	71.474	0.914	1
+FD671B08	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBUY010000313.1|	4.22e-06	48.9	23.958	0.314	1
+FD671B08	Coemansia	Kickxellales_core	Hop2	none						0	0
+FD671B08	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBUY010000047.1|	1.67e-91	323.0	28.553	0.641	2
+FD671B08	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBUY010000084.1|	3.89e-12	52.4	23.188	0.592	3
+FD671B08	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBUY010000263.1|	4.42e-48	167.0	50.307	0.98	2
+FD671B08	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBUY010000265.1|	1.13e-102	214.0	38.435	0.755	2
+FD671B08	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBUY010000012.1|	3.12e-38	154.0	24.876	0.693	1
+FD671B08	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBUY010000041.1|	1.72e-18	88.2	30.288	0.555	2
+FD671B08	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBUY010000058.1|	5.16e-13	71.2	29.412	0.364	2
+FD671B08	Coemansia	Kickxellales_core	Spo11	none	F0AFF821_005119-T1	gb|JANBUY010000020.1|	0.001	33.1	33.929	0.271	3
+FD7FFCA4	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSX010001202.1|	6.95e-128	420.0	56.734	0.791	2
+FD7FFCA4	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSX010001092.1|	0.0	753.0	44.211	0.987	1
+FD7FFCA4	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBSX010000156.1|	4.91e-42	163.0	57.353	0.304	2
+FD7FFCA4	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSX010000483.1|	2.37e-156	484.0	69.552	0.982	1
+FD7FFCA4	Coemansia	Kickxellales_core	Hop1	none						0	0
+FD7FFCA4	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBSX010000236.1|	3.72e-38	140.0	45.992	0.875	1
+FD7FFCA4	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBSX010000051.1|	2.28e-88	315.0	28.848	0.65	2
+FD7FFCA4	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSX010000043.1|	1.88e-24	109.0	27.577	0.485	1
+FD7FFCA4	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBSX010000700.1|	2.59e-57	194.0	53.571	0.961	1
+FD7FFCA4	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSX010000102.1|	2.35e-22	103.0	38.462	0.542	4
+FD7FFCA4	Coemansia	Kickxellales_core	Msh5	strong	FD4B4AC6_007013-T1	gb|JANBSX010001092.1|	4.56e-40	160.0	24.026	0.667	1
+FD7FFCA4	Coemansia	Kickxellales_core	Pch2	strong	Q15645	gb|JANBSX010000108.1|	6.63e-13	70.5	26.217	0.613	2
+FD7FFCA4	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBSX010000244.1|	1.62e-10	63.9	36.264	0.162	1
+FD7FFCA4	Coemansia	Kickxellales_core	Spo11	none						0	0
+FD97B502	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBSR010000076.1|	1.01e-112	375.0	52.711	0.769	2
+FD97B502	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBSR010000444.1|	3.18e-155	505.0	41.245	0.723	1
+FD97B502	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBSR010000396.1|	1.71e-41	161.0	48.851	0.246	1
+FD97B502	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBSR010000074.1|	4.5e-151	469.0	69.846	0.953	1
+FD97B502	Coemansia	Kickxellales_core	Hop1	none						0	0
+FD97B502	Coemansia	Kickxellales_core	Hop2	none						0	0
+FD97B502	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBSR010000904.1|	1.22e-77	279.0	28.086	0.655	2
+FD97B502	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBSR010000001.1|	5.73e-17	84.7	26.861	0.734	2
+FD97B502	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBSR010000002.1|	6.27e-59	198.0	50.0	0.971	1
+FD97B502	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBSR010001109.1|	8.33e-46	169.0	25.537	0.67	3
+FD97B502	Coemansia	Kickxellales_core	Msh5	strong	FF98D640_003108-T1	gb|JANBSR010000148.1|	4.04e-38	154.0	26.905	0.622	1
+FD97B502	Coemansia	Kickxellales_core	Pch2	strong	Q15645	gb|JANBSR010000026.1|	7.86e-13	69.7	27.568	0.454	2
+FD97B502	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBSR010000396.1|	5.69e-07	51.6	31.373	0.186	1
+FD97B502	Coemansia	Kickxellales_core	Spo11	none	F7FE4923_004084-T1	gb|JANBSR010000678.1|	1.33e-05	38.1	26.923	0.333	2
+FDF042C1	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBUD010000124.1|	4.79e-129	423.0	57.637	0.788	2
+FDF042C1	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBUD010000033.1|	0.0	723.0	43.884	0.984	1
+FDF042C1	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBUD010000010.1|	1.35e-39	155.0	44.33	0.265	1
+FDF042C1	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUD010000165.1|	3.13e-151	469.0	71.154	0.914	1
+FDF042C1	Coemansia	Kickxellales_core	Hop1	none						0	0
+FDF042C1	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBUD010000322.1|	3.54e-39	142.0	41.624	0.912	1
+FDF042C1	Coemansia	Kickxellales_core	Mer3	strong	Q5D892	gb|JANBUD010000151.1|	4.92e-91	322.0	28.271	0.733	2
+FDF042C1	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBUD010000104.1|	9.29e-18	87.8	24.868	0.836	2
+FDF042C1	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBUD010000110.1|	2.23e-62	208.0	55.556	0.971	1
+FDF042C1	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBUD010000045.1|	7.13e-73	263.0	29.189	0.679	2
+FDF042C1	Coemansia	Kickxellales_core	Msh5	strong	Q9QUM7	gb|JANBUD010000033.1|	2.14e-40	160.0	27.287	0.707	1
+FDF042C1	Coemansia	Kickxellales_core	Pch2	strong	F5C4F326_006434-T1	gb|JANBUD010000025.1|	1.34e-13	72.8	29.365	0.518	2
+FDF042C1	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBUD010000010.1|	4e-06	48.9	31.373	0.186	1
+FDF042C1	Coemansia	Kickxellales_core	Spo11	none						0	0
+FDFF0B8B	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTV010000013.1|	8.75e-170	541.0	39.679	0.991	1
+FDFF0B8B	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTV010000012.1|	0.0	785.0	45.192	0.987	1
+FDFF0B8B	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBTV010000013.1|	4.84e-38	150.0	49.032	0.242	1
+FDFF0B8B	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTV010000029.1|	3.81e-152	471.0	72.756	0.914	1
+FDFF0B8B	Coemansia	Kickxellales_core	Hop1	none						0	0
+FDFF0B8B	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBTV010000103.1|	1.15e-37	100.0	41.912	0.942	2
+FDFF0B8B	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTV010000066.1|	1.36e-92	327.0	31.602	0.614	2
+FDFF0B8B	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTV010000082.1|	4.05e-16	81.6	28.151	0.652	2
+FDFF0B8B	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBTV010000022.1|	3.28e-60	201.0	50.754	0.98	1
+FDFF0B8B	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTV010000030.1|	5.49e-51	113.0	32.143	0.724	3
+FDFF0B8B	Coemansia	Kickxellales_core	Msh5	strong	F23D95F9_002434-T1	gb|JANBTV010000009.1|	1.81e-34	141.0	22.769	0.7	3
+FDFF0B8B	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBTV010000005.1|	8.37e-19	88.6	32.367	0.467	3
+FDFF0B8B	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBTV010000013.1|	7.86e-07	50.8	31.373	0.186	1
+FDFF0B8B	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBTV010000133.1|	3.7e-07	50.8	29.545	0.255	1
+FE019C62	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTH010000820.1|	1.07e-127	420.0	56.734	0.791	2
+FE019C62	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTH010001163.1|	0.0	753.0	44.211	0.987	1
+FE019C62	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBTH010000150.1|	5.11e-42	163.0	57.353	0.304	2
+FE019C62	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTH010000580.1|	2.44e-156	484.0	69.552	0.982	1
+FE019C62	Coemansia	Kickxellales_core	Hop1	none						0	0
+FE019C62	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBTH010001892.1|	3.34e-38	140.0	45.992	0.875	1
+FE019C62	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTH010000187.1|	2.27e-88	315.0	28.848	0.65	2
+FE019C62	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTH010000091.1|	1.94e-24	109.0	27.577	0.485	1
+FE019C62	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBTH010000698.1|	2.69e-57	194.0	53.571	0.961	1
+FE019C62	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTH010000025.1|	2.47e-22	103.0	38.462	0.542	4
+FE019C62	Coemansia	Kickxellales_core	Msh5	strong	FD4B4AC6_007013-T1	gb|JANBTH010001132.1|	2.87e-41	164.0	24.188	0.667	1
+FE019C62	Coemansia	Kickxellales_core	Pch2	strong	Q15645	gb|JANBTH010000696.1|	6.06e-13	70.9	26.721	0.597	2
+FE019C62	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBTH010000015.1|	1.72e-10	63.9	36.264	0.162	1
+FE019C62	Coemansia	Kickxellales_core	Spo11	none						0	0
+FE3CD348	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBUW010000383.1|	4.49e-130	421.0	57.593	0.452	1
+FE3CD348	Coemansia	Kickxellales_core	CTRL_Msh2	strong	O74773	gb|JANBUW010000079.1|	5.4e-55	207.0	26.179	0.763	1
+FE3CD348	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBUW010000136.1|	1.53e-37	149.0	48.408	0.246	1
+FE3CD348	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUW010000019.1|	3.3e-152	471.0	72.756	0.914	1
+FE3CD348	Coemansia	Kickxellales_core	Hop1	none						0	0
+FE3CD348	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBUW010000103.1|	1.68e-44	157.0	43.049	0.902	1
+FE3CD348	Coemansia	Kickxellales_core	Mer3	strong	F104222C_005983-T1	gb|JANBUW010000052.1|	1.55e-85	306.0	33.188	0.661	2
+FE3CD348	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBUW010000044.1|	1.26e-14	76.6	28.333	0.68	2
+FE3CD348	Coemansia	Kickxellales_core	Mnd1	strong	Q9BWT6	gb|JANBUW010000043.1|	4.45e-61	204.0	47.475	0.966	1
+FE3CD348	Coemansia	Kickxellales_core	Msh4	strong	F4JP48	gb|JANBUW010000021.1|	2.1e-33	134.0	35.433	0.799	3
+FE3CD348	Coemansia	Kickxellales_core	Msh5	strong	FF98D640_003108-T1	gb|JANBUW010000079.1|	1.06e-42	168.0	27.018	0.622	1
+FE3CD348	Coemansia	Kickxellales_core	Pch2	strong	F5C4F326_006434-T1	gb|JANBUW010000111.1|	6.75e-14	73.2	30.252	0.495	2
+FE3CD348	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBUW010000136.1|	4.36e-07	51.6	31.373	0.186	1
+FE3CD348	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBUW010000153.1|	9.36e-08	52.4	36.842	0.209	1
+FE3D2DE5	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOO010000007.1|	6.44e-173	550.0	39.878	0.991	1
+FE3D2DE5	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOO010000047.1|	0.0	784.0	45.192	0.987	1
+FE3D2DE5	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBOO010000007.1|	4.62e-38	150.0	49.032	0.242	1
+FE3D2DE5	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOO010000010.1|	3.81e-152	471.0	72.756	0.914	1
+FE3D2DE5	Coemansia	Kickxellales_core	Hop1	none						0	0
+FE3D2DE5	Coemansia	Kickxellales_core	Hop2	strong	FCDD8027_008807-T1	gb|JANBOO010000146.1|	1.14e-37	100.0	41.912	0.942	2
+FE3D2DE5	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBOO010000069.1|	1.28e-92	327.0	31.602	0.614	2
+FE3D2DE5	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBOO010000098.1|	4.06e-16	81.6	28.151	0.652	2
+FE3D2DE5	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBOO010000104.1|	3.26e-60	201.0	50.754	0.98	1
+FE3D2DE5	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBOO010000013.1|	1.07e-73	187.0	26.331	0.753	2
+FE3D2DE5	Coemansia	Kickxellales_core	Msh5	strong	Q12175	gb|JANBOO010000047.1|	3.54e-41	163.0	25.649	0.701	1
+FE3D2DE5	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBOO010000042.1|	7.5e-15	75.9	27.982	0.507	2
+FE3D2DE5	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBOO010000007.1|	7.86e-07	50.8	31.373	0.186	1
+FE3D2DE5	Coemansia	Kickxellales_core	Spo11	weak	P40384	gb|JANBOO010000237.1|	3.71e-07	50.8	29.545	0.255	1
+FE4EB007	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBTG010000135.1|	5.8e-176	559.0	39.42	0.991	1
+FE4EB007	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBTG010000004.1|	0.0	747.0	43.983	0.987	1
+FE4EB007	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBTG010000163.1|	1.08e-42	164.0	46.893	0.355	2
+FE4EB007	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBTG010000065.1|	2.55e-153	475.0	73.397	0.914	1
+FE4EB007	Coemansia	Kickxellales_core	Hop1	none						0	0
+FE4EB007	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBTG010000188.1|	4.38e-37	135.0	37.405	0.986	1
+FE4EB007	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBTG010000284.1|	5.68e-92	325.0	28.505	0.685	2
+FE4EB007	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBTG010000234.1|	4.35e-16	81.6	25.939	0.457	2
+FE4EB007	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBTG010000004.1|	1.84e-59	199.0	49.246	0.98	1
+FE4EB007	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBTG010000147.1|	1.12e-49	191.0	37.966	0.629	3
+FE4EB007	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBTG010000004.1|	2.28e-42	166.0	26.466	0.721	1
+FE4EB007	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBTG010000117.1|	3.43e-15	77.0	26.606	0.507	2
+FE4EB007	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBTG010000163.1|	1.16e-06	50.4	31.373	0.186	1
+FE4EB007	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBTG010000056.1|	3.09e-07	51.6	31.068	0.253	1
+FE60C51C	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBOP010000265.1|	4.24e-176	559.0	39.42	0.991	1
+FE60C51C	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBOP010000037.1|	0.0	747.0	44.089	0.987	1
+FE60C51C	Coemansia	Kickxellales_core	CTRL_Rad21	none						0	0
+FE60C51C	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBOP010001107.1|	4.27e-159	475.0	73.397	0.914	1
+FE60C51C	Coemansia	Kickxellales_core	Hop1	none						0	0
+FE60C51C	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBOP010000576.1|	3.77e-37	135.0	37.405	0.986	1
+FE60C51C	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBOP010000166.1|	4.26e-92	325.0	28.505	0.685	2
+FE60C51C	Coemansia	Kickxellales_core	Mlh3	weak	Q12083	gb|JANBOP010000265.1|	2.73e-19	92.0	32.184	0.241	1
+FE60C51C	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBOP010001660.1|	1.75e-40	144.0	47.945	0.719	1
+FE60C51C	Coemansia	Kickxellales_core	Msh4	strong	P40965	gb|JANBOP010000037.1|	1.32e-34	142.0	26.48	0.695	1
+FE60C51C	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBOP010000037.1|	1.37e-42	167.0	26.466	0.721	1
+FE60C51C	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBOP010000579.1|	2.98e-15	77.0	26.606	0.507	2
+FE60C51C	Coemansia	Kickxellales_core	Rec8	none	P36626	gb|JANBOP010000138.1|	4.64e-05	45.1	28.571	0.162	1
+FE60C51C	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBOP010000792.1|	7.52e-07	50.1	31.068	0.253	1
+FE668E47	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRR010001762.1|	1.14e-127	397.0	59.177	0.409	1
+FE668E47	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBRR010000009.1|	0.0	741.0	43.77	0.987	1
+FE668E47	Coemansia	Kickxellales_core	CTRL_Rad21	strong	O60216	gb|JANBRR010000111.1|	1.01e-42	164.0	46.893	0.355	2
+FE668E47	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRR010000273.1|	5.21e-154	477.0	68.314	0.997	1
+FE668E47	Coemansia	Kickxellales_core	Hop1	none						0	0
+FE668E47	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBRR010001060.1|	3.66e-37	135.0	37.405	0.986	1
+FE668E47	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRR010000015.1|	1.51e-89	317.0	30.218	0.678	2
+FE668E47	Coemansia	Kickxellales_core	Mlh3	weak	Q12083	gb|JANBRR010001319.1|	3.48e-08	55.5	22.997	0.646	2
+FE668E47	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBRR010000009.1|	1.81e-59	199.0	49.246	0.98	1
+FE668E47	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBRR010000064.1|	2.08e-50	193.0	30.467	0.683	2
+FE668E47	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBRR010000009.1|	1.2e-42	167.0	26.466	0.721	1
+FE668E47	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBRR010000210.1|	3.21e-15	77.0	26.606	0.507	2
+FE668E47	Coemansia	Kickxellales_core	Rec8	weak	O95072	gb|JANBRR010000111.1|	1.13e-06	50.4	31.373	0.186	1
+FE668E47	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBRR010001458.1|	7.23e-07	50.1	31.068	0.253	1
+FE83C30F	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P38920	gb|JANBUB010001042.1|	1.11e-133	431.0	35.499	0.995	1
+FE83C30F	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBUB010000209.1|	0.0	728.0	44.044	0.961	1
+FE83C30F	Coemansia	Kickxellales_core	CTRL_Rad21	none						0	0
+FE83C30F	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUB010000303.1|	2.49e-153	475.0	73.397	0.914	1
+FE83C30F	Coemansia	Kickxellales_core	Hop1	none						0	0
+FE83C30F	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBUB010001322.1|	6.88e-37	135.0	37.023	0.986	1
+FE83C30F	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBUB010000560.1|	3.05e-92	325.0	28.505	0.685	2
+FE83C30F	Coemansia	Kickxellales_core	Mlh3	weak	Q12083	gb|JANBUB010001420.1|	1.47e-08	57.0	23.345	0.449	2
+FE83C30F	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBUB010000175.1|	3.05e-36	132.0	56.098	0.603	1
+FE83C30F	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBUB010000026.1|	1.98e-50	193.0	30.383	0.685	3
+FE83C30F	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBUB010000209.1|	1.4e-42	167.0	26.466	0.721	1
+FE83C30F	Coemansia	Kickxellales_core	Pch2	strong	FCDD8027_005517-T1	gb|JANBUB010000020.1|	3.52e-15	77.0	26.606	0.507	2
+FE83C30F	Coemansia	Kickxellales_core	Rec8	none	P36626	gb|JANBUB010000467.1|	4.52e-05	45.1	28.571	0.162	1
+FE83C30F	Coemansia	Kickxellales_core	Spo11	weak	F5A4E39E_005593-T1	gb|JANBUB010000181.1|	8.57e-07	50.1	31.068	0.253	1
+FE980263	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBRK010000113.1|	8.26e-126	414.0	55.714	0.791	2
+FE980263	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBRK010000019.1|	0.0	761.0	43.983	0.987	1
+FE980263	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBRK010000998.1|	1.43e-40	159.0	45.856	0.255	1
+FE980263	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBRK010000884.1|	7.47e-154	477.0	73.718	0.914	1
+FE980263	Coemansia	Kickxellales_core	Hop1	none						0	0
+FE980263	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBRK010000011.1|	3.33e-42	151.0	52.97	0.902	1
+FE980263	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBRK010000293.1|	3.47e-88	314.0	28.607	0.663	2
+FE980263	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBRK010000828.1|	1.19e-18	90.9	23.478	0.538	2
+FE980263	Coemansia	Kickxellales_core	Mnd1	strong	FBDB2FE6_004986-T1	gb|JANBRK010000192.1|	4.4e-64	213.0	50.505	0.961	1
+FE980263	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBRK010000199.1|	1.05e-89	253.0	29.856	0.753	2
+FE980263	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBRK010000019.1|	9.88e-49	187.0	28.617	0.745	1
+FE980263	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBRK010001124.1|	1.17e-18	89.0	34.135	0.448	2
+FE980263	Coemansia	Kickxellales_core	Rec8	none	P36626	gb|JANBRK010000101.1|	0.000123	44.7	30.864	0.217	2
+FE980263	Coemansia	Kickxellales_core	Spo11	none	F18CA942_004849-T1	gb|JANBRK010000477.1|	0.000291	42.7	36.508	0.161	1
+FEDE47E1	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQP010000530.1|	6.92e-115	382.0	53.012	0.769	2
+FEDE47E1	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQP010000004.1|	0.0	779.0	44.339	0.987	1
+FEDE47E1	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBQP010001503.1|	3.21e-40	157.0	45.902	0.257	1
+FEDE47E1	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQP010000656.1|	6.62e-151	469.0	73.226	0.909	1
+FEDE47E1	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBQP010002781.1|	5.26e-08	55.5	25.381	0.321	1
+FEDE47E1	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBQP010000908.1|	1.87e-20	88.6	42.308	0.903	2
+FEDE47E1	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBQP010000204.1|	1.33e-91	324.0	28.731	0.641	2
+FEDE47E1	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQP010000530.1|	3.32e-20	95.5	25.078	0.439	1
+FEDE47E1	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBQP010001829.1|	3.5e-57	193.0	45.536	0.98	1
+FEDE47E1	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQP010000410.1|	7.66e-57	214.0	37.755	0.755	2
+FEDE47E1	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBQP010000549.1|	3.33e-39	157.0	25.734	0.625	1
+FEDE47E1	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBQP010001451.1|	2.13e-18	87.8	30.288	0.555	2
+FEDE47E1	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBQP010000001.1|	2.6e-11	66.2	27.941	0.364	2
+FEDE47E1	Coemansia	Kickxellales_core	Spo11	none						0	0
+FEE0DDE5	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQQ010000062.1|	3.42e-129	424.0	55.899	0.819	2
+FEE0DDE5	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQQ010000184.1|	0.0	765.0	43.861	0.995	1
+FEE0DDE5	Coemansia	Kickxellales_core	CTRL_Rad21	strong	P30776	gb|JANBQQ010000150.1|	3.19e-44	169.0	61.481	0.306	2
+FEE0DDE5	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQQ010000302.1|	1.56e-151	470.0	72.492	0.906	1
+FEE0DDE5	Coemansia	Kickxellales_core	Hop1	none						0	0
+FEE0DDE5	Coemansia	Kickxellales_core	Hop2	strong	F1C537C3_003027-T1	gb|JANBQQ010000096.1|	4.94e-39	142.0	39.301	0.905	1
+FEE0DDE5	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBQQ010000174.1|	7.79e-90	318.0	28.465	0.651	2
+FEE0DDE5	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQQ010000032.1|	5.54e-14	75.1	24.675	0.462	2
+FEE0DDE5	Coemansia	Kickxellales_core	Mnd1	strong	FCDD8027_008933-T1	gb|JANBQQ010000247.1|	7.07e-53	181.0	44.726	0.971	1
+FEE0DDE5	Coemansia	Kickxellales_core	Msh4	strong	Q99MT2	gb|JANBQQ010000168.1|	4.66e-23	105.0	32.828	0.543	4
+FEE0DDE5	Coemansia	Kickxellales_core	Msh5	strong	F23D95F9_002434-T1	gb|JANBQQ010000184.1|	5.42e-42	166.0	25.518	0.694	1
+FEE0DDE5	Coemansia	Kickxellales_core	Pch2	strong	F5C4F326_006434-T1	gb|JANBQQ010000234.1|	1.46e-14	75.9	29.688	0.441	2
+FEE0DDE5	Coemansia	Kickxellales_core	Rec8	weak	P36626	gb|JANBQQ010000017.1|	3.76e-07	52.4	36.264	0.515	2
+FEE0DDE5	Coemansia	Kickxellales_core	Spo11	weak	F0AFF821_005119-T1	gb|JANBQQ010000022.1|	9.31e-07	50.4	31.313	0.235	1
+FF5D60B2	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBUA010000037.1|	6.45e-126	414.0	55.714	0.791	2
+FF5D60B2	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBUA010000094.1|	0.0	758.0	43.876	0.987	1
+FF5D60B2	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBUA010000017.1|	2.1e-41	161.0	45.856	0.255	1
+FF5D60B2	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUA010000202.1|	5.68e-154	477.0	73.718	0.914	1
+FF5D60B2	Coemansia	Kickxellales_core	Hop1	none						0	0
+FF5D60B2	Coemansia	Kickxellales_core	Hop2	strong	F18CA942_000891-T1	gb|JANBUA010000093.1|	1.3e-41	149.0	51.98	0.902	1
+FF5D60B2	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBUA010000028.1|	9.85e-88	312.0	28.344	0.663	2
+FF5D60B2	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBUA010000065.1|	1.57e-18	90.1	23.324	0.538	2
+FF5D60B2	Coemansia	Kickxellales_core	Mnd1	strong	FBDB2FE6_004986-T1	gb|JANBUA010000154.1|	3.93e-64	213.0	50.505	0.961	1
+FF5D60B2	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBUA010000052.1|	9.44e-95	328.0	29.654	0.754	1
+FF5D60B2	Coemansia	Kickxellales_core	Msh5	strong	F4JEP5	gb|JANBUA010000094.1|	4.22e-49	187.0	28.205	0.736	1
+FF5D60B2	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBUA010000034.1|	7.94e-19	89.0	34.135	0.43	3
+FF5D60B2	Coemansia	Kickxellales_core	Rec8	none	P36626	gb|JANBUA010000018.1|	1.52e-05	47.0	56.098	0.217	2
+FF5D60B2	Coemansia	Kickxellales_core	Spo11	none	F18CA942_004849-T1	gb|JANBUA010000113.1|	0.000159	43.1	36.508	0.161	1
+FFBB50EB	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBQM010002431.1|	1.81e-119	382.0	53.012	0.769	2
+FFBB50EB	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBQM010000094.1|	0.0	779.0	44.221	0.987	1
+FFBB50EB	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBQM010001636.1|	1.04e-39	155.0	45.355	0.257	1
+FFBB50EB	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBQM010000870.1|	6.69e-151	469.0	73.226	0.909	1
+FFBB50EB	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBQM010001456.1|	1.97e-07	53.5	24.873	0.321	1
+FFBB50EB	Coemansia	Kickxellales_core	Hop2	strong	F3D937C5_005458-T1	gb|JANBQM010000987.1|	7.52e-21	89.7	42.308	0.903	2
+FFBB50EB	Coemansia	Kickxellales_core	Mer3	strong	FF98D640_001244-T1	gb|JANBQM010001281.1|	6.89e-77	280.0	31.691	0.437	2
+FFBB50EB	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBQM010002431.1|	2.19e-20	95.9	25.078	0.439	1
+FFBB50EB	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBQM010001933.1|	5.21e-58	196.0	45.536	0.98	1
+FFBB50EB	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBQM010002266.1|	2.15e-114	377.0	30.464	0.75	1
+FFBB50EB	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBQM010002019.1|	8.4e-39	155.0	25.734	0.625	1
+FFBB50EB	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBQM010000424.1|	3e-18	87.8	30.288	0.555	2
+FFBB50EB	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBQM010000145.1|	1.82e-11	66.6	27.941	0.364	2
+FFBB50EB	Coemansia	Kickxellales_core	Spo11	none						0	0
+FFF4186D	Coemansia	Kickxellales_core	CTRL_Mlh1	strong	P40692	gb|JANBUZ010000309.1|	8.11e-115	382.0	53.03	0.766	2
+FFF4186D	Coemansia	Kickxellales_core	CTRL_Msh2	strong	P43246	gb|JANBUZ010000099.1|	0.0	779.0	44.28	0.987	1
+FFF4186D	Coemansia	Kickxellales_core	CTRL_Rad21	weak	O60216	gb|JANBUZ010000067.1|	8.36e-40	156.0	43.617	0.271	1
+FFF4186D	Coemansia	Kickxellales_core	CTRL_Rad51	strong	Q99133	gb|JANBUZ010000407.1|	1.69e-149	464.0	71.474	0.914	1
+FFF4186D	Coemansia	Kickxellales_core	Hop1	weak	P20050	gb|JANBUZ010000317.1|	3.85e-06	49.3	23.958	0.314	1
+FFF4186D	Coemansia	Kickxellales_core	Hop2	none						0	0
+FFF4186D	Coemansia	Kickxellales_core	Mer3	strong	F4FD0401_003824-T1	gb|JANBUZ010000003.1|	2.08e-91	323.0	28.553	0.641	2
+FFF4186D	Coemansia	Kickxellales_core	Mlh3	strong	Q12083	gb|JANBUZ010000080.1|	7.71e-12	52.4	23.188	0.592	3
+FFF4186D	Coemansia	Kickxellales_core	Mnd1	strong	F45BD9C7_003372-T1	gb|JANBUZ010000265.1|	4.42e-48	167.0	50.307	0.98	2
+FFF4186D	Coemansia	Kickxellales_core	Msh4	strong	O15457	gb|JANBUZ010000267.1|	1.13e-102	214.0	38.435	0.755	2
+FFF4186D	Coemansia	Kickxellales_core	Msh5	strong	O43196	gb|JANBUZ010000099.1|	3.06e-38	154.0	24.876	0.693	1
+FFF4186D	Coemansia	Kickxellales_core	Pch2	strong	Q8H1F9	gb|JANBUZ010000063.1|	1.63e-18	88.2	30.288	0.555	2
+FFF4186D	Coemansia	Kickxellales_core	Rec8	strong	P36626	gb|JANBUZ010000047.1|	5.17e-13	71.2	29.412	0.364	2
+FFF4186D	Coemansia	Kickxellales_core	Spo11	none						0	0

@@ -1,0 +1,165 @@
+label	kind	locustag	genus	group	id	length	call	clade	n_refs	ufboot	sh	nearest_ref	nearest_dist	terminal_bl	long_branch	mixed_labels	info
+ANN_1	annotated	F08FC5A1	Circinella	Mucoromycota_s.l.	F08FC5A1_002056-T1	513	ambiguous		5	None	None	Q9UGP5|PolLambda	2.421	0.294	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_2	annotated	F08FC5A1	Circinella	Mucoromycota_s.l.	F08FC5A1_005803-T1	563	ambiguous		5	None	None	Q9UGP5|PolLambda	2.312	0.328	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_3	annotated	F08FC5A1	Circinella	Mucoromycota_s.l.	F08FC5A1_008494-T1	536	ambiguous		5	None	None	Q9JIW4|PolMu	1.316	0.256	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_4	annotated	F104222C	Rhizomucor	Mucoromycota_s.l.	F104222C_005264-T1	499	ambiguous		5	None	None	Q9UGP5|PolLambda	2.100	0.198	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_5	annotated	F104222C	Rhizomucor	Mucoromycota_s.l.	F104222C_007464-T1	561	ambiguous		5	None	None	Q9JIW4|PolMu	1.323	0.263	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_6	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_001612-T1	541	low_support	PolBeta	4	88.0	77.2	O57383|PolBeta	2.093	1.095	True	PolBeta,PolLambda	DNA_pol_B_thumb:PF14791
+ANN_7	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_002547-T1	411	ambiguous		5	None	None	Q9UGP5|PolLambda	2.031	0.318	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_8	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_005484-T1	963	ambiguous		8	None	None	Q9UGP5|PolLambda	1.276	0.169	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_9	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_006377-T1	491	ambiguous		5	None	None	Q9UGP5|PolLambda	1.950	0.143	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_10	annotated	F18B6B82	Piromyces	Root	F18B6B82_008414-T1	1603	ambiguous		8	None	None	Q9UGP5|PolLambda	1.619	0.525	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_11	annotated	F1D7B4F9	Spizellomyces	Root	F1D7B4F9_004496-T1	585	ambiguous		5	None	None	Q9UGP5|PolLambda	1.768	0.241	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_12	annotated	F1D7B4F9	Spizellomyces	Root	F1D7B4F9_006871-T1	414	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	1.063	0.171	False	PolBeta	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_13	annotated	F1D7B4F9	Spizellomyces	Root	F1D7B4F9_008175-T1	705	ambiguous		15	None	None	Q9UGP5|PolLambda	1.500	0.206	False	Pol4,PolBeta,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_14	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_000700-T1	430	ambiguous		5	None	None	Q9UGP5|PolLambda	2.011	0.328	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_15	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_005421-T1	718	ambiguous		8	None	None	Q9UGP5|PolLambda	1.081	0.259	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_16	annotated	F3253B6A	Synchytrium	Root	F3253B6A_001392-T1	767	ambiguous		5	None	None	Q9UGP5|PolLambda	1.972	0.727	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_17	annotated	F3253B6A	Synchytrium	Root	F3253B6A_002938-T1	1100	ambiguous		8	None	None	Q9UGP5|PolLambda	1.673	0.457	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_18	annotated	F3253B6A	Synchytrium	Root	F3253B6A_003244-T1	832	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	1.237	0.523	False	PolBeta	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_19	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_005031-T1	946	ambiguous		8	None	None	Q9UGP5|PolLambda	1.332	0.274	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_20	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_010835-T1	608	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	1.686	0.571	False	PolBeta	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_21	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_007375-T1	1186	ambiguous		8	None	None	Q9UGP5|PolLambda	1.278	0.000	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_22	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_008611-T1	498	ambiguous		5	None	None	Q9UGP5|PolLambda	1.905	0.000	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_23	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_019668-T1	430	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	1.631	0.016	False	PolBeta	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_24	annotated	F4696F25	Umbelopsis	Mucoromycota_s.l.	F4696F25_005684-T1	551	ambiguous		5	None	None	Q9UGP5|PolLambda	1.526	0.516	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_25	annotated	F4696F25	Umbelopsis	Mucoromycota_s.l.	F4696F25_008762-T1	482	ambiguous		5	None	None	Q9UGP5|PolLambda	1.871	0.188	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_26	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_000307-T1	887	ambiguous		14	None	None	Q9UGP5|PolLambda	1.269	0.411	False	Pol4,PolBeta,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_27	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_000712-T1	593	ambiguous		5	None	None	Q9UGP5|PolLambda	1.920	0.509	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_28	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_001304-T1	541	ambiguous		5	None	None	Q9UGP5|PolLambda	2.185	0.116	False	PolMu,TdT	DNA_pol_B_thumb:PF14791
+ANN_29	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_001309-T1	557	ambiguous		5	None	None	Q9UGP5|PolLambda	2.129	0.060	False	PolMu,TdT	DNA_pol_B_thumb:PF14791
+ANN_30	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_002389-T1	585	ambiguous		5	None	None	Q9UGP5|PolLambda	1.815	0.000	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_31	annotated	F574EFC1	Actinomortierella	Mucoromycota_s.l.	F574EFC1_000253-T1	913	ambiguous		8	None	None	Q9UGP5|PolLambda	1.391	0.214	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_32	annotated	F58B3FB2	Nowakowskiella	Root	F58B3FB2_002970-T1	387	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	1.187	0.547	False	PolBeta	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_33	annotated	F58B3FB2	Nowakowskiella	Root	F58B3FB2_004789-T1	1403	ambiguous		5	None	None	Q9UGP5|PolLambda	5.070	0.192	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_34	annotated	F5931C4A	Paraglomus	Mucoromycota_s.l.	F5931C4A_009102-T1	490	ambiguous		5	None	None	Q9UGP5|PolLambda	2.139	0.305	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_35	annotated	F5A4E39E	Phlyctochytrium	Root	F5A4E39E_003302-T1	791	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	1.274	0.382	False	PolBeta	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_36	annotated	F5A4E39E	Phlyctochytrium	Root	F5A4E39E_004736-T1	601	ambiguous		15	None	None	Q9UGP5|PolLambda	1.504	0.210	False	Pol4,PolBeta,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_37	annotated	F5C4F326	Sorochytrium	Root	F5C4F326_002159-T1	590	ambiguous		5	None	None	Q9UGP5|PolLambda	2.462	0.629	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_38	annotated	F5C4F326	Sorochytrium	Root	F5C4F326_002204-T1	491	ambiguous		8	None	None	Q9UGP5|PolLambda	1.915	0.699	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_39	annotated	F5C4F326	Sorochytrium	Root	F5C4F326_004339-T1	309	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	1.622	0.983	False	PolBeta	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_40	annotated	F6C0647F	Cryptocalciella	Mucoromycota_s.l.	F6C0647F_008783-T1	1140	ambiguous		8	None	None	Q9UGP5|PolLambda	1.474	0.297	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_41	annotated	F6FD6BCA	Hesseltinella	Mucoromycota_s.l.	F6FD6BCA_000741-T1	699	ambiguous		5	None	None	Q9UGP5|PolLambda	1.344	0.317	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_42	annotated	F797C73E	Zygophlyctis	Root	F797C73E_004650-T1	314	low_support	PolBeta	4	88.0	77.2	O57383|PolBeta	1.202	0.399	False	PolBeta,PolLambda	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_43	annotated	F7F7C035	Gongronella	Mucoromycota_s.l.	F7F7C035_008925-T1	661	ambiguous		5	None	None	Q9UGP5|PolLambda	1.423	0.397	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_44	annotated	F8E635D0	Rhizopus	Mucoromycota_s.l.	F8E635D0_000401-T1	507	ambiguous		5	None	None	Q9UGP5|PolLambda	2.279	0.469	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_45	annotated	F9368871	Thamnocephalis	Zoopagales	F9368871_000199-T1	538	ambiguous		5	None	None	Q9UGP5|PolLambda	1.662	0.543	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_46	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_002941-T1	578	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	1.016	0.251	False	PolBeta	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_47	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_006457-T1	319	ambiguous		5	None	None	Q9UGP5|PolLambda	2.304	0.498	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_48	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_029214-T1	788	ambiguous		8	None	None	Q9UGP5|PolLambda	1.210	0.097	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_49	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_045184-T1	745	ambiguous		8	None	None	Q9UGP5|PolLambda	1.315	0.201	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_50	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_084282-T1	397	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	1.459	0.260	False	PolBeta	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_51	annotated	FAC8BA67	Syncephalastrum	Mucoromycota_s.l.	FAC8BA67_002311-T1	518	ambiguous		5	None	None	Q9UGP5|PolLambda	2.064	0.259	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_52	annotated	FAC8BA67	Syncephalastrum	Mucoromycota_s.l.	FAC8BA67_002767-T1	557	ambiguous		5	None	None	Q9JIW4|PolMu	1.319	0.321	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_53	annotated	FBAB06C3	Thermomucor	Mucoromycota_s.l.	FBAB06C3_005332-T1	454	ambiguous		5	None	None	Q9JIW4|PolMu	1.019	0.092	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_54	annotated	FBAB06C3	Thermomucor	Mucoromycota_s.l.	FBAB06C3_009528-T1	495	ambiguous		5	None	None	Q9UGP5|PolLambda	2.143	0.110	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_55	annotated	FBDB2FE6	Rhizophlyctis	Root	FBDB2FE6_005240-T1	838	ambiguous		14	None	None	Q9UGP5|PolLambda	1.276	0.297	False	Pol4,PolBeta,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_56	annotated	FBDB2FE6	Rhizophlyctis	Root	FBDB2FE6_011940-T1	664	ambiguous		5	None	None	Q9UGP5|PolLambda	1.766	0.191	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_57	annotated	FBDB2FE6	Rhizophlyctis	Root	FBDB2FE6_012412-T1	449	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	0.943	0.288	False	PolBeta	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_58	annotated	FC303ED2	Geosiphon	Mucoromycota_s.l.	FC303ED2_014672-T1	1101	ambiguous		5	None	None	Q9UGP5|PolLambda	5.491	0.471	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_59	annotated	FC303ED2	Geosiphon	Mucoromycota_s.l.	FC303ED2_018630-T1	759	ambiguous		5	None	None	Q9UGP5|PolLambda	4.292	0.023	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_60	annotated	FC8B8027	Gonapodya	Root	FC8B8027_000625-T1	533	ambiguous		8	None	None	Q9UGP5|PolLambda	2.506	1.541	True	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792
+ANN_61	annotated	FC8B8027	Gonapodya	Root	FC8B8027_006979-T1	796	ambiguous		15	None	None	Q9UGP5|PolLambda	1.640	0.500	False	Pol4,PolBeta,PolLambda,PolMu,TdT	DNA_pol_B_thumb:PF14791
+ANN_62	annotated	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	FCDD8027_009225-T1	1604	ambiguous		8	None	None	Q9UGP5|PolLambda	1.069	0.280	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_63	annotated	FD4B4AC6	Paraphysoderma	Root	FD4B4AC6_000472-T1	662	ambiguous		5	None	None	Q9UGP5|PolLambda	2.623	1.048	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_64	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_003784-T1	436	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	1.614	0.000	False	PolBeta	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_65	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_011957-T1	498	ambiguous		5	None	None	Q9UGP5|PolLambda	1.921	0.016	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_66	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_020132-T1	825	ambiguous		8	None	None	Q9UGP5|PolLambda	1.278	0.000	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_67	annotated	FE719DCE	Blyttiomyces	Root	FE719DCE_004821-T1	736	ambiguous		8	None	None	Q9UGP5|PolLambda	1.349	0.542	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_68	annotated	FEACB2E7	Cunninghamella	Mucoromycota_s.l.	FEACB2E7_000408-T1	373	ambiguous		5	None	None	Q9UGP5|PolLambda	2.465	0.338	False	PolMu,TdT	DNA_pol_B_palm:PF14792
+ANN_69	annotated	FEACB2E7	Cunninghamella	Mucoromycota_s.l.	FEACB2E7_006614-T1	510	ambiguous		5	None	None	Q9UGP5|PolLambda	1.082	0.279	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_70	annotated	FEC49E8E	Endogone	Mucoromycota_s.l.	FEC49E8E_007926-T1	256	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	1.568	0.804	False	PolBeta	DNA_pol_B_palm:PF14792
+ANN_71	annotated	FF74C8A6	Lobulomyces	Root	FF74C8A6_007494-T1	631	ambiguous		8	None	None	Q9UGP5|PolLambda	1.118	0.311	False	Pol4,PolLambda,PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+ANN_72	annotated	FF98D640	Zoopage	Zoopagales	FF98D640_003789-T1	497	ambiguous		5	None	None	Q9UGP5|PolLambda	2.110	0.795	False	PolMu,TdT	DNA_pol_B_palm:PF14792;DNA_pol_B_thumb:PF14791
+MP_1	rescued	F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	JBNZCG010000021.1:96036-98237:+	600	ambiguous		5	None	None	Q9UGP5|PolLambda	5.050	0.303	False	PolMu,TdT	miniprot
+MP_2	rescued	F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	JBNZCG010000011.1:2162364-2163246:+	240	ambiguous		5	None	None	Q9UGP5|PolLambda	5.305	0.182	False	PolMu,TdT	miniprot
+MP_3	rescued	F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	JBNZCG010000008.1:143517-144344:-	221	ambiguous		5	None	None	Q9UGP5|PolLambda	4.917	0.266	False	PolMu,TdT	miniprot
+MP_4	rescued	F0DB79EE	Coemansia	Kickxellales_core	JANBTS010000037.1:11127-13100:+	602	ambiguous		5	None	None	Q9UGP5|PolLambda	5.096	0.000	False	PolMu,TdT	miniprot
+MP_5	rescued	F0DB79EE	Coemansia	Kickxellales_core	JANBTS010000006.1:233886-234764:+	223	ambiguous		5	None	None	Q9UGP5|PolLambda	4.365	0.000	False	PolMu,TdT	miniprot
+MP_6	rescued	F0DB79EE	Coemansia	Kickxellales_core	JANBTS010000045.1:4145-4924:+	259	ambiguous		5	None	None	Q9UGP5|PolLambda	5.528	0.000	False	PolMu,TdT	miniprot
+MP_7	rescued	F0DE0BF4	Coemansia	Kickxellales_core	JAIXMV010000011.1:635375-640847:+	686	ambiguous		5	None	None	Q9UGP5|PolLambda	5.097	0.000	False	PolMu,TdT	miniprot
+MP_8	rescued	F0DE0BF4	Coemansia	Kickxellales_core	JAIXMV010000013.1:401321-403966:+	241	ambiguous		5	None	None	Q9UGP5|PolLambda	4.348	0.000	False	PolMu,TdT	miniprot
+MP_9	rescued	F0DE0BF4	Coemansia	Kickxellales_core	JAIXMV010000002.1:647426-648412:-	328	ambiguous		5	None	None	Q9UGP5|PolLambda	5.406	0.000	False	PolMu,TdT	miniprot
+MP_10	rescued	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	JANBPU010000001.1:407146-409570:-	693	ambiguous		5	None	None	Q9UGP5|PolLambda	5.244	0.282	False	PolMu,TdT	miniprot
+MP_11	rescued	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	JANBPU010000222.1:15942-18729:-	253	ambiguous		5	None	None	Q9UGP5|PolLambda	4.848	0.197	False	PolMu,TdT	miniprot
+MP_12	rescued	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	JANBPU010000109.1:9790-11153:-	219	ambiguous		5	None	None	Q9UGP5|PolLambda	4.895	0.162	False	PolMu,TdT	miniprot
+MP_13	rescued	F1C537C3	Dimargaris	Dimargaritales	JANBQC010000003.1:164914-169025:+	656	ambiguous		5	None	None	Q9UGP5|PolLambda	4.834	0.149	False	PolMu,TdT	miniprot
+MP_14	rescued	F1C537C3	Dimargaris	Dimargaritales	JANBQC010000253.1:20154-21364:-	222	ambiguous		5	None	None	Q9UGP5|PolLambda	4.420	0.000	False	PolMu,TdT	miniprot
+MP_15	rescued	F1C537C3	Dimargaris	Dimargaritales	JANBQC010000415.1:9765-10469:+	234	ambiguous		5	None	None	Q9UGP5|PolLambda	5.263	0.068	False	PolMu,TdT	miniprot
+MP_16	rescued	F1C537C3	Dimargaris	Dimargaritales	JANBQC010000001.1:109200-110333:-	222	ambiguous		5	None	None	Q9UGP5|PolLambda	4.780	0.000	False	PolMu,TdT	miniprot
+MP_17	rescued	F1C9E2AA	Dispira	Dimargaritales	JANBPY010001542.1:1791-2618:+	234	ambiguous		5	None	None	Q9UGP5|PolLambda	4.526	0.089	False	PolMu,TdT	miniprot
+MP_18	rescued	F1C9E2AA	Dispira	Dimargaritales	JANBPY010002519.1:1040-1924:-	294	ambiguous		5	None	None	Q9UGP5|PolLambda	5.211	0.056	False	PolMu,TdT	miniprot
+MP_19	rescued	F1C9E2AA	Dispira	Dimargaritales	JANBPY010000531.1:7467-9116:-	368	ambiguous		8	None	None	Q9UGP5|PolLambda	3.839	0.577	False	Pol4,PolLambda,PolMu,TdT	miniprot
+MP_20	rescued	F23D95F9	Zancudomyces	Harpellales	JBNJNM010000015.1:531823-536406:-	711	ambiguous		5	None	None	Q9UGP5|PolLambda	5.188	0.359	False	PolMu,TdT	miniprot
+MP_21	rescued	F23D95F9	Zancudomyces	Harpellales	JBNJNM010000007.1:151452-152572:+	251	ambiguous		5	None	None	Q9UGP5|PolLambda	5.422	0.124	False	PolMu,TdT	miniprot
+MP_22	rescued	F23D95F9	Zancudomyces	Harpellales	JBNJNM010000006.1:1505565-1508873:+	384	ambiguous		8	None	None	Q9UGP5|PolLambda	3.007	0.568	False	Pol4,PolLambda,PolMu,TdT	miniprot
+MP_23	rescued	F2470181	Coemansia	Kickxellales_core	JANBRJ010000076.1:247-2517:-	659	ambiguous		5	None	None	Q9UGP5|PolLambda	5.141	0.000	False	PolMu,TdT	miniprot
+MP_24	rescued	F2470181	Coemansia	Kickxellales_core	JANBRJ010000049.1:23969-24682:-	237	ambiguous		5	None	None	Q9UGP5|PolLambda	5.400	0.000	False	PolMu,TdT	miniprot
+MP_25	rescued	F2470181	Coemansia	Kickxellales_core	JANBRJ010000010.1:209191-212760:-	460	ambiguous		5	None	None	Q9UGP5|PolLambda	4.591	0.000	False	PolMu,TdT	miniprot
+MP_26	rescued	F333880B	Coemansia	Kickxellales_core	JANBQD010000017.1:227942-233415:+	686	ambiguous		5	None	None	Q9UGP5|PolLambda	5.097	0.000	False	PolMu,TdT	miniprot
+MP_27	rescued	F333880B	Coemansia	Kickxellales_core	JANBQD010000056.1:70646-73312:+	241	ambiguous		5	None	None	Q9UGP5|PolLambda	4.348	0.000	False	PolMu,TdT	miniprot
+MP_28	rescued	F333880B	Coemansia	Kickxellales_core	JANBQD010000083.1:40273-41259:+	328	ambiguous		5	None	None	Q9UGP5|PolLambda	5.406	0.000	False	PolMu,TdT	miniprot
+MP_29	rescued	F3D51D57	Coemansia	Kickxellales_core	JANBUE010000019.1:65221-66180:-	222	ambiguous		5	None	None	Q9UGP5|PolLambda	4.348	0.000	False	PolMu,TdT	miniprot
+MP_30	rescued	F3D51D57	Coemansia	Kickxellales_core	JANBUE010000025.1:108199-108894:+	231	ambiguous		5	None	None	Q9UGP5|PolLambda	5.465	0.077	False	PolMu,TdT	miniprot
+MP_31	rescued	F3D937C5	Capniomyces	Harpellales	LUVW01000021.1:1591-4857:-	660	ambiguous		5	None	None	Q9UGP5|PolLambda	5.165	0.205	False	PolMu,TdT	miniprot
+MP_32	rescued	F3D937C5	Capniomyces	Harpellales	LUVW01000010.1:446310-451432:-	256	ambiguous		5	None	None	Q9UGP5|PolLambda	5.566	0.187	False	PolMu,TdT	miniprot
+MP_33	rescued	F3D937C5	Capniomyces	Harpellales	LUVW01000016.1:339354-340331:-	284	ambiguous		5	None	None	Q9UGP5|PolLambda	4.941	0.113	False	PolMu,TdT	miniprot
+MP_34	rescued	F3F252DC	Caulochytrium	Root	ML014217.1:52561-54556:-	590	ambiguous		5	None	None	Q9UGP5|PolLambda	5.181	0.223	False	PolMu,TdT	miniprot
+MP_35	rescued	F3F252DC	Caulochytrium	Root	ML014333.1:21100-21930:-	235	ambiguous		5	None	None	Q9UGP5|PolLambda	4.650	0.084	False	PolMu,TdT	miniprot
+MP_36	rescued	F3F252DC	Caulochytrium	Root	ML014226.1:15822-17030:+	235	ambiguous		5	None	None	Q9UGP5|PolLambda	4.185	0.124	False	PolMu,TdT	miniprot
+MP_37	rescued	F3F252DC	Caulochytrium	Root	ML014283.1:22319-23053:+	244	ambiguous		5	None	None	Q9UGP5|PolLambda	4.702	0.000	False	PolMu,TdT	miniprot
+MP_38	rescued	F3F252DC	Caulochytrium	Root	ML014111.1:74172-78236:-	232	ambiguous		5	None	None	Q9JIW4|PolMu	4.796	3.797	True	PolMu,TdT	miniprot
+MP_39	rescued	F3F252DC	Caulochytrium	Root	ML014239.1:31669-33680:-	206	ambiguous		5	None	None	Q9UGP5|PolLambda	6.902	1.601	True	PolMu,TdT	miniprot
+MP_40	rescued	F43C8248	Linderina	Kickxellales_core	NW_024468354.1:21012-21878:-	222	ambiguous		5	None	None	Q9UGP5|PolLambda	4.332	0.000	False	PolMu,TdT	miniprot
+MP_41	rescued	F43C8248	Linderina	Kickxellales_core	NW_024468250.1:360545-361411:-	223	ambiguous		5	None	None	Q9UGP5|PolLambda	4.332	0.000	False	PolMu,TdT	miniprot
+MP_42	rescued	F43C8248	Linderina	Kickxellales_core	NW_024468259.1:269712-272792:+	345	ambiguous		5	None	None	Q9UGP5|PolLambda	5.251	0.000	False	PolMu,TdT	miniprot
+MP_43	rescued	F43C8248	Linderina	Kickxellales_core	NW_024468254.1:630072-637154:-	413	assigned	PolBeta	4	90.0	92.8	O57383|PolBeta	4.601	3.946	True	PolBeta	miniprot
+MP_44	rescued	F45BD9C7	Furculomyces	Harpellales	MBFT01000958.1:11684-12597:+	252	ambiguous		5	None	None	Q9UGP5|PolLambda	5.490	0.112	False	PolMu,TdT	miniprot
+MP_45	rescued	F45BD9C7	Furculomyces	Harpellales	MBFT01001277.1:2648-4448:-	239	ambiguous		5	None	None	Q9UGP5|PolLambda	4.848	0.000	False	PolMu,TdT	miniprot
+MP_46	rescued	F45BD9C7	Furculomyces	Harpellales	MBFT01001136.1:13241-15041:-	239	ambiguous		5	None	None	Q9UGP5|PolLambda	4.848	0.000	False	PolMu,TdT	miniprot
+MP_47	rescued	F4C3EFF5	Dipsacomyces	Kickxellales_core	JANBPZ010000010.1:11678-15612:+	708	ambiguous		5	None	None	Q9UGP5|PolLambda	5.204	0.078	False	PolMu,TdT	miniprot
+MP_48	rescued	F4C3EFF5	Dipsacomyces	Kickxellales_core	JANBPZ010000043.1:15416-16330:+	222	ambiguous		5	None	None	Q9UGP5|PolLambda	4.332	0.000	False	PolMu,TdT	miniprot
+MP_49	rescued	F4F8BFB2	Coemansia	Kickxellales_core	JANJYS010000042.1:127907-130177:+	659	ambiguous		5	None	None	Q9UGP5|PolLambda	5.141	0.000	False	PolMu,TdT	miniprot
+MP_50	rescued	F4F8BFB2	Coemansia	Kickxellales_core	JANJYS010000045.1:98880-99593:+	237	ambiguous		5	None	None	Q9UGP5|PolLambda	5.400	0.000	False	PolMu,TdT	miniprot
+MP_51	rescued	F4F8BFB2	Coemansia	Kickxellales_core	JANJYS010000012.1:161138-164707:-	460	ambiguous		5	None	None	Q9UGP5|PolLambda	4.591	0.000	False	PolMu,TdT	miniprot
+MP_52	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000167.1:6182-12304:-	686	ambiguous		5	None	None	Q9UGP5|PolLambda	4.833	0.000	False	PolMu,TdT	miniprot
+MP_53	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000213.1:41867-45533:+	674	ambiguous		5	None	None	Q9UGP5|PolLambda	4.833	0.000	False	PolMu,TdT	miniprot
+MP_54	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000260.1:10162-11182:+	234	ambiguous		5	None	None	Q9UGP5|PolLambda	4.437	0.000	False	PolMu,TdT	miniprot
+MP_55	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000032.1:75801-76847:+	234	ambiguous		5	None	None	Q9UGP5|PolLambda	4.437	0.000	False	PolMu,TdT	miniprot
+MP_56	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000587.1:18626-19336:+	236	ambiguous		5	None	None	Q9UGP5|PolLambda	5.229	0.000	False	PolMu,TdT	miniprot
+MP_57	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000759.1:13047-13757:+	236	ambiguous		5	None	None	Q9UGP5|PolLambda	5.229	0.000	False	PolMu,TdT	miniprot
+MP_58	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000009.1:61176-62006:+	235	ambiguous		5	None	None	Q9UGP5|PolLambda	4.813	0.000	False	PolMu,TdT	miniprot
+MP_59	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000013.1:54368-55198:+	235	ambiguous		5	None	None	Q9UGP5|PolLambda	4.813	0.000	False	PolMu,TdT	miniprot
+MP_60	rescued	F5C985FA	Spiromyces	Mycoemilia_Spiromyces	JAMZIH010000099.1:848-2115:+	225	ambiguous		5	None	None	Q9UGP5|PolLambda	4.315	0.034	False	PolMu,TdT	miniprot
+MP_61	rescued	F5C985FA	Spiromyces	Mycoemilia_Spiromyces	JAMZIH010005703.1:1668-2935:+	297	ambiguous		5	None	None	Q9UGP5|PolLambda	5.466	0.278	False	PolMu,TdT	miniprot
+MP_62	rescued	F5C985FA	Spiromyces	Mycoemilia_Spiromyces	JAMZIH010000955.1:95-1397:-	240	ambiguous		5	None	None	Q9UGP5|PolLambda	5.000	0.038	False	PolMu,TdT	miniprot
+MP_63	rescued	F5C985FA	Spiromyces	Mycoemilia_Spiromyces	JAMZIH010000005.1:43114-46053:+	245	ambiguous		5	None	None	Q9UGP5|PolLambda	8.250	3.124	True	PolMu,TdT	miniprot
+MP_64	rescued	F7A7AA4C	Coemansia	Kickxellales_core	JANBTF010000044.1:127926-130196:+	659	ambiguous		5	None	None	Q9UGP5|PolLambda	5.141	0.000	False	PolMu,TdT	miniprot
+MP_65	rescued	F7A7AA4C	Coemansia	Kickxellales_core	JANBTF010000045.1:23969-24682:-	237	ambiguous		5	None	None	Q9UGP5|PolLambda	5.400	0.000	False	PolMu,TdT	miniprot
+MP_66	rescued	F7A7AA4C	Coemansia	Kickxellales_core	JANBTF010000012.1:71349-74918:+	460	ambiguous		5	None	None	Q9UGP5|PolLambda	4.591	0.000	False	PolMu,TdT	miniprot
+MP_67	rescued	F7A7AA4C	Coemansia	Kickxellales_core	JANBTF010000009.1:295358-299183:+	465	ambiguous		5	None	None	Q9UGP5|PolLambda	2.287	0.471	False	PolMu,TdT	miniprot
+MP_68	rescued	F7FE4923	Ramicandelaber	Ramicandelaber	MU602726.1:4052-6340:-	365	ambiguous		5	None	None	Q9UGP5|PolLambda	5.300	0.000	False	PolMu,TdT	miniprot
+MP_69	rescued	F7FE4923	Ramicandelaber	Ramicandelaber	MU603571.1:1342-3579:-	519	ambiguous		8	None	None	Q9UGP5|PolLambda	4.290	1.027	False	Pol4,PolLambda,PolMu,TdT	miniprot
+MP_70	rescued	F80EB351	Coemansia	Kickxellales_core	JANBQR010000044.1:256-2526:-	659	ambiguous		5	None	None	Q9UGP5|PolLambda	5.141	0.000	False	PolMu,TdT	miniprot
+MP_71	rescued	F80EB351	Coemansia	Kickxellales_core	JANBQR010000045.1:23994-24707:-	237	ambiguous		5	None	None	Q9UGP5|PolLambda	5.400	0.000	False	PolMu,TdT	miniprot
+MP_72	rescued	F8E635D0	Rhizopus	Mucoromycota_s.l.	JARGYL010000447.1:1425-5119:-	611	ambiguous		5	None	None	Q9UGP5|PolLambda	5.230	0.272	False	PolMu,TdT	miniprot
+MP_73	rescued	F9F51274	Kickxella	Kickxellales_core	NW_026251481.1:410361-411056:+	231	ambiguous		5	None	None	Q9UGP5|PolLambda	5.428	0.040	False	PolMu,TdT	miniprot
+MP_74	rescued	FC1174D9	Coemansia	Kickxellales_core	JAIXMU010000010.1:227371-229344:-	602	ambiguous		5	None	None	Q9UGP5|PolLambda	5.096	0.000	False	PolMu,TdT	miniprot
+MP_75	rescued	FC1174D9	Coemansia	Kickxellales_core	JAIXMU010000002.1:341747-342625:+	223	ambiguous		5	None	None	Q9UGP5|PolLambda	4.365	0.000	False	PolMu,TdT	miniprot
+MP_76	rescued	FC1174D9	Coemansia	Kickxellales_core	JAIXMU010000003.1:1052131-1052910:-	259	ambiguous		5	None	None	Q9UGP5|PolLambda	5.528	0.000	False	PolMu,TdT	miniprot
+MP_77	rescued	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	MU626372.1:31480-32313:+	235	ambiguous		5	None	None	Q9UGP5|PolLambda	4.685	0.068	False	PolMu,TdT	miniprot
+MP_78	rescued	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	MU626330.1:63508-67002:-	323	low_support	PolBeta	4	88.0	77.2	O57383|PolBeta	3.077	2.079	True	PolBeta,PolLambda	miniprot
+MP_80	rescued	FCCDAB75	Smittium	Harpellales	JBJCJL010000023.1:1617487-1620873:-	590	ambiguous		5	None	None	Q9UGP5|PolLambda	5.495	0.535	False	PolMu,TdT	miniprot
+MP_81	rescued	FCCDAB75	Smittium	Harpellales	JBJCJL010000015.1:462703-463527:+	233	ambiguous		5	None	None	Q9UGP5|PolLambda	4.832	0.034	False	PolMu,TdT	miniprot
+MP_82	rescued	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	JBLKGV010000102.1:44870-45788:+	243	ambiguous		5	None	None	Q9UGP5|PolLambda	5.081	0.061	False	PolMu,TdT	miniprot
+MP_83	rescued	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	JBLKGV010000811.1:18157-18987:-	235	ambiguous		5	None	None	Q9UGP5|PolLambda	4.757	0.153	False	PolMu,TdT	miniprot
+MP_84	rescued	FD8916FB	Coemansia	Kickxellales_core	JANBTN010000024.1:6662-12135:-	686	ambiguous		5	None	None	Q9UGP5|PolLambda	5.097	0.000	False	PolMu,TdT	miniprot
+MP_85	rescued	FD8916FB	Coemansia	Kickxellales_core	JANBTN010000016.1:150415-153074:-	241	ambiguous		5	None	None	Q9UGP5|PolLambda	4.348	0.000	False	PolMu,TdT	miniprot
+MP_86	rescued	FD8916FB	Coemansia	Kickxellales_core	JANBTN010000082.1:23481-24467:-	328	ambiguous		5	None	None	Q9UGP5|PolLambda	5.406	0.000	False	PolMu,TdT	miniprot
+MP_87	rescued	FDAC0301	Capillidium	Entomophthorales_Basidiobolus	WBMQ01000009.1:1094048-1096518:-	617	ambiguous		5	None	None	Q9UGP5|PolLambda	5.296	0.609	False	PolMu,TdT	miniprot
+MP_88	rescued	FDAC0301	Capillidium	Entomophthorales_Basidiobolus	WBMQ01000005.1:752229-753051:-	223	ambiguous		5	None	None	Q9UGP5|PolLambda	5.411	0.289	False	PolMu,TdT	miniprot
+MP_89	rescued	FDAC0301	Capillidium	Entomophthorales_Basidiobolus	WBMQ01000006.1:1410705-1411556:+	232	ambiguous		5	None	None	Q9UGP5|PolLambda	4.756	0.083	False	PolMu,TdT	miniprot
+MP_90	rescued	FE0E32D4	Martensiomyces	Kickxellales_core	MU603941.1:61310-62248:+	222	ambiguous		5	None	None	Q9UGP5|PolLambda	4.348	0.000	False	PolMu,TdT	miniprot
+MP_91	rescued	FE0E32D4	Martensiomyces	Kickxellales_core	MU603972.1:105418-106188:+	256	ambiguous		5	None	None	Q9UGP5|PolLambda	5.362	0.052	False	PolMu,TdT	miniprot
+MP_92	rescued	FEB493EF	Piptocephalis	Zoopagales	MU626148.1:42389-43224:-	226	ambiguous		5	None	None	Q9UGP5|PolLambda	5.348	0.312	False	PolMu,TdT	miniprot
+MP_79	rescued	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	MU626380.1:27004-29095:-	318	dropped_by_trim										miniprot

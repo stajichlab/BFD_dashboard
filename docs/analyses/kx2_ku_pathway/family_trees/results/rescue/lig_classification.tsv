@@ -1,0 +1,306 @@
+label	kind	locustag	genus	group	id	length	call	clade	n_refs	ufboot	sh	nearest_ref	nearest_dist	terminal_bl	long_branch	mixed_labels	info
+ANN_1	annotated	F08FC5A1	Circinella	Mucoromycota_s.l.	F08FC5A1_005642-T1	512	low_support	LIG1	2	24.0	0.0	P12000|LIG1	0.872	0.244	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_2	annotated	F08FC5A1	Circinella	Mucoromycota_s.l.	F08FC5A1_008049-T1	756	ambiguous		16	None	None	P04819|LIG1	0.176	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_3	annotated	F08FC5A1	Circinella	Mucoromycota_s.l.	F08FC5A1_008182-T1	933	ambiguous		5	None	None	P52496|LIG4	2.003	0.335	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_4	annotated	F08FC5A1	Circinella	Mucoromycota_s.l.	F08FC5A1_010699-T1	831	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.650	0.000	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_5	annotated	F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	F0AFF821_003887-T1	752	low_support	LIG1	1	26.0	0.0	P04819|LIG1	0.348	0.085	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_6	annotated	F0DB79EE	Coemansia	Kickxellales_core	F0DB79EE_004319-T1	752	low_support	LIG1	1	85.0	83.1	P37913|LIG1	0.289	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_7	annotated	F0DE0BF4	Coemansia	Kickxellales_core	F0DE0BF4_003755-T1	874	low_support	LIG1	1	85.0	83.1	Q27474|LIG1	0.373	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_8	annotated	F104222C	Rhizomucor	Mucoromycota_s.l.	F104222C_000817-T1	475	ambiguous		6	None	None	Q9W1H4|LIG1	0.991	0.132	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_9	annotated	F104222C	Rhizomucor	Mucoromycota_s.l.	F104222C_002531-T1	803	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.965	0.225	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_10	annotated	F104222C	Rhizomucor	Mucoromycota_s.l.	F104222C_005687-T1	739	ambiguous		16	None	None	P04819|LIG1	0.262	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_11	annotated	F104222C	Rhizomucor	Mucoromycota_s.l.	F104222C_009039-T1	926	ambiguous		5	None	None	P52496|LIG4	1.719	0.127	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_12	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_001156-T1	763	ambiguous		16	None	None	P04819|LIG1	0.605	0.083	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_13	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_001598-T1	832	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.657	0.571	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_14	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_002686-T1	510	low_support	LIG4	3	83.0	88.5	Q4WVG8|LIG4	1.498	0.140	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_15	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_003539-T1	915	ambiguous		5	None	None	Q7SB49|LIG4	1.047	0.059	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_16	annotated	F1815028	Entrophospora	Mucoromycota_s.l.	F1815028_014291-T1	507	low_support	LIG4	3	83.0	88.5	Q4WVG8|LIG4	1.497	0.139	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_17	annotated	F186E471	Stylopage	Zoopagales	F186E471_004633-T1	1529	ambiguous		16	None	None	P04819|LIG1	0.350	0.088	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_18	annotated	F18B6B82	Piromyces	Root	F18B6B82_003622-T1	935	low_support	LIG4	1	22.0	78.5	Q08387|LIG4	0.832	0.150	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_19	annotated	F18B6B82	Piromyces	Root	F18B6B82_008069-T1	774	ambiguous		16	None	None	P04819|LIG1	0.516	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_20	annotated	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	F18CA942_003233-T1	765	ambiguous		16	None	None	P04819|LIG1	0.176	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_21	annotated	F1C537C3	Dimargaris	Dimargaritales	F1C537C3_001563-T1	1266	ambiguous		16	None	None	P04819|LIG1	0.176	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_22	annotated	F1C9E2AA	Dispira	Dimargaritales	F1C9E2AA_002150-T1	829	ambiguous		16	None	None	P04819|LIG1	0.176	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_23	annotated	F1D7B4F9	Spizellomyces	Root	F1D7B4F9_000218-T1	339	ambiguous		6	None	None	Q9W1H4|LIG1	3.243	0.440	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_24	annotated	F1D7B4F9	Spizellomyces	Root	F1D7B4F9_001377-T1	895	ambiguous		16	None	None	P04819|LIG1	0.598	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_25	annotated	F1D7B4F9	Spizellomyces	Root	F1D7B4F9_006710-T1	780	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.332	0.081	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_26	annotated	F1D7B4F9	Spizellomyces	Root	F1D7B4F9_007634-T1	1018	ambiguous		5	None	None	P52496|LIG4	1.119	0.093	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_27	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_000197-T1	536	ambiguous		10	None	None	P04819|LIG1	1.907	0.188	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_28	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_001098-T1	472	ambiguous		6	None	None	Q9W1H4|LIG1	1.586	0.195	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_29	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_002666-T1	760	ambiguous		16	None	None	P04819|LIG1	0.431	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_30	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_002785-T1	875	ambiguous		5	None	None	P52496|LIG4	1.248	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_31	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_004285-T1	930	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.618	0.202	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_32	annotated	F22945DF	Bifiguratus	Mucoromycota_s.l.	F22945DF_007997-T1	484	ambiguous		6	None	None	Q9W1H4|LIG1	2.888	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_33	annotated	F23D95F9	Zancudomyces	Harpellales	F23D95F9_000250-T1	866	ambiguous		6	None	None	P04819|LIG1	0.868	0.130	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_34	annotated	F2470181	Coemansia	Kickxellales_core	F2470181_000369-T1	780	low_support	LIG1	1	85.0	83.1	Q27474|LIG1	0.373	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_35	annotated	F3253B6A	Synchytrium	Root	F3253B6A_006014-T1	797	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.504	0.000	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_36	annotated	F3253B6A	Synchytrium	Root	F3253B6A_006511-T1	985	low_support	LIG4	1	22.0	78.5	Q90YB1|LIG4	1.248	0.491	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_37	annotated	F3253B6A	Synchytrium	Root	F3253B6A_007625-T1	505	ambiguous		6	None	None	Q9W1H4|LIG1	2.888	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_38	annotated	F3253B6A	Synchytrium	Root	F3253B6A_008679-T1	799	ambiguous		6	None	None	P04819|LIG1	0.350	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_39	annotated	F333880B	Coemansia	Kickxellales_core	F333880B_006647-T1	807	low_support	LIG1	1	85.0	83.1	Q27474|LIG1	0.373	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_40	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_002398-T1	1160	low_support	LIG3	2	86.0	88.0	P52496|LIG4	0.899	0.119	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_41	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_014802-T1	1003	ambiguous		5	None	None	Q7SB49|LIG4	0.844	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_42	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_016080-T1	610	ambiguous		16	None	None	P04819|LIG1	0.521	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_43	annotated	F359FEE0	Diversispora	Mucoromycota_s.l.	F359FEE0_022378-T1	919	ambiguous		6	None	None	Q9W1H4|LIG1	3.275	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_44	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_002968-T1	820	ambiguous		16	None	None	P04819|LIG1	0.813	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_45	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_008362-T1	950	ambiguous		6	None	None	Q7SB49|LIG4	0.612	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_46	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_011324-T1	533	ambiguous		6	None	None	Q9W1H4|LIG1	3.057	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_47	annotated	F3A2FF18	Oehlia	Mucoromycota_s.l.	F3A2FF18_013585-T1	793	ambiguous		16	None	None	P04819|LIG1	1.210	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_48	annotated	F3D51D57	Coemansia	Kickxellales_core	F3D51D57_003899-T1	804	low_support	LIG1	1	85.0	83.1	P37913|LIG1	0.289	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_49	annotated	F3D937C5	Capniomyces	Harpellales	F3D937C5_005688-T1	875	ambiguous		6	None	None	P04819|LIG1	0.263	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_50	annotated	F3F252DC	Caulochytrium	Root	F3F252DC_000554-T1	828	ambiguous		16	None	None	P04819|LIG1	0.431	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_51	annotated	F43C8248	Linderina	Kickxellales_core	F43C8248_004526-T1	817	low_support	LIG1	1	85.0	83.1	Q27474|LIG1	0.469	0.096	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_52	annotated	F45BD9C7	Furculomyces	Harpellales	F45BD9C7_004587-T1	688	ambiguous		6	None	None	P04819|LIG1	0.350	0.087	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_53	annotated	F4696F25	Umbelopsis	Mucoromycota_s.l.	F4696F25_002989-T1	931	ambiguous		5	None	None	P52496|LIG4	2.154	0.369	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_54	annotated	F4696F25	Umbelopsis	Mucoromycota_s.l.	F4696F25_004565-T1	886	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.423	0.090	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_55	annotated	F4696F25	Umbelopsis	Mucoromycota_s.l.	F4696F25_004640-T1	823	ambiguous		16	None	None	P04819|LIG1	0.262	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_56	annotated	F46AF962	Acaulopage	Zoopagales	F46AF962_001722-T1	885	ambiguous		5	None	None	Q7SB49|LIG4	1.325	0.566	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_57	annotated	F46AF962	Acaulopage	Zoopagales	F46AF962_002442-T1	678	ambiguous		16	None	None	P04819|LIG1	0.176	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_58	annotated	F46AF962	Acaulopage	Zoopagales	F46AF962_003533-T1	362	ambiguous		10	None	None	P04819|LIG1	1.262	0.278	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_59	annotated	F4C3EFF5	Dipsacomyces	Kickxellales_core	F4C3EFF5_005217-T1	541	low_support	LIG1	1	85.0	83.1	Q27474|LIG1	0.459	0.086	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_60	annotated	F4F8BFB2	Coemansia	Kickxellales_core	F4F8BFB2_000079-T1	780	low_support	LIG1	1	85.0	83.1	Q27474|LIG1	0.373	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_61	annotated	F4FD0401	Tieghemiomyces	Dimargaritales	F4FD0401_006035-T1	881	ambiguous		6	None	None	P04819|LIG1	0.263	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_62	annotated	F4FD0401	Tieghemiomyces	Dimargaritales	F4FD0401_011175-T1	881	ambiguous		6	None	None	P04819|LIG1	0.263	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_63	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_002283-T1	903	ambiguous		16	None	None	P04819|LIG1	0.598	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_64	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_008528-T1	870	ambiguous		6	None	None	P04819|LIG1	1.320	0.582	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_65	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_010178-T1	966	ambiguous		5	None	None	P52496|LIG4	1.320	0.294	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_66	annotated	F5655B54	Hyaloraphidium	Root	F5655B54_012556-T1	571	ambiguous		6	None	None	Q9W1H4|LIG1	2.714	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_67	annotated	F574EFC1	Actinomortierella	Mucoromycota_s.l.	F574EFC1_001937-T1	844	ambiguous		16	None	None	P04819|LIG1	0.609	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_68	annotated	F574EFC1	Actinomortierella	Mucoromycota_s.l.	F574EFC1_003237-T1	431	ambiguous		6	None	None	Q9W1H4|LIG1	2.542	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_69	annotated	F574EFC1	Actinomortierella	Mucoromycota_s.l.	F574EFC1_003260-T1	1242	low_support	LIG4	3	83.0	88.5	Q4WVG8|LIG4	0.531	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_70	annotated	F574EFC1	Actinomortierella	Mucoromycota_s.l.	F574EFC1_005536-T1	867	low_support	LIG4	3	83.0	88.5	Q4WVG8|LIG4	0.904	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_71	annotated	F58B3FB2	Nowakowskiella	Root	F58B3FB2_001012-T1	959	ambiguous		5	None	None	P52496|LIG4	0.999	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_72	annotated	F58B3FB2	Nowakowskiella	Root	F58B3FB2_005235-T1	639	ambiguous		6	None	None	Q9W1H4|LIG1	3.273	0.489	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_73	annotated	F58B3FB2	Nowakowskiella	Root	F58B3FB2_007317-T1	1068	ambiguous		6	None	None	P04819|LIG1	0.697	0.348	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_74	annotated	F58B3FB2	Nowakowskiella	Root	F58B3FB2_007959-T1	1663	ambiguous		6	None	None	Q9W1H4|LIG1	2.713	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_75	annotated	F5931C4A	Paraglomus	Mucoromycota_s.l.	F5931C4A_008192-T1	933	ambiguous		5	None	None	P52496|LIG4	1.405	0.180	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_76	annotated	F5931C4A	Paraglomus	Mucoromycota_s.l.	F5931C4A_008336-T1	741	ambiguous		16	None	None	P04819|LIG1	0.521	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_77	annotated	F5931C4A	Paraglomus	Mucoromycota_s.l.	F5931C4A_009529-T1	680	low_support	LIG4	3	83.0	88.5	Q4WVG8|LIG4	1.602	0.242	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_78	annotated	F5A4E39E	Phlyctochytrium	Root	F5A4E39E_003584-T1	330	ambiguous		6	None	None	Q9W1H4|LIG1	2.888	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_79	annotated	F5A4E39E	Phlyctochytrium	Root	F5A4E39E_005980-T1	859	ambiguous		16	None	None	P04819|LIG1	0.431	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_80	annotated	F5A4E39E	Phlyctochytrium	Root	F5A4E39E_008642-T1	906	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.335	0.083	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_81	annotated	F5A4E39E	Phlyctochytrium	Root	F5A4E39E_009680-T1	1039	ambiguous		5	None	None	P52496|LIG4	1.475	0.249	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_82	annotated	F5C4F326	Sorochytrium	Root	F5C4F326_000033-T1	722	ambiguous		16	None	None	P04819|LIG1	0.431	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_83	annotated	F5C4F326	Sorochytrium	Root	F5C4F326_000952-T1	824	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.569	0.236	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_84	annotated	F5C4F326	Sorochytrium	Root	F5C4F326_004721-T1	548	ambiguous		6	None	None	Q9W1H4|LIG1	2.498	0.679	True	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_85	annotated	F5C4F326	Sorochytrium	Root	F5C4F326_007749-T1	937	low_support	LIG4	1	22.0	78.5	Q08387|LIG4	1.014	1.014	True	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_86	annotated	F6C0647F	Cryptocalciella	Mucoromycota_s.l.	F6C0647F_002359-T1	753	ambiguous		16	None	None	P04819|LIG1	0.609	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_87	annotated	F6C0647F	Cryptocalciella	Mucoromycota_s.l.	F6C0647F_007272-T1	1155	low_support	LIG4	1	40.0	63.6	Q7SB49|LIG4	1.021	0.630	True	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_88	annotated	F6C0647F	Cryptocalciella	Mucoromycota_s.l.	F6C0647F_011378-T1	476	ambiguous		6	None	None	Q9W1H4|LIG1	2.542	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_89	annotated	F6FD6BCA	Hesseltinella	Mucoromycota_s.l.	F6FD6BCA_000094-T1	378	ambiguous		10	None	None	P04819|LIG1	2.293	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_90	annotated	F6FD6BCA	Hesseltinella	Mucoromycota_s.l.	F6FD6BCA_002508-T1	898	ambiguous		5	None	None	P52496|LIG4	2.167	0.380	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_91	annotated	F6FD6BCA	Hesseltinella	Mucoromycota_s.l.	F6FD6BCA_002588-T1	724	ambiguous		16	None	None	P04819|LIG1	0.176	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_92	annotated	F6FD6BCA	Hesseltinella	Mucoromycota_s.l.	F6FD6BCA_007359-T1	505	ambiguous		5	None	None	P52496|LIG4	1.682	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_93	annotated	F797C73E	Zygophlyctis	Root	F797C73E_001306-T1	437	ambiguous		10	None	None	P04819|LIG1	2.487	0.617	True	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_94	annotated	F797C73E	Zygophlyctis	Root	F797C73E_001511-T1	956	ambiguous		10	None	None	P04819|LIG1	0.816	0.274	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_95	annotated	F797C73E	Zygophlyctis	Root	F797C73E_004015-T1	1346	ambiguous		16	None	None	P04819|LIG1	0.345	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_96	annotated	F797C73E	Zygophlyctis	Root	F797C73E_005492-T1	1974	ambiguous		10	None	None	P04819|LIG1	1.478	0.033	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_97	annotated	F7A7AA4C	Coemansia	Kickxellales_core	F7A7AA4C_000127-T1	780	low_support	LIG1	1	85.0	83.1	Q27474|LIG1	0.373	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_98	annotated	F7F7C035	Gongronella	Mucoromycota_s.l.	F7F7C035_001816-T1	771	low_support	LIG1	1	26.0	0.0	P04819|LIG1	0.349	0.087	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_99	annotated	F7F7C035	Gongronella	Mucoromycota_s.l.	F7F7C035_002537-T1	380	ambiguous		10	None	None	P04819|LIG1	2.485	0.192	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_100	annotated	F7F7C035	Gongronella	Mucoromycota_s.l.	F7F7C035_004224-T1	931	ambiguous		5	None	None	P52496|LIG4	1.445	0.010	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_101	annotated	F7F7C035	Gongronella	Mucoromycota_s.l.	F7F7C035_007622-T1	507	ambiguous		5	None	None	P52496|LIG4	1.965	0.283	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_102	annotated	F7FE4923	Ramicandelaber	Ramicandelaber	F7FE4923_002588-T1	1055	low_support	LIG3	1	86.0	79.1	Q9W1H4|LIG1	0.379	0.000	False	LIG1,LIG3,LIG6	DNA_ligase_A_M:PF01068
+ANN_103	annotated	F80EB351	Coemansia	Kickxellales_core	F80EB351_000545-T1	780	low_support	LIG1	1	85.0	83.1	Q27474|LIG1	0.373	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_104	annotated	F8E635D0	Rhizopus	Mucoromycota_s.l.	F8E635D0_000635-T1	754	low_support	LIG1	1	26.0	0.0	P04819|LIG1	0.263	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_105	annotated	F8E635D0	Rhizopus	Mucoromycota_s.l.	F8E635D0_001082-T1	316	low_support	LIG3	2	86.0	88.0	P52496|LIG4	1.107	0.326	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_106	annotated	F8E635D0	Rhizopus	Mucoromycota_s.l.	F8E635D0_008968-T1	458	ambiguous		6	None	None	Q9W1H4|LIG1	1.819	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_107	annotated	F9368871	Thamnocephalis	Zoopagales	F9368871_002826-T1	1048	ambiguous		5	None	None	P52496|LIG4	1.395	0.081	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_108	annotated	F9368871	Thamnocephalis	Zoopagales	F9368871_006298-T1	706	ambiguous		10	None	None	P04819|LIG1	0.263	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_109	annotated	F9A17E9D	Zoophagus	Zoopagales	F9A17E9D_000041-T1	625	ambiguous		16	None	None	P04819|LIG1	1.170	0.825	True	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_110	annotated	F9A17E9D	Zoophagus	Zoopagales	F9A17E9D_003104-T1	964	low_support	LIG4	1	40.0	63.6	Q7SB49|LIG4	0.870	0.316	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_111	annotated	F9A17E9D	Zoophagus	Zoopagales	F9A17E9D_006457-T1	591	ambiguous		16	None	None	P04819|LIG1	1.096	0.498	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_112	annotated	F9F51274	Kickxella	Kickxellales_core	F9F51274_001727-T1	859	low_support	LIG1	1	85.0	83.1	Q27474|LIG1	0.373	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_113	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_001702-T1	793	low_support	LIG3	2	86.0	88.0	P52496|LIG4	0.514	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_114	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_007251-T1	722	ambiguous		16	None	None	P04819|LIG1	0.428	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_115	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_009976-T1	955	ambiguous		5	None	None	P52496|LIG4	0.923	0.074	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_116	annotated	F9F7649B	Ambispora	Mucoromycota_s.l.	F9F7649B_010919-T1	929	low_support	LIG4	3	83.0	88.5	Q4WVG8|LIG4	1.206	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_117	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_026828-T1	509	ambiguous		6	None	None	Q9W1H4|LIG1	3.275	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_118	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_028558-T1	937	ambiguous		5	None	None	Q7SB49|LIG4	0.759	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_119	annotated	FA186146	Gigaspora	Mucoromycota_s.l.	FA186146_086571-T1	679	ambiguous		16	None	None	P04819|LIG1	0.701	0.179	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_120	annotated	FAC8BA67	Syncephalastrum	Mucoromycota_s.l.	FAC8BA67_000729-T1	900	ambiguous		5	None	None	P52496|LIG4	2.027	0.413	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_121	annotated	FAC8BA67	Syncephalastrum	Mucoromycota_s.l.	FAC8BA67_002381-T1	765	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.807	0.158	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_122	annotated	FAC8BA67	Syncephalastrum	Mucoromycota_s.l.	FAC8BA67_004268-T1	377	ambiguous		10	None	None	P04819|LIG1	2.148	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_123	annotated	FAC8BA67	Syncephalastrum	Mucoromycota_s.l.	FAC8BA67_006530-T1	726	ambiguous		16	None	None	P04819|LIG1	0.262	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_124	annotated	FAC8BA67	Syncephalastrum	Mucoromycota_s.l.	FAC8BA67_009452-T1	482	low_support	LIG1	2	24.0	0.0	P12000|LIG1	1.003	0.375	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_125	annotated	FB5167BD	Syncephalis	Zoopagales	FB5167BD_001384-T1	887	low_support	LIG1	1	26.0	0.0	P04819|LIG1	0.088	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_126	annotated	FB5167BD	Syncephalis	Zoopagales	FB5167BD_009652-T1	886	low_support	LIG1	1	26.0	0.0	P04819|LIG1	0.088	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_127	annotated	FBAB06C3	Thermomucor	Mucoromycota_s.l.	FBAB06C3_000428-T1	881	ambiguous		5	None	None	P52496|LIG4	1.786	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_128	annotated	FBAB06C3	Thermomucor	Mucoromycota_s.l.	FBAB06C3_001053-T1	750	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.740	0.000	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_129	annotated	FBAB06C3	Thermomucor	Mucoromycota_s.l.	FBAB06C3_007262-T1	750	ambiguous		10	None	None	P04819|LIG1	0.351	0.087	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_130	annotated	FBAB06C3	Thermomucor	Mucoromycota_s.l.	FBAB06C3_009433-T1	702	ambiguous		6	None	None	Q9W1H4|LIG1	1.080	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_131	annotated	FBDB2FE6	Rhizophlyctis	Root	FBDB2FE6_003814-T1	747	ambiguous		6	None	None	Q9W1H4|LIG1	2.624	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_132	annotated	FBDB2FE6	Rhizophlyctis	Root	FBDB2FE6_007829-T1	924	ambiguous		6	None	None	P04819|LIG1	0.350	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_133	annotated	FBDB2FE6	Rhizophlyctis	Root	FBDB2FE6_008900-T1	960	ambiguous		10	None	None	P04819|LIG1	0.978	0.217	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_134	annotated	FBDB2FE6	Rhizophlyctis	Root	FBDB2FE6_011751-T1	830	ambiguous		5	None	None	P52496|LIG4	1.554	0.161	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_135	annotated	FBDB2FE6	Rhizophlyctis	Root	FBDB2FE6_012881-T1	359	ambiguous		10	None	None	P04819|LIG1	2.251	0.276	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_136	annotated	FBDB2FE6	Rhizophlyctis	Root	FBDB2FE6_012995-T1	845	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.331	0.079	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_137	annotated	FC1174D9	Coemansia	Kickxellales_core	FC1174D9_001850-T1	752	low_support	LIG1	1	85.0	83.1	P37913|LIG1	0.289	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_138	annotated	FC303ED2	Geosiphon	Mucoromycota_s.l.	FC303ED2_003509-T1	963	low_support	LIG4	3	83.0	88.5	Q4WVG8|LIG4	1.498	0.139	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_139	annotated	FC303ED2	Geosiphon	Mucoromycota_s.l.	FC303ED2_010625-T1	895	ambiguous		5	None	None	P52496|LIG4	0.994	0.149	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_140	annotated	FC303ED2	Geosiphon	Mucoromycota_s.l.	FC303ED2_018170-T1	765	ambiguous		10	None	None	P04819|LIG1	0.641	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_141	annotated	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	FC345CF7_005623-T1	793	ambiguous		16	None	None	P04819|LIG1	0.823	0.012	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_142	annotated	FC8B8027	Gonapodya	Root	FC8B8027_001203-T1	1441	ambiguous		16	None	None	P04819|LIG1	0.431	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_143	annotated	FC8B8027	Gonapodya	Root	FC8B8027_003094-T1	1150	assigned	LIG4	3	98.0	97.7	Q90YB1|LIG4	0.551	0.440	False	LIG4	DNA_ligase_A_M:PF01068
+ANN_144	annotated	FC8B8027	Gonapodya	Root	FC8B8027_003317-T1	1245	low_support	LIG4	3	83.0	88.5	Q4WVG8|LIG4	2.194	0.836	True	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_145	annotated	FC8B8027	Gonapodya	Root	FC8B8027_003653-T1	469	ambiguous		6	None	None	Q9W1H4|LIG1	2.804	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_146	annotated	FC8B8027	Gonapodya	Root	FC8B8027_009041-T1	1501	ambiguous		16	None	None	P04819|LIG1	4.998	0.265	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_147	annotated	FCCDAB75	Smittium	Harpellales	FCCDAB75_006270-T1	767	ambiguous		6	None	None	P04819|LIG1	0.444	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_148	annotated	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	FCDD8027_000144-T1	558	low_support	LIG4	3	83.0	88.5	Q4WVG8|LIG4	1.620	0.268	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_149	annotated	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	FCDD8027_004152-T1	937	low_support	LIG4	1	22.0	78.5	Q90YB1|LIG4	0.586	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_150	annotated	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	FCDD8027_011323-T1	839	low_support	LIG1	2	24.0	0.0	P12000|LIG1	0.092	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_151	annotated	FD4B4AC6	Paraphysoderma	Root	FD4B4AC6_000693-T1	821	ambiguous		16	None	None	P04819|LIG1	0.431	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_152	annotated	FD4B4AC6	Paraphysoderma	Root	FD4B4AC6_004719-T1	606	ambiguous		10	None	None	P04819|LIG1	1.180	0.356	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_153	annotated	FD4B4AC6	Paraphysoderma	Root	FD4B4AC6_005935-T1	848	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.738	0.233	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_154	annotated	FD4B4AC6	Paraphysoderma	Root	FD4B4AC6_006871-T1	985	ambiguous		5	None	None	P52496|LIG4	1.727	0.413	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_155	annotated	FD8916FB	Coemansia	Kickxellales_core	FD8916FB_006743-T1	807	low_support	LIG1	1	85.0	83.1	Q27474|LIG1	0.373	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_156	annotated	FDAC0301	Capillidium	Entomophthorales_Basidiobolus	FDAC0301_002410-T1	788	ambiguous		16	None	None	P04819|LIG1	0.431	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_157	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_011503-T1	931	ambiguous		6	None	None	Q7SB49|LIG4	0.612	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_158	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_021048-T1	533	ambiguous		6	None	None	Q9W1H4|LIG1	3.057	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_159	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_026660-T1	793	ambiguous		16	None	None	P04819|LIG1	1.210	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_160	annotated	FDB574B3	Rhizophagus	Mucoromycota_s.l.	FDB574B3_030728-T1	729	ambiguous		16	None	None	P04819|LIG1	0.813	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_161	annotated	FE0E32D4	Martensiomyces	Kickxellales_core	FE0E32D4_006485-T1	1202	low_support	LIG1	1	85.0	83.1	Q27474|LIG1	0.373	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_162	annotated	FE0E7C3D	Cochlonema	Zoopagales	FE0E7C3D_005962-T1	788	ambiguous		10	None	None	P04819|LIG1	0.342	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_163	annotated	FE719DCE	Blyttiomyces	Root	FE719DCE_003949-T1	789	ambiguous		16	None	None	P04819|LIG1	0.431	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_164	annotated	FE719DCE	Blyttiomyces	Root	FE719DCE_005298-T1	783	low_support	LIG4	3	83.0	88.5	O74833|LIG4	0.826	0.433	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_165	annotated	FE719DCE	Blyttiomyces	Root	FE719DCE_006081-T1	1126	ambiguous		5	None	None	P52496|LIG4	0.930	0.268	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_166	annotated	FEACB2E7	Cunninghamella	Mucoromycota_s.l.	FEACB2E7_000441-T1	565	ambiguous		5	None	None	P52496|LIG4	2.126	0.127	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_167	annotated	FEACB2E7	Cunninghamella	Mucoromycota_s.l.	FEACB2E7_001055-T1	1418	ambiguous		16	None	None	P04819|LIG1	0.262	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_168	annotated	FEACB2E7	Cunninghamella	Mucoromycota_s.l.	FEACB2E7_003732-T1	443	ambiguous		5	None	None	P52496|LIG4	2.229	0.230	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_169	annotated	FEB493EF	Piptocephalis	Zoopagales	FEB493EF_004111-T1	1670	ambiguous		6	None	None	P04819|LIG1	0.263	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_170	annotated	FEC49E8E	Endogone	Mucoromycota_s.l.	FEC49E8E_002263-T1	805	ambiguous		16	None	None	P04819|LIG1	0.428	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_171	annotated	FEC49E8E	Endogone	Mucoromycota_s.l.	FEC49E8E_004804-T1	610	ambiguous		6	None	None	Q9W1H4|LIG1	2.891	0.177	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_172	annotated	FEC49E8E	Endogone	Mucoromycota_s.l.	FEC49E8E_005657-T1	792	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	0.687	0.182	False	LIG1,LIG6	DNA_ligase_A_M:PF01068
+ANN_173	annotated	FEC49E8E	Endogone	Mucoromycota_s.l.	FEC49E8E_009988-T1	440	ambiguous		10	None	None	P04819|LIG1	2.148	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_174	annotated	FEF8F4D3	Polyrhizophydium	Root	FEF8F4D3_001789-T1	345	ambiguous		10	None	None	P04819|LIG1	2.126	0.150	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_175	annotated	FEF8F4D3	Polyrhizophydium	Root	FEF8F4D3_002521-T1	1083	ambiguous		5	None	None	P52496|LIG4	1.072	0.308	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_176	annotated	FEF8F4D3	Polyrhizophydium	Root	FEF8F4D3_005000-T1	814	ambiguous		16	None	None	P04819|LIG1	0.431	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_177	annotated	FF74C8A6	Lobulomyces	Root	FF74C8A6_000261-T1	975	ambiguous		10	None	None	Q90YB1|LIG4	0.737	0.000	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_178	annotated	FF74C8A6	Lobulomyces	Root	FF74C8A6_000319-T1	774	ambiguous		16	None	None	P04819|LIG1	0.431	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_179	annotated	FF74C8A6	Lobulomyces	Root	FF74C8A6_005540-T1	1791	ambiguous		6	None	None	Q9W1H4|LIG1	1.941	0.000	False	LIG1,LIG3,LIG4,LIG6	DNA_ligase_A_M:PF01068
+ANN_180	annotated	FF74C8A6	Lobulomyces	Root	FF74C8A6_009616-T1	911	ambiguous		10	None	None	P04819|LIG1	1.482	0.658	True	LIG3,LIG4	DNA_ligase_A_M:PF01068
+ANN_181	annotated	FF98D640	Zoopage	Zoopagales	FF98D640_004192-T1	1249	low_support	LIG4	1	40.0	63.6	Q7SB49|LIG4	1.092	0.538	False	LIG3,LIG4	DNA_ligase_A_M:PF01068
+MP_1	rescued	F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	JBNZCG010000032.1:1559616-1562918:-	406	ambiguous		6	None	None	Q9W1H4|LIG1	2.085	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_2	rescued	F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	JBNZCG010000022.1:1376347-1377978:-	544	ambiguous		16	None	None	P04819|LIG1	2.878	0.106	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_3	rescued	F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	JBNZCG010000038.1:19516-20647:-	320	ambiguous		10	None	None	P04819|LIG1	1.413	0.000	False	LIG3,LIG4	miniprot
+MP_4	rescued	F0AFF821	Conidiobolus	Entomophthorales_Basidiobolus	JBNZCG010000009.1:1159308-1160327:-	340	ambiguous		16	None	None	P04819|LIG1	5.561	0.828	True	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_5	rescued	F0DB79EE	Coemansia	Kickxellales_core	JANBTS010000088.1:8366-14446:+	483	ambiguous		6	None	None	Q9W1H4|LIG1	1.424	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_6	rescued	F0DB79EE	Coemansia	Kickxellales_core	JANBTS010000045.1:49300-52547:-	619	ambiguous		6	None	None	Q9W1H4|LIG1	1.897	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_7	rescued	F0DB79EE	Coemansia	Kickxellales_core	JANBTS010000001.1:136458-140053:+	811	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	1.583	0.000	False	LIG1,LIG6	miniprot
+MP_8	rescued	F0DB79EE	Coemansia	Kickxellales_core	JANBTS010000018.1:200637-202241:+	535	ambiguous		16	None	None	P04819|LIG1	2.840	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_9	rescued	F0DB79EE	Coemansia	Kickxellales_core	JANBTS010000047.1:87004-89128:-	560	ambiguous		16	None	None	P04819|LIG1	3.582	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_10	rescued	F0DB79EE	Coemansia	Kickxellales_core	JANBTS010000001.1:7044-10216:-	763	ambiguous		16	None	None	P04819|LIG1	2.612	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_11	rescued	F0DB79EE	Coemansia	Kickxellales_core	JANBTS010000053.1:54812-57265:+	672	ambiguous		16	None	None	P04819|LIG1	3.289	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_12	rescued	F0DB79EE	Coemansia	Kickxellales_core	JANBTS010000047.1:73034-74680:+	549	ambiguous		16	None	None	P04819|LIG1	2.886	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_13	rescued	F0DB79EE	Coemansia	Kickxellales_core	JANBTS010000025.1:87021-91626:-	380	ambiguous		10	None	None	P04819|LIG1	5.884	4.439	True	LIG3,LIG4	miniprot
+MP_14	rescued	F0DE0BF4	Coemansia	Kickxellales_core	JAIXMV010000023.1:91667-95745:+	473	ambiguous		6	None	None	Q9W1H4|LIG1	1.424	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_15	rescued	F0DE0BF4	Coemansia	Kickxellales_core	JAIXMV010000008.1:337193-340058:-	734	ambiguous		6	None	None	Q9W1H4|LIG1	1.473	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_16	rescued	F0DE0BF4	Coemansia	Kickxellales_core	JAIXMV010000012.1:572509-574438:+	580	ambiguous		16	None	None	P04819|LIG1	3.498	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_17	rescued	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	JANBPU010000027.1:4537-6627:-	697	ambiguous		6	None	None	Q9W1H4|LIG1	2.567	0.245	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_18	rescued	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	JANBPU010000189.1:23358-25985:-	791	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	1.331	0.176	False	LIG1,LIG6	miniprot
+MP_19	rescued	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	JANBPU010000243.1:15971-18166:-	565	ambiguous		16	None	None	P04819|LIG1	3.528	0.084	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_20	rescued	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	JANBPU010000016.1:78197-79972:-	552	ambiguous		16	None	None	P04819|LIG1	3.206	0.354	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_21	rescued	F18CA942	Mycoemilia	Mycoemilia_Spiromyces	JANBPU010000001.1:418900-421050:-	563	ambiguous		16	None	None	P04819|LIG1	3.328	0.278	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_22	rescued	F1C537C3	Dimargaris	Dimargaritales	JANBQC010000044.1:31684-34536:-	372	ambiguous		10	None	None	P04819|LIG1	1.854	0.000	False	LIG3,LIG4	miniprot
+MP_23	rescued	F1C537C3	Dimargaris	Dimargaritales	JANBQC010000019.1:95037-99995:+	726	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	1.627	0.286	False	LIG1,LIG6	miniprot
+MP_24	rescued	F1C537C3	Dimargaris	Dimargaritales	JANBQC010000088.1:4289-6373:+	614	ambiguous		16	None	None	P04819|LIG1	3.049	0.207	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_25	rescued	F1C537C3	Dimargaris	Dimargaritales	JANBQC010000040.1:67863-70507:-	572	ambiguous		16	None	None	P04819|LIG1	3.564	0.088	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_26	rescued	F1C9E2AA	Dispira	Dimargaritales	JANBPY010000165.1:1085-3741:-	406	ambiguous		6	None	None	Q9W1H4|LIG1	2.914	1.707	True	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_27	rescued	F1C9E2AA	Dispira	Dimargaritales	JANBPY010000296.1:3501-8184:-	698	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	1.560	0.469	False	LIG1,LIG6	miniprot
+MP_28	rescued	F1C9E2AA	Dispira	Dimargaritales	JANBPY010001477.1:2525-4126:+	534	ambiguous		16	None	None	P04819|LIG1	2.840	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_29	rescued	F1C9E2AA	Dispira	Dimargaritales	JANBPY010000101.1:10766-11866:+	367	ambiguous		10	None	None	P04819|LIG1	2.050	0.370	False	LIG3,LIG4	miniprot
+MP_30	rescued	F1C9E2AA	Dispira	Dimargaritales	JANBPY010000141.1:12710-14350:-	547	ambiguous		16	None	None	P04819|LIG1	2.531	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_31	rescued	F1C9E2AA	Dispira	Dimargaritales	JANBPY010000126.1:4211-10544:-	600	ambiguous		16	None	None	P04819|LIG1	3.228	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_32	rescued	F1C9E2AA	Dispira	Dimargaritales	JANBPY010000702.1:3156-5532:-	567	ambiguous		16	None	None	P04819|LIG1	2.922	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_33	rescued	F23D95F9	Zancudomyces	Harpellales	JBNJNM010000006.1:2159897-2169020:+	515	ambiguous		6	None	None	Q9W1H4|LIG1	1.941	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_34	rescued	F23D95F9	Zancudomyces	Harpellales	JBNJNM010000012.1:687479-692513:-	417	ambiguous		6	None	None	Q9W1H4|LIG1	1.941	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_35	rescued	F23D95F9	Zancudomyces	Harpellales	JBNJNM010000015.1:1555103-1558219:+	597	ambiguous		16	None	None	P04819|LIG1	3.154	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_36	rescued	F23D95F9	Zancudomyces	Harpellales	JBNJNM010000015.1:543387-547322:-	542	ambiguous		16	None	None	P04819|LIG1	3.231	0.249	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_37	rescued	F2470181	Coemansia	Kickxellales_core	JANBRJ010000074.1:17036-20930:+	418	ambiguous		6	None	None	Q9W1H4|LIG1	1.424	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_38	rescued	F2470181	Coemansia	Kickxellales_core	JANBRJ010000001.1:9047-12573:-	617	ambiguous		16	None	None	P04819|LIG1	3.498	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_39	rescued	F2470181	Coemansia	Kickxellales_core	JANBRJ010000076.1:69825-71615:-	531	ambiguous		16	None	None	P04819|LIG1	3.311	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_40	rescued	F2470181	Coemansia	Kickxellales_core	JANBRJ010000033.1:124449-126071:+	541	ambiguous		16	None	None	P04819|LIG1	4.180	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_41	rescued	F2470181	Coemansia	Kickxellales_core	JANBRJ010000111.1:12149-13225:+	359	ambiguous		10	None	None	P04819|LIG1	3.378	0.000	False	LIG3,LIG4	miniprot
+MP_42	rescued	F333880B	Coemansia	Kickxellales_core	JANBQD010000115.1:31272-35350:-	473	ambiguous		6	None	None	Q9W1H4|LIG1	1.424	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_43	rescued	F333880B	Coemansia	Kickxellales_core	JANBQD010000189.1:2002-4867:-	734	ambiguous		6	None	None	Q9W1H4|LIG1	1.473	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_44	rescued	F333880B	Coemansia	Kickxellales_core	JANBQD010000011.1:272257-275370:+	584	ambiguous		16	None	None	P04819|LIG1	2.840	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_45	rescued	F333880B	Coemansia	Kickxellales_core	JANBQD010000086.1:23749-25678:+	580	ambiguous		16	None	None	P04819|LIG1	3.498	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_46	rescued	F3D51D57	Coemansia	Kickxellales_core	JANBUE010000065.1:27005-28899:+	631	ambiguous		6	None	None	Q9W1H4|LIG1	1.710	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_47	rescued	F3D51D57	Coemansia	Kickxellales_core	JANBUE010000001.1:93922-98579:+	642	ambiguous		16	None	None	P04819|LIG1	2.612	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_48	rescued	F3D51D57	Coemansia	Kickxellales_core	JANBUE010000031.1:70542-72236:+	565	ambiguous		16	None	None	P04819|LIG1	3.087	0.246	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_49	rescued	F3D51D57	Coemansia	Kickxellales_core	JANBUE010000109.1:24375-26048:-	520	ambiguous		16	None	None	P04819|LIG1	2.728	0.045	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_50	rescued	F3D937C5	Capniomyces	Harpellales	LUVW01000002.1:768265-772875:-	650	ambiguous		16	None	None	P04819|LIG1	3.432	0.278	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_51	rescued	F3D937C5	Capniomyces	Harpellales	LUVW01000021.1:55344-59614:+	598	ambiguous		16	None	None	P04819|LIG1	2.910	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_52	rescued	F3F252DC	Caulochytrium	Root	ML014407.1:1581-6669:-	619	ambiguous		16	None	None	P04819|LIG1	4.776	0.388	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_53	rescued	F43C8248	Linderina	Kickxellales_core	NW_024468249.1:3148308-3149615:+	436	ambiguous		6	None	None	Q9W1H4|LIG1	1.424	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_54	rescued	F43C8248	Linderina	Kickxellales_core	NW_024468255.1:557973-559601:+	543	ambiguous		16	None	None	P04819|LIG1	3.498	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_55	rescued	F45BD9C7	Furculomyces	Harpellales	MBFT01000328.1:43103-44272:-	390	ambiguous		6	None	None	Q9W1H4|LIG1	1.637	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_56	rescued	F45BD9C7	Furculomyces	Harpellales	MBFT01000069.1:38535-41070:+	761	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	1.520	0.248	False	LIG1,LIG6	miniprot
+MP_57	rescued	F45BD9C7	Furculomyces	Harpellales	MBFT01000276.1:4826-8615:+	675	ambiguous		16	None	None	P04819|LIG1	3.377	0.134	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_58	rescued	F45BD9C7	Furculomyces	Harpellales	MBFT01000793.1:33885-35903:-	491	ambiguous		16	None	None	P04819|LIG1	3.237	0.167	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_59	rescued	F4C3EFF5	Dipsacomyces	Kickxellales_core	JANBPZ010000192.1:1561-4697:-	416	ambiguous		6	None	None	Q9W1H4|LIG1	1.568	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_60	rescued	F4C3EFF5	Dipsacomyces	Kickxellales_core	JANBPZ010000367.1:1638-3590:-	651	ambiguous		6	None	None	Q9W1H4|LIG1	1.305	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_61	rescued	F4C3EFF5	Dipsacomyces	Kickxellales_core	JANBPZ010000095.1:5602-10152:-	591	ambiguous		16	None	None	P04819|LIG1	3.311	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_62	rescued	F4F8BFB2	Coemansia	Kickxellales_core	JANJYS010000110.1:18479-22373:+	418	ambiguous		6	None	None	Q9W1H4|LIG1	1.424	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_63	rescued	F4F8BFB2	Coemansia	Kickxellales_core	JANJYS010000042.1:58806-60596:+	531	ambiguous		16	None	None	P04819|LIG1	3.311	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_64	rescued	F4F8BFB2	Coemansia	Kickxellales_core	JANJYS010000111.1:38342-39418:-	359	ambiguous		10	None	None	P04819|LIG1	3.378	0.000	False	LIG3,LIG4	miniprot
+MP_65	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000158.1:32119-35091:+	697	ambiguous		16	None	None	P04819|LIG1	2.840	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_66	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000280.1:28161-31130:-	697	ambiguous		16	None	None	P04819|LIG1	2.840	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_67	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000996.1:3033-5056:+	365	ambiguous		10	None	None	P04819|LIG1	2.311	0.100	False	LIG3,LIG4	miniprot
+MP_68	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000666.1:21234-22892:-	553	ambiguous		16	None	None	P04819|LIG1	3.159	0.186	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_69	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000310.1:25777-27513:-	479	ambiguous		16	None	None	P04819|LIG1	3.476	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_70	rescued	F4FD0401	Tieghemiomyces	Dimargaritales	JANBPT010000010.1:53087-54823:-	479	ambiguous		16	None	None	P04819|LIG1	3.476	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_71	rescued	F5C985FA	Spiromyces	Mycoemilia_Spiromyces	JAMZIH010006156.1:230-1579:-	450	ambiguous		6	None	None	Q9W1H4|LIG1	1.208	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_72	rescued	F5C985FA	Spiromyces	Mycoemilia_Spiromyces	JAMZIH010006006.1:97-2507:-	538	ambiguous		16	None	None	P04819|LIG1	3.544	0.100	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_73	rescued	F5C985FA	Spiromyces	Mycoemilia_Spiromyces	JAMZIH010006023.1:1167-2708:-	514	ambiguous		16	None	None	P04819|LIG1	2.980	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_74	rescued	F7A7AA4C	Coemansia	Kickxellales_core	JANBTF010000084.1:46525-50419:-	418	ambiguous		6	None	None	Q9W1H4|LIG1	1.424	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_75	rescued	F7A7AA4C	Coemansia	Kickxellales_core	JANBTF010000165.1:1215-4741:-	617	ambiguous		16	None	None	P04819|LIG1	3.498	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_76	rescued	F7A7AA4C	Coemansia	Kickxellales_core	JANBTF010000044.1:58828-60618:+	531	ambiguous		16	None	None	P04819|LIG1	3.311	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_77	rescued	F7A7AA4C	Coemansia	Kickxellales_core	JANBTF010000106.1:40390-41466:-	359	ambiguous		10	None	None	P04819|LIG1	3.378	0.000	False	LIG3,LIG4	miniprot
+MP_78	rescued	F7FE4923	Ramicandelaber	Ramicandelaber	MU602704.1:17486-21195:-	632	ambiguous		6	None	None	Q9W1H4|LIG1	2.701	0.379	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_79	rescued	F7FE4923	Ramicandelaber	Ramicandelaber	MU602723.1:37792-40167:-	792	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	1.615	0.275	False	LIG1,LIG6	miniprot
+MP_80	rescued	F7FE4923	Ramicandelaber	Ramicandelaber	MU602785.1:9378-11657:-	612	ambiguous		16	None	None	P04819|LIG1	3.074	0.100	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_81	rescued	F7FE4923	Ramicandelaber	Ramicandelaber	MU602879.1:5465-6739:-	425	ambiguous		6	None	None	Q9W1H4|LIG1	7.716	4.441	True	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_82	rescued	F80EB351	Coemansia	Kickxellales_core	JANBQR010000101.1:16601-20495:+	418	ambiguous		6	None	None	Q9W1H4|LIG1	1.424	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_83	rescued	F80EB351	Coemansia	Kickxellales_core	JANBQR010000001.1:92488-96014:-	617	ambiguous		16	None	None	P04819|LIG1	3.498	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_84	rescued	F80EB351	Coemansia	Kickxellales_core	JANBQR010000044.1:69870-71660:-	531	ambiguous		16	None	None	P04819|LIG1	3.311	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_85	rescued	F80EB351	Coemansia	Kickxellales_core	JANBQR010000136.1:19445-21067:+	502	ambiguous		16	None	None	P04819|LIG1	4.180	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_86	rescued	F80EB351	Coemansia	Kickxellales_core	JANBQR010000099.1:39705-40781:-	359	ambiguous		10	None	None	P04819|LIG1	3.378	0.000	False	LIG3,LIG4	miniprot
+MP_87	rescued	F8E635D0	Rhizopus	Mucoromycota_s.l.	JARGYL010000021.1:126606-129179:-	440	ambiguous		6	None	None	Q9W1H4|LIG1	0.966	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_88	rescued	F8E635D0	Rhizopus	Mucoromycota_s.l.	JARGYL010000053.1:87280-88839:-	374	ambiguous		10	None	None	P04819|LIG1	1.818	0.182	False	LIG3,LIG4	miniprot
+MP_89	rescued	F8E635D0	Rhizopus	Mucoromycota_s.l.	JARGYL010000692.1:4282-5919:+	528	ambiguous		6	None	None	Q9W1H4|LIG1	1.734	0.808	True	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_90	rescued	F8E635D0	Rhizopus	Mucoromycota_s.l.	JARGYL010000004.1:178737-180890:-	664	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	1.927	0.482	False	LIG1,LIG6	miniprot
+MP_91	rescued	F9F51274	Kickxella	Kickxellales_core	NW_026251488.1:414577-416988:-	392	ambiguous		6	None	None	Q9W1H4|LIG1	1.568	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_92	rescued	F9F51274	Kickxella	Kickxellales_core	NW_026251475.1:11534-20080:-	591	ambiguous		6	None	None	Q9W1H4|LIG1	1.772	0.190	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_93	rescued	F9F51274	Kickxella	Kickxellales_core	NW_026251475.1:22841-24562:-	574	ambiguous		6	None	None	Q9W1H4|LIG1	1.847	0.264	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_94	rescued	F9F51274	Kickxella	Kickxellales_core	NW_026251506.1:37492-41373:-	509	ambiguous		16	None	None	P04819|LIG1	2.852	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_95	rescued	FC1174D9	Coemansia	Kickxellales_core	JAIXMU010000003.1:1004527-1007773:+	619	ambiguous		6	None	None	Q9W1H4|LIG1	1.897	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_96	rescued	FC1174D9	Coemansia	Kickxellales_core	JAIXMU010000001.1:851255-854852:-	811	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	1.583	0.000	False	LIG1,LIG6	miniprot
+MP_97	rescued	FC1174D9	Coemansia	Kickxellales_core	JAIXMU010000002.1:1043052-1044656:+	535	ambiguous		16	None	None	P04819|LIG1	2.840	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_98	rescued	FC1174D9	Coemansia	Kickxellales_core	JAIXMU010000001.1:185162-187286:+	560	ambiguous		16	None	None	P04819|LIG1	3.582	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_99	rescued	FC1174D9	Coemansia	Kickxellales_core	JAIXMU010000001.1:1253545-1256886:-	532	ambiguous		16	None	None	P04819|LIG1	3.289	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_100	rescued	FC1174D9	Coemansia	Kickxellales_core	JAIXMU010000001.1:199603-201249:-	549	ambiguous		16	None	None	P04819|LIG1	2.886	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_101	rescued	FC1174D9	Coemansia	Kickxellales_core	JAIXMU010000013.1:552624-553682:-	353	ambiguous		10	None	None	P04819|LIG1	3.516	0.000	False	LIG3,LIG4	miniprot
+MP_102	rescued	FC1174D9	Coemansia	Kickxellales_core	JAIXMU010000013.1:499683-500741:+	353	ambiguous		10	None	None	P04819|LIG1	3.516	0.000	False	LIG3,LIG4	miniprot
+MP_103	rescued	FC1174D9	Coemansia	Kickxellales_core	JAIXMU010000013.1:510691-513855:-	490	ambiguous		16	None	None	P04819|LIG1	2.858	0.072	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_104	rescued	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	MU626266.1:158580-160656:-	396	ambiguous		6	None	None	Q9W1H4|LIG1	1.941	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_105	rescued	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	MU626272.1:37326-38993:+	556	ambiguous		16	None	None	P04819|LIG1	2.772	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_106	rescued	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	MU626260.1:226161-228263:+	541	ambiguous		16	None	None	P04819|LIG1	2.845	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_107	rescued	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	MU626289.1:145127-146420:+	369	ambiguous		10	None	None	P04819|LIG1	1.719	0.000	False	LIG3,LIG4	miniprot
+MP_108	rescued	FC345CF7	Neoconidiobolus	Entomophthorales_Basidiobolus	MU626558.1:6006-7592:-	403	ambiguous		10	None	None	P04819|LIG1	4.219	2.649	True	LIG3,LIG4	miniprot
+MP_109	rescued	FCCDAB75	Smittium	Harpellales	JBJCJL010000007.1:506622-509525:-	850	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	1.509	0.236	False	LIG1,LIG6	miniprot
+MP_110	rescued	FCCDAB75	Smittium	Harpellales	JBJCJL010000023.1:1584198-1586555:-	566	ambiguous		16	None	None	P04819|LIG1	3.226	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_111	rescued	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	JBLKGV010000069.1:41846-43009:-	388	ambiguous		6	None	None	Q9W1H4|LIG1	2.085	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_112	rescued	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	JBLKGV010000260.1:19735-22029:-	744	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	1.444	0.000	False	LIG1,LIG6	miniprot
+MP_113	rescued	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	JBLKGV010001097.1:136-1937:+	363	ambiguous		10	None	None	P04819|LIG1	1.616	0.140	False	LIG3,LIG4	miniprot
+MP_114	rescued	FCDD8027	Basidiobolus	Entomophthorales_Basidiobolus	JBLKGV010001134.1:2234-4035:-	551	ambiguous		16	None	None	P04819|LIG1	3.042	0.359	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_115	rescued	FD8916FB	Coemansia	Kickxellales_core	JANBTN010000104.1:11260-15338:+	473	ambiguous		6	None	None	Q9W1H4|LIG1	1.424	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_116	rescued	FD8916FB	Coemansia	Kickxellales_core	JANBTN010000166.1:2002-4867:-	734	ambiguous		6	None	None	Q9W1H4|LIG1	1.473	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_117	rescued	FD8916FB	Coemansia	Kickxellales_core	JANBTN010000011.1:272226-275339:+	584	ambiguous		16	None	None	P04819|LIG1	2.840	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_118	rescued	FD8916FB	Coemansia	Kickxellales_core	JANBTN010000088.1:34660-36589:-	580	ambiguous		16	None	None	P04819|LIG1	3.498	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_119	rescued	FDAC0301	Capillidium	Entomophthorales_Basidiobolus	WBMQ01000014.1:606763-608730:+	597	ambiguous		16	None	None	P04819|LIG1	2.845	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_120	rescued	FDAC0301	Capillidium	Entomophthorales_Basidiobolus	WBMQ01000009.1:1332182-1338715:-	636	ambiguous		16	None	None	P04819|LIG1	2.772	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_121	rescued	FDAC0301	Capillidium	Entomophthorales_Basidiobolus	WBMQ01000002.1:629908-631622:+	465	ambiguous		16	None	None	P04819|LIG1	4.668	0.803	True	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_122	rescued	FE0E32D4	Martensiomyces	Kickxellales_core	MU604007.1:10987-16691:+	514	ambiguous		6	None	None	Q9W1H4|LIG1	1.424	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_123	rescued	FE0E32D4	Martensiomyces	Kickxellales_core	MU604036.1:12115-13890:+	592	ambiguous		6	None	None	Q9W1H4|LIG1	1.305	0.000	False	LIG1,LIG3,LIG4,LIG6	miniprot
+MP_124	rescued	FE0E32D4	Martensiomyces	Kickxellales_core	MU603971.1:75177-77714:+	793	low_support	LIG6	1	57.0	0.0	Q9W1H4|LIG1	1.305	0.000	False	LIG1,LIG6	miniprot

@@ -1,0 +1,748 @@
+setting	ident_thr	locustag	genus	group	set	n_aligned	n_qualifying	median_introns	mean_introns	frac_ge1	per_kb	gt_ag	gc_ag	other_sites	median_identity	annotation_introns_per_tx
+A	0.4	F1C537C3	Dimargaris	Dimargaritales+Ramicandelaber	backbone	420	278	1.0	1.234	0.561	0.834	0.857	0.003	0.140	0.533	1.3859
+A	0.4	F1C9E2AA	Dispira	Dimargaritales+Ramicandelaber	backbone	365	209	0	0.416	0.287	0.288	0.897	0.000	0.103	0.538	0.5564
+A	0.4	F4FD0401	Tieghemiomyces	Dimargaritales+Ramicandelaber	backbone	408	282	1.0	1.199	0.582	0.782	0.846	0.006	0.148	0.524	1.3285
+A	0.4	F3D937C5	Capniomyces	Harpellales	backbone	372	230	1.0	1.943	0.765	1.321	0.897	0.016	0.087	0.531	2.0875
+A	0.4	F45BD9C7	Furculomyces	Harpellales	backbone	375	219	1	1.393	0.598	0.988	0.925	0.013	0.062	0.535	2.0292
+A	0.4	FCCDAB75	Smittium	Harpellales	backbone	370	219	1	1.785	0.662	1.204	0.908	0.010	0.082	0.531	1.9316
+A	0.4	F23D95F9	Zancudomyces	Harpellales	backbone	368	219	1	1.237	0.598	0.874	0.863	0.007	0.129	0.524	1.3885
+A	0.4	F0DE0BF4	Coemansia	Kickxellales core	backbone	424	277	0	0.368	0.285	0.248	0.667	0.000	0.333	0.515	0.3891
+A	0.4	F4C3EFF5	Dipsacomyces	Kickxellales core	backbone	381	226	0.0	0.376	0.296	0.260	0.788	0.000	0.212	0.521	0.6532
+A	0.4	F9F51274	Kickxella	Kickxellales core	backbone	406	265	0	0.491	0.362	0.326	0.608	0.000	0.392	0.518	0.8907
+A	0.4	F43C8248	Linderina	Kickxellales core	backbone	410	288	0.0	0.479	0.347	0.320	0.732	0.036	0.232	0.518	0.9548
+A	0.4	FE0E32D4	Martensiomyces	Kickxellales core	backbone	441	295	0	0.478	0.363	0.317	0.787	0.021	0.191	0.520	0.5974
+A	0.4	F18CA942	Mycoemilia	Mycoemilia+Spiromyces	backbone	391	238	1.0	1.672	0.639	1.110	0.905	0.023	0.073	0.534	1.6742
+A	0.4	F5C985FA	Spiromyces	Mycoemilia+Spiromyces	backbone	261	116	1.0	1.724	0.629	1.248	0.875	0.045	0.080	0.532	1.7298
+A	0.4	F7FE4923	Ramicandelaber	Dimargaritales+Ramicandelaber	backbone	368	223	0	0.269	0.220	0.187	0.633	0.017	0.350	0.527	0.5146
+A	0.4	F9F7649B	Ambispora	Other Mucoromycota group	backbone	456	285	5	5.604	0.961	3.489	0.940	0.004	0.056	0.539	3.0647
+A	0.4	FC303ED2	Geosiphon	Other Mucoromycota group	backbone	458	292	4.0	5.233	0.962	3.341	0.928	0.015	0.057	0.536	4.6403
+A	0.4	F359FEE0	Diversispora	Other Mucoromycota group	backbone	461	297	5	6.148	0.970	3.844	0.930	0.007	0.064	0.546	3.7018
+A	0.4	FA186146	Gigaspora	Other Mucoromycota group	backbone	467	304	5.0	5.648	0.970	3.570	0.938	0.003	0.059	0.527	3.2474
+A	0.4	F1815028	Entrophospora	Other Mucoromycota group	backbone	453	270	5.0	5.900	0.970	3.689	0.924	0.009	0.067	0.538	3.485
+A	0.4	F3A2FF18	Oehlia	Other Mucoromycota group	backbone	471	300	4.0	5.103	0.963	3.252	0.933	0.009	0.058	0.530	3.0456
+A	0.4	FDB574B3	Rhizophagus	Other Mucoromycota group	backbone	480	309	4	5.178	0.958	3.315	0.936	0.006	0.058	0.525	3.1901
+A	0.4	F5931C4A	Paraglomus	Other Mucoromycota group	backbone	444	286	5.0	5.462	0.958	3.513	0.939	0.011	0.050	0.544	3.479
+A	0.4	F574EFC1	Actinomortierella	Other Mucoromycota group	backbone	482	337	2	2.982	0.950	1.881	0.909	0.015	0.076	0.536	2.6795
+A	0.4	F6C0647F	Cryptocalciella	Other Mucoromycota group	backbone	496	348	3.0	3.443	0.940	2.187	0.913	0.008	0.079	0.530	2.9277
+A	0.4	F22945DF	Bifiguratus	Other Mucoromycota group	backbone	475	316	2.0	2.329	0.851	1.496	0.954	0.010	0.037	0.524	3.7747
+A	0.4	FEC49E8E	Endogone	Other Mucoromycota group	backbone	421	248	4.0	5.145	0.976	3.226	0.926	0.004	0.071	0.534	3.6294
+A	0.4	F08FC5A1	Circinella	Mucorales	backbone	466	304	3.0	4.174	0.977	2.678	0.946	0.002	0.052	0.535	3.9094
+A	0.4	FEACB2E7	Cunninghamella	Mucorales	backbone	457	292	3.0	3.921	0.959	2.545	0.928	0.000	0.072	0.554	3.9213
+A	0.4	F7F7C035	Gongronella	Mucorales	backbone	465	308	3.0	3.318	0.964	2.151	0.894	0.011	0.095	0.532	3.7797
+A	0.4	F6FD6BCA	Hesseltinella	Mucorales	backbone	465	297	2	2.862	0.926	1.826	0.932	0.019	0.049	0.532	4.086
+A	0.4	F104222C	Rhizomucor	Mucorales	backbone	468	308	3.0	3.136	0.938	2.007	0.934	0.014	0.052	0.529	4.224
+A	0.4	F8E635D0	Rhizopus	Mucorales	backbone	474	290	2.0	1.869	0.834	1.196	0.954	0.006	0.041	0.526	3.3761
+A	0.4	FAC8BA67	Syncephalastrum	Mucorales	backbone	471	319	2	2.671	0.887	1.699	0.920	0.008	0.072	0.523	3.9988
+A	0.4	FBAB06C3	Thermomucor	Mucorales	backbone	477	299	3	3.244	0.943	2.051	0.944	0.016	0.039	0.523	4.2323
+A	0.4	F4696F25	Umbelopsis	Other Mucoromycota group	backbone	498	326	2.0	2.890	0.908	1.862	0.937	0.006	0.056	0.533	3.8581
+A	0.4	F5C4F326	Sorochytrium	Root (chytrids etc.)	backbone	408	254	2.0	2.976	0.886	1.907	0.911	0.007	0.082	0.518	4.0159
+A	0.4	FD4B4AC6	Paraphysoderma	Root (chytrids etc.)	backbone	408	270	4.0	4.433	0.967	2.887	0.949	0.003	0.048	0.531	4.8362
+A	0.4	F3F252DC	Caulochytrium	Root (chytrids etc.)	backbone	367	225	0	0.520	0.431	0.363	0.624	0.009	0.368	0.527	0.5729
+A	0.4	F5A4E39E	Phlyctochytrium	Root (chytrids etc.)	backbone	419	278	2.0	2.529	0.831	1.617	0.933	0.003	0.064	0.519	3.3907
+A	0.4	F58B3FB2	Nowakowskiella	Root (chytrids etc.)	backbone	328	181	2	3.133	0.884	2.067	0.951	0.004	0.046	0.525	4.4937
+A	0.4	FF74C8A6	Lobulomyces	Root (chytrids etc.)	backbone	358	201	3	3.657	0.975	2.301	0.959	0.005	0.035	0.509	5.9779
+A	0.4	FBDB2FE6	Rhizophlyctis	Root (chytrids etc.)	backbone	428	267	3	4.019	0.929	2.550	0.941	0.005	0.054	0.521	3.8201
+A	0.4	FEF8F4D3	Polyrhizophydium	Root (chytrids etc.)	backbone	405	274	3.0	3.650	0.912	2.343	0.878	0.029	0.093	0.519	4.2073
+A	0.4	F1D7B4F9	Spizellomyces	Root (chytrids etc.)	backbone	425	283	3	3.502	0.926	2.204	0.950	0.005	0.045	0.518	4.7406
+A	0.4	F3253B6A	Synchytrium	Root (chytrids etc.)	backbone	395	263	4	4.852	0.962	3.101	0.936	0.013	0.052	0.523	5.786
+A	0.4	F797C73E	Zygophlyctis	Root (chytrids etc.)	backbone	355	210	0.0	0.848	0.486	0.572	0.978	0.000	0.022	0.516	3.4324
+A	0.4	FE719DCE	Blyttiomyces	Root (chytrids etc.)	backbone	400	220	4.0	4.182	0.936	2.719	0.921	0.002	0.077	0.526	4.3472
+A	0.4	F5655B54	Hyaloraphidium	Root (chytrids etc.)	backbone	404	258	3.0	3.194	0.961	2.038	0.910	0.011	0.079	0.512	2.7
+A	0.4	FC8B8027	Gonapodya	Root (chytrids etc.)	backbone	391	255	4	4.612	0.961	2.932	0.929	0.002	0.069	0.513	5.2059
+A	0.4	F18B6B82	Piromyces	Root (chytrids etc.)	backbone	341	208	3.5	4.442	0.861	2.868	0.929	0.000	0.071	0.530	4.48
+A	0.4	FCDD8027	Basidiobolus	Entomophthorales+Basidiobolus	backbone	482	301	1	2.252	0.731	1.454	0.954	0.004	0.041	0.527	2.5327
+A	0.4	FDAC0301	Capillidium	Entomophthorales+Basidiobolus	backbone	359	235	2	2.123	0.783	1.355	0.968	0.002	0.030	0.519	2.7127
+A	0.4	F0AFF821	Conidiobolus	Entomophthorales+Basidiobolus	backbone	387	246	1.0	1.325	0.650	0.866	0.960	0.003	0.037	0.523	1.5748
+A	0.4	FC345CF7	Neoconidiobolus	Entomophthorales+Basidiobolus	backbone	375	229	2	2.485	0.817	1.602	0.975	0.000	0.025	0.515	2.8592
+A	0.4	F46AF962	Acaulopage	Zoopagales	backbone	393	252	0.0	0.361	0.278	0.248	0.824	0.000	0.176	0.526	1.1393
+A	0.4	FE0E7C3D	Cochlonema	Zoopagales	backbone	398	237	3	2.899	0.895	1.873	0.968	0.007	0.025	0.515	3.9895
+A	0.4	FEB493EF	Piptocephalis	Zoopagales	backbone	389	257	1	1.743	0.665	1.203	0.882	0.007	0.112	0.519	2.0794
+A	0.4	F186E471	Stylopage	Zoopagales	backbone	334	189	1	0.931	0.571	0.627	0.994	0.000	0.006	0.519	4.0868
+A	0.4	FB5167BD	Syncephalis	Zoopagales	backbone	403	245	3	3.706	0.878	2.320	0.943	0.013	0.044	0.512	4.4466
+A	0.4	F9368871	Thamnocephalis	Zoopagales	backbone	366	209	3	4.053	0.880	2.809	0.936	0.027	0.037	0.529	3.8994
+A	0.4	FF98D640	Zoopage	Zoopagales	backbone	325	197	0	1.228	0.497	0.870	0.934	0.012	0.054	0.504	2.2489
+A	0.4	F9A17E9D	Zoophagus	Zoopagales	backbone	374	208	1.0	1.486	0.654	1.015	0.987	0.000	0.013	0.516	2.6778
+A	0.4	F80EB351	Coemansia	Coemansia strains	coemansia_strain	407	279	0	0.405	0.308	0.268	0.637	0.009	0.354	0.521	0.4339
+A	0.4	FC1174D9	Coemansia	Coemansia strains	coemansia_strain	408	268	0.0	0.451	0.336	0.298	0.686	0.017	0.298	0.517	0.5276
+A	0.4	F2470181	Coemansia	Coemansia strains	coemansia_strain	407	275	0	0.385	0.302	0.258	0.651	0.019	0.330	0.523	0.411
+A	0.4	F4F8BFB2	Coemansia	Coemansia strains	coemansia_strain	406	277	0	0.408	0.307	0.270	0.646	0.018	0.336	0.521	0.428
+A	0.4	FD8916FB	Coemansia	Coemansia strains	coemansia_strain	421	273	0	0.337	0.278	0.225	0.652	0.011	0.337	0.516	0.3858
+A	0.4	F333880B	Coemansia	Coemansia strains	coemansia_strain	420	274	0.0	0.336	0.274	0.225	0.652	0.011	0.337	0.516	0.3826
+A	0.4	F5353C03	Coemansia	Coemansia strains	coemansia_strain	420	268	0.0	0.328	0.269	0.222	0.636	0.011	0.352	0.516	0.3751
+A	0.4	F7A7AA4C	Coemansia	Coemansia strains	coemansia_strain	408	278	0.0	0.388	0.299	0.258	0.657	0.009	0.333	0.521	0.4151
+A	0.4	F8C73C93	Coemansia	Coemansia strains	coemansia_strain	403	262	0.0	0.405	0.317	0.272	0.764	0.009	0.226	0.519	0.406
+A	0.4	F35EFF3E	Coemansia	Coemansia strains	coemansia_strain	393	266	0.0	0.376	0.293	0.250	0.810	0.020	0.170	0.524	0.5087
+A	0.4	FDFF0B8B	Coemansia	Coemansia strains	coemansia_strain	402	264	0.0	0.413	0.314	0.271	0.706	0.018	0.275	0.517	0.4927
+A	0.4	F0DB79EE	Coemansia	Coemansia strains	coemansia_strain	406	262	0.0	0.397	0.298	0.263	0.731	0.010	0.260	0.518	0.4891
+A	0.4	F9C995D7	Lachancea	Saccharomycetes anchors	anchor_yeast	414	284	0.0	0.229	0.197	0.157	0.554	0.031	0.415	0.530	0.0864
+A	0.4	F8E439FE	Petasospora	Saccharomycetes anchors	anchor_yeast	470	329	0	0.264	0.213	0.183	0.655	0.000	0.345	0.538	0.2539
+A	0.4	FF88EFD9	Saccharomycopsis	Saccharomycetes anchors	anchor_yeast	451	290	0.0	0.228	0.203	0.154	0.697	0.000	0.303	0.535	0.1964
+A	0.4	F20FC9BD	Williopsis	Saccharomycetes anchors	anchor_yeast	477	331	0	0.254	0.215	0.175	0.619	0.012	0.369	0.533	0.23
+A	0.4	FF422533	Blumeria	Pezizomycotina anchors	anchor_pezizomycotina	913	818	1.0	1.252	0.733	0.738	0.923	0.004	0.073	0.587	1.187
+A	0.4	F1A67265	Cenococcum	Pezizomycotina anchors	anchor_pezizomycotina	997	939	1	1.758	0.825	1.029	0.936	0.008	0.055	0.608	1.9187
+A	0.4	FC7A1E40	Clonostachys	Pezizomycotina anchors	anchor_pezizomycotina	891	828	1.0	1.512	0.779	0.889	0.935	0.006	0.059	0.575	1.7325
+A	0.4	F665BA79	Trichophyton	Pezizomycotina anchors	anchor_pezizomycotina	926	845	2	1.856	0.833	1.107	0.927	0.004	0.069	0.567	2.024
+A	0.5	F1C537C3	Dimargaris	Dimargaritales+Ramicandelaber	backbone	420	179	1	1.067	0.508	0.843	0.911	0.005	0.084	0.594	1.3859
+A	0.5	F1C9E2AA	Dispira	Dimargaritales+Ramicandelaber	backbone	365	130	0.0	0.354	0.254	0.279	0.891	0.000	0.109	0.584	0.5564
+A	0.5	F4FD0401	Tieghemiomyces	Dimargaritales+Ramicandelaber	backbone	408	169	1	1.053	0.533	0.796	0.893	0.000	0.107	0.587	1.3285
+A	0.5	F3D937C5	Capniomyces	Harpellales	backbone	372	137	1	1.905	0.759	1.561	0.920	0.011	0.069	0.596	2.0875
+A	0.5	F45BD9C7	Furculomyces	Harpellales	backbone	375	135	1	1.207	0.563	0.998	0.945	0.018	0.037	0.590	2.0292
+A	0.5	FCCDAB75	Smittium	Harpellales	backbone	370	130	1.0	1.662	0.646	1.429	0.949	0.009	0.042	0.611	1.9316
+A	0.5	F23D95F9	Zancudomyces	Harpellales	backbone	368	129	1	1.078	0.612	0.907	0.914	0.007	0.079	0.589	1.3885
+A	0.5	F0DE0BF4	Coemansia	Kickxellales core	backbone	424	164	0.0	0.287	0.244	0.226	0.787	0.000	0.213	0.596	0.3891
+A	0.5	F4C3EFF5	Dipsacomyces	Kickxellales core	backbone	381	132	0.0	0.333	0.265	0.268	0.886	0.000	0.114	0.604	0.6532
+A	0.5	F9F51274	Kickxella	Kickxellales core	backbone	406	162	0.0	0.383	0.290	0.297	0.742	0.000	0.258	0.588	0.8907
+A	0.5	F43C8248	Linderina	Kickxellales core	backbone	410	178	0.0	0.399	0.298	0.307	0.775	0.042	0.183	0.596	0.9548
+A	0.5	FE0E32D4	Martensiomyces	Kickxellales core	backbone	441	177	0	0.424	0.350	0.326	0.840	0.027	0.133	0.590	0.5974
+A	0.5	F18CA942	Mycoemilia	Mycoemilia+Spiromyces	backbone	391	148	1.0	1.723	0.682	1.326	0.914	0.024	0.063	0.610	1.6742
+A	0.5	F5C985FA	Spiromyces	Mycoemilia+Spiromyces	backbone	261	73	1	1.616	0.658	1.283	0.941	0.008	0.051	0.587	1.7298
+A	0.5	F7FE4923	Ramicandelaber	Dimargaritales+Ramicandelaber	backbone	368	131	0	0.176	0.160	0.148	0.696	0.043	0.261	0.601	0.5146
+A	0.5	F9F7649B	Ambispora	Other Mucoromycota group	backbone	456	185	4	5.119	0.973	3.826	0.949	0.005	0.045	0.591	3.0647
+A	0.5	FC303ED2	Geosiphon	Other Mucoromycota group	backbone	458	181	4	4.773	0.972	3.611	0.947	0.021	0.032	0.596	4.6403
+A	0.5	F359FEE0	Diversispora	Other Mucoromycota group	backbone	461	201	5	5.617	0.990	4.148	0.950	0.006	0.043	0.590	3.7018
+A	0.5	FA186146	Gigaspora	Other Mucoromycota group	backbone	467	189	4	5.011	0.974	3.728	0.962	0.002	0.036	0.594	3.2474
+A	0.5	F1815028	Entrophospora	Other Mucoromycota group	backbone	453	176	4.0	5.318	0.983	3.872	0.952	0.012	0.036	0.590	3.485
+A	0.5	F3A2FF18	Oehlia	Other Mucoromycota group	backbone	471	183	4	4.519	0.978	3.336	0.952	0.011	0.037	0.589	3.0456
+A	0.5	FDB574B3	Rhizophagus	Other Mucoromycota group	backbone	480	187	4	4.540	0.968	3.362	0.951	0.007	0.042	0.587	3.1901
+A	0.5	F5931C4A	Paraglomus	Other Mucoromycota group	backbone	444	185	4	5.124	0.973	3.856	0.950	0.012	0.038	0.595	3.479
+A	0.5	F574EFC1	Actinomortierella	Other Mucoromycota group	backbone	482	215	2	2.628	0.949	1.926	0.929	0.019	0.051	0.592	2.6795
+A	0.5	F6C0647F	Cryptocalciella	Other Mucoromycota group	backbone	496	214	2.5	2.930	0.930	2.201	0.944	0.010	0.046	0.593	2.9277
+A	0.5	F22945DF	Bifiguratus	Other Mucoromycota group	backbone	475	186	2.0	2.151	0.855	1.634	0.958	0.007	0.035	0.593	3.7747
+A	0.5	FEC49E8E	Endogone	Other Mucoromycota group	backbone	421	157	4	4.522	0.981	3.347	0.952	0.003	0.045	0.599	3.6294
+A	0.5	F08FC5A1	Circinella	Mucorales	backbone	466	201	3	3.751	0.975	2.739	0.963	0.003	0.034	0.597	3.9094
+A	0.5	FEACB2E7	Cunninghamella	Mucorales	backbone	457	199	3	3.382	0.960	2.504	0.948	0.000	0.052	0.595	3.9213
+A	0.5	F7F7C035	Gongronella	Mucorales	backbone	465	187	2	2.888	0.952	2.151	0.919	0.009	0.072	0.596	3.7797
+A	0.5	F6FD6BCA	Hesseltinella	Mucorales	backbone	465	181	2	2.591	0.917	1.943	0.942	0.028	0.030	0.596	4.086
+A	0.5	F104222C	Rhizomucor	Mucorales	backbone	468	195	2	2.795	0.944	2.045	0.960	0.013	0.028	0.592	4.224
+A	0.5	F8E635D0	Rhizopus	Mucorales	backbone	474	175	1	1.697	0.829	1.227	0.963	0.007	0.030	0.586	3.3761
+A	0.5	FAC8BA67	Syncephalastrum	Mucorales	backbone	471	194	2.0	2.387	0.887	1.748	0.944	0.006	0.050	0.583	3.9988
+A	0.5	FBAB06C3	Thermomucor	Mucorales	backbone	477	175	2	2.943	0.943	2.149	0.957	0.014	0.029	0.593	4.2323
+A	0.5	F4696F25	Umbelopsis	Other Mucoromycota group	backbone	498	200	2.0	2.450	0.880	1.853	0.953	0.006	0.041	0.593	3.8581
+A	0.5	F5C4F326	Sorochytrium	Root (chytrids etc.)	backbone	408	148	2.0	2.493	0.878	1.928	0.940	0.005	0.054	0.569	4.0159
+A	0.5	FD4B4AC6	Paraphysoderma	Root (chytrids etc.)	backbone	408	168	3.0	3.887	0.976	3.075	0.972	0.002	0.026	0.584	4.8362
+A	0.5	F3F252DC	Caulochytrium	Root (chytrids etc.)	backbone	367	133	0	0.474	0.429	0.375	0.730	0.016	0.254	0.574	0.5729
+A	0.5	F5A4E39E	Phlyctochytrium	Root (chytrids etc.)	backbone	419	161	2	2.335	0.851	1.832	0.939	0.003	0.059	0.583	3.3907
+A	0.5	F58B3FB2	Nowakowskiella	Root (chytrids etc.)	backbone	328	109	2	2.734	0.881	2.281	0.963	0.003	0.034	0.580	4.4937
+A	0.5	FF74C8A6	Lobulomyces	Root (chytrids etc.)	backbone	358	108	3.0	3.287	0.981	2.580	0.966	0.003	0.031	0.578	5.9779
+A	0.5	FBDB2FE6	Rhizophlyctis	Root (chytrids etc.)	backbone	428	160	3.0	3.775	0.938	2.709	0.950	0.005	0.045	0.580	3.8201
+A	0.5	FEF8F4D3	Polyrhizophydium	Root (chytrids etc.)	backbone	405	157	3	3.217	0.898	2.462	0.899	0.034	0.067	0.587	4.2073
+A	0.5	F1D7B4F9	Spizellomyces	Root (chytrids etc.)	backbone	425	165	2	2.848	0.897	2.233	0.977	0.002	0.021	0.580	4.7406
+A	0.5	F3253B6A	Synchytrium	Root (chytrids etc.)	backbone	395	157	4	4.427	0.981	3.380	0.954	0.013	0.033	0.590	5.786
+A	0.5	F797C73E	Zygophlyctis	Root (chytrids etc.)	backbone	355	121	0	0.752	0.438	0.600	0.989	0.000	0.011	0.581	3.4324
+A	0.5	FE719DCE	Blyttiomyces	Root (chytrids etc.)	backbone	400	133	3	3.977	0.962	3.127	0.955	0.004	0.042	0.589	4.3472
+A	0.5	F5655B54	Hyaloraphidium	Root (chytrids etc.)	backbone	404	147	3	3.211	0.966	2.442	0.939	0.006	0.055	0.564	2.7
+A	0.5	FC8B8027	Gonapodya	Root (chytrids etc.)	backbone	391	140	4.0	4.343	0.971	3.373	0.961	0.000	0.039	0.581	5.2059
+A	0.5	F18B6B82	Piromyces	Root (chytrids etc.)	backbone	341	126	3.0	3.651	0.841	2.900	0.959	0.000	0.041	0.599	4.48
+A	0.5	FCDD8027	Basidiobolus	Entomophthorales+Basidiobolus	backbone	482	191	1	1.942	0.707	1.433	0.960	0.003	0.038	0.593	2.5327
+A	0.5	FDAC0301	Capillidium	Entomophthorales+Basidiobolus	backbone	359	131	2	2.053	0.756	1.593	0.981	0.004	0.015	0.585	2.7127
+A	0.5	F0AFF821	Conidiobolus	Entomophthorales+Basidiobolus	backbone	387	142	1.0	1.493	0.697	1.151	0.967	0.005	0.028	0.590	1.5748
+A	0.5	FC345CF7	Neoconidiobolus	Entomophthorales+Basidiobolus	backbone	375	126	1.5	2.151	0.778	1.627	0.985	0.000	0.015	0.588	2.8592
+A	0.5	F46AF962	Acaulopage	Zoopagales	backbone	393	158	0.0	0.316	0.247	0.247	0.880	0.000	0.120	0.590	1.1393
+A	0.5	FE0E7C3D	Cochlonema	Zoopagales	backbone	398	133	2	2.391	0.857	1.947	0.978	0.003	0.019	0.590	3.9895
+A	0.5	FEB493EF	Piptocephalis	Zoopagales	backbone	389	161	1	1.304	0.609	1.027	0.910	0.005	0.086	0.590	2.0794
+A	0.5	F186E471	Stylopage	Zoopagales	backbone	334	110	1.0	0.864	0.555	0.701	0.989	0.000	0.011	0.597	4.0868
+A	0.5	FB5167BD	Syncephalis	Zoopagales	backbone	403	133	3	3.113	0.850	2.311	0.959	0.005	0.036	0.597	4.4466
+A	0.5	F9368871	Thamnocephalis	Zoopagales	backbone	366	126	3.0	3.619	0.881	2.973	0.941	0.029	0.031	0.602	3.8994
+A	0.5	FF98D640	Zoopage	Zoopagales	backbone	325	107	0	0.897	0.383	0.764	0.958	0.010	0.031	0.598	2.2489
+A	0.5	F9A17E9D	Zoophagus	Zoopagales	backbone	374	115	1	1.243	0.617	1.051	0.993	0.000	0.007	0.584	2.6778
+A	0.5	F80EB351	Coemansia	Coemansia strains	coemansia_strain	407	161	0	0.304	0.261	0.240	0.694	0.000	0.306	0.590	0.4339
+A	0.5	FC1174D9	Coemansia	Coemansia strains	coemansia_strain	408	156	0.0	0.333	0.263	0.270	0.808	0.000	0.192	0.594	0.5276
+A	0.5	F2470181	Coemansia	Coemansia strains	coemansia_strain	407	161	0	0.304	0.255	0.240	0.694	0.020	0.286	0.590	0.411
+A	0.5	F4F8BFB2	Coemansia	Coemansia strains	coemansia_strain	406	159	0	0.302	0.252	0.237	0.708	0.021	0.271	0.590	0.428
+A	0.5	FD8916FB	Coemansia	Coemansia strains	coemansia_strain	421	160	0.0	0.275	0.237	0.218	0.818	0.000	0.182	0.596	0.3858
+A	0.5	F333880B	Coemansia	Coemansia strains	coemansia_strain	420	161	0	0.267	0.230	0.212	0.837	0.000	0.163	0.596	0.3826
+A	0.5	F5353C03	Coemansia	Coemansia strains	coemansia_strain	420	157	0	0.280	0.236	0.223	0.818	0.000	0.182	0.595	0.3751
+A	0.5	F7A7AA4C	Coemansia	Coemansia strains	coemansia_strain	408	161	0	0.292	0.248	0.230	0.723	0.000	0.277	0.590	0.4151
+A	0.5	F8C73C93	Coemansia	Coemansia strains	coemansia_strain	403	154	0.0	0.351	0.279	0.278	0.741	0.019	0.241	0.590	0.406
+A	0.5	F35EFF3E	Coemansia	Coemansia strains	coemansia_strain	393	155	0	0.323	0.258	0.264	0.820	0.040	0.140	0.603	0.5087
+A	0.5	FDFF0B8B	Coemansia	Coemansia strains	coemansia_strain	402	156	0.0	0.308	0.250	0.245	0.875	0.000	0.125	0.594	0.4927
+A	0.5	F0DB79EE	Coemansia	Coemansia strains	coemansia_strain	406	155	0	0.284	0.232	0.230	0.886	0.000	0.114	0.594	0.4891
+A	0.5	F9C995D7	Lachancea	Saccharomycetes anchors	anchor_yeast	414	186	0.0	0.194	0.172	0.149	0.639	0.028	0.333	0.583	0.0864
+A	0.5	F8E439FE	Petasospora	Saccharomycetes anchors	anchor_yeast	470	213	0	0.235	0.202	0.185	0.720	0.000	0.280	0.582	0.2539
+A	0.5	FF88EFD9	Saccharomycopsis	Saccharomycetes anchors	anchor_yeast	451	195	0	0.195	0.185	0.148	0.842	0.000	0.158	0.570	0.1964
+A	0.5	F20FC9BD	Williopsis	Saccharomycetes anchors	anchor_yeast	477	213	0	0.230	0.202	0.176	0.653	0.000	0.347	0.583	0.23
+A	0.5	FF422533	Blumeria	Pezizomycotina anchors	anchor_pezizomycotina	913	632	1.0	1.252	0.739	0.788	0.944	0.004	0.052	0.624	1.187
+A	0.5	F1A67265	Cenococcum	Pezizomycotina anchors	anchor_pezizomycotina	997	770	2.0	1.808	0.840	1.116	0.944	0.009	0.047	0.630	1.9187
+A	0.5	FC7A1E40	Clonostachys	Pezizomycotina anchors	anchor_pezizomycotina	891	619	1	1.577	0.798	1.004	0.950	0.005	0.045	0.614	1.7325
+A	0.5	F665BA79	Trichophyton	Pezizomycotina anchors	anchor_pezizomycotina	926	600	2.0	1.922	0.860	1.244	0.951	0.004	0.045	0.621	2.024
+A	0.6	F1C537C3	Dimargaris	Dimargaritales+Ramicandelaber	backbone	420	82	1.0	0.988	0.512	0.949	0.951	0.012	0.037	0.653	1.3859
+A	0.6	F1C9E2AA	Dispira	Dimargaritales+Ramicandelaber	backbone	365	56	0.0	0.196	0.143	0.181	1.000	0.000	0.000	0.658	0.5564
+A	0.6	F4FD0401	Tieghemiomyces	Dimargaritales+Ramicandelaber	backbone	408	73	0	1.055	0.466	1.012	0.935	0.000	0.065	0.658	1.3285
+A	0.6	F3D937C5	Capniomyces	Harpellales	backbone	372	67	1	1.776	0.761	1.854	0.908	0.025	0.067	0.652	2.0875
+A	0.6	F45BD9C7	Furculomyces	Harpellales	backbone	375	64	1.0	1.156	0.531	1.219	0.959	0.027	0.014	0.655	2.0292
+A	0.6	FCCDAB75	Smittium	Harpellales	backbone	370	71	1	1.521	0.620	1.658	0.935	0.019	0.046	0.653	1.9316
+A	0.6	F23D95F9	Zancudomyces	Harpellales	backbone	368	53	1	1.113	0.604	1.220	0.966	0.000	0.034	0.661	1.3885
+A	0.6	F0DE0BF4	Coemansia	Kickxellales core	backbone	424	80	0.0	0.250	0.225	0.246	0.850	0.000	0.150	0.652	0.3891
+A	0.6	F4C3EFF5	Dipsacomyces	Kickxellales core	backbone	381	66	0.0	0.288	0.242	0.314	0.895	0.000	0.105	0.660	0.6532
+A	0.6	F9F51274	Kickxella	Kickxellales core	backbone	406	77	0	0.364	0.286	0.388	0.750	0.000	0.250	0.649	0.8907
+A	0.6	F43C8248	Linderina	Kickxellales core	backbone	410	82	0.0	0.390	0.305	0.380	0.812	0.062	0.125	0.651	0.9548
+A	0.6	FE0E32D4	Martensiomyces	Kickxellales core	backbone	441	82	0.0	0.390	0.341	0.392	0.875	0.000	0.125	0.649	0.5974
+A	0.6	F18CA942	Mycoemilia	Mycoemilia+Spiromyces	backbone	391	78	1.0	1.603	0.667	1.600	0.920	0.032	0.048	0.651	1.6742
+A	0.6	F5C985FA	Spiromyces	Mycoemilia+Spiromyces	backbone	261	34	1.0	1.412	0.676	1.427	0.938	0.000	0.062	0.675	1.7298
+A	0.6	F7FE4923	Ramicandelaber	Dimargaritales+Ramicandelaber	backbone	368	66	0.0	0.136	0.121	0.134	0.889	0.000	0.111	0.648	0.5146
+A	0.6	F9F7649B	Ambispora	Other Mucoromycota group	backbone	456	88	3.5	4.523	0.989	3.821	0.957	0.010	0.033	0.655	3.0647
+A	0.6	FC303ED2	Geosiphon	Other Mucoromycota group	backbone	458	85	3	3.718	0.976	3.561	0.946	0.032	0.022	0.666	4.6403
+A	0.6	F359FEE0	Diversispora	Other Mucoromycota group	backbone	461	87	4	4.667	0.989	4.139	0.956	0.007	0.037	0.667	3.7018
+A	0.6	FA186146	Gigaspora	Other Mucoromycota group	backbone	467	91	3	4.418	0.989	4.041	0.975	0.002	0.022	0.655	3.2474
+A	0.6	F1815028	Entrophospora	Other Mucoromycota group	backbone	453	79	3	4.354	1.000	4.055	0.956	0.009	0.035	0.663	3.485
+A	0.6	F3A2FF18	Oehlia	Other Mucoromycota group	backbone	471	83	3	3.831	0.976	3.509	0.956	0.009	0.035	0.662	3.0456
+A	0.6	FDB574B3	Rhizophagus	Other Mucoromycota group	backbone	480	81	3	3.753	0.963	3.496	0.954	0.010	0.036	0.672	3.1901
+A	0.6	F5931C4A	Paraglomus	Other Mucoromycota group	backbone	444	92	4.0	4.500	0.989	4.187	0.957	0.014	0.029	0.665	3.479
+A	0.6	F574EFC1	Actinomortierella	Other Mucoromycota group	backbone	482	103	2	2.282	0.922	2.011	0.945	0.030	0.026	0.668	2.6795
+A	0.6	F6C0647F	Cryptocalciella	Other Mucoromycota group	backbone	496	102	2.0	2.598	0.892	2.459	0.962	0.008	0.030	0.658	2.9277
+A	0.6	F22945DF	Bifiguratus	Other Mucoromycota group	backbone	475	84	2.0	2.036	0.917	1.875	0.982	0.000	0.018	0.676	3.7747
+A	0.6	FEC49E8E	Endogone	Other Mucoromycota group	backbone	421	77	3	3.857	0.974	3.434	0.953	0.003	0.044	0.656	3.6294
+A	0.6	F08FC5A1	Circinella	Mucorales	backbone	466	100	3.0	2.920	0.970	2.769	0.969	0.000	0.031	0.660	3.9094
+A	0.6	FEACB2E7	Cunninghamella	Mucorales	backbone	457	95	2	2.632	0.947	2.514	0.964	0.000	0.036	0.661	3.9213
+A	0.6	F7F7C035	Gongronella	Mucorales	backbone	465	87	2	2.276	0.920	2.175	0.924	0.005	0.071	0.661	3.7797
+A	0.6	F6FD6BCA	Hesseltinella	Mucorales	backbone	465	87	2	2.046	0.851	1.954	0.938	0.028	0.034	0.655	4.086
+A	0.6	F104222C	Rhizomucor	Mucorales	backbone	468	87	2	2.379	0.943	2.291	0.971	0.005	0.024	0.656	4.224
+A	0.6	F8E635D0	Rhizopus	Mucorales	backbone	474	80	1.5	1.625	0.825	1.520	0.969	0.008	0.023	0.658	3.3761
+A	0.6	FAC8BA67	Syncephalastrum	Mucorales	backbone	471	80	2.0	2.100	0.900	1.970	0.964	0.006	0.030	0.662	3.9988
+A	0.6	FBAB06C3	Thermomucor	Mucorales	backbone	477	85	2	2.435	0.953	2.295	0.957	0.024	0.019	0.662	4.2323
+A	0.6	F4696F25	Umbelopsis	Other Mucoromycota group	backbone	498	91	2	1.934	0.857	1.827	0.949	0.017	0.034	0.656	3.8581
+A	0.6	F5C4F326	Sorochytrium	Root (chytrids etc.)	backbone	408	55	2	2.055	0.855	2.004	0.947	0.000	0.053	0.675	4.0159
+A	0.6	FD4B4AC6	Paraphysoderma	Root (chytrids etc.)	backbone	408	72	3.0	3.250	0.972	3.221	0.983	0.004	0.013	0.675	4.8362
+A	0.6	F3F252DC	Caulochytrium	Root (chytrids etc.)	backbone	367	52	0.0	0.558	0.481	0.541	0.759	0.034	0.207	0.654	0.5729
+A	0.6	F5A4E39E	Phlyctochytrium	Root (chytrids etc.)	backbone	419	64	2.0	2.125	0.875	1.860	0.956	0.000	0.044	0.668	3.3907
+A	0.6	F58B3FB2	Nowakowskiella	Root (chytrids etc.)	backbone	328	44	2.0	2.636	0.932	2.660	0.966	0.009	0.026	0.675	4.4937
+A	0.6	FF74C8A6	Lobulomyces	Root (chytrids etc.)	backbone	358	43	2	2.721	1.000	2.875	0.966	0.000	0.034	0.682	5.9779
+A	0.6	FBDB2FE6	Rhizophlyctis	Root (chytrids etc.)	backbone	428	66	3.0	3.212	0.939	3.186	0.948	0.005	0.047	0.654	3.8201
+A	0.6	FEF8F4D3	Polyrhizophydium	Root (chytrids etc.)	backbone	405	68	3.0	2.956	0.882	2.911	0.915	0.030	0.055	0.660	4.2073
+A	0.6	F1D7B4F9	Spizellomyces	Root (chytrids etc.)	backbone	425	69	3	3.043	0.928	2.745	0.971	0.000	0.029	0.655	4.7406
+A	0.6	F3253B6A	Synchytrium	Root (chytrids etc.)	backbone	395	74	3.5	4.203	1.000	3.840	0.958	0.006	0.035	0.655	5.786
+A	0.6	F797C73E	Zygophlyctis	Root (chytrids etc.)	backbone	355	56	1.0	0.839	0.518	0.853	1.000	0.000	0.000	0.653	3.4324
+A	0.6	FE719DCE	Blyttiomyces	Root (chytrids etc.)	backbone	400	62	3.0	3.435	0.968	3.798	0.953	0.009	0.038	0.667	4.3472
+A	0.6	F5655B54	Hyaloraphidium	Root (chytrids etc.)	backbone	404	49	3	2.857	0.980	2.678	0.929	0.014	0.057	0.661	2.7
+A	0.6	FC8B8027	Gonapodya	Root (chytrids etc.)	backbone	391	54	3.5	3.796	0.981	3.616	0.966	0.000	0.034	0.654	5.2059
+A	0.6	F18B6B82	Piromyces	Root (chytrids etc.)	backbone	341	63	2	2.667	0.746	2.546	0.952	0.000	0.048	0.653	4.48
+A	0.6	FCDD8027	Basidiobolus	Entomophthorales+Basidiobolus	backbone	482	93	1	1.355	0.591	1.253	0.984	0.000	0.016	0.670	2.5327
+A	0.6	FDAC0301	Capillidium	Entomophthorales+Basidiobolus	backbone	359	52	1.0	1.635	0.712	1.490	0.988	0.000	0.012	0.651	2.7127
+A	0.6	F0AFF821	Conidiobolus	Entomophthorales+Basidiobolus	backbone	387	62	1.0	1.161	0.645	1.025	0.958	0.014	0.028	0.653	1.5748
+A	0.6	FC345CF7	Neoconidiobolus	Entomophthorales+Basidiobolus	backbone	375	55	1	1.982	0.745	1.768	0.991	0.000	0.009	0.655	2.8592
+A	0.6	F46AF962	Acaulopage	Zoopagales	backbone	393	70	0.0	0.343	0.271	0.359	0.917	0.000	0.083	0.663	1.1393
+A	0.6	FE0E7C3D	Cochlonema	Zoopagales	backbone	398	63	1	1.984	0.810	1.914	0.968	0.008	0.024	0.653	3.9895
+A	0.6	FEB493EF	Piptocephalis	Zoopagales	backbone	389	71	1	1.127	0.521	1.233	0.950	0.000	0.050	0.673	2.0794
+A	0.6	F186E471	Stylopage	Zoopagales	backbone	334	54	1.0	0.759	0.537	0.694	0.976	0.000	0.024	0.645	4.0868
+A	0.6	FB5167BD	Syncephalis	Zoopagales	backbone	403	65	1	2.308	0.831	2.192	0.973	0.000	0.027	0.654	4.4466
+A	0.6	F9368871	Thamnocephalis	Zoopagales	backbone	366	64	2.0	3.031	0.859	3.029	0.948	0.026	0.026	0.660	3.8994
+A	0.6	FF98D640	Zoopage	Zoopagales	backbone	325	52	0.0	0.808	0.288	0.957	0.976	0.024	0.000	0.669	2.2489
+A	0.6	F9A17E9D	Zoophagus	Zoopagales	backbone	374	52	1.0	1.308	0.654	1.279	1.000	0.000	0.000	0.665	2.6778
+A	0.6	F80EB351	Coemansia	Coemansia strains	coemansia_strain	407	75	0	0.253	0.213	0.254	0.842	0.000	0.158	0.652	0.4339
+A	0.6	FC1174D9	Coemansia	Coemansia strains	coemansia_strain	408	75	0	0.320	0.293	0.311	0.792	0.000	0.208	0.657	0.5276
+A	0.6	F2470181	Coemansia	Coemansia strains	coemansia_strain	407	75	0	0.240	0.200	0.241	0.889	0.000	0.111	0.652	0.411
+A	0.6	F4F8BFB2	Coemansia	Coemansia strains	coemansia_strain	406	74	0.0	0.243	0.203	0.243	0.889	0.000	0.111	0.652	0.428
+A	0.6	FD8916FB	Coemansia	Coemansia strains	coemansia_strain	421	78	0.0	0.231	0.205	0.226	0.889	0.000	0.111	0.651	0.3858
+A	0.6	F333880B	Coemansia	Coemansia strains	coemansia_strain	420	78	0.0	0.218	0.192	0.214	0.941	0.000	0.059	0.653	0.3826
+A	0.6	F5353C03	Coemansia	Coemansia strains	coemansia_strain	420	75	0	0.227	0.200	0.226	0.941	0.000	0.059	0.654	0.3751
+A	0.6	F7A7AA4C	Coemansia	Coemansia strains	coemansia_strain	408	76	0.0	0.237	0.197	0.237	0.889	0.000	0.111	0.652	0.4151
+A	0.6	F8C73C93	Coemansia	Coemansia strains	coemansia_strain	403	74	0.0	0.324	0.284	0.318	0.750	0.000	0.250	0.639	0.406
+A	0.6	F35EFF3E	Coemansia	Coemansia strains	coemansia_strain	393	79	0	0.316	0.278	0.307	0.840	0.040	0.120	0.647	0.5087
+A	0.6	FDFF0B8B	Coemansia	Coemansia strains	coemansia_strain	402	74	0.0	0.270	0.243	0.261	0.800	0.000	0.200	0.660	0.4927
+A	0.6	F0DB79EE	Coemansia	Coemansia strains	coemansia_strain	406	74	0.0	0.270	0.243	0.262	0.800	0.000	0.200	0.659	0.4891
+A	0.6	F9C995D7	Lachancea	Saccharomycetes anchors	anchor_yeast	414	79	0	0.190	0.190	0.167	0.867	0.000	0.133	0.673	0.0864
+A	0.6	F8E439FE	Petasospora	Saccharomycetes anchors	anchor_yeast	470	95	0	0.253	0.232	0.226	0.792	0.000	0.208	0.667	0.2539
+A	0.6	FF88EFD9	Saccharomycopsis	Saccharomycetes anchors	anchor_yeast	451	85	0	0.200	0.188	0.192	0.882	0.000	0.118	0.678	0.1964
+A	0.6	F20FC9BD	Williopsis	Saccharomycetes anchors	anchor_yeast	477	99	0	0.212	0.212	0.192	0.810	0.000	0.190	0.667	0.23
+A	0.6	FF422533	Blumeria	Pezizomycotina anchors	anchor_pezizomycotina	913	369	1	1.404	0.805	0.956	0.967	0.004	0.029	0.697	1.187
+A	0.6	F1A67265	Cenococcum	Pezizomycotina anchors	anchor_pezizomycotina	997	491	2	1.894	0.880	1.293	0.961	0.011	0.028	0.683	1.9187
+A	0.6	FC7A1E40	Clonostachys	Pezizomycotina anchors	anchor_pezizomycotina	891	349	1	1.590	0.831	1.126	0.960	0.005	0.034	0.689	1.7325
+A	0.6	F665BA79	Trichophyton	Pezizomycotina anchors	anchor_pezizomycotina	926	355	2	1.921	0.882	1.375	0.962	0.001	0.037	0.673	2.024
+B	0.4	F1C537C3	Dimargaris	Dimargaritales+Ramicandelaber	backbone	420	297	2	2.199	0.791	1.488	0.511	0.015	0.473	0.531	1.3859
+B	0.4	F1C9E2AA	Dispira	Dimargaritales+Ramicandelaber	backbone	364	220	1.0	1.009	0.545	0.693	0.396	0.005	0.599	0.536	0.5564
+B	0.4	F4FD0401	Tieghemiomyces	Dimargaritales+Ramicandelaber	backbone	408	301	2	2.379	0.791	1.562	0.499	0.014	0.487	0.518	1.3285
+B	0.4	F3D937C5	Capniomyces	Harpellales	backbone	372	242	2.0	2.723	0.851	1.844	0.672	0.017	0.311	0.527	2.0875
+B	0.4	F45BD9C7	Furculomyces	Harpellales	backbone	375	240	2.0	2.492	0.800	1.710	0.682	0.008	0.309	0.533	2.0292
+B	0.4	FCCDAB75	Smittium	Harpellales	backbone	370	232	2.0	2.616	0.819	1.775	0.633	0.016	0.351	0.532	1.9316
+B	0.4	F23D95F9	Zancudomyces	Harpellales	backbone	367	230	1.0	1.970	0.748	1.387	0.625	0.007	0.369	0.521	1.3885
+B	0.4	F0DE0BF4	Coemansia	Kickxellales core	backbone	424	290	1.0	1.176	0.597	0.774	0.311	0.029	0.660	0.514	0.3891
+B	0.4	F4C3EFF5	Dipsacomyces	Kickxellales core	backbone	379	242	1.0	1.322	0.669	0.893	0.375	0.047	0.578	0.513	0.6532
+B	0.4	F9F51274	Kickxella	Kickxellales core	backbone	405	281	1	1.260	0.641	0.842	0.322	0.042	0.636	0.520	0.8907
+B	0.4	F43C8248	Linderina	Kickxellales core	backbone	408	291	1	1.388	0.663	0.922	0.302	0.035	0.663	0.519	0.9548
+B	0.4	FE0E32D4	Martensiomyces	Kickxellales core	backbone	441	304	1.0	1.355	0.664	0.902	0.396	0.056	0.549	0.517	0.5974
+B	0.4	F18CA942	Mycoemilia	Mycoemilia+Spiromyces	backbone	390	251	2	2.406	0.773	1.596	0.664	0.025	0.311	0.534	1.6742
+B	0.4	F5C985FA	Spiromyces	Mycoemilia+Spiromyces	backbone	259	124	2.0	2.427	0.847	1.744	0.678	0.047	0.276	0.529	1.7298
+B	0.4	F7FE4923	Ramicandelaber	Dimargaritales+Ramicandelaber	backbone	365	239	1	1.351	0.598	0.919	0.195	0.037	0.768	0.522	0.5146
+B	0.4	F9F7649B	Ambispora	Other Mucoromycota group	backbone	456	333	6	7.339	0.985	4.751	0.804	0.009	0.187	0.544	3.0647
+B	0.4	FC303ED2	Geosiphon	Other Mucoromycota group	backbone	458	331	6	7.239	0.979	4.709	0.781	0.015	0.204	0.545	4.6403
+B	0.4	F359FEE0	Diversispora	Other Mucoromycota group	backbone	462	322	6.0	7.186	0.991	4.625	0.811	0.006	0.182	0.544	3.7018
+B	0.4	FA186146	Gigaspora	Other Mucoromycota group	backbone	467	331	6	7.565	0.982	4.703	0.806	0.005	0.189	0.543	3.2474
+B	0.4	F1815028	Entrophospora	Other Mucoromycota group	backbone	453	311	6	7.225	0.997	4.685	0.801	0.009	0.190	0.548	3.485
+B	0.4	F3A2FF18	Oehlia	Other Mucoromycota group	backbone	471	340	6.0	7.156	0.988	4.603	0.813	0.006	0.181	0.539	3.0456
+B	0.4	FDB574B3	Rhizophagus	Other Mucoromycota group	backbone	480	341	6	7.103	0.985	4.601	0.818	0.005	0.177	0.538	3.1901
+B	0.4	F5931C4A	Paraglomus	Other Mucoromycota group	backbone	444	314	6.0	7.102	0.984	4.592	0.805	0.011	0.184	0.542	3.479
+B	0.4	F574EFC1	Actinomortierella	Other Mucoromycota group	backbone	483	353	3	3.813	0.977	2.426	0.716	0.022	0.262	0.532	2.6795
+B	0.4	F6C0647F	Cryptocalciella	Other Mucoromycota group	backbone	495	359	4	4.499	0.972	2.882	0.713	0.019	0.268	0.527	2.9277
+B	0.4	F22945DF	Bifiguratus	Other Mucoromycota group	backbone	473	346	4.0	4.673	0.962	3.039	0.750	0.024	0.226	0.531	3.7747
+B	0.4	FEC49E8E	Endogone	Other Mucoromycota group	backbone	420	275	5	6.440	0.985	4.049	0.756	0.010	0.234	0.527	3.6294
+B	0.4	F08FC5A1	Circinella	Mucorales	backbone	466	328	4.0	5.168	0.985	3.307	0.806	0.005	0.189	0.530	3.9094
+B	0.4	FEACB2E7	Cunninghamella	Mucorales	backbone	458	309	4	4.828	0.971	3.100	0.792	0.001	0.208	0.541	3.9213
+B	0.4	F7F7C035	Gongronella	Mucorales	backbone	465	332	4.0	4.813	0.988	3.075	0.702	0.021	0.277	0.528	3.7797
+B	0.4	F6FD6BCA	Hesseltinella	Mucorales	backbone	465	328	4.0	4.857	0.976	3.133	0.731	0.022	0.247	0.531	4.086
+B	0.4	F104222C	Rhizomucor	Mucorales	backbone	468	350	5.0	5.429	0.994	3.480	0.756	0.025	0.218	0.539	4.224
+B	0.4	F8E635D0	Rhizopus	Mucorales	backbone	474	326	3.0	3.761	0.948	2.481	0.774	0.006	0.220	0.535	3.3761
+B	0.4	FAC8BA67	Syncephalastrum	Mucorales	backbone	471	351	4	4.829	0.983	3.101	0.753	0.021	0.226	0.534	3.9988
+B	0.4	FBAB06C3	Thermomucor	Mucorales	backbone	476	351	5	5.755	0.986	3.700	0.760	0.023	0.216	0.530	4.2323
+B	0.4	F4696F25	Umbelopsis	Other Mucoromycota group	backbone	497	362	4.0	4.622	0.956	2.986	0.757	0.012	0.231	0.533	3.8581
+B	0.4	F5C4F326	Sorochytrium	Root (chytrids etc.)	backbone	406	282	4.0	5.071	0.961	3.365	0.703	0.020	0.278	0.521	4.0159
+B	0.4	FD4B4AC6	Paraphysoderma	Root (chytrids etc.)	backbone	407	305	5	6.190	0.980	4.134	0.788	0.005	0.207	0.532	4.8362
+B	0.4	F3F252DC	Caulochytrium	Root (chytrids etc.)	backbone	368	245	1	1.743	0.747	1.188	0.241	0.042	0.717	0.522	0.5729
+B	0.4	F5A4E39E	Phlyctochytrium	Root (chytrids etc.)	backbone	418	305	4	4.613	0.948	3.090	0.758	0.010	0.232	0.541	3.3907
+B	0.4	F58B3FB2	Nowakowskiella	Root (chytrids etc.)	backbone	327	214	4.0	5.294	0.977	3.618	0.788	0.005	0.207	0.535	4.4937
+B	0.4	FF74C8A6	Lobulomyces	Root (chytrids etc.)	backbone	358	239	6	6.908	1.000	4.505	0.820	0.004	0.177	0.532	5.9779
+B	0.4	FBDB2FE6	Rhizophlyctis	Root (chytrids etc.)	backbone	427	306	5.0	6.353	0.967	4.138	0.768	0.006	0.226	0.535	3.8201
+B	0.4	FEF8F4D3	Polyrhizophydium	Root (chytrids etc.)	backbone	405	287	4	5.136	0.951	3.316	0.681	0.042	0.277	0.532	4.2073
+B	0.4	F1D7B4F9	Spizellomyces	Root (chytrids etc.)	backbone	424	311	4	5.926	0.965	3.844	0.757	0.010	0.233	0.540	4.7406
+B	0.4	F3253B6A	Synchytrium	Root (chytrids etc.)	backbone	395	287	6	6.551	0.990	4.291	0.785	0.015	0.200	0.532	5.786
+B	0.4	F797C73E	Zygophlyctis	Root (chytrids etc.)	backbone	355	225	2	3.213	0.893	2.221	0.819	0.004	0.177	0.535	3.4324
+B	0.4	FE719DCE	Blyttiomyces	Root (chytrids etc.)	backbone	400	256	5.0	6.164	0.973	4.076	0.767	0.005	0.228	0.531	4.3472
+B	0.4	F5655B54	Hyaloraphidium	Root (chytrids etc.)	backbone	405	288	5.0	5.618	0.993	3.728	0.718	0.028	0.254	0.527	2.7
+B	0.4	FC8B8027	Gonapodya	Root (chytrids etc.)	backbone	387	279	6	6.975	0.978	4.585	0.739	0.009	0.251	0.528	5.2059
+B	0.4	F18B6B82	Piromyces	Root (chytrids etc.)	backbone	339	226	5.0	5.372	0.894	3.511	0.801	0.000	0.199	0.529	4.48
+B	0.4	FCDD8027	Basidiobolus	Entomophthorales+Basidiobolus	backbone	482	352	3.0	4.347	0.898	2.867	0.742	0.009	0.248	0.531	2.5327
+B	0.4	FDAC0301	Capillidium	Entomophthorales+Basidiobolus	backbone	359	255	4	4.451	0.929	2.903	0.814	0.001	0.185	0.528	2.7127
+B	0.4	F0AFF821	Conidiobolus	Entomophthorales+Basidiobolus	backbone	388	260	2.0	2.588	0.827	1.737	0.832	0.001	0.166	0.539	1.5748
+B	0.4	FC345CF7	Neoconidiobolus	Entomophthorales+Basidiobolus	backbone	374	251	4	4.637	0.928	3.083	0.847	0.002	0.151	0.540	2.8592
+B	0.4	F46AF962	Acaulopage	Zoopagales	backbone	393	265	1	1.385	0.755	0.953	0.444	0.068	0.488	0.530	1.1393
+B	0.4	FE0E7C3D	Cochlonema	Zoopagales	backbone	398	261	5	5.326	0.977	3.484	0.740	0.019	0.241	0.526	3.9895
+B	0.4	FEB493EF	Piptocephalis	Zoopagales	backbone	388	276	2.0	2.790	0.815	1.927	0.583	0.010	0.406	0.523	2.0794
+B	0.4	F186E471	Stylopage	Zoopagales	backbone	334	204	3.0	3.770	0.941	2.578	0.826	0.021	0.153	0.532	4.0868
+B	0.4	FB5167BD	Syncephalis	Zoopagales	backbone	402	283	5	6.173	0.951	4.017	0.785	0.019	0.195	0.532	4.4466
+B	0.4	F9368871	Thamnocephalis	Zoopagales	backbone	366	241	5	6.203	0.950	4.302	0.737	0.033	0.229	0.536	3.8994
+B	0.4	FF98D640	Zoopage	Zoopagales	backbone	324	206	2.0	2.772	0.738	1.956	0.620	0.042	0.338	0.516	2.2489
+B	0.4	F9A17E9D	Zoophagus	Zoopagales	backbone	374	235	3	3.885	0.894	2.735	0.774	0.009	0.217	0.525	2.6778
+B	0.4	F80EB351	Coemansia	Coemansia strains	coemansia_strain	407	289	1	1.201	0.616	0.802	0.323	0.029	0.648	0.515	0.4339
+B	0.4	FC1174D9	Coemansia	Coemansia strains	coemansia_strain	408	278	1.0	1.266	0.629	0.838	0.321	0.054	0.625	0.519	0.5276
+B	0.4	F2470181	Coemansia	Coemansia strains	coemansia_strain	406	288	1.0	1.177	0.611	0.786	0.327	0.029	0.643	0.516	0.411
+B	0.4	F4F8BFB2	Coemansia	Coemansia strains	coemansia_strain	406	287	1	1.164	0.610	0.775	0.329	0.030	0.641	0.515	0.428
+B	0.4	FD8916FB	Coemansia	Coemansia strains	coemansia_strain	421	285	1	1.172	0.604	0.771	0.314	0.030	0.656	0.514	0.3858
+B	0.4	F333880B	Coemansia	Coemansia strains	coemansia_strain	420	286	1.0	1.168	0.605	0.770	0.314	0.027	0.659	0.514	0.3826
+B	0.4	F5353C03	Coemansia	Coemansia strains	coemansia_strain	420	284	1.0	1.197	0.609	0.793	0.315	0.029	0.656	0.512	0.3751
+B	0.4	F7A7AA4C	Coemansia	Coemansia strains	coemansia_strain	406	288	1.0	1.177	0.611	0.786	0.327	0.029	0.643	0.516	0.4151
+B	0.4	F8C73C93	Coemansia	Coemansia strains	coemansia_strain	403	271	1	1.144	0.624	0.770	0.361	0.035	0.603	0.516	0.406
+B	0.4	F35EFF3E	Coemansia	Coemansia strains	coemansia_strain	393	278	1.0	1.061	0.576	0.704	0.403	0.034	0.563	0.520	0.5087
+B	0.4	FDFF0B8B	Coemansia	Coemansia strains	coemansia_strain	402	274	1.0	1.201	0.620	0.789	0.334	0.049	0.617	0.517	0.4927
+B	0.4	F0DB79EE	Coemansia	Coemansia strains	coemansia_strain	406	273	1	1.253	0.630	0.818	0.345	0.047	0.608	0.517	0.4891
+B	0.4	F9C995D7	Lachancea	Saccharomycetes anchors	anchor_yeast	413	286	0.0	0.738	0.472	0.505	0.256	0.009	0.735	0.531	0.0864
+B	0.4	F8E439FE	Petasospora	Saccharomycetes anchors	anchor_yeast	470	342	1.0	0.909	0.550	0.625	0.341	0.010	0.650	0.532	0.2539
+B	0.4	FF88EFD9	Saccharomycopsis	Saccharomycetes anchors	anchor_yeast	450	300	1.0	0.823	0.527	0.553	0.348	0.016	0.636	0.534	0.1964
+B	0.4	F20FC9BD	Williopsis	Saccharomycetes anchors	anchor_yeast	476	333	1	0.847	0.544	0.574	0.333	0.014	0.652	0.535	0.23
+B	0.4	FF422533	Blumeria	Pezizomycotina anchors	anchor_pezizomycotina	913	837	2	2.269	0.921	1.368	0.781	0.015	0.204	0.597	1.187
+B	0.4	F1A67265	Cenococcum	Pezizomycotina anchors	anchor_pezizomycotina	997	962	2.0	2.967	0.947	1.776	0.784	0.015	0.200	0.620	1.9187
+B	0.4	FC7A1E40	Clonostachys	Pezizomycotina anchors	anchor_pezizomycotina	892	837	2	2.419	0.914	1.443	0.747	0.011	0.242	0.581	1.7325
+B	0.4	F665BA79	Trichophyton	Pezizomycotina anchors	anchor_pezizomycotina	926	861	3	2.961	0.944	1.799	0.737	0.013	0.250	0.581	2.024
+B	0.5	F1C537C3	Dimargaris	Dimargaritales+Ramicandelaber	backbone	420	186	1.0	1.586	0.726	1.266	0.620	0.024	0.356	0.581	1.3859
+B	0.5	F1C9E2AA	Dispira	Dimargaritales+Ramicandelaber	backbone	364	139	0	0.763	0.446	0.607	0.519	0.000	0.481	0.583	0.5564
+B	0.5	F4FD0401	Tieghemiomyces	Dimargaritales+Ramicandelaber	backbone	408	176	1.0	1.926	0.739	1.444	0.528	0.018	0.454	0.584	1.3285
+B	0.5	F3D937C5	Capniomyces	Harpellales	backbone	372	143	2	2.399	0.811	1.929	0.770	0.012	0.219	0.599	2.0875
+B	0.5	F45BD9C7	Furculomyces	Harpellales	backbone	375	143	1	1.895	0.720	1.567	0.779	0.015	0.207	0.595	2.0292
+B	0.5	FCCDAB75	Smittium	Harpellales	backbone	370	137	2	2.182	0.745	1.874	0.759	0.020	0.221	0.586	1.9316
+B	0.5	F23D95F9	Zancudomyces	Harpellales	backbone	367	134	1.0	1.575	0.716	1.333	0.744	0.014	0.242	0.584	1.3885
+B	0.5	F0DE0BF4	Coemansia	Kickxellales core	backbone	424	169	1	0.846	0.509	0.647	0.406	0.028	0.566	0.593	0.3891
+B	0.5	F4C3EFF5	Dipsacomyces	Kickxellales core	backbone	379	139	1	0.914	0.583	0.696	0.528	0.016	0.457	0.596	0.6532
+B	0.5	F9F51274	Kickxella	Kickxellales core	backbone	405	165	1	0.879	0.558	0.692	0.448	0.028	0.524	0.585	0.8907
+B	0.5	F43C8248	Linderina	Kickxellales core	backbone	408	179	1	1.089	0.598	0.818	0.426	0.041	0.533	0.590	0.9548
+B	0.5	FE0E32D4	Martensiomyces	Kickxellales core	backbone	441	176	1.0	1.034	0.614	0.797	0.467	0.049	0.484	0.593	0.5974
+B	0.5	F18CA942	Mycoemilia	Mycoemilia+Spiromyces	backbone	390	153	1	2.131	0.765	1.647	0.785	0.025	0.190	0.600	1.6742
+B	0.5	F5C985FA	Spiromyces	Mycoemilia+Spiromyces	backbone	259	78	2.0	2.167	0.821	1.721	0.763	0.030	0.207	0.577	1.7298
+B	0.5	F7FE4923	Ramicandelaber	Dimargaritales+Ramicandelaber	backbone	365	140	0.0	0.821	0.486	0.673	0.296	0.026	0.678	0.592	0.5146
+B	0.5	F9F7649B	Ambispora	Other Mucoromycota group	backbone	456	219	5	6.452	0.991	4.828	0.850	0.011	0.139	0.591	3.0647
+B	0.5	FC303ED2	Geosiphon	Other Mucoromycota group	backbone	458	219	5	6.297	0.986	4.830	0.840	0.020	0.140	0.594	4.6403
+B	0.5	F359FEE0	Diversispora	Other Mucoromycota group	backbone	462	214	5.5	6.486	0.995	4.714	0.872	0.006	0.122	0.593	3.7018
+B	0.5	FA186146	Gigaspora	Other Mucoromycota group	backbone	467	227	6	6.524	0.991	4.814	0.857	0.005	0.138	0.596	3.2474
+B	0.5	F1815028	Entrophospora	Other Mucoromycota group	backbone	453	199	5	6.452	1.000	4.800	0.855	0.010	0.135	0.601	3.485
+B	0.5	F3A2FF18	Oehlia	Other Mucoromycota group	backbone	471	216	5.0	6.079	0.995	4.465	0.876	0.008	0.117	0.597	3.0456
+B	0.5	FDB574B3	Rhizophagus	Other Mucoromycota group	backbone	480	216	5.0	6.069	0.991	4.464	0.873	0.005	0.122	0.599	3.1901
+B	0.5	F5931C4A	Paraglomus	Other Mucoromycota group	backbone	444	210	5.0	6.271	0.990	4.642	0.853	0.012	0.135	0.591	3.479
+B	0.5	F574EFC1	Actinomortierella	Other Mucoromycota group	backbone	483	222	3.0	3.230	0.973	2.411	0.771	0.024	0.205	0.588	2.6795
+B	0.5	F6C0647F	Cryptocalciella	Other Mucoromycota group	backbone	495	220	3.0	3.632	0.959	2.718	0.785	0.020	0.195	0.595	2.9277
+B	0.5	F22945DF	Bifiguratus	Other Mucoromycota group	backbone	473	226	3.0	4.013	0.960	3.048	0.796	0.024	0.180	0.593	3.7747
+B	0.5	FEC49E8E	Endogone	Other Mucoromycota group	backbone	420	170	5.0	5.500	0.988	4.022	0.826	0.007	0.167	0.598	3.6294
+B	0.5	F08FC5A1	Circinella	Mucorales	backbone	466	211	4	4.436	0.981	3.249	0.857	0.004	0.139	0.593	3.9094
+B	0.5	FEACB2E7	Cunninghamella	Mucorales	backbone	458	205	3	3.932	0.971	2.924	0.855	0.001	0.144	0.594	3.9213
+B	0.5	F7F7C035	Gongronella	Mucorales	backbone	465	203	3	3.975	0.980	2.939	0.782	0.016	0.202	0.593	3.7797
+B	0.5	F6FD6BCA	Hesseltinella	Mucorales	backbone	465	207	3	3.952	0.961	2.979	0.780	0.026	0.194	0.592	4.086
+B	0.5	F104222C	Rhizomucor	Mucorales	backbone	468	224	4.0	4.549	0.991	3.404	0.800	0.019	0.182	0.595	4.224
+B	0.5	F8E635D0	Rhizopus	Mucorales	backbone	474	210	3.0	3.271	0.929	2.443	0.817	0.007	0.176	0.591	3.3761
+B	0.5	FAC8BA67	Syncephalastrum	Mucorales	backbone	471	212	3.0	4.090	0.981	3.028	0.798	0.024	0.178	0.596	3.9988
+B	0.5	FBAB06C3	Thermomucor	Mucorales	backbone	476	220	4.0	4.905	0.986	3.640	0.817	0.019	0.163	0.602	4.2323
+B	0.5	F4696F25	Umbelopsis	Other Mucoromycota group	backbone	497	227	3	3.811	0.943	2.862	0.817	0.009	0.173	0.598	3.8581
+B	0.5	F5C4F326	Sorochytrium	Root (chytrids etc.)	backbone	406	169	3	4.030	0.959	3.204	0.767	0.019	0.214	0.589	4.0159
+B	0.5	FD4B4AC6	Paraphysoderma	Root (chytrids etc.)	backbone	407	187	4	5.241	0.984	4.080	0.847	0.003	0.150	0.597	4.8362
+B	0.5	F3F252DC	Caulochytrium	Root (chytrids etc.)	backbone	368	135	1	1.222	0.704	0.966	0.339	0.030	0.630	0.572	0.5729
+B	0.5	F5A4E39E	Phlyctochytrium	Root (chytrids etc.)	backbone	418	193	3	3.969	0.948	3.165	0.804	0.008	0.188	0.588	3.3907
+B	0.5	F58B3FB2	Nowakowskiella	Root (chytrids etc.)	backbone	327	140	4.0	4.593	0.964	3.694	0.838	0.002	0.160	0.587	4.4937
+B	0.5	FF74C8A6	Lobulomyces	Root (chytrids etc.)	backbone	358	149	5	6.020	1.000	4.814	0.872	0.001	0.127	0.598	5.9779
+B	0.5	FBDB2FE6	Rhizophlyctis	Root (chytrids etc.)	backbone	427	195	5	5.549	0.964	4.112	0.821	0.007	0.172	0.587	3.8201
+B	0.5	FEF8F4D3	Polyrhizophydium	Root (chytrids etc.)	backbone	405	178	4.0	4.298	0.938	3.300	0.753	0.047	0.200	0.592	4.2073
+B	0.5	F1D7B4F9	Spizellomyces	Root (chytrids etc.)	backbone	424	201	4	4.841	0.965	3.836	0.813	0.011	0.176	0.590	4.7406
+B	0.5	F3253B6A	Synchytrium	Root (chytrids etc.)	backbone	395	180	5.0	5.789	0.989	4.482	0.835	0.015	0.150	0.586	5.786
+B	0.5	F797C73E	Zygophlyctis	Root (chytrids etc.)	backbone	355	136	2.0	2.919	0.897	2.362	0.851	0.000	0.149	0.596	3.4324
+B	0.5	FE719DCE	Blyttiomyces	Root (chytrids etc.)	backbone	400	166	5.0	5.500	0.988	4.300	0.824	0.001	0.175	0.586	4.3472
+B	0.5	F5655B54	Hyaloraphidium	Root (chytrids etc.)	backbone	405	175	4	5.246	0.994	4.083	0.786	0.022	0.192	0.585	2.7
+B	0.5	FC8B8027	Gonapodya	Root (chytrids etc.)	backbone	387	171	6	6.327	0.988	4.919	0.814	0.006	0.179	0.582	5.2059
+B	0.5	F18B6B82	Piromyces	Root (chytrids etc.)	backbone	339	144	4.0	4.493	0.882	3.519	0.850	0.000	0.150	0.592	4.48
+B	0.5	FCDD8027	Basidiobolus	Entomophthorales+Basidiobolus	backbone	482	219	2	3.269	0.858	2.495	0.782	0.008	0.209	0.591	2.5327
+B	0.5	FDAC0301	Capillidium	Entomophthorales+Basidiobolus	backbone	359	158	4.0	3.987	0.930	3.158	0.848	0.000	0.152	0.599	2.7127
+B	0.5	F0AFF821	Conidiobolus	Entomophthorales+Basidiobolus	backbone	388	163	2	2.675	0.847	2.089	0.890	0.002	0.108	0.599	1.5748
+B	0.5	FC345CF7	Neoconidiobolus	Entomophthorales+Basidiobolus	backbone	374	162	4.0	4.080	0.938	3.211	0.877	0.002	0.121	0.599	2.8592
+B	0.5	F46AF962	Acaulopage	Zoopagales	backbone	393	162	1.0	1.204	0.722	0.942	0.451	0.072	0.477	0.600	1.1393
+B	0.5	FE0E7C3D	Cochlonema	Zoopagales	backbone	398	157	4	4.344	0.968	3.391	0.771	0.025	0.204	0.586	3.9895
+B	0.5	FEB493EF	Piptocephalis	Zoopagales	backbone	388	172	1.0	1.953	0.767	1.520	0.640	0.015	0.345	0.589	2.0794
+B	0.5	F186E471	Stylopage	Zoopagales	backbone	334	128	3.0	3.164	0.938	2.611	0.859	0.022	0.119	0.601	4.0868
+B	0.5	FB5167BD	Syncephalis	Zoopagales	backbone	402	180	5.0	5.472	0.956	4.131	0.828	0.019	0.152	0.583	4.4466
+B	0.5	F9368871	Thamnocephalis	Zoopagales	backbone	366	150	4.0	5.333	0.933	4.351	0.780	0.037	0.182	0.597	3.8994
+B	0.5	FF98D640	Zoopage	Zoopagales	backbone	324	120	1.0	2.167	0.658	1.738	0.646	0.054	0.300	0.587	2.2489
+B	0.5	F9A17E9D	Zoophagus	Zoopagales	backbone	374	146	3.0	3.212	0.863	2.691	0.817	0.009	0.175	0.581	2.6778
+B	0.5	F80EB351	Coemansia	Coemansia strains	coemansia_strain	407	162	1.0	0.821	0.506	0.644	0.391	0.008	0.602	0.591	0.4339
+B	0.5	FC1174D9	Coemansia	Coemansia strains	coemansia_strain	408	162	1.0	0.938	0.549	0.753	0.375	0.033	0.592	0.595	0.5276
+B	0.5	F2470181	Coemansia	Coemansia strains	coemansia_strain	406	162	0.5	0.815	0.500	0.640	0.394	0.008	0.598	0.591	0.411
+B	0.5	F4F8BFB2	Coemansia	Coemansia strains	coemansia_strain	406	160	0.5	0.806	0.500	0.630	0.395	0.008	0.597	0.591	0.428
+B	0.5	FD8916FB	Coemansia	Coemansia strains	coemansia_strain	421	165	1	0.848	0.527	0.651	0.414	0.014	0.571	0.593	0.3858
+B	0.5	F333880B	Coemansia	Coemansia strains	coemansia_strain	420	166	1.0	0.849	0.530	0.652	0.411	0.014	0.574	0.593	0.3826
+B	0.5	F5353C03	Coemansia	Coemansia strains	coemansia_strain	420	162	1.0	0.877	0.537	0.675	0.408	0.014	0.577	0.592	0.3751
+B	0.5	F7A7AA4C	Coemansia	Coemansia strains	coemansia_strain	406	162	0.5	0.815	0.500	0.640	0.394	0.008	0.598	0.591	0.4151
+B	0.5	F8C73C93	Coemansia	Coemansia strains	coemansia_strain	403	154	1.0	0.851	0.526	0.678	0.481	0.031	0.489	0.593	0.406
+B	0.5	F35EFF3E	Coemansia	Coemansia strains	coemansia_strain	393	164	0.0	0.787	0.488	0.636	0.434	0.031	0.535	0.597	0.5087
+B	0.5	FDFF0B8B	Coemansia	Coemansia strains	coemansia_strain	402	159	1	0.906	0.541	0.721	0.389	0.042	0.569	0.594	0.4927
+B	0.5	F0DB79EE	Coemansia	Coemansia strains	coemansia_strain	406	155	1	0.903	0.542	0.721	0.393	0.029	0.579	0.596	0.4891
+B	0.5	F9C995D7	Lachancea	Saccharomycetes anchors	anchor_yeast	413	189	0	0.667	0.439	0.513	0.278	0.008	0.714	0.583	0.0864
+B	0.5	F8E439FE	Petasospora	Saccharomycetes anchors	anchor_yeast	470	224	1.0	0.835	0.545	0.637	0.369	0.016	0.615	0.580	0.2539
+B	0.5	FF88EFD9	Saccharomycopsis	Saccharomycetes anchors	anchor_yeast	450	197	0	0.721	0.487	0.551	0.444	0.007	0.549	0.572	0.1964
+B	0.5	F20FC9BD	Williopsis	Saccharomycetes anchors	anchor_yeast	476	209	0	0.679	0.493	0.530	0.373	0.000	0.627	0.594	0.23
+B	0.5	FF422533	Blumeria	Pezizomycotina anchors	anchor_pezizomycotina	913	672	2.0	2.220	0.920	1.422	0.816	0.016	0.168	0.631	1.187
+B	0.5	F1A67265	Cenococcum	Pezizomycotina anchors	anchor_pezizomycotina	997	809	2	2.968	0.952	1.868	0.814	0.013	0.173	0.645	1.9187
+B	0.5	FC7A1E40	Clonostachys	Pezizomycotina anchors	anchor_pezizomycotina	892	636	2.0	2.392	0.915	1.539	0.807	0.010	0.183	0.624	1.7325
+B	0.5	F665BA79	Trichophyton	Pezizomycotina anchors	anchor_pezizomycotina	926	642	2.0	2.889	0.945	1.899	0.794	0.015	0.191	0.626	2.024
+B	0.6	F1C537C3	Dimargaris	Dimargaritales+Ramicandelaber	backbone	420	79	1	1.354	0.671	1.261	0.682	0.019	0.299	0.656	1.3859
+B	0.6	F1C9E2AA	Dispira	Dimargaritales+Ramicandelaber	backbone	364	61	0	0.508	0.328	0.479	0.516	0.000	0.484	0.654	0.5564
+B	0.6	F4FD0401	Tieghemiomyces	Dimargaritales+Ramicandelaber	backbone	408	77	1	1.610	0.688	1.511	0.621	0.024	0.355	0.657	1.3285
+B	0.6	F3D937C5	Capniomyces	Harpellales	backbone	372	71	2	2.183	0.789	2.299	0.794	0.019	0.187	0.650	2.0875
+B	0.6	F45BD9C7	Furculomyces	Harpellales	backbone	375	67	1	1.701	0.672	1.818	0.842	0.026	0.132	0.667	2.0292
+B	0.6	FCCDAB75	Smittium	Harpellales	backbone	370	64	1.0	1.750	0.672	1.840	0.839	0.018	0.143	0.656	1.9316
+B	0.6	F23D95F9	Zancudomyces	Harpellales	backbone	367	52	1.0	1.346	0.635	1.425	0.900	0.000	0.100	0.668	1.3885
+B	0.6	F0DE0BF4	Coemansia	Kickxellales core	backbone	424	75	0	0.667	0.453	0.631	0.560	0.020	0.420	0.650	0.3891
+B	0.6	F4C3EFF5	Dipsacomyces	Kickxellales core	backbone	379	65	1	0.723	0.538	0.768	0.638	0.000	0.362	0.657	0.6532
+B	0.6	F9F51274	Kickxella	Kickxellales core	backbone	405	75	0	0.747	0.493	0.790	0.482	0.036	0.482	0.642	0.8907
+B	0.6	F43C8248	Linderina	Kickxellales core	backbone	408	81	1	0.864	0.543	0.844	0.529	0.043	0.429	0.649	0.9548
+B	0.6	FE0E32D4	Martensiomyces	Kickxellales core	backbone	441	82	1.0	1.000	0.585	0.964	0.512	0.049	0.439	0.648	0.5974
+B	0.6	F18CA942	Mycoemilia	Mycoemilia+Spiromyces	backbone	390	77	1	1.974	0.727	1.962	0.789	0.033	0.178	0.651	1.6742
+B	0.6	F5C985FA	Spiromyces	Mycoemilia+Spiromyces	backbone	259	35	1	1.914	0.800	1.972	0.806	0.015	0.179	0.676	1.7298
+B	0.6	F7FE4923	Ramicandelaber	Dimargaritales+Ramicandelaber	backbone	365	62	0.0	0.371	0.306	0.366	0.391	0.000	0.609	0.648	0.5146
+B	0.6	F9F7649B	Ambispora	Other Mucoromycota group	backbone	456	105	4	5.171	0.990	4.778	0.860	0.020	0.120	0.662	3.0647
+B	0.6	FC303ED2	Geosiphon	Other Mucoromycota group	backbone	458	103	4	5.272	0.990	4.959	0.862	0.031	0.107	0.663	4.6403
+B	0.6	F359FEE0	Diversispora	Other Mucoromycota group	backbone	462	97	4	5.598	1.000	4.954	0.901	0.007	0.092	0.669	3.7018
+B	0.6	FA186146	Gigaspora	Other Mucoromycota group	backbone	467	108	5.0	5.639	1.000	5.107	0.883	0.002	0.115	0.661	3.2474
+B	0.6	F1815028	Entrophospora	Other Mucoromycota group	backbone	453	100	4.0	5.340	1.000	5.001	0.869	0.011	0.120	0.659	3.485
+B	0.6	F3A2FF18	Oehlia	Other Mucoromycota group	backbone	471	104	4.0	5.163	0.990	4.773	0.899	0.007	0.093	0.670	3.0456
+B	0.6	FDB574B3	Rhizophagus	Other Mucoromycota group	backbone	480	106	4.0	5.151	0.991	4.690	0.896	0.005	0.099	0.669	3.1901
+B	0.6	F5931C4A	Paraglomus	Other Mucoromycota group	backbone	444	98	4.0	4.959	1.000	4.700	0.893	0.014	0.093	0.660	3.479
+B	0.6	F574EFC1	Actinomortierella	Other Mucoromycota group	backbone	483	103	2	2.796	0.961	2.417	0.812	0.031	0.156	0.664	2.6795
+B	0.6	F6C0647F	Cryptocalciella	Other Mucoromycota group	backbone	495	107	3	3.075	0.925	2.812	0.830	0.024	0.146	0.649	2.9277
+B	0.6	F22945DF	Bifiguratus	Other Mucoromycota group	backbone	473	110	3.0	3.382	0.982	3.184	0.825	0.013	0.161	0.667	3.7747
+B	0.6	FEC49E8E	Endogone	Other Mucoromycota group	backbone	420	84	4.0	4.440	0.976	3.834	0.853	0.000	0.147	0.645	3.6294
+B	0.6	F08FC5A1	Circinella	Mucorales	backbone	466	100	3.0	3.370	0.980	3.241	0.887	0.000	0.113	0.660	3.9094
+B	0.6	FEACB2E7	Cunninghamella	Mucorales	backbone	458	98	3.0	3.194	0.959	3.000	0.882	0.000	0.118	0.662	3.9213
+B	0.6	F7F7C035	Gongronella	Mucorales	backbone	465	94	3.0	3.106	0.968	2.960	0.808	0.010	0.182	0.666	3.7797
+B	0.6	F6FD6BCA	Hesseltinella	Mucorales	backbone	465	94	3.0	3.298	0.926	3.041	0.787	0.029	0.184	0.656	4.086
+B	0.6	F104222C	Rhizomucor	Mucorales	backbone	468	108	3.0	3.574	0.981	3.500	0.816	0.013	0.171	0.656	4.224
+B	0.6	F8E635D0	Rhizopus	Mucorales	backbone	474	94	3.0	2.936	0.915	2.824	0.812	0.004	0.185	0.663	3.3761
+B	0.6	FAC8BA67	Syncephalastrum	Mucorales	backbone	471	100	3.0	3.240	0.990	3.024	0.852	0.015	0.133	0.656	3.9988
+B	0.6	FBAB06C3	Thermomucor	Mucorales	backbone	476	115	3	3.730	0.983	3.579	0.846	0.021	0.133	0.659	4.2323
+B	0.6	F4696F25	Umbelopsis	Other Mucoromycota group	backbone	497	111	3	3.045	0.946	2.808	0.828	0.012	0.160	0.659	3.8581
+B	0.6	F5C4F326	Sorochytrium	Root (chytrids etc.)	backbone	406	73	3	3.315	0.945	3.179	0.818	0.008	0.174	0.667	4.0159
+B	0.6	FD4B4AC6	Paraphysoderma	Root (chytrids etc.)	backbone	407	91	4	4.286	0.978	4.170	0.864	0.008	0.128	0.670	4.8362
+B	0.6	F3F252DC	Caulochytrium	Root (chytrids etc.)	backbone	368	51	1	1.039	0.725	0.992	0.509	0.019	0.472	0.660	0.5729
+B	0.6	F5A4E39E	Phlyctochytrium	Root (chytrids etc.)	backbone	418	83	3	3.687	0.952	3.569	0.804	0.010	0.186	0.658	3.3907
+B	0.6	F58B3FB2	Nowakowskiella	Root (chytrids etc.)	backbone	327	58	4.0	4.034	1.000	4.251	0.842	0.000	0.158	0.678	4.4937
+B	0.6	FF74C8A6	Lobulomyces	Root (chytrids etc.)	backbone	358	73	4	5.068	1.000	4.908	0.895	0.000	0.105	0.657	5.9779
+B	0.6	FBDB2FE6	Rhizophlyctis	Root (chytrids etc.)	backbone	427	85	4	4.529	0.976	4.353	0.886	0.008	0.106	0.655	3.8201
+B	0.6	FEF8F4D3	Polyrhizophydium	Root (chytrids etc.)	backbone	405	80	4.0	3.788	0.912	3.634	0.792	0.033	0.175	0.653	4.2073
+B	0.6	F1D7B4F9	Spizellomyces	Root (chytrids etc.)	backbone	424	88	3.0	4.659	0.977	4.209	0.854	0.007	0.139	0.653	4.7406
+B	0.6	F3253B6A	Synchytrium	Root (chytrids etc.)	backbone	395	79	4	5.063	1.000	4.743	0.875	0.010	0.115	0.657	5.786
+B	0.6	F797C73E	Zygophlyctis	Root (chytrids etc.)	backbone	355	64	2.0	2.109	0.859	2.249	0.889	0.000	0.111	0.665	3.4324
+B	0.6	FE719DCE	Blyttiomyces	Root (chytrids etc.)	backbone	400	72	4.0	4.375	1.000	4.732	0.844	0.003	0.152	0.659	4.3472
+B	0.6	F5655B54	Hyaloraphidium	Root (chytrids etc.)	backbone	405	71	4	4.634	1.000	4.487	0.827	0.018	0.155	0.663	2.7
+B	0.6	FC8B8027	Gonapodya	Root (chytrids etc.)	backbone	387	71	5	5.268	1.000	5.083	0.874	0.005	0.120	0.656	5.2059
+B	0.6	F18B6B82	Piromyces	Root (chytrids etc.)	backbone	339	68	2.0	3.309	0.809	3.271	0.902	0.000	0.098	0.655	4.48
+B	0.6	FCDD8027	Basidiobolus	Entomophthorales+Basidiobolus	backbone	482	105	2	2.619	0.771	2.367	0.778	0.015	0.207	0.660	2.5327
+B	0.6	FDAC0301	Capillidium	Entomophthorales+Basidiobolus	backbone	359	78	3.0	3.372	0.910	3.223	0.840	0.000	0.160	0.665	2.7127
+B	0.6	F0AFF821	Conidiobolus	Entomophthorales+Basidiobolus	backbone	388	81	2	2.432	0.802	2.260	0.888	0.005	0.107	0.660	1.5748
+B	0.6	FC345CF7	Neoconidiobolus	Entomophthorales+Basidiobolus	backbone	374	81	3	3.593	0.914	3.390	0.907	0.000	0.093	0.656	2.8592
+B	0.6	F46AF962	Acaulopage	Zoopagales	backbone	393	84	1.0	1.214	0.726	1.221	0.520	0.078	0.402	0.661	1.1393
+B	0.6	FE0E7C3D	Cochlonema	Zoopagales	backbone	398	68	2.5	3.294	0.941	3.223	0.795	0.018	0.188	0.665	3.9895
+B	0.6	FEB493EF	Piptocephalis	Zoopagales	backbone	388	73	1	1.548	0.658	1.677	0.743	0.009	0.248	0.668	2.0794
+B	0.6	F186E471	Stylopage	Zoopagales	backbone	334	67	2	2.597	0.925	2.579	0.897	0.011	0.092	0.663	4.0868
+B	0.6	FB5167BD	Syncephalis	Zoopagales	backbone	402	81	3	3.975	0.938	3.835	0.839	0.022	0.140	0.670	4.4466
+B	0.6	F9368871	Thamnocephalis	Zoopagales	backbone	366	73	4	4.137	0.945	4.253	0.844	0.023	0.132	0.663	3.8994
+B	0.6	FF98D640	Zoopage	Zoopagales	backbone	324	53	0	1.340	0.491	1.519	0.690	0.042	0.268	0.675	2.2489
+B	0.6	F9A17E9D	Zoophagus	Zoopagales	backbone	374	65	2	2.569	0.831	2.708	0.874	0.000	0.126	0.670	2.6778
+B	0.6	F80EB351	Coemansia	Coemansia strains	coemansia_strain	407	77	0	0.714	0.455	0.713	0.473	0.018	0.509	0.649	0.4339
+B	0.6	FC1174D9	Coemansia	Coemansia strains	coemansia_strain	408	78	1.0	0.962	0.577	0.942	0.453	0.027	0.520	0.641	0.5276
+B	0.6	F2470181	Coemansia	Coemansia strains	coemansia_strain	406	77	0	0.701	0.442	0.700	0.481	0.019	0.500	0.649	0.411
+B	0.6	F4F8BFB2	Coemansia	Coemansia strains	coemansia_strain	406	76	0.0	0.711	0.447	0.706	0.481	0.019	0.500	0.648	0.428
+B	0.6	FD8916FB	Coemansia	Coemansia strains	coemansia_strain	421	74	0.0	0.689	0.486	0.648	0.549	0.000	0.451	0.649	0.3858
+B	0.6	F333880B	Coemansia	Coemansia strains	coemansia_strain	420	74	0.0	0.689	0.486	0.648	0.549	0.000	0.451	0.649	0.3826
+B	0.6	F5353C03	Coemansia	Coemansia strains	coemansia_strain	420	71	0	0.690	0.479	0.658	0.551	0.000	0.449	0.649	0.3751
+B	0.6	F7A7AA4C	Coemansia	Coemansia strains	coemansia_strain	406	77	0	0.701	0.442	0.700	0.481	0.019	0.500	0.649	0.4151
+B	0.6	F8C73C93	Coemansia	Coemansia strains	coemansia_strain	403	72	1.0	0.847	0.514	0.843	0.541	0.033	0.426	0.641	0.406
+B	0.6	F35EFF3E	Coemansia	Coemansia strains	coemansia_strain	393	80	0.0	0.662	0.463	0.648	0.509	0.038	0.453	0.652	0.5087
+B	0.6	FDFF0B8B	Coemansia	Coemansia strains	coemansia_strain	402	75	1	0.920	0.573	0.892	0.464	0.014	0.522	0.642	0.4927
+B	0.6	F0DB79EE	Coemansia	Coemansia strains	coemansia_strain	406	75	1	0.933	0.573	0.907	0.443	0.014	0.543	0.643	0.4891
+B	0.6	F9C995D7	Lachancea	Saccharomycetes anchors	anchor_yeast	413	79	0	0.646	0.430	0.563	0.392	0.000	0.608	0.670	0.0864
+B	0.6	F8E439FE	Petasospora	Saccharomycetes anchors	anchor_yeast	470	94	1.0	0.702	0.511	0.626	0.470	0.015	0.515	0.669	0.2539
+B	0.6	FF88EFD9	Saccharomycopsis	Saccharomycetes anchors	anchor_yeast	450	86	0.0	0.616	0.407	0.580	0.566	0.000	0.434	0.678	0.1964
+B	0.6	F20FC9BD	Williopsis	Saccharomycetes anchors	anchor_yeast	476	100	0.0	0.580	0.480	0.525	0.517	0.000	0.483	0.669	0.23
+B	0.6	FF422533	Blumeria	Pezizomycotina anchors	anchor_pezizomycotina	913	407	2	2.302	0.943	1.619	0.869	0.019	0.112	0.706	1.187
+B	0.6	F1A67265	Cenococcum	Pezizomycotina anchors	anchor_pezizomycotina	997	528	2.5	2.987	0.968	2.053	0.859	0.011	0.129	0.698	1.9187
+B	0.6	FC7A1E40	Clonostachys	Pezizomycotina anchors	anchor_pezizomycotina	892	373	2	2.359	0.925	1.716	0.853	0.008	0.139	0.690	1.7325
+B	0.6	F665BA79	Trichophyton	Pezizomycotina anchors	anchor_pezizomycotina	926	389	2	2.861	0.951	2.089	0.836	0.010	0.154	0.680	2.024
+C	0.4	F1C537C3	Dimargaris	Dimargaritales+Ramicandelaber	backbone	420	352	8.0	9.472	0.986	6.120	0.151	0.017	0.832	0.531	1.3859
+C	0.4	F1C9E2AA	Dispira	Dimargaritales+Ramicandelaber	backbone	364	260	5.0	7.173	0.954	4.655	0.122	0.011	0.867	0.526	0.5564
+C	0.4	F4FD0401	Tieghemiomyces	Dimargaritales+Ramicandelaber	backbone	408	352	9.0	10.014	0.986	6.325	0.145	0.021	0.834	0.531	1.3285
+C	0.4	F3D937C5	Capniomyces	Harpellales	backbone	372	299	8	9.753	0.990	6.321	0.200	0.013	0.787	0.521	2.0875
+C	0.4	F45BD9C7	Furculomyces	Harpellales	backbone	375	291	8	9.027	0.983	5.867	0.196	0.007	0.797	0.524	2.0292
+C	0.4	FCCDAB75	Smittium	Harpellales	backbone	370	290	8.0	9.476	0.976	6.219	0.191	0.009	0.800	0.522	1.9316
+C	0.4	F23D95F9	Zancudomyces	Harpellales	backbone	367	284	7.0	8.954	0.982	5.974	0.161	0.012	0.827	0.518	1.3885
+C	0.4	F0DE0BF4	Coemansia	Kickxellales core	backbone	424	351	7	8.413	0.960	5.291	0.100	0.028	0.872	0.517	0.3891
+C	0.4	F4C3EFF5	Dipsacomyces	Kickxellales core	backbone	379	282	6.0	8.028	0.968	5.094	0.100	0.035	0.865	0.523	0.6532
+C	0.4	F9F51274	Kickxella	Kickxellales core	backbone	405	332	7.0	7.973	0.967	5.090	0.096	0.028	0.876	0.520	0.8907
+C	0.4	F43C8248	Linderina	Kickxellales core	backbone	408	342	7.0	8.518	0.968	5.390	0.106	0.035	0.860	0.524	0.9548
+C	0.4	FE0E32D4	Martensiomyces	Kickxellales core	backbone	441	370	7.0	8.854	0.968	5.562	0.099	0.033	0.868	0.521	0.5974
+C	0.4	F18CA942	Mycoemilia	Mycoemilia+Spiromyces	backbone	390	310	8.0	9.665	0.981	6.123	0.190	0.016	0.794	0.522	1.6742
+C	0.4	F5C985FA	Spiromyces	Mycoemilia+Spiromyces	backbone	259	149	6	7.678	0.987	5.044	0.233	0.019	0.747	0.520	1.7298
+C	0.4	F7FE4923	Ramicandelaber	Dimargaritales+Ramicandelaber	backbone	365	288	6.0	7.986	0.948	5.259	0.089	0.025	0.886	0.521	0.5146
+C	0.4	F9F7649B	Ambispora	Other Mucoromycota group	backbone	456	392	12.0	13.536	0.997	8.094	0.347	0.008	0.645	0.537	3.0647
+C	0.4	FC303ED2	Geosiphon	Other Mucoromycota group	backbone	458	381	12	13.136	1.000	8.128	0.349	0.009	0.642	0.541	4.6403
+C	0.4	F359FEE0	Diversispora	Other Mucoromycota group	backbone	462	385	12	13.452	1.000	7.997	0.354	0.005	0.641	0.534	3.7018
+C	0.4	FA186146	Gigaspora	Other Mucoromycota group	backbone	467	377	12	13.191	0.997	7.967	0.368	0.005	0.626	0.545	3.2474
+C	0.4	F1815028	Entrophospora	Other Mucoromycota group	backbone	453	360	11.0	12.828	1.000	8.067	0.347	0.006	0.647	0.534	3.485
+C	0.4	F3A2FF18	Oehlia	Other Mucoromycota group	backbone	471	390	11.0	12.831	1.000	7.828	0.358	0.007	0.635	0.540	3.0456
+C	0.4	FDB574B3	Rhizophagus	Other Mucoromycota group	backbone	480	397	11	12.967	1.000	7.878	0.356	0.005	0.639	0.535	3.1901
+C	0.4	F5931C4A	Paraglomus	Other Mucoromycota group	backbone	444	373	12	13.756	0.995	8.309	0.344	0.013	0.643	0.544	3.479
+C	0.4	F574EFC1	Actinomortierella	Other Mucoromycota group	backbone	483	420	10.0	11.129	0.995	6.689	0.244	0.015	0.741	0.539	2.6795
+C	0.4	F6C0647F	Cryptocalciella	Other Mucoromycota group	backbone	0	0									2.9277
+C	0.4	F22945DF	Bifiguratus	Other Mucoromycota group	backbone	473	409	10	11.856	0.995	7.261	0.281	0.020	0.699	0.537	3.7747
+C	0.4	FEC49E8E	Endogone	Other Mucoromycota group	backbone	420	330	11.0	13.388	1.000	8.049	0.313	0.012	0.675	0.529	3.6294
+C	0.4	F08FC5A1	Circinella	Mucorales	backbone	466	388	10.0	11.789	0.997	7.228	0.312	0.007	0.681	0.532	3.9094
+C	0.4	FEACB2E7	Cunninghamella	Mucorales	backbone	458	370	9.0	10.670	0.995	6.590	0.312	0.004	0.684	0.535	3.9213
+C	0.4	F7F7C035	Gongronella	Mucorales	backbone	465	405	11	12.368	0.993	7.395	0.249	0.018	0.733	0.526	3.7797
+C	0.4	F6FD6BCA	Hesseltinella	Mucorales	backbone	465	395	10	12.296	0.992	7.520	0.270	0.019	0.712	0.533	4.086
+C	0.4	F104222C	Rhizomucor	Mucorales	backbone	468	417	11	12.731	0.998	7.644	0.286	0.020	0.694	0.534	4.224
+C	0.4	F8E635D0	Rhizopus	Mucorales	backbone	474	391	9	10.496	0.992	6.431	0.271	0.012	0.717	0.527	3.3761
+C	0.4	FAC8BA67	Syncephalastrum	Mucorales	backbone	471	410	11.0	12.220	0.998	7.406	0.276	0.017	0.707	0.531	3.9988
+C	0.4	FBAB06C3	Thermomucor	Mucorales	backbone	476	415	11	12.983	1.000	7.808	0.296	0.019	0.684	0.531	4.2323
+C	0.4	F4696F25	Umbelopsis	Other Mucoromycota group	backbone	497	427	10	11.424	0.995	7.072	0.276	0.014	0.710	0.536	3.8581
+C	0.4	F5C4F326	Sorochytrium	Root (chytrids etc.)	backbone	406	346	11.0	12.795	0.997	7.903	0.252	0.028	0.720	0.528	4.0159
+C	0.4	FD4B4AC6	Paraphysoderma	Root (chytrids etc.)	backbone	407	358	12.0	13.176	0.997	8.200	0.306	0.010	0.684	0.530	4.8362
+C	0.4	F3F252DC	Caulochytrium	Root (chytrids etc.)	backbone	368	293	7	9.355	0.976	6.065	0.073	0.033	0.894	0.520	0.5729
+C	0.4	F5A4E39E	Phlyctochytrium	Root (chytrids etc.)	backbone	418	361	11	12.283	1.000	7.726	0.265	0.011	0.724	0.533	3.3907
+C	0.4	F58B3FB2	Nowakowskiella	Root (chytrids etc.)	backbone	327	255	10	12.282	1.000	7.894	0.299	0.009	0.692	0.527	4.4937
+C	0.4	FF74C8A6	Lobulomyces	Root (chytrids etc.)	backbone	358	279	11	12.975	1.000	8.085	0.343	0.006	0.651	0.527	5.9779
+C	0.4	FBDB2FE6	Rhizophlyctis	Root (chytrids etc.)	backbone	427	363	12	13.898	0.994	8.520	0.308	0.012	0.680	0.539	3.8201
+C	0.4	FEF8F4D3	Polyrhizophydium	Root (chytrids etc.)	backbone	405	338	10.5	12.814	0.991	7.871	0.242	0.033	0.725	0.535	4.2073
+C	0.4	F1D7B4F9	Spizellomyces	Root (chytrids etc.)	backbone	424	373	12	13.351	1.000	8.160	0.302	0.016	0.682	0.537	4.7406
+C	0.4	F3253B6A	Synchytrium	Root (chytrids etc.)	backbone	395	343	13	14.329	1.000	8.659	0.308	0.013	0.678	0.530	5.786
+C	0.4	F797C73E	Zygophlyctis	Root (chytrids etc.)	backbone	355	270	8.0	9.807	1.000	6.444	0.264	0.008	0.728	0.524	3.4324
+C	0.4	FE719DCE	Blyttiomyces	Root (chytrids etc.)	backbone	400	306	11.0	12.618	1.000	7.833	0.328	0.008	0.664	0.528	4.3472
+C	0.4	F5655B54	Hyaloraphidium	Root (chytrids etc.)	backbone	405	345	11	13.159	1.000	8.217	0.264	0.027	0.709	0.533	2.7
+C	0.4	FC8B8027	Gonapodya	Root (chytrids etc.)	backbone	387	329	13	14.620	0.997	9.025	0.297	0.015	0.688	0.534	5.2059
+C	0.4	F18B6B82	Piromyces	Root (chytrids etc.)	backbone	339	248	9.0	9.589	0.984	6.258	0.365	0.002	0.632	0.528	4.48
+C	0.4	FCDD8027	Basidiobolus	Entomophthorales+Basidiobolus	backbone	482	421	10	11.772	0.976	7.190	0.255	0.011	0.734	0.529	2.5327
+C	0.4	FDAC0301	Capillidium	Entomophthorales+Basidiobolus	backbone	359	293	9	11.140	0.997	7.039	0.304	0.009	0.687	0.531	2.7127
+C	0.4	F0AFF821	Conidiobolus	Entomophthorales+Basidiobolus	backbone	388	302	7.0	8.215	0.980	5.358	0.247	0.008	0.745	0.536	1.5748
+C	0.4	FC345CF7	Neoconidiobolus	Entomophthorales+Basidiobolus	backbone	374	294	9.0	9.932	0.993	6.463	0.336	0.005	0.659	0.533	2.8592
+C	0.4	F46AF962	Acaulopage	Zoopagales	backbone	393	310	7.0	8.081	0.971	5.231	0.125	0.023	0.853	0.529	1.1393
+C	0.4	FE0E7C3D	Cochlonema	Zoopagales	backbone	398	316	11.0	12.668	1.000	7.996	0.290	0.018	0.691	0.525	3.9895
+C	0.4	FEB493EF	Piptocephalis	Zoopagales	backbone	388	330	8.0	10.833	0.973	6.754	0.176	0.015	0.808	0.527	2.0794
+C	0.4	F186E471	Stylopage	Zoopagales	backbone	334	242	9.0	9.438	1.000	6.379	0.335	0.022	0.643	0.535	4.0868
+C	0.4	FB5167BD	Syncephalis	Zoopagales	backbone	402	333	11	12.787	0.988	7.917	0.342	0.014	0.644	0.532	4.4466
+C	0.4	F9368871	Thamnocephalis	Zoopagales	backbone	366	291	11	12.966	0.993	8.448	0.318	0.027	0.655	0.533	3.8994
+C	0.4	FF98D640	Zoopage	Zoopagales	backbone	324	253	8	9.976	0.964	6.584	0.192	0.025	0.784	0.518	2.2489
+C	0.4	F9A17E9D	Zoophagus	Zoopagales	backbone	374	287	9	11.003	0.983	7.463	0.251	0.014	0.735	0.523	2.6778
+C	0.4	F80EB351	Coemansia	Coemansia strains	coemansia_strain	407	334	6.0	8.027	0.961	5.129	0.100	0.030	0.869	0.521	0.4339
+C	0.4	FC1174D9	Coemansia	Coemansia strains	coemansia_strain	408	329	7	8.486	0.976	5.321	0.094	0.036	0.870	0.519	0.5276
+C	0.4	F2470181	Coemansia	Coemansia strains	coemansia_strain	406	333	6	8.003	0.961	5.123	0.099	0.030	0.871	0.522	0.411
+C	0.4	F4F8BFB2	Coemansia	Coemansia strains	coemansia_strain	406	333	6	7.985	0.964	5.091	0.099	0.031	0.870	0.521	0.428
+C	0.4	FD8916FB	Coemansia	Coemansia strains	coemansia_strain	421	346	7.0	8.462	0.962	5.366	0.101	0.026	0.873	0.518	0.3858
+C	0.4	F333880B	Coemansia	Coemansia strains	coemansia_strain	420	344	7.0	8.215	0.962	5.226	0.099	0.028	0.874	0.519	0.3826
+C	0.4	F5353C03	Coemansia	Coemansia strains	coemansia_strain	420	339	7	8.186	0.965	5.242	0.101	0.025	0.874	0.519	0.3751
+C	0.4	F7A7AA4C	Coemansia	Coemansia strains	coemansia_strain	406	333	6	8.006	0.961	5.125	0.101	0.030	0.869	0.521	0.4151
+C	0.4	F8C73C93	Coemansia	Coemansia strains	coemansia_strain	403	329	7	7.933	0.960	5.091	0.108	0.029	0.863	0.514	0.406
+C	0.4	F35EFF3E	Coemansia	Coemansia strains	coemansia_strain	393	326	6.0	7.877	0.966	4.987	0.115	0.023	0.862	0.520	0.5087
+C	0.4	FDFF0B8B	Coemansia	Coemansia strains	coemansia_strain	402	323	6	8.269	0.972	5.208	0.104	0.036	0.860	0.520	0.4927
+C	0.4	F0DB79EE	Coemansia	Coemansia strains	coemansia_strain	406	326	6.0	8.230	0.972	5.166	0.095	0.037	0.868	0.521	0.4891
+C	0.4	F9C995D7	Lachancea	Saccharomycetes anchors	anchor_yeast	413	340	6.0	7.471	0.944	4.820	0.091	0.014	0.895	0.533	0.0864
+C	0.4	F8E439FE	Petasospora	Saccharomycetes anchors	anchor_yeast	470	401	5	7.175	0.948	4.688	0.106	0.010	0.884	0.534	0.2539
+C	0.4	FF88EFD9	Saccharomycopsis	Saccharomycetes anchors	anchor_yeast	450	356	5.0	6.674	0.947	4.365	0.100	0.012	0.888	0.535	0.1964
+C	0.4	F20FC9BD	Williopsis	Saccharomycetes anchors	anchor_yeast	476	399	6	7.659	0.955	4.871	0.110	0.017	0.873	0.531	0.23
+C	0.4	FF422533	Blumeria	Pezizomycotina anchors	anchor_pezizomycotina	913	886	5.0	7.079	0.991	4.185	0.247	0.015	0.739	0.602	1.187
+C	0.4	F1A67265	Cenococcum	Pezizomycotina anchors	anchor_pezizomycotina	997	982	6.0	6.958	0.993	4.148	0.312	0.019	0.669	0.633	1.9187
+C	0.4	FC7A1E40	Clonostachys	Pezizomycotina anchors	anchor_pezizomycotina	892	867	5	7.051	0.983	4.159	0.254	0.020	0.726	0.597	1.7325
+C	0.4	F665BA79	Trichophyton	Pezizomycotina anchors	anchor_pezizomycotina	926	902	6.0	7.980	0.997	4.728	0.263	0.018	0.720	0.597	2.024
+C	0.5	F1C537C3	Dimargaris	Dimargaritales+Ramicandelaber	backbone	420	229	6	7.087	0.978	5.359	0.183	0.014	0.803	0.578	1.3859
+C	0.5	F1C9E2AA	Dispira	Dimargaritales+Ramicandelaber	backbone	364	157	4	5.287	0.930	3.927	0.148	0.012	0.840	0.589	0.5564
+C	0.5	F4FD0401	Tieghemiomyces	Dimargaritales+Ramicandelaber	backbone	408	231	7	7.528	0.983	5.510	0.168	0.021	0.811	0.575	1.3285
+C	0.5	F3D937C5	Capniomyces	Harpellales	backbone	372	175	7	7.286	0.983	5.673	0.256	0.010	0.734	0.593	2.0875
+C	0.5	F45BD9C7	Furculomyces	Harpellales	backbone	375	168	6.0	6.625	0.970	5.312	0.242	0.006	0.752	0.594	2.0292
+C	0.5	FCCDAB75	Smittium	Harpellales	backbone	370	170	6.0	6.924	0.959	5.519	0.237	0.009	0.754	0.583	1.9316
+C	0.5	F23D95F9	Zancudomyces	Harpellales	backbone	367	162	6.0	6.531	0.969	5.279	0.210	0.017	0.773	0.589	1.3885
+C	0.5	F0DE0BF4	Coemansia	Kickxellales core	backbone	424	199	4	5.588	0.945	4.227	0.116	0.027	0.857	0.587	0.3891
+C	0.5	F4C3EFF5	Dipsacomyces	Kickxellales core	backbone	379	168	5.0	5.571	0.964	4.159	0.116	0.044	0.840	0.584	0.6532
+C	0.5	F9F51274	Kickxella	Kickxellales core	backbone	405	204	5.0	6.054	0.951	4.502	0.112	0.031	0.857	0.578	0.8907
+C	0.5	F43C8248	Linderina	Kickxellales core	backbone	408	210	5.0	6.181	0.952	4.513	0.127	0.036	0.837	0.587	0.9548
+C	0.5	FE0E32D4	Martensiomyces	Kickxellales core	backbone	441	224	5.0	6.259	0.955	4.698	0.117	0.036	0.847	0.583	0.5974
+C	0.5	F18CA942	Mycoemilia	Mycoemilia+Spiromyces	backbone	390	190	6.0	7.137	0.974	5.383	0.244	0.015	0.741	0.587	1.6742
+C	0.5	F5C985FA	Spiromyces	Mycoemilia+Spiromyces	backbone	259	89	5	5.697	0.989	4.383	0.333	0.022	0.645	0.576	1.7298
+C	0.5	F7FE4923	Ramicandelaber	Dimargaritales+Ramicandelaber	backbone	365	167	5	5.437	0.928	4.307	0.104	0.028	0.869	0.591	0.5146
+C	0.5	F9F7649B	Ambispora	Other Mucoromycota group	backbone	456	242	10.0	10.926	0.996	7.760	0.395	0.008	0.597	0.590	3.0647
+C	0.5	FC303ED2	Geosiphon	Other Mucoromycota group	backbone	458	245	9	10.780	1.000	7.823	0.402	0.011	0.587	0.595	4.6403
+C	0.5	F359FEE0	Diversispora	Other Mucoromycota group	backbone	462	242	9.0	10.760	1.000	7.674	0.412	0.005	0.583	0.590	3.7018
+C	0.5	FA186146	Gigaspora	Other Mucoromycota group	backbone	467	246	9.0	10.703	1.000	7.726	0.419	0.006	0.575	0.597	3.2474
+C	0.5	F1815028	Entrophospora	Other Mucoromycota group	backbone	453	234	10.0	10.765	1.000	7.822	0.383	0.008	0.610	0.591	3.485
+C	0.5	F3A2FF18	Oehlia	Other Mucoromycota group	backbone	471	247	10	10.356	1.000	7.467	0.407	0.005	0.588	0.597	3.0456
+C	0.5	FDB574B3	Rhizophagus	Other Mucoromycota group	backbone	480	251	10	10.602	1.000	7.629	0.395	0.005	0.599	0.597	3.1901
+C	0.5	F5931C4A	Paraglomus	Other Mucoromycota group	backbone	444	236	10.0	11.085	1.000	7.941	0.394	0.013	0.594	0.593	3.479
+C	0.5	F574EFC1	Actinomortierella	Other Mucoromycota group	backbone	483	260	7.5	8.604	0.996	6.270	0.276	0.018	0.706	0.588	2.6795
+C	0.5	F6C0647F	Cryptocalciella	Other Mucoromycota group	backbone	0	0									2.9277
+C	0.5	F22945DF	Bifiguratus	Other Mucoromycota group	backbone	473	262	8.0	9.309	0.992	6.619	0.326	0.018	0.656	0.592	3.7747
+C	0.5	FEC49E8E	Endogone	Other Mucoromycota group	backbone	420	206	9.0	10.141	1.000	7.101	0.386	0.012	0.602	0.590	3.6294
+C	0.5	F08FC5A1	Circinella	Mucorales	backbone	466	250	8.0	9.044	0.996	6.533	0.372	0.006	0.622	0.589	3.9094
+C	0.5	FEACB2E7	Cunninghamella	Mucorales	backbone	458	232	7.0	8.272	0.991	5.991	0.357	0.004	0.639	0.591	3.9213
+C	0.5	F7F7C035	Gongronella	Mucorales	backbone	465	242	8.0	9.140	0.988	6.480	0.309	0.015	0.676	0.589	3.7797
+C	0.5	F6FD6BCA	Hesseltinella	Mucorales	backbone	465	242	8.0	9.285	0.988	6.677	0.316	0.020	0.664	0.589	4.086
+C	0.5	F104222C	Rhizomucor	Mucorales	backbone	468	258	8.0	9.760	0.996	7.115	0.337	0.019	0.644	0.597	4.224
+C	0.5	F8E635D0	Rhizopus	Mucorales	backbone	474	239	7	8.176	0.987	5.837	0.308	0.010	0.682	0.590	3.3761
+C	0.5	FAC8BA67	Syncephalastrum	Mucorales	backbone	471	249	8	9.498	0.996	6.797	0.318	0.019	0.664	0.594	3.9988
+C	0.5	FBAB06C3	Thermomucor	Mucorales	backbone	476	260	9.0	10.073	1.000	7.232	0.347	0.018	0.635	0.595	4.2323
+C	0.5	F4696F25	Umbelopsis	Other Mucoromycota group	backbone	497	267	8	9.131	0.996	6.486	0.321	0.010	0.669	0.592	3.8581
+C	0.5	F5C4F326	Sorochytrium	Root (chytrids etc.)	backbone	406	218	8.0	9.486	0.995	6.935	0.284	0.025	0.691	0.575	4.0159
+C	0.5	FD4B4AC6	Paraphysoderma	Root (chytrids etc.)	backbone	407	231	9	10.641	0.996	7.773	0.357	0.009	0.634	0.593	4.8362
+C	0.5	F3F252DC	Caulochytrium	Root (chytrids etc.)	backbone	368	173	6	6.809	0.971	5.132	0.084	0.031	0.885	0.578	0.5729
+C	0.5	F5A4E39E	Phlyctochytrium	Root (chytrids etc.)	backbone	418	233	9	9.704	1.000	7.064	0.319	0.010	0.671	0.590	3.3907
+C	0.5	F58B3FB2	Nowakowskiella	Root (chytrids etc.)	backbone	327	158	9.0	9.709	1.000	7.319	0.358	0.007	0.636	0.590	4.4937
+C	0.5	FF74C8A6	Lobulomyces	Root (chytrids etc.)	backbone	358	168	9.0	10.458	1.000	7.871	0.391	0.006	0.603	0.596	5.9779
+C	0.5	FBDB2FE6	Rhizophlyctis	Root (chytrids etc.)	backbone	427	233	10	10.966	0.996	8.008	0.350	0.012	0.638	0.584	3.8201
+C	0.5	FEF8F4D3	Polyrhizophydium	Root (chytrids etc.)	backbone	405	223	9	9.771	0.987	7.137	0.294	0.035	0.671	0.586	4.2073
+C	0.5	F1D7B4F9	Spizellomyces	Root (chytrids etc.)	backbone	424	239	9	10.490	1.000	7.541	0.346	0.015	0.639	0.594	4.7406
+C	0.5	F3253B6A	Synchytrium	Root (chytrids etc.)	backbone	395	219	10	11.553	1.000	8.282	0.351	0.014	0.635	0.589	5.786
+C	0.5	F797C73E	Zygophlyctis	Root (chytrids etc.)	backbone	355	163	7	8.031	1.000	6.113	0.308	0.008	0.684	0.589	3.4324
+C	0.5	FE719DCE	Blyttiomyces	Root (chytrids etc.)	backbone	400	200	9.0	10.225	1.000	7.708	0.381	0.007	0.612	0.579	4.3472
+C	0.5	F5655B54	Hyaloraphidium	Root (chytrids etc.)	backbone	405	222	10.0	10.572	1.000	7.616	0.332	0.021	0.647	0.580	2.7
+C	0.5	FC8B8027	Gonapodya	Root (chytrids etc.)	backbone	387	212	11.0	11.953	0.995	8.636	0.354	0.013	0.633	0.581	5.2059
+C	0.5	F18B6B82	Piromyces	Root (chytrids etc.)	backbone	339	160	7.0	7.737	0.981	5.916	0.408	0.001	0.591	0.591	4.48
+C	0.5	FCDD8027	Basidiobolus	Entomophthorales+Basidiobolus	backbone	482	255	7	8.741	0.965	6.286	0.283	0.009	0.708	0.589	2.5327
+C	0.5	FDAC0301	Capillidium	Entomophthorales+Basidiobolus	backbone	359	186	8.0	8.747	0.995	6.520	0.356	0.010	0.634	0.595	2.7127
+C	0.5	F0AFF821	Conidiobolus	Entomophthorales+Basidiobolus	backbone	388	189	6	6.804	0.984	5.133	0.319	0.004	0.677	0.597	1.5748
+C	0.5	FC345CF7	Neoconidiobolus	Entomophthorales+Basidiobolus	backbone	374	188	7.5	8.271	0.995	6.217	0.367	0.006	0.626	0.587	2.8592
+C	0.5	F46AF962	Acaulopage	Zoopagales	backbone	393	191	5	6.246	0.958	4.594	0.145	0.022	0.833	0.592	1.1393
+C	0.5	FE0E7C3D	Cochlonema	Zoopagales	backbone	398	189	8	9.413	1.000	7.014	0.327	0.021	0.652	0.582	3.9895
+C	0.5	FEB493EF	Piptocephalis	Zoopagales	backbone	388	206	6.0	7.631	0.956	5.540	0.197	0.015	0.788	0.587	2.0794
+C	0.5	F186E471	Stylopage	Zoopagales	backbone	334	153	7	7.686	1.000	6.164	0.347	0.024	0.629	0.598	4.0868
+C	0.5	FB5167BD	Syncephalis	Zoopagales	backbone	402	208	9.0	10.058	0.990	7.331	0.383	0.012	0.605	0.584	4.4466
+C	0.5	F9368871	Thamnocephalis	Zoopagales	backbone	366	175	8	9.531	0.994	7.612	0.371	0.025	0.604	0.593	3.8994
+C	0.5	FF98D640	Zoopage	Zoopagales	backbone	324	145	5	6.807	0.952	5.284	0.215	0.023	0.762	0.587	2.2489
+C	0.5	F9A17E9D	Zoophagus	Zoopagales	backbone	374	184	7.5	8.978	0.973	6.997	0.280	0.016	0.705	0.583	2.6778
+C	0.5	F80EB351	Coemansia	Coemansia strains	coemansia_strain	407	199	5	5.688	0.940	4.252	0.110	0.027	0.863	0.589	0.4339
+C	0.5	FC1174D9	Coemansia	Coemansia strains	coemansia_strain	408	196	5.0	5.837	0.959	4.361	0.101	0.037	0.862	0.584	0.5276
+C	0.5	F2470181	Coemansia	Coemansia strains	coemansia_strain	406	199	4	5.638	0.940	4.216	0.111	0.027	0.863	0.589	0.411
+C	0.5	F4F8BFB2	Coemansia	Coemansia strains	coemansia_strain	406	198	4.0	5.480	0.944	4.111	0.112	0.027	0.862	0.589	0.428
+C	0.5	FD8916FB	Coemansia	Coemansia strains	coemansia_strain	421	195	4	5.764	0.949	4.323	0.113	0.028	0.859	0.588	0.3858
+C	0.5	F333880B	Coemansia	Coemansia strains	coemansia_strain	420	196	4.5	5.811	0.949	4.363	0.112	0.029	0.859	0.587	0.3826
+C	0.5	F5353C03	Coemansia	Coemansia strains	coemansia_strain	420	191	5	5.801	0.953	4.401	0.113	0.027	0.860	0.586	0.3751
+C	0.5	F7A7AA4C	Coemansia	Coemansia strains	coemansia_strain	406	199	4	5.653	0.940	4.227	0.110	0.027	0.863	0.589	0.4151
+C	0.5	F8C73C93	Coemansia	Coemansia strains	coemansia_strain	403	191	4	5.539	0.937	4.136	0.121	0.024	0.855	0.578	0.406
+C	0.5	F35EFF3E	Coemansia	Coemansia strains	coemansia_strain	393	195	4	5.477	0.949	4.146	0.134	0.025	0.841	0.582	0.5087
+C	0.5	FDFF0B8B	Coemansia	Coemansia strains	coemansia_strain	402	190	5.0	5.837	0.953	4.357	0.111	0.035	0.854	0.582	0.4927
+C	0.5	F0DB79EE	Coemansia	Coemansia strains	coemansia_strain	406	195	5	5.862	0.954	4.403	0.113	0.034	0.853	0.580	0.4891
+C	0.5	F9C995D7	Lachancea	Saccharomycetes anchors	anchor_yeast	413	218	4.0	5.390	0.927	3.986	0.091	0.015	0.894	0.582	0.0864
+C	0.5	F8E439FE	Petasospora	Saccharomycetes anchors	anchor_yeast	470	256	4.0	5.195	0.934	3.866	0.115	0.011	0.874	0.579	0.2539
+C	0.5	FF88EFD9	Saccharomycopsis	Saccharomycetes anchors	anchor_yeast	450	226	4.0	5.049	0.916	3.782	0.121	0.018	0.862	0.577	0.1964
+C	0.5	F20FC9BD	Williopsis	Saccharomycetes anchors	anchor_yeast	476	254	4.0	5.472	0.945	4.069	0.117	0.017	0.867	0.582	0.23
+C	0.5	FF422533	Blumeria	Pezizomycotina anchors	anchor_pezizomycotina	913	740	5.0	6.362	0.989	3.992	0.267	0.015	0.718	0.633	1.187
+C	0.5	F1A67265	Cenococcum	Pezizomycotina anchors	anchor_pezizomycotina	997	873	5	6.439	0.992	4.035	0.339	0.019	0.642	0.649	1.9187
+C	0.5	FC7A1E40	Clonostachys	Pezizomycotina anchors	anchor_pezizomycotina	892	700	5.0	6.320	0.979	4.016	0.289	0.020	0.691	0.628	1.7325
+C	0.5	F665BA79	Trichophyton	Pezizomycotina anchors	anchor_pezizomycotina	926	724	6.0	7.037	0.996	4.508	0.299	0.016	0.685	0.629	2.024
+C	0.6	F1C537C3	Dimargaris	Dimargaritales+Ramicandelaber	backbone	420	96	4.0	5.115	0.969	4.795	0.216	0.016	0.768	0.659	1.3859
+C	0.6	F1C9E2AA	Dispira	Dimargaritales+Ramicandelaber	backbone	364	68	3.5	3.941	0.941	3.572	0.157	0.019	0.825	0.664	0.5564
+C	0.6	F4FD0401	Tieghemiomyces	Dimargaritales+Ramicandelaber	backbone	408	93	5	5.237	0.968	4.705	0.191	0.016	0.793	0.663	1.3285
+C	0.6	F3D937C5	Capniomyces	Harpellales	backbone	372	84	5.0	5.845	0.976	5.957	0.293	0.016	0.690	0.645	2.0875
+C	0.6	F45BD9C7	Furculomyces	Harpellales	backbone	375	83	5	5.217	0.940	5.354	0.279	0.009	0.711	0.648	2.0292
+C	0.6	FCCDAB75	Smittium	Harpellales	backbone	370	78	5.0	5.321	0.936	5.543	0.280	0.005	0.716	0.650	1.9316
+C	0.6	F23D95F9	Zancudomyces	Harpellales	backbone	367	67	4	4.910	0.970	5.010	0.283	0.015	0.702	0.660	1.3885
+C	0.6	F0DE0BF4	Coemansia	Kickxellales core	backbone	424	89	3	4.135	0.921	3.794	0.133	0.022	0.845	0.650	0.3891
+C	0.6	F4C3EFF5	Dipsacomyces	Kickxellales core	backbone	379	72	2.5	3.667	0.944	3.530	0.148	0.038	0.814	0.658	0.6532
+C	0.6	F9F51274	Kickxella	Kickxellales core	backbone	405	90	3.0	4.078	0.944	3.994	0.120	0.025	0.856	0.642	0.8907
+C	0.6	F43C8248	Linderina	Kickxellales core	backbone	408	95	4	4.263	0.926	4.120	0.146	0.017	0.837	0.653	0.9548
+C	0.6	FE0E32D4	Martensiomyces	Kickxellales core	backbone	441	100	4.0	4.620	0.950	4.265	0.143	0.035	0.823	0.655	0.5974
+C	0.6	F18CA942	Mycoemilia	Mycoemilia+Spiromyces	backbone	390	87	5	5.529	0.943	5.355	0.295	0.019	0.686	0.651	1.6742
+C	0.6	F5C985FA	Spiromyces	Mycoemilia+Spiromyces	backbone	259	36	4.0	3.972	0.972	3.785	0.406	0.014	0.580	0.678	1.7298
+C	0.6	F7FE4923	Ramicandelaber	Dimargaritales+Ramicandelaber	backbone	365	77	3	3.416	0.870	3.317	0.122	0.034	0.844	0.648	0.5146
+C	0.6	F9F7649B	Ambispora	Other Mucoromycota group	backbone	456	110	7.0	7.991	0.991	7.276	0.433	0.010	0.556	0.663	3.0647
+C	0.6	FC303ED2	Geosiphon	Other Mucoromycota group	backbone	458	118	7.0	8.110	1.000	7.583	0.413	0.016	0.572	0.659	4.6403
+C	0.6	F359FEE0	Diversispora	Other Mucoromycota group	backbone	462	105	7	8.305	1.000	7.381	0.451	0.006	0.544	0.672	3.7018
+C	0.6	FA186146	Gigaspora	Other Mucoromycota group	backbone	467	121	7	8.248	1.000	7.623	0.463	0.004	0.533	0.662	3.2474
+C	0.6	F1815028	Entrophospora	Other Mucoromycota group	backbone	453	105	7	8.295	1.000	7.737	0.406	0.009	0.584	0.658	3.485
+C	0.6	F3A2FF18	Oehlia	Other Mucoromycota group	backbone	471	121	7	8.083	1.000	7.321	0.440	0.005	0.555	0.663	3.0456
+C	0.6	FDB574B3	Rhizophagus	Other Mucoromycota group	backbone	480	123	7	8.293	1.000	7.493	0.428	0.004	0.568	0.656	3.1901
+C	0.6	F5931C4A	Paraglomus	Other Mucoromycota group	backbone	444	110	7.0	8.118	1.000	7.624	0.427	0.017	0.557	0.659	3.479
+C	0.6	F574EFC1	Actinomortierella	Other Mucoromycota group	backbone	483	119	6	6.613	0.992	5.726	0.324	0.017	0.659	0.667	2.6795
+C	0.6	F6C0647F	Cryptocalciella	Other Mucoromycota group	backbone	0	0									2.9277
+C	0.6	F22945DF	Bifiguratus	Other Mucoromycota group	backbone	473	123	6	6.732	0.992	6.034	0.377	0.017	0.606	0.669	3.7747
+C	0.6	FEC49E8E	Endogone	Other Mucoromycota group	backbone	420	94	7.0	8.298	1.000	6.817	0.435	0.008	0.558	0.647	3.6294
+C	0.6	F08FC5A1	Circinella	Mucorales	backbone	466	105	6	6.657	1.000	6.282	0.408	0.006	0.587	0.662	3.9094
+C	0.6	FEACB2E7	Cunninghamella	Mucorales	backbone	458	106	6.0	6.198	0.991	5.774	0.387	0.005	0.609	0.663	3.9213
+C	0.6	F7F7C035	Gongronella	Mucorales	backbone	465	109	6	6.413	0.972	6.085	0.320	0.011	0.668	0.662	3.7797
+C	0.6	F6FD6BCA	Hesseltinella	Mucorales	backbone	465	110	7.0	6.736	0.973	6.263	0.332	0.024	0.644	0.663	4.086
+C	0.6	F104222C	Rhizomucor	Mucorales	backbone	468	126	7.0	7.294	0.992	6.896	0.372	0.017	0.610	0.664	4.224
+C	0.6	F8E635D0	Rhizopus	Mucorales	backbone	474	111	6	6.441	0.982	6.122	0.343	0.010	0.648	0.664	3.3761
+C	0.6	FAC8BA67	Syncephalastrum	Mucorales	backbone	471	121	6	7.066	0.992	6.645	0.366	0.014	0.620	0.660	3.9988
+C	0.6	FBAB06C3	Thermomucor	Mucorales	backbone	476	125	7	7.080	1.000	6.532	0.392	0.017	0.591	0.657	4.2323
+C	0.6	F4696F25	Umbelopsis	Other Mucoromycota group	backbone	497	126	6.0	6.571	1.000	5.829	0.360	0.008	0.632	0.658	3.8581
+C	0.6	F5C4F326	Sorochytrium	Root (chytrids etc.)	backbone	406	90	6.0	7.000	0.989	6.447	0.306	0.027	0.667	0.664	4.0159
+C	0.6	FD4B4AC6	Paraphysoderma	Root (chytrids etc.)	backbone	407	110	7.0	7.691	0.991	7.470	0.372	0.004	0.624	0.660	4.8362
+C	0.6	F3F252DC	Caulochytrium	Root (chytrids etc.)	backbone	368	68	4.0	4.735	0.985	4.384	0.124	0.025	0.851	0.657	0.5729
+C	0.6	F5A4E39E	Phlyctochytrium	Root (chytrids etc.)	backbone	418	102	7.0	7.333	1.000	6.605	0.338	0.008	0.654	0.657	3.3907
+C	0.6	F58B3FB2	Nowakowskiella	Root (chytrids etc.)	backbone	327	73	7	8.151	1.000	7.725	0.348	0.007	0.645	0.663	4.4937
+C	0.6	FF74C8A6	Lobulomyces	Root (chytrids etc.)	backbone	358	80	8.0	7.838	1.000	7.671	0.383	0.008	0.609	0.662	5.9779
+C	0.6	FBDB2FE6	Rhizophlyctis	Root (chytrids etc.)	backbone	427	105	8	8.829	1.000	8.029	0.383	0.014	0.603	0.667	3.8201
+C	0.6	FEF8F4D3	Polyrhizophydium	Root (chytrids etc.)	backbone	405	97	7	7.546	0.990	6.930	0.328	0.033	0.639	0.656	4.2073
+C	0.6	F1D7B4F9	Spizellomyces	Root (chytrids etc.)	backbone	424	113	8	8.389	1.000	7.510	0.374	0.009	0.616	0.655	4.7406
+C	0.6	F3253B6A	Synchytrium	Root (chytrids etc.)	backbone	395	97	8	8.732	1.000	8.082	0.394	0.009	0.596	0.661	5.786
+C	0.6	F797C73E	Zygophlyctis	Root (chytrids etc.)	backbone	355	71	5	5.761	1.000	5.630	0.323	0.017	0.660	0.658	3.4324
+C	0.6	FE719DCE	Blyttiomyces	Root (chytrids etc.)	backbone	400	80	7.5	7.300	1.000	7.624	0.418	0.003	0.579	0.663	4.3472
+C	0.6	F5655B54	Hyaloraphidium	Root (chytrids etc.)	backbone	405	95	8	8.295	1.000	8.032	0.390	0.011	0.599	0.660	2.7
+C	0.6	FC8B8027	Gonapodya	Root (chytrids etc.)	backbone	387	89	9	9.315	1.000	8.455	0.392	0.011	0.597	0.668	5.2059
+C	0.6	F18B6B82	Piromyces	Root (chytrids etc.)	backbone	339	70	5.5	5.971	0.986	5.830	0.438	0.000	0.562	0.657	4.48
+C	0.6	FCDD8027	Basidiobolus	Entomophthorales+Basidiobolus	backbone	482	118	5.0	5.958	0.932	5.491	0.319	0.013	0.669	0.665	2.5327
+C	0.6	FDAC0301	Capillidium	Entomophthorales+Basidiobolus	backbone	359	89	7	7.067	0.989	6.609	0.372	0.011	0.617	0.665	2.7127
+C	0.6	F0AFF821	Conidiobolus	Entomophthorales+Basidiobolus	backbone	388	92	5.0	5.467	0.967	5.046	0.348	0.006	0.646	0.658	1.5748
+C	0.6	FC345CF7	Neoconidiobolus	Entomophthorales+Basidiobolus	backbone	374	87	6	6.667	0.989	6.057	0.407	0.014	0.579	0.655	2.8592
+C	0.6	F46AF962	Acaulopage	Zoopagales	backbone	393	90	3.0	4.222	0.944	4.120	0.232	0.021	0.747	0.661	1.1393
+C	0.6	FE0E7C3D	Cochlonema	Zoopagales	backbone	398	80	6.0	6.825	1.000	6.698	0.348	0.020	0.632	0.670	3.9895
+C	0.6	FEB493EF	Piptocephalis	Zoopagales	backbone	388	94	5.0	5.287	0.936	5.183	0.223	0.022	0.755	0.662	2.0794
+C	0.6	F186E471	Stylopage	Zoopagales	backbone	334	75	6	6.240	1.000	5.963	0.359	0.028	0.613	0.664	4.0868
+C	0.6	FB5167BD	Syncephalis	Zoopagales	backbone	402	91	7	7.187	0.978	6.802	0.390	0.011	0.599	0.665	4.4466
+C	0.6	F9368871	Thamnocephalis	Zoopagales	backbone	366	83	7	7.193	0.988	7.360	0.419	0.017	0.564	0.667	3.8994
+C	0.6	FF98D640	Zoopage	Zoopagales	backbone	324	64	3.0	4.344	0.906	4.694	0.263	0.014	0.723	0.671	2.2489
+C	0.6	F9A17E9D	Zoophagus	Zoopagales	backbone	374	80	6.0	5.888	0.975	6.211	0.310	0.011	0.679	0.666	2.6778
+C	0.6	F80EB351	Coemansia	Coemansia strains	coemansia_strain	407	90	3.0	4.267	0.911	4.001	0.117	0.029	0.854	0.651	0.4339
+C	0.6	FC1174D9	Coemansia	Coemansia strains	coemansia_strain	408	88	4.0	4.136	0.955	3.816	0.104	0.030	0.865	0.650	0.5276
+C	0.6	F2470181	Coemansia	Coemansia strains	coemansia_strain	406	90	3.0	4.178	0.911	3.921	0.117	0.027	0.856	0.650	0.411
+C	0.6	F4F8BFB2	Coemansia	Coemansia strains	coemansia_strain	406	89	3	4.191	0.921	3.916	0.121	0.024	0.855	0.649	0.428
+C	0.6	FD8916FB	Coemansia	Coemansia strains	coemansia_strain	421	87	3	4.161	0.931	3.817	0.141	0.022	0.837	0.650	0.3858
+C	0.6	F333880B	Coemansia	Coemansia strains	coemansia_strain	420	87	3	4.161	0.931	3.817	0.141	0.022	0.837	0.650	0.3826
+C	0.6	F5353C03	Coemansia	Coemansia strains	coemansia_strain	420	85	3	4.141	0.929	3.833	0.142	0.020	0.838	0.650	0.3751
+C	0.6	F7A7AA4C	Coemansia	Coemansia strains	coemansia_strain	406	90	3.0	4.178	0.911	3.921	0.117	0.027	0.856	0.650	0.4151
+C	0.6	F8C73C93	Coemansia	Coemansia strains	coemansia_strain	403	83	3	4.361	0.928	4.083	0.146	0.028	0.826	0.651	0.406
+C	0.6	F35EFF3E	Coemansia	Coemansia strains	coemansia_strain	393	87	4	4.103	0.943	3.901	0.162	0.014	0.824	0.650	0.5087
+C	0.6	FDFF0B8B	Coemansia	Coemansia strains	coemansia_strain	402	85	4	4.059	0.941	3.729	0.104	0.035	0.861	0.650	0.4927
+C	0.6	F0DB79EE	Coemansia	Coemansia strains	coemansia_strain	406	86	3.0	4.058	0.942	3.757	0.103	0.037	0.860	0.649	0.4891
+C	0.6	F9C995D7	Lachancea	Saccharomycetes anchors	anchor_yeast	413	90	3.0	3.867	0.889	3.258	0.132	0.006	0.862	0.667	0.0864
+C	0.6	F8E439FE	Petasospora	Saccharomycetes anchors	anchor_yeast	470	110	3.0	3.936	0.909	3.375	0.145	0.012	0.843	0.668	0.2539
+C	0.6	FF88EFD9	Saccharomycopsis	Saccharomycetes anchors	anchor_yeast	450	92	3.0	3.293	0.848	3.181	0.145	0.013	0.842	0.677	0.1964
+C	0.6	F20FC9BD	Williopsis	Saccharomycetes anchors	anchor_yeast	476	115	3	4.252	0.939	3.697	0.123	0.008	0.869	0.672	0.23
+C	0.6	FF422533	Blumeria	Pezizomycotina anchors	anchor_pezizomycotina	913	450	4.0	5.216	0.991	3.640	0.343	0.017	0.640	0.703	1.187
+C	0.6	F1A67265	Cenococcum	Pezizomycotina anchors	anchor_pezizomycotina	997	585	5	5.458	0.988	3.783	0.406	0.018	0.576	0.701	1.9187
+C	0.6	FC7A1E40	Clonostachys	Pezizomycotina anchors	anchor_pezizomycotina	892	429	4	5.242	0.981	3.749	0.345	0.017	0.638	0.688	1.7325
+C	0.6	F665BA79	Trichophyton	Pezizomycotina anchors	anchor_pezizomycotina	926	443	5	5.867	0.993	4.276	0.362	0.015	0.623	0.681	2.024

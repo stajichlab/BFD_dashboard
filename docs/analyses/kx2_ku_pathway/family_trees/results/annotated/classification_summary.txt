@@ -1,0 +1,3 @@
+lig: tree 203 leaves (0 members dropped by trimming); leave-one-out 15/21 references re-assigned to their own clade; long-branch threshold 0.980
+reca: tree 362 leaves (0 members dropped by trimming); leave-one-out 13/31 references re-assigned to their own clade; long-branch threshold 0.745
+polx: tree 87 leaves (0 members dropped by trimming); leave-one-out 13/15 references re-assigned to their own clade; long-branch threshold 0.955

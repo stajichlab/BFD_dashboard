@@ -1,0 +1,22 @@
+reference	clade	call	assigned_clade	correct	acc
+REF_1	LIG1	ambiguous		False	P18858
+REF_2	LIG1	ambiguous		False	P37913
+REF_3	LIG1	low_support	LIG1	False	Q27474
+REF_4	LIG1	low_support	LIG1	False	Q9W1H4
+REF_5	LIG1	assigned	LIG1	True	P12000
+REF_6	LIG1	assigned	LIG1	True	P04819
+REF_7	LIG1	ambiguous		False	Q42572
+REF_8	LIG3	assigned	LIG3	True	P49916
+REF_9	LIG3	assigned	LIG3	True	P97386
+REF_10	LIG3	assigned	LIG6	False	Q9C1W9
+REF_11	LIG4	assigned	LIG4	True	P49917
+REF_12	LIG4	assigned	LIG4	True	Q8BTF7
+REF_13	LIG4	assigned	LIG4	True	Q90YB1
+REF_14	LIG4	assigned	LIG4	True	Q08387
+REF_15	LIG4	assigned	LIG4	True	O74833
+REF_16	LIG4	assigned	LIG4	True	Q5BH83
+REF_17	LIG4	assigned	LIG4	True	Q7SB49
+REF_18	LIG4	assigned	LIG4	True	Q4WVG8
+REF_19	LIG4	assigned	LIG4	True	P52496
+REF_20	LIG4	assigned	LIG4	True	Q9LL84
+REF_21	LIG4	assigned	LIG4	True	Q7X7E9

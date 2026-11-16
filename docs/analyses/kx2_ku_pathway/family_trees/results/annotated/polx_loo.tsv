@@ -1,0 +1,16 @@
+reference	clade	call	assigned_clade	correct	acc
+REF_1	Pol4	ambiguous		False	P25615
+REF_2	Pol4	ambiguous		False	Q09693
+REF_3	PolLambda	assigned	PolLambda	True	Q9UGP5
+REF_4	PolLambda	assigned	PolLambda	True	Q9QXE2
+REF_5	PolLambda	assigned	PolLambda	True	Q9FNY4
+REF_6	PolLambda	assigned	PolLambda	True	Q67VC8
+REF_7	PolMu	assigned	PolMu	True	Q9NP87
+REF_8	PolMu	assigned	PolMu	True	Q9JIW4
+REF_9	TdT	assigned	TdT	True	P04053
+REF_10	TdT	assigned	TdT	True	P09838
+REF_11	TdT	assigned	TdT	True	P42118
+REF_12	PolBeta	assigned	PolBeta	True	P06746
+REF_13	PolBeta	assigned	PolBeta	True	Q8K409
+REF_14	PolBeta	assigned	PolBeta	True	Q6DRD3
+REF_15	PolBeta	assigned	PolBeta	True	O57383

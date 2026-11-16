@@ -1,0 +1,4 @@
+lig: 35 annotated loci in 31 finished genomes; recovered by a model: 35 (100%); translated cleanly: 35 (100% of recovered); identical to annotation: 32; median identity of clean models to annotation: 1.000; criterion PASSED
+reca: 130 annotated loci in 31 finished genomes; recovered by a model: 130 (100%); translated cleanly: 121 (93% of recovered); identical to annotation: 112; median identity of clean models to annotation: 1.000; criterion PASSED
+polx: 2 annotated loci in 31 finished genomes; recovered by a model: 2 (100%); translated cleanly: 2 (100% of recovered); identical to annotation: 2; median identity of clean models to annotation: 1.000; criterion PASSED
+genomes with a finished rescue: 31 of 31; rescue failed in: []
