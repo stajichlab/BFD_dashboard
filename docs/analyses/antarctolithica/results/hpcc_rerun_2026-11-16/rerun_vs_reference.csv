@@ -1,0 +1,244 @@
+section,item,reference,rerun,diff
+set,phylogeny taxa,159,159,0
+set,phylogeny taxa identical LOCUSTAG set,True,True,0
+set,genus units + AO MAGs (ordination),994,994,0
+set,units in common,994,994,0
+set,RF training species,1779,1779,0
+set,RF classes,16,16,0
+PERMANOVA,struct R2_class,0.5176270025342059,0.5176270025342057,-2.220446049250313e-16
+PERMANOVA,struct R2_subphylum,0.3480140334980625,0.3480140334980625,0.0
+PERMANOVA,struct n_genera,355,355,0
+PERMANOVA,struct_all R2_class,0.5263856475581791,0.526385647558179,-1.1102230246251565e-16
+PERMANOVA,struct_all R2_subphylum,0.3599131486055533,0.3599131486055535,2.220446049250313e-16
+PERMANOVA,struct_all n_genera,355,355,0
+PERMANOVA,codon R2_class,0.5479862349014578,0.5479862349014578,0.0
+PERMANOVA,codon R2_subphylum,0.3290474155353897,0.3290474155353897,0.0
+PERMANOVA,codon n_genera,355,355,0
+PERMANOVA,aa R2_class,0.7439965480925528,0.7439965480925528,0.0
+PERMANOVA,aa R2_subphylum,0.571880538082539,0.5718805380825391,1.1102230246251565e-16
+PERMANOVA,aa n_genera,355,355,0
+PERMANOVA,trna R2_class,0.3490367935831814,0.3490367935831814,0.0
+PERMANOVA,trna R2_subphylum,0.1286601416284507,0.1286601416284507,0.0
+PERMANOVA,trna n_genera,355,355,0
+PERMANOVA,pfam_pa R2_class,0.7146127068631289,0.7146127068631289,0.0
+PERMANOVA,pfam_pa R2_subphylum,0.509118077482078,0.5091180774820782,1.1102230246251565e-16
+PERMANOVA,pfam_pa n_genera,355,355,0
+PERMANOVA,pfam_ab R2_class,0.7109234387441358,0.7109234387441357,-1.1102230246251565e-16
+PERMANOVA,pfam_ab R2_subphylum,0.5411454985536521,0.541145498553652,-1.1102230246251565e-16
+PERMANOVA,pfam_ab n_genera,355,355,0
+PERMANOVA,cazy R2_class,0.6879351530022134,0.6879351530022136,2.220446049250313e-16
+PERMANOVA,cazy R2_subphylum,0.4553815746567107,0.4553815746567108,1.1102230246251565e-16
+PERMANOVA,cazy n_genera,355,355,0
+PERMANOVA,merops R2_class,0.66184375536562,0.6618437553656199,-1.1102230246251565e-16
+PERMANOVA,merops R2_subphylum,0.4614507854158579,0.4614507854158577,-1.6653345369377348e-16
+PERMANOVA,merops n_genera,355,355,0
+PERMANOVA,tf R2_class,0.479548587724531,0.4795485877245308,-2.220446049250313e-16
+PERMANOVA,tf R2_subphylum,0.1906216095470151,0.1906216095470148,-3.0531133177191805e-16
+PERMANOVA,tf n_genera,355,355,0
+PERMANOVA,cell R2_class,0.6261862334745654,0.6261862334745654,0.0
+PERMANOVA,cell R2_subphylum,0.3927653812781733,0.3927653812781735,2.220446049250313e-16
+PERMANOVA,cell n_genera,355,355,0
+RF balanced accuracy,class struct,0.6192307950711821,0.6381696989538689,0.01893890388268682
+RF balanced accuracy,class struct_all,0.6641888654064076,0.6836524935457099,0.019463628139302247
+RF balanced accuracy,class cell,0.8223883452340606,0.8740988122512204,0.05171046701715987
+RF balanced accuracy,class codon,0.6709611688888616,0.6813557119124289,0.010394543023567349
+RF balanced accuracy,class aa,0.7098193921660874,0.7453147858529139,0.035495393686826526
+RF balanced accuracy,class trna,0.4381198886436163,0.4534016325560241,0.01528174391240783
+RF balanced accuracy,class tf,0.6221561171479522,0.6510614845942849,0.028905367446332764
+RF balanced accuracy,class cazy,0.8206572126911784,0.8930666808617596,0.07240946817058114
+RF balanced accuracy,class merops,0.7872268389940886,0.8279758079893688,0.04074896899528013
+RF balanced accuracy,class pfam_pa,0.9272599132647344,0.9447912784062324,0.017531365141498
+RF balanced accuracy,class pfam_ab,0.8869074174050663,0.95044702498729,0.06353960758222366
+RF balanced accuracy,class all_nonpfam,0.849385105050564,0.9065925313821648,0.05720742633160081
+RF balanced accuracy,class all,0.8754161508491447,0.9548734232367448,0.07945727238760014
+RF balanced accuracy,subphylum struct,0.748761655011655,0.7782634032634034,0.02950174825174834
+RF balanced accuracy,subphylum struct_all,0.7209241079433387,0.812079747175901,0.09115563923256231
+RF balanced accuracy,subphylum cell,0.907488344988345,0.9983974358974358,0.09090909090909083
+RF balanced accuracy,subphylum codon,0.6547090729783037,0.6563116370808678,0.0016025641025640969
+RF balanced accuracy,subphylum aa,0.6637697238658777,0.8144835933297472,0.15071386946386944
+RF balanced accuracy,subphylum trna,0.6145833333333334,0.6041666666666666,-0.01041666666666674
+RF balanced accuracy,subphylum tf,0.7000907746100054,0.7024946207638515,0.0024038461538461453
+RF balanced accuracy,subphylum cazy,0.7232663170163169,0.7830710955710956,0.059804778554778615
+RF balanced accuracy,subphylum merops,0.8723776223776224,0.9640879953379952,0.09171037296037277
+RF balanced accuracy,subphylum pfam_pa,0.9979043392504932,0.9979043392504932,0.0
+RF balanced accuracy,subphylum pfam_ab,0.9664918414918416,0.9951923076923078,0.02870046620046618
+RF balanced accuracy,subphylum all_nonpfam,0.9361888111888113,0.9042832167832168,-0.031905594405594484
+RF balanced accuracy,subphylum all,0.9983974358974358,0.9951923076923078,-0.0032051282051279717
+RF A. obscura,all: top class,Trigonopsidomycetes,Trigonopsidomycetes,same
+RF A. obscura,all: max class probability,0.3165,0.3155,-0.0010000000000000009
+RF A. obscura,all: P(Trigonopsidomycetes),0.3165,0.3155,-0.0010000000000000009
+RF A. obscura,all: P(Taphrinomycetes),0.1905,0.192,0.0015000000000000013
+RF A. obscura,all: P(Dipodascomycetes),0.081,0.077,-0.0040000000000000036
+RF A. obscura,all: P(Pezizomycotina),0.272,0.2765,0.004500000000000004
+RF A. obscura,all: P(Saccharomycotina),0.5085000000000001,0.5115000000000001,0.0030000000000000027
+RF A. obscura,all: P(Taphrinomycotina),0.2195,0.212,-0.007500000000000007
+RF A. obscura,all_nonpfam: top class,Trigonopsidomycetes,Trigonopsidomycetes,same
+RF A. obscura,all_nonpfam: max class probability,0.23399999999999999,0.22949999999999998,-0.004500000000000004
+RF A. obscura,all_nonpfam: P(Trigonopsidomycetes),0.23399999999999999,0.22949999999999998,-0.004500000000000004
+RF A. obscura,all_nonpfam: P(Taphrinomycetes),0.213,0.21000000000000002,-0.002999999999999975
+RF A. obscura,all_nonpfam: P(Dipodascomycetes),0.171,0.179,0.00799999999999998
+RF A. obscura,all_nonpfam: P(Pezizomycotina),0.221,0.2195,-0.0015000000000000013
+RF A. obscura,all_nonpfam: P(Saccharomycotina),0.544,0.5455,0.0014999999999999458
+RF A. obscura,all_nonpfam: P(Taphrinomycotina),0.235,0.235,0.0
+RF A. obscura,pfam_ab: top class,Trigonopsidomycetes,Trigonopsidomycetes,same
+RF A. obscura,pfam_ab: max class probability,0.28500000000000003,0.2975,0.012499999999999956
+RF A. obscura,pfam_ab: P(Trigonopsidomycetes),0.28500000000000003,0.2975,0.012499999999999956
+RF A. obscura,pfam_ab: P(Taphrinomycetes),0.194,0.193,-0.0010000000000000009
+RF A. obscura,pfam_ab: P(Dipodascomycetes),0.11049999999999999,0.107,-0.0034999999999999892
+RF A. obscura,pfam_ab: P(Pezizomycotina),0.2355,0.2355,0.0
+RF A. obscura,pfam_ab: P(Saccharomycotina),0.5225,0.5255,0.0030000000000000027
+RF A. obscura,pfam_ab: P(Taphrinomycotina),0.242,0.239,-0.0030000000000000027
+RF A. obscura,codon: top class,Lecanoromycetes,Lecanoromycetes,same
+RF A. obscura,codon: max class probability,0.2055,0.2055,0.0
+RF A. obscura,codon: P(Lecanoromycetes),0.2055,0.2055,0.0
+RF A. obscura,codon: P(Dothideomycetes),0.1805,0.1805,0.0
+RF A. obscura,codon: P(Eurotiomycetes),0.1615,0.1615,0.0
+RF A. obscura,codon: P(Pezizomycotina),0.762,0.762,0.0
+RF A. obscura,codon: P(Saccharomycotina),0.195,0.195,0.0
+RF A. obscura,codon: P(Taphrinomycotina),0.043,0.043,0.0
+RF A. obscura,struct: top class,Taphrinomycetes,Taphrinomycetes,same
+RF A. obscura,struct: max class probability,0.7,0.723,0.02300000000000002
+RF A. obscura,struct: P(Taphrinomycetes),0.7,0.723,0.02300000000000002
+RF A. obscura,struct: P(Dipodascomycetes),0.2025,0.176,-0.026500000000000024
+RF A. obscura,struct: P(Pichiomycetes),0.0455,0.039,-0.006499999999999999
+RF A. obscura,struct: P(Pezizomycotina),0.024,0.024,0.0
+RF A. obscura,struct: P(Saccharomycotina),0.3165,0.316,-0.0005000000000000004
+RF A. obscura,struct: P(Taphrinomycotina),0.6595,0.66,0.000500000000000056
+RF LOCO,all: median of class median maxprob,0.3283333333333333,0.3275,-0.0008333333333332971
+RF LOCO,all: AO maxprob (median over folds),0.2920833333333333,0.3012499999999999,0.0091666666666666
+RF LOCO,pfam_ab: median of class median maxprob,0.3433333333333333,0.3408333333333333,-0.0025000000000000022
+RF LOCO,pfam_ab: AO maxprob (median over folds),0.30166666666666664,0.3045833333333333,0.0029166666666666785
+univariate,log10_genome_mb: AO value (HQ median),0.9857847053668768,0.9857847053668768,0.0
+univariate,log10_genome_mb: pct in Ascomycota,0.7856341189674524,0.7856341189674524,0.0
+univariate,genes_per_mb: AO value (HQ median),555.1850695905136,555.1850695905136,0.0
+univariate,genes_per_mb: pct in Ascomycota,99.77553310886644,99.77553310886644,0.0
+univariate,coding_fraction: AO value (HQ median),0.7441678133391998,0.7441678133391998,0.0
+univariate,coding_fraction: pct in Ascomycota,98.31649831649833,98.31649831649833,0.0
+univariate,median_intergenic: AO value (HQ median),178.5,178.5,0.0
+univariate,median_intergenic: pct in Ascomycota,0.4489337822671156,0.4489337822671156,0.0
+univariate,median_intron_len: AO value (HQ median),34.5,34.5,0.0
+univariate,median_intron_len: pct in Ascomycota,0.2244668911335578,0.2244668911335578,0.0
+univariate,introns_per_transcript: AO value (HQ median),0.5559738241942744,0.5559738241942744,0.0
+univariate,introns_per_transcript: pct in Ascomycota,14.3658810325477,14.3658810325477,0.0
+univariate,gc_pct: AO value (HQ median),49.575,49.575,0.0
+univariate,gc_pct: pct in Ascomycota,55.218855218855225,55.218855218855225,0.0
+univariate,n_trna: AO value (HQ median),44.5,44.5,0.0
+univariate,n_trna: pct in Ascomycota,9.764309764309765,9.764309764309765,0.0
+univariate,frac_signalp: AO value (HQ median),0.0379214857362738,0.0379214857362738,0.0
+univariate,frac_signalp: pct in Ascomycota,2.244668911335578,2.244668911335578,0.0
+univariate,frac_secreted_strict: AO value (HQ median),0.0238868330787715,0.0238868330787715,0.0
+univariate,frac_secreted_strict: pct in Ascomycota,7.519640852974187,7.519640852974187,0.0
+univariate,median_idp_fraction: AO value (HQ median),0.3401,0.3401,0.0
+univariate,median_idp_fraction: pct in Ascomycota,15.937149270482603,15.937149270482603,0.0
+univariate,frac_zn2cys6: AO value (HQ median),0.0060576220570208,0.0060576220570208,0.0
+univariate,frac_zn2cys6: pct in Ascomycota,12.794612794612794,12.794612794612794,0.0
+univariate,telomere_tracts: AO value (HQ median),0.0,0.0,0.0
+univariate,telomere_tracts: pct in Ascomycota,17.28395061728395,17.115600448933783,-0.16835016835016603
+univariate,paralog_families_per1k: AO value (HQ median),24.132170038982736,24.132170038982736,0.0
+univariate,paralog_families_per1k: pct in Ascomycota,38.25198637911464,38.25198637911464,0.0
+PCoA,struct PCo1: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"struct PCo1: A. obscura (HQ mean, sign-aligned)",-0.9837819240165349,-0.9837819240165374,-2.55351295663786e-15
+PCoA,struct PCo1: A. obscura percentile,30.6841046277666,30.6841046277666,0.0
+PCoA,struct PCo2: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"struct PCo2: A. obscura (HQ mean, sign-aligned)",7.400785257876478,7.40078525787648,1.7763568394002505e-15
+PCoA,struct PCo2: A. obscura percentile,99.59758551307847,99.59758551307847,0.0
+PCoA,codon PCo1: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"codon PCo1: A. obscura (HQ mean, sign-aligned)",-0.7756328854869011,-0.7756328854868997,1.4432899320127035e-15
+PCoA,codon PCo1: A. obscura percentile,28.67203219315895,28.67203219315895,0.0
+PCoA,codon PCo2: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"codon PCo2: A. obscura (HQ mean, sign-aligned)",-0.6562134520412938,-0.6562134520412807,1.3100631690576847e-14
+PCoA,codon PCo2: A. obscura percentile,14.486921529175051,14.486921529175051,0.0
+PCoA,aa PCo1: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"aa PCo1: A. obscura (HQ mean, sign-aligned)",0.08067375666204227,0.08067375666204188,-3.885780586188048e-16
+PCoA,aa PCo1: A. obscura percentile,80.78470824949699,80.78470824949699,0.0
+PCoA,aa PCo2: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"aa PCo2: A. obscura (HQ mean, sign-aligned)",0.14190577054032938,0.1419057705403294,2.7755575615628914e-17
+PCoA,aa PCo2: A. obscura percentile,91.95171026156942,91.95171026156942,0.0
+PCoA,trna PCo1: |r| reference vs rerun over common units,1.0,0.9999999999999996,-4.440892098500626e-16
+PCoA,"trna PCo1: A. obscura (HQ mean, sign-aligned)",-2.498192359407445,-2.4981923594074398,5.329070518200751e-15
+PCoA,trna PCo1: A. obscura percentile,16.498993963782695,16.498993963782695,0.0
+PCoA,trna PCo2: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"trna PCo2: A. obscura (HQ mean, sign-aligned)",0.5770364161662331,0.577036416166234,8.881784197001252e-16
+PCoA,trna PCo2: A. obscura percentile,59.859154929577464,59.859154929577464,0.0
+PCoA,pfam_pa PCo1: |r| reference vs rerun over common units,1.0,0.9999999999999999,-1.1102230246251565e-16
+PCoA,"pfam_pa PCo1: A. obscura (HQ mean, sign-aligned)",-0.08852426038903354,-0.0885242603890334,1.3877787807814457e-16
+PCoA,pfam_pa PCo1: A. obscura percentile,21.12676056338028,21.12676056338028,0.0
+PCoA,pfam_pa PCo2: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"pfam_pa PCo2: A. obscura (HQ mean, sign-aligned)",-0.0323200346218253,-0.03232003462182537,-7.632783294297951e-17
+PCoA,pfam_pa PCo2: A. obscura percentile,9.15492957746479,9.15492957746479,0.0
+PCoA,pfam_ab PCo1: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"pfam_ab PCo1: A. obscura (HQ mean, sign-aligned)",-0.1459870331852734,-0.14598703318527337,2.7755575615628914e-17
+PCoA,pfam_ab PCo1: A. obscura percentile,15.593561368209254,15.593561368209254,0.0
+PCoA,pfam_ab PCo2: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"pfam_ab PCo2: A. obscura (HQ mean, sign-aligned)",-0.007824908315719924,-0.00782490831571985,7.45931094670027e-17
+PCoA,pfam_ab PCo2: A. obscura percentile,43.158953722334005,43.158953722334005,0.0
+PCoA,cazy PCo1: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"cazy PCo1: A. obscura (HQ mean, sign-aligned)",-0.16084631554268775,-0.1608463155426878,-5.551115123125783e-17
+PCoA,cazy PCo1: A. obscura percentile,17.90744466800805,17.90744466800805,0.0
+PCoA,cazy PCo2: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"cazy PCo2: A. obscura (HQ mean, sign-aligned)",0.0933033579234601,0.09330335792346035,2.498001805406602e-16
+PCoA,cazy PCo2: A. obscura percentile,91.85110663983903,91.85110663983903,0.0
+PCoA,tf PCo1: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"tf PCo1: A. obscura (HQ mean, sign-aligned)",0.84583606594094,0.8458360659409399,-1.1102230246251565e-16
+PCoA,tf PCo1: A. obscura percentile,78.67203219315896,78.67203219315896,0.0
+PCoA,tf PCo2: |r| reference vs rerun over common units,1.0,0.9999999999999998,-2.220446049250313e-16
+PCoA,"tf PCo2: A. obscura (HQ mean, sign-aligned)",-0.06357511623706995,-0.06357511623707003,-8.326672684688674e-17
+PCoA,tf PCo2: A. obscura percentile,45.97585513078471,45.97585513078471,0.0
+PCoA,cell PCo1: |r| reference vs rerun over common units,1.0,1.0,0.0
+PCoA,"cell PCo1: A. obscura (HQ mean, sign-aligned)",-5.998629671271157,-5.998629671271163,-6.217248937900877e-15
+PCoA,cell PCo1: A. obscura percentile,14.688128772635814,14.688128772635814,0.0
+PCoA,cell PCo2: |r| reference vs rerun over common units,1.0,0.9999999999999999,-1.1102230246251565e-16
+PCoA,"cell PCo2: A. obscura (HQ mean, sign-aligned)",0.14425640385553384,0.14425640385563268,9.883760476725456e-14
+PCoA,cell PCo2: A. obscura percentile,47.283702213279675,47.283702213279675,0.0
+position,struct: 3 nearest class centroids,"Taphrinomycetes, Dipodascomycetes, Lipomycetes","Taphrinomycetes, Dipodascomycetes, Lipomycetes",same
+position,codon: 3 nearest class centroids,"Lecanoromycetes, Geoglossomycetes, Eurotiomycetes","Lecanoromycetes, Geoglossomycetes, Eurotiomycetes",same
+position,pfam_ab: 3 nearest class centroids,"Lipomycetes, Dipodascomycetes, Trigonopsidomycetes","Lipomycetes, Dipodascomycetes, Trigonopsidomycetes",same
+position,pfam_pa: 3 nearest class centroids,"Lipomycetes, Taphrinomycetes, Dipodascomycetes","Lipomycetes, Taphrinomycetes, Dipodascomycetes",same
+position,trna: 3 nearest class centroids,"Lecanoromycetes, Lichinomycetes, Arthoniomycetes","Lecanoromycetes, Lichinomycetes, Arthoniomycetes",same
+phylogeny,"main: 300 markers, 159 taxa, LG+G: placement",sister to Saccharomycotina + Pezizomycotina,sister to Saccharomycotina + Pezizomycotina,same
+phylogeny,"main: 300 markers, 159 taxa, LG+G: support AO+sister",1.0,1.0,0.0
+phylogeny,"main: 300 markers, 159 taxa, LG+G: AO monophyletic",True,True,same
+phylogeny,"jackknife 1: 100 random markers, LG+G: placement",sister to Saccharomycotina + Pezizomycotina,sister to Saccharomycotina + Pezizomycotina,same
+phylogeny,"jackknife 1: 100 random markers, LG+G: support AO+sister",1.0,1.0,0.0
+phylogeny,"jackknife 1: 100 random markers, LG+G: AO monophyletic",True,True,same
+phylogeny,"jackknife 2: 100 random markers, LG+G: placement",sister to Saccharomycotina + Pezizomycotina,sister to Saccharomycotina + Pezizomycotina,same
+phylogeny,"jackknife 2: 100 random markers, LG+G: support AO+sister",1.0,1.0,0.0
+phylogeny,"jackknife 2: 100 random markers, LG+G: AO monophyletic",True,True,same
+phylogeny,"jackknife 3: 100 random markers, LG+G: placement",sister to Saccharomycotina + Pezizomycotina,sister to Saccharomycotina + Pezizomycotina,same
+phylogeny,"jackknife 3: 100 random markers, LG+G: support AO+sister",1.0,1.0,0.0
+phylogeny,"jackknife 3: 100 random markers, LG+G: AO monophyletic",True,True,same
+phylogeny,"jackknife 4: 100 random markers, LG+G: placement",sister to Saccharomycotina + Pezizomycotina,sister to Saccharomycotina + Pezizomycotina,same
+phylogeny,"jackknife 4: 100 random markers, LG+G: support AO+sister",0.996,0.996,0.0
+phylogeny,"jackknife 4: 100 random markers, LG+G: AO monophyletic",True,True,same
+phylogeny,"100 random markers, WAG+G: placement",sister to Saccharomycotina + Pezizomycotina,sister to Saccharomycotina + Pezizomycotina,same
+phylogeny,"100 random markers, WAG+G: support AO+sister",1.0,1.0,0.0
+phylogeny,"100 random markers, WAG+G: AO monophyletic",True,True,same
+phylogeny,"150 random markers, long-branch taxa removed, LG+G: placement",sister to Saccharomycotina + Pezizomycotina,sister to Saccharomycotina + Pezizomycotina,same
+phylogeny,"150 random markers, long-branch taxa removed, LG+G: support AO+sister",1.0,1.0,0.0
+phylogeny,"150 random markers, long-branch taxa removed, LG+G: AO monophyletic",True,True,same
+phylogeny,nearest 5 tips (patristic),Saitoella complicata; Saitoella coloradoensis; Pseudoverpa anthracobia; Maublancomyces geogenius; Tuber indicum,Saitoella complicata; Saitoella coloradoensis; Pseudoverpa anthracobia; Maublancomyces geogenius; Tuber indicum,same
+phylogeny,nearest tip distance,1.3369315199999998,1.33693152,2.220446049250313e-16
+MAG QC,Mars-14.71: flagged % bp,0.7540066920748695,0.7540066920748695,0.0
+MAG QC,Mars-17.30: flagged % bp,0.1331778792605304,0.1331778792605304,0.0
+MAG QC,Mars-52.25: flagged % bp,0.3855109808776118,0.3855109808776118,0.0
+MAG QC,Mars-55.28: flagged % bp,4.404060116083949,4.404060116083949,0.0
+MAG QC,Mars-62.17: flagged % bp,0.9130687876925486,0.9130687876925486,0.0
+MAG QC,Mars-82.9: flagged % bp,0.176740488542763,0.176740488542763,0.0
+MAG QC,Mars-17.30: median AAI vs Mars-82.9,99.6,99.6,0.0
+MAG QC,Mars-17.30: frac identical vs Mars-82.9,0.2772170925488512,0.277038626609442,-0.0001784659394091781
+MAG QC,Mars-52.25: median AAI vs Mars-82.9,99.6,99.6,0.0
+MAG QC,Mars-52.25: frac identical vs Mars-82.9,0.2653679653679653,0.2653546712802768,-1.329408768852014e-05
+MAG QC,Mars-62.17: median AAI vs Mars-82.9,99.2,99.2,0.0
+MAG QC,Mars-62.17: frac identical vs Mars-82.9,0.1471587050033959,0.1471518987341772,-6.806269218700978e-06
+MAG QC,Mars-55.28: median AAI vs Mars-82.9,99.7,99.7,0.0
+MAG QC,Mars-55.28: frac identical vs Mars-82.9,0.3794685990338164,0.3793436293436293,-0.00012496969018710447
+MAG QC,Mars-14.71: median AAI vs Mars-82.9,99.7,99.7,0.0
+MAG QC,Mars-14.71: frac identical vs Mars-82.9,0.3213891951488423,0.3214876033057851,9.840815694278637e-05
+SwissProt,A. obscura frac_SCHPO,0.3653942439870756,0.3653942439870756,0.0
+SwissProt,A. obscura frac_YEAST,0.1231796186746662,0.1231796186746662,0.0
+SwissProt,A. obscura frac_NEUCR,0.043611505663868,0.043611505663868,0.0
+SwissProt,A. obscura frac_Fungi,0.8320966905486974,0.8320966905486974,0.0
+SwissProt,A. obscura frac_prok_like,0.0487441939220052,0.0487441939220052,0.0
+SwissProt,A. obscura pid_SCHPO,44.16291744449569,44.16291744449569,0.0
+SwissProt,A. obscura pidcov_SCHPO,45.89571110628596,45.89571110628596,0.0
+SwissProt,A. obscura pid_NEUCR,55.47931904503527,55.47931904503527,0.0
