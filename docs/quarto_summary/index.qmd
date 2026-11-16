@@ -1,0 +1,45 @@
+---
+title: "BFD summary: gene content, domains, localization and taxon patterns"
+subtitle: "Draft built from the local BFD.duckdb"
+---
+
+```{python}
+import sys
+sys.path.insert(0, ".")
+from _helpers import fig, table
+```
+
+This site summarizes the BFD fungal genome database across the main functional areas. Every figure uses **one representative genome per species** (best BUSCO complete, then N50; annotated genomes only). Each figure is shown at three taxonomic levels, as tabs: **Phylum**, **Subphylum** (derived from the class, because the database's subphylum column is empty; classes without a known subphylum keep their phylum label, see Data and methods) and **Class**. Groups are ordered and coloured by their parent phylum, so related classes sit together. Group values are medians or means **over genomes**, never over proteins, so large genomes do not dominate. At phylum level the eight largest phyla are shown and the rest pooled; at subphylum and class level groups with fewer than 10 genomes are pooled as "Other (small groups)".
+
+These pages describe the database; they do not test hypotheses. For tested hypotheses with effect sizes and caveats see the [summary atlas](https://github.com/stajichlab/BFD_dashboard/blob/main/docs/summary_atlas/index.md) and [FUNCTIONAL_ANALYSES](https://github.com/stajichlab/BFD_dashboard/blob/main/docs/FUNCTIONAL_ANALYSES.md).
+
+## Genomes per group
+
+```{python}
+fig("F01_genomes_by_group", "Representative genomes per group.")
+table("T00_group_key")
+```
+
+### What is in the grey "Other" group
+
+The grey group pools every taxon that is too small to show on its own (outside the top eight phyla at phylum level, fewer than 10 genomes at subphylum and class level). It is a mixture of unrelated taxa, so read it as "everything else", not as a lineage. The table lists exactly which taxa it contains.
+
+```{python}
+table("T00b_other_members", max_rows=40)
+```
+
+## Pages
+
+| Page | Contents |
+|---|---|
+| [Gene content](01_gene_content.qmd) | genome size, gene number, protein length, GC, assembly and annotation quality |
+| [Domains](02_domains.qmd) | Pfam domains per protein, domains whose presence varies, copy-number deviation of widespread domains |
+| [Localization](03_localization.qmd) | DeepLoc and WoLF PSORT localization, signal peptides, secretome |
+| [Taxon patterns](04_phylum_patterns.qmd) | group profiles across all genome-level features, PCA |
+| [Functional areas](05_functional_domains.qmd) | CAZy, peptidases, transcription factors, kinases and signalling, transporters, P450, secondary metabolism, chromatin and DNA repair, effector-like domains, trehalose, disorder |
+| [Data and methods](06_data_notes.qmd) | sources, filters, definitions and limits |
+
+::: {.callout-warning}
+## Draft status
+Layout and figure types are a draft for discussion. The 57 Pfam accessions in the functional panels were checked against the names stored in the BFD data. The figures are descriptive: no statistical tests and no phylogenetic correction.
+:::

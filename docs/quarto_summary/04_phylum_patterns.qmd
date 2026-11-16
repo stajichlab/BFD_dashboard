@@ -1,0 +1,27 @@
+---
+title: "Taxon patterns"
+---
+
+```{python}
+import sys
+sys.path.insert(0, ".")
+from _helpers import fig, table
+```
+
+Twelve genome-level features: genome size, gene number, mean protein length, GC, strict secretome fraction, CAZy, MEROPS and transcription-factor proteins per gene, the nuclear, mitochondrial and extracellular shares of DeepLoc calls, and mean intrinsic-disorder fraction.
+
+## Group profiles
+
+```{python}
+fig("F15_feature_heatmap", "Median of each feature per group, z-scored across groups.", "90%")
+table("T04_feature_medians")
+```
+
+## Genomes in feature space
+
+```{python}
+fig("F17_feature_pca", "First two principal components of the log-scaled, z-scored feature matrix.", "65%")
+table("T06_pca_loadings")
+```
+
+A PCA shows how much of the variation lines up with taxonomy; it does not distinguish lineage effects from shared ancestry. Phylogenetically aware comparisons are in the atlas hypothesis pages.

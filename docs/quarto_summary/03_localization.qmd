@@ -1,0 +1,33 @@
+---
+title: "Localization"
+---
+
+```{python}
+import sys
+sys.path.insert(0, ".")
+from _helpers import fig, table
+```
+
+Predictions are computational. DeepLoc primary label is the class with the highest probability among ten compartments; WoLF PSORT is the tool's own best call. Shares are computed per genome and averaged over genomes.
+
+## DeepLoc
+
+```{python}
+fig("F10_deeploc", "Primary DeepLoc localization.")
+table("T03_deeploc")
+```
+
+## WoLF PSORT
+
+```{python}
+fig("F12_wolfpsort", "WoLF PSORT localization (ten most common classes).")
+```
+
+## Secretome
+
+```{python}
+fig("F13_secretome_fraction", "Strict secretome (SignalP, no transmembrane helix, not GPI-anchored) as a fraction of genes.")
+fig("F13b_signal_peptide_fraction", "Proteins with a SignalP signal peptide (p >= 0.9) as a fraction of genes.")
+```
+
+The SignalP and TMHMM tables list positive calls only, so absence of a row is read as "no call". Agreement between DeepLoc signal-peptide calls and WoLF PSORT "extracellular" is weak at the protein level, so use these as complementary rather than interchangeable views.

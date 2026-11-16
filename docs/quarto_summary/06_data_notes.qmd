@@ -1,0 +1,38 @@
+---
+title: "Data and methods"
+---
+
+## Source and unit
+
+- Database: the local `BFD.duckdb` in the `db/` folder, built from the `Fungi_BFD_runs/tables` parquet files by `workflows/build_bfd_db.sh` (MotherDuck is being phased out and is not used).
+- Unit: one representative genome per species, flagged `is_representative` in `v_genome_labels` (best BUSCO complete, then N50, then LOCUSTAG; annotated genomes only). The full database has 23,412 genomes and 244.8 million proteins; there are 7,435 representatives, of which 7,393 have a proteome (77.7 million proteins); the 42 without proteins are not plotted.
+- Groups: phylum and class from the BFD taxonomy; the eight phyla with most representatives are shown, the rest are pooled as "Other".
+- **Subphylum is derived, not stored.** The `SUBPHYLUM` column is NULL for all 7,435 representatives in both `species` and `samples`, so the subphylum level maps each class to its subphylum with the table in `bin/summary/taxonomy.py` (standard fungal classification written from memory, citation to verify). Classes missing from the table fall back to their phylum. Fixing the database column (proposal: populate it in the taxonomy source of the pipeline) would make this mapping unnecessary.
+
+## Build
+
+1. `workflows/summary/build_summary.sh` runs `bin/summary/build_summary_tables.py` on the HPCC and writes small per-genome parquet tables.
+2. `bin/summary/make_figures.py DATA OUT` writes the PNG and SVG figures and TSV tables used by these pages.
+3. Render on the laptop (Quarto is not installed on the HPCC; rendering only formats the finished figures and tables). Needs `quarto` plus a Python with `pandas tabulate jupyter`; set `QUARTO_PYTHON` to it. **Render from a copy or checkout that is not under a hidden folder** (for example not under `.claude/worktrees/`): Quarto skips files whose path contains a dot-folder and then renders 0 files without an error.
+   ```
+   cd docs/quarto_summary && quarto render      # writes _site/
+   ```
+4. Test: `bin/summary/test_make_figures.py` runs the figure code on synthetic tables.
+
+## Definitions
+
+| Item | Definition |
+|---|---|
+| Pfam domain | `domain_i_evalue <= 1e-5`, version suffix removed (as in `J2_pfam.sql`) |
+| Strict secretome | SignalP signal peptide, no transmembrane helix, not GPI-anchored (`v_secretome_proteins`) |
+| DeepLoc primary label | class with the highest probability among cytoplasm, nucleus, extracellular, cell membrane, mitochondrion, plastid, ER, lysosome/vacuole, Golgi, peroxisome |
+| IDR fraction | `idp_summary.IDP_fraction`; proteins without a row are not counted |
+| CAZy, MEROPS, TF | counts from `v_cazy_family_counts`, `v_merops_best`, `v_tf_family_counts` |
+
+## Limits
+
+- Descriptive only: no statistical tests, no phylogenetic correction.
+- Per-genome tool coverage is uneven: some genomes have a small fraction of proteins with a Pfam scan result (list: `docs/analyses/trehalose/data/th_qc_suspect_genomes.tsv`), which lowers their domain counts.
+- `targetp` covers only 125 genomes and is not used. `signalp` and `tmhmm` hold positive calls only.
+- Pfam accessions in the curated panel (`bin/summary/panel.py`): all 57 were checked on 2026-11-16 against the Pfam names stored in the BFD `pfam` table (accession and name agree). The functional interpretation of each domain is standard knowledge and was not re-derived.
+- Group sizes are small for some phyla; read the `n` under each box.
