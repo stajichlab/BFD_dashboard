@@ -1,0 +1,178 @@
+accession	group	role	EC	organism	taxid	domain	kingdom	reviewed	length	name
+A0A1H1XG33	KOJIBIOSE_HYDROLASE	reference	3.2.1.216	Mucilaginibacter mallensis	652787	Bacteria		reviewed	676	Kojibiose hydrolase (EC 3.2.1.216) (Kojibiase) (Kojibiose glucohydrolase)
+A0JMP0	ATHL1_METAZOA	reference	3.2.1.107	Danio rerio (Zebrafish) (Brachydanio rerio)	7955	Eukaryota	Metazoa	reviewed	655	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A5FBJ5	KOJIBIOSE_HYDROLASE	reference	3.2.1.216	Flavobacterium johnsoniae (strain ATCC 17061 / DSM 2064 / JCM 8514 / BCRC 14874 / CCUG 350202 / NBRC 14942 / NCIMB 11054 / UW101) (Cytophaga johnsonae)	376686	Bacteria		reviewed	681	Kojibiose hydrolase (EC 3.2.1.216) (Alpha-1,2-D-glucoside glucohydrolase) (Alpha-1,2-glucosidase) (FjGH65A) (Kojibiase)
+A9KM56	GLUCOSYLRHAMNOSE_PHOSPHORYLASE	reference	2.4.1.282	Lachnoclostridium phytofermentans (strain ATCC 700394 / DSM 18823 / ISDg) (Clostridium phytofermentans)	357809	Bacteria		reviewed	756	3-O-alpha-D-glucosyl-L-rhamnose phosphorylase (EC 2.4.1.282) (3-O-alpha-D-glucopyranosyl-L-rhamnopyranose:phosphate beta-D-glucosyltransferase)
+A9KT32	NIGEROSE_PHOSPHORYLASE	reference	2.4.1.279	Lachnoclostridium phytofermentans (strain ATCC 700394 / DSM 18823 / ISDg) (Clostridium phytofermentans)	357809	Bacteria		reviewed	753	Nigerose phosphorylase (EC 2.4.1.279)
+B8D049	KOJIBIOSE_PHOSPHORYLASE	reference	2.4.1.230	Halothermothrix orenii (strain H 168 / OCM 544 / DSM 9562)	373903	Bacteria		reviewed	780	Kojibiose phosphorylase (KP) (EC 2.4.1.230)
+D4B5H9	TREHALASE_FUNGI	reference	3.2.1.28	Trichophyton mentagrophytes (strain ATCC MYA-4681 / CBS 112371) (Arthroderma benhamiae)	663331	Eukaryota	Fungi	reviewed	1054	Cell wall acid trehalase ARB_03719 (EC 3.2.1.28) (Alpha,alpha-trehalase) (Alpha,alpha-trehalose glucohydrolase)
+D6XZ22	GLUCOSYLGLYCEROL_PHOSPHORYLASE	reference	2.4.1.332	Bacillus selenitireducens (strain ATCC 700615 / DSM 15326 / MLS10)	439292	Bacteria		reviewed	761	1,2-alpha-glucosylglycerol phosphorylase (EC 2.4.1.332) (2-O-alpha-glucosylglycerol phosphorylase) (GGP)
+E6ENP7	MALTOSE_PHOSPHORYLASE	reference	2.4.1.8	Enterococcus faecalis (strain TX4000 / JH2-2)	749493	Bacteria		reviewed	783	Maltose phosphorylase (EC 2.4.1.8)
+F1NZI4	ATHL1_METAZOA	reference	3.2.1.107	Gallus gallus (Chicken)	9031	Eukaryota	Metazoa	reviewed	702	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+M1RNJ8	TREHALASE_FUNGI	reference	3.2.1.28	Candida glabrata (Yeast) (Torulopsis glabrata)	5478	Eukaryota	Fungi	reviewed	1212	Periplasmic/secreted acid trehalase ATH1 (cgATH1) (EC 3.2.1.28)
+N1P212	TREHALASE_FUNGI	reference	3.2.1.28	Saccharomyces cerevisiae (strain CEN.PK113-7D) (Baker's yeast)	889517	Eukaryota	Fungi	reviewed	1211	Periplasmic acid trehalase ATC1 (EC 3.2.1.28)
+O06993	MALTOSE_PHOSPHORYLASE	reference	2.4.1.8	Bacillus subtilis (strain 168)	224308	Bacteria		reviewed	757	Maltose phosphorylase (EC 2.4.1.8)
+P77154	KOJIBIOSE_PHOSPHORYLASE	reference	2.4.1.230	Escherichia coli (strain K12)	83333	Bacteria		reviewed	755	Kojibiose phosphorylase (EC 2.4.1.230)
+P78617	TREHALASE_FUNGI	reference	3.2.1.28	Aspergillus nidulans (strain FGSC A4 / ATCC 38163 / CBS 112.46 / NRRL 194 / M139) (Emericella nidulans)	227321	Eukaryota	Fungi	reviewed	1054	Acid trehalase (EC 3.2.1.28) (Alpha,alpha-trehalase) (Alpha,alpha-trehalose glucohydrolase)
+P9WN12	GH65_OTHER	reference	3.2.1.-	Mycobacterium tuberculosis (strain CDC 1551 / Oshkosh)	83331	Bacteria		reviewed	786	Uncharacterized glycosyl hydrolase MT3509 (EC 3.2.1.-)
+P9WN14	GH65_OTHER	reference	3.2.1.-	Mycobacterium tuberculosis (strain CDC 1551 / Oshkosh)	83331	Bacteria		reviewed	1327	Uncharacterized glycosyl hydrolase MT2062 (EC 3.2.1.-)
+Q32M88	ATHL1_METAZOA	reference	3.2.1.107	Homo sapiens (Human)	9606	Eukaryota	Metazoa	reviewed	737	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+Q49736	GH65_OTHER	reference	3.2.1.-	Mycobacterium leprae (strain TN)	272631	Bacteria		reviewed	792	Uncharacterized glycosyl hydrolase ML0392 (EC 3.2.1.-)
+Q54KX5	GH65_GLUCOSIDASE_3.2.1.107	reference	3.2.1.107	Dictyostelium discoideum (Social amoeba)	44689	Eukaryota		reviewed	713	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+Q5AAU5	TREHALASE_FUNGI	reference	3.2.1.28	Candida albicans (strain SC5314 / ATCC MYA-2876) (Yeast)	237561	Eukaryota	Fungi	reviewed	1078	Cell wall acid trehalase ATC1 (EC 3.2.1.28) (Alpha,alpha-trehalase) (Alpha,alpha-trehalose glucohydrolase)
+Q8BP56	ATHL1_METAZOA	reference	3.2.1.107	Mus musculus (Mouse)	10090	Eukaryota	Metazoa	reviewed	690	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+Q8GRC3	TREHALOSE_PHOSPHORYLASE	reference	2.4.1.64	Geobacillus stearothermophilus (Bacillus stearothermophilus)	1422	Bacteria		reviewed	765	Alpha,alpha-trehalose phosphorylase (TPase) (EC 2.4.1.64)
+Q8L163	KOJIBIOSE_PHOSPHORYLASE	reference	2.4.1.230	Thermoanaerobacter brockii (Thermoanaerobium brockii)	29323	Bacteria		reviewed	775	Kojibiose phosphorylase (KP) (KPase) (EC 2.4.1.230)
+Q8L164	TREHALOSE_PHOSPHORYLASE	reference	2.4.1.64	Thermoanaerobacter brockii (Thermoanaerobium brockii)	29323	Bacteria		reviewed	774	Alpha,alpha-trehalose phosphorylase (TPase) (EC 2.4.1.64)
+Q8RBL8	KOJIBIOSE_PHOSPHORYLASE	reference	2.4.1.230	Caldanaerobacter subterraneus subsp. tengcongensis (strain DSM 15242 / JCM 11007 / NBRC 100824 / MB4) (Thermoanaerobacter tengcongensis)	273068	Bacteria		reviewed	771	Kojibiose phosphorylase (EC 2.4.1.230)
+Q9CID5	TREHALOSE6P_PHOSPHORYLASE	reference	2.4.1.216	Lactococcus lactis subsp. lactis (strain IL1403) (Streptococcus lactis)	272623	Bacteria		reviewed	769	Trehalose 6-phosphate phosphorylase (TrePP) (EC 2.4.1.216)
+A0A1I0N479	CONTEXT_ARCHAEA	context		Thermococcus thioreducens	277988	Archaea		unreviewed	747	Kojibiose phosphorylase
+A0ABY6HN11	CONTEXT_ARCHAEA	context	3.6.1.1	Candidatus Lokiarchaeum ossiferum	2951803	Archaea		unreviewed	1050	Pyrophosphatase PpaX (EC 3.6.1.1)
+A0A075LVI8	CONTEXT_ARCHAEA	context		Palaeococcus pacificus DY20341	1343739	Archaea		unreviewed	746	Kojibiose phosphorylase
+S5ZX25	CONTEXT_ARCHAEA	context		Thermofilum adornatum	1365176	Archaea		unreviewed	697	Glycoside hydrolase family 65 protein
+O58512	CONTEXT_ARCHAEA	context		Pyrococcus horikoshii (strain ATCC 700860 / DSM 12428 / JCM 9974 / NBRC 100139 / OT-3)	70601	Archaea		unreviewed	737	Kojibiose phosphorylase
+A0A1I2HBQ4	CONTEXT_BACTERIA	context		Actinacidiphila alni	380248	Bacteria		unreviewed	786	Alpha,alpha-trehalose phosphorylase
+A0ABW7BAH5	CONTEXT_BACTERIA	context		Streptomyces cinerochromogenes	66422	Bacteria		unreviewed	798	Glycoside hydrolase family 65 protein
+A0A8J3UWL0	CONTEXT_BACTERIA	context		Planotetraspora silvatica	234614	Bacteria		unreviewed	788	Glycosyl hydrolase
+A0A1E3RGR1	CONTEXT_BACTERIA	context		Mycolicibacterium flavescens (Mycobacterium flavescens)	1776	Bacteria		unreviewed	784	Glycosyl hydrolase
+A0A2S1R9T5	CONTEXT_BACTERIA	context		Dietzia lutea	546160	Bacteria		unreviewed	830	Kojibiose phosphorylase
+A0A8J8BHJ1	CONTEXT_BACTERIA	context		Actinocrinis puniceicyclus	977794	Bacteria		unreviewed	793	Glycoside hydrolase family 65 protein
+A0A8J3QUD0	CONTEXT_BACTERIA	context		Rugosimonospora africana	556532	Bacteria		unreviewed	803	Glycosyl hydrolase
+F5XF25	CONTEXT_BACTERIA	context	2.4.1.64	Microlunatus phosphovorus (strain ATCC 700054 / DSM 10555 / JCM 9379 / NBRC 101784 / NCIMB 13414 / VKM Ac-1990 / NM-1)	1032480	Bacteria		unreviewed	837	Putative trehalose phosphorylase (EC 2.4.1.64)
+A0ABT9NN77	CONTEXT_BACTERIA	context	2.4.1.64	Nocardioides massiliensis	1325935	Bacteria		unreviewed	848	Alpha,alpha-trehalose phosphorylase (EC 2.4.1.64)
+A0ABV9RSR9	CONTEXT_BACTERIA	context		Actinomycetospora chibensis	663606	Bacteria		unreviewed	890	Glycoside hydrolase family 65 protein
+A0A1C4VLX5	CONTEXT_BACTERIA	context		Micromonospora chaiyaphumensis	307119	Bacteria		unreviewed	790	Alpha,alpha-trehalose phosphorylase
+H0QIX7	CONTEXT_BACTERIA	context		Arthrobacter globiformis (strain ATCC 8010 / DSM 20124 / JCM 1332 / NBRC 12137 / NCIMB 8907 / NRRL B-2979 / 168)	1077972	Bacteria		unreviewed	789	Putative trehalose phosphorylase
+A0ABP7IRU6	CONTEXT_BACTERIA	context		Amycolatopsis tucumanensis	401106	Bacteria		unreviewed	793	Glycosyl hydrolase family 65 protein
+A0ABV4GX04	CONTEXT_BACTERIA	context		Kineococcus halophytocola	3234027	Bacteria		unreviewed	784	Glycoside hydrolase family 65 protein
+A0A2U2J9F6	CONTEXT_BACTERIA	context		Polaribacter aquimarinus	2100726	Bacteria		unreviewed	768	Family 65 glycosyl hydrolase
+A0A401XMY4	CONTEXT_BACTERIA	context		Thermaurantimonas aggregans	2173829	Bacteria		unreviewed	760	Maltose phosphorylase
+L8JV78	CONTEXT_BACTERIA	context		Fulvivirga imtechensis AK7	1237149	Bacteria		unreviewed	669	Kojibiose phosphorylase
+D4IJ39	CONTEXT_BACTERIA	context	2.4.1.230; 2.4.1.8	Alistipes shahii WAL 8301	717959	Bacteria		unreviewed	760	Maltose phosphorylase (EC 2.4.1.230, EC 2.4.1.8)
+A0A1M6PFI5	CONTEXT_BACTERIA	context		Flagellimonas taeanensis	1005926	Bacteria		unreviewed	768	Maltose phosphorylase
+A0ABW3WQT0	CONTEXT_BACTERIA	context		Lutibacter holmesii	1137985	Bacteria		unreviewed	768	Family 65 glycosyl hydrolase domain-containing protein
+A0ABQ2BTN1	CONTEXT_BACTERIA	context		Winogradskyella haliclonae	2048558	Bacteria		unreviewed	768	Maltose phosphorylase
+A0A934KML9	CONTEXT_BACTERIA	context		Gelidibacter salicanalis	291193	Bacteria		unreviewed	768	Glycoside hydrolase family 65 protein
+A0A098LTY0	CONTEXT_BACTERIA	context	2.4.1.64; 2.4.1.8	Jejuia pallidilutea	504487	Bacteria		unreviewed	769	Maltose phosphorylase (EC 2.4.1.64, EC 2.4.1.8)
+A0ABP6UXD2	CONTEXT_BACTERIA	context		Aquimarina addita	870485	Bacteria		unreviewed	768	Glycoside hydrolase family 65 protein
+A0ABW8QAT5	CONTEXT_BACTERIA	context		Capnocytophaga stomatis	1848904	Bacteria		unreviewed	767	Glycoside hydrolase family 65 protein
+A0A2T0SPU1	CONTEXT_BACTERIA	context		Spirosoma oryzae	1469603	Bacteria		unreviewed	768	Maltose phosphorylase
+I0WK76	CONTEXT_BACTERIA	context		Imtechella halotolerans K1	946077	Bacteria		unreviewed	768	Maltose phosphorylase
+A0ABX0EUF7	CONTEXT_BACTERIA	context		Aquirufa beregesia	2516556	Bacteria		unreviewed	764	Glycoside hydrolase family 65 protein
+A0ABQ6G695	CONTEXT_BACTERIA	context		Dictyobacter halimunensis	3026934	Bacteria		unreviewed	807	Glycosyl hydrolase
+A0A8J3ILQ9	CONTEXT_BACTERIA	context		Reticulibacter mediterranei	2778369	Bacteria		unreviewed	751	Kojibiose phosphorylase
+A0A0P6XZA2	CONTEXT_BACTERIA	context		Bellilinea caldifistulae	360411	Bacteria		unreviewed	730	Kojibiose phosphorylase
+D6U849	CONTEXT_BACTERIA	context		Ktedonobacter racemifer DSM 44963	485913	Bacteria		unreviewed	797	Glycoside hydrolase family 65 central catalytic
+A0A8J3I1Q5	CONTEXT_BACTERIA	context		Ktedonospora formicarum	2778364	Bacteria		unreviewed	813	Glycosyl hydrolase
+A0A4P6JRR0	CONTEXT_BACTERIA	context		Ktedonosporobacter rubrisoli	2509675	Bacteria		unreviewed	753	Glycoside hydrolase family 65 protein
+A0A0S7BKJ3	CONTEXT_BACTERIA	context		Longilinea arvoryzae	360412	Bacteria		unreviewed	948	Beta-phosphoglucomutase
+A0A402A0H4	CONTEXT_BACTERIA	context		Tengunoibacter tsumagoiensis	2014871	Bacteria		unreviewed	752	Kojibiose phosphorylase
+A0A326UCD3	CONTEXT_BACTERIA	context		Thermosporothrix hazakensis	644383	Bacteria		unreviewed	735	Kojibiose phosphorylase
+B8GD77	CONTEXT_BACTERIA	context	2.4.1.230	Chloroflexus aggregans (strain MD-66 / DSM 9485)	326427	Bacteria		unreviewed	720	Kojibiose phosphorylase (EC 2.4.1.230)
+I0I7A5	CONTEXT_BACTERIA	context		Caldilinea aerophila (strain DSM 14535 / JCM 11387 / NBRC 104270 / STL-6-O1)	926550	Bacteria		unreviewed	948	Putative glycoside hydrolase
+E8MZH2	CONTEXT_BACTERIA	context		Anaerolinea thermophila (strain DSM 14523 / JCM 11388 / NBRC 100420 / UNI-1)	926569	Bacteria		unreviewed	731	Glycosidase
+A0ABU3NMX0	CONTEXT_BACTERIA	context		Thermanaerothrix solaris	3058434	Bacteria		unreviewed	737	Glycosyl hydrolase family 65 protein
+A0ABS6BU19	CONTEXT_BACTERIA	context		Clostridium frigoris	205327	Bacteria		unreviewed	769	Glycoside hydrolase family 65 protein
+A0A3S1EDG8	CONTEXT_BACTERIA	context		Paenibacillus anaericanus	170367	Bacteria		unreviewed	763	Glycoside hydrolase family 65 protein
+A0A833HLL7	CONTEXT_BACTERIA	context		Alkaliphilus serpentinus	1482731	Bacteria		unreviewed	738	Glycoside hydrolase family 65 protein
+A0A511W691	CONTEXT_BACTERIA	context		Alkalibacillus haloalkaliphilus	94136	Bacteria		unreviewed	746	Glycosyl hydrolase
+A0A8J8MNG5	CONTEXT_BACTERIA	context		Vallitalea pronyensis	1348613	Bacteria		unreviewed	757	Glycoside hydrolase family 65 protein
+G9WR66	CONTEXT_BACTERIA	context		Oribacterium asaccharolyticum ACB7	796944	Bacteria		unreviewed	758	Kojibiose phosphorylase
+A0A0R2MZ11	CONTEXT_BACTERIA	context		Lacticaseibacillus saniviri JCM 17471 = DSM 24301	1293598	Bacteria		unreviewed	718	Maltose phosphorylase
+A0ABV9MGZ0	CONTEXT_BACTERIA	context		Planococcus dechangensis	1176255	Bacteria		unreviewed	761	Glycoside hydrolase family 65 protein
+A0A0K6GK94	CONTEXT_BACTERIA	context		Anoxybacillus suryakundensis	1325335	Bacteria		unreviewed	780	Trehalose and maltose hydrolase (Possible phosphorylase)
+A0A2T5INN0	CONTEXT_BACTERIA	context		Trichococcus patagoniensis	382641	Bacteria		unreviewed	757	Maltose phosphorylase
+A0A0R2FWP5	CONTEXT_BACTERIA	context		Lactobacillus selangorensis	81857	Bacteria		unreviewed	605	Glycoside hydrolase
+A0A0R2LL95	CONTEXT_BACTERIA	context		Levilactobacillus paucivorans	616990	Bacteria		unreviewed	907	Trehalose and maltose hydrolase (Phosphorylase)
+A0AAN4UAK9	CONTEXT_BACTERIA	context		Tetragenococcus koreensis	290335	Bacteria		unreviewed	876	Trehalose 6-phosphate phosphorylase
+A0A0R1NA78	CONTEXT_BACTERIA	context		Schleiferilactobacillus perolens DSM 12744	1423792	Bacteria		unreviewed	773	Trehalose maltose hydrolase, phosphorylase
+A0A518H1K3	CONTEXT_BACTERIA	context	2.4.1.64	Tautonia plasticadhaerens	2527974	Bacteria		unreviewed	818	Alpha,alpha-trehalose phosphorylase (EC 2.4.1.64)
+A0A1U9NKL5	CONTEXT_BACTERIA	context	3.2.1.-	Anaerohalosphaera lusitana	1936003	Bacteria		unreviewed	800	Putative glycosyl hydrolase (EC 3.2.1.-)
+Q1Q5R3	CONTEXT_BACTERIA	context		Kuenenia stuttgartiensis	174633	Bacteria		unreviewed	798	Uncharacterized protein
+A0ABX6R747	CONTEXT_BACTERIA	context	5.4.2.6	Pseudoxanthomonas mexicana	128785	Bacteria		unreviewed	1004	Beta-phosphoglucomutase (EC 5.4.2.6)
+A0ABT1F9B8	CONTEXT_BACTERIA	context	5.4.2.6	Dyella lutea	2950441	Bacteria		unreviewed	1013	Beta-phosphoglucomutase (EC 5.4.2.6)
+A0A099KAF2	CONTEXT_BACTERIA	context	2.4.1.230	Colwellia psychrerythraea (Vibrio psychroerythus)	28229	Bacteria		unreviewed	789	Kojibiose phosphorylase (EC 2.4.1.230)
+A0A5R9JAA1	CONTEXT_BACTERIA	context		Lichenicoccus roseus	2683649	Bacteria		unreviewed	784	Glycoside hydrolase family 65 protein
+A0ABV7T7D0	CONTEXT_BACTERIA	context		Stutzerimonas tarimensis	1507735	Bacteria		unreviewed	1060	Beta-phosphoglucomutase family hydrolase
+A0A2K1Q3C4	CONTEXT_BACTERIA	context		Solilutibacter silvestris	1645665	Bacteria		unreviewed	1027	BPGM: beta-phosphoglucomutase
+A0A6A7N0M8	CONTEXT_BACTERIA	context		Rugamonas aquatica	2743357	Bacteria		unreviewed	783	Glycoside hydrolase family 65 protein
+A0ABU6EKF3	CONTEXT_BACTERIA	context		Enterobacter huaxiensis	2494702	Bacteria		unreviewed	760	Glycoside hydrolase family 65 protein
+A0ABS1A5R2	CONTEXT_BACTERIA	context		Citrobacter cronae	1748967	Bacteria		unreviewed	758	Glycoside hydrolase family 65 protein
+A0A7G9L1V6	CONTEXT_BACTERIA	context		Sphingomonas sabuli	2764186	Bacteria		unreviewed	688	Glycoside hydrolase family 65 protein
+A0ABU4E4L8	CONTEXT_BACTERIA	context		Atlantibacter subterraneus	255519	Bacteria		unreviewed	739	Glycosyl hydrolase family 65 protein
+A0ABQ1QZU5	CONTEXT_BACTERIA	context		Lacimicrobium alkaliphilum	1526571	Bacteria		unreviewed	781	Glycosyl hydrolase
+A0ABR4YF43	CONTEXT_BACTERIA	context		Vibrio variabilis	990271	Bacteria		unreviewed	780	Trehalase
+A0ABW8Q269	CONTEXT_BACTERIA	context		Neisseria oralis	1107316	Bacteria		unreviewed	752	Glycoside hydrolase family 65 protein
+A0A1N6SG74	CONTEXT_BACTERIA	context		Alkalispirochaeta americana	159291	Bacteria		unreviewed	790	Alpha,alpha-trehalose phosphorylase
+A0A7T7XLB3	CONTEXT_BACTERIA	context		Breznakiella homolactica	2798577	Bacteria		unreviewed	781	Glycoside hydrolase family 65 protein
+A0A5C1QFM8	CONTEXT_BACTERIA	context		Thiospirochaeta perfilievii	252967	Bacteria		unreviewed	764	Glycoside hydrolase family 65 protein
+G8QV27	CONTEXT_BACTERIA	context		Sphaerochaeta pleomorpha (strain ATCC BAA-1885 / DSM 22778 / Grapes)	158190	Bacteria		unreviewed	963	Beta-phosphoglucomutase
+A0A1I3LDL5	CONTEXT_BACTERIA	context		Treponema bryantii	163	Bacteria		unreviewed	778	Maltose phosphorylase
+H9UID1	CONTEXT_BACTERIA	context		Spirochaeta africana (strain ATCC 700263 / DSM 8902 / Z-7692)	889378	Bacteria		unreviewed	780	Trehalose/maltose hydrolase or phosphorylase
+A0A5C1QJ87	CONTEXT_BACTERIA	context		Oceanispirochaeta crateris	2518645	Bacteria		unreviewed	757	Glycoside hydrolase family 65 protein
+F4GIX3	CONTEXT_BACTERIA	context	2.4.1.230	Parasphaerochaeta coccoides (strain ATCC BAA-1237 / DSM 17374 / SPN1) (Sphaerochaeta coccoides)	760011	Bacteria		unreviewed	791	Kojibiose phosphorylase (EC 2.4.1.230)
+G0GAT0	CONTEXT_BACTERIA	context		Winmispira thermophila (strain ATCC 700085 / DSM 6578 / Z-1203) (Spirochaeta thermophila)	869211	Bacteria		unreviewed	727	Glycoside hydrolase family 65 central catalytic
+A0A1Y1RYY8	CONTEXT_BACTERIA	context		Marispirochaeta aestuarii	1963862	Bacteria		unreviewed	893	Family 65 glycosyl hydrolase
+F8F0C1	CONTEXT_BACTERIA	context	2.4.1.230; 5.4.2.6	Gracilinema caldarium (strain ATCC 51460 / DSM 7334 / H1) (Treponema caldarium)	744872	Bacteria		unreviewed	1025	Beta-phosphoglucomutase (EC 2.4.1.230, EC 5.4.2.6)
+E1R7M0	CONTEXT_BACTERIA	context		Sediminispirochaeta smaragdinae (strain DSM 11293 / JCM 15392 / SEBR 4228) (Spirochaeta smaragdinae)	573413	Bacteria		unreviewed	992	Beta-phosphoglucomutase
+A0A1M7SPE6	CONTEXT_BACTERIA	context		Fervidobacterium gondwanense DSM 13020	1121883	Bacteria		unreviewed	756	Kojibiose phosphorylase
+A0A1G6L3M9	CONTEXT_BACTERIA	context		Geotoga petraea	28234	Bacteria		unreviewed	760	Kojibiose phosphorylase
+A0ABX9UE43	CONTEXT_BACTERIA	context		Petrotoga olearia	156203	Bacteria		unreviewed	763	Kojibiose phosphorylase
+A0AA45C814	CONTEXT_BACTERIA	context		Oceanotoga teriensis	515440	Bacteria		unreviewed	754	Alpha,alpha-trehalose phosphorylase
+A0ABY8PR43	CONTEXT_BACTERIA	context		Marinitoga aeolica	2809031	Bacteria		unreviewed	738	Glycoside hydrolase family 65 protein
+A0ABX7S5V6	CONTEXT_BACTERIA	context		Thermosipho ferrireducens	2571116	Bacteria		unreviewed	757	Glycoside hydrolase family 65 protein
+F7YXC4	CONTEXT_BACTERIA	context	2.4.1.230	Pseudothermotoga thermarum DSM 5069	688269	Bacteria		unreviewed	752	Glycoside hydrolase family 65 central catalytic (EC 2.4.1.230)
+A0A2U8E5K7	CONTEXT_BACTERIA	context		Ereboglobus luteus	1796921	Bacteria		unreviewed	757	Family 65 glycosyl hydrolase
+A0A934RVM1	CONTEXT_BACTERIA	context		Pelagicoccus mobilis	415221	Bacteria		unreviewed	803	Family 65 glycosyl hydrolase
+A0A842HI59	CONTEXT_BACTERIA	context		Ruficoccus amylovorans	1804625	Bacteria		unreviewed	772	Glycoside hydrolase family 65 protein
+A0ABZ1CEA0	CONTEXT_BACTERIA	context		Actomonas aquatica	2866162	Bacteria		unreviewed	764	Glycosyl hydrolase family 65 protein
+A0A7X1E705	CONTEXT_BACTERIA	context		Puniceicoccus vermicola	388746	Bacteria		unreviewed	687	Glycoside hydrolase family 65 protein
+A0A1D8AVC9	CONTEXT_BACTERIA	context	2.4.1.279	Lacunisphaera limnophila	1838286	Bacteria		unreviewed	771	Nigerose phosphorylase (EC 2.4.1.279)
+A0A6B2M3W1	CONTEXT_BACTERIA	context		Oceanipulchritudo coccoides	2706888	Bacteria		unreviewed	771	Glycoside hydrolase family 65 protein
+B1ZXT6	CONTEXT_BACTERIA	context	2.4.1.230	Opitutus terrae (strain DSM 11246 / JCM 15787 / PB90-1)	452637	Bacteria		unreviewed	776	Kojibiose phosphorylase (EC 2.4.1.230)
+A0A178IHV4	CONTEXT_BACTERIA	context		Termitidicoccus mucosus	1184151	Bacteria		unreviewed	806	Kojibiose phosphorylase
+B9XHM8	CONTEXT_BACTERIA	context	2.4.1.230	Pedosphaera parvula (strain Ellin514)	320771	Bacteria		unreviewed	770	Kojibiose phosphorylase (EC 2.4.1.230)
+A0ABZ0RIR9	CONTEXT_BACTERIA	context		Coraliomargarita algicola	3092156	Bacteria		unreviewed	726	Glycosyl hydrolase family 65 protein
+A0A8C6YU66	CONTEXT_METAZOA	context	3.2.1.107	Nothoprocta perdicaria (Chilean tinamou) (Crypturus perdicarius)	30464	Eukaryota	Metazoa	unreviewed	755	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0A8U7MCM4	CONTEXT_METAZOA	context	3.2.1.107	Corvus moneduloides (New Caledonian crow)	1196302	Eukaryota	Metazoa	unreviewed	592	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0ABM1U5P5	CONTEXT_METAZOA	context	3.2.1.107	Microtus ochrogaster (Prairie vole)	79684	Eukaryota	Metazoa	unreviewed	690	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0ABM3NGV4	CONTEXT_METAZOA	context	3.2.1.107	Acinonyx jubatus (Cheetah)	32536	Eukaryota	Metazoa	unreviewed	572	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0A8B9PMS4	CONTEXT_METAZOA	context	3.2.1.107	Apteryx owenii (Little spotted kiwi)	8824	Eukaryota	Metazoa	unreviewed	693	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0A6E8VX60	CONTEXT_METAZOA	context	3.2.1.107	Anopheles coluzzii (African malaria mosquito)	1518534	Eukaryota	Metazoa	unreviewed	774	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0A1B0CRF8	CONTEXT_METAZOA	context	3.2.1.107	Lutzomyia longipalpis (Sand fly)	7200	Eukaryota	Metazoa	unreviewed	562	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0A3P9P6V8	CONTEXT_METAZOA	context	3.2.1.107	Poecilia reticulata (Guppy) (Acanthophacelus reticulatus)	8081	Eukaryota	Metazoa	unreviewed	697	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0A6P9BNP0	CONTEXT_METAZOA	context	3.2.1.107	Pantherophis guttatus (Corn snake) (Elaphe guttata)	94885	Eukaryota	Metazoa	unreviewed	692	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+R7UAB2	CONTEXT_METAZOA	context		Capitella teleta (Polychaete worm)	283909	Eukaryota	Metazoa	unreviewed	943	Uncharacterized protein
+A0A2K5L1F8	CONTEXT_METAZOA	context	3.2.1.107	Cercocebus atys (Sooty mangabey) (Cercocebus torquatus atys)	9531	Eukaryota	Metazoa	unreviewed	695	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0A1S4FCZ7	CONTEXT_METAZOA	context	3.2.1.107	Aedes aegypti (Yellowfever mosquito) (Culex aegypti)	7159	Eukaryota	Metazoa	unreviewed	762	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0AAW1YU35	CONTEXT_METAZOA	context	3.2.1.107	Culter alburnus (Topmouth culter)	194366	Eukaryota	Metazoa	unreviewed	690	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0AAD1TI94	CONTEXT_METAZOA	context	3.2.1.107	Pelobates cultripes (Western spadefoot toad)	61616	Eukaryota	Metazoa	unreviewed	689	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0A194PTY3	CONTEXT_METAZOA	context	3.2.1.107	Papilio xuthus (Asian swallowtail butterfly)	66420	Eukaryota	Metazoa	unreviewed	811	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0A836LB60	CONTEXT_EUKARYOTA	context		Porcisia hertigi	2761500	Eukaryota		unreviewed	1183	Uncharacterized protein
+A0A836GJP8	CONTEXT_EUKARYOTA	context		Leishmania orientalis	2249476	Eukaryota		unreviewed	1154	Glycosyl hydrolase
+A0A7G2C1M4	CONTEXT_EUKARYOTA	context		Angomonas deanei	59799	Eukaryota		unreviewed	1157	Glycosyl hydrolase family 65, N-terminal domain/Glycosyl hydrolase family 65 central catalytic domain/Glycosyl hydrolase family 65, C-terminal domain/Haloacid dehalogenase-like hydrolase, putative
+A0AAW2Z680	CONTEXT_EUKARYOTA	context	3.2.1.107	Acrasis kona	1008807	Eukaryota		unreviewed	708	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0AB34JCC8	CONTEXT_EUKARYOTA	context	3.2.1.107	Prymnesium parvum (Toxic golden alga)	97485	Eukaryota		unreviewed	746	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0AAW0EK43	CONTEXT_EUKARYOTA	context		Novymonas esmeraldas	1808958	Eukaryota		unreviewed	1172	Glycosyl hydrolase
+A0A3R7N8C5	CONTEXT_EUKARYOTA	context	3.2.1.28	Trypanosoma conorhini	83891	Eukaryota		unreviewed	1163	Putative glycosyl hydrolase (EC 3.2.1.28)
+A0A813E160	CONTEXT_EUKARYOTA	context		Polarella glacialis (Dinoflagellate)	89957	Eukaryota		unreviewed	687	Glycoside hydrolase family 65 central catalytic domain-containing protein
+A0A9W7F898	CONTEXT_EUKARYOTA	context		Triparma laevis f. longispina	1714387	Eukaryota		unreviewed	728	Glycoside hydrolase family 65 central catalytic domain-containing protein
+S9TWV9	CONTEXT_EUKARYOTA	context		Strigomonas culicis	28005	Eukaryota		unreviewed	1163	Alpha,alpha-trehalase (Glycosyl hydrolase)
+A0ABQ5K424	CONTEXT_EUKARYOTA	context		Aduncisulcus paluster	2918883	Eukaryota		unreviewed	910	Glycoside hydrolase family 65 central catalytic domain-containing protein
+F2UG85	CONTEXT_EUKARYOTA	context	3.2.1.107	Salpingoeca rosetta (Choanoflagellate)	946362	Eukaryota		unreviewed	810	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0A0M9G4T3	CONTEXT_EUKARYOTA	context		Leptomonas pyrrhocoris (Firebug parasite)	157538	Eukaryota		unreviewed	1172	Glycosyl hydrolase
+L8H5C3	CONTEXT_EUKARYOTA	context	3.2.1.107	Acanthamoeba castellanii (strain ATCC 30010 / Neff)	1257118	Eukaryota		unreviewed	736	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0A6A5BHH6	CONTEXT_EUKARYOTA	context	3.2.1.107	Naegleria fowleri (Brain eating amoeba)	5763	Eukaryota		unreviewed	743	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+X6MNZ6	CONTEXT_EUKARYOTA	context		Reticulomyxa filosa	46433	Eukaryota		unreviewed	644	Glycoside hydrolase family 65 central catalytic domain-containing protein
+A0A0M0J3S8	CONTEXT_EUKARYOTA	context	3.2.1.107	Chrysochromulina tobinii	1460289	Eukaryota		unreviewed	755	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0ABQ6MLL7	CONTEXT_EUKARYOTA	context		Tetraparma gracilis	2962635	Eukaryota		unreviewed	697	Glycoside hydrolase family 65 central catalytic domain-containing protein
+A0ABR2HC44	CONTEXT_EUKARYOTA	context		Tritrichomonas musculus	1915356	Eukaryota		unreviewed	694	Uncharacterized protein
+A0A8J4PSA9	CONTEXT_EUKARYOTA	context	3.2.1.107	Polysphondylium violaceum	133409	Eukaryota		unreviewed	711	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A0AA86J3I1	CONTEXT_EUKARYOTA	context		Badhamia polycephala (Many-headed slime mold) (Physarum polycephalum)	5791	Eukaryota		unreviewed	911	Trehalose-6-phosphate phosphorylase
+A0A0S4JN81	CONTEXT_EUKARYOTA	context		Bodo saltans (Flagellated protozoan)	75058	Eukaryota		unreviewed	1337	Glycoside hydrolase, putative
+D3AZK7	CONTEXT_EUKARYOTA	context	3.2.1.107	Heterostelium pallidum (strain ATCC 26659 / Pp 5 / PN500) (Cellular slime mold) (Polysphondylium pallidum)	670386	Eukaryota		unreviewed	961	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
+A9UXV0	CONTEXT_EUKARYOTA	context		Monosiga brevicollis (Choanoflagellate)	81824	Eukaryota		unreviewed	504	Glycoside hydrolase family 65 central catalytic domain-containing protein
+A0A4D9CYH5	CONTEXT_EUKARYOTA	context		Nannochloropsis salina CCMP1776	1027361	Eukaryota		unreviewed	1042	Glycoside hydrolase family 65 central catalytic domain-containing protein
+A0A2J8AJ39	CONTEXT_VIRIDIPLANTAE	context		Tetrabaena socialis	47790	Eukaryota	Viridiplantae	unreviewed	525	Acid trehalase-like protein 1
+A0AAE0KZH6	CONTEXT_VIRIDIPLANTAE	context		Cymbomonas tetramitiformis	36881	Eukaryota	Viridiplantae	unreviewed	757	Glycoside hydrolase family 65 central catalytic domain-containing protein
+A0AAW1QPT3	CONTEXT_VIRIDIPLANTAE	context	3.2.1.107	[Myrmecia] bisecta	41462	Eukaryota	Viridiplantae	unreviewed	801	Protein-glucosylgalactosylhydroxylysine glucosidase (EC 3.2.1.107) (Acid trehalase-like protein 1)
