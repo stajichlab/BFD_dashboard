@@ -8,26 +8,37 @@ sys.path.insert(0, ".")
 from _helpers import fig, table
 ```
 
-Domains are [Pfam](https://www.ebi.ac.uk/interpro/entry/pfam/) hits with `domain_i_evalue <= 1e-5`, version suffix removed, as in `bin/atlas/sql/J2_pfam.sql`. Counts are per genome (one representative per species). The top families by prevalence (plus a curated panel) are kept.
+Domains are [Pfam](https://www.ebi.ac.uk/interpro/entry/pfam/) hits with `domain_i_evalue <= 1e-5`, version suffix removed, as in `bin/atlas/sql/J2_pfam.sql`. Counts are per genome (one representative per species). The 1,500 most prevalent families plus a curated panel are kept.
 
 ## Domains per protein
 
 ```{python}
-fig("F06_domains_per_protein", "Share of proteins with 0, 1, 2, 3, 4 or 5+ Pfam domains, mean over genomes in each phylum.")
+fig("F06_domains_per_protein", "Share of proteins with 0, 1, 2, 3, 4 or 5+ Pfam domains, mean over genomes in each group.")
 ```
 
 The "0" class combines proteins with no Pfam hit and proteins whose hits fail the gate; it also depends on how much of the proteome carries a scan result (see the coverage caveat in [Data and methods](06_data_notes.qmd)).
 
-## Most widespread domains
+## Domains whose presence varies
+
+Most widespread domains are present in nearly every genome, so a presence heatmap of them is flat. This figure instead uses domains found in 5 to 95% of genomes overall and ranks them by how much their prevalence differs between groups. Prevalence values are in the table below, not printed on the figure.
 
 ```{python}
-fig("F07_pfam_prevalence", "Fraction of genomes in each phylum that carry each of the 30 most widespread domains.", "80%")
+fig("F07_pfam_prevalence", "Fraction of genomes carrying each of the 40 domains whose presence varies most between groups.", "85%")
+table("T02b_variable_presence", link_pfam="pfam_acc")
+```
+
+## Widespread domains: copy-number deviation
+
+The 30 domains found in the most genomes differ in **copy number**, not presence. Each cell is the log2 ratio of the group's mean copies per 10,000 genes to the all-genome mean (red = more copies than average, blue = fewer).
+
+```{python}
+fig("F07b_widespread_fold", "Copy-number deviation of the 30 most widespread domains.", "85%")
 table("T02_top_pfam", link_pfam="pfam_acc")
 ```
 
-## Domains that differ most between phyla
+## Domains that differ most between groups
 
 ```{python}
-fig("F08_pfam_phylum_variance", "Mean copies per 10,000 genes (log scale), z-scored across phyla, for the 40 domains with the largest between-phylum variance (domains present in at least 30% of genomes of some phylum and averaging at least 0.5 copies per 10,000 genes).", "80%")
+fig("F08_pfam_variance", "Mean copies per 10,000 genes (log scale), z-scored across groups, for the 40 domains with the largest between-group variance (domains present in at least 30% of genomes of some group and averaging at least 0.5 copies per 10,000 genes).", "85%")
 fig("F09_pfam_breadth", "Number of the retained Pfam families present per genome.")
 ```

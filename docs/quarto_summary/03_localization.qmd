@@ -13,15 +13,14 @@ Predictions are computational. DeepLoc primary label is the class with the highe
 ## DeepLoc
 
 ```{python}
-fig("F10_deeploc_by_phylum", "Primary DeepLoc localization by phylum.")
-fig("F11_deeploc_by_class", "Primary DeepLoc localization by class (classes with 20 or more genomes).", "70%")
-table("T03_deeploc_by_phylum")
+fig("F10_deeploc", "Primary DeepLoc localization.")
+table("T03_deeploc")
 ```
 
 ## WoLF PSORT
 
 ```{python}
-fig("F12_wolfpsort_by_phylum", "WoLF PSORT localization by phylum (ten most common classes).")
+fig("F12_wolfpsort", "WoLF PSORT localization (ten most common classes).")
 ```
 
 ## Secretome

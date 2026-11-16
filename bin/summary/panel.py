@@ -1,8 +1,10 @@
 """Curated Pfam panel for the functional-domain pages of the Quarto summary.
 
-Accessions are written from memory of the Pfam release and must be checked against InterPro before
-the pages are published (citation to verify); `check_panel_names.py` prints pfam_id for each accession
-found in the data so a wrong accession is visible as a mismatched name.
+Verified 2026-11-16 against the data itself: all 57 accessions are present in BFD's pfam table and the
+Pfam short name stored there (pfam_id) matches the intended domain (for example PF00176 is now named
+SNF2-rel_dom, formerly SNF2_N; PF00154 is RecA_N; PF03443 is AA9, formerly Glyco_hydro_61). The figures
+print the name from the data. The *interpretation* of each domain (for example Condensation as an NRPS
+signature) is standard literature knowledge, not re-derived here.
 """
 
 PANEL = {

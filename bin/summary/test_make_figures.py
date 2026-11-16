@@ -18,7 +18,8 @@ def synth(root, n=240, seed=0):
     phyla = ["Ascomycota", "Basidiomycota", "Mucoromycota", "Chytridiomycota", "Zoopagomycota"]
     ids = [f"G{i:04d}" for i in range(n)]
     ph = rng.choice(phyla, n, p=[0.5, 0.3, 0.1, 0.06, 0.04])
-    core = pd.DataFrame({"species_prefix": ids, "PHYLUM": ph, "CLASS": [f"{p[:4]}_c{rng.integers(0, 3)}" for p in ph],
+    core = pd.DataFrame({"species_prefix": ids, "PHYLUM": ph, "SUBPHYLUM": [f"{p[:4]}_sub{rng.integers(0, 2)}" if p == "Ascomycota" else None for p in ph],
+                         "CLASS": [f"{p[:4]}_c{rng.integers(0, 3)}" for p in ph],
                          "ORDER": "o", "FAMILY": "f", "GENUS": "g", "SPECIES": [f"s{i}" for i in range(n)],
                          "total_length_bp": rng.integers(10_000_000, 60_000_000, n), "gc_pct": rng.uniform(35, 60, n),
                          "busco_complete": rng.uniform(80, 99, n), "N50_bp": 100000, "contig_count": 50,
@@ -55,18 +56,43 @@ def test_all_outputs(tmp_path):
     data.mkdir()
     synth(data)
     made = mf.main(data, tmp_path / "out")
-    for name in ["F01_genomes_by_phylum", "F03_genome_size_vs_genes", "F06_domains_per_protein", "F07_pfam_prevalence",
-                 "F08_pfam_phylum_variance", "F10_deeploc_by_phylum", "F12_wolfpsort_by_phylum", "F15_phylum_feature_heatmap",
-                 "F17_feature_pca", "F18_cazy_classes", "F20_merops_classes", "F21_tf_families", "F23_idp_fraction"]:
-        assert name in made, name
-        assert (tmp_path / "out" / "figures" / f"{name}.png").stat().st_size > 2000
-    assert sum(n.startswith("F22_") for n in made) == len(PANEL)
-    t = pd.read_csv(tmp_path / "out" / "tables" / "T01_phylum_overview.tsv", sep="\t")
+    assert set(made) == set(mf.LEVELS)
+    for level, names in made.items():
+        for name in ["F01_genomes_by_group", "F03_genome_size_vs_genes", "F06_domains_per_protein", "F07_pfam_prevalence",
+                     "F07b_widespread_fold", "F08_pfam_variance", "F10_deeploc", "F12_wolfpsort", "F15_feature_heatmap",
+                     "F17_feature_pca", "F18_cazy_classes", "F20_merops_classes", "F21_tf_families", "F23_idp_fraction"]:
+            assert name in names, (level, name)
+            assert (tmp_path / "out" / "figures" / level / f"{name}.png").stat().st_size > 2000
+        assert sum(n.startswith("F22_") for n in names) == len(PANEL)
+    t = pd.read_csv(tmp_path / "out" / "tables" / "phylum" / "T01_overview.tsv", sep="\t")
     assert t["genomes"].sum() == 240
+    key = pd.read_csv(tmp_path / "out" / "tables" / "class" / "T00_group_key.tsv", sep="\t")
+    assert key["genomes"].sum() == 240 and (key["phylum"] != "").all()
 
 
-def test_phylum_grouping_collapses_rare_to_other():
-    core = pd.DataFrame({"PHYLUM": [f"P{i}" for i in range(12)] * 2})
-    out, levels, colors = mf.group_phyla(core)
-    assert levels[-1] == "Other" and len(levels) == mf.TOP_PHYLA + 1
-    assert colors["Other"] == mf.GREY
+def test_groups_order_and_colour_by_parent():
+    core = pd.DataFrame({"PHYLUM": ["A"] * 30 + ["B"] * 20, "SUBPHYLUM": ["A1"] * 15 + ["A2"] * 15 + [None] * 20,
+                         "CLASS": ["a1x"] * 15 + ["a2x"] * 15 + ["bx"] * 20})
+    d, levels, colors = mf.assign_groups(core, "class")
+    assert levels == ["a1x", "a2x", "bx"]                      # ordered by phylum, then subphylum
+    assert colors["a1x"] == colors["a2x"] != colors["bx"]      # coloured by phylum
+    d, levels, _ = mf.assign_groups(core, "subphylum")
+    assert levels == ["A1", "A2", "B"]                          # subphylum where defined, else phylum
+
+
+def test_small_groups_pool_to_other():
+    core = pd.DataFrame({"PHYLUM": [f"P{i}" for i in range(12)] * 2, "CLASS": "c"})
+    d, levels, colors = mf.assign_groups(core, "phylum")
+    assert levels[-1] == mf.OTHER and len(levels) == mf.TOP_PHYLA + 1
+    assert colors[mf.OTHER] == mf.GREY
+
+
+def test_subphylum_derived_from_class_when_null():
+    core = pd.DataFrame({"PHYLUM": ["Ascomycota"] * 30 + ["Basidiomycota"] * 12,
+                         "SUBPHYLUM": [None] * 42,
+                         "CLASS": ["Sordariomycetes"] * 15 + ["Saccharomycetes"] * 15 + ["Agaricomycetes"] * 12})
+    d, levels, _ = mf.assign_groups(core, "subphylum")
+    assert set(levels) == {"Pezizomycotina", "Saccharomycotina", "Agaricomycotina"}
+    core.loc[core.CLASS == "Agaricomycetes", "CLASS"] = "Notaclassomycetes"   # unmapped class keeps the phylum label
+    d, levels, _ = mf.assign_groups(core, "subphylum")
+    assert "Basidiomycota" in levels

@@ -9,13 +9,13 @@ from pathlib import Path
 from _helpers import fig, table, HERE
 ```
 
-Each panel shows the mean number of proteins carrying a domain per genome, per phylum, on a log2(x + 1) scale, with the share of genomes that carry the domain printed in each cell. Accessions are linked to InterPro in the table at the end. **The panel accessions were written from memory and are to be verified against InterPro before publication.**
+Each panel has two heatmaps. Left: the mean number of proteins carrying a domain per genome, per group, on a log2(x + 1) scale. Right: the log2 ratio of the group's mean copies per 10,000 genes to the all-genome mean (red = more than average, blue = fewer), which shows differences even for domains present in nearly every genome. The share of genomes carrying each domain is in `tables/<level>/T09_functional_panel.tsv` (`fraction_genomes`). Accessions were checked against the Pfam names stored in the BFD data.
 
 ## Carbohydrate-active enzymes (CAZy)
 
 ```{python}
-fig("F18_cazy_classes", "CAZy proteins per gene for the six classes (GH, GT, PL, CE, AA, CBM), by phylum.")
-fig("F19_cazy_families", "Thirty most abundant CAZy families, median proteins per genome by phylum.", "80%")
+fig("F18_cazy_classes", "CAZy proteins per gene for the six classes (GH, GT, PL, CE, AA, CBM).")
+fig("F19_cazy_families", "Thirty most abundant CAZy families, mean proteins per genome.", "85%")
 ```
 
 ## Peptidases (MEROPS)
@@ -27,8 +27,8 @@ fig("F20_merops_classes", "MEROPS best-hit proteins per gene by peptidase class 
 ## Transcription factors
 
 ```{python}
-fig("F21_tf_families", "Transcription-factor families, median proteins per genome by phylum.", "80%")
-table("T08_tf_family_medians")
+fig("F21_tf_families", "Transcription-factor families, mean proteins per genome.", "85%")
+table("T08_tf_family_means")
 ```
 
 ## Curated domain panels
@@ -36,20 +36,20 @@ table("T08_tf_family_medians")
 Kinases and signalling, transporters, cytochrome P450 and redox, transcription factors, scaffolds, chromatin and DNA metabolism, carbohydrate-active domains, peptidases, secondary metabolism, lipid metabolism, secreted and effector-like domains, and trehalose and carbon storage.
 
 ```{python}
-for p in sorted((HERE / "figures").glob("F22_*.png")):
-    fig(p.stem, p.stem.split("_panel_", 1)[-1].replace("_", " ").capitalize(), "70%")
+for p in sorted((HERE / "figures" / "phylum").glob("F22_*.png")):
+    fig(p.stem, p.stem.split("_panel_", 1)[-1].replace("_", " ").capitalize(), "80%")
 ```
 
 ```{python}
-table("T09_functional_panel", link_pfam="pfam_acc", max_rows=60)
+table("T09_functional_panel", link_pfam="pfam_acc", max_rows=60, levels=["phylum"])
 ```
 
-The full panel table is `tables/T09_functional_panel.tsv`.
+The full panel tables are `tables/<level>/T09_functional_panel.tsv`.
 
 ## Intrinsic disorder
 
 ```{python}
-fig("F23_idp_fraction", "Mean fraction of each protein predicted as intrinsically disordered, per genome, by phylum.")
+fig("F23_idp_fraction", "Mean fraction of each protein predicted as intrinsically disordered, per genome.")
 fig("F23b_idp_gt03", "Share of proteins with an intrinsic-disorder fraction above 0.3.")
 ```
 

@@ -55,9 +55,11 @@ def main():
     # the db is attached read-only as 'bfd'; temp tables live in memory
     con.execute("""
         create temp table reps as
-        select LOCUSTAG as species_prefix, PHYLUM, CLASS, ORDER_ as ORDER, FAMILY, GENUS, SPECIES,
-               total_length_bp, gc_pct, busco_complete, N50_bp, contig_count
-        from v_genome_labels where is_representative
+        select v.LOCUSTAG as species_prefix, v.PHYLUM, sp.SUBPHYLUM, v.CLASS, v.ORDER_ as ORDER, v.FAMILY, v.GENUS, v.SPECIES,
+               v.total_length_bp, v.gc_pct, v.busco_complete, v.N50_bp, v.contig_count
+        from v_genome_labels v
+        left join (select LOCUSTAG, any_value(SUBPHYLUM) as SUBPHYLUM from species group by 1) sp on sp.LOCUSTAG = v.LOCUSTAG
+        where v.is_representative
     """)
     print("representatives:", con.execute("select count(*) from reps").fetchone()[0], flush=True)
 
