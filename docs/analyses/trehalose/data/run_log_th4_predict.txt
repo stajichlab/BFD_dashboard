@@ -1,0 +1,50 @@
+
+== xerophile genera: markers ranked by AUC distance from chance (within-class percentiles) ==
+      marker  n_focal  n_ctrl    auc      p   q_BH  med_focal_classpct
+      gc_pct       11    1279 0.7405 0.0060 0.2361              0.8402
+       MIP_k       11    1279 0.7272 0.0094 0.1722              0.8580
+      DIT1_k       11    1279 0.2856 0.0138 0.1983              0.1746
+      sHSP_k       11    1279 0.7079 0.0174 0.1774              0.8994
+       GPH_k       11    1279 0.7024 0.0206 0.1358              0.7870
+TPS_over_GSY       11    1279 0.7007 0.0218 0.1983              0.7219
+       TPS_k       11    1279 0.6940 0.0265 0.0000              0.7456
+       UGP_k       11    1279 0.6874 0.0322 0.1546              0.7870
+
+== dry species epithet: markers ranked by AUC distance from chance (within-class percentiles) ==
+      marker  n_focal  n_ctrl    auc      p   q_BH  med_focal_classpct
+      gc_pct       25    1265 0.6307 0.0251 0.5851              0.6833
+  HYDRO_II_k       25    1265 0.3933 0.0659 0.5526              0.4913
+       MPD_k       25    1265 0.5827 0.1557 0.4616              0.5625
+       TPS_k       25    1265 0.5821 0.1591 0.2491              0.6744
+TPS_over_GSY       25    1265 0.5784 0.1788 0.5690              0.7330
+      DIT1_k       25    1265 0.4222 0.1804 0.5526              0.4755
+   HYDRO_I_k       25    1265 0.5770 0.1862 0.5454              0.5085
+     HSP12_k       25    1265 0.4338 0.2551 0.4630              0.4583
+
+== entomopathogen genera: markers ranked by AUC distance from chance (within-class percentiles) ==
+      marker  n_focal  n_ctrl    auc      p   q_BH  med_focal_classpct
+TPS_over_GSY        6    1284 0.9062 0.0006 0.7059              0.9457
+       TPS_k        6    1284 0.8810 0.0013 0.5940              0.9344
+   HYDRO_I_k        6    1284 0.7893 0.0142 0.7059              0.9163
+       TPP_k        6    1284 0.7417 0.0409 0.5958              0.8032
+TPS_over_NTH        6    1284 0.7314 0.0502 0.7059              0.7670
+       MPD_k        6    1284 0.3233 0.1342 0.7059              0.3710
+      n_prot        6    1284 0.3237 0.1359 0.7059              0.3348
+       NTH_k        6    1284 0.6739 0.1412 0.5958              0.6946
+
+== lichen-forming classes: markers ranked by AUC distance from chance (within-class percentiles) ==
+    marker  n_focal  n_ctrl    auc      p   q_BH  med_focal_classpct
+HYDRO_II_k      126    1164 0.3615 0.0000 0.7474              0.3770
+ HYDRO_I_k      126    1164 0.3990 0.0002 0.7474              0.4385
+    DIT1_k      126    1164 0.4779 0.4123 0.7765              0.5123
+   HSP12_k      126    1164 0.4842 0.5588 0.7474              0.5123
+     ATH_k      126    1164 0.4844 0.5620 0.7059              0.5123
+     TPS_k      126    1164 0.4848 0.5756 0.7059              0.5123
+     MPD_k      126    1164 0.4850 0.5799 0.7467              0.5123
+     TPP_k      126    1164 0.4854 0.5903 0.7059              0.5123
+
+== how many markers reach q<0.1 for each focal set, and best single-marker AUC ==
+  entomopathogen genera      markers q<0.1:  0/22   best TPS_over_GSY           AUC 0.906 (n focal 6)
+  xerophile genera           markers q<0.1:  4/22   best gc_pct                 AUC 0.740 (n focal 11)
+  dry species epithet        markers q<0.1:  0/22   best gc_pct                 AUC 0.631 (n focal 25)
+  lichen-forming classes     markers q<0.1:  0/21   best HYDRO_II_k             AUC 0.362 (n focal 126)

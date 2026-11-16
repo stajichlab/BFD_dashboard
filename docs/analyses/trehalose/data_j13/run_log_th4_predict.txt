@@ -1,0 +1,54 @@
+/rhome/jstajich/projects/BFD_dashboard/bench/trehalose_J13/checkout/docs/analyses/trehalose/scripts/th4_predict.py:37: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+/rhome/jstajich/projects/BFD_dashboard/bench/trehalose_J13/checkout/docs/analyses/trehalose/scripts/th4_predict.py:39: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+/rhome/jstajich/projects/BFD_dashboard/bench/trehalose_J13/checkout/docs/analyses/trehalose/scripts/th4_predict.py:40: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+/rhome/jstajich/projects/BFD_dashboard/bench/trehalose_J13/checkout/docs/analyses/trehalose/scripts/th4_predict.py:41: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+
+== xerophile genera: markers ranked by AUC distance from chance (within-class percentiles) ==
+      marker  n_focal  n_ctrl    auc      p   q_BH  med_focal_classpct
+      gc_pct       11    1269 0.7401 0.0061 0.1053              0.8402
+       MIP_k       11    1269 0.7276 0.0093 0.1343              0.8580
+      DIT1_k       11    1269 0.2848 0.0134 0.1460              0.1746
+      sHSP_k       11    1269 0.7082 0.0173 0.1672              0.8994
+       GPH_k       11    1269 0.7029 0.0203 0.1707              0.7870
+TPS_over_GSY       11    1269 0.7009 0.0216 0.1707              0.7219
+       TPS_k       11    1269 0.6941 0.0264 0.1769              0.7456
+       UGP_k       11    1269 0.6878 0.0318 0.1976              0.7870
+
+== dry species epithet: markers ranked by AUC distance from chance (within-class percentiles) ==
+      marker  n_focal  n_ctrl    auc      p   q_BH  med_focal_classpct
+      gc_pct       25    1255 0.6304 0.0254 0.1769              0.6818
+  HYDRO_II_k       25    1255 0.3930 0.0652 0.2468              0.4912
+       MPD_k       25    1255 0.5827 0.1554 0.4430              0.5625
+       TPS_k       25    1255 0.5824 0.1579 0.4430              0.6744
+TPS_over_GSY       25    1255 0.5788 0.1768 0.4517              0.7318
+      DIT1_k       25    1255 0.4215 0.1766 0.4517              0.4754
+   HYDRO_I_k       25    1255 0.5778 0.1817 0.4517              0.5085
+     HSP12_k       25    1255 0.4338 0.2550 0.5661              0.4565
+
+== entomopathogen genera: markers ranked by AUC distance from chance (within-class percentiles) ==
+      marker  n_focal  n_ctrl    auc      p   q_BH  med_focal_classpct
+TPS_over_GSY        6    1274 0.9065 0.0006 0.0169              0.9455
+       TPS_k        6    1274 0.8808 0.0013 0.0277              0.9341
+   HYDRO_I_k        6    1274 0.7917 0.0134 0.1460              0.9205
+       TPP_k        6    1274 0.7412 0.0413 0.1997              0.8023
+TPS_over_NTH        6    1274 0.7304 0.0512 0.2227              0.7659
+      n_prot        6    1274 0.3220 0.1322 0.4380              0.3318
+       MPD_k        6    1274 0.3240 0.1359 0.4380              0.3727
+       NTH_k        6    1274 0.6731 0.1432 0.4394              0.6932
+
+== lichen-forming classes: markers ranked by AUC distance from chance (within-class percentiles) ==
+      marker  n_focal  n_ctrl    auc      p   q_BH  med_focal_classpct
+  HYDRO_II_k      122    1158 0.3672 0.0000 0.0001              0.3729
+   HYDRO_I_k      122    1158 0.3984 0.0002 0.0093              0.4407
+      DIT1_k      122    1158 0.4793 0.4483 0.7286              0.5127
+     HSP12_k      122    1158 0.4844 0.5694 0.7286              0.5127
+       MPD_k      122    1158 0.4857 0.6031 0.7286              0.5127
+TPS_over_GSY      122    1158 0.4858 0.6047 0.7286              0.5636
+       TPS_k      122    1158 0.4858 0.6059 0.7286              0.5127
+       ATH_k      122    1158 0.4859 0.6052 0.7286              0.5127
+
+== how many markers reach q<0.1 for each focal set, and best single-marker AUC ==
+  entomopathogen genera      markers q<0.1:  2/22   best TPS_over_GSY           AUC 0.907 (n focal 6)
+  xerophile genera           markers q<0.1:  0/22   best gc_pct                 AUC 0.740 (n focal 11)
+  dry species epithet        markers q<0.1:  0/22   best gc_pct                 AUC 0.630 (n focal 25)
+  lichen-forming classes     markers q<0.1:  2/21   best HYDRO_II_k             AUC 0.367 (n focal 122)

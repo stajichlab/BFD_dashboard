@@ -1,0 +1,75 @@
+GENUS	CLASS	ord	SPECIES	qcov	complete_pct	n_prot	TPS	TPP	n_tps	n_tpp	NTH	ATH
+Pycnora	Candelariomycetes	Candelariales	Pycnora praestabilis	0.9965706447187928	99.2	7827.0	0.0	0.0	0.0	0.0	1.0	1.0
+Sclerophora	Coniocybomycetes	Coniocybales	Sclerophora amabilis	0.9993141289437586	99.2	7700.0	0.0	0.0	0.0	0.0	1.0	1.0
+Buellia	Lecanoromycetes	Caliciales	Buellia mamillana	0.9897119341563786	92.5	10209.0	0.0	0.0	0.0	0.0	1.0	1.0
+Buellia	Lecanoromycetes	Caliciales	Buellia stillingiana	0.9910836762688614	90.6	10916.0	0.0	0.0	0.0	0.0	1.0	1.0
+Caloplaca	Lecanoromycetes	Teloschistales	Caloplaca aetnensis	0.9958847736625516	94.3	9643.0	0.0	0.0	0.0	0.0	1.0	1.0
+Caloplaca	Lecanoromycetes	Teloschistales	Caloplaca aegaea	0.9910836762688614	88.4	7806.0	0.0	0.0	0.0	0.0	1.0	1.0
+Caloplaca	Lecanoromycetes	Teloschistales	cf. Caloplaca sp. 1 TL-2023	0.9897119341563786	94.1	8722.0	0.0	1.0	0.0	1.0	1.0	1.0
+Dimelaena	Lecanoromycetes	Caliciales	Dimelaena oreina	0.9883401920438958	88.1	9092.0	0.0	0.0	0.0	0.0	1.0	1.0
+Dirinaria	Lecanoromycetes	Caliciales	Dirinaria frostii	0.9890260631001372	90.4	9528.0	0.0	0.0	0.0	0.0	1.0	1.0
+Flavoplaca	Lecanoromycetes	Teloschistales	Flavoplaca marina	0.9938271604938272	94.4	9669.0	0.0	1.0	0.0	1.0	1.0	1.0
+Flavoplaca	Lecanoromycetes	Teloschistales	Flavoplaca oasis	0.9993141289437586	95.4	9716.0	0.0	0.0	0.0	0.0	1.0	1.0
+Gallowayella	Lecanoromycetes	Teloschistales	Gallowayella cf. fulva	0.9993141289437586	98.9	9458.0	0.0	0.0	0.0	0.0	1.0	1.0
+Gallowayella	Lecanoromycetes	Teloschistales	Gallowayella weberi	0.9910836762688614	89.8	8129.0	0.0	0.0	0.0	0.0	1.0	1.0
+Gyalolechia	Lecanoromycetes	Teloschistales	Gyalolechia ehrenbergii	0.9958847736625516	98.7	9312.0	0.0	1.0	0.0	1.0	0.0	1.0
+Gyalolechia	Lecanoromycetes	Teloschistales	Gyalolechia marmorata	0.9945130315500684	96.5	8984.0	0.0	0.0	0.0	0.0	1.0	1.0
+Gyalolechia	Lecanoromycetes	Teloschistales	Gyalolechia gomerana	0.9869684499314128	89.1	8610.0	0.0	1.0	0.0	1.0	0.0	1.0
+Heterodermia	Lecanoromycetes	Caliciales	Heterodermia albicans	0.9869684499314128	88.6	10356.0	0.0	0.0	0.0	0.0	1.0	1.0
+Heterodermia	Lecanoromycetes	Caliciales	Heterodermia speciosa	0.9958847736625516	97.2	10662.0	0.0	0.0	0.0	0.0	1.0	1.0
+Lepraria	Lecanoromycetes	Lecanorales	Lepraria finkii	0.9986282578875172	99.0	11169.0	0.0	1.0	0.0	1.0	2.0	1.0
+Lepraria	Lecanoromycetes	Lecanorales	Lepraria neglecta	1.0	99.4	12885.0	0.0	1.0	0.0	1.0	3.0	1.0
+Lepraria	Lecanoromycetes	Lecanorales	Lepraria leprolomopsis	0.9862825788751716	87.3	9851.0	0.0	0.0	0.0	0.0	2.0	1.0
+Leptogium	Lecanoromycetes	Peltigerales	Leptogium austroamericanum	0.98559670781893	94.0	8663.0	0.0	0.0	0.0	0.0	1.0	1.0
+Letrouitia	Lecanoromycetes	Teloschistales	Letrouitia leprolyta	0.9938271604938272	94.2	9512.0	0.0	1.0	0.0	1.0	1.0	1.0
+Letrouitia	Lecanoromycetes	Teloschistales	Letrouitia transgressa	0.9965706447187928	99.4	8919.0	0.0	0.0	0.0	0.0	1.0	1.0
+Leucodermia	Lecanoromycetes	Caliciales	Leucodermia appalachiensis	0.9890260631001372	89.2	10127.0	0.0	0.0	0.0	0.0	1.0	1.0
+Lobaria	Lecanoromycetes	Peltigerales	Lobaria pulmonaria	0.99039780521262	97.1	12774.0	0.0	2.0	0.0	2.0	1.0	1.0
+Lobaria	Lecanoromycetes	Peltigerales	Lobaria immixta	1.0	99.0	13862.0	0.0	1.0	0.0	1.0	1.0	1.0
+Mobergia	Lecanoromycetes	Caliciales	Mobergia calculiformis	0.99039780521262	97.5	10570.0	0.0	0.0	0.0	0.0	1.0	1.0
+Nephroma	Lecanoromycetes	Peltigerales	Nephroma helveticum	0.9883401920438958	88.5	9104.0	0.0	1.0	0.0	1.0	1.0	1.0
+Obscuroplaca	Lecanoromycetes	Teloschistales	Obscuroplaca camptidia	0.9917695473251028	89.8	8799.0	0.0	1.0	0.0	1.0	1.0	1.0
+Opeltia	Lecanoromycetes	Teloschistales	Opeltia flavorubescens	0.9993141289437586	99.1	10440.0	0.0	1.0	0.0	1.0	2.0	1.0
+Peltigera	Lecanoromycetes	Peltigerales	Peltigera extenuata	0.9979423868312756	97.7	12270.0	0.0	0.0	0.0	0.0	1.0	1.0
+Peltigera	Lecanoromycetes	Peltigerales	Peltigera aphthosa	0.9897119341563786	96.4	14482.0	0.0	0.0	0.0	0.0	1.0	1.0
+Peltigera	Lecanoromycetes	Peltigerales	Peltigera evansiana	0.99519890260631	97.6	13249.0	0.0	0.0	0.0	0.0	1.0	1.0
+Peltigera	Lecanoromycetes	Peltigerales	Peltigera dolichorrhiza	0.9924554183813444	98.0	11198.0	0.0	0.0	0.0	0.0	1.0	1.0
+Peltigera	Lecanoromycetes	Peltigerales	Peltigera phyllidiosa	0.9931412894375856	97.8	10556.0	0.0	0.0	0.0	0.0	1.0	1.0
+Phaeophyscia	Lecanoromycetes	Caliciales	Phaeophyscia squarrosa	0.9869684499314128	91.1	10616.0	0.0	0.0	0.0	0.0	1.0	1.0
+Phaeophyscia	Lecanoromycetes	Caliciales	Phaeophyscia hispidula	0.9883401920438958	88.9	10953.0	0.0	0.0	0.0	0.0	1.0	0.0
+Physcia	Lecanoromycetes	Caliciales	Physcia biziana	0.9972565157750344	99.1	11300.0	0.0	1.0	0.0	1.0	1.0	1.0
+Physcia	Lecanoromycetes	Caliciales	Physcia sp.	0.9993141289437586	99.2	11294.0	0.0	1.0	0.0	1.0	1.0	1.0
+Physcia	Lecanoromycetes	Caliciales	Physcia stellaris	0.9945130315500684	97.9	11876.0	0.0	0.0	0.0	0.0	1.0	1.0
+Physciella	Lecanoromycetes	Caliciales	Physciella chloantha	0.9986282578875172	98.0	10764.0	0.0	0.0	0.0	0.0	1.0	1.0
+Polyblastidium	Lecanoromycetes	Caliciales	Polyblastidium squamulosum	0.9897119341563786	91.3	10309.0	0.0	0.0	0.0	0.0	1.0	1.0
+Polyblastidium	Lecanoromycetes	Caliciales	Polyblastidium hypoleucum	0.9883401920438958	90.7	9852.0	0.0	0.0	0.0	0.0	1.0	1.0
+Porpidia	Lecanoromycetes	Lecideales	Porpidia albocaerulescens	0.99039780521262	87.0	9588.0	0.0	0.0	0.0	0.0	1.0	1.0
+Pseudocyphellaria	Lecanoromycetes	Peltigerales	Pseudocyphellaria aurata	0.9979423868312756	98.3	11252.0	0.0	0.0	0.0	0.0	1.0	1.0
+Pyrenodesmia	Lecanoromycetes	Teloschistales	Pyrenodesmia sp. 3 TL-2023	0.9862825788751716	96.9	9842.0	0.0	0.0	0.0	0.0	1.0	1.0
+Pyxine	Lecanoromycetes	Caliciales	Pyxine sorediata	0.9897119341563786	89.6	9715.0	0.0	0.0	0.0	0.0	1.0	1.0
+Rinodina	Lecanoromycetes	Caliciales	Rinodina sp.	0.9924554183813444	96.8	10105.0	0.0	0.0	0.0	0.0	0.0	1.0
+Rusavskia	Lecanoromycetes	Teloschistales	Rusavskia elegans	0.9979423868312756	98.3	11050.0	0.0	1.0	0.0	1.0	1.0	1.0
+Seirophora	Lecanoromycetes	Teloschistales	Seirophora villosa	0.98559670781893	93.9	8305.0	0.0	1.0	0.0	1.0	1.0	1.0
+Seirophora	Lecanoromycetes	Teloschistales	Seirophora lacunosa	1.0	99.4	9026.0	0.0	1.0	0.0	1.0	1.0	1.0
+Solorina	Lecanoromycetes	Peltigerales	Solorina crocea	0.9931412894375856	97.5	12734.0	0.0	0.0	0.0	0.0	1.0	1.0
+Squamulea	Lecanoromycetes	Teloschistales	Squamulea sp. 1 TL-2023	0.9862825788751716	93.7	8934.0	0.0	0.0	0.0	0.0	1.0	0.0
+Teloschistes	Lecanoromycetes	Teloschistales	Teloschistes flavicans	0.99519890260631	93.8	8830.0	0.0	1.0	0.0	1.0	1.0	1.0
+Teloschistes	Lecanoromycetes	Teloschistales	Teloschistes peruensis	0.9993141289437586	99.2	9275.0	0.0	1.0	0.0	1.0	1.0	2.0
+Teloschistes	Lecanoromycetes	Teloschistales	Teloschistes chrysophthalmus	0.9979423868312756	98.1	9137.0	0.0	1.0	0.0	1.0	1.0	1.0
+Usnochroma	Lecanoromycetes	Teloschistales	Usnochroma carphineum	0.9993141289437586	98.0	9291.0	0.0	1.0	0.0	1.0	1.0	1.0
+Xanthocarpia	Lecanoromycetes	Teloschistales	Xanthocarpia feracissima	0.9945130315500684	93.0	8206.0	0.0	0.0	0.0	0.0	1.0	1.0
+Xanthoria	Lecanoromycetes	Teloschistales	Xanthoria parietina	1.0	98.9	9695.0	0.0	1.0	0.0	1.0	1.0	1.0
+Xanthoria	Lecanoromycetes	Teloschistales	Xanthoria steineri	0.9986282578875172	98.7	9923.0	0.0	1.0	0.0	1.0	1.0	1.0
+Xanthoria	Lecanoromycetes	Teloschistales	Xanthoria calcicola	1.0	99.3	9907.0	0.0	1.0	0.0	1.0	1.0	1.0
+Xanthoria	Lecanoromycetes	Teloschistales	Xanthoria aureola	0.9917695473251028	94.3	10292.0	0.0	1.0	0.0	1.0	1.0	1.0
+Xanthoria	Lecanoromycetes	Teloschistales	Xanthoria mediterranea	1.0	99.2	9679.0	0.0	1.0	0.0	1.0	1.0	1.0
+Xanthoria	Lecanoromycetes	Teloschistales	Xanthoria sp. 2 TBL-2021	0.9972565157750344	93.4	10677.0	0.0	0.0	0.0	0.0	1.0	1.0
+Basipetospora	Sordariomycetes	Microascales	Basipetospora chlamydospora	1.0	99.2	9232.0	0.0	0.0	0.0	0.0	1.0	0.0
+Cephalotrichum	Sordariomycetes	Microascales	Cephalotrichum gorgonifer	1.0	99.2	10441.0	0.0	0.0	0.0	0.0	2.0	0.0
+Lomentospora	Sordariomycetes	Microascales	Lomentospora prolificans	1.0	99.8	10027.0	0.0	0.0	0.0	0.0	3.0	0.0
+Scedosporium	Sordariomycetes	Microascales	Scedosporium aurantiacum	1.0	99.8	10994.0	0.0	0.0	0.0	0.0	2.0	0.0
+Scedosporium	Sordariomycetes	Microascales	Scedosporium apiospermum	0.9993141289437586	99.8	12959.0	0.0	0.0	0.0	0.0	3.0	0.0
+Scedosporium	Sordariomycetes	Microascales	Scedosporium boydii	0.9993141289437586	99.6	12111.0	0.0	0.0	0.0	0.0	2.0	0.0
+Scedosporium	Sordariomycetes	Microascales	Scedosporium dehoogii	0.9993141289437586	98.9	11415.0	0.0	0.0	0.0	0.0	2.0	0.0
+Scedosporium	Sordariomycetes	Microascales	Scedosporium sp. IMV 00882	0.9993141289437586	99.1	11455.0	0.0	0.0	0.0	0.0	2.0	0.0
+Scopulariopsis	Sordariomycetes	Microascales	Scopulariopsis alboflavescens	1.0	99.5	9486.0	0.0	0.0	0.0	0.0	3.0	0.0
