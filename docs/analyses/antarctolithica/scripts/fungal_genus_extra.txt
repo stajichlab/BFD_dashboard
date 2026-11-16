@@ -1,0 +1,12 @@
+# Fungal genera of SwissProt organisms that are not BFD genera (older names / teleomorph synonyms).
+# Used by 01b_swissprot_extract.py to mark org_codes as Fungi; recovered from the 2026-11-10 laptop orgcode map.
+Ajellomyces
+Cochliobolus
+Cyberlindnera
+Emericella
+Gibberella
+Glomerella
+Hypocrea
+Leptosphaeria
+Nectria
+Postia

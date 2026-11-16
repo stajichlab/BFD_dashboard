@@ -1,0 +1,18 @@
+# Python environment for analysis C (Antarctolithica obscura) on the UCR HPCC.
+# HMMER, MAFFT, trimAl, FastTree and DIAMOND come from HPCC modules (see run_hpcc.sbatch).
+[workspace]
+name = "antarctolithica-c"
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-arm64"]
+
+[dependencies]
+python = "3.12.*"
+numpy = "*"
+pandas = "2.3.*"   # scripts written against pandas 2 (pandas 3 changes string dtype and copy semantics)
+pyarrow = "*"
+python-duckdb = "*"
+scipy = "*"
+scikit-learn = "*"
+matplotlib = "*"
+biopython = "*"
+pytest = "*"

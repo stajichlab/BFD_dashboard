@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import StratifiedGroupKFold
 from sklearn.metrics import balanced_accuracy_score, f1_score
 from common import *
-RF = dict(n_estimators=500, max_features='sqrt', min_samples_leaf=1, class_weight='balanced_subsample', n_jobs=12, random_state=0)
+RF = dict(n_estimators=500, max_features='sqrt', min_samples_leaf=1, class_weight='balanced_subsample', n_jobs=int(__import__('os').environ.get('NCPU', '12')), random_state=0)
 nprot = 10 ** feat('struct').log10_n_genes
 B = blocks()
 raw = {}

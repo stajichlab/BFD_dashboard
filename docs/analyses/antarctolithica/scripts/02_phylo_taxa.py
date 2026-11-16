@@ -1,5 +1,8 @@
-"""Pick ~130 taxa for a quick phylogenomic placement of Antarctolithica."""
-import pandas as pd, numpy as np
+"""Pick ~130 taxa for a quick phylogenomic placement of Antarctolithica.
+AO_PHYLO_TAXA (optional): a taxa.tsv (e.g. the committed results/taxa.tsv) whose LOCUSTAGs replace the sampled set,
+so a rerun uses exactly the published taxon set; the re-derived set is still reported for comparison.
+Also links each proteome into phylo/pep/ for 03_phylo_search.sh."""
+import os, pandas as pd, numpy as np
 U = pd.read_parquet('data/ao_set.parquet'); L = pd.read_parquet('data/labels/genome_labels.parquet')
 rng = np.random.default_rng(1)
 want_genera = ['Friedmanniomyces','Cryomyces','Hortaea','Baudoinia','Coniosporium','Knufia','Exophiala','Cladophialophora','Rachicladosporium','Recurvomyces','Aureobasidium','Zymoseptoria','Neurospora','Aspergillus','Saccharomyces','Candida','Yarrowia','Lipomyces','Tuber','Botrytis','Xylona','Endocarpon','Umbilicaria','Cladonia','Arthonia','Lichina','Peltula','Orbilia','Pyronema','Trichoderma','Verrucaria','Capronia','Phaeomoniella','Symbiotaphrina','Trigonopsis','Geoglossum','Coccidioides','Penicillium','Cenococcum','Rhizodiscina','Lichenothelia','Saxomyces','Extremus','Neodevriesia','Acidomyces','Teratosphaeria','Piedraia','Myriangium','Elsinoe','Dothidea']
@@ -15,6 +18,11 @@ out = g[g.role=='outgroup'].groupby('CLASS').head(1).head(7)
 pick |= set(out.LOCUSTAG)
 muc = L[(L.PHYLUM=='Mucoromycota')&L.is_representative&(L.busco_complete>90)&(L.busco_duplicated<10)].sort_values('N50_bp',ascending=False).head(2)
 pick |= set(muc.LOCUSTAG)
+fixed = os.environ.get('AO_PHYLO_TAXA')
+if fixed:
+    want = set(pd.read_csv(fixed, sep='\t').LOCUSTAG)
+    print(f're-derived taxa: {len(pick)}; fixed set ({fixed}): {len(want)}; only re-derived: {sorted(pick - want)}; only fixed: {sorted(want - pick)}')
+    pick = want
 T = L[L.LOCUSTAG.isin(pick)][['LOCUSTAG','PHYLUM','CLASS','ORDER_','GENUS','SPECIES','STRAIN','busco_complete']].copy()
 pep = pd.read_csv('phylo/locustag_to_pep.tsv', sep='\t', header=None, names=['LOCUSTAG','name','pep'])
 T = T.merge(pep, on='LOCUSTAG', how='left')
@@ -23,3 +31,8 @@ T['label'] = [re.sub(r'[^A-Za-z0-9]+','_', f"{(c or 'unplaced')[:12]}|{s}|{l}".r
 T.to_csv('phylo/taxa.tsv', sep='\t', index=False)
 print(len(T), T.pep.isna().sum()); print(T.CLASS.fillna('NA').value_counts().to_string())
 T.pep.dropna().to_csv('phylo/pep_paths.txt', index=False, header=False)
+os.makedirs('phylo/pep', exist_ok=True)
+for p in T.pep.dropna():
+    d = os.path.join('phylo/pep', os.path.basename(p))
+    if os.path.lexists(d): os.remove(d)
+    os.symlink(p, d)
