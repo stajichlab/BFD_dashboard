@@ -81,8 +81,12 @@ jobs:
           if [ "$p" -lt 200 ]; then
             echo "Expected at least 200 PNG files under figures/."; exit 1
           fi
-          if [ ! -f "$site/figures_index.tsv" ]; then
-            echo "figures_index.tsv missing from the site."; exit 1
+          # figures_index.tsv is a render input (Quarto does not copy it to _site).
+          if [ ! -f docs/quarto_summary/figures_index.tsv ]; then
+            echo "figures_index.tsv missing from docs/quarto_summary."; exit 1
+          fi
+          if grep -q "has not been built yet" "$site/11_gallery.html"; then
+            echo "The gallery page is empty."; exit 1
           fi
 
       - name: Check site size
