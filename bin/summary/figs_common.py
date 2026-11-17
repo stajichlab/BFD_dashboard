@@ -5,7 +5,6 @@ import traceback
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import numpy as np
 
 
 def safe(o, name, topic, fn):
@@ -13,16 +12,16 @@ def safe(o, name, topic, fn):
     recorded as skipped in o.made."""
     try:
         fig = fn()
-    except Exception as e:  # one broken figure must not stop the page
+        if fig is None:
+            o.skip(name, topic)
+            return False
+        o.save(fig, name, topic=topic)
+    except Exception as e:  # one broken figure (or a failed save) must not stop the page
         traceback.print_exc(file=sys.stderr)
         print(f"  skipped {name}: {type(e).__name__}: {e}", flush=True)
         plt.close("all")
         o.skip(name, topic)
         return False
-    if fig is None:
-        o.skip(name, topic)
-        return False
-    o.save(fig, name, topic=topic)
     return True
 
 

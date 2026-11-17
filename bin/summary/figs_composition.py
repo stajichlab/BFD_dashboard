@@ -4,7 +4,6 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 
 from figs_common import join_groups, safe
 from make_figures import box_by_group, heat, parent_legend, stacked_by_group, width
@@ -12,6 +11,7 @@ from make_figures import box_by_group, heat, parent_legend, stacked_by_group, wi
 TOPIC = "composition"
 BASES = "TCAG"
 AA_STRING = "FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG"
+# Standard genetic code only (table 1). CTG-clade yeasts (CTG = Ser) and mitochondrial codes would be mislabelled.
 CODON_AA = {a + b + c: AA_STRING[i] for i, (a, b, c) in enumerate((a, b, c) for a in BASES for b in BASES for c in BASES)}
 AA_ORDER = "ACDEFGHIKLMNPQRSTVWY"
 AA_COLORS = {a: plt.get_cmap("tab20")(i / 20 + 0.01) for i, a in enumerate(AA_ORDER)}
