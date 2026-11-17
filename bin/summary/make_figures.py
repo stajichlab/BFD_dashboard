@@ -68,6 +68,7 @@ class Out:
         self.meta = {}      # name -> stats dict, set by a figure function before it returns its figure
         self.stat_of = {}   # name -> the stat column the figure shows (joins to T_anova.tsv in the figure index)
         self.level = level
+        self.default_topic = None   # topic for save() calls that pass none (the older F pages)
         # per-page numbers for the sidecar; set_groups() fills them for the level pages
         self.info = {"n_genomes": None, "n_groups": None, "pooled_share": 0.0 if level in ("all", "ordination") else None}
 
@@ -78,18 +79,35 @@ class Out:
         self.info = {"n_genomes": n, "n_groups": len(levels), "pooled_share": (pooled / n) if n else 0.0}
 
     def save(self, fig, name, topic=None):
+        topic = topic or self.default_topic
         for ext in ("png", "svg"):
             fig.savefig(self.fig / f"{name}.{ext}", dpi=200 if ext == "png" else None)
         plt.close(fig)
         stats = self.meta.pop(name, None)
-        made = Made(name, topic, "figure", self.scope, stats)
-        self.made.append(made)
+        self.made.append(Made(name, topic, "figure", self.scope, stats))
+        try:   # the figure is already written and recorded: a failed sidecar must not undo that
+            side = self._sidecar(name, topic, stats)
+            (self.fig / f"{name}.json").write_text(json.dumps(side))
+        except (OSError, TypeError, ValueError) as e:
+            print(f"  sidecar for {name} not written: {type(e).__name__}: {e}", file=sys.stderr, flush=True)
+
+    def _sidecar(self, name, topic, stats):
         info = dict(self.info)
-        if info["n_genomes"] is None and stats and "n" in stats:
-            info["n_genomes"] = stats["n"]
-        side = {"name": name, "level": self.level, "kind": "figure", "topic": topic,
-                "stat": self.stat_of.get(name), "scope": self.scope, **info}
-        (self.fig / f"{name}.json").write_text(json.dumps(side))
+        stats = stats or {}
+        for k, sk in (("n_genomes", "n"), ("n_groups", "n_groups")):
+            if info[k] is None and stats.get(sk) is not None:
+                info[k] = stats[sk]
+        signal, kind = stats.get("signal"), stats.get("signal_kind")
+        if signal is None and stats.get("spearman_r") is not None:
+            signal, kind = abs(float(stats["spearman_r"])), "spearman_r"
+        if signal is not None and not np.isfinite(float(signal)):
+            signal, kind = None, None
+        return {"name": name, "level": self.level, "kind": "figure", "topic": topic,
+                "stat": self.stat_of.get(name), "scope": self.scope,
+                "n_genomes": None if info["n_genomes"] is None else int(info["n_genomes"]),
+                "n_groups": None if info["n_groups"] is None else int(info["n_groups"]),
+                "pooled_share": None if info["pooled_share"] is None else float(info["pooled_share"]),
+                "signal": None if signal is None else float(signal), "signal_kind": kind}
 
     def skip(self, name, topic=None):
         self.meta.pop(name, None)
@@ -625,12 +643,17 @@ def run_level(level, core0, tables, out):
     o = Out(out, level)
     o.set_groups(core, levels)
     rd = tables
+    o.default_topic = "gene_content"
     page_gene_content(core, levels, colors, o)
+    o.default_topic = "domains"
     wide, label = page_domains(core, levels, colors, rd("pfam_genome"), rd("pfam_names"), rd("arch_genome"), o)
     deeploc = rd("deeploc_genome")
+    o.default_topic = "localization"
     page_localization(core, levels, colors, deeploc, rd("wolfpsort_genome"), o)
     idp = rd("idp_genome")
+    o.default_topic = "patterns"
     page_patterns(core, levels, colors, deeploc, idp, o)
+    o.default_topic = "functional"
     page_functional(core, levels, colors, wide, label, rd("cazy_genome"), rd("tf_genome"), rd("merops_genome"), idp, o)
     try:
         structure = rd("gene_structure_genome")

@@ -6,7 +6,15 @@ Each PNG may have a sidecar JSON (written by make_figures.Out.save) with topic, 
 n_groups and pooled_share. A PNG without a sidecar still gets a row, with those fields empty.
 effect_size is the epsilon^2 of tables/<level>/T_anova.tsv for the figure's stat. score = effect_size * (1 - pooled_share):
 a figure that mostly shows the pooled 'Other' group scores lower. Scored rows sort first, by score descending;
-unscored rows follow, by level and name.
+unscored rows follow.
+
+signal / signal_kind give a second, coarser ranking for figures that have no ANOVA effect size:
+    epsilon2      the T_anova effect_size itself (figures that have one)
+    spearman_r    |Spearman r| of an A or R scatter figure
+    permanova_R2  PERMANOVA R^2 by phylum for an ordination matrix
+Signals of different kinds are NOT comparable (a correlation, a rank-based effect size and a variance fraction
+measure different things): use them to order figures within one kind. Sort order: score descending (scored rows
+first), then signal descending, then level, then name.
 """
 import json
 import sys
@@ -15,7 +23,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-COLUMNS = ["name", "level", "topic", "kind", "scope", "n_genomes", "n_groups", "pooled_share", "effect_size", "score"]
+COLUMNS = ["name", "level", "topic", "kind", "scope", "n_genomes", "n_groups", "pooled_share", "effect_size", "score", "signal", "signal_kind"]
 
 
 def _sidecar(png):
@@ -45,6 +53,16 @@ def _num(v):
     return v if np.isfinite(v) else np.nan
 
 
+def _signal(side, effect):
+    """(signal, signal_kind): the effect size when there is one, else the sidecar's own signal (empty if none)."""
+    if np.isfinite(effect):
+        return {"signal": effect, "signal_kind": "epsilon2"}
+    sig = _num(side.get("signal"))
+    if np.isfinite(sig) and side.get("signal_kind"):
+        return {"signal": sig, "signal_kind": str(side["signal_kind"])}
+    return {"signal": np.nan, "signal_kind": None}
+
+
 def build_index(out_root):
     root = Path(out_root)
     rows = []
@@ -59,9 +77,10 @@ def build_index(out_root):
         rows.append({"name": png.stem, "level": level, "topic": side.get("topic"), "kind": side.get("kind") or "figure",
                      "scope": side.get("scope"), "n_genomes": _num(side.get("n_genomes")),
                      "n_groups": _num(side.get("n_groups")), "pooled_share": ps, "effect_size": e,
-                     "score": e * (1 - (ps if np.isfinite(ps) else 0.0)) if np.isfinite(e) else np.nan})
+                     "score": e * (1 - (ps if np.isfinite(ps) else 0.0)) if np.isfinite(e) else np.nan,
+                     **_signal(side, e)})
     df = pd.DataFrame(rows, columns=COLUMNS)
-    df = df.sort_values(["score", "level", "name"], ascending=[False, True, True], na_position="last", kind="stable").reset_index(drop=True)
+    df = df.sort_values(["score", "signal", "level", "name"], ascending=[False, False, True, True], na_position="last", kind="stable").reset_index(drop=True)
     for c in ("n_genomes", "n_groups"):
         df[c] = df[c].astype("Int64")
     df.to_csv(root / "figures_index.tsv", sep="\t", index=False)

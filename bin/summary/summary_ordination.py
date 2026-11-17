@@ -106,7 +106,7 @@ def _permanova(dist, groups):
     """PERMANOVA of one grouping. Rows with a NULL group are left out. Failures and degenerate designs give NaN."""
     g = groups.reindex(dist.index)
     keep = g.notna()
-    nan = {"F": np.nan, "p": np.nan, "n": int(keep.sum()), "n_groups": int(g[keep].nunique()),
+    nan = {"F": np.nan, "R2": np.nan, "p": np.nan, "n": int(keep.sum()), "n_groups": int(g[keep].nunique()),
            "n_permutations_run": 0, "n_unique_permutations": 0, "caveat": "not tested: fewer than 3 genera or fewer than 2 groups"}
     if nan["n"] < 3 or nan["n_groups"] < 2:
         return nan
@@ -116,7 +116,10 @@ def _permanova(dist, groups):
     except Exception as e:  # a degenerate design must not stop the run
         print(f"  permanova failed: {type(e).__name__}: {e}", flush=True)
         return nan
-    return {"F": float(r.pseudo_f), "p": float(r.p_value), "n": nan["n"], "n_groups": nan["n_groups"],
+    k, n = nan["n_groups"], nan["n"]
+    f = float(r.pseudo_f)
+    r2 = f * (k - 1) / (f * (k - 1) + (n - k)) if np.isfinite(f) and n > k else np.nan   # PERMANOVA R^2 from pseudo-F
+    return {"F": f, "R2": float(r2), "p": float(r.p_value), "n": nan["n"], "n_groups": nan["n_groups"],
             "n_permutations_run": int(r.n_permutations_run), "n_unique_permutations": int(r.n_unique_permutations),
             "caveat": r.caveat}
 
@@ -160,7 +163,7 @@ def run_ordination(reps, matrices, out):
         info = {"n_genera": int(len(mat)), "n_missing": int(n_missing), "n_dropped_nan": int(n_nan),
                 "pct_variance": [], "n_negative_eigen": 0, "negative_eigen_share": 0.0,
                 "neg_eigen_over_pos_total": 0.0,
-                "permanova": {t: {"F": np.nan, "p": np.nan, "n": 0, "n_groups": 0, "n_permutations_run": 0,
+                "permanova": {t: {"F": np.nan, "R2": np.nan, "p": np.nan, "n": 0, "n_groups": 0, "n_permutations_run": 0,
                                   "n_unique_permutations": 0, "caveat": "not tested"} for t in TESTS}}
         result[name] = info
         if len(mat) < 3:
@@ -183,7 +186,7 @@ def run_ordination(reps, matrices, out):
         tab = coords.reset_index().merge(reps[["species_prefix", "GENUS", "PHYLUM", "CLASS", "ORDER"]], on="species_prefix", how="left")
         o.table(tab, f"{name}_coords")
         rows = [{"matrix": name, "grouping": t, "metric": METRIC[name], "n_genera": r["n"], "n_groups": r["n_groups"],
-                 "pseudo_F": r["F"], "p_value": r["p"], "n_permutations_requested": N_PERM,
+                 "pseudo_F": r["F"], "R2": r["R2"], "p_value": r["p"], "n_permutations_requested": N_PERM,
                  "n_permutations_run": r["n_permutations_run"], "n_unique_permutations": r["n_unique_permutations"], "seed": SEED,
                  "n_negative_eigen": info["n_negative_eigen"],
                  "neg_eigen_over_abs_total": info["negative_eigen_share"],
@@ -195,6 +198,9 @@ def run_ordination(reps, matrices, out):
         for stem, by, cols, src, idx in ((f"O01_{name}_pcoa_phylum", "phylum", ph_col, ph, ph_idx),
                                          (f"O02_{name}_pcoa_class", "class (phylum hue, shade by class)", cl_col, cl, cl_idx)):
             groups = idx["grp"].reindex(mat.index)
+            ph_p = info["permanova"]["PHYLUM"]
+            o.meta[stem] = {"n": int(len(mat)), "n_groups": int(groups.nunique()), "signal_kind": "permanova_R2",
+                            "signal": ph_p["R2"] if np.isfinite(ph_p["R2"]) else None}
             title = f"{name} PCoA of {len(mat):,} genus representatives, coloured by {by}"
             safe(o, stem, TOPIC, lambda groups=groups, cols=cols, src=src, title=title: _scatter(coords, groups, cols, pct, src, title))
     print(f"ordination: {len(result)} matrices, {len(o.made)} outputs", flush=True)

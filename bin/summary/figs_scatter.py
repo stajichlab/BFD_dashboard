@@ -119,13 +119,15 @@ TEST_COLS = ["median_gene_len_bp", "median_cds_len_bp", "median_protein_len_aa",
              "gc_pct", "busco_complete", "total_length_bp", "n_genes"]
 
 
-def _reg_fig(d, x, y, log, xl, yl, core, levels, colors):
+def _reg_fig(d, x, y, log, xl, yl, core, levels, colors, o=None, name=None):
     r = pair_regressions(d, [(x, y)], log=log)
     if r.empty:
         return None
     r = r.iloc[0]
     ok = (d[x] > 0) & (d[y] > 0) if log else d[x].notna() & d[y].notna()
     ok = ok & d[x].notna() & d[y].notna()
+    if o is not None and ok.sum() >= 3:   # |Spearman r| (rank based, so the log transform does not change it) for the index
+        o.meta[name] = {"n": int(ok.sum()), "spearman_r": float(st.spearmanr(d.loc[ok, x], d.loc[ok, y])[0])}
     fig, ax = plt.subplots(figsize=(5.8, 4.4))
     for g in levels:
         m = ok & (d.grp == g)
@@ -157,4 +159,4 @@ def page_regressions(core, levels, colors, structure, o):
         if x not in d or y not in d:
             o.skip(name, TOPIC_REG)
             continue
-        safe(o, name, TOPIC_REG, lambda x=x, y=y, log=log, xl=xl, yl=yl: _reg_fig(d, x, y, log, xl, yl, core, levels, colors))
+        safe(o, name, TOPIC_REG, lambda x=x, y=y, log=log, xl=xl, yl=yl: _reg_fig(d, x, y, log, xl, yl, core, levels, colors, o, name))
