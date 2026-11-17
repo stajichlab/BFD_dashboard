@@ -12,6 +12,7 @@ Unit: one representative genome per species. Group means/medians are taken over 
 proteins, so large genomes do not dominate. Nothing here is a statistical test: the figures describe the
 database. The .qmd pages state the unit for every figure.
 """
+import colorsys
 import sys
 from pathlib import Path
 
@@ -26,7 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from panel import PANEL  # noqa: E402
 from taxonomy import CLASS_TO_SUBPHYLUM  # noqa: E402
 
-LEVELS = ("phylum", "subphylum", "class")
+LEVELS = ("phylum", "subphylum", "class", "order")
 TOP_PHYLA = 8      # phylum level: this many phyla shown separately, the rest pooled
 MIN_N = 10         # subphylum/class level: smaller groups are pooled
 MAX_GROUPS = 36
@@ -67,6 +68,16 @@ def width(levels, base=6.8, per=0.3):
 
 
 # ---------------------------------------------------------------- grouping
+def shade(hex_color, i, n):
+    """Shade i of n of a colour: same hue and saturation, lightness spread from dark (i=0) to light (i=n-1)."""
+    h, l, s = colorsys.rgb_to_hls(*(int(hex_color.lstrip("#")[k:k + 2], 16) / 255 for k in (0, 2, 4)))
+    lo, hi = max(0.25, l - 0.18), min(0.78, l + 0.22)
+    li = lo if n <= 1 else lo + (hi - lo) * i / (n - 1)
+    if n <= 1:
+        li = l
+    return "#%02x%02x%02x" % tuple(round(v * 255) for v in colorsys.hls_to_rgb(h, li, s))
+
+
 def assign_groups(core, level):
     """Add 'grp' (the plotted group) and 'parent' (phylum used for colour/order); return core, levels, colors."""
     d = core.copy()
@@ -82,6 +93,8 @@ def assign_groups(core, level):
         d["grp"] = ph
     elif level == "subphylum":
         d["grp"] = d["subphylum_or_phylum"]
+    elif level == "order":
+        d["grp"] = d["ORDER"].fillna("Unknown")
     else:
         d["grp"] = d["CLASS"].fillna("Unknown")
     # rank phyla by genome count: colours and ordering
@@ -108,7 +121,12 @@ def assign_groups(core, level):
     levels = sorted(par.index, key=sort_key)
     if (d.grp == OTHER).any():
         levels.append(OTHER)
-    colors = {g: pcolor.get(par[g], GREY) for g in par.index}
+    colors = {}
+    for p_, members in par.groupby(par):
+        ranked = sorted(members.index, key=lambda g: -int(n[g]))   # largest group in the phylum gets shade 0
+        for i, g in enumerate(ranked):
+            base = pcolor.get(p_, GREY)
+            colors[g] = base if (level == "phylum" or base == GREY) else shade(base, i, len(ranked))
     colors[OTHER] = GREY
     d.attrs["parents"] = {g: (par[g] if g in par.index else "Other") for g in levels}
     d.attrs["parent_colors"] = {p: pcolor.get(p, GREY) for p in dict.fromkeys(d.attrs["parents"].values())}

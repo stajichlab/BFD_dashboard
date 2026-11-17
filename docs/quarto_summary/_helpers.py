@@ -7,7 +7,7 @@ from IPython.display import Markdown, display
 
 HERE = Path(__file__).resolve().parent
 PFAM = "https://www.ebi.ac.uk/interpro/entry/pfam/{}/"
-LEVELS = [("phylum", "Phylum"), ("subphylum", "Subphylum"), ("class", "Class")]
+LEVELS = [("phylum", "Phylum"), ("subphylum", "Subphylum"), ("class", "Class"), ("order", "Order")]
 
 
 def _tabs(blocks):

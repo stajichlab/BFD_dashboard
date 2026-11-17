@@ -20,7 +20,8 @@ def synth(root, n=240, seed=0):
     ph = rng.choice(phyla, n, p=[0.5, 0.3, 0.1, 0.06, 0.04])
     core = pd.DataFrame({"species_prefix": ids, "PHYLUM": ph, "SUBPHYLUM": [f"{p[:4]}_sub{rng.integers(0, 2)}" if p == "Ascomycota" else None for p in ph],
                          "CLASS": [f"{p[:4]}_c{rng.integers(0, 3)}" for p in ph],
-                         "ORDER": "o", "FAMILY": "f", "GENUS": "g", "SPECIES": [f"s{i}" for i in range(n)],
+                         "ORDER": [None if rng.random() < 0.1 else f"{c[:4]}_o{rng.integers(0, 3)}" for c in ph],
+                         "FAMILY": "f", "GENUS": "g", "SPECIES": [f"s{i}" for i in range(n)],
                          "total_length_bp": rng.integers(10_000_000, 60_000_000, n), "gc_pct": rng.uniform(35, 60, n),
                          "busco_complete": rng.uniform(80, 99, n), "N50_bp": 100000, "contig_count": 50,
                          "n_genes": rng.integers(5000, 15000, n), "mean_len": rng.uniform(400, 550, n)})
@@ -70,12 +71,46 @@ def test_all_outputs(tmp_path):
     assert key["genomes"].sum() == 240 and (key["phylum"] != "").all()
 
 
+def _hue(hexc):
+    import colorsys
+    h = hexc.lstrip("#")
+    return colorsys.rgb_to_hsv(*(int(h[i:i + 2], 16) / 255 for i in (0, 2, 4)))[0]
+
+
+def _order_core():
+    n = 60
+    return pd.DataFrame({"PHYLUM": ["A"] * 40 + ["B"] * 20, "CLASS": "c",
+                         "ORDER": ["o1"] * 15 + ["o2"] * 15 + [None] * 10 + ["o3"] * 20})
+
+
+def test_order_level_groups_exist():
+    d, levels, colors = mf.assign_groups(_order_core(), "order")
+    assert "o1" in levels and "o3" in levels and None not in levels and not d["grp"].isna().any()
+    assert set(levels) <= set(colors)
+
+
+def test_shades_keep_parent_hue():
+    d, levels, colors = mf.assign_groups(_order_core(), "order")
+    assert colors["o1"] != colors["o2"]
+    assert abs(_hue(colors["o1"]) - _hue(colors["o2"])) < 0.02
+    assert abs(_hue(colors["o1"]) - _hue(colors["o3"])) > 0.02
+    assert mf.shade("#0072B2", 0, 3) != mf.shade("#0072B2", 2, 3)
+
+
+def test_unknown_order_kept():
+    core = _order_core()
+    d, levels, colors = mf.assign_groups(core, "order")
+    assert len(d) == len(core)
+    assert (d.loc[core["ORDER"].isna(), "grp"] == "Unknown").all() or (d.loc[core["ORDER"].isna(), "grp"] == mf.OTHER).all()
+
+
 def test_groups_order_and_colour_by_parent():
     core = pd.DataFrame({"PHYLUM": ["A"] * 30 + ["B"] * 20, "SUBPHYLUM": ["A1"] * 15 + ["A2"] * 15 + [None] * 20,
                          "CLASS": ["a1x"] * 15 + ["a2x"] * 15 + ["bx"] * 20})
     d, levels, colors = mf.assign_groups(core, "class")
     assert levels == ["a1x", "a2x", "bx"]                      # ordered by phylum, then subphylum
-    assert colors["a1x"] == colors["a2x"] != colors["bx"]      # coloured by phylum
+    assert colors["a1x"] != colors["a2x"] and colors["bx"] not in (colors["a1x"], colors["a2x"])  # shades of the phylum hue
+    assert abs(_hue(colors["a1x"]) - _hue(colors["a2x"])) < 0.02
     d, levels, _ = mf.assign_groups(core, "subphylum")
     assert levels == ["A1", "A2", "B"]                          # subphylum where defined, else phylum
 
