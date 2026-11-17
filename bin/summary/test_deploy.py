@@ -37,7 +37,8 @@ def _runs(job):
 def test_workflow_triggers():
     on = _on(_wf())
     assert on["push"]["branches"] == ["main"]
-    assert set(on["push"]["paths"]) == {"docs/quarto_summary/**", ".github/workflows/pages.yml"}
+    assert set(on["push"]["paths"]) == {"docs/quarto_summary/**", ".github/workflows/pages.yml",
+                                          "docs/quarto_summary/figures_release.json"}
     assert "workflow_dispatch" in on
     pr = on["pull_request"]
     assert set(pr["paths"]) == set(on["push"]["paths"])
