@@ -703,7 +703,16 @@ def run_level(level, core0, tables, out, phylum_order=None):
 RUN_STATUS = {"failed": [], "skipped": []}
 
 
-def main(data, out, levels=LEVELS):
+def _resolve_suppress(suppress):
+    """None -> the repo file; a path -> that file; a DataFrame -> itself (an empty one disables)."""
+    from suppress import load_suppress
+    return suppress if isinstance(suppress, pd.DataFrame) else load_suppress(suppress)
+
+
+def main(data, out, levels=LEVELS, suppress=None):
+    from suppress import drop_suppressed
+    sup = _resolve_suppress(suppress)
+    dropped = set()
     RUN_STATUS["failed"] = []
     RUN_STATUS["skipped"] = []
     data = Path(data)
@@ -711,7 +720,12 @@ def main(data, out, levels=LEVELS):
 
     def rd(n):
         if n not in cache:
-            cache[n] = pd.read_parquet(data / f"{n}.parquet")
+            df = pd.read_parquet(data / f"{n}.parquet")
+            if "species_prefix" in df.columns and len(sup):
+                ids = set(sup["species_prefix"].astype(str))
+                dropped.update(set(df["species_prefix"].astype(str)) & ids)
+                df, _ = drop_suppressed(df, sup)
+            cache[n] = df
         return cache[n]
     core0 = rd("genome_core")
     core0 = core0[core0["n_genes"].notna()]  # representatives without a proteome are not plotted
@@ -720,6 +734,7 @@ def main(data, out, levels=LEVELS):
         genome_all = rd("genome_all")
     except FileNotFoundError:
         genome_all = None
+    print(f"suppressed {len(dropped)} genomes: {', '.join(sorted(dropped))}", flush=True)
     porder = phylum_order(genome_all if genome_all is not None else core0)   # one phylum colour map for the site
     for level in levels:
         made[level] = run_level(level, core0, rd, out, phylum_order=porder)
@@ -762,8 +777,15 @@ def run_cli(argv):
     """Command-line entry: run main() and return the exit code. 1 when the ordination or the figure index
     failed (the log must not say success when O figures or figures_index.tsv are missing). Skipped single
     figures are listed at the end and do not change the exit code."""
+    argv = list(argv)
+    suppress = None
+    if "--suppress" in argv:
+        i = argv.index("--suppress")
+        val = argv[i + 1]
+        suppress = pd.DataFrame({"species_prefix": []}) if val == "none" else val
+        del argv[i:i + 2]
     levels = tuple(argv[3].split(",")) if len(argv) > 3 else LEVELS
-    main(argv[1], argv[2], levels)
+    main(argv[1], argv[2], levels, suppress=suppress)
     skipped = RUN_STATUS["skipped"]
     print(f"skipped figures: {len(skipped)}" + (" (" + ", ".join(skipped) + ")" if skipped else ""), flush=True)
     if RUN_STATUS["failed"]:

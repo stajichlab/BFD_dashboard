@@ -120,4 +120,6 @@ def test_meta_matches_real_table():
     g = Path(__file__).resolve().parents[2] / "docs" / "quarto_summary" / "data" / "genomes.json"
     if not p.exists():
         pytest.skip("real tables not available")
-    assert json.loads(g.read_text())["meta"]["n_genomes"] == len(pd.read_parquet(p))
+    meta = json.loads(g.read_text())["meta"]
+    # genome_all.parquet keeps the suppressed genomes (suppression is applied at read time), the JSON drops them.
+    assert meta["n_genomes"] == len(pd.read_parquet(p)) - meta["n_suppressed"]

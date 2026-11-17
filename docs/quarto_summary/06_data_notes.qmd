@@ -7,7 +7,7 @@ title: "Data and methods"
 - Database: the local `BFD.duckdb` in the `db/` folder, built from the `Fungi_BFD_runs/tables` parquet files by `workflows/build_bfd_db.sh` (MotherDuck is being phased out and is not used).
 - Unit: one representative genome per species, flagged `is_representative` in `v_genome_labels` (best BUSCO complete, then N50, then LOCUSTAG; annotated genomes only).
 - Genome counts. Two totals appear in this project, and they count different things:
-  - `genome_all` has one row per genome in the summary tables. Its row count is the `n_genomes` value in the `meta` of `data/genomes.json`. It is read from that file when this page renders (see below).
+  - `genome_all` has one row per genome in the summary tables. Its row count equals `n_genomes` plus `n_suppressed` in the `meta` of `data/genomes.json`. It is read from that file when this page renders (see below).
   - The gene-structure table has a row only for genomes that have a proteome (protein-coding genes). Its count is lower than the `genome_all` count. The first version of this page recorded 23,412 genomes with a gene-structure row and 244.8 million proteins; 7,435 representatives, of which 7,393 have a proteome (77.7 million proteins); the 42 without proteins are not plotted. These numbers were not re-measured for this version. Re-measure them after a database rebuild.
 - Groups: phylum and class from the BFD taxonomy; the eight phyla with most representatives are shown, the rest are pooled as "Other".
 - **Subphylum is derived, not stored.** The `SUBPHYLUM` column is NULL for all 7,435 representatives in both `species` and `samples`, so the subphylum level maps each class to its subphylum with the table in `bin/summary/taxonomy.py` (standard fungal classification written from memory, citation to verify). Classes missing from the table fall back to their phylum. Fixing the database column (proposal: populate it in the taxonomy source of the pipeline) would make this mapping unnecessary.
@@ -50,15 +50,31 @@ Tests: `bin/summary/test_make_figures.py` runs the figure code on synthetic tabl
 - Pfam accessions in the curated panel (`bin/summary/panel.py`): all 57 were checked on 2026-11-16 against the Pfam names stored in the BFD `pfam` table (accession and name agree). The functional interpretation of each domain is standard knowledge and was not re-derived.
 - Group sizes are small for some phyla; read the `n` under each box.
 
+## Suppressed genomes
+
+These genomes are left out of every figure, table, test and the Explore page until the annotation is re-run. The list is `config/summary_suppress.tsv`. A committed copy for this page is `data/summary_suppress.tsv`. The tables on disk still hold the genomes. The list is applied when the tables are read. To restore a genome, remove its line in `config/summary_suppress.tsv`, copy the file to `docs/quarto_summary/data/summary_suppress.tsv`, and re-run `make_figures.py` and `export_clade_json.py`.
+
+```{python}
+#| echo: false
+#| output: asis
+import pandas as pd
+from pathlib import Path
+try:
+    sup = pd.read_csv("data/summary_suppress.tsv", sep="\t", comment="#", dtype=str, keep_default_na=False)
+    print(sup.to_markdown(index=False) if len(sup) else "No genomes are suppressed.")
+except (OSError, ValueError):
+    print("The suppress list `data/summary_suppress.tsv` could not be read, so the table is not shown.")
+```
+
 ## Explore page data
 
-The Explore page reads `data/genomes.json` (one row per genome, all genomes in `genome_all`). Regenerate it from the repository root with:
+The Explore page reads `data/genomes.json` (one row per genome, all genomes in `genome_all` except the suppressed genomes). Regenerate it from the repository root with:
 
 ```
 python3.12 bin/summary/export_clade_json.py <tables_dir> docs/quarto_summary/data/genomes.json
 ```
 
-`<tables_dir>` is `Fungi_BFD_runs/analysis/summary_tables`, written by `workflows/summary_tables.sh` (`build_summary_tables.py`). The JSON `meta` records the genome count and the source.
+`<tables_dir>` is `Fungi_BFD_runs/analysis/summary_tables`, written by `workflows/summary_tables.sh` (`build_summary_tables.py`). The JSON `meta` records the genome count, the source, and the suppressed genomes (`n_suppressed`, `suppressed`).
 
 ```{python}
 #| echo: false
@@ -66,8 +82,9 @@ python3.12 bin/summary/export_clade_json.py <tables_dir> docs/quarto_summary/dat
 import json
 from pathlib import Path
 try:
-    n = json.loads(Path("data/genomes.json").read_text())["meta"]["n_genomes"]
-    print(f"At render time `data/genomes.json` holds **{n:,}** genomes (`genome_all` rows).")
+    meta = json.loads(Path("data/genomes.json").read_text())["meta"]
+    n, s = meta["n_genomes"], meta.get("n_suppressed", 0)
+    print(f"At render time `data/genomes.json` holds **{n:,}** genomes (`genome_all` rows minus {s} suppressed).")
 except (OSError, KeyError, ValueError):
     print("`data/genomes.json` could not be read, so the genome count is not shown.")
 ```

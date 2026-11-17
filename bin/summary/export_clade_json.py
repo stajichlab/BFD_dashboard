@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Export the per-genome table as plain JSON for the Explore page (Observable JS).
 
-    python3 export_clade_json.py TABLES_DIR OUT_JSON
+    python3 export_clade_json.py TABLES_DIR OUT_JSON [--suppress PATH|none]
+
+Genomes in config/summary_suppress.tsv are left out (see suppress.py). --suppress none keeps all genomes.
 
 Regenerate the committed file (from the repository root):
 
@@ -24,6 +26,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from make_figures import OTHER, assign_groups, phylum_order  # noqa: E402
+from suppress import drop_suppressed, load_suppress  # noqa: E402
 
 LEVELS = ("phylum", "subphylum", "class", "order")
 # field -> (label, unit)
@@ -51,9 +54,18 @@ REQUIRED = ["species_prefix", "PHYLUM", "CLASS", "ORDER", "GENUS", "is_represent
 
 
 def export_clade_json(core: pd.DataFrame, structure: pd.DataFrame, out: Path,
-                      generated_from: str = "summary_tables/genome_all.parquet") -> Path:
-    """Write the genome records and the colour map; return the path."""
+                      generated_from: str = "summary_tables/genome_all.parquet", suppress=None) -> Path:
+    """Write the genome records and the colour map; return the path.
+    suppress: None = the repo list, a path, or a DataFrame (an empty one disables). Suppressed genomes are dropped
+    from core and structure, and listed in meta."""
     out = Path(out)
+    sup = suppress if isinstance(suppress, pd.DataFrame) else load_suppress(suppress)
+    if "species_prefix" in core.columns:
+        dropped = sorted(set(core["species_prefix"].astype(str)) & set(sup["species_prefix"].astype(str)))
+    else:
+        dropped = []
+    core, _ = drop_suppressed(core, sup)
+    structure, _ = drop_suppressed(structure, sup)
     miss = [c for c in REQUIRED if c not in core.columns]
     if "species_prefix" not in structure.columns or "median_protein_len_aa" not in structure.columns:
         miss += [c for c in ("species_prefix", "median_protein_len_aa") if c not in structure.columns]
@@ -99,7 +111,8 @@ def export_clade_json(core: pd.DataFrame, structure: pd.DataFrame, out: Path,
         return v
     rows = [[clean(v) for v in r] for r in rec.itertuples(index=False, name=None)]
     obj = {
-        "meta": {"n_genomes": n, "generated_from": generated_from, "unit": "one record per genome",
+        "meta": {"n_genomes": n, "generated_from": generated_from, "n_suppressed": len(dropped), "suppressed": dropped,
+                 "unit": "one record per genome",
                  "rows_layout": "array of arrays; column order = fields",
                  "floats": "rounded to 3 decimals; null = missing"},
         "levels": list(LEVELS),
@@ -114,13 +127,21 @@ def export_clade_json(core: pd.DataFrame, structure: pd.DataFrame, out: Path,
 
 
 def main(argv):
+    argv = list(argv)
+    suppress = None
+    if "--suppress" in argv:
+        i = argv.index("--suppress")
+        val = argv[i + 1] if i + 1 < len(argv) else sys.exit(__doc__)
+        suppress = pd.DataFrame({"species_prefix": []}) if val == "none" else val
+        del argv[i:i + 2]
     if len(argv) != 3:
         sys.exit(__doc__)
     t = Path(argv[1])
     core = pd.read_parquet(t / "genome_all.parquet")
     st = pd.read_parquet(t / "gene_structure_genome.parquet", columns=["species_prefix", "median_protein_len_aa"])
-    p = export_clade_json(core, st, Path(argv[2]))
-    print(f"{p}: {p.stat().st_size} bytes, {len(core)} records")
+    p = export_clade_json(core, st, Path(argv[2]), suppress=suppress)
+    n = json.loads(p.read_text())["meta"]
+    print(f"{p}: {p.stat().st_size} bytes, {n['n_genomes']} records, {n['n_suppressed']} suppressed")
 
 
 if __name__ == "__main__":
