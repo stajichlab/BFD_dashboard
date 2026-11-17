@@ -54,10 +54,18 @@ AMINO = list("ACDEFGHIKLMNPQRSTVWY")
 def build_structure_tables(con, out):
     """Write genome_all, gene_structure_genome, codon_genome, aa_genome.
 
-    Needs: v_genome_labels, gene_info, gene_proteins, gene_exons, gene_introns,
-    gene_intergenic_distances, codon_freq, aa_freq. gene_proteins, gene_exons and gene_introns
-    carry species_prefix (a view column on the real db). Each transcript is one gene model.
+    Needs: v_genome_labels, gene_info, gene_proteins, gene_exons, gene_CDS, gene_introns,
+    gene_intergenic_distances, codon_freq, aa_freq. gene_proteins, gene_exons, gene_CDS and
+    gene_introns carry species_prefix (a view column on the real db).
+
+    Every structure metric uses protein-coding transcripts only (those in gene_proteins).
+    n_genes counts distinct protein genes from gene_proteins. genome_all.mean_len is the mean
+    protein length in aa. CDS length and coding_fraction come from gene_CDS (CDS bases only).
+    median_exons_per_gene counts rows of gene_exons per protein transcript; these may include
+    UTR exons. intron_frac_genes_with_intron is the share of protein transcripts with >1 exon.
+    Non-coding models (tRNA etc.) are excluded from all metrics.
     """
+    con.execute("create temp table gs_ptx as select distinct transcript_id from gene_proteins")
     con.execute("""
         create temp table gs_prot as
         select species_prefix, count(distinct gene_id) as n_genes, median(length) as median_protein_len_aa,
@@ -70,20 +78,30 @@ def build_structure_tables(con, out):
         from gene_info where gene_id in (select gene_id from gene_proteins) group by 1
     """)
     con.execute("""
-        create temp table gs_tx as
-        select species_prefix, transcript_id, count(*) as n_exons, sum("end" - start + 1) as cds_len
-        from gene_exons group by 1, 2
+        create temp table gs_exons as
+        select species_prefix, transcript_id, count(*) as n_exons
+        from gene_exons where transcript_id in (select transcript_id from gs_ptx) group by 1, 2
+    """)
+    con.execute("""
+        create temp table gs_cds as
+        select species_prefix, transcript_id, sum("end" - start + 1) as cds_len
+        from gene_CDS where transcript_id in (select transcript_id from gs_ptx) group by 1, 2
     """)
     con.execute("""
         create temp table gs_exon as
-        select species_prefix, median(cds_len) as median_cds_len_bp, sum(cds_len) as total_exon_bp,
-               median(n_exons) as median_exons_per_gene, avg((n_exons > 1)::int) as intron_frac_genes_with_intron
-        from gs_tx group by 1
+        select species_prefix, median(n_exons) as median_exons_per_gene,
+               avg((n_exons > 1)::int) as intron_frac_genes_with_intron
+        from gs_exons group by 1
+    """)
+    con.execute("""
+        create temp table gs_cdsg as
+        select species_prefix, median(cds_len) as median_cds_len_bp, sum(cds_len) as total_cds_bp
+        from gs_cds group by 1
     """)
     con.execute("""
         create temp table gs_intron as
         select species_prefix, median("end" - start + 1) as median_intron_len_bp
-        from gene_introns group by 1
+        from gene_introns where transcript_id in (select transcript_id from gs_ptx) group by 1
     """)
     con.execute("""
         create temp table gs_inter as
@@ -92,16 +110,17 @@ def build_structure_tables(con, out):
     """)
     con.execute("""
         create temp table gs as
-        select p.species_prefix, p.n_genes, p.mean_len, g.median_gene_len_bp, e.median_cds_len_bp,
+        select p.species_prefix, p.n_genes, p.mean_len, g.median_gene_len_bp, cg.median_cds_len_bp,
                p.median_protein_len_aa,
                p.n_genes / (l.total_length_bp / 1e6) as genes_per_mb,
-               e.total_exon_bp / l.total_length_bp as coding_fraction,
+               cg.total_cds_bp / l.total_length_bp as coding_fraction,
                e.median_exons_per_gene, e.intron_frac_genes_with_intron,
                i.median_intron_len_bp, d.median_intergenic_bp
         from gs_prot p
         join v_genome_labels l on l.LOCUSTAG = p.species_prefix
         left join gs_genelen g using (species_prefix)
         left join gs_exon e using (species_prefix)
+        left join gs_cdsg cg using (species_prefix)
         left join gs_intron i using (species_prefix)
         left join gs_inter d using (species_prefix)
     """)
@@ -143,12 +162,19 @@ def main():
     ap.add_argument("--threads", type=int, default=int(os.environ.get("SLURM_CPUS_PER_TASK", 8)))
     ap.add_argument("--memory", default="40GB")
     ap.add_argument("--db", default=None)
+    ap.add_argument("--only", choices=["structure"], default=None,
+                    help="build only genome_all, gene_structure_genome, codon_genome, aa_genome")
     a = ap.parse_args()
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     tmp = os.environ.get("SCRATCH")
     con = bfd_connect.connect(a.db, scratch=False, threads=a.threads, memory=a.memory, tmp=tmp)
     # the db is attached read-only as 'bfd'; temp tables live in memory
+    # structure tables first, so a failure in an older table cannot block them
+    build_structure_tables(con, out)
+    if a.only == "structure":
+        print("done (structure only)", flush=True)
+        return
     con.execute("""
         create temp table reps as
         select v.LOCUSTAG as species_prefix, v.PHYLUM, sp.SUBPHYLUM, v.CLASS, v.ORDER_ as ORDER, v.FAMILY, v.GENUS, v.SPECIES,
@@ -223,7 +249,6 @@ def main():
         select m.species_prefix, left(m.merops_id, 1) as merops_class, count(distinct m.protein_id) as n_proteins
         from v_merops_best m join reps r using (species_prefix) group by 1, 2
     """, out)
-    build_structure_tables(con, out)
     print("done", flush=True)
 
 

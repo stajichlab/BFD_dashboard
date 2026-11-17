@@ -27,6 +27,7 @@ def con():
     c.execute("create table gene_info (gene_id varchar, LOCUSTAG varchar, start bigint, \"end\" bigint)")
     c.execute("create table gene_proteins (gene_id varchar, protein_id varchar, transcript_id varchar, length bigint, species_prefix varchar)")
     c.execute("create table gene_exons (exon_id varchar, transcript_id varchar, \"order\" bigint, start bigint, \"end\" bigint, species_prefix varchar)")
+    c.execute("create table gene_CDS (cds_id varchar, transcript_id varchar, \"order\" bigint, start bigint, \"end\" bigint, species_prefix varchar)")
     c.execute("create table gene_introns (intron_id varchar, transcript_id varchar, start bigint, \"end\" bigint, species_prefix varchar)")
     c.execute("create table gene_intergenic_distances (species_prefix varchar, left_gene varchar, right_gene varchar, distance bigint)")
     # G1: 4 genes. g1 has 3 exons, 2 introns; g2 has 2 exons, 1 intron; g3, g4 single exon
@@ -42,9 +43,18 @@ def con():
             for k in range(nex):
                 c.execute("insert into gene_exons values (?,?,?,?,?,?)",
                           [f"{tid}.exon{k+1}", tid, k, start + k * 1000, start + k * 1000 + per - 1, sp])
+            for k in range(nex):
+                c.execute("insert into gene_CDS values (?,?,?,?,?,?)",
+                          [f"{tid}.CDS{k+1}", tid, k, start + k * 1000, start + k * 1000 + per - 1, sp])
             for k in range(nex - 1):
                 c.execute("insert into gene_introns values (?,?,?,?,?)",
-                          [f"{tid}.intron{k}", tid, start, start + 49 + k * 10 - 0, sp])  # lengths 50, 60
+                          [f"{tid}.intron{k}", tid, start, start + 49 + k * 10, sp])  # lengths 50 (k=0), 60 (k=1)
+    # UTR exon on G1_000001-T1 (exon table only, not CDS) and a non-coding model (tRNA-like) with 2 exons, 1 intron
+    c.execute("insert into gene_exons values ('G1_000001-T1.exon0','G1_000001-T1',9,10,59,'G1')")
+    c.execute("insert into gene_info values ('G1_000099','G1',20000,20999)")
+    c.execute("insert into gene_exons values ('G1_000099-T1.exon1','G1_000099-T1',0,20000,20399,'G1'),"
+              "('G1_000099-T1.exon2','G1_000099-T1',1,20600,20999,'G1')")
+    c.execute("insert into gene_introns values ('G1_000099-T1.intron0','G1_000099-T1',20400,20599,'G1')")
     c.execute("insert into gene_intergenic_distances values ('G1','a','b',100),('G1','b','c',300),('G1','c','d',200),('G2','a','b',50)")
     c.execute("create table codon_freq (species_prefix varchar, codon varchar, frequency double)")
     c.execute("create table aa_freq (species_prefix varchar, amino_acid varchar, frequency double)")
@@ -64,12 +74,13 @@ def built(con, tmp_path):
 
 
 def q(con, path, sql):
-    return con.execute(sql.replace("T", f"'{path}'")).fetchall()
+    """Run sql with {p} replaced by the quoted parquet path."""
+    return con.execute(sql.replace("{p}", f"'{path}'")).fetchall()
 
 
 def test_genome_all_has_every_genome(con, built):
     n = con.execute("select count(*) from v_genome_labels").fetchone()[0]
-    rows = q(con, built / "genome_all.parquet", "select count(*) from T")[0][0]
+    rows = q(con, built / "genome_all.parquet", "select count(*) from {p}")[0][0]
     assert rows == n == 3
     cols = [r[0] for r in con.execute(f"describe select * from '{built}/genome_all.parquet'").fetchall()]
     for want in ["species_prefix", "PHYLUM", "CLASS", "ORDER", "FAMILY", "GENUS", "SPECIES", "is_representative",
@@ -78,13 +89,13 @@ def test_genome_all_has_every_genome(con, built):
                  "median_intron_len_bp", "median_intergenic_bp"]:
         assert want in cols
     # non-representative genome kept
-    assert q(con, built / "genome_all.parquet", "select is_representative from T where species_prefix='G2'")[0][0] is False
+    assert q(con, built / "genome_all.parquet", "select is_representative from {p} where species_prefix='G2'")[0][0] is False
 
 
 def test_structure_one_row_per_genome_with_genes(con, built):
     p = built / "gene_structure_genome.parquet"
-    assert sorted(r[0] for r in q(con, p, "select species_prefix from T")) == ["G1", "G2"]
-    n, gpm = q(con, p, "select n_genes, genes_per_mb from T where species_prefix='G1'")[0]
+    assert sorted(r[0] for r in q(con, p, "select species_prefix from {p}")) == ["G1", "G2"]
+    n, gpm = q(con, p, "select n_genes, genes_per_mb from {p} where species_prefix='G1'")[0]
     assert n == 4
     assert gpm == pytest.approx(4 / (2000000 / 1e6))
     cols = [r[0] for r in con.execute(f"describe select * from '{p}'").fetchall()]
@@ -96,7 +107,7 @@ def test_structure_one_row_per_genome_with_genes(con, built):
 def test_structure_values(con, built):
     p = built / "gene_structure_genome.parquet"
     r = q(con, p, """select median_exons_per_gene, intron_frac_genes_with_intron, median_intron_len_bp,
-                     median_intergenic_bp, median_cds_len_bp, coding_fraction from T where species_prefix='G1'""")[0]
+                     median_intergenic_bp, median_cds_len_bp, coding_fraction from {p} where species_prefix='G1'""")[0]
     assert r[0] == pytest.approx(1.5)       # exons per gene 3,2,1,1 -> median 1.5
     assert r[1] == pytest.approx(0.5)       # 2 of 4 genes have an intron
     assert r[2] == pytest.approx(50.0)      # intron lengths 50,50,51 -> median 50
@@ -107,15 +118,15 @@ def test_structure_values(con, built):
 
 def test_no_introns_gives_null(con, built):
     r = q(con, built / "gene_structure_genome.parquet",
-          "select median_intron_len_bp, intron_frac_genes_with_intron from T where species_prefix='G2'")[0]
+          "select median_intron_len_bp, intron_frac_genes_with_intron from {p} where species_prefix='G2'")[0]
     assert r[0] is None
     assert r[1] == 0.0
-    r = q(con, built / "genome_all.parquet", "select median_intron_len_bp from T where species_prefix='G2'")[0]
+    r = q(con, built / "genome_all.parquet", "select median_intron_len_bp from {p} where species_prefix='G2'")[0]
     assert r[0] is None
 
 
 def test_genome_without_genes_is_in_genome_all_with_null(con, built):
-    r = q(con, built / "genome_all.parquet", "select n_genes, genes_per_mb from T where species_prefix='G3'")[0]
+    r = q(con, built / "genome_all.parquet", "select n_genes, genes_per_mb from {p} where species_prefix='G3'")[0]
     assert r == (None, None)
 
 
