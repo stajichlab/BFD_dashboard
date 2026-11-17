@@ -103,14 +103,15 @@ for name in MD_NAMES:
         con.sql(f'SELECT * FROM "{name}" LIMIT 0')
     except Exception as e:
         problems.append(f"MotherDuck name {name} does not resolve: {str(e)[:120]}")
-for name in ["v_genome_labels", "v_genome_secretome", "v_gene_introns_phase"]:
+for name in ["v_genome_labels", "v_genome_secretome"]:
     if name not in views:
         problems.append(f"helper view {name} missing")
 
 if Path(old_db).exists():
     old = duckdb.connect(old_db, read_only=True)
     old_views = {r[0] for r in old.sql("SELECT view_name FROM duckdb_views() WHERE NOT internal").fetchall()}
-    lost = sorted(old_views - views)
+    RETIRED = {"v_gene_introns_phase"}   # removed on purpose 2026-11-17 (gene_introns rebuilt with the phase fix)
+    lost = sorted(old_views - views - RETIRED)
     print(f"previous db: {len(old_views)} views; views lost: {lost or 'none'}")
     if lost:
         problems.append(f"views present before but not now: {lost}")

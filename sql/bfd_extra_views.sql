@@ -299,47 +299,6 @@ FROM p LEFT JOIN species s ON s.LOCUSTAG = p.LOCUSTAG
        LEFT JOIN asm_stats a ON a.LOCUSTAG = p.LOCUSTAG;
 COMMENT ON VIEW v_genome_truncation IS 'One row per genome: n_transcripts, n_partial, pct_partial, n_no_start, n_no_stop from gene_transcripts, plus contig_count, N50_bp, masked_pct. truncation_class = high (>10% partial), moderate (>5), low (>1), none. q_truncated = pct_partial > 5. High-partial genomes are fragmented assemblies (median N50 4,185 bp for >10%, 329,909 bp for <=1%); masked_pct is similar across classes, so the partials are real truncation, not a masking artifact. Scans gene_transcripts (about a minute).';
 
--- ---------------------------------------------------------------------------
--- v_gene_introns_phase: intron position and phase recomputed from gene_CDS
--- ---------------------------------------------------------------------------
--- STILL NEEDED on 2026-11-11: gene_introns.parquet (written 2026-11-08) has the off-by-one bug. In it,
--- codon_position and codon_frame describe the NEXT CDS junction; the last intron gets the protein length
--- and frame 0 (md_load_bfd.py DEFAULT_COMMENTS; kickxellomycota/README.md:16 and :450-453, where kx_junc is
--- the same recomputation). The builder was fixed in Fungi_BFD commit 34c8d14 (2026-11-09), after this
--- parquet was written. DROP this view when gene_introns.parquet is rebuilt with that fix; until then the
--- raw columns are exposed here as codon_position_raw and codon_frame_raw.
--- Definitions (same as the fixed builder):
---   cds_nt_upstream = coding bases 5' of the intron (cumulative gene_CDS length in transcript order)
---   codon_position  = cds_nt_upstream // 3 (complete codons 5' of the intron)
---   codon_frame     = cds_nt_upstream % 3  (phase: 0 between codons, 1 after base 1, 2 after base 2)
---   in_cds          = false when the intron does not sit between two CDS segments (then the three are NULL)
--- The intron is matched to the CDS segment that ends at its 5' side, by coordinate.
--- Limit: the count starts at the first CDS base. For a 5'-partial model (gene_transcripts.has_start_codon
--- = 'FALSE') whose first CDS segment does not start on a codon boundary, codon_frame can be shifted; the
--- tables do not hold the GFF phase. Seen in 2 of 8,307 checked introns of genome F77FFF1D, both 5'-partial.
--- ALWAYS filter by transcript: transcript_id = '...' or in_genome(transcript_id, '<LOCUSTAG>'). The filter is
--- pushed into both parquet scans. Without it the view windows over all 754 M gene_CDS rows.
-CREATE OR REPLACE VIEW v_gene_introns_phase AS
-WITH cds AS (
-  SELECT transcript_id,
-         CASE WHEN strand = -1 THEN start - 1 ELSE "end" + 1 END AS junction,
-         sum("end" - start + 1) OVER (PARTITION BY transcript_id ORDER BY "order") AS cds_nt_upstream,
-         "order" AS cds_order,
-         count(*) OVER (PARTITION BY transcript_id) AS n_cds
-  FROM gene_CDS
-)
-SELECT i.intron_id, i.transcript_id, i.intron_number, i.chrom, i.start, i."end", i.strand,
-       i.splice_5, i.splice_3, i.GC_content,
-       i.codon_position AS codon_position_raw,
-       i.codon_frame AS codon_frame_raw,
-       (c.transcript_id IS NOT NULL) AS in_cds,
-       c.cds_nt_upstream,
-       c.cds_nt_upstream // 3 AS codon_position,
-       c.cds_nt_upstream % 3 AS codon_frame,
-       i.species_prefix
-FROM gene_introns i
-LEFT JOIN cds c
-       ON c.transcript_id = i.transcript_id
-      AND c.junction = CASE WHEN i.strand = -1 THEN i."end" ELSE i.start END
-      AND c.cds_order < c.n_cds - 1;
-COMMENT ON VIEW v_gene_introns_phase IS 'gene_introns with intron position and phase recomputed from gene_CDS: cds_nt_upstream (coding bases 5'' of the intron), codon_position (= cds_nt_upstream // 3), codon_frame (phase 0, 1 or 2), in_cds. codon_position_raw and codon_frame_raw are the table values, which are off by one exon in the 2026-11-08 gene_introns.parquet. Always filter by transcript_id (= or in_genome(transcript_id, LOCUSTAG)); an unfiltered query windows over all of gene_CDS. For 5''-partial models (has_start_codon = FALSE) the phase can be shifted. Drop this view after gene_introns is rebuilt with Fungi_BFD commit 34c8d14.';
+-- v_gene_introns_phase was removed on 2026-11-17: gene_introns.parquet was rebuilt on 2026-11-11 with Fungi_BFD
+-- commit 34c8d14, so codon_position and codon_frame are correct in the table. Query gene_introns directly
+-- (docs/BFD_VIEW_REVIEW.md section 4.3).

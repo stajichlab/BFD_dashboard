@@ -43,7 +43,7 @@ Started: 2026-11-10. This page tracks the exploratory analyses run against the f
   | `pfam` | 23,410 genomes; 42 genomes with proteins have no Pfam rows |
   | BUSCO (`fungi_odb12`) | About 75–80% in budding yeasts, from real gene loss |
   | `SUBPHYLUM` | Mostly empty; use CLASS and ORDER |
-  | `gene_introns.codon_position`, `codon_frame` | **Bug:** off by one exon. They describe the next CDS junction, and the last intron gets the protein length and frame 0. Recompute from cumulative `gene_CDS` lengths. Confirmed 2026-11-10; the upstream table builder needs fixing |
+  | `gene_introns.codon_position`, `codon_frame` | **Fixed 2026-11-11.** The table was off by one exon until `gene_introns.parquet` of 2026-11-08 (Fungi_BFD commit `34c8d14`). Since the 2026-11-11 rebuild the columns are correct: query `gene_introns` directly. For 5'-partial models (`has_start_codon = 'FALSE'`) the phase depends on the first CDS frame and was not independently checked |
 
 - **Reporting standard (every analysis):**
   - Include figures (PNG, embedded in the report) and tables.
@@ -79,12 +79,12 @@ The agent also reviews the current dashboard and atlas ideas and proposes a rank
    - *Missing:* a phylogeny (genus-level p-values are anticonservative), orthogroups, an annotation-gap control for presence/absence calls, and a repeat-class table.
    - *Hidden by pooling:* the pooled "Zoopagomycota s.l." row averages over very different groups.
    - *Over-filtering:* Q-n50 removes 79% of Kickxellomycota.
-   - *Bug found:* the `gene_introns` phase bug above.
+   - *Bug found and fixed (2026-11-11):* the `gene_introns` phase bug above.
 
 **Top next studies**
 1. Orthogroups plus a species tree, with CAFE, Dollo and Count gain-loss analysis. Load the orthogroups into the release.
 2. A robust definition of lineage-restricted domains: model false absences with BUSCO, N50 and partial-gene covariates, and check absences in six frames.
-3. Fix and publish shared tables: the `gene_introns` phase bug, `genome_labels`, a `pfam_genome_matrix`, and a taxon synonym table.
+3. Fix and publish shared tables: (`gene_introns` phase bug fixed 2026-11-11), `genome_labels`, a `pfam_genome_matrix`, and a taxon synonym table.
 4. Ancestral reconstruction of intron positions and Ku/RdRP presence in Kickxellomycota, and a kingdom-wide test of Ku loss against intron density.
 5. RNA-seq validation of intron models, and a repeat-class table.
 
@@ -359,7 +359,7 @@ To do when HPCC is back online. These are also in `TODO.md`.
 | Issue | Evidence | Action |
 |---|---|---|
 | Gene annotation under-calls | Analysis C: 33 of 44 near-universal families absent from all 6 annotated *Antarctolithica* proteomes are found in the assemblies by blastx, including ribosomal proteins L22e, L34e and S21e. Mars-9.1 and Mars-19.38 were not annotated (too small) | Find out why gene prediction missed them: training set, filtering, contig edges, short or single-exon genes. Check other small or fragmented genomes for the same problem. Treat single-gene absences as weak evidence until this is fixed. **Added 2026-11-11:** misses are genome-specific (Ku missed in *Tieghemiomyces*, *Caulochytrium*, *Conidiobolus*; *Massospora* has 415 proteins), while in 107 *Coemansia* strains protein-mode BUSCO equals genome-mode (median gap -0.2 points; [analyses/kx2_kickx_reduction/annotation_check/](analyses/kx2_kickx_reduction/annotation_check/README.md)), so no systematic loss is indicated there for conserved genes. Proposed remedy: a validated, source-tagged miniprot gap-filling step after predict for genomes with a large BUSCO gap, a tiny proteome or a MAG, extending the existing `do_annotation_busco_gap` diagnostic (details in `TODO.md`); not to be adopted until the rescue passes its validation |
-| `gene_introns.codon_position`, `codon_frame` | Off by one exon; confirmed 2026-11-10 | Fix the table builder and rebuild `gene_introns` |
+| `gene_introns.codon_position`, `codon_frame` | Off by one exon; confirmed 2026-11-10. Fixed in the 2026-11-11 rebuild | None. Query `gene_introns` directly |
 | "Saccharomycotina sp. YJ-2025a/b" (FF90B97F, F6EB82EF) | Group with Basidiomycota in the analysis C tree | Check and correct the phylum. Excluded from analyses C and D |
 | Uneven per-genome Pfam scan coverage | Analysis G: 80 species reps have <30 % of their own proteins carrying a Pfam hit (kingdom median 74 %), 21 at BUSCO ≥ 90; 40 have 0 of 1,409 near-universal families; 22 are `annotation_status='annotated'` with no `gene_proteins` rows. List in `docs/analyses/trehalose/data/th_qc_suspect_genomes.tsv` (worst: *Tricholoma* FD6195C5, BUSCO 99.8 %, 265/3,744 proteins with a hit) | Find out whether the hmmsearch job failed or was run on a different protein set than `gene_proteins`, and re-scan. Separately, the inflated-proteome genomes (*Phakopsora* 108 k, *Gigaspora* 96 k, *Massospora* 89 k models) need a prediction-quality filter. Until fixed, no presence/absence claim should use BUSCO as its only quality gate |
 
