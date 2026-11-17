@@ -5,7 +5,12 @@
 #   --no-verify          skip the sha256 check (local experiments only)
 # Env: ROOT (repo root, default: git toplevel), REPO (default stajichlab/BFD_dashboard),
 #      GH_TOKEN (used by gh when set).
-# Exit codes: 2 manifest missing, 3 sha256 mismatch, 4 download or unpack failure.
+# Exit codes: 2 manifest missing, 3 sha256 mismatch (only), 4 download failure, archive
+#   rejected or could not be unpacked, 5 bad tag or asset name in the manifest.
+# Trust model: the manifest in git is the trust anchor. A pull request can change both the
+# manifest and the asset. The sha256 check protects against a swapped or corrupted asset only.
+# The archive is also checked before unpacking: only regular files and directories under
+# figures/, tables/ and figures_index.tsv, no absolute paths, no "..", no links.
 set -euo pipefail
 ROOT=${ROOT:-$(git rev-parse --show-toplevel)}
 REPO=${REPO:-stajichlab/BFD_dashboard}
@@ -25,6 +30,13 @@ if [ ! -f "$MANIFEST" ]; then
 fi
 field() { python3 -I -c 'import json,sys; print(json.load(open(sys.argv[1]))[sys.argv[2]])' "$MANIFEST" "$1"; }
 TAG=$(field tag); ASSET=$(field asset); WANT=$(field sha256)
+
+NAME_RE='^[A-Za-z0-9][A-Za-z0-9._-]*$'
+for pair in "tag:$TAG" "asset:$ASSET"; do
+  if ! printf '%s\n' "${pair#*:}" | grep -Eq "$NAME_RE"; then
+    echo "ERROR: manifest field ${pair%%:*} is not a safe name: ${pair#*:}" >&2; exit 5
+  fi
+done
 
 TMP=$(mktemp -d "${TMPDIR:-/tmp}/fetch_site.XXXXXX")
 trap 'rm -rf "$TMP"' EXIT
@@ -59,12 +71,28 @@ case "$ASSET" in
   *.tar.gz) UNPACK=(tar -z) ;;
   *) echo "ERROR: unknown archive type $ASSET." >&2; exit 4 ;;
 esac
-if "${UNPACK[@]}" -tf "$ARCHIVE" 2>/dev/null | grep -Eq '^/|(^|/)\.\.(/|$)'; then
-  echo "ERROR: archive has absolute or parent paths." >&2; exit 4
-fi
+reject() { echo "ERROR: archive rejected: $1" >&2; exit 4; }
+names=$("${UNPACK[@]}" -tf "$ARCHIVE" 2>/dev/null) || reject "cannot list $ARCHIVE"
+verbose=$("${UNPACK[@]}" -tvf "$ARCHIVE" 2>/dev/null) || reject "cannot list $ARCHIVE"
+[ -n "$names" ] || reject "empty archive"
+while IFS= read -r line; do
+  case "${line:0:1}" in
+    -|d) ;;
+    *) reject "member type '${line:0:1}' is not allowed (links and special files)" ;;
+  esac
+done <<< "$verbose"
+while IFS= read -r name; do
+  case "$name" in
+    /*) reject "absolute path: $name" ;;
+  esac
+  if grep -Eq '(^|/)\.\.(/|$)' <<< "$name"; then reject "parent path component: $name"; fi
+  if ! grep -Eq '^(figures(/|$)|tables(/|$)|figures_index\.tsv$)' <<< "$name"; then
+    reject "member outside figures/, tables/, figures_index.tsv: $name"
+  fi
+done <<< "$names"
 mkdir "$TMP/x"
-if ! "${UNPACK[@]}" -xf "$ARCHIVE" -C "$TMP/x"; then
-  echo "ERROR: could not unpack $ARCHIVE." >&2; exit 3
+if ! "${UNPACK[@]}" -xf "$ARCHIVE" -C "$TMP/x" --no-same-owner --no-same-permissions; then
+  reject "could not unpack $ARCHIVE"
 fi
 for need in figures tables figures_index.tsv; do
   if [ ! -e "$TMP/x/$need" ]; then echo "ERROR: archive lacks $need." >&2; exit 4; fi

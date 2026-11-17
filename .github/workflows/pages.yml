@@ -53,7 +53,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          command -v zstd >/dev/null || sudo apt-get install -y zstd
+          command -v zstd >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y zstd; }
           bash workflows/fetch_site_assets.sh
 
       - uses: quarto-dev/quarto-actions/setup@v2

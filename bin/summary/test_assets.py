@@ -198,7 +198,188 @@ def test_fetch_corrupted_archive_exit_3(built):
     data[len(data) // 2] ^= 0xFF
     bad.write_bytes(bytes(data))
     f = _fetch(root, "--from-archive", str(bad))
-    assert f.returncode == 3
+    assert f.returncode == 3  # sha256 mismatch only
+
+
+def _pin(root, archive, asset="site-figures-2026-01-02.tar.gz", tag="site-figures-2026-01-02"):
+    """Write a manifest whose sha256 matches `archive`."""
+    mp = root / "docs" / "quarto_summary" / "figures_release.json"
+    mp.write_text(json.dumps({"tag": tag, "asset": asset, "sha256": _sha(archive),
+                              "bytes": Path(archive).stat().st_size}))
+
+
+def _existing_site(root):
+    site = root / "docs" / "quarto_summary"
+    (site / "figures").mkdir(parents=True, exist_ok=True)
+    (site / "figures" / "keep.png").write_bytes(b"keep")
+    (site / "tables").mkdir(exist_ok=True)
+    (site / "figures_index.tsv").write_text("keep\n")
+    return site
+
+
+def _bad_archive(tmp_path, kind):
+    p = tmp_path / f"{kind}.tar.gz"
+    with tarfile.open(p, "w:gz") as tf:
+        for name in ("figures/ok.png", "tables/t.tsv", "figures_index.tsv"):
+            data = b"ok"
+            ti = tarfile.TarInfo(name)
+            ti.size = len(data)
+            import io
+            tf.addfile(ti, io.BytesIO(data))
+        if kind == "dotdot":
+            ti = tarfile.TarInfo("figures/../../evil")
+            ti.size = 1
+            import io
+            tf.addfile(ti, io.BytesIO(b"x"))
+        elif kind == "absolute":
+            ti = tarfile.TarInfo("/tmp/evil_abs")
+            ti.size = 1
+            import io
+            tf.addfile(ti, io.BytesIO(b"x"))
+        elif kind == "symlink":
+            ti = tarfile.TarInfo("figures/link")
+            ti.type = tarfile.SYMTYPE
+            ti.linkname = "/etc/passwd"
+            tf.addfile(ti)
+        elif kind == "hardlink":
+            ti = tarfile.TarInfo("figures/hl")
+            ti.type = tarfile.LNKTYPE
+            ti.linkname = "figures/ok.png"
+            tf.addfile(ti)
+        elif kind == "outside":
+            ti = tarfile.TarInfo("other/file.txt")
+            ti.size = 1
+            import io
+            tf.addfile(ti, io.BytesIO(b"x"))
+    return p
+
+
+@pytest.mark.parametrize("kind", ["dotdot", "absolute", "symlink", "hardlink", "outside"])
+def test_fetch_rejects_unsafe_archive(tmp_path, kind):
+    root = _make_root(tmp_path)
+    site = _existing_site(root)
+    arch = _bad_archive(tmp_path, kind)
+    _pin(root, arch)
+    f = _fetch(root, "--from-archive", str(arch))
+    assert f.returncode == 4, f.stderr
+    assert (site / "figures" / "keep.png").read_bytes() == b"keep"
+    assert (site / "figures_index.tsv").read_text() == "keep\n"
+    assert not (Path("/tmp/evil_abs")).exists() or kind != "absolute"
+
+
+def test_fetch_accepts_benign_sha_correct_archive(tmp_path):
+    root = _make_root(tmp_path)
+    _existing_site(root)
+    arch = _bad_archive(tmp_path, "benign")
+    _pin(root, arch)
+    f = _fetch(root, "--from-archive", str(arch))
+    assert f.returncode == 0, f.stderr
+    assert not (root / "docs" / "quarto_summary" / "figures" / "keep.png").exists()
+
+
+def test_fetch_unpack_failure_exit_4(tmp_path):
+    root = _make_root(tmp_path)
+    site = _existing_site(root)
+    arch = tmp_path / "garbage.tar.gz"
+    arch.write_bytes(b"this is not a tar archive" * 50)
+    _pin(root, arch)
+    f = _fetch(root, "--from-archive", str(arch))
+    assert f.returncode == 4
+    assert (site / "figures" / "keep.png").exists()
+
+
+@pytest.mark.parametrize("bad", ["../x", "a/b", "-rf"])
+def test_fetch_rejects_bad_manifest_names(tmp_path, bad):
+    root = _make_root(tmp_path)
+    arch = _bad_archive(tmp_path, "benign")
+    for field in ("tag", "asset"):
+        _pin(root, arch)
+        mp = root / "docs" / "quarto_summary" / "figures_release.json"
+        m = json.loads(mp.read_text())
+        m[field] = bad
+        mp.write_text(json.dumps(m))
+        f = _fetch(root, "--from-archive", str(arch))
+        assert f.returncode == 5, (field, f.stderr)
+        assert field in f.stderr
+
+
+# ---- release script: gh safety checks ----
+
+def _fake_gh(tmp_path, auth_ok=True, tag_exists=False, upload_ok=True):
+    d = tmp_path / "fakebin"
+    d.mkdir(exist_ok=True)
+    log = tmp_path / "gh.log"
+    script = f"""#!/bin/sh
+echo "$@" >> {log}
+case "$1 $2" in
+  "auth status") exit {0 if auth_ok else 1} ;;
+  "release view") exit {0 if tag_exists else 1} ;;
+  "release create"|"release upload")
+    if [ -f "$ROOT/docs/quarto_summary/figures_release.json" ]; then echo MANIFEST_PRESENT >> {log}; else echo MANIFEST_ABSENT >> {log}; fi
+    exit {0 if upload_ok else 1} ;;
+esac
+exit 0
+"""
+    (d / "gh").write_text(script)
+    (d / "gh").chmod(0o755)
+    return d, log
+
+
+def _release_gh(tmp_path, fake, *args):
+    out = _make_out(tmp_path)
+    root = _make_root(tmp_path)
+    env = dict(os.environ, ROOT=str(root), OUT=str(out), PATH=f"{fake}:{os.environ['PATH']}")
+    r = subprocess.run(["bash", str(RELEASE), "--out", str(tmp_path / "dest"), "--date", "2026-01-02", *args],
+                       env=env, capture_output=True, text=True)
+    return r, root / "docs" / "quarto_summary" / "figures_release.json"
+
+
+def test_upload_auth_failure_leaves_manifest_and_builds_nothing(tmp_path):
+    fake, log = _fake_gh(tmp_path, auth_ok=False)
+    r, mp = _release_gh(tmp_path, fake, "--upload")
+    assert r.returncode != 0
+    assert "gh auth" in r.stderr
+    assert not mp.exists()
+    assert not (tmp_path / "dest").exists()
+
+
+def test_upload_existing_tag_refused_without_clobber(tmp_path):
+    fake, log = _fake_gh(tmp_path, tag_exists=True)
+    r, mp = _release_gh(tmp_path, fake, "--upload")
+    assert r.returncode != 0
+    assert "--clobber" in r.stderr
+    assert not mp.exists()
+    assert "release create" not in log.read_text() and "release upload" not in log.read_text()
+
+
+def test_upload_clobber_warns_and_uploads(tmp_path):
+    fake, log = _fake_gh(tmp_path, tag_exists=True)
+    r, mp = _release_gh(tmp_path, fake, "--upload", "--clobber")
+    assert r.returncode == 0, r.stderr
+    assert "exit 3" in r.stderr
+    assert "release upload site-figures-2026-01-02" in log.read_text()
+    assert mp.exists()
+
+
+def test_upload_writes_manifest_after_upload(tmp_path):
+    fake, log = _fake_gh(tmp_path)
+    r, mp = _release_gh(tmp_path, fake, "--upload")
+    assert r.returncode == 0, r.stderr
+    text = log.read_text()
+    assert "release create site-figures-2026-01-02" in text
+    assert "MANIFEST_ABSENT" in text
+    assert mp.exists()
+
+
+def test_upload_failure_writes_no_manifest(tmp_path):
+    fake, log = _fake_gh(tmp_path, upload_ok=False)
+    r, mp = _release_gh(tmp_path, fake, "--upload")
+    assert r.returncode != 0
+    assert not mp.exists()
+
+
+def test_no_upload_says_release_does_not_exist_yet(built):
+    assert "does not exist yet" in built[5].stdout
 
 
 def test_fetch_missing_manifest_exit_2(tmp_path):
@@ -232,7 +413,7 @@ def test_workflow_fetch_step_before_render():
     s = _build_steps()[i]
     assert "workflows/fetch_site_assets.sh" in s["run"]
     assert s["env"]["GH_TOKEN"] == "${{ github.token }}"
-    assert "zstd" in s["run"] or "zstd" in "".join(x.get("run", "") for x in _build_steps()[:i])
+    assert "command -v zstd >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y zstd; }" in s["run"]
 
 
 def test_workflow_asserts_png_count_and_index():
