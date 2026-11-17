@@ -8,13 +8,15 @@ import pandas as pd
 from scipy import stats as st
 
 from figs_common import safe
-from make_figures import GREY, PALETTE, Out, parent_legend
+from matplotlib.lines import Line2D
+
+from make_figures import GREY, PALETTE, Out, parent_legend, phylum_color_map, phylum_order
 from stats import group_tests, pair_regressions
 
 TOPIC_ALL = "scatter"
 TOPIC_REG = "regression"
-POINTS_BELOW = 200     # phyla with fewer genomes than this get individual points; larger phyla only the density layer
-TOP_PHYLA = 8
+POINT_SIZE = 3
+POINT_ALPHA = 0.3
 # name, x column, y column, logx, logy, x label, y label
 A_FAMILY = [
     ("A01_busco_vs_genome_size", "total_length_bp", "busco_complete", True, False, "Genome size (bp)", "BUSCO complete (%)"),
@@ -32,25 +34,13 @@ A_FAMILY = [
 ]
 
 
-def phylum_colors(df):
-    """Colour per phylum. The palette goes by rank (genome count) to the phyla that get individual points
-    (fewer than POINTS_BELOW genomes), up to TOP_PHYLA of them. Other phyla are grey: the large ones are shown
-    only in the density layer."""
-    counts = df["PHYLUM"].fillna("Unknown").value_counts()
-    cols = {p: GREY for p in counts.index}
-    small = [p for p in counts.index if counts[p] < POINTS_BELOW and p != "Unknown"]
-    for i, p in enumerate(small[:TOP_PHYLA]):
-        cols[p] = PALETTE[i]
-    return cols
-
-
 def _all_positive(v):
     return len(v) > 0 and bool((v > 0).all())
 
 
 def scatter_all(df, x, y, colors_by_phylum, o, name, logx=False, logy=False, xlabel=None, ylabel=None):
-    """Density (hexbin) of every genome in df plus individual points for phyla with fewer than POINTS_BELOW
-    genomes, in the phylum hue. Records n, Pearson r and Spearman r (on the plotted scale) in the Made entry's
+    """Every genome in df as a small, transparent, rasterized point coloured by phylum (colors_by_phylum is the
+    site-wide map; phyla not in it are grey and drawn first). Records n, Pearson r and Spearman r (on the plotted scale) in the Made entry's
     .stats, with scope all_genomes. Returns True when saved, False when skipped (missing column, no data)."""
     def build():
         if x not in df.columns or y not in df.columns:
@@ -69,17 +59,20 @@ def scatter_all(df, x, y, colors_by_phylum, o, name, logx=False, logy=False, xla
                         "spearman_r": float("nan") if const else float(st.spearmanr(vx, vy)[0]),
                         "logx": bool(lx), "logy": bool(ly)}
         fig, ax = plt.subplots(figsize=(5.6, 4.4))
-        if not const:
-            hb = ax.hexbin(d[x], d[y], gridsize=45, bins="log", mincnt=1, cmap="Greys",
-                           xscale="log" if lx else "linear", yscale="log" if ly else "linear", linewidths=0, zorder=1)
-            fig.colorbar(hb, ax=ax, label="Genomes per bin", pad=0.02, fraction=0.05)
         counts = d["PHYLUM"].value_counts()
-        for ph in counts.index[::-1]:
-            if counts[ph] >= POINTS_BELOW:
-                continue
+        coloured = [p for p in counts.index if p in colors_by_phylum]
+        grey = ~d["PHYLUM"].isin(colors_by_phylum)
+        if grey.any():       # phyla beyond the palette first, so the coloured phyla stay visible on top
+            ax.scatter(d.loc[grey, x], d.loc[grey, y], s=POINT_SIZE, alpha=POINT_ALPHA, color=GREY, linewidths=0,
+                       rasterized=True, zorder=1)
+        for ph in coloured:  # largest phylum first, smallest last (on top)
             m = d["PHYLUM"] == ph
-            ax.scatter(d.loc[m, x], d.loc[m, y], s=7, alpha=0.8, color=colors_by_phylum.get(ph, GREY), linewidths=0,
-                       rasterized=True, zorder=2, label=f"{ph} (n={counts[ph]})")
+            ax.scatter(d.loc[m, x], d.loc[m, y], s=POINT_SIZE, alpha=POINT_ALPHA, color=colors_by_phylum[ph],
+                       linewidths=0, rasterized=True, zorder=2)
+        handles = [Line2D([], [], marker="o", ls="", markersize=4.5, color=colors_by_phylum[p], label=f"{p} (n={counts[p]})")
+                   for p in coloured]
+        if grey.any():
+            handles.append(Line2D([], [], marker="o", ls="", markersize=4.5, color=GREY, label="Other phyla"))
         if lx:
             ax.set_xscale("log")
         if ly:
@@ -90,16 +83,17 @@ def scatter_all(df, x, y, colors_by_phylum, o, name, logx=False, logy=False, xla
         tag = " (log10)" if (lx or ly) else ""
         s["title"] = f"n={s['n']} genomes (all)   Pearson r={s['pearson_r']:.2f}   Spearman r={s['spearman_r']:.2f}{tag}"
         ax.set_title(s["title"], fontsize=8.5)
-        if ax.get_legend_handles_labels()[0]:
-            ax.legend(fontsize=6.5, frameon=False, loc="best", title=f"Phyla with <{POINTS_BELOW} genomes", title_fontsize=6.5)
+        if handles:
+            ax.legend(handles=handles, fontsize=6.5, frameon=False, loc="best", title="Phylum", title_fontsize=6.5)
         return fig
     return safe(o, name, TOPIC_ALL, build)
 
 
-def page_all_genomes(genome_all, out):
-    """A01-A12 from genome_all (every genome), written under figures/all/. Returns the Made list."""
+def page_all_genomes(genome_all, out, porder=None):
+    """A01-A12 from genome_all (every genome), written under figures/all/. Returns the Made list.
+    porder: phylum ranking (make_figures.phylum_order); default = ranking of genome_all."""
     o = Out(out, "all")
-    colors = phylum_colors(genome_all)
+    colors = phylum_color_map(porder if porder is not None else phylum_order(genome_all))
     for name, x, y, lx, ly, xl, yl in A_FAMILY:
         scatter_all(genome_all, x, y, colors, o, name, logx=lx, logy=ly, xlabel=xl, ylabel=yl)
     print(f"all: {len(genome_all)} genomes, {len(o.made)} outputs", flush=True)

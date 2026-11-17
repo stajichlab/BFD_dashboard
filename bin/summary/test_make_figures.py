@@ -273,18 +273,6 @@ def test_all_and_regression_outputs_via_main(tmp_path):
     assert (tmp_path / "out" / "figures" / "all" / "A01_busco_vs_genome_size.png").exists()
 
 
-def test_phylum_colors_cover_phyla_that_get_points():
-    from figs_scatter import phylum_colors, PALETTE, GREY, POINTS_BELOW
-    ph = ["Big"] * 500 + [f"Small{i}" for i in range(10) for _ in range(10 + i)]
-    cols = phylum_colors(pd.DataFrame({"PHYLUM": ph}))
-    counts = pd.Series(ph).value_counts()
-    drawn = [p for p in counts.index if counts[p] < POINTS_BELOW]
-    assert all(p in cols for p in drawn)
-    top = drawn[:8]
-    assert all(cols[p] in PALETTE for p in top) and len({cols[p] for p in top}) == 8
-    assert all(cols[p] == GREY for p in drawn[8:]) and cols["Big"] == GREY
-
-
 def test_scatter_all_title_marks_log10(tmp_path):
     from figs_scatter import scatter_all
     o = mf.Out(tmp_path, "all")

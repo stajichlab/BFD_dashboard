@@ -23,7 +23,7 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from make_figures import OTHER, assign_groups  # noqa: E402
+from make_figures import OTHER, assign_groups, phylum_order  # noqa: E402
 
 LEVELS = ("phylum", "subphylum", "class", "order")
 # field -> (label, unit)
@@ -62,8 +62,9 @@ def export_clade_json(core: pd.DataFrame, structure: pd.DataFrame, out: Path,
     d = core.reset_index(drop=True).copy()
     colors, group_of = {}, {}
     cols_by_level = {}
+    porder = phylum_order(d)    # the same phylum colours as the figures
     for lv in LEVELS:
-        g, _levels, cmap = assign_groups(d, lv)
+        g, _levels, cmap = assign_groups(d, lv, phylum_order=porder)
         # the plotted value per genome: the label itself when it has a colour, else pooled
         raw = g["subphylum_or_phylum"] if lv == "subphylum" else g["PHYLUM"] if lv == "phylum" else \
             d["CLASS" if lv == "class" else "ORDER"].fillna("Unknown")

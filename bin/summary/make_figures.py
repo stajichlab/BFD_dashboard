@@ -148,7 +148,21 @@ def shade_band(pos, n_bands):
     return seq[pos % n_bands]
 
 
-def assign_groups(core, level):
+def phylum_order(df):
+    """Phyla ranked by genome count (ties by name), 'Unknown' last. Pass genome_all (every genome) so the whole
+    site shares one ranking."""
+    c = df["PHYLUM"].fillna("Unknown").value_counts()
+    known = sorted((p for p in c.index if p != "Unknown"), key=lambda p: (-int(c[p]), str(p)))
+    return known + (["Unknown"] if "Unknown" in c.index else [])
+
+
+def phylum_color_map(order):
+    """The one phylum -> colour map of the site: the first len(PALETTE) known phyla of `order` get PALETTE colours
+    in rank order. Other phyla and 'Unknown' are not in the map (callers draw them grey)."""
+    return {p: PALETTE[i] for i, p in enumerate([p for p in order if p != "Unknown"][:len(PALETTE)])}
+
+
+def assign_groups(core, level, phylum_order=None):
     """Add 'grp' (the plotted group) and 'parent' (phylum used for colour/order); return core, levels, colors."""
     d = core.copy()
     ph = d["PHYLUM"].fillna("Unknown")
@@ -170,6 +184,8 @@ def assign_groups(core, level):
     # rank phyla by genome count: colours and ordering
     ph_rank = ph.value_counts()
     ph_order = list(ph_rank.index)
+    if phylum_order is not None:     # global ranking and colours (phylum_order(genome_all)); local ranks fill the gaps
+        ph_order = [p for p in phylum_order if p in ph_rank.index] + [p for p in ph_order if p not in set(phylum_order)]
     n = d["grp"].value_counts()
     if level == "phylum":
         keep = list(n.index[:TOP_PHYLA])
@@ -194,6 +210,8 @@ def assign_groups(core, level):
     subs = d[d.grp != OTHER].groupby("grp")["subphylum_or_phylum"].agg(lambda x: x.value_counts().index[0])
     top_ph = ph_order[:len(PALETTE)]
     pcolor = {p: (PALETTE[i] if p in top_ph else GREY) for i, p in enumerate(ph_order[:len(PALETTE)])}
+    if phylum_order is not None:
+        pcolor = phylum_color_map(phylum_order)
 
     def sort_key(g):
         return (ph_order.index(par[g]), str(subs[g]), -int(n[g]))
@@ -643,11 +661,11 @@ def page_functional(core, levels, colors, wide, label, cazy, tf, merops, idp, o)
         o.save(fig, name)
 
 
-def run_level(level, core0, tables, out):
+def run_level(level, core0, tables, out, phylum_order=None):
     from figs_structure import page_gene_structure  # imported here: these modules import helpers from this one
     from figs_composition import page_composition
     from figs_scatter import page_regressions
-    core, levels, colors = assign_groups(core0, level)
+    core, levels, colors = assign_groups(core0, level, phylum_order=phylum_order)
     o = Out(out, level)
     o.set_groups(core, levels)
     rd = tables
@@ -698,15 +716,18 @@ def main(data, out, levels=LEVELS):
     core0 = rd("genome_core")
     core0 = core0[core0["n_genes"].notna()]  # representatives without a proteome are not plotted
     made = {}
-    for level in levels:
-        made[level] = run_level(level, core0, rd, out)
     try:
         genome_all = rd("genome_all")
     except FileNotFoundError:
+        genome_all = None
+    porder = phylum_order(genome_all if genome_all is not None else core0)   # one phylum colour map for the site
+    for level in levels:
+        made[level] = run_level(level, core0, rd, out, phylum_order=porder)
+    if genome_all is None:
         print("genome_all.parquet absent, skipping all-genome scatter plots", flush=True)
     else:
         from figs_scatter import page_all_genomes
-        made["all"] = page_all_genomes(genome_all, out)   # phylum-independent: one set under figures/all/
+        made["all"] = page_all_genomes(genome_all, out, porder)   # phylum-independent: one set under figures/all/
         from summary_ordination import pick_complete_reps, run_ordination   # runs once, not per level
         mats = {}
         for key, tname in (("codon", "codon_genome"), ("aa", "aa_genome"), ("structure", "gene_structure_genome")):
@@ -716,7 +737,7 @@ def main(data, out, levels=LEVELS):
                 print(f"{tname}.parquet absent, skipping its ordination", flush=True)
         if mats:
             try:
-                res = run_ordination(pick_complete_reps(genome_all, mats), mats, out)
+                res = run_ordination(pick_complete_reps(genome_all, mats), mats, out, phylum_order=porder)
                 made["ordination"] = res.pop("_made")
             except Exception as e:  # the level pages are already built: report and keep them
                 import traceback
