@@ -31,7 +31,7 @@ title: "Data and methods"
 
 ## Limits
 
-- Descriptive only: no statistical tests, no phylogenetic correction.
+- Mostly descriptive. The group tests and regressions on the Gene structure and Comparisons pages have no phylogenetic correction, and the group tests have no multiple-testing correction.
 - Per-genome tool coverage is uneven: some genomes have a small fraction of proteins with a Pfam scan result (list: `docs/analyses/trehalose/data/th_qc_suspect_genomes.tsv`), which lowers their domain counts.
 - `targetp` covers only 125 genomes and is not used. `signalp` and `tmhmm` hold positive calls only.
 - Pfam accessions in the curated panel (`bin/summary/panel.py`): all 57 were checked on 2026-11-16 against the Pfam names stored in the BFD `pfam` table (accession and name agree). The functional interpretation of each domain is standard knowledge and was not re-derived.

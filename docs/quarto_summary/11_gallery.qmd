@@ -1,0 +1,23 @@
+---
+title: "Figure gallery"
+---
+
+```{python}
+import sys
+sys.path.insert(0, ".")
+from _helpers import fig, table, single, flat_table, read_flat, gallery
+```
+
+Every figure the pipeline built, in one table, with a thumbnail and links to the PNG and SVG files. Type in a filter box to narrow the table by topic, level, scope or signal kind.
+
+::: {.callout-note}
+## How to choose figures
+- **score** = effect_size × (1 − pooled_share). The effect size comes from the group test of the figure's statistic; pooled_share is the share of genomes in the grey "Other" group.
+- **signal** values of different kinds (epsilon2, spearman_r, permanova_R2) are not comparable. Rank figures within one signal_kind (use the filter), not across kinds.
+- The ranking only helps sorting. It does not decide which figures are interesting. The group tests have no multiple-testing correction and no phylogenetic control.
+- Figures without a group test have no effect_size or score. n_genomes is the number of genomes in the figure.
+:::
+
+```{python}
+gallery()
+```

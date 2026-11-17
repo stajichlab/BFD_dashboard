@@ -1,9 +1,16 @@
 """Helpers shared by the .qmd pages. Figures and tables are written by bin/summary/make_figures.py into
 figures/<level>/ and tables/<level>/ for level in phylum, subphylum, class; each is shown as three tabs."""
+import html
+import json
 from pathlib import Path
 
 import pandas as pd
-from IPython.display import Markdown, display
+try:
+    from IPython.display import HTML, Markdown, display
+except ImportError:  # unit tests run without IPython; the helpers then only return strings
+    def Markdown(x): return x
+    def HTML(x): return x
+    def display(x): print(x)
 
 HERE = Path(__file__).resolve().parent
 PFAM = "https://www.ebi.ac.uk/interpro/entry/pfam/{}/"
@@ -18,15 +25,35 @@ def _tabs(blocks):
     display(Markdown("\n".join(out)))
 
 
+def _facts(folder, name):
+    """One factual sentence from the sidecar figures/<folder>/<name>.json (n, groups, pooled share), or ''."""
+    path = HERE / "figures" / folder / f"{name}.json"
+    try:
+        side = json.loads(path.read_text())
+    except (OSError, ValueError):
+        return ""
+    parts = []
+    if side.get("n_genomes") is not None:
+        parts.append(f"n = {int(side['n_genomes']):,} genomes")
+    if side.get("n_groups") is not None:
+        parts.append(f"{int(side['n_groups'])} groups")
+    ps = side.get("pooled_share")
+    if isinstance(ps, (int, float)) and ps == ps:
+        parts.append(f"{ps * 100:.0f}% of genomes are in the pooled \"Other\" group")
+    return " (" + "; ".join(parts) + ")" if parts else ""
+
+
 def fig(name, caption, width="95%", levels=None):
-    """Embed figures/<level>/<name>.png as one tab per level; the SVG sits next to each PNG."""
+    """Embed figures/<level>/<name>.png as one tab per level; the SVG sits next to each PNG.
+    The sidecar JSON, when present, adds n, number of groups and the pooled share to the caption."""
     blocks = []
     for lv, title in LEVELS:
         if levels and lv not in levels:
             continue
         png = HERE / "figures" / lv / f"{name}.png"
         if png.exists():
-            blocks.append((title, f"![{caption}](figures/{lv}/{name}.png){{width={width}}}\n\n*{caption}* "
+            cap = caption + _facts(lv, name)
+            blocks.append((title, f"![{cap}](figures/{lv}/{name}.png){{width={width}}}\n\n*{cap}* "
                                   f"([SVG](figures/{lv}/{name}.svg))"))
         else:
             blocks.append((title, f"*Figure `{name}` has not been built for this level.*"))
@@ -50,3 +77,114 @@ def table(name, link_pfam=None, digits=3, max_rows=None, levels=None):
             df[link_pfam] = df[link_pfam].map(lambda a: f"[{a}]({PFAM.format(str(a).split('.')[0])})")
         blocks.append((title, df.round(digits).to_markdown(index=False)))
     _tabs(blocks)
+
+
+def single(name, caption, folder, width="85%"):
+    """Embed one figure that has no level tabs: figures/<folder>/<name>.png (folder = all or ordination)."""
+    png = HERE / "figures" / folder / f"{name}.png"
+    if not png.exists():
+        display(Markdown(f"*Figure `{name}` has not been built (figures/{folder}/).*"))
+        return
+    cap = caption + _facts(folder, name)
+    display(Markdown(f"![{cap}](figures/{folder}/{name}.png){{width={width}}}\n\n*{cap}* "
+                     f"([SVG](figures/{folder}/{name}.svg))"))
+
+
+def flat_table(name, folder, digits=3, max_rows=None, columns=None):
+    """Show tables/<folder>/<name>.tsv (folder = ordination); says so when the table is absent."""
+    path = HERE / "tables" / folder / f"{name}.tsv"
+    if not path.exists():
+        display(Markdown(f"*Table `{name}` has not been built (tables/{folder}/).*"))
+        return
+    df = pd.read_csv(path, sep="\t")
+    if columns:
+        df = df[[c for c in columns if c in df.columns]]
+    if max_rows:
+        df = df.head(max_rows)
+    display(Markdown(df.round(digits).to_markdown(index=False)))
+
+
+def read_flat(name, folder):
+    """DataFrame of tables/<folder>/<name>.tsv, or None when absent."""
+    path = HERE / "tables" / folder / f"{name}.tsv"
+    return pd.read_csv(path, sep="\t") if path.exists() else None
+
+
+INDEX_COLS = ["name", "level", "topic", "kind", "scope", "n_genomes", "n_groups", "pooled_share", "effect_size",
+              "score", "signal", "signal_kind"]
+_NUM = {"n_genomes": "{:,.0f}", "n_groups": "{:,.0f}", "pooled_share": "{:.2f}", "effect_size": "{:.3f}",
+        "score": "{:.3f}", "signal": "{:.3f}"}
+_FOLDER = {"all_genomes": "all", "genus_reps": "ordination"}
+
+_JS = """<script>
+(function(){
+  var root=document.currentScript.parentNode, rows=root.querySelectorAll('tbody tr'), ins=root.querySelectorAll('.gal-filter');
+  function apply(){
+    var f={}; ins.forEach(function(i){f[i.dataset.col]=i.value.toLowerCase();});
+    var shown=0;
+    rows.forEach(function(r){
+      var ok=true; for(var c in f){ if(f[c] && (r.dataset[c]||'').toLowerCase().indexOf(f[c])<0){ok=false;} }
+      r.style.display=ok?'':'none'; if(ok){shown++;}
+    });
+    root.querySelector('.gal-count').textContent=shown+' of '+rows.length+' figures shown';
+  }
+  ins.forEach(function(i){i.addEventListener('input',apply);}); apply();
+})();
+</script>"""
+
+
+def _fmt(col, v):
+    if v is None or (isinstance(v, float) and v != v) or v == "":
+        return ""
+    if col in _NUM:
+        try:
+            return _NUM[col].format(float(v))
+        except (TypeError, ValueError):
+            pass
+    return str(v)
+
+
+def _fig_dir(row):
+    scope = str(row.get("scope", ""))
+    return _FOLDER.get(scope, str(row.get("level", "")))
+
+
+def gallery_html(topic=None, level=None, top=None, index_path=None):
+    """HTML for the figure gallery built from figures_index.tsv (index order kept; top = first N rows after the
+    topic/level filter). Returns a short note instead when the index has not been built."""
+    path = Path(index_path) if index_path else HERE / "figures_index.tsv"
+    if not path.exists():
+        return ("<p><em>figures_index.tsv has not been built yet, so the gallery is empty. "
+                "It is written by bin/summary/make_figures.py.</em></p>")
+    df = pd.read_csv(path, sep="\t", keep_default_na=False)
+    if topic:
+        df = df[df["topic"] == topic]
+    if level:
+        df = df[df["level"] == level]
+    if top:
+        df = df.head(int(top))
+    e = html.escape
+    head = ["thumbnail"] + [c for c in INDEX_COLS if c in df.columns] + ["files"]
+    filt = ["topic", "level", "scope", "signal_kind"]
+    out = ['<div class="gallery"><style>.gallery table{font-size:.8rem}.gallery img{width:90px;height:auto}'
+           '.gallery .gal-filter{width:9rem;margin:0 .5rem .5rem 0}</style>']
+    out.append("<p>" + "".join(f'<label>{c} <input class="gal-filter" data-col="{c}" type="text" '
+                               f'placeholder="contains..."></label>' for c in filt if c in df.columns)
+               + '<span class="gal-count"></span></p>')
+    out.append("<table><thead><tr>" + "".join(f"<th>{e(h)}</th>" for h in head) + "</tr></thead><tbody>")
+    for _, r in df.iterrows():
+        d = _fig_dir(r)
+        png = f"figures/{d}/{r['name']}.png"
+        svg = f"figures/{d}/{r['name']}.svg"
+        data = " ".join(f'data-{c}="{e(str(r[c]))}"' for c in filt if c in df.columns)
+        cells = [f'<td><a href="{png}"><img loading="lazy" src="{png}" alt="{e(str(r["name"]))}"></a></td>']
+        cells += [f"<td>{e(_fmt(c, r[c]))}</td>" for c in INDEX_COLS if c in df.columns]
+        cells.append(f'<td><a href="{png}">PNG</a> <a href="{svg}">SVG</a></td>')
+        out.append(f"<tr {data}>" + "".join(cells) + "</tr>")
+    out.append("</tbody></table>" + _JS + "</div>")
+    return "\n".join(out)
+
+
+def gallery(topic=None, level=None, top=None):
+    """Display the filterable figure gallery (see gallery_html)."""
+    display(HTML(gallery_html(topic, level, top)))

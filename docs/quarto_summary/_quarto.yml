@@ -17,6 +17,16 @@ website:
         text: Phylum patterns
       - href: 05_functional_domains.qmd
         text: Functional areas
+      - href: 07_gene_structure.qmd
+        text: Gene structure
+      - href: 08_composition.qmd
+        text: Composition
+      - href: 09_comparisons.qmd
+        text: Comparisons
+      - href: 10_ordination.qmd
+        text: Ordination
+      - href: 11_gallery.qmd
+        text: Gallery
       - href: 06_data_notes.qmd
         text: Data and methods
 format:

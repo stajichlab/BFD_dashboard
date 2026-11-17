@@ -11,3 +11,10 @@ atlas_env/
 
 # local DuckDB files (build with workflows/build_bfd_db.sh; scratch via bin/bfd_scratch.py)
 db/
+
+# quarto render outputs
+docs/quarto_summary/_site/
+docs/quarto_summary/site_libs/
+docs/quarto_summary/.quarto/
+docs/quarto_summary/*_files/
+*.quarto_ipynb
