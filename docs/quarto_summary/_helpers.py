@@ -3,6 +3,7 @@ figures/<level>/ and tables/<level>/ for level in phylum, subphylum, class; each
 import html
 import json
 from pathlib import Path
+from urllib.parse import quote
 
 import pandas as pd
 try:
@@ -25,6 +26,15 @@ def _tabs(blocks):
     display(Markdown("\n".join(out)))
 
 
+def _count(v):
+    """Integer text for a sidecar value, or None when it is missing, NaN or not numeric."""
+    try:
+        f = float(v)
+    except (TypeError, ValueError):
+        return None
+    return None if f != f or f in (float("inf"), float("-inf")) else f"{int(f):,}"
+
+
 def _facts(folder, name):
     """One factual sentence from the sidecar figures/<folder>/<name>.json (n, groups, pooled share), or ''."""
     path = HERE / "figures" / folder / f"{name}.json"
@@ -33,10 +43,11 @@ def _facts(folder, name):
     except (OSError, ValueError):
         return ""
     parts = []
-    if side.get("n_genomes") is not None:
-        parts.append(f"n = {int(side['n_genomes']):,} genomes")
-    if side.get("n_groups") is not None:
-        parts.append(f"{int(side['n_groups'])} groups")
+    n, g = _count(side.get("n_genomes")), _count(side.get("n_groups"))
+    if n:
+        parts.append(f"n = {n} genomes")
+    if g:
+        parts.append(f"{g} groups")
     ps = side.get("pooled_share")
     if isinstance(ps, (int, float)) and ps == ps:
         parts.append(f"{ps * 100:.0f}% of genomes are in the pooled \"Other\" group")
@@ -118,19 +129,30 @@ _FOLDER = {"all_genomes": "all", "genus_reps": "ordination"}
 
 _JS = """<script>
 (function(){
-  var root=document.currentScript.parentNode, rows=root.querySelectorAll('tbody tr'), ins=root.querySelectorAll('.gal-filter');
+  var root=document.currentScript.parentNode, rows=root.querySelectorAll('tbody tr'), ctl=root.querySelectorAll('.gal-filter');
   function apply(){
-    var f={}; ins.forEach(function(i){f[i.dataset.col]=i.value.toLowerCase();});
     var shown=0;
     rows.forEach(function(r){
-      var ok=true; for(var c in f){ if(f[c] && (r.dataset[c]||'').toLowerCase().indexOf(f[c])<0){ok=false;} }
+      var ok=true;
+      ctl.forEach(function(c){
+        var v=c.value, d=r.dataset[c.dataset.col]||'';
+        if(!v){return;}
+        if(c.dataset.mode==='exact'){ if(d!==v){ok=false;} }
+        else if(d.toLowerCase().indexOf(v.toLowerCase())<0){ok=false;}
+      });
       r.style.display=ok?'':'none'; if(ok){shown++;}
     });
     root.querySelector('.gal-count').textContent=shown+' of '+rows.length+' figures shown';
   }
-  ins.forEach(function(i){i.addEventListener('input',apply);}); apply();
+  ctl.forEach(function(c){c.addEventListener('input',apply); c.addEventListener('change',apply);}); apply();
 })();
 </script>"""
+_SELECTS = ["topic", "level", "scope", "signal_kind"]
+_CSS = ("<style>.gallery table{font-size:.8rem}.gallery img{width:90px;height:auto}"
+        ".gallery .gal-filter{margin:0 .5rem .5rem 0;max-width:100%}"
+        ".gallery .gal-scroll{overflow-x:auto;max-width:100%}"
+        "@media (max-width:600px){.gallery .lowval{display:none}}</style>")
+_LOWVAL = {"kind", "n_groups", "pooled_share", "scope"}
 
 
 def _fmt(col, v):
@@ -149,9 +171,15 @@ def _fig_dir(row):
     return _FOLDER.get(scope, str(row.get("level", "")))
 
 
+def _url(row, ext):
+    """Relative figure URL with every path segment percent-encoded (then HTML-escaped by the caller)."""
+    return f"figures/{quote(_fig_dir(row), safe='')}/{quote(str(row['name']), safe='')}.{ext}"
+
+
 def gallery_html(topic=None, level=None, top=None, index_path=None):
     """HTML for the figure gallery built from figures_index.tsv (index order kept; top = first N rows after the
-    topic/level filter). Returns a short note instead when the index has not been built."""
+    topic/level filter). Returns a short note instead when the index has not been built. Closed-set columns
+    get exact-match <select> filters; the figure name gets a substring search box."""
     path = Path(index_path) if index_path else HERE / "figures_index.tsv"
     if not path.exists():
         return ("<p><em>figures_index.tsv has not been built yet, so the gallery is empty. "
@@ -164,24 +192,33 @@ def gallery_html(topic=None, level=None, top=None, index_path=None):
     if top:
         df = df.head(int(top))
     e = html.escape
-    head = ["thumbnail"] + [c for c in INDEX_COLS if c in df.columns] + ["files"]
-    filt = ["topic", "level", "scope", "signal_kind"]
-    out = ['<div class="gallery"><style>.gallery table{font-size:.8rem}.gallery img{width:90px;height:auto}'
-           '.gallery .gal-filter{width:9rem;margin:0 .5rem .5rem 0}</style>']
-    out.append("<p>" + "".join(f'<label>{c} <input class="gal-filter" data-col="{c}" type="text" '
-                               f'placeholder="contains..."></label>' for c in filt if c in df.columns)
-               + '<span class="gal-count"></span></p>')
-    out.append("<table><thead><tr>" + "".join(f"<th>{e(h)}</th>" for h in head) + "</tr></thead><tbody>")
+    cols = [c for c in INDEX_COLS if c in df.columns]
+    head = ["thumbnail"] + cols + ["files"]
+    sel = [c for c in _SELECTS if c in df.columns]
+    out = ['<div class="gallery">' + _CSS]
+    ctl = []
+    for c in sel:
+        vals = sorted({str(v) for v in df[c] if str(v) != ""})
+        ctl.append(f'<label>{c} <select class="gal-filter" data-col="{c}" data-mode="exact">'
+                   '<option value="">all</option>' + "".join(f'<option value="{e(v)}">{e(v)}</option>' for v in vals)
+                   + "</select></label>")
+    ctl.append('<label>name <input class="gal-filter" data-col="name" data-mode="contains" type="text" '
+               'placeholder="contains..."></label>')
+    out.append("<p>" + " ".join(ctl) + '<span class="gal-count" aria-live="polite"></span></p>')
+    out.append('<div class="gal-scroll" style="overflow-x:auto">'
+               '<table aria-label="Figure gallery"><thead><tr>'
+               + "".join(f'<th class="{"lowval" if h in _LOWVAL else ""}">{e(h)}</th>' for h in head) + "</tr></thead><tbody>")
     for _, r in df.iterrows():
-        d = _fig_dir(r)
-        png = f"figures/{d}/{r['name']}.png"
-        svg = f"figures/{d}/{r['name']}.svg"
-        data = " ".join(f'data-{c}="{e(str(r[c]))}"' for c in filt if c in df.columns)
-        cells = [f'<td><a href="{png}"><img loading="lazy" src="{png}" alt="{e(str(r["name"]))}"></a></td>']
-        cells += [f"<td>{e(_fmt(c, r[c]))}</td>" for c in INDEX_COLS if c in df.columns]
-        cells.append(f'<td><a href="{png}">PNG</a> <a href="{svg}">SVG</a></td>')
+        png, svg = e(_url(r, "png"), quote=True), e(_url(r, "svg"), quote=True)
+        nm = e(str(r["name"]), quote=True)
+        data = " ".join(f'data-{c}="{e(str(r[c]), quote=True)}"' for c in sel + ["name"])
+        alt = e(f"{r['name']} ({r.get('topic', '')}, {r.get('level', '')})", quote=True)
+        cells = [f'<td><a href="{png}" tabindex="-1"><img loading="lazy" decoding="async" width="90" height="53" '
+                 f'src="{png}" alt="{alt}"></a></td>']
+        cells += [f'<td class="{"lowval" if c in _LOWVAL else ""}">{e(_fmt(c, r[c]))}</td>' for c in cols]
+        cells.append(f'<td><a href="{png}" aria-label="PNG of {nm}">PNG</a> <a href="{svg}" aria-label="SVG of {nm}">SVG</a></td>')
         out.append(f"<tr {data}>" + "".join(cells) + "</tr>")
-    out.append("</tbody></table>" + _JS + "</div>")
+    out.append("</tbody></table></div>" + _JS + "</div>")
     return "\n".join(out)
 
 
