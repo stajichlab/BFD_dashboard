@@ -51,7 +51,7 @@ def _size_fig(d, core, levels, colors):
     ok = (x > 0) & (y > 0)
     for g in levels:
         m = ok & (d.grp == g)
-        ax.scatter(x[m], y[m], s=6, alpha=0.5, color=colors[g], linewidths=0)
+        ax.scatter(x[m], y[m], s=6, alpha=0.5, color=colors[g], linewidths=0, rasterized=True)
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xlabel("Median gene length (bp)")

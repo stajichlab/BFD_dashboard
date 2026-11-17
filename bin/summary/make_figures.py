@@ -1,16 +1,24 @@
 #!/usr/bin/env python3
 """Figures and tables for the Quarto summary, from the parquet files of build_summary_tables.py.
 
-    python make_figures.py DATA_DIR OUT_DIR
-      -> OUT_DIR/figures/<level>/*.png|svg, OUT_DIR/tables/<level>/*.tsv   for level in phylum, subphylum, class
+    python make_figures.py DATA_DIR OUT_DIR [LEVELS]
+      -> OUT_DIR/figures/<level>/*.png|svg|json, OUT_DIR/tables/<level>/*.tsv   for level in phylum, subphylum, class, order
+      -> OUT_DIR/figures/all, tables/all           all-genome scatter plots and regressions (Comparisons page)
+      -> OUT_DIR/figures/ordination, tables/ordination   PCoA and PERMANOVA on one genome per genus
+      -> OUT_DIR/figures_index.tsv                 one row per figure, for the gallery
+    Exit code 1 when the ordination or the figure index fails. Skipped single figures are listed at the end
+    and do not fail the run.
 
-Levels: 'phylum'; 'subphylum' (the subphylum where defined, else the phylum); 'class'. Groups are ordered
+Levels: 'phylum'; 'subphylum' (derived from the class, else the phylum); 'class'; 'order'. Groups are ordered
 and coloured by their parent: subphyla by phylum, classes by phylum and ordered within a phylum by
-subphylum. Groups with fewer than MIN_N genomes are pooled as 'Other (small groups)' at subphylum/class level.
+subphylum. Groups with fewer than MIN_N genomes are pooled as 'Other (small groups)' at subphylum, class and
+order level (each phylum keeps its largest group).
 
-Unit: one representative genome per species. Group means/medians are taken over genomes, never over
-proteins, so large genomes do not dominate. Nothing here is a statistical test: the figures describe the
-database. The .qmd pages state the unit for every figure.
+Unit of the level pages: one representative genome per species. Group means/medians are taken over genomes, never
+over proteins, so large genomes do not dominate. The all-genome scatter plots use every genome; the ordination
+uses one genome per genus. The level pages are descriptive. The group tests (Kruskal-Wallis, ANOVA; T_anova)
+and the regressions (all/ outputs) are uncorrected for multiple testing and do not control for phylogeny.
+The .qmd pages state the unit for every figure.
 """
 import colorsys
 import json
@@ -239,7 +247,7 @@ def box_by_group(ax, core, col, levels, colors, log=False, ylabel=None):
     for i, (d, g) in enumerate(zip(data, levels), start=1):
         bp["boxes"][i - 1].set(facecolor=colors[g], alpha=0.35, edgecolor=colors[g])
         if len(d):
-            ax.scatter(i + rng.uniform(-0.18, 0.18, len(d)), d, s=3, color=colors[g], alpha=0.35, linewidths=0)
+            ax.scatter(i + rng.uniform(-0.18, 0.18, len(d)), d, s=3, color=colors[g], alpha=0.35, linewidths=0, rasterized=True)
     ax.set_xticks(range(1, len(levels) + 1))
     ax.set_xticklabels([f"{g}\n(n={len(d)})" for g, d in zip(levels, data)], rotation=60 if len(levels) > 12 else 35,
                        ha="right", fontsize=tick_font(levels))
@@ -330,7 +338,7 @@ def page_gene_content(core, levels, colors, o):
     fig, ax = plt.subplots(figsize=(5.8, 4.6))
     for g in levels:
         d = core[core.grp == g]
-        ax.scatter(d.total_length_bp / 1e6, d.n_genes, s=6, alpha=0.5, color=colors[g], linewidths=0)
+        ax.scatter(d.total_length_bp / 1e6, d.n_genes, s=6, alpha=0.5, color=colors[g], linewidths=0, rasterized=True)
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xlabel("Genome size (Mb)")
@@ -500,7 +508,7 @@ def page_patterns(core, levels, colors, deeploc, idp, o):
     fig, ax = plt.subplots(figsize=(5.8, 4.8))
     for g in levels:
         mk = (d["grp"] == g).values
-        ax.scatter(pc[mk, 0], pc[mk, 1], s=7, alpha=0.55, color=colors[g], linewidths=0)
+        ax.scatter(pc[mk, 0], pc[mk, 1], s=7, alpha=0.55, color=colors[g], linewidths=0, rasterized=True)
     ax.set_xlabel(f"PC1 ({ev[0]:.0%})")
     ax.set_ylabel(f"PC2 ({ev[1]:.0%})")
     ax.set_title("Genomes in feature space (log, z-scored)")
@@ -672,7 +680,14 @@ def run_level(level, core0, tables, out):
     return o.made
 
 
+# Filled by main(): "failed" = steps that raised (ordination, figure index); "skipped" = names of figures
+# that safe() skipped. run_cli() turns "failed" into a nonzero exit code. Reset at each main() call.
+RUN_STATUS = {"failed": [], "skipped": []}
+
+
 def main(data, out, levels=LEVELS):
+    RUN_STATUS["failed"] = []
+    RUN_STATUS["skipped"] = []
     data = Path(data)
     cache = {}
 
@@ -707,6 +722,7 @@ def main(data, out, levels=LEVELS):
                 import traceback
                 traceback.print_exc(file=sys.stderr)
                 print(f"ordination failed: {type(e).__name__}: {e}", flush=True)
+                RUN_STATUS["failed"].append(f"ordination ({type(e).__name__}: {e})")
     try:
         from figure_index import build_index
         idx = build_index(Path(out))
@@ -715,8 +731,25 @@ def main(data, out, levels=LEVELS):
         import traceback
         traceback.print_exc(file=sys.stderr)
         print(f"figure index failed: {type(e).__name__}: {e}", flush=True)
+        RUN_STATUS["failed"].append(f"figure index ({type(e).__name__}: {e})")
+    RUN_STATUS["skipped"] = [f"{lv}/{m}" for lv, names in made.items() for m in names
+                             if getattr(m, "kind", "") == "skipped"]
     return made
 
 
+def run_cli(argv):
+    """Command-line entry: run main() and return the exit code. 1 when the ordination or the figure index
+    failed (the log must not say success when O figures or figures_index.tsv are missing). Skipped single
+    figures are listed at the end and do not change the exit code."""
+    levels = tuple(argv[3].split(",")) if len(argv) > 3 else LEVELS
+    main(argv[1], argv[2], levels)
+    skipped = RUN_STATUS["skipped"]
+    print(f"skipped figures: {len(skipped)}" + (" (" + ", ".join(skipped) + ")" if skipped else ""), flush=True)
+    if RUN_STATUS["failed"]:
+        print("FAILED: " + "; ".join(RUN_STATUS["failed"]), flush=True)
+        return 1
+    return 0
+
+
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2], tuple(sys.argv[3].split(",")) if len(sys.argv) > 3 else LEVELS)
+    sys.exit(run_cli(sys.argv))

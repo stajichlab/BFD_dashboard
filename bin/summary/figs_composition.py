@@ -128,7 +128,7 @@ def _gc3_vs_gc(g3, core, levels, colors):
     fig, ax = plt.subplots(figsize=(5.4, 4.4))
     for g in levels:
         m = d[d.grp == g]
-        ax.scatter(m["gc_pct"], m["gc3"] * 100, s=6, alpha=0.5, color=colors[g], linewidths=0)
+        ax.scatter(m["gc_pct"], m["gc3"] * 100, s=6, alpha=0.5, color=colors[g], linewidths=0, rasterized=True)
     ax.set_xlabel("Genome GC (%)")
     ax.set_ylabel("GC3 (%)")
     ax.set_title("GC3 vs genome GC")
@@ -147,7 +147,7 @@ def _aa_vs_gc(aa, g3, core, levels, colors):
             continue
         for g in levels:
             m = d[d.grp == g]
-            ax.scatter(m["gc3"] * 100, m[c] * 100, s=3, alpha=0.4, color=colors[g], linewidths=0)
+            ax.scatter(m["gc3"] * 100, m[c] * 100, s=3, alpha=0.4, color=colors[g], linewidths=0, rasterized=True)
         ax.set_title(a, fontsize=8)
         ax.tick_params(labelsize=6)
     for ax in axes[-1]:
