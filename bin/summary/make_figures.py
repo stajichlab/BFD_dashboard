@@ -48,10 +48,11 @@ plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.righ
 
 class Made(str):
     """A made-output name (a str, so `name in made` still works) that also carries .topic and .kind
-    ('figure', 'table' or 'skipped')."""
-    def __new__(cls, name, topic=None, kind="figure"):
+    ('figure', 'table' or 'skipped'), .scope ('representatives', 'genus_reps' or 'all_genomes') and .stats (a dict
+    of caption numbers such as n, pearson_r, spearman_r; empty for most figures)."""
+    def __new__(cls, name, topic=None, kind="figure", scope="representatives", stats=None):
         o = super().__new__(cls, name)
-        o.topic, o.kind = topic, kind
+        o.topic, o.kind, o.scope, o.stats = topic, kind, scope, stats or {}
         return o
 
 
@@ -62,19 +63,22 @@ class Out:
         self.fig.mkdir(parents=True, exist_ok=True)
         self.tab.mkdir(parents=True, exist_ok=True)
         self.made = []
+        self.scope = "all_genomes" if level == "all" else "representatives"
+        self.meta = {}      # name -> stats dict, set by a figure function before it returns its figure
 
     def save(self, fig, name, topic=None):
         for ext in ("png", "svg"):
             fig.savefig(self.fig / f"{name}.{ext}", dpi=200 if ext == "png" else None)
         plt.close(fig)
-        self.made.append(Made(name, topic, "figure"))
+        self.made.append(Made(name, topic, "figure", self.scope, self.meta.pop(name, None)))
 
     def skip(self, name, topic=None):
-        self.made.append(Made(name, topic, "skipped"))
+        self.meta.pop(name, None)
+        self.made.append(Made(name, topic, "skipped", self.scope))
 
     def table(self, df, name):
         df.to_csv(self.tab / f"{name}.tsv", sep="\t", index=False)
-        self.made.append(Made(name, "tables", "table"))
+        self.made.append(Made(name, "tables", "table", self.scope))
 
 
 def width(levels, base=6.8, per=0.3):
@@ -596,6 +600,7 @@ def page_functional(core, levels, colors, wide, label, cazy, tf, merops, idp, o)
 def run_level(level, core0, tables, out):
     from figs_structure import page_gene_structure  # imported here: these modules import helpers from this one
     from figs_composition import page_composition
+    from figs_scatter import page_regressions
     core, levels, colors = assign_groups(core0, level)
     o = Out(out, level)
     rd = tables
@@ -612,6 +617,7 @@ def run_level(level, core0, tables, out):
         print(f"{level}: gene_structure_genome.parquet absent, skipping gene structure page", flush=True)
     else:
         page_gene_structure(core, levels, colors, structure, o)
+        page_regressions(core, levels, colors, structure, o)
     try:
         codon, aa = rd("codon_genome"), rd("aa_genome")
     except FileNotFoundError:
@@ -635,6 +641,13 @@ def main(data, out, levels=LEVELS):
     made = {}
     for level in levels:
         made[level] = run_level(level, core0, rd, out)
+    try:
+        genome_all = rd("genome_all")
+    except FileNotFoundError:
+        print("genome_all.parquet absent, skipping all-genome scatter plots", flush=True)
+    else:
+        from figs_scatter import page_all_genomes
+        made["all"] = page_all_genomes(genome_all, out)   # phylum-independent: one set under figures/all/
     return made
 
 

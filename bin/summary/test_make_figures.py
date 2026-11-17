@@ -50,6 +50,25 @@ def synth(root, n=240, seed=0):
                  columns=["species_prefix", "tf_family", "n_proteins"]).to_parquet(root / "tf_genome.parquet")
     pd.DataFrame([(i, c, int(rng.integers(10, 300))) for i in ids for c in "ACMST"],
                  columns=["species_prefix", "merops_class", "n_proteins"]).to_parquet(root / "merops_genome.parquet")
+    # genome_all: every genome (the representatives plus non-representatives), the table of the A01-A12 scatter plots
+    m = n // 2
+    ext = [f"X{i:04d}" for i in range(m)]
+    eph = rng.choice(phyla, m, p=[0.5, 0.3, 0.1, 0.06, 0.04])
+    allids = ids + ext
+    allph = np.concatenate([ph, eph])
+    na = len(allids)
+    size = rng.integers(10_000_000, 60_000_000, na)
+    ngn = (size / 2500 + rng.normal(0, 800, na)).astype(int)
+    bc = rng.uniform(60, 99, na)
+    pd.DataFrame({"species_prefix": allids, "PHYLUM": allph, "CLASS": "c", "ORDER": "o", "FAMILY": "f", "GENUS": "g",
+                  "SPECIES": [f"sp{i}" for i in range(na)], "is_representative": [True] * n + [False] * m,
+                  "total_length_bp": size, "gc_pct": rng.uniform(35, 60, na), "busco_complete": bc,
+                  "busco_single": bc - 2, "busco_duplicated": 2.0, "busco_fragmented": rng.uniform(0, 5, na),
+                  "busco_missing": 100 - bc, "N50_bp": rng.integers(20_000, 5_000_000, na),
+                  "contig_count": rng.integers(5, 3000, na), "n_genes": ngn, "mean_len": rng.uniform(400, 550, na),
+                  "genes_per_mb": ngn / (size / 1e6), "coding_fraction": rng.uniform(0.3, 0.75, na),
+                  "median_intron_len_bp": rng.uniform(50, 300, na),
+                  "median_intergenic_bp": rng.uniform(300, 3000, na)}).to_parquet(root / "genome_all.parquet")
 
     sp = ids
     pd.DataFrame({"species_prefix": sp, "n_genes": core["n_genes"].values,
@@ -109,8 +128,10 @@ def test_all_outputs(tmp_path):
     data.mkdir()
     synth(data)
     made = mf.main(data, tmp_path / "out")
-    assert set(made) == set(mf.LEVELS)
+    assert set(made) == set(mf.LEVELS) | {"all"}
     for level, names in made.items():
+        if level == "all":
+            continue
         for name in ["F01_genomes_by_group", "F03_genome_size_vs_genes", "F06_domains_per_protein", "F07_pfam_prevalence",
                      "F07b_widespread_fold", "F08_pfam_variance", "F10_deeploc", "F12_wolfpsort", "F15_feature_heatmap",
                      "F17_feature_pca", "F18_cazy_classes", "F20_merops_classes", "F21_tf_families", "F23_idp_fraction"]:
@@ -205,3 +226,45 @@ def test_subphylum_derived_from_class_when_null():
     core.loc[core.CLASS == "Agaricomycetes", "CLASS"] = "Notaclassomycetes"   # unmapped class keeps the phylum label
     d, levels, _ = mf.assign_groups(core, "subphylum")
     assert "Basidiomycota" in levels
+
+
+def _all_frame(n=300, n_rep=40, seed=1):
+    rng = np.random.default_rng(seed)
+    size = rng.integers(10_000_000, 60_000_000, n)
+    return pd.DataFrame({"PHYLUM": rng.choice(["Ascomycota", "Basidiomycota", "Mucoromycota"], n, p=[.5, .4, .1]),
+                         "is_representative": [True] * n_rep + [False] * (n - n_rep), "total_length_bp": size,
+                         "n_genes": (size / 2500 + rng.normal(0, 500, n)).astype(int)})
+
+
+def test_scatter_all_uses_every_genome(tmp_path):
+    from figs_scatter import scatter_all
+    df = _all_frame()
+    o = mf.Out(tmp_path, "all")
+    assert scatter_all(df, "total_length_bp", "n_genes", {"Ascomycota": "#0072B2"}, o, "A07_genes_vs_genome_size", logx=True, logy=True)
+    m = [x for x in o.made if x == "A07_genes_vs_genome_size"][0]
+    assert m.kind == "figure" and m.scope == "all_genomes"
+    assert m.stats["n"] == 300 and -1 <= m.stats["pearson_r"] <= 1 and m.stats["pearson_r"] > 0.5
+    assert (tmp_path / "figures" / "all" / "A07_genes_vs_genome_size.png").stat().st_size > 1000
+
+
+def test_scatter_all_missing_column_is_skipped(tmp_path):
+    from figs_scatter import scatter_all
+    o = mf.Out(tmp_path, "all")
+    assert not scatter_all(_all_frame(), "total_length_bp", "busco_missing", {}, o, "A11_x")
+    assert o.made[-1].kind == "skipped"
+
+
+def test_all_and_regression_outputs_via_main(tmp_path):
+    data = tmp_path / "data"
+    data.mkdir()
+    synth(data)
+    made = mf.main(data, tmp_path / "out", ("phylum",))
+    names = {m: m for m in made["all"]}
+    for n in ("A01_busco_vs_genome_size", "A07_genes_vs_genome_size", "A12_n50_vs_n_genes"):
+        assert names[n].kind == "figure" and names[n].stats["n"] == 360
+    assert not any(m.kind == "skipped" for m in made["all"])
+    assert {"R01_size_vs_genes", "R02_density_vs_intron_len"} <= set(made["phylum"])
+    for t in ("T_anova", "T_regression"):
+        d = pd.read_csv(tmp_path / "out" / "tables" / "phylum" / f"{t}.tsv", sep="\t")
+        assert len(d) > 3
+    assert (tmp_path / "out" / "figures" / "all" / "A01_busco_vs_genome_size.png").exists()
