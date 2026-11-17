@@ -406,3 +406,25 @@ Timings (seconds; one run each, shared node, file cache state not controlled):
 4. **`gene_trnas` alias.** I excluded `species_prefix` to match the parquet exactly. If you prefer the genome key there, change it to `SELECT * FROM gene_trna`.
 5. **Pipeline fixes found on the way** (not in my files): `v_protein_annotation` GPI flag and IDP join; `infernal_rfam.parquet` column shift; `idp`/`idp_summary` key form; the sort-order statement in `BFD_Introduction.md` for the gene tables.
 6. **`v_gene_introns_phase`**: resolved. `gene_introns.parquet` was rebuilt on 2026-11-11 with commit `34c8d14` and the view was removed on 2026-11-17 (section 4.3).
+
+---
+
+## 8. Interpretation caveats (added 2026-11-17)
+
+These come from the read-only review in [DB_DESIGN_REVIEW_2026-11-17.md](DB_DESIGN_REVIEW_2026-11-17.md) (section 3). The reviewer measured them on the 2026-11-16 database. They were not re-run for this section. Read them before you use a flag column from `v_protein_annotation`.
+
+| Column or pattern | What it can mean | Measured |
+|---|---|---|
+| `is_gpi_anchored = FALSE` | The protein has no `GPI-anchor` row **or** it has no `predgpi` row at all | 17,574,741 proteins have no `predgpi` row; 1,064 genomes lack rows for more than half their proteins; 2 genomes have none |
+| `IDP_fraction IS NULL` | No disorder **or** the tool did not run for the protein | `idp_summary` holds positive values only (146 M rows for 224 M proteins; no zero) |
+| `targetp_class = 'OTHER'` | The default, not a prediction, for almost every protein | TargetP covers 125 genomes; 11,776 of 15,385,240 proteins in the F7 sample have another value |
+| `tmhmm_helices = 0`, `has_signal_peptide = FALSE`, `wolfpsort_loc` empty | A real negative **or** missing coverage | `wolfpsort`: 2 genomes absent, 2,631 genomes differ in row count from `gene_proteins` (21,967 proteins). `tmhmm` 23,409 genomes, `signalp` and `predgpi` 23,410, `gene_proteins` 23,412 |
+| `left(id, 8)` or an 8-character id range | Merges two genomes for three 9-character LOCUSTAGs | `FF38F669A`, `F3DC5624A` and `FCB937CBA` share 8 characters with `FF38F669`, `F3DC5624` and `FCB937CB`. The range for `FF38F669` returns 20,620 proteins; `in_genome(protein_id, 'FF38F669A')` returns 13,799 |
+| `WHERE LOCUSTAG = '...'` on `v_protein_annotation` | Filters only the `gene_proteins` side, so the query runs the full join (it was killed at 16 GB) | Use `in_genome(protein_id, '...')` instead: 2.1 to 4.5 s |
+
+How to query:
+- To count a flag, join to a coverage table first, or compare against the genome's protein count, so that "no prediction" is not counted as "negative".
+- Filter by genome with `in_genome(protein_id, 'LOCUSTAG')` or `split_part(protein_id, '_', 1) = 'LOCUSTAG'`. Do not use `left(id, 8)`.
+- Section 6 above quotes the 2026-11-08 row counts. After the 2026-11-11 rebuild `gene_proteins` has 244,812,918 rows (244,988,294 then).
+- The pipeline database copy `Fungi_BFD_runs/BFD_function/db/BFD.duckdb` (2026-11-14, 39 views) had the unfiltered `predgpi` join until it is rebuilt. A rebuild was submitted on 2026-11-17 (job 32132750). Check its date before you use `is_gpi_anchored` from it.
+
