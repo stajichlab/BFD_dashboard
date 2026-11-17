@@ -42,6 +42,7 @@ def test_recent_duplications_give_low_index():
                            np.random.default_rng(1))["Cls"]
     assert abs(res["median_within"] - 0.02) < 1e-9
     assert res["pi"] < 0.02
+    assert res["recent_pair_frac"] == 1.0
 
 
 def test_ancient_paralogs_give_index_near_one():
@@ -52,6 +53,7 @@ def test_ancient_paralogs_give_index_near_one():
                            np.random.default_rng(1))["Cls"]
     assert abs(res["median_within"] - 2.2) < 1e-9
     assert 0.9 <= res["pi"] <= 1.2   # the reference median is 2.0 to 2.2 depending on the draw
+    assert res["recent_pair_frac"] == 0.0
 
 
 def test_tp1_verdict_rule():

@@ -46,10 +46,12 @@ def paralog_index(root, tips, rng):
             genus_of[loc] = genus
     out = {}
     for cls, genomes in by_class.items():
-        within = {}
+        within, closest = {}, {}
         for loc, nodes in genomes.items():
             if len(nodes) >= 2:
-                within[loc] = statistics.median(fam_lib.path_distance(a, b) for a, b in itertools.combinations(nodes, 2))
+                d = [fam_lib.path_distance(a, b) for a, b in itertools.combinations(nodes, 2)]
+                within[loc] = statistics.median(d)
+                closest[loc] = min(d)   # post hoc supplement: the closest pair of copies in the genome
         locs = [loc for loc in genomes]
         ref_d = []
         tries = 0
@@ -63,13 +65,16 @@ def paralog_index(root, tips, rng):
             ref_d.append(fam_lib.path_distance(na, nb))
         ref = statistics.median(ref_d) if ref_d else float("nan")
         pis = [w / ref for w in within.values()] if ref and ref == ref and ref > 0 else []
+        # post hoc supplement (not part of the TP1 rule): share of genomes whose closest pair is closer than half the reference
+        recent = float(np.mean([c / ref < 0.5 for c in closest.values()])) if closest and ref and ref > 0 else float("nan")
         if pis:
             boot = [float(np.median(rng.choice(pis, len(pis)))) for _ in range(N_BOOT)]
             ci = (float(np.percentile(boot, 2.5)), float(np.percentile(boot, 97.5)))
         else:
             ci = (float("nan"), float("nan"))
         out[cls] = {"n_genomes": len(genomes), "n_multi": len(within), "median_within": statistics.median(within.values()) if within else float("nan"),
-                    "ref": ref, "pi": float(np.median(pis)) if pis else float("nan"), "ci_lo": ci[0], "ci_hi": ci[1]}
+                    "ref": ref, "pi": float(np.median(pis)) if pis else float("nan"), "ci_lo": ci[0], "ci_hi": ci[1],
+                    "recent_pair_frac": recent}
     return out
 
 
@@ -109,7 +114,7 @@ def run(bench, out):
                     rows.append({"family": fam, "tree": kind, "class": cls, **r})
                     if kind == "fasttree":
                         table[(fam, cls)] = r
-    cols = ["family", "tree", "class", "n_genomes", "n_multi", "median_within", "ref", "pi", "ci_lo", "ci_hi"]
+    cols = ["family", "tree", "class", "n_genomes", "n_multi", "median_within", "ref", "pi", "ci_lo", "ci_hi", "recent_pair_frac"]
     with open(out / "paralog_index.tsv", "w") as fh:
         w = csv.DictWriter(fh, fieldnames=cols, delimiter="\t")
         w.writeheader()
@@ -120,7 +125,8 @@ def run(bench, out):
         for cls in TARGET + BASELINE:
             r = table.get((fam, cls))
             if r:
-                lines.append(f"{fam} {cls}: PI {r['pi']:.2f} (95% CI {r['ci_lo']:.2f} to {r['ci_hi']:.2f}); {r['n_multi']} of {r['n_genomes']} genomes with >= 2 copies")
+                lines.append(f"{fam} {cls}: PI {r['pi']:.2f} (95% CI {r['ci_lo']:.2f} to {r['ci_hi']:.2f}); {r['n_multi']} of {r['n_genomes']} genomes with >= 2 copies; "
+                         f"genomes with a recent pair (closest pair < 0.5 x reference, post hoc): {r['recent_pair_frac']:.0%}")
     (out / "tp1_verdict.txt").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
     return verdict

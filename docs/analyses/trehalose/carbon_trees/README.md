@@ -1,6 +1,7 @@
 # Carbon-storage family trees (one genome per genus)
 
-Status: **design and decision rules, written before any tree was built** (committed first; results are added after).
+Status: **first-pass trees and the TP1 test done 2026-11-16; IQ-TREE trees for four families still queued** (see Results). The design and decision
+rules were written, and committed, before any tree was built.
 Parent: [`../README.md`](../README.md) (module definitions), [`../t5/`](../t5/) (the GH65 tree, same pipeline and settings).
 
 ## Why
@@ -62,6 +63,67 @@ The same index is reported for the other families and classes with at least 8 ge
 - No outgroup, so paralog clades are described by tree topology within the fungal set only; claims about the origin of TPS and TPP
   paralogs (or about function) are citations to verify and none is made here.
 
-## Files (planned)
+## Files
 
-`01_extract_domains.py` (HPCC job), `02_trees.sh` (SLURM array, one task per family), `03_paralog_index.py`, `test_carbon_trees.py`, `results/`.
+`01_extract_domains.py` (HPCC job 32132586, 10 min), `02_trees.sh` (FastTree array, job 32132838), `03_iqtree.sh` (IQ-TREE array, job 32132839,
+**queued, not yet run**), `04_paralog_index.py`, `test_carbon_trees.py` (5 fixture tests pass on the HPCC), `results/`, `trees/`
+(FastTree trees, logs). Alignments and the tip table (`tips.tsv`, 22,276 kept sequences from 24,356 domain hits) stay in
+`bench/trehalose_carbon_trees/` on the HPCC.
+
+---
+## Results (2026-11-16)
+
+Order of events: design and TP1 rule committed first (`93cc3b9`), scripts next (`e8fc462`), then the trees and one analysis run. Two
+bugs were fixed before the run (a path to `fam_lib` one directory too high; a too-tight bound in a fixture test). After the TP1
+result one **post hoc** statistic was added (closest within-genome pair, below) and is labelled as such.
+
+### Trees built (first pass, FastTree 2.1.11 `-lg -gamma`, unrooted)
+
+| Family | Sequences | Alignment columns (raw to trimmed) |
+|---|---|---|
+| TPS | 4,942 | 3,536 to 472 |
+| TPP | 3,529 | 2,038 to 256 |
+| NTH | 2,886 | 3,146 to 576 |
+| UGP | 3,718 | 1,617 to 489 |
+| GSY | 1,742 | 1,485 to 665 |
+| GPH | 1,551 | 1,802 to 736 |
+| GDB | 1,675 | 1,354 to 500 |
+| GPD | 2,233 | 824 to 190 |
+
+Sequences dropped by the pre-set 60% length rule: TPS 284, TPP 110, NTH 999 (a quarter of the neutral-trehalase domain hits are much
+shorter than the median), UGP 148, GSY 97, GPH 191, GDB 222, GPD 29. trimAl kept every sequence of every family. The IQ-TREE trees for GSY, GPH,
+GDB and GPD are **not built yet**.
+
+### TP1 (pre-registered): supported, by the rule
+
+PI (median within-genome copy distance / between-genus distance) is **at or above 0.8 in all four test cells**: TPS 1.11 (Mucoromycetes) and
+1.05 (Mortierellomycetes); TPP 1.20 and 1.33 (all 95% intervals above 1.0). By the rule, the extra copies are not recent
+duplications; copies of one genome are as different as copies of different genera.
+
+**That answer is not specific to the high-copy classes.** The baseline classes with 3 to 4 copies give the same values (TPS Sordariomycetes
+1.07, Agaricomycetes 1.03, Eurotiomycetes 1.05; TPP Eurotiomycetes 1.08, Sordariomycetes 1.13, Agaricomycetes 2.30). PI of about 1 or
+above is expected whenever a genome carries copies from different paralog groups: a within-genome pair is always two different copies,
+whereas a random between-genus pair often falls in the same group. So TP1 shows that distinct deep paralog groups exist everywhere; it does not
+separate Mucoromycetes from the other classes, and a median over pairs cannot see a few recent duplicates among many ancient paralogs.
+
+### Post hoc supplement (not part of the rule): a recent duplicate pair is common only in the high-copy classes
+
+Share of genomes whose **closest** pair of copies is nearer than half the between-genus reference distance:
+
+| Class | TPS | TPP |
+|---|---|---|
+| Mucoromycetes (36 genomes) | 89% | 86% |
+| Mortierellomycetes (14) | 86% | 93% |
+| Sordariomycetes (about 270) | 9% | 4% |
+| Agaricomycetes (about 300) | 17% | 18% |
+| Eurotiomycetes (71) | 21% | 1% |
+
+Read as suggestive: in the two high-copy classes most genomes have at least one recently duplicated pair on top of the ancient paralog groups,
+which would explain the elevated copy number. **Caveats:** the 0.5 cutoff was chosen after seeing the index; a genome with 7 copies has 21 pairs and so is
+more likely to contain a small distance by chance than a genome with 2 copies, so the contrast is partly mechanical; a copy-number-matched
+comparison was not run; gene-model errors (split or merged genes) can create close pairs.
+
+### Not done
+
+IQ-TREE trees (queued); rooting or outgroups; identification of the number of deep paralog groups per class; a copy-number-matched test of the
+closest-pair statistic; trees for PGM; any claim about function or origin (citations to verify, none made).
