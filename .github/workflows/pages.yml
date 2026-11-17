@@ -1,0 +1,81 @@
+# Publishes the Quarto site in docs/quarto_summary to GitHub Pages.
+#
+# One-time repository setting (cannot be set from this file):
+#   Settings -> Pages -> Build and deployment -> Source: GitHub Actions.
+# The custom domain bfd.fungalgenomes.org is set by two things together:
+#   1. docs/quarto_summary/CNAME (copied to the site root by Quarto), and
+#   2. Settings -> Pages -> Custom domain (plus "Enforce HTTPS" once DNS resolves).
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/quarto_summary/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python packages
+        run: pip install pandas matplotlib nbformat nbclient ipykernel pyyaml tabulate
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.7.31
+
+      - name: Render site
+        env:
+          QUARTO_PYTHON: ${{ env.pythonLocation }}/bin/python
+        run: quarto render docs/quarto_summary
+
+      - name: Assert site is complete
+        run: |
+          site=docs/quarto_summary/_site
+          n=$(find "$site" -maxdepth 1 -name '*.html' | wc -l)
+          echo "HTML pages: $n"
+          if [ "$n" -lt 12 ]; then
+            echo "Expected at least 12 HTML pages (index + 01..11)."; exit 1
+          fi
+          if [ ! -f "$site/CNAME" ]; then
+            echo "CNAME missing from the site root."; exit 1
+          fi
+
+      - name: Check site size
+        run: |
+          size=$(du -sm docs/quarto_summary/_site | cut -f1)
+          echo "Site size: ${size} MB"
+          if [ "$size" -gt 900 ]; then
+            echo "Site is larger than 900 MB."; exit 1
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/quarto_summary/_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
