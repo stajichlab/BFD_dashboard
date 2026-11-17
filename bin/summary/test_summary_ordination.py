@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
+import pytest
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -184,7 +185,8 @@ def test_permanova_table_has_real_permutation_count_and_neg_columns(tmp_path):
     so.run_ordination(reps, {"codon": codon}, tmp_path)
     t = pd.read_csv(tmp_path / "tables" / "ordination" / "codon_permanova.tsv", sep="\t")
     r = t[t.grouping == "PHYLUM"].iloc[0]
-    assert r.n_permutations_run == 19 and r.n_unique_permutations == 20
+    assert r.n_permutations_run == 19 and r.n_unique_permutations_log10 == pytest.approx(np.log10(20))
+    assert "n_unique_permutations" not in t.columns
     assert "screening" in r.caveat
     assert {"neg_eigen_over_abs_total", "neg_eigen_over_pos_total"} <= set(t.columns)
 
@@ -256,3 +258,39 @@ def test_run_cli_skipped_figure_listed_but_exit_0(tmp_path, capsys, monkeypatch)
     assert rc == 0
     assert "skipped figures:" in out and "C04_gc3" in out.split("skipped figures:")[-1]
     assert "FAILED" not in out
+
+
+def test_huge_unique_permutation_count_is_written_as_log10(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+    reps, codon = clusters(3)
+    real = so.lib_ordination.permanova
+
+    def fake(dist, groups, n_permutations, seed):
+        r = real(dist, groups, n_permutations=n_permutations, seed=seed)
+        return SimpleNamespace(pseudo_f=r.pseudo_f, p_value=r.p_value, n_permutations_run=r.n_permutations_run,
+                               n_unique_permutations=10 ** 400, caveat=r.caveat)
+    monkeypatch.setattr(so.lib_ordination, "permanova", fake)
+    so.run_ordination(reps, {"codon": codon}, tmp_path)
+    t = pd.read_csv(tmp_path / "tables" / "ordination" / "codon_permanova.tsv", sep="\t")
+    assert np.isfinite(t["n_unique_permutations_log10"]).all()
+    assert t.loc[t.grouping == "PHYLUM", "n_unique_permutations_log10"].iloc[0] == pytest.approx(400)
+
+
+def test_log10_count_helper():
+    assert so._log10_count(0) == 0.0 and so._log10_count(None) == 0.0
+    assert so._log10_count(10 ** 400) == pytest.approx(400)
+
+
+def test_run_ordination_many_genera_many_groups(tmp_path):
+    rng = np.random.default_rng(5)
+    n, k = 1700, 30
+    ids = [f"g{i}" for i in range(n)]
+    reps = pd.DataFrame({"species_prefix": ids, "GENUS": ids, "PHYLUM": [f"P{i % 5}" for i in range(n)],
+                         "CLASS": [f"C{i % k}" for i in range(n)], "ORDER": [f"O{i % k}" for i in range(n)],
+                         "busco_complete": 90.0, "N50_bp": 1})
+    v = rng.uniform(0.5, 1.5, (n, 10))
+    codon = pd.DataFrame(v / v.sum(1, keepdims=True), columns=[f"codon_{j}" for j in range(10)])
+    codon["species_prefix"] = ids
+    so.run_ordination(reps, {"codon": codon}, tmp_path)
+    t = pd.read_csv(tmp_path / "tables" / "ordination" / "codon_permanova.tsv", sep="\t")
+    assert t["n_unique_permutations_log10"].gt(100).all()

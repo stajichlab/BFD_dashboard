@@ -5,6 +5,7 @@ PERMANOVA code and both folders can be on sys.path. The library module is loaded
 name lib_ordination, so `import ordination` cannot pick the wrong file.
 """
 import importlib.util
+import math
 import sys
 from pathlib import Path
 
@@ -102,12 +103,22 @@ def _feature_matrix(name, table, reps):
     return mat[ok], n_missing, int((~ok).sum())
 
 
+def _log10_count(n):
+    """log10 of an exact (possibly astronomically large) Python int; 0.0 when the count is 0 or unknown.
+    The raw int cannot go into a float64 DataFrame column (OverflowError for 1,600+ genera in many groups)."""
+    try:
+        n = int(n)
+    except (TypeError, ValueError):
+        return 0.0
+    return math.log10(n) if n > 0 else 0.0
+
+
 def _permanova(dist, groups):
     """PERMANOVA of one grouping. Rows with a NULL group are left out. Failures and degenerate designs give NaN."""
     g = groups.reindex(dist.index)
     keep = g.notna()
     nan = {"F": np.nan, "R2": np.nan, "p": np.nan, "n": int(keep.sum()), "n_groups": int(g[keep].nunique()),
-           "n_permutations_run": 0, "n_unique_permutations": 0, "caveat": "not tested: fewer than 3 genera or fewer than 2 groups"}
+           "n_permutations_run": 0, "n_unique_permutations_log10": 0.0, "caveat": "not tested: fewer than 3 genera or fewer than 2 groups"}
     if nan["n"] < 3 or nan["n_groups"] < 2:
         return nan
     sub = dist.loc[keep, keep]
@@ -120,7 +131,7 @@ def _permanova(dist, groups):
     f = float(r.pseudo_f)
     r2 = f * (k - 1) / (f * (k - 1) + (n - k)) if np.isfinite(f) and n > k else np.nan   # PERMANOVA R^2 from pseudo-F
     return {"F": f, "R2": float(r2), "p": float(r.p_value), "n": nan["n"], "n_groups": nan["n_groups"],
-            "n_permutations_run": int(r.n_permutations_run), "n_unique_permutations": int(r.n_unique_permutations),
+            "n_permutations_run": int(r.n_permutations_run), "n_unique_permutations_log10": _log10_count(r.n_unique_permutations),
             "caveat": r.caveat}
 
 
@@ -164,7 +175,7 @@ def run_ordination(reps, matrices, out):
                 "pct_variance": [], "n_negative_eigen": 0, "negative_eigen_share": 0.0,
                 "neg_eigen_over_pos_total": 0.0,
                 "permanova": {t: {"F": np.nan, "R2": np.nan, "p": np.nan, "n": 0, "n_groups": 0, "n_permutations_run": 0,
-                                  "n_unique_permutations": 0, "caveat": "not tested"} for t in TESTS}}
+                                  "n_unique_permutations_log10": 0.0, "caveat": "not tested"} for t in TESTS}}
         result[name] = info
         if len(mat) < 3:
             print(f"  {name}: {len(mat)} genera, too few for PCoA", flush=True)
@@ -187,7 +198,7 @@ def run_ordination(reps, matrices, out):
         o.table(tab, f"{name}_coords")
         rows = [{"matrix": name, "grouping": t, "metric": METRIC[name], "n_genera": r["n"], "n_groups": r["n_groups"],
                  "pseudo_F": r["F"], "R2": r["R2"], "p_value": r["p"], "n_permutations_requested": N_PERM,
-                 "n_permutations_run": r["n_permutations_run"], "n_unique_permutations": r["n_unique_permutations"], "seed": SEED,
+                 "n_permutations_run": r["n_permutations_run"], "n_unique_permutations_log10": r["n_unique_permutations_log10"], "seed": SEED,
                  "n_negative_eigen": info["n_negative_eigen"],
                  "neg_eigen_over_abs_total": info["negative_eigen_share"],
                  "neg_eigen_over_pos_total": info["neg_eigen_over_pos_total"], "caveat": r["caveat"],
