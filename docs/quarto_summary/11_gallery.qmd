@@ -15,7 +15,7 @@ Every figure the pipeline built, in one table, with a thumbnail and links to the
 - **score** = effect_size × (1 − pooled_share). The effect size comes from the group test of the figure's statistic; pooled_share is the share of genomes in the grey "Other" group.
 - **signal** values of different kinds (epsilon2, spearman_r, permanova_R2) are not comparable. Rank figures within one signal_kind (use the filter), not across kinds.
 - The ranking only helps sorting. It does not decide which figures are interesting. The group tests have no multiple-testing correction and no phylogenetic control.
-- Figures without a group test have no effect_size or score. n_genomes is the number of genomes in the figure.
+- Figures without a group test have no effect_size or score. n_genomes is the number of genomes in the level's group table. Figures that drop genomes with missing values (for example intron length or the codon join) show fewer. For the ordination figures O02 (class), n_groups is the number of class groups drawn after pooling, while the signal is the by-phylum PERMANOVA R2, the same value as for O01. The O02 signal therefore does not measure the class grouping.
 :::
 
 ```{python}

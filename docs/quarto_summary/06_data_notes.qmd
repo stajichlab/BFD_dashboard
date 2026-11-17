@@ -5,19 +5,32 @@ title: "Data and methods"
 ## Source and unit
 
 - Database: the local `BFD.duckdb` in the `db/` folder, built from the `Fungi_BFD_runs/tables` parquet files by `workflows/build_bfd_db.sh` (MotherDuck is being phased out and is not used).
-- Unit: one representative genome per species, flagged `is_representative` in `v_genome_labels` (best BUSCO complete, then N50, then LOCUSTAG; annotated genomes only). The full database has 23,412 genomes and 244.8 million proteins; there are 7,435 representatives, of which 7,393 have a proteome (77.7 million proteins); the 42 without proteins are not plotted.
+- Unit: one representative genome per species, flagged `is_representative` in `v_genome_labels` (best BUSCO complete, then N50, then LOCUSTAG; annotated genomes only).
+- Genome counts. Two totals appear in this project, and they count different things:
+  - `genome_all` has one row per genome in the summary tables. Its row count is the `n_genomes` value in the `meta` of `data/genomes.json`. It is read from that file when this page renders (see below).
+  - The gene-structure table has a row only for genomes that have a proteome (protein-coding genes). Its count is lower than the `genome_all` count. The first version of this page recorded 23,412 genomes with a gene-structure row and 244.8 million proteins; 7,435 representatives, of which 7,393 have a proteome (77.7 million proteins); the 42 without proteins are not plotted. These numbers were not re-measured for this version. Re-measure them after a database rebuild.
 - Groups: phylum and class from the BFD taxonomy; the eight phyla with most representatives are shown, the rest are pooled as "Other".
 - **Subphylum is derived, not stored.** The `SUBPHYLUM` column is NULL for all 7,435 representatives in both `species` and `samples`, so the subphylum level maps each class to its subphylum with the table in `bin/summary/taxonomy.py` (standard fungal classification written from memory, citation to verify). Classes missing from the table fall back to their phylum. Fixing the database column (proposal: populate it in the taxonomy source of the pipeline) would make this mapping unnecessary.
 
 ## Build
 
-1. `workflows/summary/build_summary.sh` runs `bin/summary/build_summary_tables.py` on the HPCC and writes small per-genome parquet tables.
-2. `bin/summary/make_figures.py DATA OUT` writes the PNG and SVG figures and TSV tables used by these pages.
-3. Render on the laptop (Quarto is not installed on the HPCC; rendering only formats the finished figures and tables). Needs `quarto` plus a Python with `pandas tabulate jupyter`; set `QUARTO_PYTHON` to it. **Render from a copy or checkout that is not under a hidden folder** (for example not under `.claude/worktrees/`): Quarto skips files whose path contains a dot-folder and then renders 0 files without an error.
-   ```
-   cd docs/quarto_summary && quarto render      # writes _site/
-   ```
-4. Test: `bin/summary/test_make_figures.py` runs the figure code on synthetic tables.
+Run these steps in order, from the repository root, on the HPCC.
+
+1. `sbatch workflows/summary_tables.sh` builds the per-genome parquet tables from the local `BFD.duckdb` (`bin/summary/build_summary_tables.py`). The default output directory is `Fungi_BFD_runs/analysis/summary_tables`. Override it with `OUT`.
+2. `sbatch workflows/summary_figures.sh` runs `bin/summary/make_figures.py` on those tables. It reads `DATA` (default: the tables directory above) and writes PNG and SVG figures, TSV tables and `figures_index.tsv` to `OUT` (default: `Fungi_BFD_runs/analysis/summary_figures_real`). Both scripts write their SLURM log in the submit directory.
+3. `workflows/publish_figures_to_site.sh` copies `figures/`, `tables/` and `figures_index.tsv` from `OUT` to `docs/quarto_summary/`. Use `--dry-run` first to see the counts. It does not delete files in the destination.
+4. `python3.12 bin/summary/export_clade_json.py <tables_dir> docs/quarto_summary/data/genomes.json` rewrites the Explore page data.
+5. Commit and push. The site renders only the committed outputs. GitHub Actions does the render (`.github/workflows/pages.yml`).
+
+`workflows/summary/build_summary.sh` is superseded by `workflows/summary_tables.sh`. It built the same tables from a bench copy of the code. Do not use it for new runs.
+
+To render on another machine, install `quarto` and a Python with `pandas tabulate jupyter`, and set `QUARTO_PYTHON` to it. **Render from a copy or checkout that is not under a hidden folder** (for example not under `.claude/worktrees/`): Quarto skips files whose path contains a dot-folder and then renders 0 files without an error.
+
+```
+cd docs/quarto_summary && quarto render      # writes _site/
+```
+
+Tests: `bin/summary/test_make_figures.py` runs the figure code on synthetic tables.
 
 ## Definitions
 
@@ -39,10 +52,22 @@ title: "Data and methods"
 
 ## Explore page data
 
-The Explore page reads `data/genomes.json` (one row per genome, all 23,680 genomes in `genome_all`). Regenerate it from the repository root with:
+The Explore page reads `data/genomes.json` (one row per genome, all genomes in `genome_all`). Regenerate it from the repository root with:
 
 ```
 python3.12 bin/summary/export_clade_json.py <tables_dir> docs/quarto_summary/data/genomes.json
 ```
 
 `<tables_dir>` is `Fungi_BFD_runs/analysis/summary_tables`, written by `workflows/summary_tables.sh` (`build_summary_tables.py`). The JSON `meta` records the genome count and the source.
+
+```{python}
+#| echo: false
+#| output: asis
+import json
+from pathlib import Path
+try:
+    n = json.loads(Path("data/genomes.json").read_text())["meta"]["n_genomes"]
+    print(f"At render time `data/genomes.json` holds **{n:,}** genomes (`genome_all` rows).")
+except (OSError, KeyError, ValueError):
+    print("`data/genomes.json` could not be read, so the genome count is not shown.")
+```

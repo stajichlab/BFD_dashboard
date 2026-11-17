@@ -5,7 +5,7 @@ format:
     toc: false
 ---
 
-This is an early (phase B) interactive view. Each point is one genome. Nothing here is controlled for phylogeny, so related genomes are not independent and the correlations below are descriptive only. The default shows all genomes. Use the toggle to restrict to representative genomes (one per species). The static pages use representatives only, so counts differ.
+This is an early (phase B) interactive view. Each point is one genome. Nothing here is controlled for phylogeny, so related genomes are not independent and the correlations below are descriptive only. The default shows all genomes. Use the toggle to restrict to representative genomes (one per species). The level pages use one representative per species, and the all-genome scatter plots on the Comparisons page use all genomes. Counts differ between these views.
 
 ```{ojs}
 //| echo: false

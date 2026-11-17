@@ -191,3 +191,51 @@ def test_explore_log10_and_defaults():
     assert "pooled small groups" in page and "aria-label" in page
     notes = _read("06_data_notes.qmd")
     assert "python3.12 bin/summary/export_clade_json.py" in notes and "docs/quarto_summary/data/genomes.json" in notes
+
+
+# ---- final-review text fixes ----
+def test_composition_captions_match_code():
+    t = _read("08_composition.qmd")
+    assert "Amino-acid frequency against genome GC." not in t
+    assert "GC3" in t.split('fig("C05_aa_vs_gc"')[1].split("\n")[0]
+    assert "standard genetic code" in t and "CTG" in t
+
+
+def test_ordination_page_shows_negative_eigen_columns():
+    t = _read("10_ordination.qmd")
+    for c in ("n_negative_eigen", "neg_eigen_over_abs_total", "neg_eigen_over_pos_total", "n_permutations_run"):
+        assert t.count(c) >= 3, c
+
+
+def test_index_scope_wording():
+    t = _read("index.qmd")
+    assert "Every figure uses **one representative genome per species**" not in t
+    assert "Each figure is shown at four taxonomic levels" not in t
+    assert "all genomes" in t and "one genome per genus" in t and "largest" in t
+
+
+def test_explore_scope_wording():
+    t = _read("12_explore.qmd")
+    assert "The static pages use representatives only" not in t
+    assert "level pages use one representative per species" in t and "Comparisons page use all genomes" in t
+
+
+def test_data_notes_counts_and_build():
+    t = _read("06_data_notes.qmd")
+    assert "meta" in t and "n_genomes" in t and "genome_all" in t and "gene-structure" in t
+    assert "23,680" not in t
+    assert "sbatch workflows/summary_tables.sh" in t and "sbatch workflows/summary_figures.sh" in t
+    assert "workflows/publish_figures_to_site.sh" in t and "export_clade_json.py" in t
+    assert "build_summary.sh` is superseded" in t
+
+
+def test_gene_structure_definitions_match_sql():
+    t = _read("07_gene_structure.qmd")
+    assert "come from protein-coding transcripts only" not in t
+    assert "per transcript" in t and "isoform" in t and "intergenic" in t and "not filtered" in t
+
+
+def test_gallery_note_wording():
+    t = _read("11_gallery.qmd")
+    assert "n_genomes is the number of genomes in the figure" not in t
+    assert "group table" in t and "O02" in t and "by-phylum" in t

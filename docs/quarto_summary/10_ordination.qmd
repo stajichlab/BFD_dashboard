@@ -10,7 +10,7 @@ from _helpers import fig, table, single, flat_table, read_flat, gallery
 
 Principal coordinates analysis (PCoA) of genomes on three feature matrices: codon frequencies, amino-acid frequencies and gene-structure statistics. PCoA uses one genome per genus (best BUSCO, then N50, then lowest id), taken from genomes with complete codon, amino-acid and gene-structure data. Genera with no such genome are left out; the counts are in the table below.
 
-PERMANOVA uses 999 permutations, by phylum and by order. When a grouping has too few genera or groups, the table says it was not tested. Axes with negative eigenvalues are reported in the permanova tables; read the variance shown on the axes with that in mind.
+PERMANOVA uses 999 permutations, by phylum and by order. When a grouping has too few genera or groups, the table says it was not tested. The permanova tables report negative eigenvalues: `n_negative_eigen` is their number, `neg_eigen_over_abs_total` is their summed size divided by the summed absolute size of all eigenvalues, and `neg_eigen_over_pos_total` is their summed size divided by the summed positive eigenvalues. `n_permutations_run` is the number of permutations actually run. Read the variance shown on the axes with the negative eigenvalues in mind.
 
 ## Genera used
 
@@ -23,7 +23,7 @@ flat_table("ordination_summary", "ordination")
 ```{python}
 single("O01_codon_pcoa_phylum", "PCoA of codon frequencies, coloured by phylum.", "ordination", "75%")
 single("O02_codon_pcoa_class", "PCoA of codon frequencies, coloured by class.", "ordination", "75%")
-flat_table("codon_permanova", "ordination", columns=["grouping", "metric", "n_genera", "n_groups", "pseudo_F", "R2", "p_value", "n_permutations_run", "caveat"])
+flat_table("codon_permanova", "ordination", columns=["grouping", "metric", "n_genera", "n_groups", "pseudo_F", "R2", "p_value", "n_permutations_run", "n_negative_eigen", "neg_eigen_over_abs_total", "neg_eigen_over_pos_total", "caveat"])
 ```
 
 ## Amino-acid frequencies
@@ -31,7 +31,7 @@ flat_table("codon_permanova", "ordination", columns=["grouping", "metric", "n_ge
 ```{python}
 single("O01_aa_pcoa_phylum", "PCoA of amino-acid frequencies, coloured by phylum.", "ordination", "75%")
 single("O02_aa_pcoa_class", "PCoA of amino-acid frequencies, coloured by class.", "ordination", "75%")
-flat_table("aa_permanova", "ordination", columns=["grouping", "metric", "n_genera", "n_groups", "pseudo_F", "R2", "p_value", "n_permutations_run", "caveat"])
+flat_table("aa_permanova", "ordination", columns=["grouping", "metric", "n_genera", "n_groups", "pseudo_F", "R2", "p_value", "n_permutations_run", "n_negative_eigen", "neg_eigen_over_abs_total", "neg_eigen_over_pos_total", "caveat"])
 ```
 
 ## Gene structure
@@ -39,5 +39,5 @@ flat_table("aa_permanova", "ordination", columns=["grouping", "metric", "n_gener
 ```{python}
 single("O01_structure_pcoa_phylum", "PCoA of gene-structure statistics, coloured by phylum.", "ordination", "75%")
 single("O02_structure_pcoa_class", "PCoA of gene-structure statistics, coloured by class.", "ordination", "75%")
-flat_table("structure_permanova", "ordination", columns=["grouping", "metric", "n_genera", "n_groups", "pseudo_F", "R2", "p_value", "n_permutations_run", "caveat"])
+flat_table("structure_permanova", "ordination", columns=["grouping", "metric", "n_genera", "n_groups", "pseudo_F", "R2", "p_value", "n_permutations_run", "n_negative_eigen", "neg_eigen_over_abs_total", "neg_eigen_over_pos_total", "caveat"])
 ```

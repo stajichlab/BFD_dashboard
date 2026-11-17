@@ -8,7 +8,7 @@ sys.path.insert(0, ".")
 from _helpers import fig, table, single, flat_table, read_flat, gallery
 ```
 
-Unit: one representative genome per species. Codon and amino-acid frequencies come from protein-coding transcripts only (coding sequences and their translations); each genome contributes one frequency vector, so large genomes do not dominate. The phylum tab comes first; subphylum, class and order are the other tabs.
+Unit: one representative genome per species. Codon and amino-acid frequencies come from protein-coding transcripts only (coding sequences and their translations); each genome contributes one frequency vector, so large genomes do not dominate. Codons are mapped to amino acids with the standard genetic code. CTG-clade yeasts (CTG = serine) and genomes that use a mitochondrial code are mislabelled for CTG. The phylum tab comes first; subphylum, class and order are the other tabs.
 
 ## Codon usage
 
@@ -29,8 +29,8 @@ fig("C04b_gc3_vs_gc", "GC3 against genome GC.", "70%")
 
 ```{python}
 fig("C03_aa_composition", "Mean amino-acid composition per group.")
-fig("C03b_aa_heatmap", "Amino-acid frequency per group (heatmap).")
-fig("C05_aa_vs_gc", "Amino-acid frequency against genome GC.", "70%")
+fig("C03b_aa_heatmap", "Amino-acid frequency per group (heatmap, z-score of the group mean across groups).")
+fig("C05_aa_vs_gc", "Amino-acid frequency against GC3 (GC at the third codon position), one panel per amino acid.", "70%")
 fig("C06_charged_aa", "Charged residues (D, E, K, R) per genome.")
 fig("C07_aromatic_aa", "Aromatic residues (F, W, Y) per genome.")
 ```

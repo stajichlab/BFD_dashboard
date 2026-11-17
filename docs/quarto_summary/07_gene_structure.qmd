@@ -10,7 +10,13 @@ from _helpers import fig, table, single, flat_table, read_flat, gallery
 
 Unit: one representative genome per species. Boxes show the median and quartiles over genomes. The phylum tab comes first; subphylum, class and order are the other tabs. Each caption gives n and the share of genomes pooled in the grey "Other" group, read from the figure's data file.
 
-**Definitions.** Gene length, CDS length and the other per-gene values come from protein-coding transcripts only. Note that exon counts may include UTR exons, so a gene with annotated UTRs can show more exons than its coding sequence has. Each genome contributes one median, so large genomes do not dominate.
+**Definitions.** Each genome contributes one median, so large genomes do not dominate. The unit of each statistic differs:
+
+- Gene length is per protein-coding gene (span of the gene model). Protein length is per protein in the protein table.
+- CDS length, exons per gene, the share of genes with an intron and intron length are per transcript, over protein-coding transcripts. A gene with several isoforms counts once per isoform. Note that exon counts may include UTR exons.
+- Coding fraction is the summed CDS length of all protein-coding transcripts divided by the genome length. Alternative isoforms add to the sum, so the value can be inflated in genomes with many isoforms.
+- Intergenic distance comes from the intergenic-distance table and is not filtered to protein-coding genes.
+- Genes per Mb counts distinct protein-coding genes.
 
 ## Gene, CDS and protein length
 
