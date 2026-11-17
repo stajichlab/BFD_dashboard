@@ -33,9 +33,15 @@ A_FAMILY = [
 
 
 def phylum_colors(df):
-    """Colour per phylum: the TOP_PHYLA largest get the palette, the rest grey."""
-    order = df["PHYLUM"].fillna("Unknown").value_counts().index
-    return {p: (PALETTE[i] if i < TOP_PHYLA and p != "Unknown" else GREY) for i, p in enumerate(order)}
+    """Colour per phylum. The palette goes by rank (genome count) to the phyla that get individual points
+    (fewer than POINTS_BELOW genomes), up to TOP_PHYLA of them. Other phyla are grey: the large ones are shown
+    only in the density layer."""
+    counts = df["PHYLUM"].fillna("Unknown").value_counts()
+    cols = {p: GREY for p in counts.index}
+    small = [p for p in counts.index if counts[p] < POINTS_BELOW and p != "Unknown"]
+    for i, p in enumerate(small[:TOP_PHYLA]):
+        cols[p] = PALETTE[i]
+    return cols
 
 
 def _all_positive(v):
@@ -81,7 +87,9 @@ def scatter_all(df, x, y, colors_by_phylum, o, name, logx=False, logy=False, xla
         ax.set_xlabel(xlabel or x)
         ax.set_ylabel(ylabel or y)
         s = o.meta[name]
-        ax.set_title(f"n={s['n']} genomes (all)   Pearson r={s['pearson_r']:.2f}   Spearman r={s['spearman_r']:.2f}", fontsize=8.5)
+        tag = " (log10)" if (lx or ly) else ""
+        s["title"] = f"n={s['n']} genomes (all)   Pearson r={s['pearson_r']:.2f}   Spearman r={s['spearman_r']:.2f}{tag}"
+        ax.set_title(s["title"], fontsize=8.5)
         if ax.get_legend_handles_labels()[0]:
             ax.legend(fontsize=6.5, frameon=False, loc="best", title=f"Phyla with <{POINTS_BELOW} genomes", title_fontsize=6.5)
         return fig

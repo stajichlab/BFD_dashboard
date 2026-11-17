@@ -11,7 +11,10 @@ def group_tests(df, stats, group_col="grp"):
     """Kruskal-Wallis across groups for each column in `stats`, with epsilon^2 = H / ((n^2 - 1) / (n + 1)) as
     effect size, plus one-way ANOVA F and eta^2. Missing values are dropped per stat; groups with fewer than
     2 genomes are dropped. Columns that are absent, or have fewer than 2 groups, are skipped. A constant
-    column gives NaN effect sizes."""
+    column gives NaN effect sizes.
+
+    No multiple-testing correction is applied (about 13 tests per level): use p_value descriptively, and read
+    the effect sizes (effect_size, eta2) rather than significance alone."""
     rows = []
     for s in stats:
         if s not in df.columns:
@@ -38,8 +41,9 @@ def group_tests(df, stats, group_col="grp"):
 
 def pair_regressions(df, pairs, log=True):
     """Ordinary least squares (scipy.stats.linregress) of y on x for each (x, y) pair, on log10 values when
-    `log` (rows with a non-positive value in either column are dropped). Pairs with a missing column or fewer
-    than 3 usable genomes are skipped.
+    `log` (rows with a non-positive value in either column are dropped). Pairs with a missing column are
+    skipped. Pairs with fewer than 3 usable genomes, or a constant column, return a row with n and NaN for
+    slope, intercept, r2 and p_value.
 
     These regressions do not control for phylogeny: genomes of related species are not independent, so the
     p-values overstate the evidence and the slopes describe the database, not an evolutionary rate."""
@@ -51,9 +55,7 @@ def pair_regressions(df, pairs, log=True):
         if log:
             d = d[(d[x] > 0) & (d[y] > 0)]
             d = np.log10(d)
-        if len(d) < 3:
-            continue
-        if d[x].nunique() < 2 or d[y].nunique() < 2:
+        if len(d) < 3 or d[x].nunique() < 2 or d[y].nunique() < 2:
             rows.append((x, y, len(d), np.nan, np.nan, np.nan, np.nan))
             continue
         r = st.linregress(d[x], d[y])

@@ -51,3 +51,36 @@ def test_regression_log_drops_nonpositive_and_handles_constant():
     d = pd.DataFrame({"x": [0.0, 1, 2, 3, 4], "y": [1.0, 1, 1, 1, 1]})
     r = pair_regressions(d, [("x", "y"), ("x", "missing")]).iloc[0]
     assert r["n"] == 4 and np.isnan(r["r2"])
+
+
+def test_known_answer_two_groups():
+    # [1,2,3] vs [4,5,6], no ties. Rank sums 6 and 15, n=6:
+    #   H = 12/(6*7)*(6^2/3 + 15^2/3) - 3*7 = 3.857142857; eps2 = H*(n+1)/(n^2-1) = H*7/35 = 0.771428571
+    #   ANOVA: SSB = 13.5, SSW = 4, F = 13.5/(4/4) = 13.5; eta2 = 13.5/17.5 = 0.771428571
+    d = pd.DataFrame({"grp": list("aaabbb"), "y": [1, 2, 3, 4, 5, 6]})
+    r = group_tests(d, ["y"]).iloc[0]
+    assert abs(r["statistic"] - 3.857142857) < 1e-6
+    assert abs(r["effect_size"] - 0.771428571) < 1e-6
+    assert abs(r["anova_F"] - 13.5) < 1e-6
+    assert abs(r["eta2"] - 0.771428571) < 1e-6
+
+
+def test_known_answer_one_zero_variance_group():
+    # [5,5,5], [1,2,3], [4,6,8]; n=9. Pooled ranks: 1,2,3,4 -> 1..4; the three 5s -> 6 each; 6 -> 8; 8 -> 9.
+    # Rank sums 18, 6, 21. H uncorrected = 12/(9*10)*(18^2/3+6^2/3+21^2/3) - 3*10 = 5.6.
+    # Tie correction 1 - (3^3-3)/(9^3-9) = 0.966667, so H = 5.793103448; eps2 = H*10/80 = 0.724137931.
+    # ANOVA: means 5,2,6, grand mean 13/3; SSB = 26, SSW = 0+2+8 = 10, F = (26/2)/(10/6) = 7.8, eta2 = 26/36.
+    d = pd.DataFrame({"grp": list("aaabbbccc"), "y": [5, 5, 5, 1, 2, 3, 4, 6, 8]})
+    r = group_tests(d, ["y"]).iloc[0]
+    assert abs(r["statistic"] - 5.793103448) < 1e-6
+    assert abs(r["effect_size"] - 0.724137931) < 1e-6
+    assert abs(r["anova_F"] - 7.8) < 1e-6
+    assert abs(r["eta2"] - 26 / 36) < 1e-9
+    assert r["n"] == 9 and r["n_groups"] == 3
+
+
+def test_regression_small_n_returns_nan_row_with_n():
+    d = pd.DataFrame({"x": [1.0, 2.0], "y": [2.0, 4.0]})
+    r = pair_regressions(d, [("x", "y")])
+    assert len(r) == 1 and r.iloc[0]["n"] == 2
+    assert r[["slope", "intercept", "r2", "p_value"]].isna().all(axis=None)
