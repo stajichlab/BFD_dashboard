@@ -175,7 +175,7 @@ def test_run_ordination_reports_pool_counts(tmp_path):
     reps, codon = clusters()
     reps.attrs.update(n_no_genus=7, n_genera_no_complete_data=3)
     res = so.run_ordination(reps, {"codon": codon}, tmp_path)
-    assert res["_summary"] == {"n_no_genus": 7, "n_genera_no_complete_data": 3}
+    assert res["_summary"] == {"n_no_genus": 7, "n_genera_no_complete_data": 3, "n_clipped_values": 0, "n_genera_clipped": 0}
     s = pd.read_csv(tmp_path / "tables" / "ordination" / "ordination_summary.tsv", sep="\t")
     assert s.loc[0, "n_no_genus"] == 7 and s.loc[0, "n_genera_no_complete_data"] == 3
 
@@ -294,3 +294,61 @@ def test_run_ordination_many_genera_many_groups(tmp_path):
     so.run_ordination(reps, {"codon": codon}, tmp_path)
     t = pd.read_csv(tmp_path / "tables" / "ordination" / "codon_permanova.tsv", sep="\t")
     assert t["n_unique_permutations_log10"].gt(100).all()
+
+
+def _struct_table(n=200, seed=4, extreme=True):
+    rng = np.random.default_rng(seed)
+    t = pd.DataFrame(rng.normal(0, 1, (n, 4)), columns=[f"f{i}" for i in range(4)])    # signed: no log transform
+    t.insert(0, "species_prefix", [f"s{i}" for i in range(n)])
+    if extreme:
+        t.loc[0, [f"f{i}" for i in range(4)]] = 60.0
+    return t
+
+
+def _pco1_z(mat):
+    """|PCo1| of the first genus in SDs of the other genera (the outlier does not inflate its own scale)."""
+    dist = so.lib_ordination.distance_matrix(mat, "euclidean")
+    c = so.lib_ordination.pcoa(dist, n_axes=2).coords["PCo1"]
+    rest = c.iloc[1:]
+    return float(abs(c.iloc[0] - rest.median()) / rest.std())
+
+
+def test_structure_clipping_stops_one_genus_dominating_pco1():
+    t = _struct_table(extreme=False).iloc[:, :3]          # two features, one extreme value (like log coding_fraction)
+    t.loc[0, "f0"] = 60.0
+    raw = so.structure_matrix(t, clip=None)
+    clipped = so.structure_matrix(t)
+    assert _pco1_z(raw) > 6          # measured 13.2: the extreme genus is far out on PCo1
+    assert _pco1_z(clipped) < 2.5    # measured 0.3: bounded at 4 in one feature, inside the cloud on PCo1
+    assert clipped.abs().to_numpy().max() <= 4.0 + 1e-9
+    assert clipped.attrs["n_clipped_values"] == 1 and clipped.attrs["n_genera_clipped"] == 1
+
+
+def test_structure_no_extremes_not_clipped():
+    m = so.structure_matrix(_struct_table(extreme=False))
+    assert m.attrs["n_clipped_values"] <= 2 and m.abs().to_numpy().max() <= 4.0 + 1e-9
+
+
+def test_clipped_counts_reported_in_tables(tmp_path):
+    reps = pd.DataFrame({"species_prefix": [f"s{i}" for i in range(200)], "GENUS": [f"g{i}" for i in range(200)],
+                         "PHYLUM": [f"P{i % 3}" for i in range(200)], "CLASS": "c", "ORDER": [f"O{i % 5}" for i in range(200)],
+                         "busco_complete": 90.0, "N50_bp": 1})
+    res = so.run_ordination(reps, {"structure": _struct_table()}, tmp_path)
+    assert res["_summary"]["n_clipped_values"] == 4 and res["_summary"]["n_genera_clipped"] == 1
+    s = pd.read_csv(tmp_path / "tables" / "ordination" / "ordination_summary.tsv", sep="\t")
+    assert s.loc[0, "n_clipped_values"] == 4 and s.loc[0, "n_genera_clipped"] == 1
+    t = pd.read_csv(tmp_path / "tables" / "ordination" / "structure_permanova.tsv", sep="\t")
+    assert (t["n_clipped_values"] == 4).all() and (t["n_genera_clipped"] == 1).all()
+
+
+def test_r2_adj_hand_computed():
+    assert so._r2_adj(0.5, 20, 5) == pytest.approx(1 - 0.5 * 19 / 15)
+    assert np.isnan(so._r2_adj(0.5, 5, 5)) and np.isnan(so._r2_adj(0.5, 4, 5))
+
+
+def test_r2_adj_in_permanova_table(tmp_path):
+    reps, codon = clusters(3)
+    so.run_ordination(reps, {"codon": codon}, tmp_path)
+    t = pd.read_csv(tmp_path / "tables" / "ordination" / "codon_permanova.tsv", sep="\t")
+    r = t[t.grouping == "PHYLUM"].iloc[0]
+    assert r.R2_adj == pytest.approx(1 - (1 - r.R2) * (r.n_genera - 1) / (r.n_genera - r.n_groups))

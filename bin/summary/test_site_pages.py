@@ -239,3 +239,10 @@ def test_gallery_note_wording():
     t = _read("11_gallery.qmd")
     assert "n_genomes is the number of genomes in the figure" not in t
     assert "group table" in t and "O02" in t and "by-phylum" in t
+
+
+def test_ordination_page_adjusted_r2_and_clipping():
+    t = _read("10_ordination.qmd")
+    assert t.count('"R2", "R2_adj"') >= 3
+    assert "R2_adj" in t and "inflated by the number of groups" in t
+    assert "clipped at" in t and "n_clipped_values" in t and "n_genera_clipped" in t
