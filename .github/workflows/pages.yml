@@ -25,7 +25,10 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  # PR builds get their own group per ref. They must not share the "deploy" group:
+  # GitHub keeps one pending run per group, so a queued PR build would displace a
+  # pending deploy from main.
+  group: pages-${{ github.event_name == 'pull_request' && github.ref || 'deploy' }}
   cancel-in-progress: false
 
 jobs:

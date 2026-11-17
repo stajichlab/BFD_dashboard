@@ -64,7 +64,12 @@ def test_requirements_pinned_and_used():
 def test_workflow_permissions_and_concurrency():
     wf = _wf()
     assert wf["permissions"] == {"contents": "read", "pages": "write", "id-token": "write"}
-    assert wf["concurrency"] == {"group": "pages", "cancel-in-progress": False}
+    # PR builds must not share a group with the real deploy: GitHub keeps one pending run per
+    # group, so a queued PR build would displace a pending deploy from main.
+    assert wf["concurrency"] == {
+        "group": "pages-${{ github.event_name == 'pull_request' && github.ref || 'deploy' }}",
+        "cancel-in-progress": False,
+    }
 
 
 def test_build_job_steps():
