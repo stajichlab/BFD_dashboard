@@ -1,6 +1,6 @@
 # DeepLoc and intrinsic-disorder (IDR) patterns across the BFD proteomes
 
-Status: **design, controls and decision rules, written before any test was run** (this file is committed first; results are added after).
+Status: **done 2026-11-16 (see Results at the end).** The design, controls and decision rules were written, and committed, before any test was run.
 Data: the local `BFD.duckdb` (`deeploc`, `idp_summary`, `idp`, `signalp`, `tmhmm`, `predgpi`, `wolfpsort`, `gene_proteins`, `pfam`,
 `tf_inventory`, `v_secretome_proteins`, `v_protein_annotation`). Predictions are computational throughout.
 
@@ -68,7 +68,63 @@ are FungalTraits 1.2 `primary_lifestyle` at genus level (`plant_pathogen`, and s
 No phylogenetic correction (no tree); no validation against experimental effector sets; no statement about function. Any
 literature link between disorder and function is a citation to verify and none is made here.
 
-## Files (planned)
+## Files
 
-`01_build_cube.py` (HPCC job: genome x length bin x localization x flags table), `02_analyze.py` (controls, H1 to H7, candidates),
-`test_deeploc_idp.py` (fixture test), `audit/` (audit script and log), `results/`.
+`01_build_cube.py` (HPCC job 32132454, 2 min: genome x length bin x localization x flags table), `02_analyze.py` (controls, H1 to H7,
+candidate counts), `test_deeploc_idp.py` (4 fixture tests pass on the HPCC), `audit/` (audit script and log), `results/`.
+The cube tables and the list of effector-like candidate proteins (245,547 proteins, `ssp_candidates.parquet`) stay in
+`bench/deeploc_idp/cube/` on the HPCC.
+
+---
+## Results (2026-11-16; 1,669 genus-representative genomes, 18,424,213 proteins)
+
+Order of events: the design and rules above were committed first (`4575c84`), the scripts next (`dbacaf5`), then the cube was built
+and the analysis run once. No rule or threshold was changed after the results were seen (one code bug, a column named `loc` clashing
+with the pandas `.loc` attribute, was fixed before the first run).
+
+### Controls
+
+| Control | Observed | Criterion | Result |
+|---|---|---|---|
+| C1 TFs DeepLoc nuclear (share of classes with median >= 0.90) | 1.00 | 0.90 | pass |
+| C2 mitochondrial carriers DeepLoc mitochondrion | 0.964 | 0.70 | pass |
+| C3 strict secretome DeepLoc extracellular or membrane | 0.909 | 0.60 | pass |
+| C4 effector-like families recovered by the secretion filter | **0.431** | 0.70 | **FAIL** |
+| C5 nuclear above mitochondrial IDR_all0 (share of classes) | 1.00 | 0.90 | pass |
+
+C4 failed: only 43% of proteins carrying CFEM, LysM, CAP or Chitin_bind_1 domains pass the strict secretion filter. The reason was not
+tested (these domains also occur in non-secreted and multidomain proteins, and the signal-peptide call is a single predictor), so it
+is not known whether the filter is too strict or the control too broad. Per the pre-registered rule it is a **caveat on H7 and on the
+candidate list**: real effectors may be missed.
+
+### Hypotheses (`results/hypotheses.tsv`; q = Benjamini-Hochberg over the seven primary tests)
+
+| # | Result (primary statistic) | Effect size | Verdict by the pre-set rule |
+|---|---|---|---|
+| H1 TFs more disordered than other nuclear proteins | positive in 19 of 20 classes (p 2e-05, q 3.5e-05) | pooled median +0.124 IDR_all0 | supported |
+| H2 unannotated more disordered than annotated | positive in 20 of 20 classes (p 9.5e-07) | pooled median +0.162 | supported |
+| H3 strict secretome less disordered than the rest | negative in 18 of 20 classes (p 2e-04) | pooled median -0.137 | supported |
+| H4 genome IDR_all0 tracks GC (class-demeaned) | rho 0.188 (n = 1,491 genomes) | between the thresholds 0.15 and 0.30 | **mixed** |
+| H5 nuclear share rises with proteome size | rho **-0.228** (n = 1,491), opposite sign | nuclear share falls with proteome size | **killed** |
+| H6 Microsporidia less disordered at matched length | median genome contrast -0.192, bootstrap interval -0.201 to -0.178 (30 genomes) | about -0.19 IDR_all0 | supported |
+| H7 effector-like candidates more frequent in plant-pathogen genera | positive in 3 of 4 evaluable classes (p 0.31, q 0.36) | per 1,000 proteins: Dothideomycetes +1.77, Agaricomycetes +0.41, Sordariomycetes +0.33, Leotiomycetes -1.76 | meets the rule (>= 75% of at least 3 classes), **but weak** |
+
+### How to read these
+
+- **H1 to H3** hold in nearly every class with effect sizes of 0.12 to 0.16 in IDR fraction, after matching for protein length and
+  within each genome. Because H4 is only mixed (rho 0.19), a share of the IDR signal follows composition; a GC-adjusted version of
+  H1 to H3 was not pre-registered and was not run.
+- **H5 is opposite to the prediction**, not merely null; why was not investigated.
+- **H6** is a large effect, but Microsporidia genomes are small and annotation-sensitive, and the 30 genera are not independent;
+  it should be read as "Microsporidia proteomes are strongly depleted in predicted disorder at matched length".
+- **H7 meets the pre-registered rule only narrowly.** There are 4 evaluable classes, the sign test is not significant (p 0.31), the
+  per-class differences are small against rates of 11 to 15 candidates per 1,000 proteins (one class goes the other way), and C4
+  failed. Treat it as no evidence, not as support.
+- The class is the unit of the sign tests; classes are not independent (shared ancestry), and no phylogenetic correction was possible.
+- The 245,547 effector-like candidates (about 13 per 1,000 proteins) are small secreted proteins of unknown function selected by the
+  rule above, not validated effectors.
+
+### Not done
+
+GC-adjusted H1 to H3; a two-sided test for H5; the cause of the C4 failure; any phylogenetic correction; any link to function
+(literature claims about disorder and function are citations to verify and none is made).

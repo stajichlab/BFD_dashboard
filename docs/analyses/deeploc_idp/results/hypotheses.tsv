@@ -1,0 +1,8 @@
+hypothesis	what	n	statistic	value	pooled_median	p	verdict	q_BH
+H1	TF minus other nuclear IDR_all0	20	share of classes in predicted direction	0.95	0.12394057272070085	2.002716064453125e-05	supported	3.504753112792969e-05
+H2	unannotated minus annotated IDR_all0	20	share of classes in predicted direction	1.0	0.16152901506794637	9.5367431640625e-07	supported	2.2252400716145835e-06
+H3	strict secretome minus other IDR_all0	20	share of classes in predicted direction	0.9	-0.13746216516210896	0.00020122528076171875	supported	0.00028171539306640623
+H4	genome IDR_all0 vs GC, class-demeaned	1491	Spearman rho	0.1876812890433117		1.3764514243291596e-13	mixed	9.635159970304117e-13
+H5	nuclear share vs log proteome size, class-demeaned	1491	Spearman rho	-0.22810014055363567		1.0	killed	1.0
+H6	Microsporidia minus rest IDR_all0 (CI -0.201 to -0.178)	30	median genome contrast	-0.1915044271993701	-0.1915044271993701	1.862645149230957e-09	supported	6.51925802230835e-09
+H7	effector-like candidates per 1,000 proteins, plant pathogen minus saprotroph	4	share of classes in predicted direction	0.75	0.36712889512378055	0.3125	supported	0.3645833333333333
