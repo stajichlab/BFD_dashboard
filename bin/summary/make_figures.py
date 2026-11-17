@@ -34,6 +34,9 @@ MAX_GROUPS = 36
 OTHER = "Other (small groups)"
 PALETTE = ["#0072B2", "#D55E00", "#009E73", "#E69F00", "#CC79A7", "#56B4E9", "#F0E442", "#8C564B"]
 GREY = "#9a9a9a"
+UNKNOWN_GREY = "#d4d4d4"      # genomes with no taxon at this level (distinct from the pooled-Other grey)
+SHADE_LIGHTNESS = (0.25, 0.78)
+MAX_SHADES = 5               # distinct lightness bands per phylum; more groups cycle through them
 LOC_COLORS = {"cytoplasm": "#4C78A8", "nucleus": "#F58518", "extracellular": "#54A24B", "cell_membrane": "#E45756",
               "mitochondrion": "#B279A2", "plastid": "#72B7B2", "endoplasmic_reticulum": "#EECA3B",
               "lysosome_vacuole": "#9D755D", "golgi": "#BAB0AC", "peroxisome": "#FF9DA6"}
@@ -69,13 +72,19 @@ def width(levels, base=6.8, per=0.3):
 
 # ---------------------------------------------------------------- grouping
 def shade(hex_color, i, n):
-    """Shade i of n of a colour: same hue and saturation, lightness spread from dark (i=0) to light (i=n-1)."""
-    h, l, s = colorsys.rgb_to_hls(*(int(hex_color.lstrip("#")[k:k + 2], 16) / 255 for k in (0, 2, 4)))
-    lo, hi = max(0.25, l - 0.18), min(0.78, l + 0.22)
-    li = lo if n <= 1 else lo + (hi - lo) * i / (n - 1)
-    if n <= 1:
-        li = l
+    """Shade i of n of a colour: same hue and saturation, lightness spread evenly from dark (i=0) to light (i=n-1).
+    The window is 0.25-0.78 lightness. A single shade (n=1) uses the middle of the window."""
+    h, _, s = colorsys.rgb_to_hls(*(int(hex_color.lstrip("#")[k:k + 2], 16) / 255 for k in (0, 2, 4)))
+    lo, hi = SHADE_LIGHTNESS
+    li = (lo + hi) / 2 if n <= 1 else lo + (hi - lo) * i / (n - 1)
     return "#%02x%02x%02x" % tuple(round(v * 255) for v in colorsys.hls_to_rgb(h, li, s))
+
+
+def shade_band(pos, n_bands):
+    """Map a position in the legend order to a shade band so neighbours alternate between dark and light."""
+    lows, highs = list(range((n_bands + 1) // 2)), list(range((n_bands + 1) // 2, n_bands))
+    seq = [x for pair in zip(lows, highs) for x in pair] + lows[len(highs):]
+    return seq[pos % n_bands]
 
 
 def assign_groups(core, level):
@@ -104,7 +113,16 @@ def assign_groups(core, level):
     if level == "phylum":
         keep = list(n.index[:TOP_PHYLA])
     else:
-        keep = [g for g in n.index if n[g] >= MIN_N][:MAX_GROUPS]
+        big = [g for g in n.index if n[g] >= MIN_N]
+        # every phylum stays visible: reserve its largest qualifying group, then fill by size
+        modal = d.groupby("grp")["parent"].agg(lambda x: x.value_counts().index[0])
+        reserved = []
+        for p_ in ph_order:
+            mine = [g for g in big if g != "Unknown" and modal[g] == p_]
+            if mine:
+                reserved.append(mine[0])
+        reserved = reserved[:MAX_GROUPS]
+        keep = reserved + [g for g in big if g not in reserved][:MAX_GROUPS - len(reserved)]
     pooled = (d.loc[~d["grp"].isin(keep)].groupby("grp")
               .agg(genomes=("parent", "size"), phylum=("parent", lambda x: x.value_counts().index[0]),
                    subphylum=("subphylum_or_phylum", lambda x: x.value_counts().index[0]))
@@ -118,18 +136,25 @@ def assign_groups(core, level):
 
     def sort_key(g):
         return (ph_order.index(par[g]), str(subs[g]), -int(n[g]))
-    levels = sorted(par.index, key=sort_key)
+    unk = "Unknown" in par.index and level != "phylum"
+    levels = sorted([g for g in par.index if not (unk and g == "Unknown")], key=sort_key)
+    if unk:
+        levels.append("Unknown")
     if (d.grp == OTHER).any():
         levels.append(OTHER)
     colors = {}
-    for p_, members in par.groupby(par):
-        ranked = sorted(members.index, key=lambda g: -int(n[g]))   # largest group in the phylum gets shade 0
-        for i, g in enumerate(ranked):
-            base = pcolor.get(p_, GREY)
-            colors[g] = base if (level == "phylum" or base == GREY) else shade(base, i, len(ranked))
+    for p_ in dict.fromkeys(par[g] for g in levels if g in par.index and not (unk and g == "Unknown")):
+        members = [g for g in levels if g in par.index and par[g] == p_ and not (unk and g == "Unknown")]
+        base = pcolor.get(p_, GREY)
+        k = min(len(members), MAX_SHADES)
+        for pos, g in enumerate(members):             # legend order: neighbours alternate dark/light
+            colors[g] = base if (level == "phylum" or base == GREY) else shade(base, shade_band(pos, k), k)
+    if unk:
+        colors["Unknown"] = UNKNOWN_GREY
     colors[OTHER] = GREY
-    d.attrs["parents"] = {g: (par[g] if g in par.index else "Other") for g in levels}
-    d.attrs["parent_colors"] = {p: pcolor.get(p, GREY) for p in dict.fromkeys(d.attrs["parents"].values())}
+    d.attrs["parents"] = {g: ("Unknown" if (unk and g == "Unknown") else par[g] if g in par.index else "Other") for g in levels}
+    d.attrs["parent_colors"] = {p: (UNKNOWN_GREY if p == "Unknown" and unk else pcolor.get(p, GREY))
+                                for p in dict.fromkeys(d.attrs["parents"].values())}
     d.attrs["subphylum_of"] = {g: (subs[g] if g in subs.index else "") for g in levels}
     d.attrs["other_members"] = pooled
     return d, levels, colors

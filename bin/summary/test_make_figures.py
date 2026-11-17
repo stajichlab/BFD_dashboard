@@ -101,7 +101,29 @@ def test_unknown_order_kept():
     core = _order_core()
     d, levels, colors = mf.assign_groups(core, "order")
     assert len(d) == len(core)
-    assert (d.loc[core["ORDER"].isna(), "grp"] == "Unknown").all() or (d.loc[core["ORDER"].isna(), "grp"] == mf.OTHER).all()
+    assert (d.loc[core["ORDER"].isna(), "grp"] == "Unknown").all()
+    assert levels[-1] == "Unknown" or levels[-2:] == ["Unknown", mf.OTHER]
+    assert colors["Unknown"] == mf.UNKNOWN_GREY != mf.GREY
+    assert colors["Unknown"] not in (colors["o1"], colors["o2"], colors["o3"])
+
+
+def test_small_phylum_visible_at_order_level():
+    rows = [("Big", f"b{i}") for i in range(40) for _ in range(30)]          # 40 orders x 30 genomes
+    rows += [("Small", f"s{i}") for i in range(2) for _ in range(11)]       # 2 orders x 11, below the 36th largest
+    core = pd.DataFrame(rows, columns=["PHYLUM", "ORDER"])
+    core["CLASS"] = "c"
+    d, levels, colors = mf.assign_groups(core, "order")
+    assert "s0" in levels   # the phylum quota reserves its largest group (one per phylum)
+    assert d.attrs["parents"]["s0"] == "Small"
+
+
+def test_adjacent_shades_separable():
+    import colorsys
+    core = pd.DataFrame({"PHYLUM": "A", "CLASS": "c", "ORDER": [f"o{i:02d}" for i in range(20) for _ in range(12)]})
+    d, levels, colors = mf.assign_groups(core, "order")
+    lum = [colorsys.rgb_to_hls(*(int(colors[g][k:k + 2], 16) / 255 for k in (1, 3, 5)))[1] for g in levels]
+    assert min(abs(a - b) for a, b in zip(lum, lum[1:])) >= 0.05
+    assert max(abs(_hue(colors[g]) - _hue(colors[levels[0]])) for g in levels) < 0.02
 
 
 def test_groups_order_and_colour_by_parent():
