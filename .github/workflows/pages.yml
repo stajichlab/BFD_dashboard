@@ -13,10 +13,12 @@ on:
     paths:
       - "docs/quarto_summary/**"
       - ".github/workflows/pages.yml"
+      - "docs/quarto_summary/figures_release.json"
   pull_request:
     paths:
       - "docs/quarto_summary/**"
       - ".github/workflows/pages.yml"
+      - "docs/quarto_summary/figures_release.json"
   workflow_dispatch:
 
 permissions:
@@ -47,6 +49,13 @@ jobs:
       - name: Install Python packages
         run: pip install -r docs/quarto_summary/requirements.txt
 
+      - name: Fetch figures (release asset)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          command -v zstd >/dev/null || sudo apt-get install -y zstd
+          bash workflows/fetch_site_assets.sh
+
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: 1.7.31
@@ -66,6 +75,14 @@ jobs:
           fi
           if [ ! -f "$site/CNAME" ]; then
             echo "CNAME missing from the site root."; exit 1
+          fi
+          p=$(find "$site/figures" -name '*.png' 2>/dev/null | wc -l)
+          echo "PNG files under figures/: $p"
+          if [ "$p" -lt 200 ]; then
+            echo "Expected at least 200 PNG files under figures/."; exit 1
+          fi
+          if [ ! -f "$site/figures_index.tsv" ]; then
+            echo "figures_index.tsv missing from the site."; exit 1
           fi
 
       - name: Check site size

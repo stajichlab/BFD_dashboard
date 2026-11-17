@@ -18,3 +18,8 @@ docs/quarto_summary/site_libs/
 docs/quarto_summary/.quarto/
 docs/quarto_summary/*_files/
 *.quarto_ipynb
+
+# generated figures and tables come from a release asset (workflows/fetch_site_assets.sh)
+docs/quarto_summary/figures/
+docs/quarto_summary/tables/
+docs/quarto_summary/figures_index.tsv

@@ -225,7 +225,8 @@ def test_data_notes_counts_and_build():
     assert "meta" in t and "n_genomes" in t and "genome_all" in t and "gene-structure" in t
     assert "23,680" not in t
     assert "sbatch workflows/summary_tables.sh" in t and "sbatch workflows/summary_figures.sh" in t
-    assert "workflows/publish_figures_to_site.sh" in t and "export_clade_json.py" in t
+    assert "workflows/release_site_assets.sh --upload" in t and "export_clade_json.py" in t
+    assert "figures_release.json" in t and "not in git" in t
     assert "build_summary.sh` is superseded" in t
 
 

@@ -113,10 +113,10 @@ def test_quarto_lists_cname_resource():
     assert "CNAME" in cfg["project"]["resources"]
 
 
-def test_figures_tracked():
+def test_figures_not_tracked():
     out = subprocess.run(["git", "ls-files", "docs/quarto_summary/figures"], cwd=ROOT,
                          capture_output=True, text=True, check=True).stdout.split()
-    assert len(out) > 0
+    assert out == []  # figures come from a release asset, see test_assets.py
 
 
 def test_local_render_places_cname(tmp_path):

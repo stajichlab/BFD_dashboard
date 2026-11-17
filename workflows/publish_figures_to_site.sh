@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 # Copy the figure run output (figures, tables, figures_index.tsv) into the Quarto site folder.
+# FOR LOCAL PREVIEWS ONLY. It copies into folders that git ignores. It does not publish the site.
+# To publish figures, use workflows/release_site_assets.sh --upload (release asset + manifest).
 # Usage: workflows/publish_figures_to_site.sh [--dry-run]
 # Override ROOT (repo root) and OUT (figure run output) with env vars.
 # Files are merged into the destination. Extra files in the destination are not deleted.
