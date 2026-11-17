@@ -109,7 +109,7 @@ def test_new_pages_make_figures(tmp_path):
         assert not any(getattr(m, "kind", "") == "skipped" for m in made[level])
         assert {m.topic for m in made[level] if m.startswith(("S0", "C0"))} == {"structure", "composition"}
     for p in (tmp_path / "out" / "figures").rglob("*.*"):
-        assert re.fullmatch(r"[A-Za-z0-9_]+\.(png|svg)", p.name), p
+        assert re.fullmatch(r"[A-Za-z0-9_]+\.(png|svg|json)", p.name), p
 
 
 def test_main_tolerates_missing_new_tables(tmp_path, capsys):
@@ -142,6 +142,9 @@ def test_all_outputs(tmp_path):
     assert t["genomes"].sum() == 240
     key = pd.read_csv(tmp_path / "out" / "tables" / "class" / "T00_group_key.tsv", sep="\t")
     assert key["genomes"].sum() == 240 and (key["phylum"] != "").all()
+    idx = pd.read_csv(tmp_path / "out" / "figures_index.tsv", sep="\t")
+    assert len(idx) == len(list((tmp_path / "out" / "figures").glob("*/*.png")))
+    assert {"all", *mf.LEVELS} <= set(idx["level"]) and idx["pooled_share"].dropna().between(0, 1).all()
 
 
 def _hue(hexc):

@@ -67,6 +67,7 @@ def page_gene_structure(core, levels, colors, structure, o):
         if col not in d:
             o.skip(name, TOPIC)
             continue
+        o.stat_of[name] = col
         safe(o, name, TOPIC, lambda col=col, ylabel=ylabel, title=title, log=log: _box_fig(d, col, ylabel, title, log, levels, colors, core))
     safe(o, "S08_structure_heatmap", TOPIC, lambda: _heat_fig(d, levels, colors))
     safe(o, "S09_gene_vs_intergenic", TOPIC, lambda: _size_fig(d, core, levels, colors))

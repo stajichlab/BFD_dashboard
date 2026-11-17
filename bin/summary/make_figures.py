@@ -13,6 +13,7 @@ proteins, so large genomes do not dominate. Nothing here is a statistical test: 
 database. The .qmd pages state the unit for every figure.
 """
 import colorsys
+import json
 import sys
 from pathlib import Path
 
@@ -65,12 +66,30 @@ class Out:
         self.made = []
         self.scope = "all_genomes" if level == "all" else "representatives"
         self.meta = {}      # name -> stats dict, set by a figure function before it returns its figure
+        self.stat_of = {}   # name -> the stat column the figure shows (joins to T_anova.tsv in the figure index)
+        self.level = level
+        # per-page numbers for the sidecar; set_groups() fills them for the level pages
+        self.info = {"n_genomes": None, "n_groups": None, "pooled_share": 0.0 if level in ("all", "ordination") else None}
+
+    def set_groups(self, core, levels):
+        """Record the genome count, group count and the share of genomes in the pooled 'Other' group for the sidecars."""
+        n = len(core)
+        pooled = int((core["grp"] == OTHER).sum()) if "grp" in core else 0
+        self.info = {"n_genomes": n, "n_groups": len(levels), "pooled_share": (pooled / n) if n else 0.0}
 
     def save(self, fig, name, topic=None):
         for ext in ("png", "svg"):
             fig.savefig(self.fig / f"{name}.{ext}", dpi=200 if ext == "png" else None)
         plt.close(fig)
-        self.made.append(Made(name, topic, "figure", self.scope, self.meta.pop(name, None)))
+        stats = self.meta.pop(name, None)
+        made = Made(name, topic, "figure", self.scope, stats)
+        self.made.append(made)
+        info = dict(self.info)
+        if info["n_genomes"] is None and stats and "n" in stats:
+            info["n_genomes"] = stats["n"]
+        side = {"name": name, "level": self.level, "kind": "figure", "topic": topic,
+                "stat": self.stat_of.get(name), "scope": self.scope, **info}
+        (self.fig / f"{name}.json").write_text(json.dumps(side))
 
     def skip(self, name, topic=None):
         self.meta.pop(name, None)
@@ -287,6 +306,7 @@ def page_gene_content(core, levels, colors, o):
         box_by_group(ax, core, col, levels, colors, log=log, ylabel=ylab)
         ax.set_title(ylab)
         parent_legend(ax, core, loc="best")
+        o.stat_of[name] = col
         o.save(fig, name)
 
     fig, ax = plt.subplots(figsize=(5.8, 4.6))
@@ -603,6 +623,7 @@ def run_level(level, core0, tables, out):
     from figs_scatter import page_regressions
     core, levels, colors = assign_groups(core0, level)
     o = Out(out, level)
+    o.set_groups(core, levels)
     rd = tables
     page_gene_content(core, levels, colors, o)
     wide, label = page_domains(core, levels, colors, rd("pfam_genome"), rd("pfam_names"), rd("arch_genome"), o)
@@ -663,6 +684,14 @@ def main(data, out, levels=LEVELS):
                 import traceback
                 traceback.print_exc(file=sys.stderr)
                 print(f"ordination failed: {type(e).__name__}: {e}", flush=True)
+    try:
+        from figure_index import build_index
+        idx = build_index(Path(out))
+        print(f"figures_index.tsv: {len(idx)} figures", flush=True)
+    except Exception as e:  # the figures are already written: report and keep them
+        import traceback
+        traceback.print_exc(file=sys.stderr)
+        print(f"figure index failed: {type(e).__name__}: {e}", flush=True)
     return made
 
 
