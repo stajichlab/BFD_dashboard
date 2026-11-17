@@ -8,10 +8,18 @@
 
 | Item | Status on 2026-11-17 |
 |---|---|
-| Pipeline database `Fungi_BFD_runs/BFD_function/db/BFD.duckdb` has the old `is_gpi_anchored` join | Rebuild submitted as SLURM job 32132750 (`BFD_function/rebuild_pipeline_duckdb.sh`); pending when this was written |
-| R1 materialized `protein_annotation` table | Experiment E1 submitted as SLURM job 32132757 (`BFD_function/experiments/E1_protein_annotation/run_E1.sh`); pending when this was written. No change to the pipeline yet |
+| Pipeline database `Fungi_BFD_runs/BFD_function/db/BFD.duckdb` has the old `is_gpi_anchored` join | Rebuilt by SLURM job 32132750 (`BFD_function/rebuild_pipeline_duckdb.sh`, 12 min 47 s, 39 views, published 2026-11-16 20:08). The `predgpi` view returns 3,299,703 `GPI-anchor` rows. `is_gpi_anchored` through `v_protein_annotation` in this DB was not checked: the query timed out at 280 s |
+| R1 materialized `protein_annotation` table | Experiment E1 done (SLURM job 32132757, 10 min, exit 0; `BFD_function/experiments/E1_protein_annotation/run_E1.sh`, log `E1.32132757.log`). Full-table result, see the E1 results below. No change to the pipeline yet |
 | Caveats in section 3, items 1 to 7 and 11 | Summarized in `BFD_VIEW_REVIEW.md` section 8 |
 | R2 to R10 | Not started |
+
+### E1 results (measured 2026-11-16 by the session that ran the job; single run)
+- 16 chunks, 25 to 35 s each, 1.7 GB total. Rows: 244,812,918, all `protein_id` distinct (equals `gene_proteins`).
+- `is_gpi_anchored`: 3,299,703 true, 241,513,215 false. LOCUSTAG groups: 23,412.
+- Query times on the 16 files. The first number is node-local NVMe, the second is `/bigdata`:
+  count + distinct `protein_id` 6.5 s / 21.3 s; `is_gpi_anchored` group-by 0.6 s / 14.6 s; group by LOCUSTAG with 3 aggregates 0.84 s / 13.6 s; group by `deeploc_localizations` 1.5 s / 13.6 s; one genome 0.12 s / 1.17 s.
+- The same group-bys through the view did not finish in 280 s.
+- The `/bigdata` timings are 10 to 25 times slower than NVMe on the same files. The reviewer's NVMe estimate (1.5 to 5 s) held. The unchunked COPY and the single sorted file were not tried.
 
 ---
 
