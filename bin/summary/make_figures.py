@@ -648,7 +648,7 @@ def main(data, out, levels=LEVELS):
     else:
         from figs_scatter import page_all_genomes
         made["all"] = page_all_genomes(genome_all, out)   # phylum-independent: one set under figures/all/
-        from summary_ordination import pick_genus_reps, run_ordination   # runs once, not per level
+        from summary_ordination import pick_complete_reps, run_ordination   # runs once, not per level
         mats = {}
         for key, tname in (("codon", "codon_genome"), ("aa", "aa_genome"), ("structure", "gene_structure_genome")):
             try:
@@ -656,8 +656,13 @@ def main(data, out, levels=LEVELS):
             except FileNotFoundError:
                 print(f"{tname}.parquet absent, skipping its ordination", flush=True)
         if mats:
-            res = run_ordination(pick_genus_reps(genome_all), mats, out)
-            made["ordination"] = res.pop("_made")
+            try:
+                res = run_ordination(pick_complete_reps(genome_all, mats), mats, out)
+                made["ordination"] = res.pop("_made")
+            except Exception as e:  # the level pages are already built: report and keep them
+                import traceback
+                traceback.print_exc(file=sys.stderr)
+                print(f"ordination failed: {type(e).__name__}: {e}", flush=True)
     return made
 
 

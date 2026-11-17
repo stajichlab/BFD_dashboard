@@ -143,3 +143,66 @@ def test_main_without_composition_tables_skips_ordination(tmp_path, capsys):
         (data / f"{n}.parquet").unlink()
     made = mf.main(data, tmp_path / "out", ("phylum",))
     assert "ordination" not in made or not made["ordination"]
+
+
+def _pool_fixture():
+    core = pd.DataFrame({
+        "species_prefix": ["a1", "a2", "b1", "c1", "c2", "n1"],
+        "GENUS": ["A", "A", "B", "C", "C", None],
+        "busco_complete": [99.0, 90.0, 80.0, 70.0, 60.0, 99.0],
+        "N50_bp": 1})
+    cols = [f"codon_{j}" for j in range(3)]
+    codon = pd.DataFrame([[.2, .3, .5]] * 6, columns=cols).assign(species_prefix=core["species_prefix"].values)
+    codon = codon[codon.species_prefix != "a1"]                    # best genome of A has no codon data
+    aa = pd.DataFrame([[.5, .5]] * 6, columns=["aa_A", "aa_C"]).assign(species_prefix=core["species_prefix"].values)
+    st = pd.DataFrame({"species_prefix": core["species_prefix"], "x": [1., 2, 3, 4, 5, 6], "y": [2., 1, 4, 3, 6, 5]})
+    st.loc[st.species_prefix == "b1", "y"] = np.nan                # the only genome of B has NaN structure stats
+    return core, {"codon": codon, "aa": aa, "structure": st}
+
+
+def test_reps_come_from_data_complete_genomes():
+    core, mats = _pool_fixture()
+    reps = so.pick_complete_reps(core, mats)
+    by = reps.set_index("GENUS")["species_prefix"]
+    assert by["A"] == "a2"                     # best BUSCO genome a1 lacks codon data: second best is used
+    assert by["C"] == "c1"
+    assert "B" not in by.index                 # no genome of B is complete
+    assert reps.attrs["n_genera_no_complete_data"] == 1 and reps.attrs["n_no_genus"] == 1
+
+
+def test_run_ordination_reports_pool_counts(tmp_path):
+    reps, codon = clusters()
+    reps.attrs.update(n_no_genus=7, n_genera_no_complete_data=3)
+    res = so.run_ordination(reps, {"codon": codon}, tmp_path)
+    assert res["_summary"] == {"n_no_genus": 7, "n_genera_no_complete_data": 3}
+    s = pd.read_csv(tmp_path / "tables" / "ordination" / "ordination_summary.tsv", sep="\t")
+    assert s.loc[0, "n_no_genus"] == 7 and s.loc[0, "n_genera_no_complete_data"] == 3
+
+
+def test_permanova_table_has_real_permutation_count_and_neg_columns(tmp_path):
+    reps, codon = clusters(3)       # 6 genera in groups 3+3: 20 unique permutations, so 19 run, not 999
+    so.run_ordination(reps, {"codon": codon}, tmp_path)
+    t = pd.read_csv(tmp_path / "tables" / "ordination" / "codon_permanova.tsv", sep="\t")
+    r = t[t.grouping == "PHYLUM"].iloc[0]
+    assert r.n_permutations_run == 19 and r.n_unique_permutations == 20
+    assert "screening" in r.caveat
+    assert {"neg_eigen_over_abs_total", "neg_eigen_over_pos_total"} <= set(t.columns)
+
+
+def test_composition_matrix_uses_only_prefixed_columns():
+    reps, codon = clusters(3)
+    codon["extra_count"] = 5.0
+    mat, _, _ = so._feature_matrix("codon", codon, reps)
+    assert list(mat.columns) == [f"codon_{j}" for j in range(10)]
+
+
+def test_main_survives_ordination_failure(tmp_path, capsys):
+    from test_make_figures import synth
+    data = tmp_path / "data"
+    data.mkdir()
+    synth(data)
+    ga = pd.read_parquet(data / "genome_all.parquet").drop(columns=["busco_complete"])
+    ga.to_parquet(data / "genome_all.parquet")
+    made = mf.main(data, tmp_path / "out", ("phylum",))
+    assert "F01_genomes_by_group" in made["phylum"] and "all" in made
+    assert "ordination failed" in capsys.readouterr().out
