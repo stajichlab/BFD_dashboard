@@ -648,6 +648,16 @@ def main(data, out, levels=LEVELS):
     else:
         from figs_scatter import page_all_genomes
         made["all"] = page_all_genomes(genome_all, out)   # phylum-independent: one set under figures/all/
+        from summary_ordination import pick_genus_reps, run_ordination   # runs once, not per level
+        mats = {}
+        for key, tname in (("codon", "codon_genome"), ("aa", "aa_genome"), ("structure", "gene_structure_genome")):
+            try:
+                mats[key] = rd(tname)
+            except FileNotFoundError:
+                print(f"{tname}.parquet absent, skipping its ordination", flush=True)
+        if mats:
+            res = run_ordination(pick_genus_reps(genome_all), mats, out)
+            made["ordination"] = res.pop("_made")
     return made
 
 

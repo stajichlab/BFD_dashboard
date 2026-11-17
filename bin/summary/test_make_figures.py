@@ -128,9 +128,9 @@ def test_all_outputs(tmp_path):
     data.mkdir()
     synth(data)
     made = mf.main(data, tmp_path / "out")
-    assert set(made) == set(mf.LEVELS) | {"all"}
+    assert set(made) == set(mf.LEVELS) | {"all", "ordination"}
     for level, names in made.items():
-        if level == "all":
+        if level in ("all", "ordination"):
             continue
         for name in ["F01_genomes_by_group", "F03_genome_size_vs_genes", "F06_domains_per_protein", "F07_pfam_prevalence",
                      "F07b_widespread_fold", "F08_pfam_variance", "F10_deeploc", "F12_wolfpsort", "F15_feature_heatmap",
