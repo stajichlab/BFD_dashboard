@@ -101,3 +101,23 @@ def test_missing_is_representative_is_null(tmp_path):
 def test_size_under_5mb_for_full_table(tmp_path):
     _, out, _ = _run(tmp_path, n=23680)
     assert out.stat().st_size < 5_000_000
+
+
+def test_meta_fields_and_missing_columns(tmp_path):
+    core, out, j = _run(tmp_path)
+    assert j["meta"]["n_genomes"] == len(core) and "generated_from" in j["meta"]
+    assert j["meta"]["rows_layout"] == "array of arrays; column order = fields"
+    assert not j["meta"]["generated_from"].startswith("/")
+    import pytest
+    core, st = _frames(10)
+    with pytest.raises(ValueError, match="gc_pct.*N50_bp|N50_bp.*gc_pct"):
+        export_clade_json(core.drop(columns=["gc_pct", "N50_bp"]), st, tmp_path / "x.json")
+
+
+def test_meta_matches_real_table():
+    import pytest
+    p = Path("/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/analysis/summary_tables/genome_all.parquet")
+    g = Path(__file__).resolve().parents[2] / "docs" / "quarto_summary" / "data" / "genomes.json"
+    if not p.exists():
+        pytest.skip("real tables not available")
+    assert json.loads(g.read_text())["meta"]["n_genomes"] == len(pd.read_parquet(p))

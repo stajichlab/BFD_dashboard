@@ -177,6 +177,17 @@ def test_explore_page_wired():
 def test_committed_genomes_json():
     p = SITE / "data" / "genomes.json"
     j = json.loads(p.read_text())
-    assert len(j["rows"]) == 23680
+    assert len(j["rows"]) == j["meta"]["n_genomes"]
     assert p.stat().st_size < 5_000_000
     assert "NaN" not in p.read_text()
+
+
+def test_explore_log10_and_defaults():
+    page = _read("12_explore.qmd")
+    assert "Math.log10" in page and "(log10)" in page
+    assert "untransformed" not in page
+    assert "logDefault" in page and "viewof logx = Inputs.toggle({label: \"Log x\", value: logDefault" in page
+    assert "genome_mb" in page.split("logDefault =")[1].split("```")[0]
+    assert "pooled small groups" in page and "aria-label" in page
+    notes = _read("06_data_notes.qmd")
+    assert "python3.12 bin/summary/export_clade_json.py" in notes and "docs/quarto_summary/data/genomes.json" in notes

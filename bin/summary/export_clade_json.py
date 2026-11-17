@@ -3,6 +3,13 @@
 
     python3 export_clade_json.py TABLES_DIR OUT_JSON
 
+Regenerate the committed file (from the repository root):
+
+    python3.12 bin/summary/export_clade_json.py <tables_dir> docs/quarto_summary/data/genomes.json
+
+<tables_dir> is Fungi_BFD_runs/analysis/summary_tables, written by workflows/summary_tables.sh
+(build_summary_tables.py).
+
 TABLES_DIR holds genome_all.parquet (one row per genome) and gene_structure_genome.parquet.
 Output: {"meta", "levels", "columns", "colors", "fields", "rows"}. "rows" is a list of arrays, one per genome,
 in the order of "fields" (this keeps the file under 5 MB; the page turns each row into an object). Floats are rounded to 3 decimals,
@@ -38,9 +45,20 @@ def _num(s):
     return pd.to_numeric(s, errors="coerce").round(3).astype(object).where(lambda x: x.notna(), None)
 
 
-def export_clade_json(core: pd.DataFrame, structure: pd.DataFrame, out: Path) -> Path:
+REQUIRED = ["species_prefix", "PHYLUM", "CLASS", "ORDER", "GENUS", "is_representative", "total_length_bp",
+            "gc_pct", "busco_complete", "N50_bp", "n_genes", "genes_per_mb", "coding_fraction",
+            "median_intron_len_bp", "median_intergenic_bp"]
+
+
+def export_clade_json(core: pd.DataFrame, structure: pd.DataFrame, out: Path,
+                      generated_from: str = "summary_tables/genome_all.parquet") -> Path:
     """Write the genome records and the colour map; return the path."""
     out = Path(out)
+    miss = [c for c in REQUIRED if c not in core.columns]
+    if "species_prefix" not in structure.columns or "median_protein_len_aa" not in structure.columns:
+        miss += [c for c in ("species_prefix", "median_protein_len_aa") if c not in structure.columns]
+    if miss:
+        raise ValueError(f"export_clade_json: missing required columns: {', '.join(miss)}")
     d = core.reset_index(drop=True).copy()
     colors, group_of = {}, {}
     cols_by_level = {}
@@ -80,7 +98,9 @@ def export_clade_json(core: pd.DataFrame, structure: pd.DataFrame, out: Path) ->
         return v
     rows = [[clean(v) for v in r] for r in rec.itertuples(index=False, name=None)]
     obj = {
-        "meta": {"n_genomes": n, "unit": "one record per genome", "floats": "rounded to 3 decimals; null = missing"},
+        "meta": {"n_genomes": n, "generated_from": generated_from, "unit": "one record per genome",
+                 "rows_layout": "array of arrays; column order = fields",
+                 "floats": "rounded to 3 decimals; null = missing"},
         "levels": list(LEVELS),
         "columns": {k: {"label": l, "unit": u} for k, (l, u) in COLUMNS.items()},
         "colors": colors,

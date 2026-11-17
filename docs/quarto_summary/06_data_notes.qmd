@@ -36,3 +36,13 @@ title: "Data and methods"
 - `targetp` covers only 125 genomes and is not used. `signalp` and `tmhmm` hold positive calls only.
 - Pfam accessions in the curated panel (`bin/summary/panel.py`): all 57 were checked on 2026-11-16 against the Pfam names stored in the BFD `pfam` table (accession and name agree). The functional interpretation of each domain is standard knowledge and was not re-derived.
 - Group sizes are small for some phyla; read the `n` under each box.
+
+## Explore page data
+
+The Explore page reads `data/genomes.json` (one row per genome, all 23,680 genomes in `genome_all`). Regenerate it from the repository root with:
+
+```
+python3.12 bin/summary/export_clade_json.py <tables_dir> docs/quarto_summary/data/genomes.json
+```
+
+`<tables_dir>` is `Fungi_BFD_runs/analysis/summary_tables`, written by `workflows/summary_tables.sh` (`build_summary_tables.py`). The JSON `meta` records the genome count and the source.

@@ -53,6 +53,12 @@ phylaAll = ["All"].concat(Array.from(new Set(genomes.map(d => d.phylum))).sort()
 
 ```{ojs}
 //| echo: false
+//| output: false
+logDefault = new Set(["genome_mb", "n50_bp", "median_intron_len_bp", "median_intergenic_bp", "n_genes"])
+```
+
+```{ojs}
+//| echo: false
 viewof xvar = Inputs.select(numFields, {label: "x axis", value: "genome_mb", format: label})
 ```
 
@@ -78,12 +84,12 @@ viewof repsOnly = Inputs.radio(["All genomes", "Representatives only"], {label: 
 
 ```{ojs}
 //| echo: false
-viewof logx = Inputs.toggle({label: "Log x", value: false})
+viewof logx = Inputs.toggle({label: "Log x", value: logDefault.has(xvar)})
 ```
 
 ```{ojs}
 //| echo: false
-viewof logy = Inputs.toggle({label: "Log y", value: false})
+viewof logy = Inputs.toggle({label: "Log y", value: logDefault.has(yvar)})
 ```
 
 ```{ojs}
@@ -141,13 +147,14 @@ fmt = x => Number.isFinite(x) ? x.toFixed(3) : "not defined"
 //| output: false
 stats = {
   const a = pts.map(d => d[xvar]), b = pts.map(d => d[yvar]);
-  return {n: pts.length, pearson: pearson(a, b), spearman: pearson(ranks(a), ranks(b))};
+  const la = logx ? a.map(Math.log10) : a, lb = logy ? b.map(Math.log10) : b;
+  return {n: pts.length, pearson: pearson(la, lb), spearman: pearson(ranks(a), ranks(b))};
 }
 ```
 
 ```{ojs}
 //| echo: false
-html`<p><strong>${stats.n.toLocaleString()}</strong> genomes shown. Pearson r = <strong>${fmt(stats.pearson)}</strong>. Spearman r = <strong>${fmt(stats.spearman)}</strong>. Both use the displayed points and ignore phylogeny.${(logx || logy) ? " Pearson r is computed on the untransformed values; Spearman r does not depend on the log scale." : ""}</p>`
+html`<p><strong>${stats.n.toLocaleString()}</strong> genomes shown. Pearson r${(logx || logy) ? " (log10)" : ""} = <strong>${fmt(stats.pearson)}</strong>. Spearman r = <strong>${fmt(stats.spearman)}</strong>. Both use the displayed points and ignore phylogeny.${(logx || logy) ? " Pearson r is computed on log10 of each logged axis, as in the static figures. Spearman r is rank-based and does not depend on the log scale." : ""}</p>`
 ```
 
 ```{ojs}
@@ -173,10 +180,13 @@ legendGroups = groupsShown.slice(0, 20)
 
 ```{ojs}
 //| echo: false
-Plot.plot({
+{
+ const desc = `Scatter plot of ${label(xvar)} against ${label(yvar)}, coloured by ${level}, ${pts.length.toLocaleString()} genomes`;
+ const fig = Plot.plot({
   width: Math.min(width, 900),
   height: Math.min(520, Math.max(300, width * 0.7)),
   marginLeft: 55,
+  caption: desc,
   x: {type: logx ? "log" : "linear", label: label(xvar), grid: true},
   y: {type: logy ? "log" : "linear", label: label(yvar), grid: true},
   color: {domain: groupsShown, range: groupsShown.map(g => colorMap[g] || "#9a9a9a")},
@@ -185,11 +195,16 @@ Plot.plot({
       title: d => `${d.id}\n${d.phylum} / ${d.class}\n${d.genus}`, tip: true})
   ]
 })
+ const svg = fig.tagName.toLowerCase() === "svg" ? fig : fig.querySelector("svg");
+ svg.setAttribute("aria-label", desc);
+ svg.setAttribute("role", "img");
+ return fig;
+}
 ```
 
 ```{ojs}
 //| echo: false
-html`<div style="display:flex;flex-wrap:wrap;gap:0.4em 1em;font-size:0.85em">${legendGroups.map(g => html`<span style="white-space:nowrap"><span style="display:inline-block;width:0.9em;height:0.9em;background:${colorMap[g] || "#9a9a9a"};margin-right:0.3em;vertical-align:middle"></span>${g}</span>`)}${groupsShown.length > legendGroups.length ? html`<span>and ${groupsShown.length - legendGroups.length} more groups (not listed)</span>` : ""}</div>`
+html`<div style="display:flex;flex-wrap:wrap;gap:0.4em 1em;font-size:0.85em">${legendGroups.map(g => html`<span style="white-space:nowrap"><span style="display:inline-block;width:0.9em;height:0.9em;background:${colorMap[g] || "#9a9a9a"};margin-right:0.3em;vertical-align:middle"></span>${g}</span>`)}${legendGroups.includes("Other (small groups)") ? html`<span>grey = pooled small groups</span>` : ""}${groupsShown.length > legendGroups.length ? html`<span>and ${groupsShown.length - legendGroups.length} more groups (not listed)</span>` : ""}</div>`
 ```
 
 Top 10 displayed genomes by the y variable:
