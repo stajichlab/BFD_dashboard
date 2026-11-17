@@ -279,20 +279,45 @@ See section 2. All 9 views have the same column names and types as the parquet f
 | `v_genome_function_counts` | P6, P7 (`k1.py:4-11` join) | One row per genome: secretome counts, `n_cazy`, `n_cazy_secreted`, `n_merops`, `n_merops_secreted`, `n_tf_proteins` | Equal to `A5/cazy_genome` (23,392 of 23,392), `merops_genome` (23,404 of 23,404), `tf_genome` (23,394 of 23,394), `secretome` (23,410 of 23,410). 9-12 s (1.5.5), 13-20 s (1.1.3) |
 | `v_gene_transcripts` | P5 | `gene_transcripts` plus BOOLEAN `has_start`, `has_stop`, `q_model` | F77FFF1D: 8,783 `q_model` of 10,377; the text `'NULL'` rows (102) give NULL flags and `q_model` = false. Tested with a genome filter and `LIMIT 5` only |
 | `v_genome_truncation` | Added 2026-11-16 | One row per genome: `n_partial`, `pct_partial`, `n_no_start`, `n_no_stop` from `gene_transcripts` next to `contig_count`, `N50_bp`, `masked_pct`; `truncation_class` (high >10%, moderate >5, low >1, none) and `q_truncated` (>5% partial) | 23,412 rows: 30 high, 59 moderate, 377 low, 22,946 none. Median N50 4,185 bp (high) against 331,165 bp (none). Tested as a temporary view on the 2026-11-15 database; scans `gene_transcripts` (about a minute) |
-| `v_gene_introns_phase` | P9 | `gene_introns` with `cds_nt_upstream`, corrected `codon_position` and `codon_frame`, `in_cds`; raw values kept as `*_raw` | Section 4.3 |
+| `v_gene_introns_phase` | P9 | **Removed 2026-11-17.** `gene_introns` is correct since the 2026-11-11 rebuild | Section 4.3 |
 
-### 4.3 `v_gene_introns_phase`: is it still needed?
+### 4.3 `v_gene_introns_phase`: removed 2026-11-17; query `gene_introns` directly
 
-Yes, on 2026-11-11.
+**Status:** the view was a workaround for an off-by-one bug in `gene_introns.parquet` (written 2026-11-08). Fungi_BFD commit `34c8d14` (2026-11-09) fixed the builder, and the table was rebuilt on 2026-11-11 (parquet dated 23:26, all per-genome caches newer than the fix). The view is no longer needed and was removed from `sql/bfd_extra_views.sql`. `workflows/build_bfd_db.sh` no longer requires it and does not treat its disappearance as a lost view.
 
-- `gene_introns.parquet` was written 2026-11-08 22:13. The builder fix is Fungi_BFD commit `34c8d14` (2026-11-09 21:24, "compute intron position correctly", on `main`). The parquet is older than the fix.
-- The bug is in the data. Transcript `F77FFF1D_000014-T1` has CDS segments of 146, 82, 103, 397, 192, 688 nt. Intron 0 follows 146 coding bases, so the correct values are position 48, phase 2. The table holds 76 and 0, which belong to the next junction (228 nt). The last intron holds 536 and 0 (1,608 / 3: the whole CDS).
-- The view gives 48/2, 76/0, 110/1, 242/2, 306/2 for the five introns.
-- Check on three whole genomes (F77FFF1D, F07D2B4E, F2D1C788; 56,585 introns): the corrected value of intron n equals the raw value of intron n-1 in 31,199 of 31,201 later introns. 0 introns have corrected = raw. All introns were matched to a CDS junction (`in_cds` true).
-- The 2 mismatches are in two 5'-partial transcripts (`has_start_codon = 'FALSE'`). For these the reading frame does not start at the first CDS base and the tables do not hold the GFF phase. The view comment states this limit. I did not check what the fixed builder returns for such models.
-- The `in_cds = false` branch (an intron outside the CDS) did not occur in the genomes checked. It is **not exercised** by the tests. `gene_exons` minus `gene_CDS` rows = 4,558,316 = the tRNA row count, so UTR exons are probably absent everywhere; not verified.
-- With a filter on `transcript_id` the view takes 0.5-0.9 s (one transcript or one genome, both DuckDB versions). **Without a filter it windows over all 754 M `gene_CDS` rows. I did not run that.**
-- Drop the view when `gene_introns.parquet` is rebuilt with the fix. The definitions are the same as in the fixed builder (`cds_len_upstream // 3`, `% 3`).
+**Check before removal (2026-11-17, database built 2026-11-16).** I compared the view's recomputation from `gene_CDS` with the raw `gene_introns` columns, per genome:
+
+| Genome | Introns | Position differs | Phase differs | Differences on 5'-partial models |
+|---|---:|---:|---:|---|
+| F07D2B4E | 19,827 | 0 | 0 | none |
+| F77FFF1D | 15,562 | 2 | 4 | 4 of 4 |
+| F7EF265E | 9,572 | 394 | 998 | 987 of 998 |
+| F441D06F | 12,403 | 642 | 1,414 | 1,387 of 1,414 |
+
+(F7EF265E and F441D06F are fragmented assemblies with many 5'-partial models; see `v_genome_truncation`.) Transcript `F77FFF1D_000014-T1` (CDS segments 146, 82, 103, 397, 192, 688 nt, minus strand) now gives, from 5' to 3': 48/2, 76/0, 110/1, 242/2, 306/2 (position/phase) in the table itself. These are the values the old view gave.
+
+- The view counted from the first CDS base, so on a 5'-partial model it can be shifted. The builder applies the first CDS frame, so the table is the better source there.
+- 11 differences (F7EF265E) and 27 (F441D06F) are on models with a start codon. I did not find the cause. If you rely on phase for a specific genome, check those rows against `gene_CDS`.
+
+**How to query**
+
+Columns: `intron_id`, `transcript_id`, `intron_number`, `chrom`, `start`, `end`, `strand`, `splice_5`, `splice_3`, `GC_content`, `codon_position`, `codon_frame`, `species_prefix`.
+
+- `codon_position` = number of complete codons 5' of the intron. `codon_frame` = intron phase: 0 between codons, 1 after codon base 1, 2 after base 2.
+- Filter by genome with `in_genome(transcript_id, 'LOCUSTAG')`, as for the other gene tables. A filter on `species_prefix` reads every row group.
+- Order introns of a transcript by `intron_number`, not by `start`: on the minus strand `start` runs 3' to 5'.
+- For 5'-partial models (`gene_transcripts.has_start_codon = 'FALSE'`) the phase depends on the first CDS frame. Join `v_gene_transcripts` and drop `has_start = false` when phase matters.
+
+```sql
+SELECT i.transcript_id, i.intron_number, i.codon_position, i.codon_frame
+FROM gene_introns i
+JOIN v_gene_transcripts t USING (transcript_id)
+WHERE in_genome(i.transcript_id, 'F77FFF1D') AND in_genome(t.transcript_id, 'F77FFF1D')
+  AND t.has_start                      -- optional: skip 5'-partial models
+ORDER BY i.transcript_id, i.intron_number;
+```
+
+I ran the joined example as written for F77FFF1D: 15,550 introns (12 fewer than the genome's 15,562, from 5'-partial models), codon_frame 0 to 2, 0.33 s with DuckDB CLI. An unfiltered scan of `gene_introns` was not run. The view's old limit (a window over all 754 M `gene_CDS` rows when unfiltered) does not apply to the table.
 
 ### 4.4 `extra_views_atlas.sql` (4 views, optional)
 
@@ -333,8 +358,8 @@ Two test set-ups. Both ran inside SLURM job 31992150 (node r11, 4 CPUs), with `t
 **A. In-memory, python duckdb 1.5.5** (`test/test_inmemory.py`, log `test/test_inmemory.log`). In-memory connection; published `BFD.duckdb` attached `READ_ONLY` as `bfd`; `SET search_path='memory.main,bfd.main'`; then every statement of the three SQL files.
 - 47 statements ran without error: 23 `CREATE OR REPLACE VIEW`, 1 macro, 23 `COMMENT ON VIEW` for the new views.
 - 33 `COMMENT ON` statements target objects of the read-only `bfd` catalog. They cannot run in this set-up and were skipped. They were tested in set-up B.
-- `SELECT * ... LIMIT 5` ran on all 23 views (`v_gene_introns_phase` with a transcript filter).
-- `count(*)` ran on 20 views. Not counted: `v_secretome_proteins` (its total is `v_genome_secretome.sum(n_signalp)` = 18,767,284), `v_gene_transcripts`, `v_gene_introns_phase` (gene tables; filtered tests only).
+- `SELECT * ... LIMIT 5` ran on all 23 views (`v_gene_introns_phase` with a transcript filter; that view was removed on 2026-11-17).
+- `count(*)` ran on 20 views. Not counted: `v_secretome_proteins` (its total is `v_genome_secretome.sum(n_signalp)` = 18,767,284), `v_gene_transcripts`, `v_gene_introns_phase` (gene tables; filtered tests only; the second view was removed on 2026-11-17).
 - The comparisons with the atlas files in section 4.2 ran here.
 
 **B. DuckDB CLI 1.1.3** (`module load duckdb`, the version the build script uses). I built a replica of the published catalog in this folder from the view and macro definitions stored in the published file (`test/replicate_pipeline_db.sql`; 38 views, `swissprot_subject` as a table, 3 macros). Then:
@@ -357,7 +382,7 @@ Timings (seconds; one run each, shared node, file cache state not controlled):
 | `v_tf_family_counts` count | 0.34 | 0.28 |
 | `v_merops_best` count | 1.4 | 1.0 |
 | `v_genome_function_counts` count | 12.9 | 8.9 |
-| `v_gene_introns_phase`, one transcript | 0.53-0.73 | 0.47-0.74 |
+| `v_gene_introns_phase`, one transcript (view removed 2026-11-17) | 0.53-0.73 | 0.47-0.74 |
 | `v_gene_introns_phase`, one genome (`in_genome`) | 0.51 | 0.44-0.57 |
 | `v_gene_transcripts`, one genome | 0.43 | not timed |
 | `pfam_genome_matrix WHERE genome = ...` | 0.02 | 0.06 |
@@ -365,9 +390,9 @@ Timings (seconds; one run each, shared node, file cache state not controlled):
 **Not tested:**
 - MotherDuck itself (the MCP server did not connect). Column equality with MotherDuck is inferred from the loader.
 - The files against a database built by a fresh run of `build_BFD_duckDB.sh`. The replica has the same definitions as the 2026-11-08 file; a rebuild after the current merge can differ.
-- Unfiltered queries on `v_gene_introns_phase` and `v_gene_transcripts`; full scans of `pfam`, the gene tables and `idp`.
+- Unfiltered queries on `v_gene_introns_phase` (since removed) and `v_gene_transcripts`; full scans of `pfam`, the gene tables and `idp`.
 - `v_protein_annotation` and `v_species_summary` were not run.
-- The `in_cds = false` branch of `v_gene_introns_phase`.
+- The `in_cds = false` branch of `v_gene_introns_phase` (since removed).
 - Substitution of the `TABLES_DIR` / `ATLAS_DIR` path by a build script. The files hold literal paths; a `sed` over the file is the intended method.
 - Behaviour when an optional pipeline view is missing: the matching `COMMENT ON` line then fails. In my runs all were present.
 
@@ -380,4 +405,4 @@ Timings (seconds; one run each, shared node, file cache state not controlled):
 3. **Where the two (or three) SQL files run.** They are not wired into `build_BFD_duckDB.sh` or `workflows/build_bfd_db.sh`. The wrapper's check "views lost" would not notice if they were skipped on a rebuild.
 4. **`gene_trnas` alias.** I excluded `species_prefix` to match the parquet exactly. If you prefer the genome key there, change it to `SELECT * FROM gene_trna`.
 5. **Pipeline fixes found on the way** (not in my files): `v_protein_annotation` GPI flag and IDP join; `infernal_rfam.parquet` column shift; `idp`/`idp_summary` key form; the sort-order statement in `BFD_Introduction.md` for the gene tables.
-6. **`v_gene_introns_phase`** must be dropped after `gene_introns.parquet` is rebuilt with commit `34c8d14`. I do not know when that rebuild is planned.
+6. **`v_gene_introns_phase`**: resolved. `gene_introns.parquet` was rebuilt on 2026-11-11 with commit `34c8d14` and the view was removed on 2026-11-17 (section 4.3).
