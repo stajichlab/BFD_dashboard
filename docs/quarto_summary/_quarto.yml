@@ -3,6 +3,7 @@ project:
   output-dir: _site
   resources:
     - CNAME
+    - data/genomes.json
 website:
   title: "BFD summary"
   navbar:
@@ -29,6 +30,8 @@ website:
         text: Ordination
       - href: 11_gallery.qmd
         text: Gallery
+      - href: 12_explore.qmd
+        text: Explore
       - href: 06_data_notes.qmd
         text: Data and methods
 format:

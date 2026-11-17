@@ -161,3 +161,22 @@ def test_index_and_notes_caveats():
         assert "no statistical tests" not in t and "do not test hypotheses" not in t, page
     idx = _read("index.qmd")
     assert "do not control for phylogeny" in idx and "multiple testing" in idx and "genus representatives" in idx
+
+
+def test_explore_page_wired():
+    cfg = yaml.safe_load(_read("_quarto.yml"))
+    nav = {i["href"]: i["text"] for i in cfg["website"]["navbar"]["left"]}
+    assert nav.get("12_explore.qmd") == "Explore"
+    assert "data/genomes.json" in cfg["project"]["resources"] and "CNAME" in cfg["project"]["resources"]
+    page = _read("12_explore.qmd")
+    assert "{ojs}" in page and 'FileAttachment("data/genomes.json")' in page
+    assert "<script" not in page
+    assert "phase B" in page and "Each point is one genome" in page and "controlled for phylogeny" in page
+
+
+def test_committed_genomes_json():
+    p = SITE / "data" / "genomes.json"
+    j = json.loads(p.read_text())
+    assert len(j["rows"]) == 23680
+    assert p.stat().st_size < 5_000_000
+    assert "NaN" not in p.read_text()
