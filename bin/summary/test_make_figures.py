@@ -51,6 +51,58 @@ def synth(root, n=240, seed=0):
     pd.DataFrame([(i, c, int(rng.integers(10, 300))) for i in ids for c in "ACMST"],
                  columns=["species_prefix", "merops_class", "n_proteins"]).to_parquet(root / "merops_genome.parquet")
 
+    sp = ids
+    pd.DataFrame({"species_prefix": sp, "n_genes": core["n_genes"].values,
+                  "median_gene_len_bp": rng.uniform(1200, 2200, n), "median_cds_len_bp": rng.uniform(1000, 1800, n),
+                  "median_protein_len_aa": rng.uniform(330, 600, n), "genes_per_mb": rng.uniform(200, 500, n),
+                  "coding_fraction": rng.uniform(0.3, 0.75, n), "median_exons_per_gene": rng.uniform(1.5, 4, n),
+                  "intron_frac_genes_with_intron": rng.uniform(0.2, 0.9, n),
+                  "median_intron_len_bp": [np.nan if (p == "Zoopagomycota" or rng.random() < 0.05) else rng.uniform(50, 300) for p in ph],
+                  "median_intergenic_bp": rng.uniform(300, 3000, n)}).to_parquet(root / "gene_structure_genome.parquet")
+    bases = "TCAG"
+    codons = [a + b + c for a in bases for b in bases for c in bases]
+    stops = {"TAA", "TAG", "TGA"}
+    cod = [c for c in codons if c not in stops]
+    f = rng.dirichlet(np.ones(61) * 8, n)
+    pd.DataFrame(f, columns=[f"codon_{c}" for c in cod]).assign(species_prefix=sp)[["species_prefix"] + [f"codon_{c}" for c in cod]] \
+        .to_parquet(root / "codon_genome.parquet")
+    aas = "ACDEFGHIKLMNPQRSTVWY"
+    pd.DataFrame(rng.dirichlet(np.ones(20) * 20, n), columns=[f"aa_{a}" for a in aas]).assign(species_prefix=sp) \
+        [["species_prefix"] + [f"aa_{a}" for a in aas]].to_parquet(root / "aa_genome.parquet")
+
+
+NEW_NAMES = ["S01_gene_len", "S02_gene_density", "S03_coding_fraction", "S04_exons", "S05_intron_len", "S06_intron_frac",
+             "S07_intergenic", "C01_codon_heatmap", "C02_rscu_boxes", "C03_aa_composition", "C04_gc3", "C05_aa_vs_gc"]
+
+
+def test_new_pages_make_figures(tmp_path):
+    import re
+    data = tmp_path / "data"
+    data.mkdir()
+    synth(data)
+    made = mf.main(data, tmp_path / "out", ("phylum", "order"))
+    for level in ("phylum", "order"):
+        for name in NEW_NAMES:
+            for ext in ("png", "svg"):
+                assert (tmp_path / "out" / "figures" / level / f"{name}.{ext}").stat().st_size > 1000, (level, name, ext)
+        assert all(re.fullmatch(r"[A-Za-z0-9_]+", n) for n in made[level])
+        assert len(set(made[level])) == len(made[level])
+        assert not any(getattr(m, "kind", "") == "skipped" for m in made[level])
+        assert {m.topic for m in made[level] if m.startswith(("S0", "C0"))} == {"structure", "composition"}
+    for p in (tmp_path / "out" / "figures").rglob("*.*"):
+        assert re.fullmatch(r"[A-Za-z0-9_]+\.(png|svg)", p.name), p
+
+
+def test_main_tolerates_missing_new_tables(tmp_path, capsys):
+    data = tmp_path / "data"
+    data.mkdir()
+    synth(data)
+    for n in ("gene_structure_genome", "codon_genome", "aa_genome"):
+        (data / f"{n}.parquet").unlink()
+    made = mf.main(data, tmp_path / "out", ("phylum",))
+    assert "F01_genomes_by_group" in made["phylum"] and not any(m.startswith(("S0", "C0")) for m in made["phylum"])
+    assert "skipping" in capsys.readouterr().out
+
 
 def test_all_outputs(tmp_path):
     data = tmp_path / "data"

@@ -46,6 +46,15 @@ plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.righ
                      "savefig.bbox": "tight", "svg.fonttype": "none"})
 
 
+class Made(str):
+    """A made-output name (a str, so `name in made` still works) that also carries .topic and .kind
+    ('figure', 'table' or 'skipped')."""
+    def __new__(cls, name, topic=None, kind="figure"):
+        o = super().__new__(cls, name)
+        o.topic, o.kind = topic, kind
+        return o
+
+
 class Out:
     def __init__(self, root, level):
         self.fig = Path(root) / "figures" / level
@@ -54,15 +63,18 @@ class Out:
         self.tab.mkdir(parents=True, exist_ok=True)
         self.made = []
 
-    def save(self, fig, name):
+    def save(self, fig, name, topic=None):
         for ext in ("png", "svg"):
             fig.savefig(self.fig / f"{name}.{ext}", dpi=200 if ext == "png" else None)
         plt.close(fig)
-        self.made.append(name)
+        self.made.append(Made(name, topic, "figure"))
+
+    def skip(self, name, topic=None):
+        self.made.append(Made(name, topic, "skipped"))
 
     def table(self, df, name):
         df.to_csv(self.tab / f"{name}.tsv", sep="\t", index=False)
-        self.made.append(name)
+        self.made.append(Made(name, "tables", "table"))
 
 
 def width(levels, base=6.8, per=0.3):
@@ -582,6 +594,8 @@ def page_functional(core, levels, colors, wide, label, cazy, tf, merops, idp, o)
 
 
 def run_level(level, core0, tables, out):
+    from figs_structure import page_gene_structure  # imported here: these modules import helpers from this one
+    from figs_composition import page_composition
     core, levels, colors = assign_groups(core0, level)
     o = Out(out, level)
     rd = tables
@@ -592,6 +606,18 @@ def run_level(level, core0, tables, out):
     idp = rd("idp_genome")
     page_patterns(core, levels, colors, deeploc, idp, o)
     page_functional(core, levels, colors, wide, label, rd("cazy_genome"), rd("tf_genome"), rd("merops_genome"), idp, o)
+    try:
+        structure = rd("gene_structure_genome")
+    except FileNotFoundError:
+        print(f"{level}: gene_structure_genome.parquet absent, skipping gene structure page", flush=True)
+    else:
+        page_gene_structure(core, levels, colors, structure, o)
+    try:
+        codon, aa = rd("codon_genome"), rd("aa_genome")
+    except FileNotFoundError:
+        print(f"{level}: codon_genome/aa_genome.parquet absent, skipping composition page", flush=True)
+    else:
+        page_composition(core, levels, colors, codon, aa, o)
     print(f"{level}: {len(levels)} groups, {len(o.made)} outputs", flush=True)
     return o.made
 
