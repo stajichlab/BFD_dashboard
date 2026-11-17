@@ -39,6 +39,26 @@ def test_workflow_triggers():
     assert on["push"]["branches"] == ["main"]
     assert set(on["push"]["paths"]) == {"docs/quarto_summary/**", ".github/workflows/pages.yml"}
     assert "workflow_dispatch" in on
+    pr = on["pull_request"]
+    assert set(pr["paths"]) == set(on["push"]["paths"])
+
+
+def test_deploy_skipped_on_pull_request():
+    wf = _wf()
+    assert wf["jobs"]["deploy"]["if"] == "github.event_name != 'pull_request'"
+    assert "if" not in wf["jobs"]["build"]
+    assert wf["jobs"]["build"]["timeout-minutes"] == 30
+
+
+def test_requirements_pinned_and_used():
+    req = (SITE / "requirements.txt").read_text().split()
+    pins = {r.split("==")[0].lower(): r.split("==")[1] for r in req}
+    for pkg in ("pandas", "matplotlib", "nbformat", "nbclient", "ipykernel", "pyyaml", "tabulate", "numpy"):
+        assert pkg in pins and pins[pkg][0].isdigit(), pkg
+    assert all("==" in r for r in req)
+    py = next(s for s in _steps("build") if s.get("uses", "").startswith("actions/setup-python"))
+    assert py["with"]["cache"] == "pip"
+    assert py["with"]["cache-dependency-path"] == "docs/quarto_summary/requirements.txt"
 
 
 def test_workflow_permissions_and_concurrency():
@@ -57,7 +77,7 @@ def test_build_job_steps():
     py = next(s for s in _steps("build") if s.get("uses", "").startswith("actions/setup-python"))
     assert str(py["with"]["python-version"]) == "3.12"
     runs = _runs("build")
-    assert "pip install pandas matplotlib nbformat nbclient ipykernel pyyaml tabulate" in runs
+    assert "pip install -r docs/quarto_summary/requirements.txt" in runs
     assert "quarto render docs/quarto_summary" in runs
     assert "CNAME" in runs and "12" in runs  # assertion step
     assert "du -sm" in runs and "900" in runs  # size check

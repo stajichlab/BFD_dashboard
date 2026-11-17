@@ -21,7 +21,7 @@ def synth(root, n=240, seed=0):
     core = pd.DataFrame({"species_prefix": ids, "PHYLUM": ph, "SUBPHYLUM": [f"{p[:4]}_sub{rng.integers(0, 2)}" if p == "Ascomycota" else None for p in ph],
                          "CLASS": [f"{p[:4]}_c{rng.integers(0, 3)}" for p in ph],
                          "ORDER": [None if rng.random() < 0.1 else f"{c[:4]}_o{rng.integers(0, 3)}" for c in ph],
-                         "FAMILY": "f", "GENUS": "g", "SPECIES": [f"s{i}" for i in range(n)],
+                         "FAMILY": "f", "GENUS": [f"g{i % 60}" for i in range(n)], "SPECIES": [f"s{i}" for i in range(n)],
                          "total_length_bp": rng.integers(10_000_000, 60_000_000, n), "gc_pct": rng.uniform(35, 60, n),
                          "busco_complete": rng.uniform(80, 99, n), "N50_bp": 100000, "contig_count": 50,
                          "n_genes": rng.integers(5000, 15000, n), "mean_len": rng.uniform(400, 550, n)})
@@ -60,7 +60,7 @@ def synth(root, n=240, seed=0):
     size = rng.integers(10_000_000, 60_000_000, na)
     ngn = (size / 2500 + rng.normal(0, 800, na)).astype(int)
     bc = rng.uniform(60, 99, na)
-    pd.DataFrame({"species_prefix": allids, "PHYLUM": allph, "CLASS": "c", "ORDER": "o", "FAMILY": "f", "GENUS": "g",
+    pd.DataFrame({"species_prefix": allids, "PHYLUM": allph, "CLASS": "c", "ORDER": "o", "FAMILY": "f", "GENUS": [f"g{i % 60}" for i in range(len(allids))],
                   "SPECIES": [f"sp{i}" for i in range(na)], "is_representative": [True] * n + [False] * m,
                   "total_length_bp": size, "gc_pct": rng.uniform(35, 60, na), "busco_complete": bc,
                   "busco_single": bc - 2, "busco_duplicated": 2.0, "busco_fragmented": rng.uniform(0, 5, na),
@@ -144,7 +144,7 @@ def test_all_outputs(tmp_path):
     assert key["genomes"].sum() == 240 and (key["phylum"] != "").all()
     idx = pd.read_csv(tmp_path / "out" / "figures_index.tsv", sep="\t")
     assert len(idx) == len(list((tmp_path / "out" / "figures").glob("*/*.png")))
-    assert {"all", *mf.LEVELS} <= set(idx["level"]) and idx["pooled_share"].dropna().between(0, 1).all()
+    assert {"all", "ordination", *mf.LEVELS} <= set(idx["level"]) and idx["pooled_share"].dropna().between(0, 1).all()
 
 
 def _hue(hexc):

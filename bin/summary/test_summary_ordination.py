@@ -206,3 +206,53 @@ def test_main_survives_ordination_failure(tmp_path, capsys):
     made = mf.main(data, tmp_path / "out", ("phylum",))
     assert "F01_genomes_by_group" in made["phylum"] and "all" in made
     assert "ordination failed" in capsys.readouterr().out
+
+
+def _ga_without_busco(tmp_path):
+    from test_make_figures import synth
+    data = tmp_path / "data"
+    data.mkdir()
+    synth(data)
+    ga = pd.read_parquet(data / "genome_all.parquet").drop(columns=["busco_complete"])
+    ga.to_parquet(data / "genome_all.parquet")
+    return data
+
+
+def test_run_cli_exits_1_when_ordination_fails(tmp_path, capsys):
+    data = _ga_without_busco(tmp_path)
+    rc = mf.run_cli(["make_figures.py", str(data), str(tmp_path / "out"), "phylum"])
+    out = capsys.readouterr().out
+    assert rc == 1
+    assert "FAILED: ordination" in out
+
+
+def test_run_cli_exits_1_when_index_fails(tmp_path, capsys, monkeypatch):
+    from test_make_figures import synth
+    import figure_index
+    data = tmp_path / "data"
+    data.mkdir()
+    synth(data)
+
+    def boom(_root):
+        raise RuntimeError("index boom")
+    monkeypatch.setattr(figure_index, "build_index", boom)
+    rc = mf.run_cli(["make_figures.py", str(data), str(tmp_path / "out"), "phylum"])
+    out = capsys.readouterr().out
+    assert rc == 1 and "FAILED: figure index" in out
+
+
+def test_run_cli_skipped_figure_listed_but_exit_0(tmp_path, capsys, monkeypatch):
+    from test_make_figures import synth
+    import figs_composition as fc
+    data = tmp_path / "data"
+    data.mkdir()
+    synth(data)
+
+    def boom(*a, **k):
+        raise ValueError("one figure broke")
+    monkeypatch.setattr(fc, "_gc3_box", boom)
+    rc = mf.run_cli(["make_figures.py", str(data), str(tmp_path / "out"), "phylum"])
+    out = capsys.readouterr().out
+    assert rc == 0
+    assert "skipped figures:" in out and "C04_gc3" in out.split("skipped figures:")[-1]
+    assert "FAILED" not in out
