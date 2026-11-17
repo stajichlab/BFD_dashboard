@@ -1,5 +1,5 @@
 #!/usr/bin/bash -l
-#SBATCH -p epyc -c 8 --mem 48G --time 3:00:00 -J qs_figures
+#SBATCH -p epyc -c 2 --mem 24G --time 3:00:00 -J qs_figures
 #SBATCH -o /bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/analysis/summary_figures_real/qs_figures.%j.log
 # Build all summary figures and tables for the Quarto site from the per-genome parquet tables.
 # Submit: sbatch workflows/summary_figures.sh   (override ROOT, DATA, OUT, PY with env vars)
