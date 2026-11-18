@@ -1,0 +1,107 @@
+---
+title: "TF expansions"
+---
+
+```{python}
+import sys
+sys.path.insert(0, ".")
+import pandas as pd
+from _helpers import fig, table, single, flat_table, read_flat, say
+```
+
+This page searches for TF families that are larger or smaller in a lineage than expected. The search goes beyond the claims of Lax et al. 2025, Nature Communications 16:10277. Every result here is one of the hypotheses to test later. None is a finding.
+
+::: {.callout-warning}
+## Read this first
+- **Hypotheses.** A flagged family is a hypothesis about a lineage. It is not a tested cause.
+- **p-values are inflated.** Genera are not independent, and phylogeny is not controlled. The adjusted p-values overstate the evidence.
+- **annotation completeness.** A fragmented or incomplete annotation looks like a contraction. The main tables use genera with BUSCO >= 80. The sensitivity table below uses all genera and is not evidence.
+- **Counts are distinct proteins** per genome and paper family. Families that BFD cannot detect (non-zero in fewer than 3 genera) are left out.
+:::
+
+## Method
+
+1. **Unit.** One representative genome per genus (the best BUSCO). Families are the paper families.
+2. **Scaling model.** For each family, log1p(count) is fitted against log(proteome size) by least squares. The fit is made per phylum, so an order is compared with the rest of its phylum on the same footing. A phylum with fewer than 30 eligible genera uses the fit of all phyla instead (the column `scaling` says which). The residual of a genus is its count relative to the count that its proteome size predicts.
+3. **Lineage test.** Each order and each class with at least 5 genera, and at least 5 other genera in its phylum, is tested against the other genera of the same phylum (Mann-Whitney U). The effect is the rank-biserial correlation. A positive effect means the lineage is above the rest. Benjamini-Hochberg adjustment is applied per level and per filter.
+4. **Flag.** A family-by-lineage cell is flagged when all four conditions hold:
+   - p_adj < 0.05;
+   - |effect| >= 0.5;
+   - at least 3 genera of the lineage lie on the side of the effect of the median of the rest of the phylum;
+   - the mean raw count of the lineage lies on the side of the direction (this removes an artefact for rare families).
+5. **lineage-wide.** A lineage is marked lineage-wide when it is flagged for more than half of the families tested for it (and at least 4 families were tested). The cutoff of one half is a judgement, not a tested value. A lineage-wide shift points to a proteome-size or annotation effect, not to one family.
+6. **Presence flags.** A family is lost in a lineage when it is present in at least 80% of all genera and in at most 20% of the lineage. It is gained for the reverse. A phylum with two or fewer lineages in the table carries the note "phylum-level statement".
+
+## Summary
+
+```{python}
+#| output: asis
+h = read_flat("T11_tf_expansion_hits", "tf")
+if h is None:
+    say("*The expansion tables have not been built yet (tables/tf/T11_tf_expansion_hits).*")
+else:
+    f = h[h["flagged"].astype(str) == "True"]
+    lw = f[f["lineage_wide"].astype(str) == "True"]
+    say(f"{len(h):,} family-by-lineage tests were run on genera with BUSCO >= 80. {len(f):,} are flagged. "
+        f"{len(lw):,} of the flagged cells are in lineage-wide lineages. The numbers come from the table.")
+    if "scaling" in h.columns:
+        sc = h["scaling"].value_counts().to_dict()
+        say("Scaling fit used per test: " + ", ".join(f"{k} = {v:,}" for k, v in sc.items()) + ". The fit is per phylum (per phylum scaling); the global fit is the fallback for small phyla.")
+    sk = read_flat("T11_tf_expansion_skipped", "tf")
+    if sk is not None:
+        say(f"{len(sk):,} lineages were not tested (too few genera); the reasons are in the skipped table below.")
+```
+
+## Effect heat map
+
+```{python}
+single("T11_tf_effect_heatmap", "Effect of each tested family in each order (rank-biserial, lineage against the rest of its phylum). Marked cells are flagged. Hypotheses; genus values; no phylogenetic control.", "tf", width="95%")
+```
+
+## Top hits
+
+The figure shows the flagged hits that are not lineage-wide. The boxes show the scaling residual of the lineage and of the rest of its phylum.
+
+```{python}
+single("T12_tf_hit_boxes", "Scaling residuals of the top flagged hits (lineage against the rest of its phylum). Hypotheses; genus values; no phylogenetic control.", "tf", width="95%")
+```
+
+## Flagged hits
+
+Flagged rows, sorted by adjusted p-value. `lineage_wide` = True marks a lineage with a lineage-wide shift.
+
+```{python}
+flat_table("T11_tf_expansion_hits", "tf", digits=4, max_rows=80,
+           columns=["level", "family", "lineage", "parent", "n_genera", "n_rest", "effect", "p_adj", "direction", "n_agree",
+                    "lineage_wide", "scaling"],
+           where=lambda d: d[d["flagged"].astype(str) == "True"])
+```
+
+## Presence flags
+
+Families that are lost or gained in a lineage (80% and 20% rule). Hypotheses.
+
+```{python}
+flat_table("T11_tf_presence_flags", "tf", digits=3,
+           columns=["level", "family", "lineage", "parent", "global_prevalence", "lineage_prevalence", "flag", "n_genera", "note"])
+```
+
+## Sensitivity: no BUSCO filter
+
+::: {.callout-important}
+## Sensitivity only
+This table uses all genera with no BUSCO filter. It is sensitivity only. Low annotation completeness is a confound here, not a tested cause. A flagged cell that appears only in this table is not evidence. A cell that is flagged in the main table and not here, or the reverse, shows that the result depends on annotation completeness.
+:::
+
+```{python}
+flat_table("T11_tf_expansion_nofilter", "tf", digits=4, max_rows=80,
+           columns=["level", "family", "lineage", "parent", "n_genera", "n_rest", "effect", "p_adj", "direction", "flagged",
+                    "lineage_wide", "filter"],
+           where=lambda d: d[d["flagged"].astype(str) == "True"])
+```
+
+## Lineages that were not tested
+
+```{python}
+flat_table("T11_tf_expansion_skipped", "tf", digits=3, max_rows=60)
+```

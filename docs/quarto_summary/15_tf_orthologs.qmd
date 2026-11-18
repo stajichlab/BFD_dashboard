@@ -1,0 +1,103 @@
+---
+title: "TF orthologs"
+---
+
+```{python}
+import sys
+sys.path.insert(0, ".")
+from pathlib import Path
+import pandas as pd
+from _helpers import fig, table, single, flat_table, read_flat, say, HERE
+```
+
+This page follows three TFs across fungi: WC-2 (white-collar complex), a Zap1-like C2H2 TF (Znf1) and bZip5. It also shows how well the DAP-seq target genes of the paper are conserved. The paper is Lax et al. 2025, Nature Communications 16:10277.
+
+::: {.callout-warning}
+## Read this first
+- Sequence similarity and tree position are evidence for orthology, not proof. A gene that the search calls an ortholog can be a paralog or a different family member.
+- An orthology call is not a function call: function is not inferred. A protein in the same clade as WC-2 is not shown to work as a light regulator.
+- No regulation or binding claim is made for any genome other than as quoted from the paper. The DAP-seq targets come from one species of the paper. Their conservation in other genomes describes the genes, not the regulation.
+- The search covers genus representatives (one genome per genus, the best BUSCO). A genus without a hit is reported as absent. A missing hit can also come from a gap in the annotation.
+:::
+
+## Method
+
+1. **Seeds.** Two sources are used. (a) The paper's own sequences (supplementary file MOESM6, from JGI). They are searched against the BFD *Rhizopus microsporus* ATCC 11559 proteome to find the matching BFD protein, and are named from the paper's Supplementary Table 1. (b) Literature seeds from UniProt: *Neurospora crassa* WC-2, *Saccharomyces cerevisiae* Zap1 and Cad1/Yap2.
+2. **Candidates.** All proteins of the genus representatives that carry the TF Pfam domain of the target.
+3. **Search.** MMseqs2 search of each seed against the candidates. The identity and coverage thresholds are shown in the table headers once the tables exist (see the table of thresholds below).
+4. **Architecture rule.** The domain architecture is checked after the search, not before it. WC-2 needs a GATA domain and a PAS domain. The architecture counts are in the tables.
+5. **Tree.** MAFFT alignment, trimming of gap-rich columns, FastTree. The tree tips use the phylum colours of the other pages. The anchor species (*Rhizopus microsporus*, *Mucor lusitanicus* and *Phycomyces*) are marked.
+6. **DAP-seq targets.** The JGI protein IDs of the tested TFs and their targets are mapped to BFD proteins of *R. microsporus* by reciprocal best hit (MMseqs2). The mapping rate is reported. Each target is searched against the genus-representative proteomes. The page reports the number of phyla and orders with a hit and compares the targets of each TF with all genes of the genome. These are hypotheses about the targets, not about regulation in other species.
+
+```{python}
+#| output: asis
+TF = HERE / "tables" / "tf"
+FIGS = HERE / "figures" / "tf"
+SUFFIX = ("_presence", "_tree", "_seeds", "_thresholds")
+
+
+def found_targets():
+    """Target slugs from tables/tf/T20_ortho_<target>.tsv; empty when the ortholog workflow has not run."""
+    out = []
+    if TF.is_dir():
+        for p in sorted(TF.glob("T20_ortho_*.tsv")):
+            slug = p.stem[len("T20_ortho_"):]
+            if slug and not slug.endswith(SUFFIX):
+                out.append(slug)
+    return out
+
+
+targets = found_targets()
+NAMES = {"wc2": "WC-2 (GATA and PAS)", "zap1": "Zap1-like C2H2 (Znf1)", "bzip5": "bZip5"}
+shown = targets or list(NAMES)
+if not targets:
+    say("*The ortholog tables (`T20_ortho_<target>`) have not been built yet. "
+        "The sections below show the structure. They fill when `workflows/tf_orthologs.sh` has run and its output is in the release asset.*")
+else:
+    say(f"Ortholog tables found for {len(targets)} targets: {', '.join(targets)}.")
+```
+
+## Seeds and thresholds
+
+```{python}
+#| output: asis
+seed_files = sorted(TF.glob("T20_*seed*.tsv")) if TF.is_dir() else []
+if not seed_files:
+    say("*The seed table has not been built yet. It lists, for each seed, the source (paper MOESM6 or UniProt), the key, the match result, and the MMseqs2 identity and coverage thresholds.*")
+else:
+    for p in seed_files:
+        say(f"**{p.stem}**")
+        say(pd.read_csv(p, sep="\t").round(3).to_markdown(index=False))
+```
+
+## Orthologs by target
+
+```{python}
+#| output: asis
+for slug in shown:
+    say(f"### {NAMES.get(slug, slug)}")
+    single(f"T20_ortho_{slug}_presence", f"Presence of {NAMES.get(slug, slug)} orthologs by order (genus representatives). Absent means no hit that passes the thresholds and the architecture rule. This is evidence for orthology, not proof.", "tf", width="90%")
+    flat_table(f"T20_ortho_{slug}", "tf", digits=3)
+    single(f"T20_ortho_{slug}_tree", f"Gene tree of the {NAMES.get(slug, slug)} candidates, tips coloured by phylum. Anchor species are marked. Tree position is evidence for orthology, not proof.", "tf", width="95%")
+```
+
+## DAP-seq target conservation
+
+The paper tested TFs of *R. microsporus* by DAP-seq. The tables below describe how widely the mapped target genes occur in other fungi. They do not show that the TFs regulate these genes elsewhere.
+
+```{python}
+single("T21_target_set_sizes", "Mapped and unmapped DAP-seq targets for each tested TF.", "tf", width="90%")
+single("T21_target_conservation", "Number of orders with a hit for the targets of each TF, with the median of all genes of the genome as background. Hypothesis only.", "tf", width="95%")
+```
+
+```{python}
+flat_table("T21_jgi_map_rate", "tf")
+```
+
+```{python}
+flat_table("T21_target_conservation", "tf", digits=3)
+```
+
+```{python}
+flat_table("T21_target_profile", "tf", digits=3, max_rows=60)
+```
