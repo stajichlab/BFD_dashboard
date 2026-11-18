@@ -143,3 +143,53 @@ def test_v_genome_labels_one_row_per_genome_with_traits(tmp_path):
     assert r == ("saprotroph", "filamentous_mycelium", True, "Mucoromycotina", "class_table")
     r3 = con.execute("SELECT primary_lifestyle, in_fungaltraits, SUBPHYLUM FROM v_genome_labels WHERE LOCUSTAG = 'A3'").fetchone()
     assert r3 == (None, False, None)
+
+
+# ---- bin/check_traits_vs_atlas.py ----
+import subprocess
+import sys
+
+CHECK = ROOT / "bin" / "check_traits_vs_atlas.py"
+
+
+def _check_fixture(tmp_path, db_life, dup_genus=False):
+    db = tmp_path / "t.duckdb"
+    con = duckdb.connect(str(db))
+    con.execute("""CREATE TABLE v_genome_labels (LOCUSTAG VARCHAR, GENUS VARCHAR, PHYLUM VARCHAR, CLASS VARCHAR,
+                   growth_form VARCHAR, primary_lifestyle VARCHAR, SUBPHYLUM VARCHAR)""")
+    con.executemany("INSERT INTO v_genome_labels VALUES (?,?,?,?,?,?,?)", [
+        ("A1", "Mucor", "Mucoromycota", "Mucoromycetes", "f", "saprotroph", None),
+        ("A2", "Other", "Ascomycota", "Eurotiomycetes", "f", db_life, "Pezizomycotina")])
+    con.close()
+    atlas = tmp_path / "atlas.parquet"
+    duckdb.execute(f"""COPY (SELECT * FROM (VALUES ('A1','f','saprotroph'),('A2','f','saprotroph'))
+                        t(LOCUSTAG, growth_form, primary_lifestyle)) TO '{atlas}' (FORMAT parquet)""")
+    ftcsv = tmp_path / "ft.csv"
+    rows = [ft("j1", "Mucor", "saprotroph"), ft("j2", "Other", "saprotroph")]
+    if dup_genus:
+        rows.append(ft("j3", "Other", "different"))
+    _write(ftcsv, FT_COLS, rows, ",")
+    return db, atlas, ftcsv
+
+
+def _run_check(db, atlas, ftcsv):
+    return subprocess.run([sys.executable, str(CHECK), "--db", str(db), "--atlas", str(atlas), "--ft-csv", str(ftcsv)],
+                          capture_output=True, text=True)
+
+
+def test_check_script_flags_a_mismatch(tmp_path):
+    r = _run_check(*_check_fixture(tmp_path, "parasite"))
+    assert r.returncode == 1, r.stdout + r.stderr
+    assert "A2" in r.stdout
+
+
+def test_check_script_passes_when_equal(tmp_path):
+    r = _run_check(*_check_fixture(tmp_path, "saprotroph"))
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "Mucoromycetes" in r.stdout          # unmapped class report: A1 has NULL SUBPHYLUM
+
+
+def test_check_script_tolerates_mismatch_in_duplicate_genus(tmp_path):
+    r = _run_check(*_check_fixture(tmp_path, "parasite", dup_genus=True))
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "duplicate" in r.stdout.lower()
