@@ -88,6 +88,11 @@ def test_match_species_picks_best_busco_and_reports_none():
     assert m.loc["Zzz nonesuch", "match"] == "none" and m.loc["Zzz nonesuch", "n_candidates"] == 0
     assert pd.isna(m.loc["Zzz nonesuch", "species_prefix"]) or m.loc["Zzz nonesuch", "species_prefix"] == ""
     assert m.loc["Orpinomyces", "match"] == "none"           # no epithet: cannot match by genus and epithet
+    assert m.loc["Malasseizia sympodialis", "alias_reason"] == "typo" and m.loc["Rhizopus microsporus", "alias_reason"] == ""
+    m2 = tp.match_species(["Ustilago maydis"], GA.assign(GENUS=GA["GENUS"].replace("Malassezia", "Mycosarcoma"),
+                          SPECIES=GA["SPECIES"].replace("Malassezia sympodialis", "Mycosarcoma maydis")),
+                          aliases={"Ustilago maydis": "Mycosarcoma maydis"}).iloc[0]
+    assert m2["match"] == "alias" and m2["alias_reason"] == "renamed taxon"
 
 
 def _perfect():
@@ -112,7 +117,8 @@ def _perfect():
 def test_calibrate_known_answer():
     fam, pc, sm = _perfect()
     summ, per = tp.calibrate(fam, pc, sm, FMAP)
-    assert list(summ.columns)[:5] == ["paper_family", "n_species", "spearman", "pearson_log", "median_ratio"]
+    assert list(summ.columns) == ["paper_family", "n_species", "n_nonzero_paper", "n_nonzero_bfd", "spearman", "pearson_log",
+                                  "median_ratio", "note"]
     s = summ.set_index("paper_family")
     assert s.loc["P1", "n_species"] == 4 and abs(s.loc["P1", "spearman"] - 1.0) < 1e-12
     assert abs(s.loc["P1", "median_ratio"] - 1.0) < 1e-12 and abs(s.loc["P1", "pearson_log"] - 1.0) < 1e-12
@@ -183,6 +189,8 @@ def test_committed_paper_tables_are_consistent():
     assert counts["species"].nunique() == 62 and len(totals) == 62 and len(smap) == 62
     assert list(smap["paper_species"]) == list(totals["species_full"])
     assert set(smap["match"]) <= {"exact", "alias", "none"}
+    assert set(smap.loc[smap["match"] == "alias", "alias_reason"]) <= {"typo", "renamed taxon", "synonym"}
+    assert (smap.loc[smap["match"] == "alias", "alias_reason"] != "").all() and (smap.loc[smap["match"] != "alias", "alias_reason"] == "").all()
     assert ((smap["match"] == "none") == (smap["species_prefix"] == "")).all()
     fmap = pd.read_csv(cfg / "tf_family_map.tsv", sep="\t", dtype=str, comment="#", keep_default_na=False)
     assert (set(fmap["paper_family"]) - {""}) <= set(counts["paper_family"])        # the map uses the paper's exact names
@@ -223,3 +231,48 @@ def test_main_runs_claims_page_after_landscape(tmp_path):
     assert "T01_tf_fraction" in made["phylum"] and "T10_tf_claims_forest" in made["tf"]
     assert (tmp_path / "o" / "tables" / "tf" / "T10_tf_claims.tsv").exists()
     assert not mf.RUN_STATUS["failed"]
+
+
+def test_calibrate_nonzero_counts_and_not_comparable_family():
+    fam, pc, sm = _perfect()
+    # P2: BFD has the family label but zero proteins in every matched species -> not comparable: NaN, not 0.0
+    fam = fam[fam["family"] != "Fam Two"]
+    fam = pd.concat([fam, pd.DataFrame([("S9", "Fam Two", 5)], columns=fam.columns)], ignore_index=True)   # a non-matched genome
+    s = tp.calibrate(fam, pc, sm, FMAP)[0].set_index("paper_family")
+    assert s.loc["P1", "n_nonzero_paper"] == 4 and s.loc["P1", "n_nonzero_bfd"] == 4
+    assert s.loc["P2", "n_nonzero_paper"] == 4 and s.loc["P2", "n_nonzero_bfd"] == 0
+    assert np.isnan(s.loc["P2", "spearman"]) and np.isnan(s.loc["P2", "median_ratio"]) and np.isnan(s.loc["P2", "pearson_log"])
+    assert "BFD Pfam definition does not detect this family" in s.loc["P2", "note"]
+
+
+def test_calibrate_genus_nonzero_threshold_flags_family():
+    fam, pc, sm = _perfect()
+    assert "not comparable" not in tp.calibrate(fam, pc, sm, FMAP)[0].set_index("paper_family").loc["P1", "note"]
+    s = tp.calibrate(fam, pc, sm, FMAP, genus_nonzero={"P1": 2, "P2": 50})[0].set_index("paper_family")
+    assert np.isnan(s.loc["P1", "spearman"]) and np.isnan(s.loc["P1", "median_ratio"])
+    assert "non-zero in 2 genera" in s.loc["P1", "note"] and np.isfinite(s.loc["P2", "spearman"])
+
+
+def test_calibrate_uses_paper_family_table_and_fallback_note():
+    fam, pc, sm = _perfect()
+    # distinct-protein paper-family counts: P1 is half of the sum over the two Pfam families
+    pf = pd.DataFrame([("S1", "P1", 5), ("S2", "P1", 10), ("S3", "P1", 15), ("S4", "P1", 20),
+                       ("S1", "P2", 4), ("S2", "P2", 8), ("S3", "P2", 2), ("S4", "P2", 6)],
+                      columns=["species_prefix", "paper_family", "n_proteins"])
+    s = tp.calibrate(fam, pc, sm, FMAP, bfd_paper_family=pf)[0].set_index("paper_family")
+    assert abs(s.loc["P1", "median_ratio"] - 0.5) < 1e-12 and s.loc["P1", "note"] == ""
+    s0 = tp.calibrate(fam, pc, sm, FMAP)[0].set_index("paper_family")
+    assert "paper-family counts summed over Pfam families (double counting possible)" in s0.loc["P1", "note"]
+
+
+def test_paper_side_note_for_not_comparable_family():
+    sp = [f"Aa s{i}" for i in range(5)] + [f"Mm s{i}" for i in range(5)]
+    pc = pd.DataFrame([(s[:4] + str(i), s, "P1", c) for i, (s, c) in enumerate(zip(sp, [5, 6, 7, 8, 9, 0, 0, 1, 0, 0]))],
+                      columns=["species", "species_full", "paper_family", "count"])
+    totals = pd.DataFrame({"species": pc["species"], "species_full": pc["species_full"], "total_tfs": 100, "total_genes": 1000})
+    ph = pd.DataFrame({"species_full": sp, "PHYLUM": ["Ascomycota"] * 5 + ["Mucoromycota"] * 5})
+    cl = pd.DataFrame([dict(claim_id="c", text="t", family="P1", metric="fraction", level="species", group_a="Ascomycota",
+                            group_b="Mucoromycota", paper_direction="a>b")])
+    r = tp.evaluate_claims_on_paper(pc, ph, cl, totals, n_boot=50, not_comparable={"P1"}).iloc[0]
+    assert "paper definition; not reproduced by BFD Pfam" in r["note"] and r["agrees"] in ("yes", "mixed")
+    assert r["filter"] != "BUSCO>=80"

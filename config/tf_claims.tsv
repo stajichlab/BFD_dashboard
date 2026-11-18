@@ -1,6 +1,8 @@
 # TF claims of Lax et al. 2025 (Nature Communications 16:10277), Results, 'The fungal TF landscape', as tests on genus values. Group sets: Dikarya = Ascomycota + Basidiomycota; EDF = all phyla except Ascomycota, Basidiomycota and Microsporidia (the controller's reading of the paper, not a definition given by the paper); ALL = every phylum; 'X-Y' = set X without phylum Y.
 # family = paper family (row name of MOESM3 'TF count', equal to paper_family in tf_family_map.tsv); BFD families are added through that map. metric: fraction (family proteins / all proteins), count, prevalence (share of genera with at least 1 protein), shannon (family is empty).
 # The paper names the lineage but often not the comparison group. The comparison groups here (for example Dikarya for the lineage expansions) are the controller's choice and are in group_b. paper_direction: a>b, a<b, or absent_in_a (a expected below b).
+# Extra metrics. rank (family empty): the Shannon index of group a is ranked among all phyla of group b with >= 5 genera and group a is tested against each of them (BH over the pairwise tests); yes only if group a ranks first and every pair is yes. max_other_prevalence: prevalence in group a against the highest prevalence among the other phyla with >= 5 genera; yes when the margin is >= 0.3 (EXCLUSIVE_MARGIN in tf_claims.py). The rows with '(pooled comparison)' in the text compare group a with the pooled other phyla and are kept; the rows ending in _highest and _max_other are the per-phylum versions.
+# agrees = not comparable: BFD detects the family in fewer than 3 genera (MIN_NONZERO_GENERA), so the BFD Pfam definition does not reproduce the paper's family.
 claim_id	text	family	metric	level	group_a	group_b	paper_direction
 zn_dikarya_vs_edf	Zn cluster TFs are expanded in Dikarya compared with early-diverging fungi	Zn cluster	fraction	genus	Dikarya	EDF	a>b
 zn_asco_vs_basidio	Zn cluster TFs are expanded in Dikarya, especially Ascomycota (Ascomycota above Basidiomycota)	Zn cluster	fraction	genus	Ascomycota	Basidiomycota	a>b
@@ -20,6 +22,9 @@ e2f_absent_dikarya	E2F is absent in Dikarya (prevalence in Dikarya below EDF)	E2
 tubby_absent_dikarya	Tubby is absent in Dikarya (prevalence in Dikarya below EDF)	Tubby TF	prevalence	genus	Dikarya	EDF	absent_in_a
 rfx_dikarya_vs_edf	RFX is present in Dikarya but absent or rare in EDF	RFX_DNA_binding	prevalence	genus	Dikarya	EDF	a>b
 stat_dikarya_vs_edf	STAT is present in Dikarya but absent or rare in EDF	STAT	prevalence	genus	Dikarya	EDF	a>b
-wrky_mucoromycota	WRKY is almost exclusive to Mucoromycota (prevalence in Mucoromycota above all other phyla)	DNA-binding WRKY	prevalence	genus	Mucoromycota	ALL-Mucoromycota	a>b
-e2f_mucoromycota	E2F is almost exclusive to Mucoromycota (prevalence in Mucoromycota above all other phyla)	E2F_TDP	prevalence	genus	Mucoromycota	ALL-Mucoromycota	a>b
-shannon_mucoromycota	Mucoromycota has the highest TF diversity by Shannon index (tested against all other phyla pooled, not against each)		shannon	genus	Mucoromycota	ALL-Mucoromycota	a>b
+wrky_mucoromycota	WRKY is almost exclusive to Mucoromycota (pooled comparison)	DNA-binding WRKY	prevalence	genus	Mucoromycota	ALL-Mucoromycota	a>b
+e2f_mucoromycota	E2F is almost exclusive to Mucoromycota (pooled comparison)	E2F_TDP	prevalence	genus	Mucoromycota	ALL-Mucoromycota	a>b
+shannon_mucoromycota	Mucoromycota has the highest TF diversity by Shannon index (pooled comparison)		shannon	genus	Mucoromycota	ALL-Mucoromycota	a>b
+shannon_mucoromycota_highest	Mucoromycota has the highest TF diversity by Shannon index (ranked against each other phylum with at least 5 genera)		rank	genus	Mucoromycota	ALL-Mucoromycota	a>b
+wrky_mucoromycota_max_other	WRKY is almost exclusive to Mucoromycota (prevalence above the highest other phylum by at least 0.3)	DNA-binding WRKY	max_other_prevalence	genus	Mucoromycota	ALL-Mucoromycota	a>b
+e2f_mucoromycota_max_other	E2F is almost exclusive to Mucoromycota (prevalence above the highest other phylum by at least 0.3)	E2F_TDP	max_other_prevalence	genus	Mucoromycota	ALL-Mucoromycota	a>b

@@ -17,6 +17,13 @@ CONFIG = Path(__file__).resolve().parents[2] / "config"
 SOURCE_LINE = ("# Source: Lax et al. 2025, Nature Communications 16:10277, Supplementary Data (MOESM3), sheet 'TF count' "
                "(counts) and sheet 'Genomes' (full species names, paired by column order). Whitespace in names stripped.")
 # Paper species names with a typo or an old name, to the BFD name. Marked match = alias in the species map.
+ALIAS_REASONS = {
+    "Malasseizia sympodialis": "typo",
+    "Ustilago maydis": "renamed taxon",
+    "Saksenea vasiformis": "typo",
+    "Mortierella elongata": "renamed taxon",
+    "Synchephalis fuscata": "typo",
+}
 ALIASES = {
     "Malasseizia sympodialis": "Malassezia sympodialis",
     "Ustilago maydis": "Mycosarcoma maydis",
@@ -93,7 +100,8 @@ def match_species(paper_species, genome_all, aliases=None):
     """For each paper species name (full name from the 'Genomes' sheet) the best BFD genome with the same genus and epithet:
     highest busco_complete, then highest N50_bp, then lowest species_prefix. A name with a genus in brackets is tried with
     both genera. When nothing matches, `aliases` (paper name -> BFD 'Genus epithet') is tried (match = alias). Columns:
-    paper_species, species_prefix, strain, match (exact, alias, none), n_candidates, bfd_species, busco_complete."""
+    paper_species, species_prefix, strain, match (exact, alias, none), n_candidates, bfd_species, busco_complete,
+    alias_reason (typo, renamed taxon or synonym for an alias; empty otherwise)."""
     aliases = ALIASES if aliases is None else aliases
     ga = genome_all.copy()
     sp = ga["SPECIES"].fillna("").astype(str).str.split()
@@ -111,14 +119,15 @@ def match_species(paper_species, genome_all, aliases=None):
             cand = ga[ga["GENUS"].isin(g2) & (ga["_epi"] == e2)]
             how = "alias" if len(cand) else "none"
         if not len(cand):
-            recs.append((name, None, "", "none", 0, "", np.nan))
+            recs.append((name, None, "", "none", 0, "", np.nan, ""))
             continue
         by = ["busco_complete"] + ([n50] if n50 else []) + ["species_prefix"]
         best = cand.sort_values(by, ascending=[False] + [False] * (len(by) - 2) + [True], na_position="last").iloc[0]
         strain = str(best["STRAIN"]) if "STRAIN" in cand.columns and pd.notna(best.get("STRAIN")) else ""
-        recs.append((name, best["species_prefix"], strain, how, len(cand), best["SPECIES"], best["busco_complete"]))
+        reason = ALIAS_REASONS.get(str(name).strip(), "synonym") if how == "alias" else ""
+        recs.append((name, best["species_prefix"], strain, how, len(cand), best["SPECIES"], best["busco_complete"], reason))
     return pd.DataFrame(recs, columns=["paper_species", "species_prefix", "strain", "match", "n_candidates", "bfd_species",
-                                       "busco_complete"])
+                                       "busco_complete", "alias_reason"])
 
 
 def _bridge(fmap):
@@ -126,17 +135,26 @@ def _bridge(fmap):
     return fm
 
 
-def calibrate(bfd_family_genome, paper_counts, species_map, fmap):
+def calibrate(bfd_family_genome, paper_counts, species_map, fmap, bfd_paper_family=None, genus_nonzero=None):
     """Compare BFD and paper counts per paper family over the matched species. Returns (summary, per_species).
-    summary: paper_family, n_species, spearman, pearson_log (Pearson on log10(count + 1)), median_ratio (BFD / paper over
-    species with a paper count above 0), note. One row for each paper family that has a Pfam in the family map and a row
-    in the paper table; a family with no BFD rows at all gets n_species 0 and a note. per_species: paper_species,
-    species, species_prefix, paper_family, paper_count, bfd_count, ratio. BFD counts of the BFD families of one paper family
-    are added. A species or family absent from the BFD table counts as 0."""
+    summary: paper_family, n_species, n_nonzero_paper, n_nonzero_bfd (matched species with a count above 0), spearman,
+    pearson_log (Pearson on log10(count + 1)), median_ratio (BFD / paper over species with a paper count above 0), note.
+    One row for each paper family that has a Pfam in the family map and a row in the paper table. A family with no BFD rows
+    at all gets n_species 0 and a note. A family is "not comparable" when it is non-zero in none of the matched species or
+    (genus_nonzero: {paper family: number of genera with a protein}) in fewer than MIN_NONZERO_GENERA genera: spearman,
+    pearson_log and median_ratio are NaN and the note says so.
+    BFD counts: bfd_paper_family (tf_paper_family_genome: species_prefix, paper_family, n_proteins; distinct proteins) when
+    given; otherwise the counts of the BFD families of one paper family are added (a note says double counting is possible).
+    per_species: paper_species, species, species_prefix, paper_family, paper_count, bfd_count, ratio. A species or family
+    absent from the BFD table counts as 0."""
     br = _bridge(fmap)
+    nlab = br.groupby("paper_family")["family"].nunique()
     sm = species_map[(species_map["match"] != "none") & species_map["species_prefix"].notna() &
                      (species_map["species_prefix"].astype(str) != "")][["paper_species", "species_prefix"]]
-    fam = bfd_family_genome.merge(br, on="family", how="inner")
+    if bfd_paper_family is not None:
+        fam = bfd_paper_family[bfd_paper_family["paper_family"].isin(set(br["paper_family"]))]
+    else:
+        fam = bfd_family_genome.merge(br, on="family", how="inner")
     wide = fam.groupby(["species_prefix", "paper_family"])["n_proteins"].sum()
     pc = paper_counts[paper_counts["paper_family"].isin(set(br["paper_family"]))]
     per = pc.merge(sm, left_on="species_full", right_on="paper_species", how="inner")
@@ -148,25 +166,35 @@ def calibrate(bfd_family_genome, paper_counts, species_map, fmap):
     rows = []
     for f in sorted(set(pc["paper_family"])):
         d = per[per["paper_family"] == f]
+        npp, nb = int((d["paper_count"] > 0).sum()), int((d["bfd_count"] > 0).sum())
+        sumnote = tc.SUM_NOTE if bfd_paper_family is None and nlab.get(f, 1) > 1 else ""
         if f not in has_bfd:
-            rows.append((f, 0, np.nan, np.nan, np.nan, "no BFD rows for this family (family absent from the BFD table)"))
+            rows.append((f, 0, npp, 0, np.nan, np.nan, np.nan, "no BFD rows for this family (family absent from the BFD table)"))
             continue
         x, y = d["paper_count"].to_numpy(float), d["bfd_count"].to_numpy(float)
+        k = genus_nonzero.get(f) if genus_nonzero else None
+        if nb == 0 or (k is not None and k < tc.MIN_NONZERO_GENERA):
+            note = tc.not_comparable_note(k) if k is not None else \
+                f"BFD Pfam definition does not detect this family (non-zero in {nb} matched species); not comparable with the paper"
+            rows.append((f, len(d), npp, nb, np.nan, np.nan, np.nan, tc._join(note, sumnote)))
+            continue
         sp = pl = np.nan
         if len(d) >= 3 and np.ptp(x) > 0 and np.ptp(y) > 0:
             sp = float(st.spearmanr(x, y).statistic)
             pl = float(st.pearsonr(np.log10(x + 1), np.log10(y + 1)).statistic)
         rt = d["ratio"].dropna()
-        rows.append((f, len(d), sp, pl, float(rt.median()) if len(rt) else np.nan, ""))
-    summ = pd.DataFrame(rows, columns=["paper_family", "n_species", "spearman", "pearson_log", "median_ratio", "note"])
+        rows.append((f, len(d), npp, nb, sp, pl, float(rt.median()) if len(rt) else np.nan, sumnote))
+    summ = pd.DataFrame(rows, columns=["paper_family", "n_species", "n_nonzero_paper", "n_nonzero_bfd", "spearman", "pearson_log",
+                                       "median_ratio", "note"])
     return summ, per.reset_index(drop=True)
 
 
-def evaluate_claims_on_paper(paper_counts, species_phylum, claims, totals, n_boot=2000, seed=1, fmap=None):
+def evaluate_claims_on_paper(paper_counts, species_phylum, claims, totals, n_boot=2000, seed=1, fmap=None, not_comparable=None):
     """The claims on the paper's own table: one value per species (not per genus). fraction = count / Total Genes. Phylum
     comes from species_phylum (columns species_full, PHYLUM: the BFD taxonomy of the matched genome); species without a phylum
     are left out. Shannon index over the paper families that have a Pfam in the family map (all non-bacterial families when
-    fmap is None). Same columns as tf_claims.evaluate_claims, source = 'paper', n_genera_* = number of species."""
+    fmap is None). Same columns as tf_claims.evaluate_claims, source = 'paper', n_genera_* = number of species. Claims on a
+    family in `not_comparable` (a set) keep their result and get the note 'paper definition; not reproduced by BFD Pfam'."""
     wide = paper_counts.pivot_table(index="species_full", columns="paper_family", values="count", aggfunc="sum", fill_value=0)
     tot = totals.drop_duplicates("species_full").set_index("species_full")["total_genes"].astype(float)
     ph = species_phylum.dropna(subset=["PHYLUM"]).drop_duplicates("species_full").set_index("species_full")["PHYLUM"]
@@ -193,7 +221,9 @@ def evaluate_claims_on_paper(paper_counts, species_phylum, claims, totals, n_boo
         v = wide[family].to_numpy(float)
         return (v / tot.to_numpy(float) if metric == "fraction" else v), ""
 
-    return tc.evaluate_table(df, claims, value_fn, n_boot, seed, "paper", "species")
+    nc = set(not_comparable or ())
+    flag_fn = (lambda f: (False, "paper definition; not reproduced by BFD Pfam") if f in nc else None)
+    return tc.evaluate_table(df, claims, value_fn, n_boot, seed, "paper", "species", flag_fn, "n/a (paper table)")
 
 
 def _calibration_fig(summ, per):
@@ -226,22 +256,23 @@ def _calibration_fig(summ, per):
     return fig
 
 
-def page_tf_calibration(bfd_family_genome, paper_counts, species_map, fmap, o):
+def page_tf_calibration(bfd_family_genome, paper_counts, species_map, fmap, o, bfd_paper_family=None, genus_nonzero=None):
     """T09_tf_calibration.tsv, T09_tf_calibration_species.tsv and the figure T09_tf_calibration. o: an Out for 'tf'.
     Returns the summary table."""
     from figs_common import safe
-    summ, per = calibrate(bfd_family_genome, paper_counts, species_map, fmap)
+    summ, per = calibrate(bfd_family_genome, paper_counts, species_map, fmap, bfd_paper_family, genus_nonzero)
     o.table(summ, "T09_tf_calibration")
     o.table(per, "T09_tf_calibration_species")
     safe(o, "T09_tf_calibration", "tf", lambda: _calibration_fig(summ, per))
     return summ
 
 
-def run_tf_claims(genome_all, fam, summ, out, busco_min=80, n_boot=2000, config_dir=None):
+def run_tf_claims(genome_all, fam, summ, out, busco_min=80, n_boot=2000, config_dir=None, paper_fam=None):
     """The claims page and the calibration page under tables/tf and figures/tf. BFD claims use genus representatives with
     busco_complete >= busco_min; T10_tf_claims_nofilter.tsv uses all genera. When the derived paper tables exist in
     config_dir (default config/), the claims table also has the paper's own rows (source = paper) and the calibration is
-    written; otherwise only the BFD claims are. Returns the Made list."""
+    written; otherwise only the BFD claims are. paper_fam: tf_paper_family_genome (distinct proteins per paper family); when
+    None the counts of the BFD families are added with a printed warning and a note on each row. Returns the Made list."""
     from make_figures import Out
     from tf_data import genus_table
     cfg = Path(config_dir) if config_dir else CONFIG
@@ -249,8 +280,13 @@ def run_tf_claims(genome_all, fam, summ, out, busco_min=80, n_boot=2000, config_
     o.scope = "genus_reps"
     claims = tc.load_claims(cfg / "tf_claims.tsv")
     fmap = tc.load_fmap(cfg / "tf_family_map.tsv")
-    g80 = genus_table(genome_all, fam, summ, busco_min=busco_min)
-    g0 = genus_table(genome_all, fam, summ)
+    if paper_fam is None:
+        print("WARNING: tf_paper_family_genome absent: paper-family counts are summed over Pfam families "
+              "(double counting possible)", flush=True)
+    g80 = genus_table(genome_all, fam, summ, busco_min=busco_min, paper_fam=paper_fam)
+    g0 = genus_table(genome_all, fam, summ, paper_fam=paper_fam)
+    nz = tc.nonzero_genera(g0, fmap)
+    not_comp = {f for f, k in nz.items() if k < tc.MIN_NONZERO_GENERA}
     o.info = {"n_genomes": len(g80), "n_groups": None, "pooled_share": 0.0}
     paper_rows, calib = None, None
     cf, tf_, mf_ = cfg / "paper_tf_counts.tsv", cfg / "paper_tf_totals.tsv", cfg / "paper_species_map.tsv"
@@ -260,10 +296,10 @@ def run_tf_claims(genome_all, fam, summ, out, busco_min=80, n_boot=2000, config_
         smap["species_prefix"] = smap["species_prefix"].replace("", np.nan)
         ph = smap.merge(genome_all[["species_prefix", "PHYLUM"]], on="species_prefix", how="inner")
         ph = ph.rename(columns={"paper_species": "species_full"})[["species_full", "PHYLUM"]]
-        paper_rows = evaluate_claims_on_paper(counts, ph, claims, totals, n_boot=n_boot, fmap=fmap)
+        paper_rows = evaluate_claims_on_paper(counts, ph, claims, totals, n_boot=n_boot, fmap=fmap, not_comparable=not_comp)
         smap_ok = smap[smap["species_prefix"].isin(set(genome_all["species_prefix"]))]   # drops suppressed genomes
         calib = (fam, counts, smap_ok)
     tc.page_tf_claims(g80, claims, o, paper_rows=paper_rows, genus_df_nofilter=g0, fmap=fmap, n_boot=n_boot)
     if calib is not None:
-        page_tf_calibration(calib[0], calib[1], calib[2], fmap, o)
+        page_tf_calibration(calib[0], calib[1], calib[2], fmap, o, bfd_paper_family=paper_fam, genus_nonzero=nz)
     return o.made

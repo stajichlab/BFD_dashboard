@@ -767,7 +767,11 @@ def main(data, out, levels=LEVELS, suppress=None):
             made["all"] = list(made["all"]) + list(page_tf_all(genome_all, tf_summ_all, out, porder))
             try:     # the paper's claims and the calibration: after the landscape pages; a failure must not stop the run
                 from tf_paper import run_tf_claims
-                made["tf"] = run_tf_claims(genome_all, rd("tf_family_genome"), tf_summ_all, out)
+                try:
+                    pf_tab = rd("tf_paper_family_genome")
+                except FileNotFoundError:
+                    pf_tab = None     # run_tf_claims prints the warning and notes the rows
+                made["tf"] = run_tf_claims(genome_all, rd("tf_family_genome"), tf_summ_all, out, paper_fam=pf_tab)
             except Exception as e:
                 import traceback
                 traceback.print_exc(file=sys.stderr)

@@ -157,11 +157,13 @@ def test_shannon_metric_and_bh_over_claims():
 def test_claims_file_is_consistent_with_family_map():
     cl = tc.load_claims(CONFIG / "tf_claims.tsv")
     assert list(cl.columns) == CLAIM_COLS and cl["claim_id"].is_unique and len(cl) >= 15
-    assert set(cl["metric"]) <= {"fraction", "count", "prevalence", "shannon"}
+    assert set(cl["metric"]) <= {"fraction", "count", "prevalence", "shannon", "rank", "max_other_prevalence"}
+    assert {"rank", "max_other_prevalence"} <= set(cl["metric"])
+    assert cl.set_index("claim_id").loc[["shannon_mucoromycota", "wrky_mucoromycota", "e2f_mucoromycota"], "text"].str.contains("(pooled comparison)", regex=False).all()
     assert set(cl["paper_direction"]) <= {"a>b", "a<b", "absent_in_a"}
     fmap = pd.read_csv(CONFIG / "tf_family_map.tsv", sep="\t", dtype=str, comment="#", keep_default_na=False)
     pf = set(fmap["paper_family"]) - {""}
-    fam = set(cl.loc[cl["metric"] != "shannon", "family"])
+    fam = set(cl.loc[~cl["metric"].isin(["shannon", "rank"]), "family"])
     assert fam <= pf, fam - pf
     head = (CONFIG / "tf_claims.tsv").read_text().splitlines()[0]
     assert head.startswith("#") and "EDF" in head and "controller" in head
@@ -179,8 +181,118 @@ def test_page_writes_tables_and_forest(tmp_path):
     tc.page_tf_claims(g, c, o, paper_rows=paper, genus_df_nofilter=g.iloc[:35], fmap=FMAP, n_boot=100)
     t = pd.read_csv(tmp_path / "tables" / "tf" / "T10_tf_claims.tsv", sep="\t", keep_default_na=False)
     assert set(t["source"]) == {"BFD", "paper"} and len(t) == 6
+    assert set(t.loc[t["source"] == "BFD", "filter"]) == {"BUSCO>=80"}
     n = pd.read_csv(tmp_path / "tables" / "tf" / "T10_tf_claims_nofilter.tsv", sep="\t", keep_default_na=False)
-    assert set(n["source"]) == {"BFD"} and len(n) == 3
+    assert set(n["source"]) == {"BFD"} and len(n) == 3 and set(n["filter"]) == {"none"}
+    assert n["note"].str.contains("sensitivity only; low-BUSCO genomes have incomplete annotation; an a<b result here is not "
+                                  "evidence against the paper", regex=False).all()
     for ext in ("png", "svg"):
         assert (tmp_path / "figures" / "tf" / f"T10_tf_claims_forest.{ext}").stat().st_size > 1000
     assert any(m == "T10_tf_claims_forest" and m.kind == "figure" for m in o.made)
+
+
+# ---------------------------------------------------------------- fix round
+def test_not_comparable_family_when_bfd_detects_it_in_fewer_than_3_genera():
+    g = genus_df({"Ascomycota": (10, 0.04), "Mucoromycota": (10, 0.01)})
+    g["fam_Fam Two"] = 0
+    g.loc[[0, 15], "fam_Fam Two"] = 2                      # non-zero in 2 genera
+    c = claims([("rare", "P2", "prevalence", "Ascomycota", "Mucoromycota", "a>b"),
+                ("zero", "P1", "count", "Ascomycota", "Mucoromycota", "a>b")])
+    r = tc.evaluate_claims(g, c, n_boot=50, fmap=FMAP).set_index("claim_id")
+    assert r.loc["rare", "agrees"] == "not comparable"
+    assert r.loc["rare", "note"].startswith("BFD Pfam definition does not detect this family (non-zero in 2 genera); "
+                                            "not comparable with the paper")
+    assert r.loc["zero", "agrees"] == "yes" and "not comparable" not in r.loc["zero", "note"]
+    g["fam_Fam Two"] = 0
+    assert tc.evaluate_claims(g, c, n_boot=50, fmap=FMAP).set_index("claim_id").loc["rare", "note"].find("non-zero in 0 genera") > 0
+    assert tc.MIN_NONZERO_GENERA == 3
+
+
+def test_paper_family_columns_are_used_without_double_counting():
+    g = genus_df({"Ascomycota": (10, 0.04), "Mucoromycota": (10, 0.01)})
+    g["pf_P1"] = (g["fam_Fam One"] + g["fam_Fam One b"]) // 2      # distinct proteins: half the sum
+    c = claims([("f", "P1", "fraction", "Ascomycota", "Mucoromycota", "a>b")])
+    r = tc.evaluate_claims(g, c, n_boot=50, fmap=FMAP).iloc[0]
+    exp = float(np.median(g.loc[g["PHYLUM"] == "Ascomycota", "pf_P1"] / 1000))
+    assert abs(r["value_a"] - exp) < 1e-12 and "double counting" not in r["note"]
+    r0 = tc.evaluate_claims(g.drop(columns="pf_P1"), c, n_boot=50, fmap=FMAP).iloc[0]
+    assert "paper-family counts summed over Pfam families (double counting possible)" in r0["note"]
+    assert r0["value_a"] > r["value_a"]
+
+
+def test_no_with_ci_including_zero_gets_note():
+    g = genus_df({"Ascomycota": (8, 0.02), "Mucoromycota": (8, 0.02)}, seed=3)
+    c = claims([("w", "P1", "fraction", "Ascomycota", "Mucoromycota", "a>b"), ("w2", "P1", "fraction", "Mucoromycota", "Ascomycota", "a>b")])
+    r = tc.evaluate_claims(g, c, n_boot=200, fmap=FMAP).set_index("claim_id")
+    bad = r[(r["agrees"] == "no") & (r["ci_lo"] <= 0) & (r["ci_hi"] >= 0)]
+    assert len(bad) >= 1 and bad["note"].str.contains("CI includes 0").all()
+
+
+def _rank_df(shannon):
+    rows = []
+    for ph, (n, v) in shannon.items():
+        for i in range(n):
+            rows.append((f"{ph[:3]}{i}", ph, 1000, v + 0.001 * i, 0, 0, v + 0.001 * i))
+    return pd.DataFrame(rows, columns=["genus", "PHYLUM", "n_proteins_total", "shannon", "fam_Fam One", "fam_Fam One b", "x"]
+                        ).assign(**{"fam_Fam Two": 0})
+
+
+def test_rank_claim_yes_when_first_and_all_pairs_yes_small_phyla_ignored():
+    g = _rank_df({"Mucoromycota": (6, 3.0), "Ascomycota": (8, 2.0), "Basidiomycota": (8, 2.5), "Zoopagomycota": (4, 9.0)})
+    c = claims([("hi", "", "rank", "Mucoromycota", "ALL-Mucoromycota", "a>b")])
+    r = tc.evaluate_claims(g, c, n_boot=100, fmap=FMAP).iloc[0]
+    assert r["agrees"] == "yes" and "rank 1 of 3" in r["note"] and r["n_genera_a"] == 6
+    assert r["value_a"] > r["value_b"] and r["effect"] == 1.0
+
+
+def test_rank_claim_no_when_another_phylum_is_higher_and_names_it():
+    g = _rank_df({"Mucoromycota": (6, 3.0), "Ascomycota": (8, 2.0), "Basidiomycota": (8, 3.5)})
+    c = claims([("hi", "", "rank", "Mucoromycota", "ALL-Mucoromycota", "a>b")])
+    r = tc.evaluate_claims(g, c, n_boot=100, fmap=FMAP).iloc[0]
+    assert r["agrees"] == "no" and "rank 2 of 3" in r["note"] and "Basidiomycota" in r["note"]
+
+
+def _prev_df(prev):
+    rows = []
+    for ph, p in prev.items():
+        for i in range(10):
+            rows.append((f"{ph[:3]}{i}", ph, 1000, 1.0, 1 if i < round(p * 10) else 0, 0, 0))
+    return pd.DataFrame(rows, columns=["genus", "PHYLUM", "n_proteins_total", "shannon", "fam_Fam Two", "fam_Fam One", "fam_Fam One b"])
+
+
+def test_max_other_prevalence_margin():
+    assert tc.EXCLUSIVE_MARGIN == 0.3
+    c = claims([("ex", "P2", "max_other_prevalence", "Mucoromycota", "ALL-Mucoromycota", "a>b")])
+    r = tc.evaluate_claims(_prev_df({"Mucoromycota": 1.0, "Ascomycota": 0.2, "Basidiomycota": 0.6}), c, n_boot=50, fmap=FMAP).iloc[0]
+    assert r["agrees"] == "yes" and abs(r["value_a"] - 1.0) < 1e-12 and abs(r["value_b"] - 0.6) < 1e-12
+    assert abs(r["effect"] - 0.4) < 1e-12 and "Basidiomycota" in r["note"]
+    r = tc.evaluate_claims(_prev_df({"Mucoromycota": 1.0, "Ascomycota": 0.2, "Basidiomycota": 0.8}), c, n_boot=50, fmap=FMAP).iloc[0]
+    assert r["agrees"] == "mixed" and abs(r["effect"] - 0.2) < 1e-12
+    r = tc.evaluate_claims(_prev_df({"Mucoromycota": 0.5, "Ascomycota": 0.2, "Basidiomycota": 0.8}), c, n_boot=50, fmap=FMAP).iloc[0]
+    assert r["agrees"] == "no"
+
+
+def test_forest_draws_not_comparable_and_open_markers(tmp_path):
+    import make_figures as mf
+    t = pd.DataFrame({"claim_id": ["a", "b", "c", "d"], "group_a": "X", "group_b": "Y", "source": "BFD",
+                      "effect": [0.5, -0.1, 0.2, np.nan], "ci_lo": [0.3, -0.4, 0.1, np.nan], "ci_hi": [0.7, 0.2, 0.3, np.nan],
+                      "agrees": ["yes", "no", "not comparable", "not tested"]})
+    fig = tc._forest(t)
+    txt = " ".join(x.get_text() for x in fig.axes[0].get_legend().get_texts())
+    assert "not comparable (BFD Pfam definition does not detect this family)" in txt
+    assert "BUSCO >= 80" in fig.axes[0].get_title()
+    open_markers = [l for l in fig.axes[0].lines if l.get_marker() == "o" and l.get_markerfacecolor() in ("white", "w")]
+    assert len(open_markers) == 1
+
+
+def test_genus_table_adds_paper_family_columns():
+    import tf_data
+    ga = pd.DataFrame([("A1", "G1", "P", "C", "O", 90.0, 1), ("B1", "G2", "P", "C", "O", 90.0, 1)],
+                      columns=["species_prefix", "GENUS", "PHYLUM", "CLASS", "ORDER", "busco_complete", "N50_bp"])
+    fam = pd.DataFrame({"species_prefix": ["A1"], "family": ["F"], "n_proteins": [4]})
+    summ = pd.DataFrame({"species_prefix": ["A1", "B1"], "n_proteins_total": 100, "n_tf_proteins": [3, 0],
+                         "tf_fraction": [0.03, 0.0], "n_families": [1, 0], "shannon": [0.0, np.nan]})
+    pf = pd.DataFrame({"species_prefix": ["A1"], "paper_family": ["PF one"], "n_proteins": [3]})
+    t = tf_data.genus_table(ga, fam, summ, paper_fam=pf)
+    assert dict(zip(t["genus"], t["pf_PF one"])) == {"G1": 3, "G2": 0}
+    assert "pf_PF one" not in tf_data.genus_table(ga, fam, summ).columns

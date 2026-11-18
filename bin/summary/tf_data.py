@@ -12,6 +12,7 @@ from suppress import drop_suppressed, load_suppress
 
 FAMILY_MAP = Path(__file__).resolve().parents[2] / "config" / "tf_family_map.tsv"
 FAM_PREFIX = "fam_"
+PF_PREFIX = "pf_"
 
 
 def load_tf(data_dir, suppress=None):
@@ -38,12 +39,14 @@ def rare_family_labels(accessions, map_path=None):
     return out
 
 
-def genus_table(core_all, fam, summ, busco_min=None):
+def genus_table(core_all, fam, summ, busco_min=None, paper_fam=None):
     """One row per genus: the genome with the highest busco_complete (then highest N50_bp, then lowest
     species_prefix) among the genomes with complete TF data (a TF summary row with a proteome and a tf_fraction).
     Genomes with busco_complete < busco_min (or no BUSCO value) are excluded first when busco_min is given.
     Columns: genus, species_prefix, PHYLUM, CLASS, ORDER, busco_complete, n_proteins_total, n_tf_proteins,
     tf_fraction, shannon, and one fam_<family> column per family with the protein count (0 where absent).
+    paper_fam (tf_paper_family_genome: species_prefix, paper_family, n_proteins), when given, adds one pf_<paper_family> column
+    per paper family with the distinct-protein count (0 where absent).
     Rows with a NULL genus are left out; their number (in core_all after the BUSCO filter) is attrs['n_no_genus']."""
     from summary_ordination import pick_genus_reps   # imported here: it pulls in the ordination libraries
     pool = core_all
@@ -60,6 +63,12 @@ def genus_table(core_all, fam, summ, busco_min=None):
     wide = wide.reindex(t["species_prefix"]).fillna(0).astype(int)
     wide.columns = [FAM_PREFIX + str(c) for c in wide.columns]
     t = pd.concat([t.reset_index(drop=True), wide.reset_index(drop=True)], axis=1)
+    if paper_fam is not None:
+        pw = paper_fam.pivot_table(index="species_prefix", columns="paper_family", values="n_proteins", aggfunc="sum",
+                                   fill_value=0)
+        pw = pw.reindex(t["species_prefix"]).fillna(0).astype(int)
+        pw.columns = [PF_PREFIX + str(c) for c in pw.columns]
+        t = pd.concat([t.reset_index(drop=True), pw.reset_index(drop=True)], axis=1)
     t = t.sort_values("genus").reset_index(drop=True)
     t.attrs["n_no_genus"] = n_no_genus
     return t
