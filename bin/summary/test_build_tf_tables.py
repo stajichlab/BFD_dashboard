@@ -10,7 +10,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_tf_tables as t  # noqa: E402
 
-MAP_HEADER = "pfam_acc\tfamily\tpaper_family\tnote\n"
+MAP_HEADER = "pfam_acc\tfamily\tpaper_family\tnote\tpfam_id\n"
 
 
 def write_map(tmp_path, body):
@@ -74,15 +74,15 @@ def genes_for(prefix, n):
 
 
 def test_family_map_rejects_duplicate_accessions(tmp_path):
-    p = write_map(tmp_path, "PF00172\tZn\tZn cluster\t\nPF00172\tZn2\tZn cluster\t\n")
+    p = write_map(tmp_path, "PF00172\tZn\tZn cluster\t\tZn_clus\nPF00172\tZn2\tZn cluster\t\tZn_clus\n")
     with pytest.raises(ValueError, match="PF00172"):
         t.load_family_map(p)
 
 
 def test_family_map_ignores_comments_and_keeps_unmapped_rows(tmp_path):
-    p = write_map(tmp_path, "PF00172\tZn\tZn cluster\t\n\t\tSTAT\tunmapped\n")
+    p = write_map(tmp_path, "PF00172\tZn\tZn cluster\t\tZn_clus\n\t\tSTAT\tunmapped\t\n")
     m = t.load_family_map(p)
-    assert list(m.columns) == ["pfam_acc", "family", "paper_family", "note"]
+    assert list(m.columns) == ["pfam_acc", "family", "paper_family", "note", "pfam_id"]
     assert len(m) == 2 and m.loc[1, "pfam_acc"] == ""
 
 
@@ -167,3 +167,41 @@ def test_found_accessions_reported(con, tmp_path):
     res, _, _ = run(con, tmp_path, inv, [], genes_for("G1", 2), ["G1"])
     assert res["accessions_with_hits"] == ["PF00172"]
     assert res["accessions_without_hits"] == ["PF03106"]
+
+
+DAT = """#=GF ID   Zn_clus
+#=GF AC   PF00172.24
+#=GF DE   Fungal Zn(2)-Cys(6) binuclear cluster domain
+//
+#=GF ID   WRKY
+#=GF AC   PF03106.20
+//
+#=GF ID   Ovate
+#=GF AC   PF04844.18
+//
+"""
+
+
+def pf_map(rows):
+    return pd.DataFrame(rows, columns=["pfam_acc", "family", "paper_family", "note", "pfam_id"])
+
+
+def test_check_pfam_ids_match_wrong_and_missing(tmp_path):
+    dat = tmp_path / "Pfam-A.hmm.dat"
+    dat.write_text(DAT)
+    ok = pf_map([["PF00172", "Zn", "", "", "Zn_clus"], ["PF03106", "WRKY", "", "", "WRKY"], ["", "", "STAT", "unmapped", ""]])
+    assert t.check_pfam_ids(ok, dat) == []
+    bad = pf_map([["PF04844", "APSES", "", "", "DNA_binding_1"], ["PF99999", "X", "", "", "X"]])
+    msgs = t.check_pfam_ids(bad, dat)
+    assert len(msgs) == 2
+    assert "PF04844" in msgs[0] and "Ovate" in msgs[0] and "DNA_binding_1" in msgs[0]
+    assert "PF99999" in msgs[1]
+
+
+REAL_DAT = Path("/srv/projects/db/pfam/current/Pfam-A.hmm.dat")
+
+
+@pytest.mark.skipif(not REAL_DAT.exists(), reason="Pfam-A.hmm.dat not available on this host")
+def test_committed_map_matches_pfam_release():
+    fm = t.load_family_map(t.DEFAULT_MAP)
+    assert t.check_pfam_ids(fm, REAL_DAT) == []

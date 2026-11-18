@@ -6,7 +6,7 @@ Outputs (ZSTD parquet, built for EVERY genome in genome_all; the suppress list i
   tf_summary_genome  species_prefix, n_proteins_total, n_tf_proteins, tf_fraction, n_families, shannon
 
 Inputs: <tables_dir>/{tf_inventory,pfam,gene_proteins}.parquet, <summary_dir>/{genome_all,pfam_names}.parquet,
-and the family map config/tf_family_map.tsv (pfam_acc, family, paper_family, note).
+and the family map config/tf_family_map.tsv (pfam_acc, family, paper_family, note, pfam_id).
 
 Counting rule. A protein counts once per family if it has at least one domain of the family.
 Pfams that are in tf_inventory are counted from tf_inventory. The added Pfams are counted from pfam.parquet,
@@ -39,7 +39,8 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_MAP = ROOT / "config" / "tf_family_map.tsv"
-COLS = ["pfam_acc", "family", "paper_family", "note"]
+COLS = ["pfam_acc", "family", "paper_family", "note", "pfam_id"]
+DEFAULT_DAT = "/srv/projects/db/pfam/current/Pfam-A.hmm.dat"
 ACC_RE = "^(PF[0-9]+)"
 
 
@@ -57,9 +58,9 @@ def load_family_map(path) -> pd.DataFrame:
     rows = []
     for i, ln in enumerate(lines[1:], 2):
         f = ln.split("\t")
-        if len(f) > 4:
-            raise ValueError(f"{path}: data row {i} has {len(f)} columns, expected 4")
-        rows.append((f + [""] * 4)[:4])
+        if len(f) > len(COLS):
+            raise ValueError(f"{path}: data row {i} has {len(f)} columns, expected {len(COLS)}")
+        rows.append((f + [""] * len(COLS))[:len(COLS)])
     df = pd.DataFrame(rows, columns=COLS).apply(lambda s: s.str.strip())
     acc = df.loc[df["pfam_acc"] != "", "pfam_acc"]
     dup = sorted(acc[acc.duplicated()].unique())
@@ -78,6 +79,30 @@ def validate_accessions(fmap: pd.DataFrame, pfam_names: pd.DataFrame) -> None:
     missing = sorted(a for a in want if a not in known)
     if missing:
         raise ValueError(f"{len(missing)} accession(s) in the family map are missing from pfam_names: {missing}")
+
+
+def check_pfam_ids(fmap: pd.DataFrame, dat_path) -> list:
+    """Compare pfam_id of every mapped accession with `#=GF ID` in a Pfam-A.hmm.dat file.
+
+    Returns one message per accession that is missing from the file or has a different ID. Empty list = all match.
+    """
+    ids, cur = {}, None
+    with open(dat_path) as fh:
+        for ln in fh:
+            if ln.startswith("#=GF ID"):
+                cur = ln.split(None, 2)[2].strip()
+            elif ln.startswith("#=GF AC") and cur is not None:
+                ids[ln.split()[2].split(".")[0]] = cur
+                cur = None
+    msgs = []
+    for acc, pid in zip(fmap["pfam_acc"], fmap["pfam_id"]):
+        if not acc:
+            continue
+        if acc not in ids:
+            msgs.append(f"{acc}: not found in {dat_path}")
+        elif ids[acc] != pid:
+            msgs.append(f"{acc}: map pfam_id '{pid}' but Pfam ID is '{ids[acc]}'")
+    return msgs
 
 
 def build_tf_tables(con, tables_dir, summary_dir, fmap: pd.DataFrame, out) -> dict:
@@ -169,6 +194,8 @@ def main(argv=None):
     ap.add_argument("summary_dir", help="dir with genome_all.parquet and pfam_names.parquet")
     ap.add_argument("out_dir")
     ap.add_argument("--map", default=str(DEFAULT_MAP))
+    ap.add_argument("--pfam-dat", default=DEFAULT_DAT,
+                    help="Pfam-A.hmm.dat to check pfam_id against ('none' disables; skipped if the file is absent)")
     ap.add_argument("--threads", type=int, default=4)
     ap.add_argument("--memory", default="24GB")
     ap.add_argument("--tmp", default=os.environ.get("SCRATCH"), help="DuckDB temp dir (default $SCRATCH)")
@@ -176,6 +203,10 @@ def main(argv=None):
     fmap = load_family_map(a.map)
     names = pd.read_parquet(Path(a.summary_dir) / "pfam_names.parquet")
     validate_accessions(fmap, names)
+    if a.pfam_dat.lower() != "none" and Path(a.pfam_dat).exists():
+        msgs = check_pfam_ids(fmap, a.pfam_dat)
+        if msgs:
+            sys.exit("family map does not match the Pfam release:\n" + "\n".join(msgs))
     out = Path(a.out_dir)
     out.mkdir(parents=True, exist_ok=True)
     con = duckdb.connect()
