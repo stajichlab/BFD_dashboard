@@ -61,3 +61,22 @@ def pair_regressions(df, pairs, log=True):
         r = st.linregress(d[x], d[y])
         rows.append((x, y, len(d), r.slope, r.intercept, r.rvalue ** 2, r.pvalue))
     return pd.DataFrame(rows, columns=REG_COLS)
+
+
+def bh_adjust(p):
+    """Benjamini-Hochberg adjusted p-values, in the order of the input. NaN stays NaN and is not counted in the number of
+    tests m. Adjusted values are monotone and capped at 1."""
+    p = np.asarray(p, dtype=float)
+    out = np.full(p.shape, np.nan)
+    ok = np.isfinite(p)
+    m = int(ok.sum())
+    if m == 0:
+        return out
+    v = p[ok]
+    order = np.argsort(v, kind="stable")
+    raw = v[order] * m / np.arange(1, m + 1)
+    adj = np.minimum.accumulate(raw[::-1])[::-1]
+    res = np.empty(m)
+    res[order] = np.minimum(adj, 1.0)
+    out[ok] = res
+    return out
