@@ -35,7 +35,6 @@ This page searches for TF families that are larger or smaller in a lineage than 
 ## Summary
 
 ```{python}
-#| output: asis
 h = read_flat("T11_tf_expansion_hits", "tf")
 if h is None:
     say("*The expansion tables have not been built yet (tables/tf/T11_tf_expansion_hits).*")

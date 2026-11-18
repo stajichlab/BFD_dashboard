@@ -23,7 +23,6 @@ This page counts transcription factors (TFs) in the BFD genomes. A TF here is a 
 ## Scope
 
 ```{python}
-#| output: asis
 t = read_flat("T_tf_groups", "phylum")
 if t is None:
     say("*The TF group table has not been built yet, so the counts for this page are not shown.*")
@@ -85,7 +84,6 @@ table("T_anova_tf", digits=4)
 The map links each Pfam accession to a BFD family label and to a row of the family table of Lax et al. 2025 (Nature Communications 16:10277; the paper's families come from InterPro, not from Pfam). The page reads the map from `data/tf_family_map.tsv`. This file is a copy of `config/tf_family_map.tsv`. A test checks that the two files are the same.
 
 ```{python}
-#| output: asis
 fm = read_family_map()
 if fm is None:
     say("*The family map `data/tf_family_map.tsv` could not be read, so the counts and tables of this section are not shown.*")
@@ -124,7 +122,6 @@ Five rows of the TF Pfam CSV that the pipeline used (`nextflow/assets/fungal_tf_
 ### Pfam families and their paper family
 
 ```{python}
-#| output: asis
 if fm is None:
     say("*Family map not available.*")
 else:
@@ -135,7 +132,6 @@ else:
 ### Paper families with no Pfam in the map (unmapped)
 
 ```{python}
-#| output: asis
 if fm is None:
     say("*Family map not available.*")
 else:
@@ -146,7 +142,6 @@ else:
 ### Notes on the rows that are not counted
 
 ```{python}
-#| output: asis
 if fm is None:
     say("*Family map not available.*")
 else:

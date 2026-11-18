@@ -84,7 +84,6 @@ The map was checked against Pfam release 38.2. The TF Pfam CSV of the pipeline h
 
 ```{python}
 #| echo: false
-#| output: asis
 import sys
 sys.path.insert(0, ".")
 from _helpers import read_family_map, say

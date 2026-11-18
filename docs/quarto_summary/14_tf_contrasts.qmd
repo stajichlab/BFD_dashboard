@@ -32,7 +32,6 @@ single("T10_tf_claims_forest", "Effect of each claim with a 95% bootstrap interv
 Each row is one claim. The BFD columns use genera with BUSCO >= 80. The paper columns apply the same test to the paper's own table, with one value per species.
 
 ```{python}
-#| output: asis
 t = read_flat("T10_tf_claims", "tf")
 if t is None:
     say("*Table `T10_tf_claims` has not been built (tables/tf/).*")
@@ -60,7 +59,6 @@ A claim is marked "not comparable" when the BFD Pfam definition does not detect 
 For the species that appear in both data sets, the page compares the BFD count of a family with the paper's count. The paper's counts were made with InterPro. The BFD counts use Pfam.
 
 ```{python}
-#| output: asis
 sm = None
 try:
     sm = pd.read_csv("data/paper_species_map.tsv", sep="\t", comment="#", dtype=str, keep_default_na=False)
@@ -95,7 +93,6 @@ The table below uses the representative of every genus, with no BUSCO filter. A 
 :::
 
 ```{python}
-#| output: asis
 t0 = read_flat("T10_tf_claims_nofilter", "tf")
 if t0 is None:
     say("*Table `T10_tf_claims_nofilter` has not been built (tables/tf/).*")

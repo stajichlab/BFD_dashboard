@@ -30,7 +30,6 @@ This page follows three TFs across fungi: WC-2 (white-collar complex), a Zap1-li
 6. **DAP-seq targets.** The JGI protein IDs of the tested TFs and their targets are mapped to BFD proteins of *R. microsporus* by reciprocal best hit (MMseqs2). The mapping rate is reported. Each target is searched against the genus-representative proteomes. The page reports the number of phyla and orders with a hit and compares the targets of each TF with all genes of the genome. These are hypotheses about the targets, not about regulation in other species.
 
 ```{python}
-#| output: asis
 TF = HERE / "tables" / "tf"
 FIGS = HERE / "figures" / "tf"
 SUFFIX = ("_presence", "_tree", "_seeds", "_thresholds")
@@ -60,7 +59,6 @@ else:
 ## Seeds and thresholds
 
 ```{python}
-#| output: asis
 seed_files = sorted(TF.glob("T20_*seed*.tsv")) if TF.is_dir() else []
 if not seed_files:
     say("*The seed table has not been built yet. It lists, for each seed, the source (paper MOESM6 or UniProt), the key, the match result, and the MMseqs2 identity and coverage thresholds.*")
@@ -73,7 +71,6 @@ else:
 ## Orthologs by target
 
 ```{python}
-#| output: asis
 for slug in shown:
     say(f"### {NAMES.get(slug, slug)}")
     single(f"T20_ortho_{slug}_presence", f"Presence of {NAMES.get(slug, slug)} orthologs by order (genus representatives). Absent means no hit that passes the thresholds and the architecture rule. This is evidence for orthology, not proof.", "tf", width="90%")
