@@ -267,6 +267,14 @@ def page_tf_calibration(bfd_family_genome, paper_counts, species_map, fmap, o, b
     return summ
 
 
+def not_comparable_families(genus_nonzero, calib_summary):
+    """Paper families BFD cannot reproduce: non-zero in fewer than MIN_NONZERO_GENERA genera of the BUSCO>=80 genus table
+    (genus_nonzero), or zero in all matched species (n_nonzero_bfd == 0 in the calibration summary)."""
+    few = {f for f, k in genus_nonzero.items() if k < tc.MIN_NONZERO_GENERA}
+    zero = set(calib_summary.loc[calib_summary["n_nonzero_bfd"] == 0, "paper_family"])
+    return few | zero
+
+
 def run_tf_claims(genome_all, fam, summ, out, busco_min=80, n_boot=2000, config_dir=None, paper_fam=None):
     """The claims page and the calibration page under tables/tf and figures/tf. BFD claims use genus representatives with
     busco_complete >= busco_min; T10_tf_claims_nofilter.tsv uses all genera. When the derived paper tables exist in
@@ -285,8 +293,7 @@ def run_tf_claims(genome_all, fam, summ, out, busco_min=80, n_boot=2000, config_
               "(double counting possible)", flush=True)
     g80 = genus_table(genome_all, fam, summ, busco_min=busco_min, paper_fam=paper_fam)
     g0 = genus_table(genome_all, fam, summ, paper_fam=paper_fam)
-    nz = tc.nonzero_genera(g0, fmap)
-    not_comp = {f for f, k in nz.items() if k < tc.MIN_NONZERO_GENERA}
+    nz = tc.nonzero_genera(g80, fmap)     # ONE definition of "non-zero genera": the BUSCO>=80 genus table (T10, T09, paper side)
     o.info = {"n_genomes": len(g80), "n_groups": None, "pooled_share": 0.0}
     paper_rows, calib = None, None
     cf, tf_, mf_ = cfg / "paper_tf_counts.tsv", cfg / "paper_tf_totals.tsv", cfg / "paper_species_map.tsv"
@@ -296,10 +303,12 @@ def run_tf_claims(genome_all, fam, summ, out, busco_min=80, n_boot=2000, config_
         smap["species_prefix"] = smap["species_prefix"].replace("", np.nan)
         ph = smap.merge(genome_all[["species_prefix", "PHYLUM"]], on="species_prefix", how="inner")
         ph = ph.rename(columns={"paper_species": "species_full"})[["species_full", "PHYLUM"]]
-        paper_rows = evaluate_claims_on_paper(counts, ph, claims, totals, n_boot=n_boot, fmap=fmap, not_comparable=not_comp)
         smap_ok = smap[smap["species_prefix"].isin(set(genome_all["species_prefix"]))]   # drops suppressed genomes
+        csum, _ = calibrate(fam, counts, smap_ok, fmap, paper_fam, nz)
+        paper_rows = evaluate_claims_on_paper(counts, ph, claims, totals, n_boot=n_boot, fmap=fmap,
+                                              not_comparable=not_comparable_families(nz, csum))
         calib = (fam, counts, smap_ok)
-    tc.page_tf_claims(g80, claims, o, paper_rows=paper_rows, genus_df_nofilter=g0, fmap=fmap, n_boot=n_boot)
+    tc.page_tf_claims(g80, claims, o, paper_rows=paper_rows, genus_df_nofilter=g0, fmap=fmap, n_boot=n_boot, nonzero=nz)
     if calib is not None:
         page_tf_calibration(calib[0], calib[1], calib[2], fmap, o, bfd_paper_family=paper_fam, genus_nonzero=nz)
     return o.made

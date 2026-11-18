@@ -18,7 +18,7 @@ domains of one paper family then counts twice); every such row has a note.
 A paper family is "not comparable" when BFD detects it in fewer than MIN_NONZERO_GENERA genera of the table: agrees is then
 'not comparable' and the note says so (the statistics are still shown).
 Groups are phyla or the sets Dikarya (Ascomycota + Basidiomycota), EDF (all phyla except Ascomycota, Basidiomycota and
-Microsporidia), ALL (every phylum); 'X-Y' removes the phylum Y from the set X (for example ALL-Mucoromycota).
+Microsporidia), Mucoromyceta (Mucoromycota + Mortierellomycota + Glomeromycota), ALL (every phylum); 'X-Y' removes the phylum Y from the set X (for example ALL-Mucoromycota).
 Confidence intervals are percentile bootstraps over genera (n_boot resamples within each group, fixed seed). p-values are
 Benjamini-Hochberg adjusted over the tested claims of ONE call, so separately for the BFD table (BUSCO >= 80), the BFD no-filter
 sensitivity table and the paper-side table. Phylogeny is not controlled: related genera are not independent.
@@ -43,6 +43,7 @@ SENS_NOTE = ("sensitivity only; low-BUSCO genomes have incomplete annotation; an
              "the paper")
 DIKARYA = ("Ascomycota", "Basidiomycota")
 NOT_EDF = DIKARYA + ("Microsporidia",)
+MUCOROMYCETA = ("Mucoromycota", "Mortierellomycota", "Glomeromycota")   # one reading of "Mucoromycota" in the paper
 FAM_PREFIX = "fam_"
 UNIT = {"genus": "genera", "species": "species"}
 CLAIM_COLS = ["claim_id", "text", "family", "metric", "level", "group_a", "group_b", "paper_direction"]
@@ -67,21 +68,28 @@ def load_fmap(path=None):
     return pd.read_csv(path or FAMILY_MAP, sep="\t", dtype=str, comment="#", keep_default_na=False)
 
 
+def _base_mask(name, ph, known):
+    if name == "Dikarya":
+        return ph.isin(DIKARYA)
+    if name == "EDF":
+        return known & ~ph.isin(NOT_EDF)
+    if name == "Mucoromyceta":
+        return ph.isin(MUCOROMYCETA)
+    if name == "ALL":
+        return known
+    return ph == name
+
+
 def resolve_group(spec, phylum):
-    """Boolean numpy mask of the rows of `phylum` (Series) in the group `spec`. Unknown phylum (NaN) is in no group."""
+    """Boolean numpy mask of the rows of `phylum` (Series) in the group `spec`: a phylum, or one of the sets Dikarya, EDF,
+    Mucoromyceta (Mucoromycota + Mortierellomycota + Glomeromycota), ALL; 'X-Y' removes the set or phylum Y from X. Unknown
+    phylum (NaN) is in no group."""
     ph = pd.Series(phylum).reset_index(drop=True)
     known = ph.notna()
     base, *minus = [s.strip() for s in str(spec).split("-")]
-    if base == "Dikarya":
-        m = ph.isin(DIKARYA)
-    elif base == "EDF":
-        m = known & ~ph.isin(NOT_EDF)
-    elif base == "ALL":
-        m = known
-    else:
-        m = ph == base
+    m = _base_mask(base, ph, known)
     for s in minus:
-        m = m & (ph != s)
+        m = m & ~_base_mask(s, ph, known)
     return m.to_numpy(dtype=bool)
 
 
@@ -160,6 +168,16 @@ def _phylum_values(v, ph, mask, min_n):
     return out
 
 
+def _eligible_note(v, ph, mask, others, unit):
+    """'eligible phyla: ...; excluded (< 5 unit): Name (n), ...' for the phyla of `mask`."""
+    cnt = {}
+    for name, idx in pd.Series(np.arange(len(v))[mask]).groupby(ph.to_numpy()[mask]):
+        cnt[name] = int(np.isfinite(v[idx.to_numpy()]).sum())
+    elig = ", ".join(sorted(others))
+    exc = ", ".join(f"{k} ({n})" for k, n in sorted(cnt.items()) if k not in others and n > 0)
+    return f"eligible phyla: {elig}" + (f"; excluded (< {MIN_GENERA} {unit}): {exc}" if exc else "")
+
+
 def _rank_row(r, v, ph, ma, mb, n_boot, rng, unit):
     a = v[ma][np.isfinite(v[ma])]
     others = _phylum_values(v, ph, mb & ~ma, MIN_GENERA)
@@ -179,7 +197,8 @@ def _rank_row(r, v, ph, ma, mb, n_boot, rng, unit):
              observed_direction=observed_direction(e))
     r["agrees"] = "yes" if rank == 1 and not notyes else "mixed" if rank == 1 else "no"
     r["note"] = _join(r["note"], f"rank {rank} of {len(med) + 1} phyla with >= {MIN_GENERA} {unit}; weakest pair vs {weakest} "
-                      f"(effect {e:.2f}); p = largest BH-adjusted pairwise p" + (f"; not yes vs: {', '.join(notyes)}" if notyes else ""))
+                      f"(effect {e:.2f}); p = largest BH-adjusted pairwise p" + (f"; not yes vs: {', '.join(notyes)}" if notyes else ""),
+                      _eligible_note(v, ph, mb & ~ma, others, unit))
     return r
 
 
@@ -198,9 +217,12 @@ def _maxprev_row(r, v, ph, ma, mb, n_boot, rng, unit):
     lo, hi = _boot_ci(xa, xb, True, n_boot, rng)
     r.update(value_a=float(xa.mean()), value_b=prev[top], effect=e, ci_lo=lo, ci_hi=hi, observed_direction=observed_direction(e),
              p=float(st.fisher_exact([[ka, len(xa) - ka], [kb, len(xb) - kb]])[1]))
-    r["agrees"] = "yes" if e >= EXCLUSIVE_MARGIN else "mixed" if e > 0 else "no"
-    r["note"] = _join(r["note"], f"highest other prevalence: {top} ({prev[top]:.2f}); yes needs a margin of at least "
-                      f"{EXCLUSIVE_MARGIN} over it")
+    r["agrees"] = "yes" if e >= EXCLUSIVE_MARGIN else "mixed" if e >= 0 else "no"
+    tied = [k for k in prev if prev[k] == prev[top]]
+    what = (f"tie at the maximum prevalence with: {', '.join(tied)} ({prev[top]:.2f})" if e == 0 else
+            f"highest other prevalence: {top} ({prev[top]:.2f})")
+    r["note"] = _join(r["note"], f"{what}; yes needs a margin of at least {EXCLUSIVE_MARGIN} over it",
+                      _eligible_note(v, ph, mb & ~ma, others, unit))
     return r
 
 
@@ -282,8 +304,12 @@ def nonzero_genera(genus_df, fmap=None):
     return out
 
 
-def not_comparable_note(k):
-    return f"BFD Pfam definition does not detect this family (non-zero in {k} genera); not comparable with the paper"
+def not_comparable_note(k, basis="BUSCO>=80"):
+    """k = number of genera with a protein in the BUSCO>=80 genus table (the one definition used for T10, T09 and the paper
+    side)."""
+    n = f"{k} genus" if k == 1 else f"{k} genera"
+    return (f"BFD Pfam definition does not detect this family (non-zero in {n}); not comparable with the paper "
+            f"(genus table: {basis})")
 
 
 def _labels(fm):
@@ -291,15 +317,16 @@ def _labels(fm):
     return bridge.groupby("paper_family")["family"].agg(list).to_dict()
 
 
-def evaluate_claims(genus_df, claims, n_boot=2000, seed=1, fmap=None, filter_label="", extra_note=""):
+def evaluate_claims(genus_df, claims, n_boot=2000, seed=1, fmap=None, filter_label="", extra_note="", nonzero=None):
     """Test each claim on genus values. genus_df: tf_data.genus_table output (PHYLUM, n_proteins_total, shannon, fam_<label>
     and, with the paper-family table, pf_<paper family>). fmap: the family map (default config/tf_family_map.tsv). Returns
-    OUT_COLS (source = 'BFD'; filter = filter_label)."""
+    OUT_COLS (source = 'BFD'; filter = filter_label). nonzero: {paper family: genera with a protein} used for the
+    not-comparable flag (default: counted on genus_df); pass the BUSCO>=80 table's numbers so every table uses one definition."""
     fm = load_fmap() if fmap is None else fmap
     labels = _labels(fm)
     pf_mode = any(c.startswith(PF_PREFIX) for c in genus_df.columns)
     tot = genus_df["n_proteins_total"].astype(float).where(genus_df["n_proteins_total"] > 0)
-    nz = nonzero_genera(genus_df, fm)
+    nz = dict(nonzero) if nonzero is not None else nonzero_genera(genus_df, fm)
 
     def value_fn(family, metric):
         if metric == "shannon":
@@ -375,16 +402,20 @@ def _forest(t):
     return fig
 
 
-def page_tf_claims(genus_df, claims_table, o, paper_rows=None, genus_df_nofilter=None, fmap=None, n_boot=2000, seed=1):
+def page_tf_claims(genus_df, claims_table, o, paper_rows=None, genus_df_nofilter=None, fmap=None, n_boot=2000, seed=1,
+                   nonzero=None):
     """T10_tf_claims.tsv (BFD rows on genus_df with filter BUSCO>=80, plus paper_rows when given),
     T10_tf_claims_nofilter.tsv (BFD rows on genus_df_nofilter, filter none, every note says sensitivity only) and the figure
     T10_tf_claims_forest. o: an Out for the 'tf' level."""
     from figs_common import safe
-    bfd = evaluate_claims(genus_df, claims_table, n_boot, seed, fmap, filter_label="BUSCO>=80")
+    if nonzero is None:
+        nonzero = nonzero_genera(genus_df, load_fmap() if fmap is None else fmap)
+    bfd = evaluate_claims(genus_df, claims_table, n_boot, seed, fmap, filter_label="BUSCO>=80", nonzero=nonzero)
     tab = bfd if paper_rows is None else pd.concat([bfd, paper_rows], ignore_index=True)
     o.table(tab, "T10_tf_claims")
     if genus_df_nofilter is not None:
-        o.table(evaluate_claims(genus_df_nofilter, claims_table, n_boot, seed, fmap, filter_label="none", extra_note=SENS_NOTE),
+        o.table(evaluate_claims(genus_df_nofilter, claims_table, n_boot, seed, fmap, filter_label="none", extra_note=SENS_NOTE,
+                        nonzero=nonzero),
                 "T10_tf_claims_nofilter")
     safe(o, "T10_tf_claims_forest", "tf", lambda: _forest(tab))
     return tab

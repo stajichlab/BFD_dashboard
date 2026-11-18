@@ -296,3 +296,51 @@ def test_genus_table_adds_paper_family_columns():
     t = tf_data.genus_table(ga, fam, summ, paper_fam=pf)
     assert dict(zip(t["genus"], t["pf_PF one"])) == {"G1": 3, "G2": 0}
     assert "pf_PF one" not in tf_data.genus_table(ga, fam, summ).columns
+
+
+# ---------------------------------------------------------------- residual fix
+def test_max_other_tie_is_mixed_and_lists_all_tied_phyla():
+    c = claims([("ex", "P2", "max_other_prevalence", "Mucoromycota", "ALL-Mucoromycota", "a>b")])
+    r = tc.evaluate_claims(_prev_df({"Mucoromycota": 1.0, "Ascomycota": 1.0, "Basidiomycota": 1.0, "Chytridiomycota": 0.3}), c,
+                           n_boot=50, fmap=FMAP).iloc[0]
+    assert r["effect"] == 0.0 and r["agrees"] == "mixed"
+    assert "tie at the maximum prevalence with: Ascomycota, Basidiomycota" in r["note"]
+    r = tc.evaluate_claims(_prev_df({"Mucoromycota": 0.5, "Ascomycota": 0.9, "Basidiomycota": 0.2}), c, n_boot=50, fmap=FMAP).iloc[0]
+    assert r["agrees"] == "no" and r["effect"] < 0 and "tie" not in r["note"]
+
+
+def test_max_other_and_rank_notes_list_eligible_and_excluded_phyla():
+    df = _prev_df({"Mucoromycota": 1.0, "Ascomycota": 0.2, "Basidiomycota": 0.6})
+    small = pd.DataFrame({"genus": ["m1", "m2", "m3"], "PHYLUM": "Mortierellomycota", "n_proteins_total": 1000, "shannon": 1.0,
+                          "fam_Fam Two": 1, "fam_Fam One": 0, "fam_Fam One b": 0})
+    df = pd.concat([df, small], ignore_index=True)
+    c = claims([("ex", "P2", "max_other_prevalence", "Mucoromycota", "ALL-Mucoromycota", "a>b"),
+                ("rk", "", "rank", "Mucoromycota", "ALL-Mucoromycota", "a>b")])
+    r = tc.evaluate_claims(df, c, n_boot=50, fmap=FMAP).set_index("claim_id")
+    for k in ("ex", "rk"):
+        assert "eligible phyla: Ascomycota, Basidiomycota; excluded (< 5 genera): Mortierellomycota (3)" in r.loc[k, "note"]
+    assert r.loc["ex", "agrees"] == "yes"            # the small phylum does not count: the note says so
+
+
+def test_mucoromyceta_group_is_a_named_set():
+    ph = pd.Series(["Mucoromycota", "Mortierellomycota", "Glomeromycota", "Ascomycota", None])
+    assert list(tc.resolve_group("Mucoromyceta", ph)) == [True, True, True, False, False]
+    assert list(tc.resolve_group("ALL-Mucoromyceta", ph)) == [False, False, False, True, False]
+    cl = tc.load_claims(CONFIG / "tf_claims.tsv").set_index("claim_id")
+    for k in ("wrky_mucoromyceta", "e2f_mucoromyceta", "shannon_mucoromyceta"):
+        assert cl.loc[k, "group_a"] == "Mucoromyceta" and cl.loc[k, "group_b"] == "ALL-Mucoromyceta"
+    assert "alternative reading" in (CONFIG / "tf_claims.tsv").read_text()
+
+
+def test_not_comparable_note_singular_plural_and_basis():
+    assert "non-zero in 1 genus)" in tc.not_comparable_note(1) and "non-zero in 2 genera)" in tc.not_comparable_note(2)
+    assert "non-zero in 0 genera)" in tc.not_comparable_note(0)
+    assert tc.not_comparable_note(1).endswith("(genus table: BUSCO>=80)")
+
+
+def test_one_nonzero_definition_can_be_passed_in():
+    g = genus_df({"Ascomycota": (10, 0.04), "Mucoromycota": (10, 0.01)})
+    c = claims([("x", "P1", "count", "Ascomycota", "Mucoromycota", "a>b")])
+    assert tc.evaluate_claims(g, c, n_boot=50, fmap=FMAP).iloc[0]["agrees"] == "yes"
+    r = tc.evaluate_claims(g, c, n_boot=50, fmap=FMAP, nonzero={"P1": 2}).iloc[0]
+    assert r["agrees"] == "not comparable" and "non-zero in 2 genera" in r["note"]

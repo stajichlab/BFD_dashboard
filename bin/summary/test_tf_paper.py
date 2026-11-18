@@ -276,3 +276,20 @@ def test_paper_side_note_for_not_comparable_family():
     r = tp.evaluate_claims_on_paper(pc, ph, cl, totals, n_boot=50, not_comparable={"P1"}).iloc[0]
     assert "paper definition; not reproduced by BFD Pfam" in r["note"] and r["agrees"] in ("yes", "mixed")
     assert r["filter"] != "BUSCO>=80"
+
+
+def test_not_comparable_families_uses_genus_threshold_and_zero_in_matched_species():
+    summ = pd.DataFrame({"paper_family": ["A", "B", "C"], "n_nonzero_bfd": [0, 5, 5]})
+    assert tp.not_comparable_families({"A": 99, "B": 2, "C": 50}, summ) == {"A", "B"}
+
+
+def test_run_tf_claims_prints_warning_without_paper_family_table(tmp_path, capsys):
+    from test_figs_tf import tf_synth
+    from test_make_figures import synth
+    root = tmp_path / "d"
+    root.mkdir()
+    synth(root)
+    fam, summ = tf_synth(root)
+    ga = pd.read_parquet(root / "genome_all.parquet")
+    tp.run_tf_claims(ga, fam, summ, tmp_path / "o", n_boot=30)
+    assert "WARNING: tf_paper_family_genome absent" in capsys.readouterr().out
