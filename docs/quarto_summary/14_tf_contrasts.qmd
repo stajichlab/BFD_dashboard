@@ -36,23 +36,38 @@ t = read_flat("T10_tf_claims", "tf")
 if t is None:
     say("*Table `T10_tf_claims` has not been built (tables/tf/).*")
 else:
-    keep = ["claim_id", "n_genera_a", "n_genera_b", "effect", "ci_lo", "ci_hi", "p_adj", "observed_direction", "agrees"]
-    b = t[t["source"] == "BFD"][["claim_id", "family", "metric", "group_a", "group_b", "paper_direction"] + keep[1:]]
-    p = t[t["source"] == "paper"][keep].add_prefix("paper_").rename(columns={"paper_claim_id": "claim_id"})
-    m = b.merge(p, on="claim_id", how="left")
-    m = m.rename(columns={"n_genera_a": "bfd_n_a", "n_genera_b": "bfd_n_b", "effect": "bfd_effect", "ci_lo": "bfd_ci_lo",
+    b = t[t["source"] == "BFD"][["claim_id", "n_genera_a", "n_genera_b", "effect", "ci_lo", "ci_hi", "p_adj",
+                                 "observed_direction", "agrees"]]
+    p = t[t["source"] == "paper"][["claim_id", "n_genera_a", "n_genera_b", "effect", "p_adj", "agrees"]]
+    p = p.rename(columns={"n_genera_a": "paper_n_a", "n_genera_b": "paper_n_b", "effect": "paper_effect",
+                          "p_adj": "paper_p_adj", "agrees": "paper_agrees"})
+    m = b.rename(columns={"n_genera_a": "bfd_n_a", "n_genera_b": "bfd_n_b", "effect": "bfd_effect", "ci_lo": "bfd_ci_lo",
                           "ci_hi": "bfd_ci_hi", "p_adj": "bfd_p_adj", "observed_direction": "bfd_direction",
-                          "agrees": "bfd_agrees"})
-    say(f"{len(b)} claims. In the paper columns, n is the number of species; an empty paper cell means the paper side was not computed. "
+                          "agrees": "bfd_agrees"}).merge(p, on="claim_id", how="left")
+    say(f"{len(b)} claims. Claim texts, families and groups are in the forest figure and in `T10_tf_claims.tsv`. In the paper columns, n is the number of species; an empty paper cell means the paper side was not computed. "
         f"BFD: {int((b['agrees']=='yes').sum())} agree, {int((b['agrees']=='mixed').sum())} mixed, "
         f"{int((b['agrees']=='no').sum())} do not agree, {int((b['agrees']=='not tested').sum())} not tested, "
         f"{int((b['agrees']=='not comparable').sum())} not comparable. These counts come from the table.")
-    say(m.round(3).to_markdown(index=False))
+    say('<div style="overflow-x:auto">\n\n' + m.round(3).to_markdown(index=False) + "\n\n</div>")
 ```
 
 ### Families that are not comparable (the STAT case)
 
-A claim is marked "not comparable" when the BFD Pfam definition does not detect the family in enough genera. The clearest case is STAT. The Pfam STAT models hit one BFD genome. The paper's table has STAT in 18 of 62 species and in 13 of 19 Dikarya species (the paper's numbers). The two definitions do not describe the same set of proteins. This is a definition mismatch, not a result about fungi. The claim is marked not comparable and no sign is compared.
+A claim is marked "not comparable" when the BFD Pfam definition does not detect the family in enough genera. The clearest case is STAT.
+
+```{python}
+import re
+cal = read_flat("T09_tf_calibration", "tf")
+k = None
+if cal is not None:
+    note = " ".join(cal.loc[cal["paper_family"] == "STAT", "note"].astype(str))
+    m = re.search(r"non-zero in (\d+) genus|non-zero in (\d+) genera", note)
+    k = int(next(g for g in m.groups() if g)) if m else None
+hit = f"hit {k} BFD genus (genus table, BUSCO >= 80)" if k is not None else "hit very few BFD genera (the count is read from the calibration table, which is not built yet)"
+say(f"The Pfam STAT models {hit}. The paper's table has STAT in 18 of 62 species and in 13 of 19 Dikarya species (the paper's numbers). "
+    "The two definitions do not describe the same set of proteins. This is a definition mismatch, not a result about fungi. "
+    "The claim is marked not comparable and no sign is compared.")
+```
 
 ## Calibration against the paper's counts
 
@@ -98,7 +113,7 @@ if t0 is None:
     say("*Table `T10_tf_claims_nofilter` has not been built (tables/tf/).*")
 else:
     cols = ["claim_id", "n_genera_a", "n_genera_b", "effect", "ci_lo", "ci_hi", "p_adj", "observed_direction", "paper_direction", "agrees", "filter"]
-    say(t0[[c for c in cols if c in t0.columns]].round(3).to_markdown(index=False))
+    say('<div style="overflow-x:auto">\n\n' + t0[[c for c in cols if c in t0.columns]].round(3).to_markdown(index=False) + "\n\n</div>")
 ```
 
 ## Sources

@@ -15,7 +15,7 @@ This page searches for TF families that are larger or smaller in a lineage than 
 ## Read this first
 - **Hypotheses.** A flagged family is a hypothesis about a lineage. It is not a tested cause.
 - **p-values are inflated.** Genera are not independent, and phylogeny is not controlled. The adjusted p-values overstate the evidence.
-- **annotation completeness.** A fragmented or incomplete annotation looks like a contraction. The main tables use genera with BUSCO >= 80. The sensitivity table below uses all genera and is not evidence.
+- **annotation completeness.** A fragmented or incomplete annotation can look like a contraction. Annotation completeness is a confound here, not a tested cause. The main tables use genera with BUSCO >= 80. The sensitivity table below uses all genera and is not evidence.
 - **Counts are distinct proteins** per genome and paper family. Families that BFD cannot detect (non-zero in fewer than 3 genera) are left out.
 :::
 
@@ -29,7 +29,7 @@ This page searches for TF families that are larger or smaller in a lineage than 
    - |effect| >= 0.5;
    - at least 3 genera of the lineage lie on the side of the effect of the median of the rest of the phylum;
    - the mean raw count of the lineage lies on the side of the direction (this removes an artefact for rare families).
-5. **lineage-wide.** A lineage is marked lineage-wide when it is flagged for more than half of the families tested for it (and at least 4 families were tested). The cutoff of one half is a judgement, not a tested value. A lineage-wide shift points to a proteome-size or annotation effect, not to one family.
+5. **lineage-wide.** A lineage is marked lineage-wide when it is flagged for more than half of the families tested for it (and at least 4 families were tested). The cutoff of one half is a judgement, not a tested value. A lineage-wide shift may reflect a proteome-size or annotation effect rather than one family. This was not tested.
 6. **Presence flags.** A family is lost in a lineage when it is present in at least 80% of all genera and in at most 20% of the lineage. It is gained for the reverse. A phylum with two or fewer lineages in the table carries the note "phylum-level statement".
 
 ## Summary
@@ -54,7 +54,7 @@ else:
 ## Effect heat map
 
 ```{python}
-single("T11_tf_effect_heatmap", "Effect of each tested family in each order (rank-biserial, lineage against the rest of its phylum). Marked cells are flagged. Hypotheses; genus values; no phylogenetic control.", "tf", width="95%")
+single("T11_tf_effect_heatmap", "Effect of each tested family in each order (rank-biserial, lineage against the rest of its phylum). Marked cells are flagged. The labels are small: open the SVG to zoom. Hypotheses; genus values; no phylogenetic control.", "tf", width="95%")
 ```
 
 ## Top hits
@@ -89,7 +89,7 @@ flat_table("T11_tf_presence_flags", "tf", digits=3,
 
 ::: {.callout-important}
 ## Sensitivity only
-This table uses all genera with no BUSCO filter. It is sensitivity only. Low annotation completeness is a confound here, not a tested cause. A flagged cell that appears only in this table is not evidence. A cell that is flagged in the main table and not here, or the reverse, shows that the result depends on annotation completeness.
+This table uses all genera with no BUSCO filter. It is sensitivity only. Low annotation completeness is a confound here, not a tested cause. A flagged cell that appears only in this table is not evidence. A cell that is flagged in the main table and not here, or the reverse, may reflect annotation completeness (not tested).
 :::
 
 ```{python}

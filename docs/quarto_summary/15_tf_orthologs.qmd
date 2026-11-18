@@ -24,34 +24,30 @@ This page follows three TFs across fungi: WC-2 (white-collar complex), a Zap1-li
 
 1. **Seeds.** Two sources are used. (a) The paper's own sequences (supplementary file MOESM6, from JGI). They are searched against the BFD *Rhizopus microsporus* ATCC 11559 proteome to find the matching BFD protein, and are named from the paper's Supplementary Table 1. (b) Literature seeds from UniProt: *Neurospora crassa* WC-2, *Saccharomyces cerevisiae* Zap1 and Cad1/Yap2.
 2. **Candidates.** All proteins of the genus representatives that carry the TF Pfam domain of the target.
-3. **Search.** MMseqs2 search of each seed against the candidates. The identity and coverage thresholds are shown in the table headers once the tables exist (see the table of thresholds below).
+3. **Search.** MMseqs2 search of each seed against the candidates. Thresholds: E-value <= 1e-5 and query coverage >= 0.5. The thresholds that a run actually used are written as a `#` line at the top of its tables and are shown above the table.
 4. **Architecture rule.** The domain architecture is checked after the search, not before it. WC-2 needs a GATA domain and a PAS domain. The architecture counts are in the tables.
 5. **Tree.** MAFFT alignment, trimming of gap-rich columns, FastTree. The tree tips use the phylum colours of the other pages. The anchor species (*Rhizopus microsporus*, *Mucor lusitanicus* and *Phycomyces*) are marked.
-6. **DAP-seq targets.** The JGI protein IDs of the tested TFs and their targets are mapped to BFD proteins of *R. microsporus* by reciprocal best hit (MMseqs2). The mapping rate is reported. Each target is searched against the genus-representative proteomes. The page reports the number of phyla and orders with a hit and compares the targets of each TF with all genes of the genome. These are hypotheses about the targets, not about regulation in other species.
+6. **DAP-seq targets.** The JGI protein IDs of the tested TFs and their targets are mapped to BFD proteins of *R. microsporus* by reciprocal best hit (MMseqs2; identity >= 90% and coverage >= 0.8, with a looser sensitivity run at 70% and 0.7). The mapping rate is reported. The conservation search uses E-value <= 1e-5 and query coverage >= 0.5. Each target is searched against the genus-representative proteomes. The page reports the number of phyla and orders with a hit and compares the targets of each TF with all genes of the genome. These are hypotheses about the targets, not about regulation in other species.
 
 ```{python}
 TF = HERE / "tables" / "tf"
 FIGS = HERE / "figures" / "tf"
-SUFFIX = ("_presence", "_tree", "_seeds", "_thresholds")
+
+
+# Task 5 (the ortholog workflow) is not built yet: recheck these slugs and the T20_ortho_<slug>_* names when it lands.
+NAMES = {"wc2": "WC-2 (GATA and PAS)", "zap1": "Zap1-like C2H2 (Znf1)", "bzip5": "bZip5"}
 
 
 def found_targets():
-    """Target slugs from tables/tf/T20_ortho_<target>.tsv; empty when the ortholog workflow has not run."""
-    out = []
-    if TF.is_dir():
-        for p in sorted(TF.glob("T20_ortho_*.tsv")):
-            slug = p.stem[len("T20_ortho_"):]
-            if slug and not slug.endswith(SUFFIX):
-                out.append(slug)
-    return out
+    """Slugs of NAMES that have a table tables/tf/T20_ortho_<slug>.tsv; empty when the ortholog workflow has not run."""
+    return [s for s in NAMES if (TF / f"T20_ortho_{s}.tsv").exists()]
 
 
 targets = found_targets()
-NAMES = {"wc2": "WC-2 (GATA and PAS)", "zap1": "Zap1-like C2H2 (Znf1)", "bzip5": "bZip5"}
 shown = targets or list(NAMES)
 if not targets:
     say("*The ortholog tables (`T20_ortho_<target>`) have not been built yet. "
-        "The sections below show the structure. They fill when `workflows/tf_orthologs.sh` has run and its output is in the release asset.*")
+        "The sections below show the structure. They fill when the ortholog workflow has run and its output is in the release asset.*")
 else:
     say(f"Ortholog tables found for {len(targets)} targets: {', '.join(targets)}.")
 ```
@@ -93,6 +89,16 @@ flat_table("T21_jgi_map_rate", "tf")
 
 ```{python}
 flat_table("T21_target_conservation", "tf", digits=3)
+```
+
+Each TF's targets are compared with all proteins of the *R. microsporus* genome (Mann-Whitney, Benjamini-Hochberg over TFs). TFs with too few mapped targets are not tested; the table says so.
+
+```{python}
+flat_table("T21_target_background_tests", "tf", digits=4)
+```
+
+```{python}
+flat_table("T21_tf_set_sizes", "tf", digits=3)
 ```
 
 ```{python}

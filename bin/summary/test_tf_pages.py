@@ -22,11 +22,14 @@ REQUIRED = {
                             "BUSCO >= 80", "Benjamini-Hochberg", "phylogeny is not otherwise controlled",
                             "only compares the sign", "InterPro", "62 species", "not comparable", "distinct proteins",
                             "18 of 62", "13 of 19", "sensitivity only", "confound"],
-    "15_tf_orthologs.qmd": ["evidence for orthology, not proof", "function is not inferred", "reciprocal best hit",
+    "15_tf_orthologs.qmd": ["Lax et al.", "T21_target_background_tests", "1e-5", "evidence for orthology, not proof", "function is not inferred", "reciprocal best hit",
                             "MOESM6", "JGI", "UniProt", "MMseqs", "has not been built"],
-    "16_tf_expansions.qmd": ["hypotheses", "p_adj < 0.05", "|effect| >= 0.5", "at least 3 genera", "lineage-wide",
+    "16_tf_expansions.qmd": ["Lax et al.", "distinct proteins", "hypotheses", "p_adj < 0.05", "|effect| >= 0.5", "at least 3 genera", "lineage-wide",
                              "per phylum", "annotation completeness", "not independent", "phylogeny is not controlled"],
 }
+
+
+MIN_NOT_BUILT = {"15_tf_orthologs.qmd": 8, "14_tf_contrasts.qmd": 3, "16_tf_expansions.qmd": 5}
 
 
 def _read(name):
@@ -73,8 +76,8 @@ def _cells(text):
 
 @pytest.mark.parametrize("page", list(PAGES))
 def test_pages_run_without_tf_outputs(page, tmp_path, monkeypatch, capsys):
-    pytest.importorskip("tabulate")   # DataFrame.to_markdown, as in the existing helpers
     """Copy the tracked tree only (no figures or tables): every python cell must run and show 'not built' notes."""
+    pytest.importorskip("tabulate")   # DataFrame.to_markdown, as in the existing helpers
     dst = tmp_path / "quarto_summary"
     shutil.copytree(SITE, dst, ignore=shutil.ignore_patterns("figures", "tables", "figures_index.tsv", "__pycache__",
                                                              "_site", ".quarto"))
@@ -89,7 +92,22 @@ def test_pages_run_without_tf_outputs(page, tmp_path, monkeypatch, capsys):
     sys.modules.pop("_helpers", None)
     sys.path.insert(0, str(SITE))
     import _helpers as _h  # noqa: F401  restore for the other tests
-    assert "has not been built" in out or "not built" in out or "could not be read" in out
+    n = out.count("has not been built")
+    assert n >= MIN_NOT_BUILT.get(page, 1), (page, n)
+
+
+def test_flat_table_skips_leading_comment_lines(tmp_path, monkeypatch, capsys):
+    monkeypatch.setattr(_helpers, "HERE", tmp_path)
+    d = tmp_path / "tables" / "tf"
+    d.mkdir(parents=True)
+    (d / "T_c.tsv").write_text("# min_cov=0.5 evalue=1e-05\n# second\na\tb\n1\t2\n")
+    df = _helpers.read_flat("T_c", "tf")
+    assert list(df.columns) == ["a", "b"] and len(df) == 1
+    assert _helpers.read_comments("T_c", "tf") == ["min_cov=0.5 evalue=1e-05", "second"]
+    _helpers.flat_table("T_c", "tf")
+    out = capsys.readouterr().out
+    assert "min_cov=0.5" in out and "|   a |" in out
+    assert _helpers.read_comments("absent", "tf") == []
 
 
 def test_gallery_lists_tf_figures(tmp_path):

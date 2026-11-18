@@ -100,7 +100,7 @@ else:
 
 ### Caveats
 
-- **STAT is not detectable.** The Pfam STAT models (PF01017, PF02864, PF21354) hit very few BFD genomes. The paper's table has STAT in many more species. This is a difference in definition, not a result. The claims page shows it as "not comparable".
+- **STAT is not detectable.** The Pfam STAT models (PF01017, PF02864, PF21354) hit very few BFD genomes (the map notes give the count). The paper's table has STAT in many more species. This is a difference in definition, not a result. The claims page shows it as "not comparable".
 - **Paper families with no Pfam in the map are not counted.** The list is the table of unmapped paper families below. The pipeline's old Pfam rows for SBP and WOPR are also not counted (see the corrections table).
 - **The paper's counts are InterPro-based.** BFD counts come from Pfam. The calibration on the claims page compares them for the species that both sets share.
 - **Some paper families are wider than the Pfam that maps to them.** For example, HTH/Homeodomain-like is wider than Pfam Homeodomain.
@@ -113,7 +113,7 @@ Five rows of the TF Pfam CSV that the pipeline used (`nextflow/assets/fungal_tf_
 
 | Accession in the CSV | CSV label | Name in Pfam 38.2 | Treatment in the BFD list |
 |---|---|---|---|
-| PF00446 | SBP | GnRH | not counted; SBP is PF03110 and has no BFD hits |
+| PF00446 | SBP | GnRH | not counted; SBP is PF03110 (a plant-type domain; the map notes give its BFD hit count) |
 | PF11955 | WOPR | PORR | not counted; Pfam 38.2 has no WOPR model |
 | PF04844 | APSES | Ovate (a plant family) | not counted; APSES is covered by PF04383 (KilA-N) |
 | PF11951 | C6H2-type zinc finger | Fungal_trans_2 | counted as Fungal_trans_2, not as a zinc finger |
