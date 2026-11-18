@@ -1,0 +1,10 @@
+target	seed_name	source	key	taxon_id	target_pfam	required_pfam	note
+WC-2	WC-2C (GATA_Znf10)	paper	1921537		PF00320	PF00989|PF08447|PF13426	Lax et al. 2025 name WC-2C = GATA_Znf10; JGI Rhimi59_2 protein 1921537 (MOESM6); full length from the JGI protein file
+WC-2	N. crassa wc-2	uniprot	wc-2	367110	PF00320	PF00989|PF08447|PF13426	literature seed; locus NCU00902
+WC-2	R. microsporus ATCC 11559 GATA+PAS	bfd	FBF4BF29|pfam:GATA+PAS		PF00320	PF00989|PF08447|PF13426	BFD candidates by domain
+WC-2	M. lusitanicus GATA+PAS	bfd	F750FE6D|pfam:GATA+PAS		PF00320	PF00989|PF08447|PF13426	BFD candidates by domain
+WC-2	P. blakesleeanus GATA+PAS	bfd	F43EADC6|pfam:GATA+PAS		PF00320	PF00989|PF08447|PF13426	BFD candidates by domain
+Zap1-like	Znf1	paper	1799646		PF00096	PF00096>=4	Lax et al. 2025 name Znf1; JGI Rhimi59_2 protein 1799646; rule: 4 or more C2H2 domains
+Zap1-like	S. cerevisiae ZAP1	uniprot	ZAP1	559292	PF00096	PF00096>=4	literature seed
+bZip5	bZip5	paper	1909793		PF00170		Lax et al. 2025 name bZip5; JGI Rhimi59_2 protein 1909793
+bZip5	S. cerevisiae CAD1 (Yap2)	uniprot	CAD1	559292	PF00170		literature bZIP seed; CAD1 is a bZIP protein, so it is listed under bZip5 and not under Zap1-like
