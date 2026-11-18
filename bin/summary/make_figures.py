@@ -765,6 +765,14 @@ def main(data, out, levels=LEVELS, suppress=None):
         else:
             from figs_tf import page_tf_all
             made["all"] = list(made["all"]) + list(page_tf_all(genome_all, tf_summ_all, out, porder))
+            try:     # the paper's claims and the calibration: after the landscape pages; a failure must not stop the run
+                from tf_paper import run_tf_claims
+                made["tf"] = run_tf_claims(genome_all, rd("tf_family_genome"), tf_summ_all, out)
+            except Exception as e:
+                import traceback
+                traceback.print_exc(file=sys.stderr)
+                print(f"TF claims page failed: {type(e).__name__}: {e}", flush=True)
+                RUN_STATUS["failed"].append(f"TF claims ({type(e).__name__}: {e})")
         from summary_ordination import pick_complete_reps, run_ordination   # runs once, not per level
         mats = {}
         for key, tname in (("codon", "codon_genome"), ("aa", "aa_genome"), ("structure", "gene_structure_genome")):
