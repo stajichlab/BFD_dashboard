@@ -41,3 +41,9 @@ def test_data_spellings_are_mapped():
 def test_overrides_file_has_genus_and_growth_form():
     rows = _rows("growth_form_overrides.tsv", "\t")
     assert len(rows) > 100 and {"GENUS", "growth_form"} <= set(rows[0])
+
+
+def test_kickxellomycota_classes_map_to_kickxellomycotina():
+    m = {r["CLASS"]: r["SUBPHYLUM"] for r in _rows("class_subphylum.tsv", "\t")}
+    for c in ("Kickxellomycetes", "Harpellomycetes", "Dimargaritomycetes"):
+        assert m.get(c) == "Kickxellomycotina", c

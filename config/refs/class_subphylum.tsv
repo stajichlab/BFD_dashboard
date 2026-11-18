@@ -11,6 +11,7 @@ Collemopsidiomycetes	Pezizomycotina	taxonomy_py
 Coniocybomycetes	Pezizomycotina	taxonomy_py	
 Cystobasidiomycetes	Pucciniomycotina	taxonomy_py	
 Dacrymycetes	Agaricomycotina	taxonomy_py	
+Dimargaritomycetes	Kickxellomycotina	proposed	Kickxellomycota in the species table; added at the user's request 2026-11-18
 Dipodascomycetes	Saccharomycotina	taxonomy_py	
 Dothideomycetes	Pezizomycotina	taxonomy_py	
 Endogonomycetes	Mucoromycotina	proposed	Endogonales placed in Mucoromycotina by Spatafora 2016; check
@@ -18,6 +19,8 @@ Eurotiomycetes	Pezizomycotina	taxonomy_py
 Exobasidiomycetes	Ustilaginomycotina	taxonomy_py	
 Geminibasidiomycetes	Wallemiomycotina	proposed	Basidiomycota; check
 Geoglossomycetes	Pezizomycotina	taxonomy_py	
+Harpellomycetes	Kickxellomycotina	proposed	Kickxellomycota in the species table; added at the user's request 2026-11-18
+Kickxellomycetes	Kickxellomycotina	proposed	Kickxellomycota in the species table; added at the user's request 2026-11-18
 Laboulbeniomycetes	Pezizomycotina	taxonomy_py	
 Lecanoromycetes	Pezizomycotina	taxonomy_py	
 Leotiomycetes	Pezizomycotina	taxonomy_py	
