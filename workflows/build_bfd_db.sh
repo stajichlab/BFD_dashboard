@@ -37,7 +37,7 @@ for f in "$BUILDER" "$SCHEMA"; do
   [ -e "$f" ] || { echo "ERROR: missing $f" >&2; exit 1; }
 done
 [ -d "$TABLES" ] || { echo "ERROR: tables dir $TABLES not found" >&2; exit 1; }
-for f in fungaltraits_1.2.utf8.csv growth_form_overrides.tsv class_subphylum.tsv; do
+for f in fungaltraits_1.2.utf8.csv growth_form_overrides.tsv class_subphylum.tsv phylum_subphylum.tsv; do
   [ -e "$REF_DIR/$f" ] || { echo "ERROR: missing $REF_DIR/$f (set REF_DIR or REPO)" >&2; exit 1; }
 done
 REF_DIR="$(cd "$REF_DIR" && pwd)"
@@ -117,7 +117,7 @@ for name in ["v_genome_labels", "v_genome_secretome", "v_genome_traits"]:
         problems.append(f"helper view {name} missing")
 
 # trait tables and the v_genome_labels join: one row per genome, nothing multiplied or lost
-for name in ["ref_fungaltraits", "ref_growth_form_override", "ref_class_subphylum"]:
+for name in ["ref_fungaltraits", "ref_growth_form_override", "ref_class_subphylum", "ref_phylum_subphylum"]:
     try:
         n = con.sql(f"SELECT count(*) FROM {name}").fetchone()[0]
     except Exception as e:

@@ -25,11 +25,12 @@ def ft(jrk, genus, life=None, growth=None):
     return [jrk, genus, life, None, None, None, None, growth]
 
 
-def write_refs(tmp_path, ft_rows=(), ovr_rows=(), cls_rows=()):
+def write_refs(tmp_path, ft_rows=(), ovr_rows=(), cls_rows=(), phy_rows=()):
     _write(tmp_path / "fungaltraits_1.2.utf8.csv", FT_COLS, ft_rows, ",")
     _write(tmp_path / "growth_form_overrides.tsv", ["GENUS", "growth_form", "source", "n_genomes", "CLASS"],
            ovr_rows, "\t")
     _write(tmp_path / "class_subphylum.tsv", ["CLASS", "SUBPHYLUM", "source", "note"], cls_rows, "\t")
+    _write(tmp_path / "phylum_subphylum.tsv", ["PHYLUM", "SUBPHYLUM", "source", "note"], phy_rows, "\t")
 
 
 def apply_traits(con, tmp_path):
@@ -39,12 +40,12 @@ def apply_traits(con, tmp_path):
     con.execute(sql.replace(first[len("-- REF_DIR="):], str(tmp_path)))
 
 
-def load(tmp_path, species, ft_rows=(), ovr_rows=(), cls_rows=()):
-    """species: list of (LOCUSTAG, GENUS, CLASS, SUBPHYLUM). Returns a connection with the traits SQL applied."""
-    write_refs(tmp_path, ft_rows, ovr_rows, cls_rows)
+def load(tmp_path, species, ft_rows=(), ovr_rows=(), cls_rows=(), phy_rows=()):
+    """species: list of (LOCUSTAG, GENUS, CLASS, SUBPHYLUM[, PHYLUM]). Returns a connection with the traits SQL applied."""
+    write_refs(tmp_path, ft_rows, ovr_rows, cls_rows, phy_rows)
     con = duckdb.connect()
-    con.execute("CREATE TABLE species (LOCUSTAG VARCHAR, GENUS VARCHAR, CLASS VARCHAR, SUBPHYLUM VARCHAR)")
-    con.executemany("INSERT INTO species VALUES (?,?,?,?)", species)
+    con.execute("CREATE TABLE species (LOCUSTAG VARCHAR, GENUS VARCHAR, CLASS VARCHAR, SUBPHYLUM VARCHAR, PHYLUM VARCHAR)")
+    con.executemany("INSERT INTO species VALUES (?,?,?,?,?)", [tuple(r) + (None,) * (5 - len(r)) for r in species])
     apply_traits(con, tmp_path)
     return con
 
@@ -107,6 +108,20 @@ def test_yeast_origin_matches_atlas_rules(tmp_path):
                                         ft("j3", "Gf", None, "filamentous_mycelium"), ft("j4", "Gn", None, "other_form")])
     got = {lt: one(con, lt)["yeast_origin"] for lt in ("A1", "A2", "A3", "A4")}
     assert got == {"A1": "Saccharomycotina", "A2": "Pezizomycotina-dimorphic", "A3": "filamentous", "A4": "other"}
+
+
+def test_subphylum_phylum_fallback_order(tmp_path):
+    cls = [("Kickxellomycetes", "Kickxellomycotina", "proposed", "")]
+    phy = [("Kickxellomycota", "Kickxellomycotina", "proposed", ""), ("Glomeromycota", "Glomeromycotina", "proposed", "")]
+    con = load(tmp_path, [("A1", "G", None, None, "Kickxellomycota"),          # no class: phylum table
+                          ("A2", "G", "Kickxellomycetes", None, "Kickxellomycota"),   # class table wins
+                          ("A3", "G", None, None, "Ascomycota"),               # phylum not listed: NULL
+                          ("A4", "G", None, "Given", "Glomeromycota"),          # species value wins
+                          ("A5", "G", None, None, None)],                      # no phylum: NULL
+               cls_rows=cls, phy_rows=phy)
+    got = {lt: (one(con, lt)["SUBPHYLUM"], one(con, lt)["subphylum_source"]) for lt in ("A1", "A2", "A3", "A4", "A5")}
+    assert got == {"A1": ("Kickxellomycotina", "phylum_table"), "A2": ("Kickxellomycotina", "class_table"),
+                   "A3": (None, None), "A4": ("Given", "species"), "A5": (None, None)}
 
 
 def _labels_statement():

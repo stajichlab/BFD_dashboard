@@ -19,6 +19,7 @@ Eurotiomycetes	Pezizomycotina	taxonomy_py
 Exobasidiomycetes	Ustilaginomycotina	taxonomy_py	
 Geminibasidiomycetes	Wallemiomycotina	proposed	Basidiomycota; check
 Geoglossomycetes	Pezizomycotina	taxonomy_py	
+Glomeromycetes	Glomeromycotina	proposed	added at the user's request 2026-11-18
 Harpellomycetes	Kickxellomycotina	proposed	Kickxellomycota in the species table; added at the user's request 2026-11-18
 Kickxellomycetes	Kickxellomycotina	proposed	Kickxellomycota in the species table; added at the user's request 2026-11-18
 Laboulbeniomycetes	Pezizomycotina	taxonomy_py	
@@ -30,6 +31,7 @@ Malasseziomycetes	Ustilaginomycotina	taxonomy_py
 Microbotryomycetes	Pucciniomycotina	taxonomy_py	
 Mixiomycetes	Pucciniomycotina	taxonomy_py	
 Moniliellomycetes	Ustilaginomycotina	atlas	class list in bin/atlas/build_labels.py
+Mortierellomycetes	Mortierellomycotina	proposed	added at the user's request 2026-11-18
 Mucoromycetes	Mucoromycotina	proposed	Mucoromycota; check
 Neolectomycetes	Taphrinomycotina	taxonomy_py	
 Orbiliomycetes	Pezizomycotina	taxonomy_py	

@@ -47,3 +47,11 @@ def test_kickxellomycota_classes_map_to_kickxellomycotina():
     m = {r["CLASS"]: r["SUBPHYLUM"] for r in _rows("class_subphylum.tsv", "\t")}
     for c in ("Kickxellomycetes", "Harpellomycetes", "Dimargaritomycetes"):
         assert m.get(c) == "Kickxellomycotina", c
+
+
+def test_phylum_subphylum_file_and_class_rows():
+    ph = {r["PHYLUM"]: r["SUBPHYLUM"] for r in _rows("phylum_subphylum.tsv", "\t")}
+    assert ph == {"Kickxellomycota": "Kickxellomycotina", "Mortierellomycota": "Mortierellomycotina",
+                  "Glomeromycota": "Glomeromycotina"}
+    m = {r["CLASS"]: r["SUBPHYLUM"] for r in _rows("class_subphylum.tsv", "\t")}
+    assert m["Mortierellomycetes"] == "Mortierellomycotina" and m["Glomeromycetes"] == "Glomeromycotina"
