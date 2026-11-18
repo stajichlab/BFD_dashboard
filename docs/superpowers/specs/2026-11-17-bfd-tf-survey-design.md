@@ -26,11 +26,18 @@ User scope: A (landscape and the paper's contrasts), B (ortholog tracking), C (b
 - The full `pfam` table holds those domains for the same genomes. Genome counts: RFX_DNA_binding 21,484, CP2 13,649, TEA 21,215, Copper-fist 21,331, CBF/NF-Y 23,334, KilA-N 23,033, Tubby 839, E2F_TDP 604, WRKY 452. No new annotation run is needed.
 - `seqdb/proteins` (bgzip + faidx) for all proteomes.
 - The paper's anchor species are in BFD: *R. microsporus* (ATCC 11559 is `FBF4BF29`, plus several other strains), *Mucor lusitanicus*, *Phycomyces blakesleeanus*.
-- Not available: the paper's supplementary tables (the 88 tested TFs with JGI protein IDs, the 62-species list, the WC-2C target list). The PDF has the main text only. Binding sites and motifs are experimental and cannot be extended from BFD data.
+- Supplementary material, added by the user on 2026-11-17 in `resources/s41467-025-65177-1_suppl/`:
+  - `MOESM3` (xlsx): sheet `TF count` = the paper's TF counts, 51 family rows plus totals, for 62 species (R. microsporus: 605 TFs of 10,700 genes); sheet `Genomes` = the 62 species with their sources (63 JGI MycoCosm, 3 NCBI). This gives the paper's exact family names and a direct way to calibrate BFD's Pfam-based counts.
+  - `MOESM4` (xlsx): 57 sheets, one per TF (for example `Znf1`, `GATA Znf10`, `bZip5`), each with the JGI gene IDs of its DAP-seq targets. BFD does not carry JGI gene IDs, so these lists cannot be mapped to BFD genes unless BFD keeps the old IDs (to check).
+  - `MOESM5` (pdf, 5 pages): supplementary figures (bZip target overlap and similar).
+  - `MOESM6` (xlsx): 96 protein sequences of the tested TFs, IDs `Rhimi59_2_<JGI id>` (some are DNA-binding-domain fragments with `a`/`b` suffixes).
+  - `MOESM7` (xlsx): primers and crRNAs. Not used.
+  - Still missing: `MOESM1` (Supplementary Information, which should hold Supplementary Table 1 with the TF names and IDs). Without it, TF names cannot be tied to the `MOESM6` IDs. The paper says `Znf1` is the only C2H2 TF in the tested set, so it can be found by domain. WC-2C can be found as the GATA protein with a PAS domain. `bZip5` among five bZip TFs cannot be told apart without the table.
+- Binding sites and motifs are experimental and cannot be extended from BFD data.
 
 ## Goals
 
-- A: one TF family table for all genomes with an extended family set; landscape figures by phylum, class and order; a table that tests each claim above at BFD scale.
+- A: one TF family table for all genomes with an extended family set; landscape figures by phylum, class and order; a calibration of BFD's Pfam-based family counts against the paper's own counts (`MOESM3`) for the species present in both; a table that tests each claim above at BFD scale and, side by side, on the paper's own 62-species table.
 - B: for WC-2 (white-collar), Zap1-like C2H2 and bZip5, find orthologs across fungi; report presence, copy number and domain architecture by lineage; give a tree.
 - C: a ranked list of lineage-by-family expansions and contractions, with effect sizes and corrected p-values, labelled as hypotheses.
 - Outputs follow the site rules: generated files go into the release asset, not git; pages read tables at render time; the suppress list applies.
@@ -66,7 +73,7 @@ User scope: A (landscape and the paper's contrasts), B (ortholog tracking), C (b
 
 ### B. Ortholog tracking
 
-1. Seeds: WC-2 (GATA + PAS), Zap1-like C2H2 (zinc-responsive), bZip5 (yeast Cad1/Yap2-like). Two seed sources, in this order: (a) the paper's *R. microsporus* IDs if the user adds the supplementary tables to `resources/`; (b) literature seeds from UniProt (*N. crassa* WC-2, *S. cerevisiae* Zap1, *S. cerevisiae* Cad1/Yap2, *M. lusitanicus* WC proteins). The seed list and its source are written to a table.
+1. Seeds: WC-2 (GATA + PAS), Zap1-like C2H2 (zinc-responsive), bZip5 (yeast Cad1/Yap2-like). Seed sources, in this order: (a) the paper's own sequences (`MOESM6`, 96 proteins): search them against the BFD *R. microsporus* ATCC 11559 proteome (`FBF4BF29`) to find the matching BFD proteins (near-identical hits), then pick the targets by domain: Znf1 = the only C2H2 protein in the set, WC-2C = the GATA protein with a PAS domain; bZip5 stays unresolved until `MOESM1` is added, so it is reported as a candidate set of bZip proteins; (b) literature seeds from UniProt (*N. crassa* WC-2, *S. cerevisiae* Zap1, *S. cerevisiae* Cad1/Yap2). The seed list, source and match result are written to a table.
 2. Search: the proteins carrying the relevant TF Pfam domain in genus representatives (one genome per genus, best BUSCO). Seed-vs-candidates with MMseqs2 or DIAMOND (whichever module exists on HPCC; the builder checks), keep hits with coverage and identity thresholds stated in the output; verify domain architecture with the existing Pfam hits (for example WC-2 needs GATA plus PAS).
 3. Align (MAFFT), trim, build a tree (FastTree; IQ-TREE only for the final small trees). Report: presence and copy number by order, architecture counts, the tree with phylum colours, and the R. microsporus / M. lusitanicus / Phycomyces members marked.
 4. Caveat on every page: sequence similarity and tree position are evidence for orthology, not proof; function is not inferred.
@@ -104,5 +111,5 @@ New pages after Explore: TF landscape, TF contrasts, TF orthologs, TF expansions
 
 ## Open items
 
-- The paper's supplementary tables would improve B. If the user adds them to `resources/`, B uses the paper's own protein IDs. The work does not wait for them.
+- `MOESM1` (Supplementary Information with Supplementary Table 1) would tie TF names to the `MOESM6` IDs. The work does not wait for it. Ask whether BFD keeps JGI gene IDs for the R. microsporus genome; if it does, the `MOESM4` target lists can be mapped.
 - Paper family names that have no Pfam equivalent in the extended set (for example STAT, if no accession exists in `pfam_names`) are reported as unmapped.
