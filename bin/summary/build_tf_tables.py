@@ -4,6 +4,8 @@
 Outputs (ZSTD parquet, built for EVERY genome in genome_all; the suppress list is applied by the readers):
   tf_family_genome   species_prefix, family, n_proteins   (one row per genome and family with n >= 1)
   tf_summary_genome  species_prefix, n_proteins_total, n_tf_proteins, tf_fraction, n_families, shannon
+  tf_paper_family_genome  species_prefix, paper_family, n_proteins   (distinct proteins with a domain of ANY Pfam family
+                     that the map assigns to the paper family; rows with an empty paper_family are skipped)
 
 Inputs: <tables_dir>/{tf_inventory,pfam,gene_proteins}.parquet, <summary_dir>/{genome_all,pfam_names}.parquet,
 and the family map config/tf_family_map.tsv (pfam_acc, family, paper_family, note, pfam_id).
@@ -28,6 +30,8 @@ n_tf_proteins counts distinct proteins with a TF domain of any mapped family.
 shannon is the natural-log Shannon index of the family distribution p_f = n_f / sum(n_f) over the families
 of the genome. A protein with domains of two families (for example Zn_clus and Fungal_trans) adds to both
 n_f, so sum(n_f) can exceed n_tf_proteins. The index is 0 for one family and NaN for none.
+tf_paper_family_genome counts each protein once per paper family, even when it has domains of two Pfam families
+of the same paper family (for example Zn_clus PF00172 and Fungal_trans PF04082 for 'Zn cluster').
 """
 import argparse
 import os
@@ -106,10 +110,15 @@ def check_pfam_ids(fmap: pd.DataFrame, dat_path) -> list:
 
 
 def build_tf_tables(con, tables_dir, summary_dir, fmap: pd.DataFrame, out) -> dict:
-    """Write tf_family_genome.parquet and tf_summary_genome.parquet to out. Return a dict of counts."""
+    """Write tf_family_genome, tf_summary_genome and tf_paper_family_genome (parquet) to out. Return a dict of counts."""
     tables_dir, summary_dir, out = Path(tables_dir), Path(summary_dir), Path(out)
     m = fmap.loc[fmap["pfam_acc"] != "", ["pfam_acc", "family"]].drop_duplicates()
     con.register("tf_map", m)
+    pf = fmap.loc[(fmap["pfam_acc"] != "") & (fmap["paper_family"] != ""), ["family", "paper_family"]].drop_duplicates()
+    multi = pf[pf["family"].duplicated(keep=False)]
+    if len(multi):
+        raise ValueError(f"family label with several paper families: {sorted(set(multi['family']))}")
+    con.register("tf_pf_map", pf)
     inv = f"'{tables_dir / 'tf_inventory.parquet'}'"
     pfam = f"'{tables_dir / 'pfam.parquet'}'"
     gp = f"'{tables_dir / 'gene_proteins.parquet'}'"
@@ -139,6 +148,11 @@ def build_tf_tables(con, tables_dir, summary_dir, fmap: pd.DataFrame, out) -> di
         copy (select h.species_prefix, h.family, count(*)::bigint as n_proteins
               from tf_hits h join tf_genomes g using (species_prefix)
               group by 1, 2 order by 1, 2) to '{fam_path}' (format parquet, compression zstd)""")
+    pf_path = out / "tf_paper_family_genome.parquet"
+    con.execute(f"""
+        copy (select h.species_prefix, m.paper_family, count(distinct h.protein_id)::bigint as n_proteins
+              from tf_hits h join tf_pf_map m using (family) join tf_genomes g using (species_prefix)
+              group by 1, 2 order by 1, 2) to '{pf_path}' (format parquet, compression zstd)""")
     con.execute(f"""
         copy (
           with fam as (select species_prefix, family, count(*)::double as n from tf_hits
@@ -169,10 +183,12 @@ def build_tf_tables(con, tables_dir, summary_dir, fmap: pd.DataFrame, out) -> di
     hit_acc = _accessions_with_hits(con, tables_dir, m)
     want = sorted(m["pfam_acc"])
     con.unregister("tf_map")
+    con.unregister("tf_pf_map")
     return {
         "n_genomes": int(n_genomes), "n_zero_tf": int(n_zero), "n_empty_proteome": int(n_empty),
         "tf_genomes_not_in_genome_all": int(outside),
         "n_family_rows": int(con.execute(f"select count(*) from '{fam_path}'").fetchone()[0]),
+        "n_paper_family_rows": int(con.execute(f"select count(*) from '{pf_path}'").fetchone()[0]),
         "accessions_with_hits": [a for a in want if a in hit_acc],
         "accessions_without_hits": [a for a in want if a not in hit_acc],
     }

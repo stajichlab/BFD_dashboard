@@ -262,3 +262,45 @@ def test_cli_none_disables_and_ok_reports(con, tmp_path, capsys):
     dat.write_text(DAT)
     run_cli(tdir, sdir, mp, tmp_path, dat)
     assert "pfam_id check: ok (1 accessions)" in capsys.readouterr().err
+
+
+FMAP_PF = fmap_df([
+    ["PF00172", "Zn clus", "Zn cluster", ""],              # existing: tf_inventory
+    ["PF04082", "Fungal TF", "Zn cluster", ""],            # added: pfam; same paper family as PF00172
+    ["PF03106", "WRKY", "DNA-binding WRKY", ""],           # added: pfam
+    ["PF00157", "POU", "", "no paper family"],             # added: pfam; empty paper_family is not counted
+])
+
+
+def run_pf(con, tmp_path, inv, pfam, genes, genomes):
+    tdir, sdir = make_tables(con, tmp_path, inv, pfam, genes, genomes)
+    out = tmp_path / "out"
+    out.mkdir()
+    t.build_tf_tables(con, tdir, sdir, FMAP_PF, out)
+    return pd.read_parquet(out / "tf_paper_family_genome.parquet"), pd.read_parquet(out / "tf_family_genome.parquet")
+
+
+def test_paper_family_counts_protein_once_across_pfam_families(con, tmp_path):
+    # protein 1: Zn_clus + Fungal_trans (one paper family) -> 1 in the paper-family table, 2 in the per-Pfam-family table
+    # protein 2: Zn_clus only; protein 3: Fungal_trans only (distinct proteins: 3 in all)
+    inv = [("G1", "G1_000001-T1", "PF00172", "Zn_clus", "Zn", 1e-10, 50.0),
+           ("G1", "G1_000002-T1", "PF00172", "Zn_clus", "Zn", 1e-10, 50.0)]
+    pfam = [("G1_000001-T1", "Fungal_trans", "PF04082.20", 1e-5, 30.0), ("G1_000003-T1", "Fungal_trans", "PF04082.20", 1e-5, 30.0)]
+    pf, fam = run_pf(con, tmp_path, inv, pfam, genes_for("G1", 5), ["G1"])
+    d = pf.set_index(["species_prefix", "paper_family"])["n_proteins"]
+    assert d[("G1", "Zn cluster")] == 3
+    assert fam.set_index("family")["n_proteins"].loc[["Zn clus", "Fungal TF"]].sum() == 4     # the old sum double counts
+
+
+def test_paper_family_protein_in_two_families_counts_in_each(con, tmp_path):
+    inv = [("G1", "G1_000001-T1", "PF00172", "Zn_clus", "Zn", 1e-10, 50.0)]
+    pfam = [("G1_000001-T1", "WRKY", "PF03106.20", 1e-5, 30.0)]
+    pf, _ = run_pf(con, tmp_path, inv, pfam, genes_for("G1", 2), ["G1"])
+    d = pf.set_index("paper_family")["n_proteins"]
+    assert d["Zn cluster"] == 1 and d["DNA-binding WRKY"] == 1
+
+
+def test_paper_family_excludes_empty_paper_family_and_other_genomes(con, tmp_path):
+    pfam = [("G1_000001-T1", "POU", "PF00157.10", 1e-5, 30.0), ("X1_000001-T1", "WRKY", "PF03106.20", 1e-5, 30.0)]
+    pf, _ = run_pf(con, tmp_path, [], pfam, genes_for("G1", 2) + genes_for("X1", 2), ["G1"])     # X1 is not in genome_all
+    assert len(pf) == 0 and list(pf.columns) == ["species_prefix", "paper_family", "n_proteins"]
