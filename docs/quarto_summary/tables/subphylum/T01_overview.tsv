@@ -1,8 +1,8 @@
 group	genomes	genome_Mb	genes	protein_len	gc_pct	busco
-Ascomycota	43	21.45	7013.0	499.1	49.57	97.0
-Pezizomycotina	3797	35.76	11294.0	484.28	49.49	99.2
+Ascomycota	28	22.78	7149.0	493.91	52.02	98.2
+Pezizomycotina	3803	35.73	11287.0	484.3	49.49	99.2
 Saccharomycotina	1297	12.36	5502.0	499.66	41.38	80.7
-Taphrinomycotina	25	12.74	6077.0	459.59	49.28	91.1
+Taphrinomycotina	34	12.56	5974.0	463.61	47.87	89.8
 Agaricomycotina	1396	40.58	11624.5	464.04	49.34	97.1
 Basidiomycota	10	20.33	6825.0	474.58	56.06	88.0
 Pucciniomycotina	135	21.62	7706.0	534.24	54.89	94.1

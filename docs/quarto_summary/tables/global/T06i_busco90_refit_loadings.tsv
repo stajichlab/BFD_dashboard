@@ -1,0 +1,13 @@
+feature	PC1_refit	PC2_refit
+genome_Mb	0.085	0.474
+n_genes	-0.051	0.45
+mean_len	-0.214	-0.323
+gc_pct	-0.14	-0.157
+secreted_frac	-0.393	0.204
+cazy_per_gene	-0.415	0.106
+merops_per_gene	-0.329	-0.226
+tf_per_gene	-0.332	-0.056
+loc_nucleus	0.45	-0.004
+loc_mitochondrion	-0.077	-0.459
+loc_extracellular	-0.27	0.351
+mean_idp_fraction	0.314	-0.052

@@ -1,0 +1,9 @@
+subset	genomes	axis	busco_complete	log10_N50	log10_contigs
+all fungi	7393	PC1	0.681	0.176	0.107
+all fungi	7393	PC2	0.26	0.338	-0.399
+Pezizomycotina	3803	PC1	0.382	0.211	-0.105
+Pezizomycotina	3803	PC2	0.434	0.326	-0.302
+Saccharomycotina	1297	PC1	0.396	-0.151	0.244
+Saccharomycotina	1297	PC2	0.01	0.322	-0.388
+Basidiomycota	1654	PC1	0.395	0.058	0.174
+Basidiomycota	1654	PC2	0.145	0.388	-0.584

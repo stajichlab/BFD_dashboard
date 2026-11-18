@@ -1,0 +1,5 @@
+subphylum	genomes	low PC1 (< -1) all	high PC1 (>= -1) all	low PC1 (< -1) BUSCO>=90	high PC1 (>= -1) BUSCO>=90	share low PC1
+Pezizomycotina	3803	114	3689	94	3385	0.03
+Saccharomycotina	1297	1291	6	128	4	0.995
+Taphrinomycotina	34	34	0	16	0	1.0
+unassigned	28	9	19	6	18	0.321

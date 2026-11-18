@@ -5,7 +5,7 @@ title: "Taxon patterns"
 ```{python}
 import sys
 sys.path.insert(0, ".")
-from _helpers import fig, table
+from _helpers import fig, table, fig1, fig_tabs, table1
 ```
 
 Twelve genome-level features: genome size, gene number, mean protein length, GC, strict secretome fraction, CAZy, MEROPS and transcription-factor proteins per gene, the nuclear, mitochondrial and extracellular shares of DeepLoc calls, and mean intrinsic-disorder fraction.
@@ -19,9 +19,155 @@ table("T04_feature_medians")
 
 ## Genomes in feature space
 
+### What goes in
+
+Each point is one representative genome (7,393 with a proteome). The PCA uses the same twelve features as the heatmap above. Each feature is log-transformed (`log1p`) and z-scored over all genomes, so every feature has the same weight. Missing values take the feature median. Assembly quality (BUSCO, N50, contig count) is **not** an input; it is shown as an overlay further down.
+
+| Feature | What it measures |
+|---|---|
+| genome size, genes | genome and gene-set size |
+| protein length | mean protein length; also sensitive to gene-model quality |
+| GC | genome GC (%) |
+| secreted / gene | strict secretome (signal peptide, no TM helix, no GPI anchor) per gene |
+| CAZy, MEROPS, TF / gene | carbohydrate-active enzymes, peptidases and transcription factors per gene |
+| nuclear, mitochondrial, extracellular share | share of proteins with that DeepLoc primary label |
+| IDR fraction | mean intrinsically disordered fraction per protein |
+
+The sign of each axis is fixed so that its largest loading is positive. This keeps the orientation stable between rebuilds.
+
+### What the axes mean
+
 ```{python}
-fig("F17_feature_pca", "First two principal components of the log-scaled, z-scored feature matrix.", "65%")
+fig1("F17b_pca_biplot", "Global PCA as a biplot. Points: genomes coloured by phylum. Arrows: feature loadings (scaled); an arrow points to where genomes with high values of that feature sit.", "85%")
+table1("T06a_global_pca")
+```
+
+- **PC1 (36%) is a genome-size and secretome axis.** High PC1 means a large genome, many genes, a large secretome, many CAZymes and a high extracellular share (loadings +0.31 to +0.44). Low PC1 means a high mitochondrial share (−0.33). Yeasts and reduced genomes sit on the left; most Pezizomycotina sit on the right.
+- **PC2 (30%) is a nuclear-versus-enzymes axis.** High PC2 means more MEROPS peptidases, TFs and CAZymes per gene and longer proteins. Low PC2 means a higher nuclear share and more disorder. Basidiomycota, Glomeromycota and Microsporidia spread to low PC2.
+- PC3 (10%) is mainly GC and disorder.
+
+The level tabs show the same PCA coloured by phylum, subphylum or class. At subphylum and class level each group is numbered at its median and listed on the right.
+
+```{python}
+fig("F17_feature_pca", "First two principal components of the log-scaled, z-scored feature matrix. Subphylum and class: the numbered dots are group medians.", "85%")
 table("T06_pca_loadings")
 ```
+
+### Each phylum on its own
+
+Each tab shows one phylum; the small phyla are pooled. Points are coloured by class and shaped by subphylum (by phylum in the pooled tab). The legend lists every class with its genome count. Classes with fewer than 5 genomes are pooled in grey.
+
+- **Left:** the PCA recomputed within that phylum (features re-standardized within it).
+- **Right:** the same genomes on the global axes, against all fungi in grey.
+
+```{python}
+fig_tabs([("Ascomycota", "F17d_pca_ascomycota"), ("Basidiomycota", "F17d_pca_basidiomycota"),
+          ("Mucoromycota", "F17d_pca_mucoromycota"), ("Other phyla", "F17d_pca_other_phyla")],
+         "Left: PCA within the phylum. Right: the same genomes on the global PCA axes.")
+table1("T06c_within_phylum_pca")
+```
+
+Within Ascomycota, PC1 explains 52% of the variance, more than in the global PCA. It has the same meaning: extracellular share +0.38, mitochondrial share −0.37, genes +0.37. In Basidiomycota, Mucoromycota and the pooled phyla the first axis explains 39–52%; the table gives the loadings.
+
+On the global axes the yeast side is not only Ascomycota. The basidiomycete yeasts *Malassezia* (Malasseziomycetes) sit with the budding yeasts at low PC1, and the Microsporidia sit at low PC1 and low PC2. Low PC1 marks small, reduced genomes in any phylum.
+
+## Ascomycota: yeasts and filamentous fungi
+
+**Yes, Ascomycota form two groups: the yeasts and the filamentous fungi.** On global PC1 the Ascomycota have two modes, at about −3.6 and +1.4. The density is lowest at −1.7.
+
+- **Low PC1 (< −1):** 1,291 of 1,297 Saccharomycotina (99.5%) and all 34 Taphrinomycotina (fission yeasts, *Taphrina*, *Pneumocystis*).
+- **High PC1:** 3,689 of 3,803 Pezizomycotina (97%).
+- PC1 below −1.46 separates Saccharomycotina from Pezizomycotina with a **balanced accuracy of 99.0%**. The fixed cut at −1 gives 98.3%.
+
+```{python}
+fig1("F17e_asco_pc1", "Ascomycota on global PC1, by subphylum. Dashed: the cut at −1. Dotted: the lowest point of the density between the two modes. Middle and right: BUSCO ≥ 90 only.")
+table1("T06d_asco_cluster_subphylum")
+```
+
+### What separates them
+
+No single feature does as well as PC1, but four come close. Balanced accuracy is the mean of the hit rates in the two subphyla, so the larger group cannot dominate.
+
+| Feature | Saccharomycotina median | Pezizomycotina median | Best cut (yeast side) | Balanced accuracy |
+|---|---|---|---|---|
+| mitochondrial share | 0.120 | 0.074 | ≥ 0.101 | 97.7% |
+| genome size | 12.4 Mb | 35.7 Mb | < 22 Mb | 96.4% |
+| genes | 5,502 | 11,287 | < 7,096 | 95.1% |
+| extracellular share | 0.039 | 0.102 | < 0.063 | 94.7% |
+| secreted / gene | 0.025 | 0.064 | < 0.038 | 93.0% |
+| GC | 41.4% | 49.5% | < 46% | 81.1% |
+
+Yeasts have half the genes, a third of the genome size and less than half the secretome share. A larger share of their proteins is mitochondrial. In absolute terms that is roughly 660 against 835 mitochondrial proteins (median share times median genes, an approximation). So the core mitochondrial set shrank less than the rest of the proteome.
+
+```{python}
+fig1("F17f_asco_features", "The eight best single features, by subphylum. Dashed: the best cut. Title: balanced accuracy.")
+table1("T06f_asco_feature_separation")
+```
+
+### By class
+
+All seven Saccharomycotina classes and all five Taphrinomycotina classes sit on the low side. Every Pezizomycotina class with more than 10 genomes sits on the high side, with at most 9% on the low side (Eurotiomycetes).
+
+```{python}
+table1("T06e_asco_cluster_class")
+```
+
+### Genomes on the "wrong" side
+
+114 Pezizomycotina sit on the yeast side, and 6 Saccharomycotina sit on the filamentous side.
+
+- **Most Pezizomycotina misfits are not low-quality assemblies.** Their median BUSCO is 98.5%; only 20 of 114 are below 90%. They are lineages with small genomes and small secretomes (median 24 Mb, 7,537 genes, secreted fraction 0.036).
+- Most are **Onygenales (52)**: dermatophytes (*Trichophyton*, *Microsporum*), the dimorphic animal pathogens (*Paracoccidioides*, *Blastomyces*, *Histoplasma*, *Coccidioides*, *Emergomyces*) and the bee pathogen *Ascosphaera*. Onygenales are known for a reduced set of plant-cell-wall CAZymes.
+- Next are **Microascales (16)** and **Ophiostomatales (7)**, including insect-farmed ambrosia fungi (*Ambrosiella*, *Meredithiella*) and *Ceratocystiopsis*. There are also the powdery mildew *Erysiphe* (3), the Laboulbeniomycete *Herpomyces* and some lichens.
+- **Five of the six Saccharomycotina misfits are *Blastobotrys* or *Magnusiomyces* (Dipodascales).** They sit just across the cut, at PC1 −1.0 to −0.75. Dipodascales often grow as hyphae, so this position is plausible.
+- The sixth, *Debaryomycetaceae* sp. 2NR914 (Serinales), has 33 Mb, 11,378 genes and BUSCO 99.6% at PC1 +0.8. No other Pichiomycete looks like this. It may be mislabelled or contaminated; check it before using it.
+
+```{python}
+table1("T06g_asco_misfits", columns=["subphylum", "CLASS", "ORDER", "GENUS", "SPECIES", "PC1", "busco_complete",
+                                      "genome_Mb", "n_genes", "secreted_frac"])
+```
+
+### The BUSCO caveat
+
+Low BUSCO in yeasts is mostly real gene loss, not poor assembly. Read the yeast BUSCO values with that in mind.
+
+- All representatives are scored with **fungi_odb12** (1,122 markers), a set built across all fungi.
+- The *Saccharomyces cerevisiae* assembly (19 contigs) scores 75.8% complete. *Candida albicans* scores 80.8%, *Komagataella phaffii* 82.9% and *Schizosaccharomyces pombe* 84.0%.
+- In Saccharomycotina, missing markers outnumber fragmented ones about 6 to 1 (median 16.6% missing, 2.6% fragmented). Assembly gaps would mainly add fragments.
+- Among the most contiguous yeast assemblies (N50 ≥ 1 Mb or ≤ 50 contigs), the median BUSCO is still 81%. Only 7% reach 90%.
+
+So a "BUSCO ≥ 90" filter removes about 90% of the yeasts. The yeasts it keeps are biased toward Dipodascomycetes and Lipomycetes, which lost fewer genes. With that caveat, **the split still holds with BUSCO ≥ 90**:
+
+- On the global axes, 128 of 132 Saccharomycotina stay on the low side. The balanced accuracy is 97.8%.
+- With the PCA refitted on BUSCO ≥ 90 genomes only, the yeast axis becomes PC2 (31%; genome size +0.47, genes +0.45, mitochondrial share −0.46). Its balanced accuracy is 95.5%. Refitted PC1 is now the nuclear-versus-enzymes axis, because few yeasts are left.
+- The yeast mode is no longer a visible peak: 132 yeasts are a small group next to 3,479 filamentous genomes.
+
+```{python}
+table1("T06h_asco_busco90")
+table1("T06i_busco90_refit_loadings")
+```
+
+## Quality overlays
+
+BUSCO, N50 and contig count are not PCA inputs. Here they colour the same points instead.
+
+```{python}
+fig1("F17c_pca_qc", "The global PCA coloured by BUSCO complete (fungi_odb12), log10 N50 and log10 contig count. Poor values are drawn on top.")
+table1("T06b_qc_correlation")
+```
+
+- Across all fungi, PC1 follows BUSCO (Spearman 0.68). Most of this is the yeast effect above.
+- Within Pezizomycotina, Saccharomycotina and Basidiomycota, PC1 correlates with BUSCO at about 0.4. A lower BUSCO goes with fewer genes, and gene number is a PCA input.
+- N50 and contig count follow PC2 more than PC1 (contigs −0.30 to −0.58 within groups). Fragmented assemblies sit lower on PC2. Gene-model quality (shorter or split proteins) may explain part of this.
+
+## Factors that would help
+
+These factors are not in the summary tables yet. They are candidates; nothing new was fetched.
+
+- **Intron density** (introns per gene): yeasts have few introns and filamentous fungi many. It would show whether gene-structure compaction follows the PC1 split.
+- **Repeat content** (masked %): it would separate genome size caused by repeats from size caused by genes. `masked_pct` is already in `v_genome_labels` and could be added to `genome_core`.
+- **tRNA gene count**: a second measure of compaction and codon use that does not depend on protein annotation. It would help tell reduced genomes from small but complete ones.
+- **Lifestyle and ecology** (yeast or hyphal growth; saprotroph, pathogen, symbiont, lichen): it would test whether the Onygenales and ambrosia misfits sit on the yeast side because of lifestyle rather than lineage.
+- **BUSCO missing versus fragmented, and a lineage-specific BUSCO** (for example saccharomycetes_odb): it would separate real gene loss from assembly gaps genome by genome.
 
 A PCA shows how much of the variation lines up with taxonomy; it does not distinguish lineage effects from shared ancestry. Phylogenetically aware comparisons are in the atlas hypothesis pages.

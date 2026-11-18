@@ -1,0 +1,17 @@
+feature	label	pca_input	balanced_accuracy	accuracy	yeast_side	balanced_accuracy_BUSCO>=90	median_Saccharomycotina	median_Pezizomycotina	median_Taphrinomycotina
+PC1	PC1	False	0.9896	0.991	< -1.464	0.9779	-3.4963	1.2327	-2.2228
+loc_mitochondrion	mitochondrial share	True	0.9765	0.979	>= 0.1007	0.9579	0.1203	0.0742	0.1057
+genome_Mb	genome size	True	0.9638	0.9702	< 21.97	0.973	12.3608	35.7336	12.5624
+n_genes	genes	True	0.9505	0.9625	< 7096	0.9444	5502.0	11287.0	5974.0
+loc_extracellular	extracellular share	True	0.947	0.9584	< 0.06283	0.9308	0.0391	0.1021	0.0605
+busco_complete	BUSCO complete (%)	False	0.9376	0.91	< 94.15	0.9689	80.7	99.2	89.8
+secreted_frac	secreted / gene	True	0.9299	0.9382	< 0.03768	0.9185	0.025	0.0638	0.036
+mean_idp_fraction	IDR fraction	True	0.8756	0.8937	< 0.4174	0.7194	0.391	0.4551	0.4232
+cazy_per_gene	CAZy / gene	True	0.8743	0.8288	< 0.0296	0.8425	0.0245	0.0397	0.0254
+merops_per_gene	MEROPS / gene	True	0.8533	0.8392	>= 0.03044	0.7577	0.0329	0.0279	0.0315
+gc_pct	GC	True	0.8112	0.8375	< 46	0.7284	41.38	49.49	47.87
+loc_nucleus	nuclear share	True	0.7893	0.7286	>= 0.2783	0.7968	0.2976	0.2661	0.3034
+mean_len	protein length	True	0.6701	0.7259	>= 497	0.565	499.6584	484.2954	463.6105
+tf_per_gene	TF / gene	True	0.6432	0.4962	< 0.03111	0.6403	0.0243	0.025	0.0184
+contig_count	contigs	False	0.6393	0.5582	< 243.5	0.5879	86.0	216.0	65.5
+N50_bp	N50 (bp)	False	0.6104	0.4739	< 1.45e+06	0.6386	351490.0	497678.0	413189.0

@@ -1,0 +1,53 @@
+panel	feature	PC1	PC2
+Ascomycota	genome_Mb	0.362	-0.114
+Ascomycota	n_genes	0.368	0.011
+Ascomycota	mean_len	-0.132	0.325
+Ascomycota	gc_pct	0.25	0.026
+Ascomycota	secreted_frac	0.361	0.143
+Ascomycota	cazy_per_gene	0.305	0.3
+Ascomycota	merops_per_gene	-0.183	0.457
+Ascomycota	tf_per_gene	0.091	0.439
+Ascomycota	loc_nucleus	-0.241	-0.435
+Ascomycota	loc_mitochondrion	-0.369	0.116
+Ascomycota	loc_extracellular	0.379	0.01
+Ascomycota	mean_idp_fraction	0.225	-0.407
+Ascomycota	explained_variance	0.517	0.209
+Basidiomycota	genome_Mb	-0.328	0.311
+Basidiomycota	n_genes	-0.144	0.445
+Basidiomycota	mean_len	0.357	0.148
+Basidiomycota	gc_pct	0.27	-0.113
+Basidiomycota	secreted_frac	0.207	0.446
+Basidiomycota	cazy_per_gene	0.269	0.326
+Basidiomycota	merops_per_gene	0.325	0.154
+Basidiomycota	tf_per_gene	0.398	-0.087
+Basidiomycota	loc_nucleus	-0.3	-0.139
+Basidiomycota	loc_mitochondrion	0.405	-0.17
+Basidiomycota	loc_extracellular	-0.138	0.456
+Basidiomycota	mean_idp_fraction	-0.139	-0.279
+Basidiomycota	explained_variance	0.389	0.25
+Mucoromycota	genome_Mb	-0.355	-0.158
+Mucoromycota	n_genes	-0.264	-0.423
+Mucoromycota	mean_len	0.353	-0.028
+Mucoromycota	gc_pct	0.064	0.583
+Mucoromycota	secreted_frac	0.274	-0.308
+Mucoromycota	cazy_per_gene	0.339	0.098
+Mucoromycota	merops_per_gene	0.327	0.182
+Mucoromycota	tf_per_gene	0.303	-0.281
+Mucoromycota	loc_nucleus	-0.351	0.128
+Mucoromycota	loc_mitochondrion	0.368	-0.014
+Mucoromycota	loc_extracellular	-0.103	0.064
+Mucoromycota	mean_idp_fraction	-0.133	0.467
+Mucoromycota	explained_variance	0.515	0.147
+Other phyla	genome_Mb	0.085	0.509
+Other phyla	n_genes	0.152	0.469
+Other phyla	mean_len	0.344	-0.006
+Other phyla	gc_pct	0.294	-0.323
+Other phyla	secreted_frac	0.204	0.369
+Other phyla	cazy_per_gene	0.368	0.066
+Other phyla	merops_per_gene	0.397	-0.121
+Other phyla	tf_per_gene	0.311	-0.137
+Other phyla	loc_nucleus	-0.379	-0.086
+Other phyla	loc_mitochondrion	0.393	-0.148
+Other phyla	loc_extracellular	-0.006	0.461
+Other phyla	mean_idp_fraction	0.187	0.011
+Other phyla	explained_variance	0.449	0.185

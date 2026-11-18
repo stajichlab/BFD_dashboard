@@ -1,0 +1,121 @@
+species_prefix	subphylum	CLASS	ORDER	FAMILY	GENUS	SPECIES	PC1	PC2	busco_complete	genome_Mb	n_genes	N50_bp	contig_count	secreted_frac	loc_mitochondrion
+F87CEBFC	Pezizomycotina	Dothideomycetes	Capnodiales	Piedraiaceae	Piedraia	Piedraia hortae	-1.505	-0.954	96.4	16.89	6639.0	260314	124	0.038	0.098
+F31C1A2B	Pezizomycotina	Dothideomycetes	Mycosphaerellales	Teratosphaeriaceae	Oleoguttula	Oleoguttula sp. CCFEE 6159	-1.005	-0.637	86.4	19.688	7179.0	9686	2788	0.031	0.087
+FD2F0C02	Pezizomycotina	Eurotiomycetes	Onygenales	Ascosphaeraceae	Ascosphaera	Ascosphaera aggregata	-2.13	-1.399	84.0	17.901	6060.0	8341	2771	0.021	0.092
+FCA5E144	Pezizomycotina	Eurotiomycetes	Onygenales	Ascosphaeraceae	Ascosphaera	Ascosphaera apis	-1.983	-0.862	96.0	20.299	6604.0	482601	71	0.03	0.106
+FA456A6E	Pezizomycotina	Eurotiomycetes	Eurotiales	Trichocomaceae	Thermomyces	Thermomyces dupontii	-1.779	-0.114	99.0	19.834	7030.0	2765601	28	0.027	0.107
+F556830A	Pezizomycotina	Eurotiomycetes	Eurotiales	Aspergillaceae	Xeromyces	Xeromyces bisporus	-1.775	-0.784	97.5	21.692	7521.0	440982	186	0.031	0.101
+F4C68BB8	Pezizomycotina	Eurotiomycetes	Eurotiales	Trichocomaceae	Thermomyces	Thermomyces lanuginosus	-1.737	0.07	99.2	19.916	7259.0	1314937	49	0.028	0.114
+F5111BC2	Pezizomycotina	Eurotiomycetes	Onygenales	Ascosphaeraceae	Ascosphaera	Ascosphaera pollenicola	-1.697	-1.691	74.0	17.305	6484.0	7530	2887	0.025	0.085
+FA9E2146	Pezizomycotina	Eurotiomycetes	Onygenales	Ascosphaeraceae	Ascosphaera	Ascosphaera acerosa	-1.674	-1.385	66.5	15.822	5456.0	7733	2591	0.023	0.085
+F78B8B43	Pezizomycotina	Eurotiomycetes	Onygenales	Nannizziopsiaceae	Emydomyces	Emydomyces testavorans	-1.63	-0.458	99.0	31.891	7681.0	9561073	6	0.036	0.101
+FFF3FDAD	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Paracoccidioides	Paracoccidioides sp. IMR-M-Pb 369	-1.573	-1.117	98.4	28.864	7544.0	2133236	58	0.027	0.099
+F1047EE5	Pezizomycotina	Eurotiomycetes	Onygenales	Onygenaceae	Byssoonygena	Byssoonygena ceratinophila	-1.566	0.016	96.2	22.448	7512.0	136753	734	0.038	0.097
+FEEB090A	Pezizomycotina	Eurotiomycetes	Onygenales	Onygenaceae	Coccidioides	Coccidioides posadasii	-1.556	-0.337	99.1	28.193	8102.0	8079863	9	0.034	0.103
+F09E3AB3	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Paracoccidioides	Paracoccidioides venezuelensis	-1.537	-1.1	99.0	30.705	7667.0	6225818	10	0.028	0.101
+F59C2D40	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Paracoccidioides	Paracoccidioides sp. americana	-1.529	-1.252	99.3	31.733	8063.0	5294830	50	0.027	0.1
+F7F57E82	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Histoplasma	Histoplasma mississippiense	-1.515	-2.284	82.6	30.073	7893.0	2885091	114	0.026	0.081
+F07BA119	Pezizomycotina	Eurotiomycetes	Chaetothyriales			Chaetothyriales sp. CBS 135597	-1.503	0.164	98.6	20.727	7529.0	570188	125	0.034	0.104
+F17CA823	Pezizomycotina	Eurotiomycetes	Onygenales	Onygenaceae	Onygena	Onygena corvina	-1.486	0.526	98.8	21.82	7351.0	4410474	13	0.043	0.1
+FA747717	Pezizomycotina	Eurotiomycetes	Chaetothyriales			Chaetothyriales sp. CBS 134920	-1.48	0.024	98.6	20.642	7594.0	168741	332	0.03	0.101
+F7A11897	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Paracoccidioides	Paracoccidioides lutzii	-1.475	-1.303	98.9	33.602	7900.0	8441446	8	0.026	0.097
+FE238CF5	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Paracoccidioides	Paracoccidioides brasiliensis	-1.462	-1.712	99.2	30.242	8323.0	4584296	11	0.027	0.097
+FCEA440F	Pezizomycotina	Eurotiomycetes	Onygenales	Onygenaceae	Coccidioides	Coccidioides immitis	-1.455	-0.305	99.3	27.437	7856.0	3797145	7	0.035	0.094
+F4EA5946	Pezizomycotina	Eurotiomycetes	Onygenales	Onygenaceae	Uncinocarpus	Uncinocarpus reesii	-1.436	0.099	98.5	22.302	7688.0	5232914	7	0.04	0.097
+FB0FE234	Pezizomycotina	Eurotiomycetes	Onygenales	Onygenaceae	Chrysosporium	Chrysosporium queenslandicum	-1.401	0.192	99.2	23.307	7858.0	260216	272	0.041	0.098
+F787FB4C	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Paracoccidioides	Paracoccidioides restrepoana	-1.4	-1.243	99.1	32.449	8270.0	6879454	162	0.027	0.1
+FC674704	Pezizomycotina	Eurotiomycetes	Onygenales	Onygenaceae	Aphanoascus	Aphanoascus verrucosus	-1.366	0.174	99.4	22.982	7668.0	444897	91	0.043	0.101
+FC59D2A8	Pezizomycotina	Eurotiomycetes	Chaetothyriales			Chaetothyriales sp. CBS 132003	-1.366	0.112	98.8	22.901	7453.0	312613	110	0.028	0.097
+F900CCC1	Pezizomycotina	Eurotiomycetes	Onygenales	Onygenaceae	Amauroascus	Amauroascus verrucosus	-1.319	0.194	99.2	24.001	8080.0	300197	296	0.038	0.091
+F6C88D81	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae		uncultured Arthrodermataceae	-1.259	-0.748	68.1	17.827	7223.0	5923	3477	0.038	0.086
+F85F86CD	Pezizomycotina	Eurotiomycetes	Onygenales	Ascosphaeraceae	Ascosphaera	Ascosphaera atra	-1.232	-5.996	34.1	18.327	5394.0	3568	5219	0.011	0.046
+FE1053B4	Pezizomycotina	Eurotiomycetes	Onygenales	Onygenaceae	Amauroascus	Amauroascus niger	-1.232	-0.268	99.5	26.662	8511.0	165989	731	0.041	0.095
+FF1A1996	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton soudanense	-1.225	0.459	98.5	22.344	7703.0	2110654	19	0.045	0.098
+F003687F	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton kuryangei	-1.219	0.458	98.3	22.214	7685.0	2053565	18	0.045	0.098
+FBCF7834	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton violaceum	-1.213	0.395	98.8	23.282	7731.0	1335347	59	0.045	0.098
+F299D803	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton equinum	-1.212	0.147	94.5	24.156	7735.0	397011	124	0.044	0.096
+FDD2F179	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton mentagrophytes	-1.198	0.304	98.8	23.587	8037.0	12415992	11	0.048	0.105
+FBB030AD	Pezizomycotina	Eurotiomycetes	Chaetothyriales			Chaetothyriales sp. CBS 134916	-1.196	-0.316	98.3	26.102	8208.0	62130	999	0.029	0.094
+FD0E68FC	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton yaoundei	-1.195	0.454	98.5	22.369	7714.0	1853339	17	0.046	0.098
+F3F37487	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton benhamiae	-1.194	0.585	98.5	22.211	7898.0	644461	65	0.048	0.105
+F4C7FF1B	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Emergomyces	Emergomyces africanus	-1.185	-0.915	90.2	27.543	7973.0	15470	2929	0.035	0.094
+FBBAB4BE	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton verrucosum	-1.183	0.647	98.4	22.541	7778.0	75556	523	0.047	0.102
+FA504FBD	Pezizomycotina	Eurotiomycetes	Eurotiales	Aspergillaceae	Monascus	Monascus ruber	-1.181	0.253	99.3	24.828	8925.0	314215	142	0.032	0.094
+FB3C3343	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Epidermophyton	Epidermophyton floccosum	-1.18	0.071	98.6	24.575	7923.0	1440268	52	0.043	0.098
+F9BA87E0	Pezizomycotina	Eurotiomycetes	Onygenales	Onygenaceae	Chrysosporium	Chrysosporium keratinophilum	-1.179	-0.136	98.4	25.325	8147.0	2037736	23	0.042	0.096
+FE4075D0	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton rubrum	-1.171	0.052	98.7	22.302	8187.0	2198313	19	0.044	0.102
+F5621DF7	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton interdigitale	-1.17	0.291	98.8	23.172	8040.0	192715	239	0.048	0.104
+F3B8190C	Pezizomycotina	Eurotiomycetes	Eurotiales	Thermoascaceae	Thermoascus	Thermoascus thermophilus	-1.162	-0.111	95.6	24.527	6951.0	28770	1452	0.034	0.104
+F8F055B1	Pezizomycotina	Eurotiomycetes	Eurotiales	Aspergillaceae	Monascus	Monascus purpureus	-1.137	0.258	99.4	24.405	8776.0	3071915	9	0.033	0.099
+F0DD1005	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Histoplasma	Histoplasma capsulatum	-1.135	-2.55	99.5	32.532	9806.0	5328076	8	0.027	0.087
+F0F5528E	Pezizomycotina	Eurotiomycetes	Eurotiales	Aspergillaceae	Aspergillus	Aspergillus cejpii	-1.121	0.078	99.1	23.887	8406.0	3505643	13	0.035	0.096
+F03B467B	Pezizomycotina	Eurotiomycetes	Eurotiales	Aspergillaceae	Penicillium	Penicillium sp.	-1.107	0.753	91.2	20.22	7985.0	20171	1370	0.038	0.1
+F7107C1B	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton concentricum	-1.104	0.575	98.7	22.436	7800.0	93131	425	0.048	0.099
+F6D4562C	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton indotineae	-1.104	0.668	98.9	22.546	7720.0	4522206	22	0.05	0.1
+F7200082	Pezizomycotina	Eurotiomycetes	Verrucariales			Verrucariales sp.	-1.091	-1.437	62.7	19.2	6481.0	5720	3859	0.028	0.059
+FC452C90	Pezizomycotina	Eurotiomycetes	Onygenales		Myotisia	Myotisia sp. PD_48	-1.09	0.325	98.8	21.805	7810.0	156262	301	0.048	0.098
+FA948F4D	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton schoenleinii	-1.082	0.432	98.5	22.209	8011.0	80590	506	0.049	0.103
+F665BA79	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton tonsurans	-1.077	-0.048	98.8	25.245	8260.0	12654034	25	0.045	0.099
+F2DA6B58	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Trichophyton	Trichophyton simii	-1.074	0.659	98.8	23.299	7735.0	465483	171	0.051	0.099
+FEBB5F01	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Microsporum	Microsporum audouinii	-1.068	0.474	98.9	23.753	8235.0	417950	223	0.049	0.097
+F1DE26A9	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Blastomyces	Blastomyces percursus	-1.057	-1.811	96.3	30.548	9158.0	13488	3259	0.03	0.087
+F53B407F	Pezizomycotina	Eurotiomycetes	Onygenales	Nannizziopsiaceae	Nannizziopsis	Nannizziopsis arthrosporioides	-1.054	0.42	98.9	24.246	7627.0	6417451	6	0.052	0.096
+F7BF56E7	Pezizomycotina	Eurotiomycetes	Onygenales	Arthrodermataceae	Microsporum	Microsporum ferrugineum	-1.053	0.58	98.8	22.733	8199.0	505661	90	0.05	0.098
+F8DC8B16	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Blastomyces	Blastomyces parvus	-1.051	0.114	99.0	27.771	7955.0	173194	340	0.043	0.098
+F3728279	Pezizomycotina	Eurotiomycetes	Eurotiales	Aspergillaceae	Monascus	Monascus pilosus	-1.032	0.057	99.2	26.196	9281.0	3510661	11	0.032	0.095
+F6210D2D	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Histoplasma	Histoplasma ohiense	-1.031	-1.785	99.1	39.488	8898.0	6711819	8	0.033	0.095
+FA3E5325	Pezizomycotina	Eurotiomycetes	Verrucariales	Verrucariaceae	Dermatocarpon	Dermatocarpon luridum	-1.029	-1.801	93.0	25.567	8751.0	21316	1616	0.03	0.078
+F310531C	Pezizomycotina	Eurotiomycetes	Chaetothyriales	Trichomeriaceae	Arthrocladium	Arthrocladium fulminans	-1.016	0.227	98.6	27.194	9372.0	2259535	26	0.029	0.085
+F933012B	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Blastomyces	Blastomyces silverae	-1.012	-0.575	85.1	29.199	7744.0	32240	1883	0.041	0.095
+F9F45D41	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Blastomyces	Blastomyces emzantsi	-1.006	-0.189	96.3	26.71	7919.0	26260	1754	0.04	0.096
+F567066A	Pezizomycotina	Eurotiomycetes	Onygenales	Ajellomycetaceae	Emergomyces	Emergomyces pasteurianus	-1.001	-0.833	99.3	32.119	8677.0	46580	1448	0.038	0.094
+FF092DDF	Pezizomycotina	Geoglossomycetes	Geoglossales	Geoglossaceae	Glutinoglossum	Glutinoglossum americanum	-1.153	-1.088	96.6	26.051	7914.0	117661	386	0.03	0.077
+F87402E5	Pezizomycotina	Laboulbeniomycetes	Herpomycetales	Herpomycetaceae	Herpomyces	Herpomyces periplanetae	-3.235	-0.4	79.7	14.707	4478.0	96553	426	0.032	0.107
+F4ED9067	Pezizomycotina	Lecanoromycetes	Hymeneliales	Hymeneliaceae	Ionaspis	Ionaspis alba	-1.211	-0.156	86.6	18.295	6559.0	19572	1282	0.041	0.081
+FFE09323	Pezizomycotina	Lecanoromycetes	Lecanorales		Botryolepraria	Botryolepraria lesdainii	-1.211	-1.577	73.4	20.394	7157.0	6689	3537	0.028	0.071
+FC02A1D0	Pezizomycotina	Lecanoromycetes	Lecanorales	Psoraceae	Psora	Psora crenata	-1.184	-0.827	91.0	24.444	7151.0	29543	1440	0.035	0.087
+FC673289	Pezizomycotina	Lecanoromycetes	Umbilicariales	Umbilicariaceae	Lasallia	Lasallia papulosa	-1.118	-0.571	80.5	20.265	6866.0	11260	2195	0.038	0.078
+F30877A3	Pezizomycotina	Lecanoromycetes	Sarrameanales		Schaereria	Schaereria dolodes	-1.07	-0.54	97.3	21.149	7429.0	37598	933	0.042	0.088
+F0257D5C	Pezizomycotina	Lecanoromycetes	Baeomycetales			Baeomycetales sp.	-1.05	-0.65	77.4	18.354	6770.0	15872	1647	0.042	0.077
+FFB42AEA	Pezizomycotina	Lecanoromycetes	Umbilicariales	Umbilicariaceae	Umbilicaria	Umbilicaria mammulata	-1.045	-0.457	80.6	21.477	7127.0	11971	2264	0.035	0.075
+F4E47451	Pezizomycotina	Leotiomycetes	Helotiales	Erysiphaceae	Erysiphe	Erysiphe neolycopersici	-2.08	-2.09	98.3	36.503	6752.0	8402	5551	0.025	0.086
+FDA6C17D	Pezizomycotina	Leotiomycetes	Helotiales	Erysiphaceae	Erysiphe	Erysiphe pisi	-1.719	-6.144	56.6	44.531	7218.0	4438	10903	0.014	0.057
+F4ABCCAB	Pezizomycotina	Leotiomycetes	Thelebolales	Thelebolaceae	Antarctomyces	Antarctomyces pellizariae	-1.392	-0.969	98.6	24.11	7451.0	220359	277	0.029	0.098
+F6FF61C7	Pezizomycotina	Leotiomycetes	Helotiales	Erysiphaceae	Podosphaera	Podosphaera aphanis	-1.377	-2.979	98.5	45.973	7474.0	9905	6300	0.032	0.08
+F084B443	Pezizomycotina	Leotiomycetes	Helotiales	Erysiphaceae	Oidium	Oidium heveae	-1.326	-2.995	88.6	51.515	6843.0	54173	2020	0.041	0.074
+FA0D5EF9	Pezizomycotina	Leotiomycetes		Myxotrichaceae		uncultured Pseudogymnoascus	-1.323	-1.919	85.1	22.816	7582.0	17505	1689	0.028	0.092
+FCE497ED	Pezizomycotina	Leotiomycetes	Helotiales	Erysiphaceae	Erysiphe	Erysiphe necator	-1.258	-2.148	98.5	47.048	7375.0	15579	4548	0.039	0.091
+F2A9EF59	Pezizomycotina	Leotiomycetes	Helotiales	Erysiphaceae	Golovinomyces	Golovinomyces ambrosiae	-1.043	-4.37	98.8	154.869	7268.0	3548775	85	0.017	0.063
+F805A845	Pezizomycotina	Lichinomycetes	Lichinales	Porocyphaceae	Ephebe	Ephebe solida	-2.134	-1.894	67.8	13.0	4696.0	5234	2723	0.026	0.083
+FF4070FC	Pezizomycotina	Sareomycetes	Sareales	Zythiaceae	Sarea	Sarea resinae	-1.381	-0.256	99.1	25.517	7638.0	270143	143	0.033	0.1
+F25C5D9C	Pezizomycotina	Sordariomycetes	Hypocreales	Ophiocordycipitaceae	Ophiocordyceps	Ophiocordyceps bispora	-3.252	1.08	29.9	6.317	2257.0	41819	231	0.01	0.061
+F621F417	Pezizomycotina	Sordariomycetes	Ophiostomatales	Ophiostomataceae	Chrysosphaeria	Chrysosphaeria jannelii	-2.293	-0.007	96.3	15.893	6006.0	137012	246	0.029	0.103
+F89B4930	Pezizomycotina	Sordariomycetes	Ophiostomatales	Ophiostomataceae	Sporothrix	Sporothrix epigloea	-1.871	0.419	99.0	23.001	6648.0	159914	326	0.029	0.105
+F317CA4A	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Wolfgangiella	Wolfgangiella franznegeri	-1.73	0.366	95.9	26.609	6594.0	345804	128	0.035	0.105
+F045E29F	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Toshionella	Toshionella taiwanensis	-1.687	0.272	98.0	25.39	6721.0	511874	99	0.038	0.106
+FE0631B0	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Ambrosiella	Ambrosiella roeperi	-1.44	0.188	98.7	26.948	6975.0	753112	95	0.036	0.104
+F87BAD9E	Pezizomycotina	Sordariomycetes	Ophiostomatales	Ophiostomataceae	Ceratocystiopsis	Ceratocystiopsis brevicomis	-1.401	0.307	92.8	20.626	6565.0	1466767	124	0.031	0.105
+F62C7D35	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Phialophoropsis	Phialophoropsis hubbardii	-1.366	0.049	98.6	26.758	7034.0	796299	72	0.037	0.103
+F882A5C0	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Ambrosiella	Ambrosiella grosmanniae	-1.285	0.053	98.2	27.27	7060.0	417021	150	0.039	0.102
+F7080087	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Ambrosiella	Ambrosiella xylebori	-1.278	0.073	98.5	27.19	7038.0	1859748	31	0.04	0.103
+FC225C5D	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Chalaropsis	Chalaropsis thielavioides	-1.26	0.537	98.6	23.333	6535.0	3916844	12	0.044	0.111
+FB24D3D7	Pezizomycotina	Sordariomycetes	Ophiostomatales	Ophiostomataceae	Ceratocystiopsis	Ceratocystiopsis minima	-1.223	0.714	98.7	21.012	7022.0	134849	297	0.032	0.104
+F87ED57B	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Ambrosiella	Ambrosiella cleistominuta	-1.219	0.005	98.3	27.106	7100.0	283474	164	0.039	0.1
+FD7FCB53	Pezizomycotina	Sordariomycetes	Ophiostomatales	Ophiostomataceae	Intubia	Intubia oerlemansii	-1.206	0.097	98.5	26.215	7397.0	55224	768	0.031	0.105
+F8333576	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Catunica	Catunica adiposa	-1.169	0.177	98.5	28.169	7096.0	115283	480	0.042	0.102
+F12C74E9	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Meredithiella	Meredithiella fracta	-1.153	-0.105	97.8	27.046	6921.0	3970047	11	0.036	0.096
+F3E3B190	Pezizomycotina	Sordariomycetes	Ophiostomatales	Ophiostomataceae	Ceratocystiopsis	Ceratocystiopsis sp. VPRI43766	-1.152	0.8	99.3	20.446	6824.0	471680	77	0.033	0.103
+FFA10D02	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Ambrosiella	Ambrosiella beaveri	-1.133	0.054	98.3	27.107	7071.0	291932	179	0.04	0.1
+F9BA4265	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Huntiella	Huntiella tyalla	-1.11	-0.146	97.8	24.775	7311.0	302606	205	0.04	0.099
+F9410C1D	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Thielaviopsis	Thielaviopsis populi	-1.102	0.306	97.0	23.62	6615.0	29118	1267	0.044	0.108
+F378BE93	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Bretziella	Bretziella fagacearum	-1.091	0.183	98.1	26.581	7109.0	42305	1073	0.043	0.104
+FE4DD30A	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Huntiella	Huntiella fecunda	-1.081	-0.125	97.3	24.893	7325.0	320262	204	0.041	0.099
+F3027C78	Pezizomycotina	Sordariomycetes	Microascales	Ceratocystidaceae	Meredithiella	Meredithiella norrisii	-1.076	0.042	98.8	27.292	7186.0	680893	104	0.04	0.099
+FB0F98D6	Pezizomycotina	Sordariomycetes	Ophiostomatales	Ophiostomataceae	Ophiostoma	Ophiostoma fasciatum	-1.045	0.787	99.2	22.542	7414.0	966108	35	0.029	0.106
+F3264CDE	Pezizomycotina	Xylonomycetes	Xylonales	Xylonaceae	Xylona	Xylona heveae	-1.564	-0.042	99.9	24.335	7561.0	1905886	25	0.031	0.102
+FAB0BB51	Saccharomycotina	Dipodascomycetes	Dipodascales	Trichomonascaceae	Blastobotrys	Blastobotrys aristatus	-0.999	0.4	92.6	13.241	6929.0	3526027	5	0.057	0.107
+F24CBC7E	Saccharomycotina	Dipodascomycetes	Dipodascales	Trichomonascaceae	Blastobotrys	Blastobotrys niveus	-0.908	-0.316	87.5	16.55	7419.0	24605	1065	0.056	0.096
+F85DF490	Saccharomycotina	Dipodascomycetes	Dipodascales	Dipodascaceae	Magnusiomyces	Magnusiomyces magnusii	-0.902	-1.424	82.7	37.042	16520.0	7276	6195	0.026	0.098
+F08462DF	Saccharomycotina	Dipodascomycetes	Dipodascales	Trichomonascaceae	Blastobotrys	Blastobotrys elegans	-0.805	0.009	91.6	15.209	7235.0	47537	655	0.063	0.104
+F7A26DFD	Saccharomycotina	Dipodascomycetes	Dipodascales	Trichomonascaceae	Blastobotrys	Blastobotrys proliferans	-0.746	0.807	91.9	14.455	7438.0	172716	158	0.056	0.102
+F7B62D90	Saccharomycotina	Pichiomycetes	Serinales	Debaryomycetaceae		Debaryomycetaceae sp. 2NR914	0.802	-0.58	99.6	32.986	11378.0	531012	199	0.047	0.077

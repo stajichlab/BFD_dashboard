@@ -7,12 +7,12 @@ title: "Data and methods"
 - Database: the local `BFD.duckdb` in the `db/` folder, built from the `Fungi_BFD_runs/tables` parquet files by `workflows/build_bfd_db.sh` (MotherDuck is being phased out and is not used).
 - Unit: one representative genome per species, flagged `is_representative` in `v_genome_labels` (best BUSCO complete, then N50, then LOCUSTAG; annotated genomes only). The full database has 23,412 genomes and 244.8 million proteins; there are 7,435 representatives, of which 7,393 have a proteome (77.7 million proteins); the 42 without proteins are not plotted.
 - Groups: phylum and class from the BFD taxonomy; the eight phyla with most representatives are shown, the rest are pooled as "Other".
-- **Subphylum is derived, not stored.** The `SUBPHYLUM` column is NULL for all 7,435 representatives in both `species` and `samples`, so the subphylum level maps each class to its subphylum with the table in `bin/summary/taxonomy.py` (standard fungal classification written from memory, citation to verify). Classes missing from the table fall back to their phylum. Fixing the database column (proposal: populate it in the taxonomy source of the pipeline) would make this mapping unnecessary.
+- **Subphylum is derived, not stored.** The `SUBPHYLUM` column is NULL for all 7,435 representatives in both `species` and `samples`, so the subphylum level maps each class to its subphylum with the table in `bin/summary/taxonomy.py` (standard fungal classification written from memory, citation to verify). Classes missing from the table fall back to their phylum. Added on 2026-11-18 after checking the class names in the data: Pneumocystomycetes and Saitoellomycetes (Taphrinomycotina); Candelariomycetes, Sareomycetes and Xylobotryomycetes (Pezizomycotina). Novakomycetes is still unassigned. Fixing the database column (proposal: populate it in the taxonomy source of the pipeline) would make this mapping unnecessary.
 
 ## Build
 
 1. `workflows/summary/build_summary.sh` runs `bin/summary/build_summary_tables.py` on the HPCC and writes small per-genome parquet tables.
-2. `bin/summary/make_figures.py DATA OUT` writes the PNG and SVG figures and TSV tables used by these pages.
+2. `workflows/summary/make_figures.sh` (sbatch, from the bench folder) runs the tests and then `bin/summary/make_figures.py DATA OUT`, which writes the PNG and SVG figures and TSV tables used by these pages: one set per level in `figures/<level>/` and `tables/<level>/`, plus one level-free set in `figures/global/` and `tables/global/` (biplot, quality overlays, the per-phylum ordinations and the Ascomycota split on the Taxon patterns page). Copy `out/figures` and `out/tables` into `docs/quarto_summary/` before rendering.
 3. Render on the laptop (Quarto is not installed on the HPCC; rendering only formats the finished figures and tables). Needs `quarto` plus a Python with `pandas tabulate jupyter`; set `QUARTO_PYTHON` to it. **Render from a copy or checkout that is not under a hidden folder** (for example not under `.claude/worktrees/`): Quarto skips files whose path contains a dot-folder and then renders 0 files without an error.
    ```
    cd docs/quarto_summary && quarto render      # writes _site/
@@ -26,6 +26,9 @@ title: "Data and methods"
 | Pfam domain | `domain_i_evalue <= 1e-5`, version suffix removed (as in `J2_pfam.sql`) |
 | Strict secretome | SignalP signal peptide, no transmembrane helix, not GPI-anchored (`v_secretome_proteins`) |
 | DeepLoc primary label | class with the highest probability among cytoplasm, nucleus, extracellular, cell membrane, mitochondrion, plastid, ER, lysosome/vacuole, Golgi, peroxisome |
+| BUSCO complete | `busco_genome.complete_pct`, **fungi_odb12** (1,122 markers) for all 7,435 representatives. Budding and fission yeasts score about 75–85% from real gene loss (*S. cerevisiae* 75.8%), so a BUSCO cut removes most yeasts |
+| PCA | 12 features, `log1p`, z-scored over the genomes in the PCA, SVD; each axis flipped so its largest loading is positive. Within-phylum PCAs re-standardize within the phylum |
+| Balanced accuracy | mean of the two hit rates of a single cut (Saccharomycotina vs Pezizomycotina); the cut is the best of all midpoints |
 | IDR fraction | `idp_summary.IDP_fraction`; proteins without a row are not counted |
 | CAZy, MEROPS, TF | counts from `v_cazy_family_counts`, `v_merops_best`, `v_tf_family_counts` |
 

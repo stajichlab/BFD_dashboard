@@ -1,0 +1,5 @@
+subset	Ascomycota	Saccharomycotina	Pezizomycotina	Taphrinomycotina	explained_variance	cut_-1_balanced_accuracy	best_cut	best_cut_balanced_accuracy	density_valley	low_mode	high_mode
+all Ascomycota, global PC1	5162	1297	3803	34	0.359	0.983	< -1.46	0.99	-1.739	-3.551	1.443
+BUSCO >= 90, global PC1	3651	132	3479	16	0.359	0.971	< -1.2	0.978	1.546	1.191	1.923
+BUSCO >= 90, PCA refitted on BUSCO >= 90 fungi: PC1	3651	132	3479	16	0.347		>= -0.35	0.818	-0.027	-1.624	0.161
+BUSCO >= 90, PCA refitted on BUSCO >= 90 fungi: PC2	3651	132	3479	16	0.307		< -1.92	0.955			

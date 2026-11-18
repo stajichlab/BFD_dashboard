@@ -15,9 +15,11 @@ CLASS_TO_SUBPHYLUM = {
     **{c: "Pezizomycotina" for c in [
         "Eurotiomycetes", "Dothideomycetes", "Sordariomycetes", "Leotiomycetes", "Pezizomycetes", "Orbiliomycetes",
         "Xylonomycetes", "Geoglossomycetes", "Lecanoromycetes", "Arthoniomycetes", "Lichinomycetes",
-        "Laboulbeniomycetes", "Coniocybomycetes", "Collemopsidiomycetes"]},
+        "Laboulbeniomycetes", "Coniocybomycetes", "Collemopsidiomycetes", "Candelariomycetes", "Sareomycetes",
+        "Xylobotryomycetes"]},
     **{c: "Taphrinomycotina" for c in [
-        "Taphrinomycetes", "Schizosaccharomycetes", "Pneumocystidomycetes", "Neolectomycetes", "Archaeorhizomycetes"]},
+        "Taphrinomycetes", "Schizosaccharomycetes", "Pneumocystidomycetes", "Pneumocystomycetes", "Neolectomycetes",
+        "Archaeorhizomycetes", "Saitoellomycetes"]},
     # Basidiomycota
     **{c: "Agaricomycotina" for c in ["Agaricomycetes", "Tremellomycetes", "Dacrymycetes"]},
     **{c: "Pucciniomycotina" for c in [

@@ -1,0 +1,31 @@
+class	subphylum	low PC1 (< -1)	high PC1 (>= -1)	genomes	share low PC1	median BUSCO
+Sordariomycetes	Pezizomycotina	24	1590	1614	0.015	99.4
+Eurotiomycetes	Pezizomycotina	68	676	744	0.091	99.2
+Dothideomycetes	Pezizomycotina	2	610	612	0.003	99.2
+Lecanoromycetes	Pezizomycotina	7	399	406	0.017	89.6
+Leotiomycetes	Pezizomycotina	8	228	236	0.034	99.5
+Pezizomycetes	Pezizomycotina	0	121	121	0.0	99.0
+Orbiliomycetes	Pezizomycotina	0	30	30	0.0	98.0
+Arthoniomycetes	Pezizomycotina	0	12	12	0.0	93.0
+Geoglossomycetes	Pezizomycotina	1	8	9	0.111	98.3
+Lichinomycetes	Pezizomycotina	1	8	9	0.111	97.4
+Candelariomycetes	Pezizomycotina	0	4	4	0.0	97.4
+Coniocybomycetes	Pezizomycotina	0	2	2	0.0	98.4
+Laboulbeniomycetes	Pezizomycotina	1	0	1	1.0	79.7
+Sareomycetes	Pezizomycotina	1	0	1	1.0	99.1
+Xylobotryomycetes	Pezizomycotina	0	1	1	0.0	99.3
+Xylonomycetes	Pezizomycotina	1	0	1	1.0	99.9
+Pichiomycetes	Saccharomycotina	665	1	666	0.998	80.7
+Saccharomycetes	Saccharomycotina	366	0	366	1.0	76.7
+Dipodascomycetes	Saccharomycotina	205	5	210	0.976	89.7
+Lipomycetes	Saccharomycotina	35	0	35	1.0	92.6
+Trigonopsidomycetes	Saccharomycotina	15	0	15	1.0	83.3
+Sporopachydermiomycetes	Saccharomycotina	3	0	3	1.0	86.9
+Alloascoideomycetes	Saccharomycotina	2	0	2	1.0	90.8
+Taphrinomycetes	Taphrinomycotina	17	0	17	1.0	91.7
+Pneumocystomycetes	Taphrinomycotina	7	0	7	1.0	86.5
+Schizosaccharomycetes	Taphrinomycotina	7	0	7	1.0	84.0
+Saitoellomycetes	Taphrinomycotina	2	0	2	1.0	96.8
+Neolectomycetes	Taphrinomycotina	1	0	1	1.0	88.3
+(class not set)	unassigned	8	19	27	0.296	98.5
+Novakomycetes	unassigned	1	0	1	1.0	88.8

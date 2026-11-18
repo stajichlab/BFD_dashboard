@@ -1,8 +1,8 @@
 category	pfam_acc	pfam_name	description	group	mean_proteins	fraction_genomes
-Kinases and signalling	PF00069	Pkinase	Protein kinase	Ascomycota	104.95348837209302	1.0
-Kinases and signalling	PF00069	Pkinase	Protein kinase	Pezizomycotina	126.60547800895444	1.0
+Kinases and signalling	PF00069	Pkinase	Protein kinase	Ascomycota	111.25	1.0
+Kinases and signalling	PF00069	Pkinase	Protein kinase	Pezizomycotina	126.61162240336576	1.0
 Kinases and signalling	PF00069	Pkinase	Protein kinase	Saccharomycotina	99.38781804163455	0.9992289899768697
-Kinases and signalling	PF00069	Pkinase	Protein kinase	Taphrinomycotina	95.88	1.0
+Kinases and signalling	PF00069	Pkinase	Protein kinase	Taphrinomycotina	88.58823529411765	1.0
 Kinases and signalling	PF00069	Pkinase	Protein kinase	Agaricomycotina	176.09527220630372	0.9992836676217765
 Kinases and signalling	PF00069	Pkinase	Protein kinase	Basidiomycota	136.0	1.0
 Kinases and signalling	PF00069	Pkinase	Protein kinase	Pucciniomycotina	114.57777777777778	1.0
@@ -16,10 +16,10 @@ Kinases and signalling	PF00069	Pkinase	Protein kinase	Glomeromycota	1290.3548387
 Kinases and signalling	PF00069	Pkinase	Protein kinase	Basidiobolomycota	252.1764705882353	1.0
 Kinases and signalling	PF00069	Pkinase	Protein kinase	Zoopagomycota	206.54545454545453	1.0
 Kinases and signalling	PF00069	Pkinase	Protein kinase	Other (small groups)	199.77777777777777	0.9722222222222222
-Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Ascomycota	97.93023255813954	1.0
-Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Pezizomycotina	112.43745061890966	1.0
+Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Ascomycota	104.0	1.0
+Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Pezizomycotina	112.44333420983435	1.0
 Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Saccharomycotina	97.28527370855821	0.9992289899768697
-Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Taphrinomycotina	93.24	1.0
+Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Taphrinomycotina	86.26470588235294	1.0
 Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Agaricomycotina	161.4541547277937	0.997134670487106
 Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Basidiomycota	125.8	1.0
 Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Pucciniomycotina	109.4888888888889	1.0
@@ -33,10 +33,10 @@ Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Glomeromycota	1
 Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Basidiobolomycota	241.64705882352942	1.0
 Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Zoopagomycota	184.63636363636363	1.0
 Kinases and signalling	PF07714	PK_Tyr_Ser-Thr	Tyr/Ser-Thr kinase	Other (small groups)	190.88888888888889	0.9722222222222222
-Kinases and signalling	PF00071	Ras	Ras GTPase	Ascomycota	30.767441860465116	1.0
-Kinases and signalling	PF00071	Ras	Ras GTPase	Pezizomycotina	33.84645772978667	1.0
+Kinases and signalling	PF00071	Ras	Ras GTPase	Ascomycota	32.857142857142854	1.0
+Kinases and signalling	PF00071	Ras	Ras GTPase	Pezizomycotina	33.84407047068104	1.0
 Kinases and signalling	PF00071	Ras	Ras GTPase	Saccharomycotina	31.221279876638395	0.9992289899768697
-Kinases and signalling	PF00071	Ras	Ras GTPase	Taphrinomycotina	27.24	1.0
+Kinases and signalling	PF00071	Ras	Ras GTPase	Taphrinomycotina	26.176470588235293	1.0
 Kinases and signalling	PF00071	Ras	Ras GTPase	Agaricomycotina	34.57808022922636	0.9921203438395415
 Kinases and signalling	PF00071	Ras	Ras GTPase	Basidiomycota	41.2	1.0
 Kinases and signalling	PF00071	Ras	Ras GTPase	Pucciniomycotina	33.96296296296296	1.0
@@ -50,10 +50,10 @@ Kinases and signalling	PF00071	Ras	Ras GTPase	Glomeromycota	41.32258064516129	1.
 Kinases and signalling	PF00071	Ras	Ras GTPase	Basidiobolomycota	98.58823529411765	1.0
 Kinases and signalling	PF00071	Ras	Ras GTPase	Zoopagomycota	40.09090909090909	1.0
 Kinases and signalling	PF00071	Ras	Ras GTPase	Other (small groups)	47.47222222222222	0.9722222222222222
-Kinases and signalling	PF00072	Response_reg	Response regulator	Ascomycota	11.069767441860465	0.9767441860465116
-Kinases and signalling	PF00072	Response_reg	Response regulator	Pezizomycotina	16.966289175664997	0.9992099025546484
+Kinases and signalling	PF00072	Response_reg	Response regulator	Ascomycota	12.464285714285714	1.0
+Kinases and signalling	PF00072	Response_reg	Response regulator	Pezizomycotina	16.958979752826714	0.9992111490928215
 Kinases and signalling	PF00072	Response_reg	Response regulator	Saccharomycotina	5.9043947571318425	0.9984579799537394
-Kinases and signalling	PF00072	Response_reg	Response regulator	Taphrinomycotina	15.6	1.0
+Kinases and signalling	PF00072	Response_reg	Response regulator	Taphrinomycotina	13.029411764705882	0.9705882352941176
 Kinases and signalling	PF00072	Response_reg	Response regulator	Agaricomycotina	9.274355300859598	0.9563037249283668
 Kinases and signalling	PF00072	Response_reg	Response regulator	Basidiomycota	12.1	1.0
 Kinases and signalling	PF00072	Response_reg	Response regulator	Pucciniomycotina	15.051851851851852	1.0
@@ -67,10 +67,10 @@ Kinases and signalling	PF00072	Response_reg	Response regulator	Glomeromycota	20.
 Kinases and signalling	PF00072	Response_reg	Response regulator	Basidiobolomycota	37.88235294117647	1.0
 Kinases and signalling	PF00072	Response_reg	Response regulator	Zoopagomycota	8.181818181818182	1.0
 Kinases and signalling	PF00072	Response_reg	Response regulator	Other (small groups)	12.38888888888889	0.9722222222222222
-Kinases and signalling	PF00512	HisKA	His kinase A	Ascomycota	7.8604651162790695	0.8372093023255814
-Kinases and signalling	PF00512	HisKA	His kinase A	Pezizomycotina	12.428232815380564	0.9989465367395312
+Kinases and signalling	PF00512	HisKA	His kinase A	Ascomycota	8.857142857142858	1.0
+Kinases and signalling	PF00512	HisKA	His kinase A	Pezizomycotina	12.421772285038127	0.9989481987904286
 Kinases and signalling	PF00512	HisKA	His kinase A	Saccharomycotina	2.9421742482652276	0.9969159599074788
-Kinases and signalling	PF00512	HisKA	His kinase A	Taphrinomycotina	11.72	1.0
+Kinases and signalling	PF00512	HisKA	His kinase A	Taphrinomycotina	9.794117647058824	0.7941176470588235
 Kinases and signalling	PF00512	HisKA	His kinase A	Agaricomycotina	4.984240687679083	0.9419770773638968
 Kinases and signalling	PF00512	HisKA	His kinase A	Basidiomycota	7.4	1.0
 Kinases and signalling	PF00512	HisKA	His kinase A	Pucciniomycotina	10.274074074074074	1.0
@@ -84,10 +84,10 @@ Kinases and signalling	PF00512	HisKA	His kinase A	Glomeromycota	16.8064516129032
 Kinases and signalling	PF00512	HisKA	His kinase A	Basidiobolomycota	21.58823529411765	1.0
 Kinases and signalling	PF00512	HisKA	His kinase A	Zoopagomycota	3.727272727272727	1.0
 Kinases and signalling	PF00512	HisKA	His kinase A	Other (small groups)	6.916666666666667	0.9166666666666666
-Kinases and signalling	PF02518	HATPase_c	HATPase_c	Ascomycota	14.534883720930232	0.9767441860465116
-Kinases and signalling	PF02518	HATPase_c	HATPase_c	Pezizomycotina	21.248880695285752	0.9994732683697656
+Kinases and signalling	PF02518	HATPase_c	HATPase_c	Ascomycota	16.214285714285715	1.0
+Kinases and signalling	PF02518	HATPase_c	HATPase_c	Pezizomycotina	21.241125427294243	0.9994740993952143
 Kinases and signalling	PF02518	HATPase_c	HATPase_c	Saccharomycotina	9.58905165767155	0.9992289899768697
-Kinases and signalling	PF02518	HATPase_c	HATPase_c	Taphrinomycotina	17.64	1.0
+Kinases and signalling	PF02518	HATPase_c	HATPase_c	Taphrinomycotina	15.117647058823529	0.9705882352941176
 Kinases and signalling	PF02518	HATPase_c	HATPase_c	Agaricomycotina	12.386103151862464	0.9706303724928367
 Kinases and signalling	PF02518	HATPase_c	HATPase_c	Basidiomycota	14.9	1.0
 Kinases and signalling	PF02518	HATPase_c	HATPase_c	Pucciniomycotina	17.637037037037036	1.0
@@ -101,10 +101,10 @@ Kinases and signalling	PF02518	HATPase_c	HATPase_c	Glomeromycota	25.387096774193
 Kinases and signalling	PF02518	HATPase_c	HATPase_c	Basidiobolomycota	40.64705882352941	1.0
 Kinases and signalling	PF02518	HATPase_c	HATPase_c	Zoopagomycota	10.272727272727273	1.0
 Kinases and signalling	PF02518	HATPase_c	HATPase_c	Other (small groups)	14.555555555555555	0.9722222222222222
-Kinases and signalling	PF00018	SH3_1	SH3	Ascomycota	18.27906976744186	1.0
-Kinases and signalling	PF00018	SH3_1	SH3	Pezizomycotina	18.239136160126417	0.9994732683697656
+Kinases and signalling	PF00018	SH3_1	SH3	Ascomycota	19.535714285714285	1.0
+Kinases and signalling	PF00018	SH3_1	SH3	Pezizomycotina	18.239547725479884	0.9994740993952143
 Kinases and signalling	PF00018	SH3_1	SH3	Saccharomycotina	19.881264456437933	0.9992289899768697
-Kinases and signalling	PF00018	SH3_1	SH3	Taphrinomycotina	19.76	1.0
+Kinases and signalling	PF00018	SH3_1	SH3	Taphrinomycotina	18.294117647058822	1.0
 Kinases and signalling	PF00018	SH3_1	SH3	Agaricomycotina	22.183381088825215	0.9842406876790831
 Kinases and signalling	PF00018	SH3_1	SH3	Basidiomycota	26.3	1.0
 Kinases and signalling	PF00018	SH3_1	SH3	Pucciniomycotina	21.903703703703705	1.0
@@ -118,10 +118,10 @@ Kinases and signalling	PF00018	SH3_1	SH3	Glomeromycota	28.322580645161292	1.0
 Kinases and signalling	PF00018	SH3_1	SH3	Basidiobolomycota	53.588235294117645	1.0
 Kinases and signalling	PF00018	SH3_1	SH3	Zoopagomycota	21.181818181818183	1.0
 Kinases and signalling	PF00018	SH3_1	SH3	Other (small groups)	49.25	0.9722222222222222
-Kinases and signalling	PF00169	PH	PH domain	Ascomycota	13.023255813953488	0.9767441860465116
-Kinases and signalling	PF00169	PH	PH domain	Pezizomycotina	13.412167500658414	0.9989465367395312
+Kinases and signalling	PF00169	PH	PH domain	Ascomycota	14.142857142857142	1.0
+Kinases and signalling	PF00169	PH	PH domain	Pezizomycotina	13.415198527478307	0.9989481987904286
 Kinases and signalling	PF00169	PH	PH domain	Saccharomycotina	11.542020046260602	0.9992289899768697
-Kinases and signalling	PF00169	PH	PH domain	Taphrinomycotina	11.88	1.0
+Kinases and signalling	PF00169	PH	PH domain	Taphrinomycotina	10.852941176470589	0.9705882352941176
 Kinases and signalling	PF00169	PH	PH domain	Agaricomycotina	11.052292263610315	0.9613180515759312
 Kinases and signalling	PF00169	PH	PH domain	Basidiomycota	14.8	1.0
 Kinases and signalling	PF00169	PH	PH domain	Pucciniomycotina	13.881481481481481	0.9925925925925926
@@ -135,10 +135,10 @@ Kinases and signalling	PF00169	PH	PH domain	Glomeromycota	23.193548387096776	1.0
 Kinases and signalling	PF00169	PH	PH domain	Basidiobolomycota	72.47058823529412	1.0
 Kinases and signalling	PF00169	PH	PH domain	Zoopagomycota	14.909090909090908	1.0
 Kinases and signalling	PF00169	PH	PH domain	Other (small groups)	27.666666666666668	0.9722222222222222
-Transporters	PF07690	MFS_1	MFS_1	Ascomycota	123.16279069767442	0.9767441860465116
-Transporters	PF07690	MFS_1	MFS_1	Pezizomycotina	325.94838030023703	0.9989465367395312
+Transporters	PF07690	MFS_1	MFS_1	Ascomycota	146.42857142857142	1.0
+Transporters	PF07690	MFS_1	MFS_1	Pezizomycotina	325.6726268735209	0.9989481987904286
 Transporters	PF07690	MFS_1	MFS_1	Saccharomycotina	106.4656900539707	0.9992289899768697
-Transporters	PF07690	MFS_1	MFS_1	Taphrinomycotina	72.76	1.0
+Transporters	PF07690	MFS_1	MFS_1	Taphrinomycotina	62.0	0.9705882352941176
 Transporters	PF07690	MFS_1	MFS_1	Agaricomycotina	160.32879656160458	0.9727793696275072
 Transporters	PF07690	MFS_1	MFS_1	Basidiomycota	129.4	1.0
 Transporters	PF07690	MFS_1	MFS_1	Pucciniomycotina	137.25185185185185	1.0
@@ -152,10 +152,10 @@ Transporters	PF07690	MFS_1	MFS_1	Glomeromycota	54.12903225806452	1.0
 Transporters	PF07690	MFS_1	MFS_1	Basidiobolomycota	218.7058823529412	1.0
 Transporters	PF07690	MFS_1	MFS_1	Zoopagomycota	44.0	1.0
 Transporters	PF07690	MFS_1	MFS_1	Other (small groups)	91.86111111111111	0.9722222222222222
-Transporters	PF00005	ABC_tran	ABC transporter ATPase	Ascomycota	28.86046511627907	1.0
-Transporters	PF00005	ABC_tran	ABC transporter ATPase	Pezizomycotina	49.96760600474058	0.9997366341848828
+Transporters	PF00005	ABC_tran	ABC transporter ATPase	Ascomycota	33.82142857142857	1.0
+Transporters	PF00005	ABC_tran	ABC transporter ATPase	Pezizomycotina	49.93268472258743	0.9997370496976071
 Transporters	PF00005	ABC_tran	ABC transporter ATPase	Saccharomycotina	29.342328450269854	0.9992289899768697
-Transporters	PF00005	ABC_tran	ABC transporter ATPase	Taphrinomycotina	25.28	1.0
+Transporters	PF00005	ABC_tran	ABC transporter ATPase	Taphrinomycotina	22.323529411764707	1.0
 Transporters	PF00005	ABC_tran	ABC transporter ATPase	Agaricomycotina	45.31948424068768	0.9785100286532952
 Transporters	PF00005	ABC_tran	ABC transporter ATPase	Basidiomycota	41.3	1.0
 Transporters	PF00005	ABC_tran	ABC transporter ATPase	Pucciniomycotina	36.34074074074074	1.0
@@ -169,10 +169,10 @@ Transporters	PF00005	ABC_tran	ABC transporter ATPase	Glomeromycota	40.4193548387
 Transporters	PF00005	ABC_tran	ABC transporter ATPase	Basidiobolomycota	102.82352941176471	1.0
 Transporters	PF00005	ABC_tran	ABC transporter ATPase	Zoopagomycota	40.09090909090909	1.0
 Transporters	PF00005	ABC_tran	ABC transporter ATPase	Other (small groups)	75.86111111111111	0.9722222222222222
-Transporters	PF00083	Sugar_tr	Sugar transporter	Ascomycota	65.20930232558139	0.9767441860465116
-Transporters	PF00083	Sugar_tr	Sugar transporter	Pezizomycotina	167.15538583091916	0.9994732683697656
+Transporters	PF00083	Sugar_tr	Sugar transporter	Ascomycota	77.35714285714286	1.0
+Transporters	PF00083	Sugar_tr	Sugar transporter	Pezizomycotina	167.01682881935315	0.9994740993952143
 Transporters	PF00083	Sugar_tr	Sugar transporter	Saccharomycotina	55.73014649190439	0.9992289899768697
-Transporters	PF00083	Sugar_tr	Sugar transporter	Taphrinomycotina	42.56	1.0
+Transporters	PF00083	Sugar_tr	Sugar transporter	Taphrinomycotina	36.05882352941177	0.9705882352941176
 Transporters	PF00083	Sugar_tr	Sugar transporter	Agaricomycotina	75.2012893982808	0.9813753581661891
 Transporters	PF00083	Sugar_tr	Sugar transporter	Basidiomycota	62.7	1.0
 Transporters	PF00083	Sugar_tr	Sugar transporter	Pucciniomycotina	65.57037037037037	1.0
@@ -186,10 +186,10 @@ Transporters	PF00083	Sugar_tr	Sugar transporter	Glomeromycota	27.741935483870968
 Transporters	PF00083	Sugar_tr	Sugar transporter	Basidiobolomycota	123.17647058823529	1.0
 Transporters	PF00083	Sugar_tr	Sugar transporter	Zoopagomycota	20.727272727272727	1.0
 Transporters	PF00083	Sugar_tr	Sugar transporter	Other (small groups)	48.97222222222222	0.9722222222222222
-Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Ascomycota	34.97674418604651	0.9767441860465116
-Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Pezizomycotina	113.98288122201738	0.9997366341848828
+Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Ascomycota	44.17857142857143	1.0
+Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Pezizomycotina	113.86458059426768	0.9997370496976071
 Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Saccharomycotina	7.973014649190439	0.9992289899768697
-Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Taphrinomycotina	9.0	1.0
+Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Taphrinomycotina	7.588235294117647	0.9705882352941176
 Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Agaricomycotina	126.62893982808023	0.9871060171919771
 Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Basidiomycota	24.1	1.0
 Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Pucciniomycotina	21.503703703703703	1.0
@@ -203,10 +203,10 @@ Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Glomeromycota	119.5806451
 Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Basidiobolomycota	58.294117647058826	1.0
 Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Zoopagomycota	24.818181818181817	1.0
 Cytochrome P450 and redox	PF00067	p450	Cytochrome P450	Other (small groups)	44.19444444444444	0.6944444444444444
-Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Ascomycota	16.302325581395348	0.9767441860465116
-Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Pezizomycotina	32.31498551488017	0.9994732683697656
+Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Ascomycota	18.857142857142858	1.0
+Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Pezizomycotina	32.29871154351827	0.9994740993952143
 Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Saccharomycotina	15.598303777949113	0.9992289899768697
-Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Taphrinomycotina	12.44	1.0
+Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Taphrinomycotina	10.352941176470589	0.9705882352941176
 Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Agaricomycotina	36.570200573065904	0.9799426934097422
 Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Basidiomycota	25.9	1.0
 Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Pucciniomycotina	18.79259259259259	1.0
@@ -220,10 +220,10 @@ Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Glomeromycota
 Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Basidiobolomycota	29.58823529411765	1.0
 Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Zoopagomycota	9.272727272727273	1.0
 Cytochrome P450 and redox	PF00248	Aldo_ket_red	Aldo/keto reductase	Other (small groups)	20.27777777777778	0.9722222222222222
-Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Ascomycota	64.90697674418605	1.0
-Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Pezizomycotina	156.73900447721886	1.0
+Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Ascomycota	76.42857142857143	1.0
+Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Pezizomycotina	156.61977386273995	1.0
 Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Saccharomycotina	31.654587509637626	0.9992289899768697
-Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Taphrinomycotina	40.48	1.0
+Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Taphrinomycotina	34.588235294117645	1.0
 Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Agaricomycotina	75.84169054441261	0.9820916905444126
 Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Basidiomycota	63.2	1.0
 Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Pucciniomycotina	57.785185185185185	1.0
@@ -237,10 +237,10 @@ Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Glomeromyc
 Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Basidiobolomycota	71.41176470588235	1.0
 Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Zoopagomycota	28.727272727272727	1.0
 Cytochrome P450 and redox	PF00106	adh_short	Short-chain dehydrogenase	Other (small groups)	51.75	0.9722222222222222
-Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Ascomycota	49.604651162790695	0.9767441860465116
-Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Pezizomycotina	145.12825915196208	0.9989465367395312
+Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Ascomycota	60.107142857142854	1.0
+Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Pezizomycotina	145.0005259006048	0.9989481987904286
 Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Saccharomycotina	54.71549730146492	0.9992289899768697
-Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Taphrinomycotina	25.84	1.0
+Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Taphrinomycotina	20.91176470588235	0.9705882352941176
 Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Agaricomycotina	29.860315186246417	0.9627507163323782
 Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Basidiomycota	31.3	1.0
 Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Pucciniomycotina	30.918518518518518	0.9925925925925926
@@ -254,10 +254,10 @@ Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Glomeromycota	28.1612903
 Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Basidiobolomycota	38.76470588235294	1.0
 Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Zoopagomycota	5.2727272727272725	1.0
 Transcription factors	PF00172	Zn_clus	Zn2Cys6 (Zn_clus)	Other (small groups)	40.30555555555556	0.9444444444444444
-Transcription factors	PF04082	Fungal_trans	Fungal_trans	Ascomycota	46.48837209302326	0.8372093023255814
-Transcription factors	PF04082	Fungal_trans	Fungal_trans	Pezizomycotina	149.14353436923886	0.9997366341848828
+Transcription factors	PF04082	Fungal_trans	Fungal_trans	Ascomycota	57.25	1.0
+Transcription factors	PF04082	Fungal_trans	Fungal_trans	Pezizomycotina	148.9968445963713	0.9997370496976071
 Transcription factors	PF04082	Fungal_trans	Fungal_trans	Saccharomycotina	33.20740169622205	0.9984579799537394
-Transcription factors	PF04082	Fungal_trans	Fungal_trans	Taphrinomycotina	21.24	1.0
+Transcription factors	PF04082	Fungal_trans	Fungal_trans	Taphrinomycotina	17.352941176470587	0.7941176470588235
 Transcription factors	PF04082	Fungal_trans	Fungal_trans	Agaricomycotina	46.73567335243553	0.9670487106017192
 Transcription factors	PF04082	Fungal_trans	Fungal_trans	Basidiomycota	35.2	1.0
 Transcription factors	PF04082	Fungal_trans	Fungal_trans	Pucciniomycotina	36.17037037037037	1.0
@@ -271,10 +271,10 @@ Transcription factors	PF04082	Fungal_trans	Fungal_trans	Glomeromycota	12.5806451
 Transcription factors	PF04082	Fungal_trans	Fungal_trans	Basidiobolomycota	46.64705882352941	1.0
 Transcription factors	PF04082	Fungal_trans	Fungal_trans	Zoopagomycota	7.454545454545454	1.0
 Transcription factors	PF04082	Fungal_trans	Fungal_trans	Other (small groups)	26.25	0.9166666666666666
-Transcription factors	PF00096	zf-C2H2	zf-C2H2	Ascomycota	6.813953488372093	0.9767441860465116
-Transcription factors	PF00096	zf-C2H2	zf-C2H2	Pezizomycotina	7.835396365551752	0.9976297076639452
+Transcription factors	PF00096	zf-C2H2	zf-C2H2	Ascomycota	7.25	1.0
+Transcription factors	PF00096	zf-C2H2	zf-C2H2	Pezizomycotina	7.835130160399684	0.9976334472784644
 Transcription factors	PF00096	zf-C2H2	zf-C2H2	Saccharomycotina	7.832690824980725	0.9992289899768697
-Transcription factors	PF00096	zf-C2H2	zf-C2H2	Taphrinomycotina	6.36	1.0
+Transcription factors	PF00096	zf-C2H2	zf-C2H2	Taphrinomycotina	5.970588235294118	0.9705882352941176
 Transcription factors	PF00096	zf-C2H2	zf-C2H2	Agaricomycotina	4.287249283667622	0.9505730659025788
 Transcription factors	PF00096	zf-C2H2	zf-C2H2	Basidiomycota	7.7	1.0
 Transcription factors	PF00096	zf-C2H2	zf-C2H2	Pucciniomycotina	5.177777777777778	0.9851851851851852
@@ -288,10 +288,10 @@ Transcription factors	PF00096	zf-C2H2	zf-C2H2	Glomeromycota	8.709677419354838	1.
 Transcription factors	PF00096	zf-C2H2	zf-C2H2	Basidiobolomycota	60.88235294117647	1.0
 Transcription factors	PF00096	zf-C2H2	zf-C2H2	Zoopagomycota	5.181818181818182	0.9090909090909091
 Transcription factors	PF00096	zf-C2H2	zf-C2H2	Other (small groups)	8.416666666666666	0.9722222222222222
-Transcription factors	PF00010	HLH	bHLH	Ascomycota	7.790697674418604	0.9767441860465116
-Transcription factors	PF00010	HLH	bHLH	Pezizomycotina	10.29496971293126	0.9994732683697656
+Transcription factors	PF00010	HLH	bHLH	Ascomycota	9.321428571428571	1.0
+Transcription factors	PF00010	HLH	bHLH	Pezizomycotina	10.291348935051275	0.9994740993952143
 Transcription factors	PF00010	HLH	bHLH	Saccharomycotina	8.54124903623747	0.9992289899768697
-Transcription factors	PF00010	HLH	bHLH	Taphrinomycotina	7.2	1.0
+Transcription factors	PF00010	HLH	bHLH	Taphrinomycotina	6.0588235294117645	0.9705882352941176
 Transcription factors	PF00010	HLH	bHLH	Agaricomycotina	8.893982808022923	0.9742120343839542
 Transcription factors	PF00010	HLH	bHLH	Basidiomycota	9.2	1.0
 Transcription factors	PF00010	HLH	bHLH	Pucciniomycotina	7.311111111111111	0.9925925925925926
@@ -305,10 +305,10 @@ Transcription factors	PF00010	HLH	bHLH	Glomeromycota	13.03225806451613	1.0
 Transcription factors	PF00010	HLH	bHLH	Basidiobolomycota	40.8235294117647	1.0
 Transcription factors	PF00010	HLH	bHLH	Zoopagomycota	9.545454545454545	1.0
 Transcription factors	PF00010	HLH	bHLH	Other (small groups)	11.416666666666666	0.9722222222222222
-Transcription factors	PF00046	Homeodomain	Homeobox	Ascomycota	4.837209302325581	0.9534883720930233
-Transcription factors	PF00046	Homeodomain	Homeobox	Pezizomycotina	6.547537529628654	0.9971029760337108
+Transcription factors	PF00046	Homeodomain	Homeobox	Ascomycota	5.321428571428571	0.9642857142857143
+Transcription factors	PF00046	Homeodomain	Homeobox	Pezizomycotina	6.546147778069945	0.9971075466736786
 Transcription factors	PF00046	Homeodomain	Homeobox	Saccharomycotina	3.5420200462606015	0.9969159599074788
-Transcription factors	PF00046	Homeodomain	Homeobox	Taphrinomycotina	5.08	1.0
+Transcription factors	PF00046	Homeodomain	Homeobox	Taphrinomycotina	4.470588235294118	0.9705882352941176
 Transcription factors	PF00046	Homeodomain	Homeobox	Agaricomycotina	8.929799426934098	0.9742120343839542
 Transcription factors	PF00046	Homeodomain	Homeobox	Basidiomycota	7.5	1.0
 Transcription factors	PF00046	Homeodomain	Homeobox	Pucciniomycotina	6.725925925925926	0.9925925925925926
@@ -322,10 +322,10 @@ Transcription factors	PF00046	Homeodomain	Homeobox	Glomeromycota	8.4838709677419
 Transcription factors	PF00046	Homeodomain	Homeobox	Basidiobolomycota	36.8235294117647	1.0
 Transcription factors	PF00046	Homeodomain	Homeobox	Zoopagomycota	5.363636363636363	1.0
 Transcription factors	PF00046	Homeodomain	Homeobox	Other (small groups)	21.02777777777778	0.9722222222222222
-Transcription factors	PF00170	bZIP_1	bZIP_1	Ascomycota	7.3023255813953485	0.8604651162790697
-Transcription factors	PF00170	bZIP_1	bZIP_1	Pezizomycotina	9.983671319462733	0.9989465367395312
+Transcription factors	PF00170	bZIP_1	bZIP_1	Ascomycota	8.642857142857142	0.9642857142857143
+Transcription factors	PF00170	bZIP_1	bZIP_1	Pezizomycotina	9.982119379437286	0.9989481987904286
 Transcription factors	PF00170	bZIP_1	bZIP_1	Saccharomycotina	5.815728604471858	0.9984579799537394
-Transcription factors	PF00170	bZIP_1	bZIP_1	Taphrinomycotina	6.12	1.0
+Transcription factors	PF00170	bZIP_1	bZIP_1	Taphrinomycotina	5.029411764705882	0.8529411764705882
 Transcription factors	PF00170	bZIP_1	bZIP_1	Agaricomycotina	5.869627507163324	0.9641833810888252
 Transcription factors	PF00170	bZIP_1	bZIP_1	Basidiomycota	11.6	1.0
 Transcription factors	PF00170	bZIP_1	bZIP_1	Pucciniomycotina	8.777777777777779	0.9851851851851852
@@ -339,10 +339,10 @@ Transcription factors	PF00170	bZIP_1	bZIP_1	Glomeromycota	11.96774193548387	1.0
 Transcription factors	PF00170	bZIP_1	bZIP_1	Basidiobolomycota	30.11764705882353	1.0
 Transcription factors	PF00170	bZIP_1	bZIP_1	Zoopagomycota	8.0	1.0
 Transcription factors	PF00170	bZIP_1	bZIP_1	Other (small groups)	12.38888888888889	0.9166666666666666
-Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Ascomycota	3.046511627906977	0.9302325581395349
-Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Pezizomycotina	3.0608375032920727	0.9978930734790624
+Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Ascomycota	3.5714285714285716	0.9285714285714286
+Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Pezizomycotina	3.0607415198527477	0.9978963975808572
 Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Saccharomycotina	4.008481110254433	0.9984579799537394
-Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Taphrinomycotina	2.8	1.0
+Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Taphrinomycotina	2.4411764705882355	0.9705882352941176
 Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Agaricomycotina	4.665472779369628	0.9620343839541547
 Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Basidiomycota	9.3	1.0
 Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Pucciniomycotina	10.088888888888889	0.9925925925925926
@@ -356,10 +356,10 @@ Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Glomeromycota	5.67741935
 Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Basidiobolomycota	35.64705882352941	1.0
 Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Zoopagomycota	3.6363636363636362	1.0
 Transcription factors	PF00447	HSF_DNA-bind	HSF_DNA-bind	Other (small groups)	11.38888888888889	0.9166666666666666
-Protein-protein scaffolds	PF00400	WD40	WD40	Ascomycota	67.5813953488372	1.0
-Protein-protein scaffolds	PF00400	WD40	WD40	Pezizomycotina	72.20042138530418	1.0
+Protein-protein scaffolds	PF00400	WD40	WD40	Ascomycota	68.75	1.0
+Protein-protein scaffolds	PF00400	WD40	WD40	Pezizomycotina	72.19221667104917	1.0
 Protein-protein scaffolds	PF00400	WD40	WD40	Saccharomycotina	58.36083269082498	0.9992289899768697
-Protein-protein scaffolds	PF00400	WD40	WD40	Taphrinomycotina	71.28	1.0
+Protein-protein scaffolds	PF00400	WD40	WD40	Taphrinomycotina	69.44117647058823	1.0
 Protein-protein scaffolds	PF00400	WD40	WD40	Agaricomycotina	125.46131805157593	0.9914040114613181
 Protein-protein scaffolds	PF00400	WD40	WD40	Basidiomycota	81.9	1.0
 Protein-protein scaffolds	PF00400	WD40	WD40	Pucciniomycotina	67.70370370370371	1.0
@@ -373,10 +373,10 @@ Protein-protein scaffolds	PF00400	WD40	WD40	Glomeromycota	92.12903225806451	1.0
 Protein-protein scaffolds	PF00400	WD40	WD40	Basidiobolomycota	138.0	1.0
 Protein-protein scaffolds	PF00400	WD40	WD40	Zoopagomycota	84.54545454545455	1.0
 Protein-protein scaffolds	PF00400	WD40	WD40	Other (small groups)	102.08333333333333	0.9722222222222222
-Protein-protein scaffolds	PF00023	Ank	Ankyrin	Ascomycota	22.372093023255815	0.9767441860465116
-Protein-protein scaffolds	PF00023	Ank	Ankyrin	Pezizomycotina	51.90387147748222	1.0
+Protein-protein scaffolds	PF00023	Ank	Ankyrin	Ascomycota	25.714285714285715	1.0
+Protein-protein scaffolds	PF00023	Ank	Ankyrin	Pezizomycotina	51.867473047594004	1.0
 Protein-protein scaffolds	PF00023	Ank	Ankyrin	Saccharomycotina	8.087124132613724	0.9992289899768697
-Protein-protein scaffolds	PF00023	Ank	Ankyrin	Taphrinomycotina	8.72	1.0
+Protein-protein scaffolds	PF00023	Ank	Ankyrin	Taphrinomycotina	8.441176470588236	0.9705882352941176
 Protein-protein scaffolds	PF00023	Ank	Ankyrin	Agaricomycotina	28.818767908309457	0.9863896848137536
 Protein-protein scaffolds	PF00023	Ank	Ankyrin	Basidiomycota	10.1	1.0
 Protein-protein scaffolds	PF00023	Ank	Ankyrin	Pucciniomycotina	12.488888888888889	1.0
@@ -390,10 +390,10 @@ Protein-protein scaffolds	PF00023	Ank	Ankyrin	Glomeromycota	18.774193548387096	1
 Protein-protein scaffolds	PF00023	Ank	Ankyrin	Basidiobolomycota	40.76470588235294	1.0
 Protein-protein scaffolds	PF00023	Ank	Ankyrin	Zoopagomycota	131.36363636363637	1.0
 Protein-protein scaffolds	PF00023	Ank	Ankyrin	Other (small groups)	124.33333333333333	0.9722222222222222
-Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Ascomycota	4.8604651162790695	0.9767441860465116
-Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Pezizomycotina	5.65604424545694	0.9984198051092968
+Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Ascomycota	4.892857142857143	1.0
+Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Pezizomycotina	5.656061004470155	0.9984222981856429
 Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Saccharomycotina	5.243639167309175	0.9984579799537394
-Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Taphrinomycotina	4.92	1.0
+Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Taphrinomycotina	4.735294117647059	0.9705882352941176
 Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Agaricomycotina	5.827363896848137	0.9727793696275072
 Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Basidiomycota	6.0	1.0
 Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Pucciniomycotina	5.651851851851852	1.0
@@ -407,10 +407,10 @@ Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Glomeromycota	57.96774193548387	1.
 Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Basidiobolomycota	17.41176470588235	1.0
 Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Zoopagomycota	6.909090909090909	1.0
 Protein-protein scaffolds	PF00515	TPR_1	TPR_1	Other (small groups)	10.222222222222221	0.9722222222222222
-Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Ascomycota	23.441860465116278	1.0
-Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Pezizomycotina	28.154595733473794	0.9994732683697656
+Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Ascomycota	24.821428571428573	1.0
+Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Pezizomycotina	28.151985274783065	0.9994740993952143
 Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Saccharomycotina	19.99768696993061	0.9992289899768697
-Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Taphrinomycotina	23.12	1.0
+Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Taphrinomycotina	21.529411764705884	1.0
 Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Agaricomycotina	26.346704871060172	0.9849570200573066
 Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Basidiomycota	24.0	1.0
 Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Pucciniomycotina	29.985185185185184	1.0
@@ -424,10 +424,10 @@ Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Glomeromycota	17.516129
 Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Basidiobolomycota	26.352941176470587	1.0
 Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Zoopagomycota	17.181818181818183	1.0
 Chromatin and DNA metabolism	PF00176	SNF2-rel_dom	SNF2_N	Other (small groups)	24.0	0.9722222222222222
-Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Ascomycota	50.58139534883721	1.0
-Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Pezizomycotina	56.34895970503029	1.0
+Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Ascomycota	53.32142857142857	1.0
+Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Pezizomycotina	56.34499079673942	1.0
 Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Saccharomycotina	49.53199691595991	0.9992289899768697
-Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Taphrinomycotina	53.36	1.0
+Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Taphrinomycotina	49.794117647058826	1.0
 Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Agaricomycotina	60.66690544412607	0.9928366762177651
 Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Basidiomycota	62.5	1.0
 Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Pucciniomycotina	66.98518518518519	1.0
@@ -441,10 +441,10 @@ Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Glomeromycota	62.6451612
 Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Basidiobolomycota	77.47058823529412	1.0
 Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Zoopagomycota	51.63636363636363	1.0
 Chromatin and DNA metabolism	PF00270	DEAD	DEAD helicase	Other (small groups)	61.666666666666664	0.9722222222222222
-Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Ascomycota	66.69767441860465	1.0
-Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Pezizomycotina	75.73426389254675	1.0
+Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Ascomycota	69.89285714285714	1.0
+Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Pezizomycotina	75.73205364186168	1.0
 Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Saccharomycotina	61.05319969159599	0.9992289899768697
-Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Taphrinomycotina	67.08	1.0
+Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Taphrinomycotina	63.0	1.0
 Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Agaricomycotina	76.81160458452722	0.9856733524355301
 Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Basidiomycota	75.7	1.0
 Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Pucciniomycotina	79.94074074074074	1.0
@@ -458,10 +458,10 @@ Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Glomeromycota	71.7419
 Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Basidiobolomycota	90.70588235294117	1.0
 Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Zoopagomycota	62.63636363636363	1.0
 Chromatin and DNA metabolism	PF00271	Helicase_C	Helicase_C	Other (small groups)	74.44444444444444	0.9722222222222222
-Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Ascomycota	10.883720930232558	1.0
-Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Pezizomycotina	11.775085593889914	0.998683170924414
+Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Ascomycota	11.25	1.0
+Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Pezizomycotina	11.776492242966079	0.9986852484880357
 Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Saccharomycotina	8.82266769468003	0.9992289899768697
-Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Taphrinomycotina	10.96	1.0
+Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Taphrinomycotina	10.323529411764707	1.0
 Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Agaricomycotina	9.75	0.9577363896848138
 Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Basidiomycota	9.0	1.0
 Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Pucciniomycotina	10.85925925925926	0.9925925925925926
@@ -475,10 +475,10 @@ Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Glomeromycota	12.90322580645
 Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Basidiobolomycota	15.352941176470589	1.0
 Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Zoopagomycota	9.636363636363637	1.0
 Chromatin and DNA metabolism	PF00628	PHD	PHD finger	Other (small groups)	11.25	0.9722222222222222
-Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Ascomycota	4.3023255813953485	1.0
-Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Pezizomycotina	6.21148274953911	0.9989465367395312
+Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Ascomycota	4.321428571428571	1.0
+Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Pezizomycotina	6.210886142519064	0.9989481987904286
 Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Saccharomycotina	2.1318427139552814	0.9992289899768697
-Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Taphrinomycotina	5.12	1.0
+Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Taphrinomycotina	4.617647058823529	1.0
 Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Agaricomycotina	9.315902578796562	0.9935530085959885
 Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Basidiomycota	4.6	1.0
 Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Pucciniomycotina	6.592592592592593	0.9925925925925926
@@ -492,10 +492,10 @@ Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Glomeromycota	14.032258064516
 Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Basidiobolomycota	18.176470588235293	1.0
 Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Zoopagomycota	4.909090909090909	1.0
 Chromatin and DNA metabolism	PF00385	Chromo	Chromo	Other (small groups)	8.777777777777779	0.9722222222222222
-Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Ascomycota	7.3023255813953485	1.0
-Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Pezizomycotina	7.380563602844351	1.0
+Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Ascomycota	7.357142857142857	1.0
+Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Pezizomycotina	7.379963186957665	1.0
 Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Saccharomycotina	8.482652274479568	0.9992289899768697
-Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Taphrinomycotina	7.64	1.0
+Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Taphrinomycotina	7.5588235294117645	1.0
 Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Agaricomycotina	10.349570200573066	0.9856733524355301
 Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Basidiomycota	12.3	1.0
 Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Pucciniomycotina	9.185185185185185	0.9925925925925926
@@ -509,10 +509,10 @@ Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Glomeromycota	21.61
 Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Basidiobolomycota	17.176470588235293	1.0
 Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Zoopagomycota	9.545454545454545	1.0
 Chromatin and DNA metabolism	PF00439	Bromodomain	Bromodomain	Other (small groups)	12.055555555555555	0.9722222222222222
-Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Ascomycota	1.930232558139535	0.9069767441860465
-Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Pezizomycotina	1.7500658414537793	0.9815643929417962
+Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Ascomycota	1.7142857142857142	0.9285714285714286
+Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Pezizomycotina	1.7501972127267946	0.9813305285301078
 Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Saccharomycotina	1.707787201233616	0.9907478797224364
-Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Taphrinomycotina	2.4	1.0
+Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Taphrinomycotina	2.4705882352941178	0.9705882352941176
 Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Agaricomycotina	1.41189111747851	0.8445558739255015
 Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Basidiomycota	1.8	1.0
 Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Pucciniomycotina	1.511111111111111	0.9629629629629629
@@ -526,10 +526,10 @@ Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Glomeromycota	2.258064516129032
 Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Basidiobolomycota	4.0588235294117645	1.0
 Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Zoopagomycota	2.1818181818181817	0.9090909090909091
 Chromatin and DNA metabolism	PF00154	RecA_N	RecA	Other (small groups)	1.8888888888888888	0.8888888888888888
-Chromatin and DNA metabolism	PF02735	Ku	Ku	Ascomycota	1.9767441860465116	1.0
-Chromatin and DNA metabolism	PF02735	Ku	Ku	Pezizomycotina	2.005530682117461	0.9965762444034765
+Chromatin and DNA metabolism	PF02735	Ku	Ku	Ascomycota	2.0	1.0
+Chromatin and DNA metabolism	PF02735	Ku	Ku	Pezizomycotina	2.00552195635025	0.996581646068893
 Chromatin and DNA metabolism	PF02735	Ku	Ku	Saccharomycotina	2.094834232845027	0.9938319198149576
-Chromatin and DNA metabolism	PF02735	Ku	Ku	Taphrinomycotina	2.08	1.0
+Chromatin and DNA metabolism	PF02735	Ku	Ku	Taphrinomycotina	2.0294117647058822	1.0
 Chromatin and DNA metabolism	PF02735	Ku	Ku	Agaricomycotina	1.972779369627507	0.9477077363896849
 Chromatin and DNA metabolism	PF02735	Ku	Ku	Basidiomycota	2.1	1.0
 Chromatin and DNA metabolism	PF02735	Ku	Ku	Pucciniomycotina	1.9851851851851852	0.9407407407407408
@@ -543,10 +543,10 @@ Chromatin and DNA metabolism	PF02735	Ku	Ku	Glomeromycota	1.7741935483870968	1.0
 Chromatin and DNA metabolism	PF02735	Ku	Ku	Basidiobolomycota	1.8823529411764706	0.9411764705882353
 Chromatin and DNA metabolism	PF02735	Ku	Ku	Zoopagomycota	1.9090909090909092	0.9090909090909091
 Chromatin and DNA metabolism	PF02735	Ku	Ku	Other (small groups)	1.75	0.8333333333333334
-Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Ascomycota	0.9534883720930233	0.9534883720930233
-Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Pezizomycotina	0.9886752699499605	0.9744535159336318
+Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Ascomycota	0.9285714285714286	0.9285714285714286
+Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Pezizomycotina	0.9886931369971076	0.9744938206678938
 Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Saccharomycotina	0.5828835774865073	0.5543562066306862
-Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Taphrinomycotina	1.08	1.0
+Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Taphrinomycotina	1.0588235294117647	1.0
 Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Agaricomycotina	0.9627507163323782	0.8918338108882522
 Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Basidiomycota	1.0	1.0
 Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Pucciniomycotina	0.9777777777777777	0.9037037037037037
@@ -560,10 +560,10 @@ Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Glomeromycota	0.9032258064516129	
 Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Basidiobolomycota	0.9411764705882353	0.9411764705882353
 Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Zoopagomycota	0.8181818181818182	0.6363636363636364
 Chromatin and DNA metabolism	PF03730	Ku_C	Ku_C	Other (small groups)	0.5277777777777778	0.4722222222222222
-Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Ascomycota	1.697674418604651	0.9767441860465116
-Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Pezizomycotina	1.921516987095075	0.9944693178825389
+Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Ascomycota	1.7857142857142858	0.9642857142857143
+Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Pezizomycotina	1.9216408098869313	0.9944780436497502
 Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Saccharomycotina	1.3577486507324594	0.8982266769468004
-Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Taphrinomycotina	1.64	1.0
+Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Taphrinomycotina	1.5294117647058822	1.0
 Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Agaricomycotina	1.4269340974212035	0.9247851002865329
 Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Basidiomycota	1.0	1.0
 Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Pucciniomycotina	1.2074074074074075	0.9111111111111111
@@ -577,10 +577,10 @@ Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Glomeromycota	1.7096774193548387	
 Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Basidiobolomycota	1.8823529411764706	0.9411764705882353
 Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Zoopagomycota	1.7272727272727273	1.0
 Chromatin and DNA metabolism	PF03731	Ku_N	Ku_N	Other (small groups)	1.0	0.6944444444444444
-Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Ascomycota	7.209302325581396	0.813953488372093
-Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Pezizomycotina	12.631814590466158	0.9992099025546484
+Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Ascomycota	8.607142857142858	0.9642857142857143
+Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Pezizomycotina	12.626347620299763	0.9992111490928215
 Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Saccharomycotina	4.168080185042405	0.9807247494217425
-Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Taphrinomycotina	5.92	1.0
+Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Taphrinomycotina	4.764705882352941	0.7941176470588235
 Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Agaricomycotina	14.31375358166189	0.9677650429799427
 Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Basidiomycota	12.1	1.0
 Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Pucciniomycotina	8.955555555555556	1.0
@@ -594,10 +594,10 @@ Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Glomeromycota
 Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Basidiobolomycota	6.647058823529412	1.0
 Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Zoopagomycota	2.4545454545454546	1.0
 Carbohydrate-active (domain level)	PF00150	Cellulase	GH5 cellulase	Other (small groups)	14.38888888888889	0.8888888888888888
-Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Ascomycota	5.534883720930233	0.8372093023255814
-Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Pezizomycotina	14.827495391098235	0.9992099025546484
+Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Ascomycota	7.178571428571429	1.0
+Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Pezizomycotina	14.810938732579542	0.9992111490928215
 Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Saccharomycotina	3.23053199691596	0.9976869699306091
-Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Taphrinomycotina	2.32	0.72
+Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Taphrinomycotina	2.0294117647058822	0.5882352941176471
 Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Agaricomycotina	10.911174785100286	0.9720630372492837
 Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Basidiomycota	5.2	1.0
 Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Pucciniomycotina	7.837037037037037	0.9925925925925926
@@ -611,10 +611,10 @@ Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Glomero
 Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Basidiobolomycota	36.11764705882353	1.0
 Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Zoopagomycota	7.363636363636363	1.0
 Carbohydrate-active (domain level)	PF00704	Glyco_hydro_18	GH18 chitinase	Other (small groups)	14.333333333333334	0.9444444444444444
-Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Ascomycota	0.8604651162790697	0.20930232558139536
-Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Pezizomycotina	2.9847247827232026	0.7829865683434291
+Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Ascomycota	1.2857142857142858	0.2857142857142857
+Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Pezizomycotina	2.9802787273205364	0.7820141993163292
 Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Saccharomycotina	0.05474171164225135	0.03392444101773323
-Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Taphrinomycotina	0.16	0.16
+Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Taphrinomycotina	0.11764705882352941	0.11764705882352941
 Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Agaricomycotina	3.2285100286532953	0.7012893982808023
 Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Basidiomycota	0.1	0.1
 Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Pucciniomycotina	1.0666666666666667	0.26666666666666666
@@ -628,10 +628,10 @@ Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Glomerom
 Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Basidiobolomycota	0.058823529411764705	0.058823529411764705
 Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Zoopagomycota	0.0	0.0
 Carbohydrate-active (domain level)	PF00331	Glyco_hydro_10	GH10 xylanase	Other (small groups)	9.472222222222221	0.3611111111111111
-Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Ascomycota	1.5116279069767442	0.3023255813953488
-Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Pezizomycotina	7.15696602580985	0.8546220700553068
+Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Ascomycota	1.9285714285714286	0.39285714285714285
+Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Pezizomycotina	7.148566920851959	0.8537996318695766
 Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Saccharomycotina	0.2683114880493446	0.13338473400154202
-Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Taphrinomycotina	2.6	0.68
+Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Taphrinomycotina	1.911764705882353	0.5
 Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Agaricomycotina	5.549426934097421	0.8603151862464183
 Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Basidiomycota	1.5	0.5
 Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Pucciniomycotina	1.1037037037037036	0.45185185185185184
@@ -645,10 +645,10 @@ Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Glomero
 Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Basidiobolomycota	0.0	0.0
 Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Zoopagomycota	0.0	0.0
 Carbohydrate-active (domain level)	PF00295	Glyco_hydro_28	GH28 pectinase	Other (small groups)	1.3333333333333333	0.4444444444444444
-Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Ascomycota	4.4186046511627906	0.6511627906976745
-Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Pezizomycotina	12.649986831709244	0.9649723465894127
+Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Ascomycota	6.321428571428571	0.7857142857142857
+Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Pezizomycotina	12.63344727846437	0.9650276097817513
 Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Saccharomycotina	0.1110254433307633	0.04471858134155744
-Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Taphrinomycotina	0.08	0.04
+Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Taphrinomycotina	0.058823529411764705	0.029411764705882353
 Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Agaricomycotina	9.676934097421203	0.8681948424068768
 Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Basidiomycota	7.5	0.6
 Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Pucciniomycotina	1.6666666666666667	0.4962962962962963
@@ -662,10 +662,10 @@ Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Glomero
 Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Basidiobolomycota	0.11764705882352941	0.058823529411764705
 Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Zoopagomycota	0.0	0.0
 Carbohydrate-active (domain level)	PF03443	AA9	AA9 LPMO (Glyco_hydro_61)	Other (small groups)	2.0	0.19444444444444445
-Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Ascomycota	6.744186046511628	1.0
-Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Pezizomycotina	18.01132473005004	0.9992099025546484
+Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Ascomycota	7.75	1.0
+Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Pezizomycotina	17.99184854062582	0.9992111490928215
 Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Saccharomycotina	5.338473400154202	0.9984579799537394
-Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Taphrinomycotina	7.52	1.0
+Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Taphrinomycotina	6.676470588235294	1.0
 Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Agaricomycotina	9.052292263610315	0.9706303724928367
 Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Basidiomycota	9.3	1.0
 Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Pucciniomycotina	7.82962962962963	1.0
@@ -679,10 +679,10 @@ Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Glomeromycota	16.22
 Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Basidiobolomycota	70.6470588235294	1.0
 Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Zoopagomycota	44.18181818181818	1.0
 Peptidases (domain level)	PF00082	Peptidase_S8	Subtilisin S8	Other (small groups)	50.611111111111114	0.9722222222222222
-Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Ascomycota	10.69767441860465	0.9767441860465116
-Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Pezizomycotina	17.461153542270214	0.9989465367395312
+Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Ascomycota	13.464285714285714	1.0
+Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Pezizomycotina	17.447278464370235	0.9989481987904286
 Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Saccharomycotina	14.259830377794911	0.9992289899768697
-Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Taphrinomycotina	7.68	1.0
+Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Taphrinomycotina	6.5588235294117645	0.9705882352941176
 Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Agaricomycotina	41.67550143266476	0.9806590257879656
 Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Basidiomycota	18.2	1.0
 Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Pucciniomycotina	16.214814814814815	0.9925925925925926
@@ -696,10 +696,10 @@ Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Glomeromycota	15.6129032258064
 Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Basidiobolomycota	18.235294117647058	1.0
 Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Zoopagomycota	2.8181818181818183	1.0
 Peptidases (domain level)	PF00026	Asp	Aspartyl A1	Other (small groups)	3.6944444444444446	0.9166666666666666
-Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Ascomycota	0.11627906976744186	0.11627906976744186
-Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Pezizomycotina	0.094548327627074	0.08585725572820647
+Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Ascomycota	0.07142857142857142	0.07142857142857142
+Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Pezizomycotina	0.09439915855903235	0.08572179858006837
 Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Saccharomycotina	0.026985350809560524	0.026985350809560524
-Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Taphrinomycotina	0.0	0.0
+Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Taphrinomycotina	0.08823529411764706	0.08823529411764706
 Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Agaricomycotina	0.07736389684813753	0.04871060171919771
 Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Basidiomycota	0.0	0.0
 Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Pucciniomycotina	0.07407407407407407	0.014814814814814815
@@ -713,10 +713,10 @@ Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Glomeromycota	0.0	0.0
 Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Basidiobolomycota	0.35294117647058826	0.35294117647058826
 Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Zoopagomycota	0.18181818181818182	0.09090909090909091
 Peptidases (domain level)	PF00112	Peptidase_C1	Cysteine C1	Other (small groups)	0.3055555555555556	0.1388888888888889
-Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Ascomycota	1.6511627906976745	0.8372093023255814
-Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Pezizomycotina	4.065314722149065	0.9834079536476166
+Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Ascomycota	2.25	1.0
+Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Pezizomycotina	4.060478569550355	0.9834341309492506
 Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Saccharomycotina	0.9915188897455667	0.9282960678488821
-Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Taphrinomycotina	1.0	1.0
+Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Taphrinomycotina	0.7941176470588235	0.7941176470588235
 Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Agaricomycotina	0.9018624641833811	0.6482808022922636
 Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Basidiomycota	0.6	0.3
 Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Pucciniomycotina	0.8074074074074075	0.725925925925926
@@ -730,10 +730,10 @@ Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Glom
 Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Basidiobolomycota	8.235294117647058	1.0
 Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Zoopagomycota	5.909090909090909	0.9090909090909091
 Peptidases (domain level)	PF00246	Peptidase_M14	Metallocarboxypeptidase M14	Other (small groups)	7.388888888888889	0.9166666666666666
-Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Ascomycota	5.976744186046512	0.9767441860465116
-Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Pezizomycotina	9.792731103502765	0.9989465367395312
+Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Ascomycota	6.857142857142857	1.0
+Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Pezizomycotina	9.789113857480936	0.9989481987904286
 Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Saccharomycotina	4.085582112567463	0.9984579799537394
-Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Taphrinomycotina	4.76	1.0
+Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Taphrinomycotina	4.088235294117647	0.9705882352941176
 Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Agaricomycotina	13.035816618911175	0.9648997134670487
 Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Basidiomycota	7.4	1.0
 Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Pucciniomycotina	7.407407407407407	1.0
@@ -747,10 +747,10 @@ Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Glom
 Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Basidiobolomycota	8.529411764705882	1.0
 Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Zoopagomycota	3.727272727272727	1.0
 Peptidases (domain level)	PF00450	Peptidase_S10	Serine carboxypeptidase S10	Other (small groups)	5.305555555555555	0.9444444444444444
-Secondary metabolism	PF00501	AMP-binding	AMP-binding	Ascomycota	22.25581395348837	1.0
-Secondary metabolism	PF00501	AMP-binding	AMP-binding	Pezizomycotina	51.510666315512246	0.9994732683697656
+Secondary metabolism	PF00501	AMP-binding	AMP-binding	Ascomycota	25.892857142857142	1.0
+Secondary metabolism	PF00501	AMP-binding	AMP-binding	Pezizomycotina	51.475414146726266	0.9994740993952143
 Secondary metabolism	PF00501	AMP-binding	AMP-binding	Saccharomycotina	10.43484965304549	0.9992289899768697
-Secondary metabolism	PF00501	AMP-binding	AMP-binding	Taphrinomycotina	17.08	1.0
+Secondary metabolism	PF00501	AMP-binding	AMP-binding	Taphrinomycotina	14.235294117647058	1.0
 Secondary metabolism	PF00501	AMP-binding	AMP-binding	Agaricomycotina	31.043696275071632	0.9792263610315186
 Secondary metabolism	PF00501	AMP-binding	AMP-binding	Basidiomycota	25.3	1.0
 Secondary metabolism	PF00501	AMP-binding	AMP-binding	Pucciniomycotina	17.955555555555556	1.0
@@ -764,10 +764,10 @@ Secondary metabolism	PF00501	AMP-binding	AMP-binding	Glomeromycota	21.1612903225
 Secondary metabolism	PF00501	AMP-binding	AMP-binding	Basidiobolomycota	118.17647058823529	1.0
 Secondary metabolism	PF00501	AMP-binding	AMP-binding	Zoopagomycota	14.545454545454545	1.0
 Secondary metabolism	PF00501	AMP-binding	AMP-binding	Other (small groups)	39.69444444444444	0.9722222222222222
-Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Ascomycota	7.186046511627907	0.9767441860465116
-Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Pezizomycotina	23.449302080589938	0.9994732683697656
+Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Ascomycota	9.035714285714286	1.0
+Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Pezizomycotina	23.423349986852486	0.9994740993952143
 Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Saccharomycotina	2.771781033153431	0.9992289899768697
-Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Taphrinomycotina	2.28	1.0
+Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Taphrinomycotina	2.088235294117647	0.9705882352941176
 Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Agaricomycotina	4.053724928366762	0.9613180515759312
 Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Basidiomycota	4.1	1.0
 Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Pucciniomycotina	1.9111111111111112	0.9777777777777777
@@ -781,10 +781,10 @@ Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Glomeromycota	1.8064516
 Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Basidiobolomycota	7.705882352941177	1.0
 Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Zoopagomycota	1.9090909090909092	1.0
 Secondary metabolism	PF00109	ketoacyl-synt	Ketoacyl-synt	Other (small groups)	8.0	0.9722222222222222
-Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Ascomycota	6.72093023255814	0.9767441860465116
-Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Pezizomycotina	22.667632341322097	0.9992099025546484
+Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Ascomycota	8.5	1.0
+Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Pezizomycotina	22.64265053904812	0.9992111490928215
 Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Saccharomycotina	2.1881264456437934	0.9992289899768697
-Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Taphrinomycotina	2.04	1.0
+Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Taphrinomycotina	1.7941176470588236	0.9705882352941176
 Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Agaricomycotina	3.732808022922636	0.9491404011461319
 Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Basidiomycota	3.3	0.9
 Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Pucciniomycotina	1.162962962962963	0.9481481481481482
@@ -798,10 +798,10 @@ Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Glomeromycota	1.677
 Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Basidiobolomycota	5.823529411764706	1.0
 Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Zoopagomycota	1.2727272727272727	1.0
 Secondary metabolism	PF02801	Ketoacyl-synt_C	Ketoacyl-synt_C	Other (small groups)	7.055555555555555	0.9722222222222222
-Secondary metabolism	PF00668	Condensation	Condensation	Ascomycota	2.9767441860465116	0.7441860465116279
-Secondary metabolism	PF00668	Condensation	Condensation	Pezizomycotina	11.839873584408744	0.9931524888069528
+Secondary metabolism	PF00668	Condensation	Condensation	Ascomycota	3.642857142857143	0.8571428571428571
+Secondary metabolism	PF00668	Condensation	Condensation	Pezizomycotina	11.827504601630292	0.993163292137786
 Secondary metabolism	PF00668	Condensation	Condensation	Saccharomycotina	0.16114109483423283	0.1218195836545875
-Secondary metabolism	PF00668	Condensation	Condensation	Taphrinomycotina	1.16	1.0
+Secondary metabolism	PF00668	Condensation	Condensation	Taphrinomycotina	0.9117647058823529	0.7941176470588235
 Secondary metabolism	PF00668	Condensation	Condensation	Agaricomycotina	1.835243553008596	0.7729226361031518
 Secondary metabolism	PF00668	Condensation	Condensation	Basidiomycota	1.6	1.0
 Secondary metabolism	PF00668	Condensation	Condensation	Pucciniomycotina	1.3037037037037038	0.9259259259259259
@@ -815,10 +815,10 @@ Secondary metabolism	PF00668	Condensation	Condensation	Glomeromycota	1.354838709
 Secondary metabolism	PF00668	Condensation	Condensation	Basidiobolomycota	67.82352941176471	1.0
 Secondary metabolism	PF00668	Condensation	Condensation	Zoopagomycota	0.7272727272727273	0.6363636363636364
 Secondary metabolism	PF00668	Condensation	Condensation	Other (small groups)	14.444444444444445	0.6944444444444444
-Secondary metabolism	PF00550	PP-binding	PP-binding	Ascomycota	10.093023255813954	1.0
-Secondary metabolism	PF00550	PP-binding	PP-binding	Pezizomycotina	32.58388201211483	0.9994732683697656
+Secondary metabolism	PF00550	PP-binding	PP-binding	Ascomycota	11.714285714285714	1.0
+Secondary metabolism	PF00550	PP-binding	PP-binding	Pezizomycotina	32.5553510386537	0.9994740993952143
 Secondary metabolism	PF00550	PP-binding	PP-binding	Saccharomycotina	3.030840400925212	0.9984579799537394
-Secondary metabolism	PF00550	PP-binding	PP-binding	Taphrinomycotina	4.16	1.0
+Secondary metabolism	PF00550	PP-binding	PP-binding	Taphrinomycotina	3.6176470588235294	1.0
 Secondary metabolism	PF00550	PP-binding	PP-binding	Agaricomycotina	7.574498567335244	0.9742120343839542
 Secondary metabolism	PF00550	PP-binding	PP-binding	Basidiomycota	7.6	1.0
 Secondary metabolism	PF00550	PP-binding	PP-binding	Pucciniomycotina	3.511111111111111	1.0
@@ -832,10 +832,10 @@ Secondary metabolism	PF00550	PP-binding	PP-binding	Glomeromycota	4.1612903225806
 Secondary metabolism	PF00550	PP-binding	PP-binding	Basidiobolomycota	75.6470588235294	1.0
 Secondary metabolism	PF00550	PP-binding	PP-binding	Zoopagomycota	2.4545454545454546	0.9090909090909091
 Secondary metabolism	PF00550	PP-binding	PP-binding	Other (small groups)	16.86111111111111	0.9722222222222222
-Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Ascomycota	6.604651162790698	0.9069767441860465
-Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Pezizomycotina	22.579141427442718	0.998683170924414
+Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Ascomycota	8.392857142857142	0.9642857142857143
+Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Pezizomycotina	22.554299237444123	0.9986852484880357
 Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Saccharomycotina	1.8080185042405552	0.9984579799537394
-Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Taphrinomycotina	2.04	1.0
+Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Taphrinomycotina	1.7352941176470589	0.9117647058823529
 Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Agaricomycotina	3.9613180515759314	0.9591690544412608
 Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Basidiomycota	3.5	1.0
 Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Pucciniomycotina	2.1333333333333333	0.9407407407407408
@@ -849,10 +849,10 @@ Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Glomeromycota	1.5483870
 Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Basidiobolomycota	7.176470588235294	1.0
 Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Zoopagomycota	1.2727272727272727	0.8181818181818182
 Secondary metabolism	PF00698	Acyl_transf_1	Acyl_transf_1	Other (small groups)	4.555555555555555	0.9166666666666666
-Lipid metabolism	PF01764	Lipase_3	Lipase_3	Ascomycota	4.069767441860465	0.8604651162790697
-Lipid metabolism	PF01764	Lipase_3	Lipase_3	Pezizomycotina	5.700026336581511	0.9981564392941796
+Lipid metabolism	PF01764	Lipase_3	Lipase_3	Ascomycota	4.392857142857143	1.0
+Lipid metabolism	PF01764	Lipase_3	Lipase_3	Pezizomycotina	5.700762555876939	0.9981593478832501
 Lipid metabolism	PF01764	Lipase_3	Lipase_3	Saccharomycotina	3.4448727833461836	0.9784117193523516
-Lipid metabolism	PF01764	Lipase_3	Lipase_3	Taphrinomycotina	5.2	1.0
+Lipid metabolism	PF01764	Lipase_3	Lipase_3	Taphrinomycotina	4.264705882352941	0.8235294117647058
 Lipid metabolism	PF01764	Lipase_3	Lipase_3	Agaricomycotina	9.89541547277937	0.9648997134670487
 Lipid metabolism	PF01764	Lipase_3	Lipase_3	Basidiomycota	7.6	1.0
 Lipid metabolism	PF01764	Lipase_3	Lipase_3	Pucciniomycotina	6.592592592592593	0.9851851851851852
@@ -866,10 +866,10 @@ Lipid metabolism	PF01764	Lipase_3	Lipase_3	Glomeromycota	30.451612903225808	1.0
 Lipid metabolism	PF01764	Lipase_3	Lipase_3	Basidiobolomycota	45.88235294117647	1.0
 Lipid metabolism	PF01764	Lipase_3	Lipase_3	Zoopagomycota	13.636363636363637	1.0
 Lipid metabolism	PF01764	Lipase_3	Lipase_3	Other (small groups)	32.02777777777778	0.9722222222222222
-Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Ascomycota	25.348837209302324	0.9767441860465116
-Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Pezizomycotina	51.382670529365285	0.9992099025546484
+Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Ascomycota	29.785714285714285	1.0
+Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Pezizomycotina	51.34735734946095	0.9992111490928215
 Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Saccharomycotina	20.160370084811102	0.9992289899768697
-Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Taphrinomycotina	21.32	1.0
+Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Taphrinomycotina	18.08823529411765	0.9705882352941176
 Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Agaricomycotina	37.66404011461318	0.9756446991404012
 Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Basidiomycota	33.0	1.0
 Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Pucciniomycotina	26.474074074074075	0.9925925925925926
@@ -883,10 +883,10 @@ Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Glomeromycota	33.0967741935
 Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Basidiobolomycota	50.8235294117647	1.0
 Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Zoopagomycota	22.90909090909091	1.0
 Lipid metabolism	PF00561	Abhydrolase_1	Abhydrolase_1	Other (small groups)	39.72222222222222	0.9722222222222222
-Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Ascomycota	2.0232558139534884	0.5348837209302325
-Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Pezizomycotina	5.022386094284962	0.9417961548590993
+Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Ascomycota	1.8928571428571428	0.5357142857142857
+Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Pezizomycotina	5.020773073889035	0.9418879831711806
 Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Saccharomycotina	0.17039321511179645	0.1218195836545875
-Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Taphrinomycotina	0.04	0.04
+Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Taphrinomycotina	0.3235294117647059	0.08823529411764706
 Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Agaricomycotina	0.37106017191977075	0.15830945558739254
 Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Basidiomycota	0.1	0.1
 Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Pucciniomycotina	0.11851851851851852	0.08888888888888889
@@ -900,10 +900,10 @@ Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	G
 Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Basidiobolomycota	43.94117647058823	1.0
 Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Zoopagomycota	0.7272727272727273	0.5454545454545454
 Secreted and effector-like domains	PF00187	Chitin_bind_1	Chitin_bind_1 (CBM18)	Other (small groups)	60.666666666666664	0.8055555555555556
-Secreted and effector-like domains	PF01476	LysM	LysM	Ascomycota	0.8372093023255814	0.4418604651162791
-Secreted and effector-like domains	PF01476	LysM	LysM	Pezizomycotina	4.237029233605478	0.9202001580194891
+Secreted and effector-like domains	PF01476	LysM	LysM	Ascomycota	1.25	0.6428571428571429
+Secreted and effector-like domains	PF01476	LysM	LysM	Pezizomycotina	4.230607415198527	0.9190113068630029
 Secreted and effector-like domains	PF01476	LysM	LysM	Saccharomycotina	0.05628373168851195	0.03700848111025443
-Secreted and effector-like domains	PF01476	LysM	LysM	Taphrinomycotina	1.52	0.72
+Secreted and effector-like domains	PF01476	LysM	LysM	Taphrinomycotina	1.1176470588235294	0.5294117647058824
 Secreted and effector-like domains	PF01476	LysM	LysM	Agaricomycotina	4.770057306590258	0.9412607449856734
 Secreted and effector-like domains	PF01476	LysM	LysM	Basidiomycota	2.3	0.9
 Secreted and effector-like domains	PF01476	LysM	LysM	Pucciniomycotina	0.8814814814814815	0.7703703703703704
@@ -917,10 +917,10 @@ Secreted and effector-like domains	PF01476	LysM	LysM	Glomeromycota	1.35483870967
 Secreted and effector-like domains	PF01476	LysM	LysM	Basidiobolomycota	8.058823529411764	1.0
 Secreted and effector-like domains	PF01476	LysM	LysM	Zoopagomycota	0.18181818181818182	0.18181818181818182
 Secreted and effector-like domains	PF01476	LysM	LysM	Other (small groups)	3.7222222222222223	0.6666666666666666
-Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Ascomycota	2.813953488372093	0.813953488372093
-Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Pezizomycotina	3.429022912825915	0.9889386357650777
+Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Ascomycota	3.5357142857142856	0.9642857142857143
+Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Pezizomycotina	3.427820141993163	0.9889560872995004
 Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Saccharomycotina	2.998457979953739	0.9822667694680031
-Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Taphrinomycotina	3.56	0.72
+Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Taphrinomycotina	2.7941176470588234	0.5882352941176471
 Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Agaricomycotina	2.3760744985673354	0.7643266475644699
 Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Basidiomycota	1.1	0.5
 Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Pucciniomycotina	4.155555555555556	0.9777777777777777
@@ -934,10 +934,10 @@ Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Glomeromycota	3.0967741
 Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Basidiobolomycota	45.1764705882353	1.0
 Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Zoopagomycota	22.90909090909091	1.0
 Secreted and effector-like domains	PF00188	CAP	CAP (SCP)	Other (small groups)	13.694444444444445	0.9444444444444444
-Secreted and effector-like domains	PF05730	CFEM	CFEM	Ascomycota	5.209302325581396	0.9302325581395349
-Secreted and effector-like domains	PF05730	CFEM	CFEM	Pezizomycotina	12.483539636555175	0.9965762444034765
+Secreted and effector-like domains	PF05730	CFEM	CFEM	Ascomycota	6.178571428571429	0.9642857142857143
+Secreted and effector-like domains	PF05730	CFEM	CFEM	Pezizomycotina	12.47357349460952	0.996581646068893
 Secreted and effector-like domains	PF05730	CFEM	CFEM	Saccharomycotina	2.627602158828065	0.9175019275250579
-Secreted and effector-like domains	PF05730	CFEM	CFEM	Taphrinomycotina	1.84	0.72
+Secreted and effector-like domains	PF05730	CFEM	CFEM	Taphrinomycotina	1.7647058823529411	0.7352941176470589
 Secreted and effector-like domains	PF05730	CFEM	CFEM	Agaricomycotina	4.328796561604585	0.8997134670487106
 Secreted and effector-like domains	PF05730	CFEM	CFEM	Basidiomycota	3.0	0.5
 Secreted and effector-like domains	PF05730	CFEM	CFEM	Pucciniomycotina	5.4222222222222225	0.9777777777777777
@@ -951,10 +951,10 @@ Secreted and effector-like domains	PF05730	CFEM	CFEM	Glomeromycota	0.0	0.0
 Secreted and effector-like domains	PF05730	CFEM	CFEM	Basidiobolomycota	0.0	0.0
 Secreted and effector-like domains	PF05730	CFEM	CFEM	Zoopagomycota	0.0	0.0
 Secreted and effector-like domains	PF05730	CFEM	CFEM	Other (small groups)	0.6111111111111112	0.05555555555555555
-Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Ascomycota	2.744186046511628	0.9069767441860465
-Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Pezizomycotina	3.402422965499078	0.9502238609428496
+Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Ascomycota	2.857142857142857	0.9285714285714286
+Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Pezizomycotina	3.400999211149093	0.9500394425453589
 Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Saccharomycotina	3.2606013878180415	0.9992289899768697
-Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Taphrinomycotina	3.6	1.0
+Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Taphrinomycotina	3.323529411764706	0.9705882352941176
 Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Agaricomycotina	3.310888252148997	0.9699140401146131
 Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Basidiomycota	3.3	1.0
 Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Pucciniomycotina	2.5185185185185186	0.9851851851851852
@@ -968,10 +968,10 @@ Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Glome
 Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Basidiobolomycota	5.9411764705882355	1.0
 Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Zoopagomycota	3.1818181818181817	1.0
 Trehalose and carbon storage	PF00982	Glyco_transf_20	Glyco_transf_20 (TPS)	Other (small groups)	4.083333333333333	0.9722222222222222
-Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Ascomycota	1.744186046511628	0.8837209302325582
-Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Pezizomycotina	2.0350276534105873	0.9636555175138267
+Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Ascomycota	1.9285714285714286	0.8928571428571429
+Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Pezizomycotina	2.034446489613463	0.9634499079673942
 Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Saccharomycotina	2.155744024672321	0.9976869699306091
-Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Taphrinomycotina	2.64	1.0
+Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Taphrinomycotina	2.264705882352941	0.9705882352941176
 Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Agaricomycotina	2.0286532951289398	0.9541547277936963
 Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Basidiomycota	2.1	1.0
 Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Pucciniomycotina	2.488888888888889	0.9925925925925926
@@ -985,10 +985,10 @@ Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Glome
 Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Basidiobolomycota	6.0588235294117645	1.0
 Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Zoopagomycota	3.3636363636363638	1.0
 Trehalose and carbon storage	PF02358	Trehalose_PPase	Trehalose_PPase (TPP)	Other (small groups)	3.5277777777777777	0.9722222222222222
-Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Ascomycota	1.558139534883721	0.9767441860465116
-Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Pezizomycotina	2.298393468527785	0.99341585462207
+Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Ascomycota	1.7142857142857142	1.0
+Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Pezizomycotina	2.2963449907967393	0.9934262424401789
 Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Saccharomycotina	1.5628373168851195	0.9814957594448728
-Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Taphrinomycotina	2.0	1.0
+Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Taphrinomycotina	1.8529411764705883	0.9705882352941176
 Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Agaricomycotina	2.9283667621776504	0.9684813753581661
 Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Basidiomycota	3.4	1.0
 Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Pucciniomycotina	2.2074074074074073	0.9925925925925926
@@ -1002,8 +1002,8 @@ Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Glomeromycota	1.6774193
 Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Basidiobolomycota	5.176470588235294	1.0
 Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Zoopagomycota	1.9090909090909092	0.9090909090909091
 Trehalose and carbon storage	PF01204	Trehalase	Trehalase	Other (small groups)	2.361111111111111	0.9722222222222222
-Trehalose and carbon storage	PF03632	Glyco_hydro_65m	Glyco_hydro_65m (GH65)	Ascomycota	0.6744186046511628	0.6511627906976745
-Trehalose and carbon storage	PF03632	Glyco_hydro_65m	Glyco_hydro_65m (GH65)	Pezizomycotina	0.80826968659468	0.7034500921780353
+Trehalose and carbon storage	PF03632	Glyco_hydro_65m	Glyco_hydro_65m (GH65)	Ascomycota	0.8214285714285714	0.7857142857142857
+Trehalose and carbon storage	PF03632	Glyco_hydro_65m	Glyco_hydro_65m (GH65)	Pezizomycotina	0.8085721798580069	0.7039179595056534
 Trehalose and carbon storage	PF03632	Glyco_hydro_65m	Glyco_hydro_65m (GH65)	Saccharomycotina	0.8712413261372398	0.8149575944487278
 Trehalose and carbon storage	PF03632	Glyco_hydro_65m	Glyco_hydro_65m (GH65)	Taphrinomycotina	0.0	0.0
 Trehalose and carbon storage	PF03632	Glyco_hydro_65m	Glyco_hydro_65m (GH65)	Agaricomycotina	0.01862464183381089	0.013610315186246419
