@@ -205,3 +205,21 @@ REAL_DAT = Path("/srv/projects/db/pfam/current/Pfam-A.hmm.dat")
 def test_committed_map_matches_pfam_release():
     fm = t.load_family_map(t.DEFAULT_MAP)
     assert t.check_pfam_ids(fm, REAL_DAT) == []
+
+
+def test_excluded_accession_in_tf_inventory_is_not_counted(con, tmp_path):
+    """PF08880 (QLQ) is absent from the map. Its tf_inventory rows must not count or leak a family label."""
+    inv = [("G1", "G1_000001-T1", "PF08880", "Rrn7", "RNA Pol I transcription factor Rrn7-type", 1e-10, 50.0),
+           ("G1", "G1_000002-T1", "PF08880", "Rrn7", "RNA Pol I transcription factor Rrn7-type", 1e-10, 50.0),
+           ("G1", "G1_000002-T1", "PF00172", "Zn_clus", "Zn", 1e-10, 50.0)]
+    _, fam, summ = run(con, tmp_path, inv, [], genes_for("G1", 4), ["G1"])
+    assert list(fam["family"]) == ["Zn"] and list(fam["n_proteins"]) == [1]
+    assert summ.loc["G1", "n_tf_proteins"] == 1 and summ.loc["G1", "n_families"] == 1
+
+
+def test_committed_map_excludes_pf08880():
+    fm = t.load_family_map(t.DEFAULT_MAP)
+    assert "PF08880" not in set(fm["pfam_acc"])
+    row = fm[fm["note"].str.contains("PF08880")]
+    assert len(row) == 1 and row.iloc[0]["pfam_acc"] == "" and row.iloc[0]["pfam_id"] == ""
+    assert row.iloc[0]["note"].startswith("excluded")

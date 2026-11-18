@@ -25,9 +25,9 @@ PF00249	Myb-like DNA-binding domain	Myb	Myb-like.	Myb_DNA-binding
 PF13921	Myb-like DNA-binding domain variant	Myb	Myb-like variant HMM.	Myb_DNA-bind_6
 PF00105	Nuclear hormone receptor C4 zinc finger		Nuclear hormone receptor. No paper family.	zf-C4
 PF00157	POU-specific domain		POU. No paper family.	Pou
-PF08880	RNA Pol I transcription factor Rrn7-type		Rrn7 (Pol I factor). No paper family. Pfam 38.2 names PF08880 QLQ, not Rrn7; the BFD label is from the source CSV and is kept so counts match.	QLQ
+			excluded: BFD's source CSV lists PF08880 as 'Rrn7-type RNA Pol I TF'; in Pfam 38.2 it is QLQ (SWI/SNF-related domain), not a TF DNA-binding domain; not counted	
 PF00642	CCCH zinc finger	C2H2/CCHC/CCCH/C5HC2	CCCH finger. Paper family merges C2H2/CCHC/CCCH/C5HC2.	zf-CCCH
-PF02319	E2F_TDP	E2F_TDP	Added. Pfam 38.2 ID is WHD_E2F_TDP.	WHD_E2F_TDP
+PF02319	E2F_TDP	E2F_TDP	Added. Pfam 38.2 name is WHD_E2F_TDP; the family label E2F_TDP is kept.	WHD_E2F_TDP
 PF01167	Tub	Tubby TF	Added. Pfam Tub.	Tub
 PF02257	RFX_DNA_binding	RFX_DNA_binding	Added.	RFX_DNA_binding
 PF03106	WRKY	DNA-binding WRKY	Added.	WRKY
