@@ -151,13 +151,18 @@ def _permanova(dist, groups):
 
 
 def _scatter(coords, groups, colors, pct, src, title):
-    fig, ax = plt.subplots(figsize=(6.6, 5.2))
+    fig, ax = plt.subplots(figsize=(8.4, 5.2))
     c = groups.map(colors).fillna("#9a9a9a")
     ax.scatter(coords["PCo1"], coords["PCo2"] if "PCo2" in coords else 0, s=9, c=c, alpha=0.85, linewidths=0, rasterized=True)
     ax.set_xlabel(f"PCo1 ({pct[0]:.1f}%)")
     ax.set_ylabel(f"PCo2 ({pct[1]:.1f}%)" if len(pct) > 1 else "PCo2")
     ax.set_title(title)
-    parent_legend(ax, src)
+    leg = parent_legend(ax, src, outside=True, ncol=2, fontsize=6, title_fontsize=6.5)
+    if leg is not None:   # make room on the right for the legend: savefig is not called with bbox_inches="tight"
+        fig.canvas.draw()
+        w_in = leg.get_window_extent().width / fig.dpi
+        right = 1 - (w_in + 0.05 * fig.get_figwidth() / 8.4 + 0.1) / fig.get_figwidth()
+        fig.subplots_adjust(right=max(0.5, right))
     return fig
 
 

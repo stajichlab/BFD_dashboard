@@ -239,13 +239,18 @@ def assign_groups(core, level, phylum_order=None):
     return d, levels, colors
 
 
-def parent_legend(ax, core, loc="upper right", fontsize=7):
+def parent_legend(ax, core, loc="upper right", fontsize=7, outside=False, ncol=1, title_fontsize=None):
+    """Phylum legend. Default: inside the axes. outside=True: right of the axes, anchored at the top, ncol columns.
+    Returns the Legend, or None when there is nothing to show."""
     pc = core.attrs.get("parent_colors", {})
-    if len(pc) > 1:
-        handles = [Patch(color=c, label=p) for p, c in pc.items() if p != "Other"]
-        if "Other" in pc:
-            handles.append(Patch(color=GREY, label="Other = pooled small groups"))
-        ax.legend(handles=handles, frameon=False, fontsize=fontsize, title="Phylum", title_fontsize=fontsize, loc=loc)
+    if len(pc) <= 1:
+        return None
+    handles = [Patch(color=c, label=p) for p, c in pc.items() if p != "Other"]
+    if "Other" in pc:
+        handles.append(Patch(color=GREY, label="Other = pooled small groups"))
+    kw = {"loc": "upper left", "bbox_to_anchor": (1.01, 1.0), "borderaxespad": 0} if outside else {"loc": loc}
+    return ax.legend(handles=handles, frameon=False, fontsize=fontsize, title="Phylum",
+                     title_fontsize=title_fontsize or fontsize, ncol=ncol, **kw)
 
 
 def color_ticks(ax, levels, colors, axis="x"):
