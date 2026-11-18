@@ -1,0 +1,13 @@
+{
+  "tag": "site-figures-2026-11-18",
+  "asset": "site-figures-2026-11-18.tar.zst",
+  "sha256": "bb9e5300be02c115d6528b08b56abb599ee5cedd6b92c392a0cf0699b530298f",
+  "bytes": 65674362,
+  "created": "2026-11-18",
+  "n_png": 262,
+  "n_files": 846,
+  "source": {
+    "summary_suppress_sha256": "6d9038f9bdda180a707e74e919b2395056b96f19c70bfddfed0ab35997a4bf60",
+    "branch_commit": "19ae70f"
+  }
+}

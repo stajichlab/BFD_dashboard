@@ -1,0 +1,58 @@
+---
+title: "Gene structure"
+---
+
+```{python}
+import sys
+sys.path.insert(0, ".")
+from _helpers import fig, table, single, flat_table, read_flat, gallery
+```
+
+Unit: one representative genome per species. Boxes show the median and quartiles over genomes. The phylum tab comes first; subphylum, class and order are the other tabs. Each caption gives n and the share of genomes pooled in the grey "Other" group, read from the figure's data file.
+
+**Definitions.** Each genome contributes one median, so large genomes do not dominate. The unit of each statistic differs:
+
+- Gene length is per protein-coding gene (span of the gene model). Protein length is per protein in the protein table.
+- CDS length, exons per gene, the share of genes with an intron and intron length are per transcript, over protein-coding transcripts. A gene with several isoforms counts once per isoform. Note that exon counts may include UTR exons.
+- Coding fraction is the summed CDS length of all protein-coding transcripts divided by the genome length. Alternative isoforms add to the sum, so the value can be inflated in genomes with many isoforms.
+- Intergenic distance comes from the intergenic-distance table and is not filtered to protein-coding genes.
+- Genes per Mb counts distinct protein-coding genes.
+
+## Gene, CDS and protein length
+
+```{python}
+fig("S01_gene_len", "Median gene length (transcript span, bp) per genome.")
+fig("S01b_cds_len", "Median CDS length (bp) per genome.")
+fig("S01c_protein_len", "Median protein length (aa) per genome.")
+```
+
+## Density, coding fraction and intergenic distance
+
+```{python}
+fig("S02_gene_density", "Protein-coding genes per Mb of genome.")
+fig("S03_coding_fraction", "Coding fraction of the genome.")
+fig("S07_intergenic", "Median intergenic distance (bp) per genome.")
+```
+
+## Exons and introns
+
+```{python}
+fig("S04_exons", "Median exons per gene per genome.")
+fig("S05_intron_len", "Median intron length (bp); genomes without introns are left out.")
+fig("S06_intron_frac", "Fraction of genes with at least one intron.")
+```
+
+## Overview
+
+```{python}
+fig("S08_structure_heatmap", "Group medians of the structure statistics (column-scaled).")
+fig("S09_gene_vs_intergenic", "Gene length against intergenic distance (log-log).", "70%")
+```
+
+## Group tests
+
+Kruskal-Wallis and ANOVA across the groups of each level, one row per statistic. No multiple-testing correction is applied. Effect size is epsilon-squared from the Kruskal-Wallis test.
+
+```{python}
+table("T_anova")
+```

@@ -5,19 +5,36 @@ title: "Data and methods"
 ## Source and unit
 
 - Database: the local `BFD.duckdb` in the `db/` folder, built from the `Fungi_BFD_runs/tables` parquet files by `workflows/build_bfd_db.sh` (MotherDuck is being phased out and is not used).
-- Unit: one representative genome per species, flagged `is_representative` in `v_genome_labels` (best BUSCO complete, then N50, then LOCUSTAG; annotated genomes only). The full database has 23,412 genomes and 244.8 million proteins; there are 7,435 representatives, of which 7,393 have a proteome (77.7 million proteins); the 42 without proteins are not plotted.
+- Unit: one representative genome per species, flagged `is_representative` in `v_genome_labels` (best BUSCO complete, then N50, then LOCUSTAG; annotated genomes only).
+- Genome counts. Two totals appear in this project, and they count different things:
+  - `genome_all` has one row per genome in the summary tables. Its row count equals `n_genomes` plus `n_suppressed` in the `meta` of `data/genomes.json`. It is read from that file when this page renders (see below).
+  - The gene-structure table has a row only for genomes that have a proteome (protein-coding genes). Its count is lower than the `genome_all` count. The first version of this page recorded 23,412 genomes with a gene-structure row and 244.8 million proteins; 7,435 representatives, of which 7,393 have a proteome (77.7 million proteins); the 42 without proteins are not plotted. These numbers were not re-measured for this version. Re-measure them after a database rebuild.
 - Groups: phylum and class from the BFD taxonomy; the eight phyla with most representatives are shown, the rest are pooled as "Other".
 - **Subphylum is derived, not stored.** The `SUBPHYLUM` column is NULL for all 7,435 representatives in both `species` and `samples`, so the subphylum level maps each class to its subphylum with the table in `bin/summary/taxonomy.py` (standard fungal classification written from memory, citation to verify). Classes missing from the table fall back to their phylum. Fixing the database column (proposal: populate it in the taxonomy source of the pipeline) would make this mapping unnecessary.
 
 ## Build
 
-1. `workflows/summary/build_summary.sh` runs `bin/summary/build_summary_tables.py` on the HPCC and writes small per-genome parquet tables.
-2. `bin/summary/make_figures.py DATA OUT` writes the PNG and SVG figures and TSV tables used by these pages.
-3. Render on the laptop (Quarto is not installed on the HPCC; rendering only formats the finished figures and tables). Needs `quarto` plus a Python with `pandas tabulate jupyter`; set `QUARTO_PYTHON` to it. **Render from a copy or checkout that is not under a hidden folder** (for example not under `.claude/worktrees/`): Quarto skips files whose path contains a dot-folder and then renders 0 files without an error.
-   ```
-   cd docs/quarto_summary && quarto render      # writes _site/
-   ```
-4. Test: `bin/summary/test_make_figures.py` runs the figure code on synthetic tables.
+Run these steps in order, from the repository root, on the HPCC.
+
+1. `sbatch workflows/summary_tables.sh` builds the per-genome parquet tables from the local `BFD.duckdb` (`bin/summary/build_summary_tables.py`). The default output directory is `Fungi_BFD_runs/analysis/summary_tables`. Override it with `OUT`.
+2. `sbatch workflows/summary_figures.sh` runs `bin/summary/make_figures.py` on those tables. It reads `DATA` (default: the tables directory above) and writes PNG and SVG figures, TSV tables and `figures_index.tsv` to `OUT` (default: `Fungi_BFD_runs/analysis/summary_figures_real`). Both scripts write their SLURM log in the submit directory.
+3. `workflows/release_site_assets.sh --upload` packs `figures/`, `tables/` and `figures_index.tsv` from `OUT` into `site-figures-<date>.tar.zst`. It uploads the archive as a GitHub release asset and writes `docs/quarto_summary/figures_release.json` (tag, asset name, sha256, size, counts, and `branch_commit`, the HEAD at packaging time). It checks `gh auth` and the tag before it builds. If the tag exists it stops, unless you pass `--clobber`. Prefer a new dated tag (`--date`). Run it without `--upload` first to build the archive and see the `gh release create` command. This step replaces `publish_figures_to_site.sh` as the way figures reach the site.
+4. `python3.12 bin/summary/export_clade_json.py <tables_dir> docs/quarto_summary/data/genomes.json` rewrites the Explore page data. `genomes.json` stays in git (about 3.6 MB).
+5. Commit the new `figures_release.json` and `genomes.json`, then open a pull request. GitHub Actions does the render (`.github/workflows/pages.yml`).
+
+Figures, tables and `figures_index.tsv` are not in git. The Pages workflow runs `workflows/fetch_site_assets.sh`. That script downloads the release asset named in `figures_release.json` and checks its sha256 before the render. If the manifest is missing or the checksum fails, the build fails. For a local preview, run `workflows/fetch_site_assets.sh` after the release exists. Before the release exists, use `workflows/fetch_site_assets.sh --from-archive <archive>`. `workflows/publish_figures_to_site.sh` also copies figures into the ignored folders, for local previews only.
+
+The "Suppressed genomes" section below lists the genomes that the summary leaves out.
+
+`workflows/summary/build_summary.sh` is superseded by `workflows/summary_tables.sh`. It built the same tables from a bench copy of the code. Do not use it for new runs.
+
+To render on another machine, install `quarto` and a Python with `pandas tabulate jupyter`, and set `QUARTO_PYTHON` to it. **Render from a copy or checkout that is not under a hidden folder** (for example not under `.claude/worktrees/`): Quarto skips files whose path contains a dot-folder and then renders 0 files without an error.
+
+```
+cd docs/quarto_summary && quarto render      # writes _site/
+```
+
+Tests: `bin/summary/test_make_figures.py` runs the figure code on synthetic tables.
 
 ## Definitions
 
@@ -31,8 +48,47 @@ title: "Data and methods"
 
 ## Limits
 
-- Descriptive only: no statistical tests, no phylogenetic correction.
+- Mostly descriptive. The group tests and regressions on the Gene structure and Comparisons pages have no phylogenetic correction, and the group tests have no multiple-testing correction.
 - Per-genome tool coverage is uneven: some genomes have a small fraction of proteins with a Pfam scan result (list: `docs/analyses/trehalose/data/th_qc_suspect_genomes.tsv`), which lowers their domain counts.
 - `targetp` covers only 125 genomes and is not used. `signalp` and `tmhmm` hold positive calls only.
 - Pfam accessions in the curated panel (`bin/summary/panel.py`): all 57 were checked on 2026-11-16 against the Pfam names stored in the BFD `pfam` table (accession and name agree). The functional interpretation of each domain is standard knowledge and was not re-derived.
 - Group sizes are small for some phyla; read the `n` under each box.
+
+## Suppressed genomes
+
+These genomes are left out of every figure, table, test and the Explore page until the annotation is re-run. The list is `config/summary_suppress.tsv`. A committed copy for this page is `data/summary_suppress.tsv`. The tables on disk still hold the genomes. The list is applied when the tables are read. To restore a genome, remove its line in `config/summary_suppress.tsv`, copy the file to `docs/quarto_summary/data/summary_suppress.tsv`, and re-run `make_figures.py` and `export_clade_json.py`.
+
+```{python}
+#| echo: false
+#| output: asis
+import pandas as pd
+from pathlib import Path
+try:
+    sup = pd.read_csv("data/summary_suppress.tsv", sep="\t", comment="#", dtype=str, keep_default_na=False)
+    print(sup.to_markdown(index=False) if len(sup) else "No genomes are suppressed.")
+except (OSError, ValueError):
+    print("The suppress list `data/summary_suppress.tsv` could not be read, so the table is not shown.")
+```
+
+## Explore page data
+
+The Explore page reads `data/genomes.json` (one row per genome, all genomes in `genome_all` except the suppressed genomes). Regenerate it from the repository root with:
+
+```
+python3.12 bin/summary/export_clade_json.py <tables_dir> docs/quarto_summary/data/genomes.json
+```
+
+`<tables_dir>` is `Fungi_BFD_runs/analysis/summary_tables`, written by `workflows/summary_tables.sh` (`build_summary_tables.py`). The JSON `meta` records the genome count, the source, and the suppressed genomes (`n_suppressed`, `suppressed`).
+
+```{python}
+#| echo: false
+#| output: asis
+import json
+from pathlib import Path
+try:
+    meta = json.loads(Path("data/genomes.json").read_text())["meta"]
+    n, s = meta["n_genomes"], meta.get("n_suppressed", 0)
+    print(f"At render time `data/genomes.json` holds **{n:,}** genomes (`genome_all` rows minus {s} suppressed).")
+except (OSError, KeyError, ValueError):
+    print("`data/genomes.json` could not be read, so the genome count is not shown.")
+```

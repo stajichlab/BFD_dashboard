@@ -1,17 +1,27 @@
 #!/usr/bin/env python3
 """Figures and tables for the Quarto summary, from the parquet files of build_summary_tables.py.
 
-    python make_figures.py DATA_DIR OUT_DIR
-      -> OUT_DIR/figures/<level>/*.png|svg, OUT_DIR/tables/<level>/*.tsv   for level in phylum, subphylum, class
+    python make_figures.py DATA_DIR OUT_DIR [LEVELS]
+      -> OUT_DIR/figures/<level>/*.png|svg|json, OUT_DIR/tables/<level>/*.tsv   for level in phylum, subphylum, class, order
+      -> OUT_DIR/figures/all, tables/all           all-genome scatter plots and regressions (Comparisons page)
+      -> OUT_DIR/figures/ordination, tables/ordination   PCoA and PERMANOVA on one genome per genus
+      -> OUT_DIR/figures_index.tsv                 one row per figure, for the gallery
+    Exit code 1 when the ordination or the figure index fails. Skipped single figures are listed at the end
+    and do not fail the run.
 
-Levels: 'phylum'; 'subphylum' (the subphylum where defined, else the phylum); 'class'. Groups are ordered
+Levels: 'phylum'; 'subphylum' (derived from the class, else the phylum); 'class'; 'order'. Groups are ordered
 and coloured by their parent: subphyla by phylum, classes by phylum and ordered within a phylum by
-subphylum. Groups with fewer than MIN_N genomes are pooled as 'Other (small groups)' at subphylum/class level.
+subphylum. Groups with fewer than MIN_N genomes are pooled as 'Other (small groups)' at subphylum, class and
+order level (each phylum keeps its largest group).
 
-Unit: one representative genome per species. Group means/medians are taken over genomes, never over
-proteins, so large genomes do not dominate. Nothing here is a statistical test: the figures describe the
-database. The .qmd pages state the unit for every figure.
+Unit of the level pages: one representative genome per species. Group means/medians are taken over genomes, never
+over proteins, so large genomes do not dominate. The all-genome scatter plots use every genome; the ordination
+uses one genome per genus. The level pages are descriptive. The group tests (Kruskal-Wallis, ANOVA; T_anova)
+and the regressions (all/ outputs) are uncorrected for multiple testing and do not control for phylogeny.
+The .qmd pages state the unit for every figure.
 """
+import colorsys
+import json
 import sys
 from pathlib import Path
 
@@ -26,13 +36,16 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from panel import PANEL  # noqa: E402
 from taxonomy import CLASS_TO_SUBPHYLUM  # noqa: E402
 
-LEVELS = ("phylum", "subphylum", "class")
+LEVELS = ("phylum", "subphylum", "class", "order")
 TOP_PHYLA = 8      # phylum level: this many phyla shown separately, the rest pooled
 MIN_N = 10         # subphylum/class level: smaller groups are pooled
 MAX_GROUPS = 36
 OTHER = "Other (small groups)"
 PALETTE = ["#0072B2", "#D55E00", "#009E73", "#E69F00", "#CC79A7", "#56B4E9", "#F0E442", "#8C564B"]
 GREY = "#9a9a9a"
+UNKNOWN_GREY = "#d4d4d4"      # genomes with no taxon at this level (distinct from the pooled-Other grey)
+SHADE_LIGHTNESS = (0.25, 0.78)
+MAX_SHADES = 5               # distinct lightness bands per phylum; more groups cycle through them
 LOC_COLORS = {"cytoplasm": "#4C78A8", "nucleus": "#F58518", "extracellular": "#54A24B", "cell_membrane": "#E45756",
               "mitochondrion": "#B279A2", "plastid": "#72B7B2", "endoplasmic_reticulum": "#EECA3B",
               "lysosome_vacuole": "#9D755D", "golgi": "#BAB0AC", "peroxisome": "#FF9DA6"}
@@ -42,6 +55,16 @@ plt.rcParams.update({"font.size": 9, "axes.spines.top": False, "axes.spines.righ
                      "savefig.bbox": "tight", "svg.fonttype": "none"})
 
 
+class Made(str):
+    """A made-output name (a str, so `name in made` still works) that also carries .topic and .kind
+    ('figure', 'table' or 'skipped'), .scope ('representatives', 'genus_reps' or 'all_genomes') and .stats (a dict
+    of caption numbers such as n, pearson_r, spearman_r; empty for most figures)."""
+    def __new__(cls, name, topic=None, kind="figure", scope="representatives", stats=None):
+        o = super().__new__(cls, name)
+        o.topic, o.kind, o.scope, o.stats = topic, kind, scope, stats or {}
+        return o
+
+
 class Out:
     def __init__(self, root, level):
         self.fig = Path(root) / "figures" / level
@@ -49,16 +72,58 @@ class Out:
         self.fig.mkdir(parents=True, exist_ok=True)
         self.tab.mkdir(parents=True, exist_ok=True)
         self.made = []
+        self.scope = "all_genomes" if level == "all" else "representatives"
+        self.meta = {}      # name -> stats dict, set by a figure function before it returns its figure
+        self.stat_of = {}   # name -> the stat column the figure shows (joins to T_anova.tsv in the figure index)
+        self.level = level
+        self.default_topic = None   # topic for save() calls that pass none (the older F pages)
+        # per-page numbers for the sidecar; set_groups() fills them for the level pages
+        self.info = {"n_genomes": None, "n_groups": None, "pooled_share": 0.0 if level in ("all", "ordination") else None}
 
-    def save(self, fig, name):
+    def set_groups(self, core, levels):
+        """Record the genome count, group count and the share of genomes in the pooled 'Other' group for the sidecars."""
+        n = len(core)
+        pooled = int((core["grp"] == OTHER).sum()) if "grp" in core else 0
+        self.info = {"n_genomes": n, "n_groups": len(levels), "pooled_share": (pooled / n) if n else 0.0}
+
+    def save(self, fig, name, topic=None):
+        topic = topic or self.default_topic
         for ext in ("png", "svg"):
             fig.savefig(self.fig / f"{name}.{ext}", dpi=200 if ext == "png" else None)
         plt.close(fig)
-        self.made.append(name)
+        stats = self.meta.pop(name, None)
+        self.made.append(Made(name, topic, "figure", self.scope, stats))
+        try:   # the figure is already written and recorded: a failed sidecar must not undo that
+            side = self._sidecar(name, topic, stats)
+            (self.fig / f"{name}.json").write_text(json.dumps(side))
+        except (OSError, TypeError, ValueError) as e:
+            print(f"  sidecar for {name} not written: {type(e).__name__}: {e}", file=sys.stderr, flush=True)
+
+    def _sidecar(self, name, topic, stats):
+        info = dict(self.info)
+        stats = stats or {}
+        for k, sk in (("n_genomes", "n"), ("n_groups", "n_groups")):
+            if info[k] is None and stats.get(sk) is not None:
+                info[k] = stats[sk]
+        signal, kind = stats.get("signal"), stats.get("signal_kind")
+        if signal is None and stats.get("spearman_r") is not None:
+            signal, kind = abs(float(stats["spearman_r"])), "spearman_r"
+        if signal is not None and not np.isfinite(float(signal)):
+            signal, kind = None, None
+        return {"name": name, "level": self.level, "kind": "figure", "topic": topic,
+                "stat": self.stat_of.get(name), "scope": self.scope,
+                "n_genomes": None if info["n_genomes"] is None else int(info["n_genomes"]),
+                "n_groups": None if info["n_groups"] is None else int(info["n_groups"]),
+                "pooled_share": None if info["pooled_share"] is None else float(info["pooled_share"]),
+                "signal": None if signal is None else float(signal), "signal_kind": kind}
+
+    def skip(self, name, topic=None):
+        self.meta.pop(name, None)
+        self.made.append(Made(name, topic, "skipped", self.scope))
 
     def table(self, df, name):
         df.to_csv(self.tab / f"{name}.tsv", sep="\t", index=False)
-        self.made.append(name)
+        self.made.append(Made(name, "tables", "table", self.scope))
 
 
 def width(levels, base=6.8, per=0.3):
@@ -67,7 +132,37 @@ def width(levels, base=6.8, per=0.3):
 
 
 # ---------------------------------------------------------------- grouping
-def assign_groups(core, level):
+def shade(hex_color, i, n):
+    """Shade i of n of a colour: same hue and saturation, lightness spread evenly from dark (i=0) to light (i=n-1).
+    The window is 0.25-0.78 lightness. A single shade (n=1) uses the middle of the window."""
+    h, _, s = colorsys.rgb_to_hls(*(int(hex_color.lstrip("#")[k:k + 2], 16) / 255 for k in (0, 2, 4)))
+    lo, hi = SHADE_LIGHTNESS
+    li = (lo + hi) / 2 if n <= 1 else lo + (hi - lo) * i / (n - 1)
+    return "#%02x%02x%02x" % tuple(round(v * 255) for v in colorsys.hls_to_rgb(h, li, s))
+
+
+def shade_band(pos, n_bands):
+    """Map a position in the legend order to a shade band so neighbours alternate between dark and light."""
+    lows, highs = list(range((n_bands + 1) // 2)), list(range((n_bands + 1) // 2, n_bands))
+    seq = [x for pair in zip(lows, highs) for x in pair] + lows[len(highs):]
+    return seq[pos % n_bands]
+
+
+def phylum_order(df):
+    """Phyla ranked by genome count (ties by name), 'Unknown' last. Pass genome_all (every genome) so the whole
+    site shares one ranking."""
+    c = df["PHYLUM"].fillna("Unknown").value_counts()
+    known = sorted((p for p in c.index if p != "Unknown"), key=lambda p: (-int(c[p]), str(p)))
+    return known + (["Unknown"] if "Unknown" in c.index else [])
+
+
+def phylum_color_map(order):
+    """The one phylum -> colour map of the site: the first len(PALETTE) known phyla of `order` get PALETTE colours
+    in rank order. Other phyla and 'Unknown' are not in the map (callers draw them grey)."""
+    return {p: PALETTE[i] for i, p in enumerate([p for p in order if p != "Unknown"][:len(PALETTE)])}
+
+
+def assign_groups(core, level, phylum_order=None):
     """Add 'grp' (the plotted group) and 'parent' (phylum used for colour/order); return core, levels, colors."""
     d = core.copy()
     ph = d["PHYLUM"].fillna("Unknown")
@@ -82,16 +177,29 @@ def assign_groups(core, level):
         d["grp"] = ph
     elif level == "subphylum":
         d["grp"] = d["subphylum_or_phylum"]
+    elif level == "order":
+        d["grp"] = d["ORDER"].fillna("Unknown")
     else:
         d["grp"] = d["CLASS"].fillna("Unknown")
     # rank phyla by genome count: colours and ordering
     ph_rank = ph.value_counts()
     ph_order = list(ph_rank.index)
+    if phylum_order is not None:     # global ranking and colours (phylum_order(genome_all)); local ranks fill the gaps
+        ph_order = [p for p in phylum_order if p in ph_rank.index] + [p for p in ph_order if p not in set(phylum_order)]
     n = d["grp"].value_counts()
     if level == "phylum":
         keep = list(n.index[:TOP_PHYLA])
     else:
-        keep = [g for g in n.index if n[g] >= MIN_N][:MAX_GROUPS]
+        big = [g for g in n.index if n[g] >= MIN_N]
+        # every phylum stays visible: reserve its largest qualifying group, then fill by size
+        modal = d.groupby("grp")["parent"].agg(lambda x: x.value_counts().index[0])
+        reserved = []
+        for p_ in ph_order:
+            mine = [g for g in big if g != "Unknown" and modal[g] == p_]
+            if mine:
+                reserved.append(mine[0])
+        reserved = reserved[:MAX_GROUPS]
+        keep = reserved + [g for g in big if g not in reserved][:MAX_GROUPS - len(reserved)]
     pooled = (d.loc[~d["grp"].isin(keep)].groupby("grp")
               .agg(genomes=("parent", "size"), phylum=("parent", lambda x: x.value_counts().index[0]),
                    subphylum=("subphylum_or_phylum", lambda x: x.value_counts().index[0]))
@@ -102,16 +210,30 @@ def assign_groups(core, level):
     subs = d[d.grp != OTHER].groupby("grp")["subphylum_or_phylum"].agg(lambda x: x.value_counts().index[0])
     top_ph = ph_order[:len(PALETTE)]
     pcolor = {p: (PALETTE[i] if p in top_ph else GREY) for i, p in enumerate(ph_order[:len(PALETTE)])}
+    if phylum_order is not None:
+        pcolor = phylum_color_map(phylum_order)
 
     def sort_key(g):
         return (ph_order.index(par[g]), str(subs[g]), -int(n[g]))
-    levels = sorted(par.index, key=sort_key)
+    unk = "Unknown" in par.index and level != "phylum"
+    levels = sorted([g for g in par.index if not (unk and g == "Unknown")], key=sort_key)
+    if unk:
+        levels.append("Unknown")
     if (d.grp == OTHER).any():
         levels.append(OTHER)
-    colors = {g: pcolor.get(par[g], GREY) for g in par.index}
+    colors = {}
+    for p_ in dict.fromkeys(par[g] for g in levels if g in par.index and not (unk and g == "Unknown")):
+        members = [g for g in levels if g in par.index and par[g] == p_ and not (unk and g == "Unknown")]
+        base = pcolor.get(p_, GREY)
+        k = min(len(members), MAX_SHADES)
+        for pos, g in enumerate(members):             # legend order: neighbours alternate dark/light
+            colors[g] = base if (level == "phylum" or base == GREY) else shade(base, shade_band(pos, k), k)
+    if unk:
+        colors["Unknown"] = UNKNOWN_GREY
     colors[OTHER] = GREY
-    d.attrs["parents"] = {g: (par[g] if g in par.index else "Other") for g in levels}
-    d.attrs["parent_colors"] = {p: pcolor.get(p, GREY) for p in dict.fromkeys(d.attrs["parents"].values())}
+    d.attrs["parents"] = {g: ("Unknown" if (unk and g == "Unknown") else par[g] if g in par.index else "Other") for g in levels}
+    d.attrs["parent_colors"] = {p: (UNKNOWN_GREY if p == "Unknown" and unk else pcolor.get(p, GREY))
+                                for p in dict.fromkeys(d.attrs["parents"].values())}
     d.attrs["subphylum_of"] = {g: (subs[g] if g in subs.index else "") for g in levels}
     d.attrs["other_members"] = pooled
     return d, levels, colors
@@ -143,7 +265,7 @@ def box_by_group(ax, core, col, levels, colors, log=False, ylabel=None):
     for i, (d, g) in enumerate(zip(data, levels), start=1):
         bp["boxes"][i - 1].set(facecolor=colors[g], alpha=0.35, edgecolor=colors[g])
         if len(d):
-            ax.scatter(i + rng.uniform(-0.18, 0.18, len(d)), d, s=3, color=colors[g], alpha=0.35, linewidths=0)
+            ax.scatter(i + rng.uniform(-0.18, 0.18, len(d)), d, s=3, color=colors[g], alpha=0.35, linewidths=0, rasterized=True)
     ax.set_xticks(range(1, len(levels) + 1))
     ax.set_xticklabels([f"{g}\n(n={len(d)})" for g, d in zip(levels, data)], rotation=60 if len(levels) > 12 else 35,
                        ha="right", fontsize=tick_font(levels))
@@ -228,12 +350,13 @@ def page_gene_content(core, levels, colors, o):
         box_by_group(ax, core, col, levels, colors, log=log, ylabel=ylab)
         ax.set_title(ylab)
         parent_legend(ax, core, loc="best")
+        o.stat_of[name] = col
         o.save(fig, name)
 
     fig, ax = plt.subplots(figsize=(5.8, 4.6))
     for g in levels:
         d = core[core.grp == g]
-        ax.scatter(d.total_length_bp / 1e6, d.n_genes, s=6, alpha=0.5, color=colors[g], linewidths=0)
+        ax.scatter(d.total_length_bp / 1e6, d.n_genes, s=6, alpha=0.5, color=colors[g], linewidths=0, rasterized=True)
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xlabel("Genome size (Mb)")
@@ -403,7 +526,7 @@ def page_patterns(core, levels, colors, deeploc, idp, o):
     fig, ax = plt.subplots(figsize=(5.8, 4.8))
     for g in levels:
         mk = (d["grp"] == g).values
-        ax.scatter(pc[mk, 0], pc[mk, 1], s=7, alpha=0.55, color=colors[g], linewidths=0)
+        ax.scatter(pc[mk, 0], pc[mk, 1], s=7, alpha=0.55, color=colors[g], linewidths=0, rasterized=True)
     ax.set_xlabel(f"PC1 ({ev[0]:.0%})")
     ax.set_ylabel(f"PC2 ({ev[1]:.0%})")
     ax.set_title("Genomes in feature space (log, z-scored)")
@@ -538,36 +661,138 @@ def page_functional(core, levels, colors, wide, label, cazy, tf, merops, idp, o)
         o.save(fig, name)
 
 
-def run_level(level, core0, tables, out):
-    core, levels, colors = assign_groups(core0, level)
+def run_level(level, core0, tables, out, phylum_order=None):
+    from figs_structure import page_gene_structure  # imported here: these modules import helpers from this one
+    from figs_composition import page_composition
+    from figs_scatter import page_regressions
+    core, levels, colors = assign_groups(core0, level, phylum_order=phylum_order)
     o = Out(out, level)
+    o.set_groups(core, levels)
     rd = tables
+    o.default_topic = "gene_content"
     page_gene_content(core, levels, colors, o)
+    o.default_topic = "domains"
     wide, label = page_domains(core, levels, colors, rd("pfam_genome"), rd("pfam_names"), rd("arch_genome"), o)
     deeploc = rd("deeploc_genome")
+    o.default_topic = "localization"
     page_localization(core, levels, colors, deeploc, rd("wolfpsort_genome"), o)
     idp = rd("idp_genome")
+    o.default_topic = "patterns"
     page_patterns(core, levels, colors, deeploc, idp, o)
+    o.default_topic = "functional"
     page_functional(core, levels, colors, wide, label, rd("cazy_genome"), rd("tf_genome"), rd("merops_genome"), idp, o)
+    try:
+        structure = rd("gene_structure_genome")
+    except FileNotFoundError:
+        print(f"{level}: gene_structure_genome.parquet absent, skipping gene structure page", flush=True)
+    else:
+        page_gene_structure(core, levels, colors, structure, o)
+        page_regressions(core, levels, colors, structure, o)
+    try:
+        codon, aa = rd("codon_genome"), rd("aa_genome")
+    except FileNotFoundError:
+        print(f"{level}: codon_genome/aa_genome.parquet absent, skipping composition page", flush=True)
+    else:
+        page_composition(core, levels, colors, codon, aa, o)
     print(f"{level}: {len(levels)} groups, {len(o.made)} outputs", flush=True)
     return o.made
 
 
-def main(data, out, levels=LEVELS):
+# Filled by main(): "failed" = steps that raised (ordination, figure index); "skipped" = names of figures
+# that safe() skipped. run_cli() turns "failed" into a nonzero exit code. Reset at each main() call.
+RUN_STATUS = {"failed": [], "skipped": []}
+
+
+def _resolve_suppress(suppress):
+    """None -> the repo file; a path -> that file; a DataFrame -> itself (an empty one disables)."""
+    from suppress import load_suppress
+    return suppress if isinstance(suppress, pd.DataFrame) else load_suppress(suppress)
+
+
+def main(data, out, levels=LEVELS, suppress=None):
+    from suppress import drop_suppressed
+    sup = _resolve_suppress(suppress)
+    dropped = set()
+    RUN_STATUS["failed"] = []
+    RUN_STATUS["skipped"] = []
     data = Path(data)
     cache = {}
 
     def rd(n):
         if n not in cache:
-            cache[n] = pd.read_parquet(data / f"{n}.parquet")
+            df = pd.read_parquet(data / f"{n}.parquet")
+            if "species_prefix" in df.columns and len(sup):
+                ids = set(sup["species_prefix"].astype(str))
+                dropped.update(set(df["species_prefix"].astype(str)) & ids)
+                df, _ = drop_suppressed(df, sup)
+            cache[n] = df
         return cache[n]
     core0 = rd("genome_core")
     core0 = core0[core0["n_genes"].notna()]  # representatives without a proteome are not plotted
     made = {}
+    try:
+        genome_all = rd("genome_all")
+    except FileNotFoundError:
+        genome_all = None
+    print(f"suppressed {len(dropped)} genomes: {', '.join(sorted(dropped))}", flush=True)
+    porder = phylum_order(genome_all if genome_all is not None else core0)   # one phylum colour map for the site
     for level in levels:
-        made[level] = run_level(level, core0, rd, out)
+        made[level] = run_level(level, core0, rd, out, phylum_order=porder)
+    if genome_all is None:
+        print("genome_all.parquet absent, skipping all-genome scatter plots", flush=True)
+    else:
+        from figs_scatter import page_all_genomes
+        made["all"] = page_all_genomes(genome_all, out, porder)   # phylum-independent: one set under figures/all/
+        from summary_ordination import pick_complete_reps, run_ordination   # runs once, not per level
+        mats = {}
+        for key, tname in (("codon", "codon_genome"), ("aa", "aa_genome"), ("structure", "gene_structure_genome")):
+            try:
+                mats[key] = rd(tname)
+            except FileNotFoundError:
+                print(f"{tname}.parquet absent, skipping its ordination", flush=True)
+        if mats:
+            try:
+                res = run_ordination(pick_complete_reps(genome_all, mats), mats, out, phylum_order=porder)
+                made["ordination"] = res.pop("_made")
+            except Exception as e:  # the level pages are already built: report and keep them
+                import traceback
+                traceback.print_exc(file=sys.stderr)
+                print(f"ordination failed: {type(e).__name__}: {e}", flush=True)
+                RUN_STATUS["failed"].append(f"ordination ({type(e).__name__}: {e})")
+    try:
+        from figure_index import build_index
+        idx = build_index(Path(out))
+        print(f"figures_index.tsv: {len(idx)} figures", flush=True)
+    except Exception as e:  # the figures are already written: report and keep them
+        import traceback
+        traceback.print_exc(file=sys.stderr)
+        print(f"figure index failed: {type(e).__name__}: {e}", flush=True)
+        RUN_STATUS["failed"].append(f"figure index ({type(e).__name__}: {e})")
+    RUN_STATUS["skipped"] = [f"{lv}/{m}" for lv, names in made.items() for m in names
+                             if getattr(m, "kind", "") == "skipped"]
     return made
 
 
+def run_cli(argv):
+    """Command-line entry: run main() and return the exit code. 1 when the ordination or the figure index
+    failed (the log must not say success when O figures or figures_index.tsv are missing). Skipped single
+    figures are listed at the end and do not change the exit code."""
+    argv = list(argv)
+    suppress = None
+    if "--suppress" in argv:
+        i = argv.index("--suppress")
+        val = argv[i + 1]
+        suppress = pd.DataFrame({"species_prefix": []}) if val == "none" else val
+        del argv[i:i + 2]
+    levels = tuple(argv[3].split(",")) if len(argv) > 3 else LEVELS
+    main(argv[1], argv[2], levels, suppress=suppress)
+    skipped = RUN_STATUS["skipped"]
+    print(f"skipped figures: {len(skipped)}" + (" (" + ", ".join(skipped) + ")" if skipped else ""), flush=True)
+    if RUN_STATUS["failed"]:
+        print("FAILED: " + "; ".join(RUN_STATUS["failed"]), flush=True)
+        return 1
+    return 0
+
+
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2], tuple(sys.argv[3].split(",")) if len(sys.argv) > 3 else LEVELS)
+    sys.exit(run_cli(sys.argv))

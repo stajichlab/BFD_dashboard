@@ -18,6 +18,11 @@ Outputs (one parquet each):
   cazy_genome      species_prefix x cazy_class x cazy_family, proteins
   tf_genome        species_prefix x tf_family, proteins
   merops_genome    species_prefix x merops class (first letter of merops_id), proteins
+  genome_all       one row per genome in v_genome_labels (all, not only representatives): taxonomy,
+                   assembly, BUSCO, and gene-structure summary
+  gene_structure_genome  per-genome medians of gene, CDS, protein, exon, intron, intergenic lengths
+  codon_genome     species_prefix x 61 sense-codon frequencies (stops dropped, renormalised to sum 1)
+  aa_genome        species_prefix x 20 amino-acid frequencies (* and X dropped, renormalised to sum 1)
 """
 import argparse
 import os
@@ -41,18 +46,135 @@ def copy(con, name, sql, out):
     print(f"{name}: {n} rows", flush=True)
 
 
+CODONS = [a + b + c for a in "ACGT" for b in "ACGT" for c in "ACGT"
+          if a + b + c not in ("TAA", "TAG", "TGA")]
+AMINO = list("ACDEFGHIKLMNPQRSTVWY")
+
+
+def build_structure_tables(con, out):
+    """Write genome_all, gene_structure_genome, codon_genome, aa_genome.
+
+    Needs: v_genome_labels, gene_info, gene_proteins, gene_exons, gene_CDS, gene_introns,
+    gene_intergenic_distances, codon_freq, aa_freq. gene_proteins, gene_exons, gene_CDS and
+    gene_introns carry species_prefix (a view column on the real db).
+
+    Every structure metric uses protein-coding transcripts only (those in gene_proteins).
+    n_genes counts distinct protein genes from gene_proteins. genome_all.mean_len is the mean
+    protein length in aa. CDS length and coding_fraction come from gene_CDS (CDS bases only).
+    median_exons_per_gene counts rows of gene_exons per protein transcript; these may include
+    UTR exons. intron_frac_genes_with_intron is the share of protein transcripts with >1 exon.
+    Non-coding models (tRNA etc.) are excluded from all metrics.
+    """
+    con.execute("create temp table gs_ptx as select distinct transcript_id from gene_proteins")
+    con.execute("""
+        create temp table gs_prot as
+        select species_prefix, count(distinct gene_id) as n_genes, median(length) as median_protein_len_aa,
+               avg(length) as mean_len
+        from gene_proteins group by 1
+    """)
+    con.execute("""
+        create temp table gs_genelen as
+        select LOCUSTAG as species_prefix, median("end" - start + 1) as median_gene_len_bp
+        from gene_info where gene_id in (select gene_id from gene_proteins) group by 1
+    """)
+    con.execute("""
+        create temp table gs_exons as
+        select species_prefix, transcript_id, count(*) as n_exons
+        from gene_exons where transcript_id in (select transcript_id from gs_ptx) group by 1, 2
+    """)
+    con.execute("""
+        create temp table gs_cds as
+        select species_prefix, transcript_id, sum("end" - start + 1) as cds_len
+        from gene_CDS where transcript_id in (select transcript_id from gs_ptx) group by 1, 2
+    """)
+    con.execute("""
+        create temp table gs_exon as
+        select species_prefix, median(n_exons) as median_exons_per_gene,
+               avg((n_exons > 1)::int) as intron_frac_genes_with_intron
+        from gs_exons group by 1
+    """)
+    con.execute("""
+        create temp table gs_cdsg as
+        select species_prefix, median(cds_len) as median_cds_len_bp, sum(cds_len) as total_cds_bp
+        from gs_cds group by 1
+    """)
+    con.execute("""
+        create temp table gs_intron as
+        select species_prefix, median("end" - start + 1) as median_intron_len_bp
+        from gene_introns where transcript_id in (select transcript_id from gs_ptx) group by 1
+    """)
+    con.execute("""
+        create temp table gs_inter as
+        select species_prefix, median(distance) as median_intergenic_bp
+        from gene_intergenic_distances group by 1
+    """)
+    con.execute("""
+        create temp table gs as
+        select p.species_prefix, p.n_genes, p.mean_len, g.median_gene_len_bp, cg.median_cds_len_bp,
+               p.median_protein_len_aa,
+               p.n_genes / (l.total_length_bp / 1e6) as genes_per_mb,
+               cg.total_cds_bp / l.total_length_bp as coding_fraction,
+               e.median_exons_per_gene, e.intron_frac_genes_with_intron,
+               i.median_intron_len_bp, d.median_intergenic_bp
+        from gs_prot p
+        join v_genome_labels l on l.LOCUSTAG = p.species_prefix
+        left join gs_genelen g using (species_prefix)
+        left join gs_exon e using (species_prefix)
+        left join gs_cdsg cg using (species_prefix)
+        left join gs_intron i using (species_prefix)
+        left join gs_inter d using (species_prefix)
+    """)
+    copy(con, "gene_structure_genome", """
+        select species_prefix, n_genes, median_gene_len_bp, median_cds_len_bp, median_protein_len_aa,
+               genes_per_mb, coding_fraction, median_exons_per_gene, intron_frac_genes_with_intron,
+               median_intron_len_bp, median_intergenic_bp
+        from gs order by species_prefix
+    """, out)
+    copy(con, "genome_all", """
+        select l.LOCUSTAG as species_prefix, l.PHYLUM, l."CLASS", l.ORDER_ as "ORDER", l.FAMILY, l.GENUS, l.SPECIES,
+               l.is_representative, l.total_length_bp, l.gc_pct,
+               l.busco_complete, l.busco_single, l.busco_duplicated, l.busco_fragmented, l.busco_missing,
+               l.N50_bp, l.contig_count,
+               g.n_genes, g.mean_len, g.genes_per_mb, g.coding_fraction, g.median_intron_len_bp, g.median_intergenic_bp
+        from v_genome_labels l left join gs g on g.species_prefix = l.LOCUSTAG
+        order by l.LOCUSTAG
+    """, out)
+    # composition: drop stops / ambiguous symbols and renormalise (source frequencies are rounded to 4 decimals)
+    cc = ", ".join(f"max(frequency) filter (where codon = '{c}') / any_value(tot) as codon_{c}" for c in CODONS)
+    copy(con, "codon_genome", f"""
+        select species_prefix, {cc} from (
+            select *, sum(frequency) over (partition by species_prefix) as tot
+            from codon_freq where codon in ({",".join(f"'{c}'" for c in CODONS)})
+        ) group by species_prefix order by species_prefix
+    """, out)
+    ac = ", ".join(f"max(frequency) filter (where amino_acid = '{a}') / any_value(tot) as aa_{a}" for a in AMINO)
+    copy(con, "aa_genome", f"""
+        select species_prefix, {ac} from (
+            select *, sum(frequency) over (partition by species_prefix) as tot
+            from aa_freq where amino_acid in ({",".join(f"'{a}'" for a in AMINO)})
+        ) group by species_prefix order by species_prefix
+    """, out)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("out")
     ap.add_argument("--threads", type=int, default=int(os.environ.get("SLURM_CPUS_PER_TASK", 8)))
     ap.add_argument("--memory", default="40GB")
     ap.add_argument("--db", default=None)
+    ap.add_argument("--only", choices=["structure"], default=None,
+                    help="build only genome_all, gene_structure_genome, codon_genome, aa_genome")
     a = ap.parse_args()
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     tmp = os.environ.get("SCRATCH")
     con = bfd_connect.connect(a.db, scratch=False, threads=a.threads, memory=a.memory, tmp=tmp)
     # the db is attached read-only as 'bfd'; temp tables live in memory
+    # structure tables first, so a failure in an older table cannot block them
+    build_structure_tables(con, out)
+    if a.only == "structure":
+        print("done (structure only)", flush=True)
+        return
     con.execute("""
         create temp table reps as
         select v.LOCUSTAG as species_prefix, v.PHYLUM, sp.SUBPHYLUM, v.CLASS, v.ORDER_ as ORDER, v.FAMILY, v.GENUS, v.SPECIES,

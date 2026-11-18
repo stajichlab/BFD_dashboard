@@ -1,0 +1,60 @@
+---
+title: "Comparisons and regressions"
+---
+
+```{python}
+import sys
+sys.path.insert(0, ".")
+from _helpers import fig, table, single, flat_table, read_flat, gallery
+```
+
+This page shows relations between genome-level statistics. Two caveats apply to everything here.
+
+::: {.callout-warning}
+## Caveats
+The regressions do not control for phylogeny: genomes of one lineage are not independent, so the p-values and R-squared values describe the sample, not an evolutionary relation. Because no multiple-testing correction is applied to the group tests, p-values from many tests should be read as unadjusted.
+:::
+
+## All genomes (not only representatives)
+
+The scatter plots use all genomes in the genome table, not one per species. Closely related genomes can therefore dominate. The caption of each plot gives n.
+
+```{python}
+single("A01_busco_vs_genome_size", "BUSCO complete against genome size.", "all")
+single("A02_busco_vs_n_genes", "BUSCO complete against gene number.", "all")
+single("A03_busco_vs_n50", "BUSCO complete against N50.", "all")
+single("A04_busco_vs_contigs", "BUSCO complete against contig count.", "all")
+single("A05_busco_vs_gc", "BUSCO complete against GC.", "all")
+single("A06_busco_vs_gene_density", "BUSCO complete against gene density.", "all")
+single("A07_genes_vs_genome_size", "Gene number against genome size.", "all")
+single("A08_intron_len_vs_gene_density", "Median intron length against gene density.", "all")
+single("A09_gc_vs_genome_size", "GC against genome size.", "all")
+single("A10_busco_dup_vs_genome_size", "BUSCO duplicated against genome size.", "all")
+single("A11_busco_missing_vs_contigs", "BUSCO missing against contig count.", "all")
+single("A12_n50_vs_n_genes", "N50 against gene number.", "all")
+```
+
+## Regressions by group
+
+One representative genome per species. The regression table gives n, slope, R-squared and the scale used for each pair.
+
+```{python}
+fig("R01_size_vs_genes", "Genome size against gene number.", "70%")
+fig("R02_density_vs_intron_len", "Gene density against intron length.", "70%")
+fig("R03_size_vs_intergenic", "Genome size against intergenic distance.", "70%")
+fig("R04_gc_vs_gene_density", "GC against gene density.", "70%")
+```
+
+### Regression table
+
+```{python}
+table("T_regression")
+```
+
+## Group tests
+
+Kruskal-Wallis and ANOVA per statistic across the groups of each level. No multiple-testing correction is applied.
+
+```{python}
+table("T_anova")
+```

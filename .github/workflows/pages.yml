@@ -1,0 +1,113 @@
+# Publishes the Quarto site in docs/quarto_summary to GitHub Pages.
+#
+# One-time repository setting (cannot be set from this file):
+#   Settings -> Pages -> Build and deployment -> Source: GitHub Actions.
+# The custom domain bfd.fungalgenomes.org is set by two things together:
+#   1. docs/quarto_summary/CNAME (copied to the site root by Quarto), and
+#   2. Settings -> Pages -> Custom domain (plus "Enforce HTTPS" once DNS resolves).
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/quarto_summary/**"
+      - ".github/workflows/pages.yml"
+      - "docs/quarto_summary/figures_release.json"
+  pull_request:
+    paths:
+      - "docs/quarto_summary/**"
+      - ".github/workflows/pages.yml"
+      - "docs/quarto_summary/figures_release.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  # PR builds get their own group per ref. They must not share the "deploy" group:
+  # GitHub keeps one pending run per group, so a queued PR build would displace a
+  # pending deploy from main.
+  group: pages-${{ github.event_name == 'pull_request' && github.ref || 'deploy' }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: docs/quarto_summary/requirements.txt
+
+      - name: Install Python packages
+        run: pip install -r docs/quarto_summary/requirements.txt
+
+      - name: Fetch figures (release asset)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          command -v zstd >/dev/null || { sudo apt-get update -qq && sudo apt-get install -y zstd; }
+          bash workflows/fetch_site_assets.sh
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.7.31
+
+      - name: Render site
+        env:
+          QUARTO_PYTHON: ${{ env.pythonLocation }}/bin/python
+        run: quarto render docs/quarto_summary
+
+      - name: Assert site is complete
+        run: |
+          site=docs/quarto_summary/_site
+          n=$(find "$site" -maxdepth 1 -name '*.html' | wc -l)
+          echo "HTML pages: $n"
+          if [ "$n" -lt 12 ]; then
+            echo "Expected at least 12 HTML pages (index + 01..11)."; exit 1
+          fi
+          if [ ! -f "$site/CNAME" ]; then
+            echo "CNAME missing from the site root."; exit 1
+          fi
+          p=$(find "$site/figures" -name '*.png' 2>/dev/null | wc -l)
+          echo "PNG files under figures/: $p"
+          if [ "$p" -lt 200 ]; then
+            echo "Expected at least 200 PNG files under figures/."; exit 1
+          fi
+          # figures_index.tsv is a render input (Quarto does not copy it to _site).
+          if [ ! -f docs/quarto_summary/figures_index.tsv ]; then
+            echo "figures_index.tsv missing from docs/quarto_summary."; exit 1
+          fi
+          if grep -q "has not been built yet" "$site/11_gallery.html"; then
+            echo "The gallery page is empty."; exit 1
+          fi
+
+      - name: Check site size
+        run: |
+          size=$(du -sm docs/quarto_summary/_site | cut -f1)
+          echo "Site size: ${size} MB"
+          if [ "$size" -gt 900 ]; then
+            echo "Site is larger than 900 MB."; exit 1
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/quarto_summary/_site
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

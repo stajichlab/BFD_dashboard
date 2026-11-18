@@ -1,0 +1,4 @@
+species_prefix	species	reason	added	until
+FCF75579	Massospora cicadina	annotation incomplete: 415 genes for a 1.49 Gb assembly (coding fraction 0.00016)	2026-11-17	annotation re-run
+F5C00A22	Massospora cicadina	no annotation: 144,784 contigs; held out of the annotation run, re-run pending	2026-11-17	annotation re-run
+F5CD90C7	Massospora platypediae	no annotation: 241,057 contigs; held out of the annotation run, re-run pending	2026-11-17	annotation re-run

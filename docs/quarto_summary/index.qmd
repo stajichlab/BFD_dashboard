@@ -9,9 +9,9 @@ sys.path.insert(0, ".")
 from _helpers import fig, table
 ```
 
-This site summarizes the BFD fungal genome database across the main functional areas. Every figure uses **one representative genome per species** (best BUSCO complete, then N50; annotated genomes only). Each figure is shown at three taxonomic levels, as tabs: **Phylum**, **Subphylum** (derived from the class, because the database's subphylum column is empty; classes without a known subphylum keep their phylum label, see Data and methods) and **Class**. Groups are ordered and coloured by their parent phylum, so related classes sit together. Group values are medians or means **over genomes**, never over proteins, so large genomes do not dominate. At phylum level the eight largest phyla are shown and the rest pooled; at subphylum and class level groups with fewer than 10 genomes are pooled as "Other (small groups)".
+This site summarizes the BFD fungal genome database across the main functional areas. The level pages (Gene content to Gene structure and Composition) use **one representative genome per species** (best BUSCO complete, then N50; annotated genomes only). Each of their figures is shown at four taxonomic levels, as tabs: **Phylum**, **Subphylum** (derived from the class, because the database's subphylum column is empty; classes without a known subphylum keep their phylum label, see Data and methods), **Class** and **Order**. Groups are ordered and coloured by their parent phylum, so related classes sit together. Group values are medians or means **over genomes**, never over proteins, so large genomes do not dominate. The scatter plots on the Comparisons page use all genomes and have no level tabs. The ordination figures use one genome per genus and have no level tabs. At phylum level the eight largest phyla are shown and the rest pooled. At subphylum, class and order level, groups with fewer than 10 genomes are pooled as "Other (small groups)", except that each phylum keeps its largest group (one reserved group per phylum).
 
-These pages describe the database; they do not test hypotheses. For tested hypotheses with effect sizes and caveats see the [summary atlas](https://github.com/stajichlab/BFD_dashboard/blob/main/docs/summary_atlas/index.md) and [FUNCTIONAL_ANALYSES](https://github.com/stajichlab/BFD_dashboard/blob/main/docs/FUNCTIONAL_ANALYSES.md).
+These pages are mostly descriptive. Some pages add group tests (Kruskal-Wallis, ANOVA) and regressions, and the ordination page uses PCoA on genus representatives. The group tests have no multiple-testing correction, and the regressions and tests do not control for phylogeny. For tested hypotheses with effect sizes and caveats see the [summary atlas](https://github.com/stajichlab/BFD_dashboard/blob/main/docs/summary_atlas/index.md) and [FUNCTIONAL_ANALYSES](https://github.com/stajichlab/BFD_dashboard/blob/main/docs/FUNCTIONAL_ANALYSES.md).
 
 ## Genomes per group
 
@@ -37,9 +37,14 @@ table("T00b_other_members", max_rows=40)
 | [Localization](03_localization.qmd) | DeepLoc and WoLF PSORT localization, signal peptides, secretome |
 | [Taxon patterns](04_phylum_patterns.qmd) | group profiles across all genome-level features, PCA |
 | [Functional areas](05_functional_domains.qmd) | CAZy, peptidases, transcription factors, kinases and signalling, transporters, P450, secondary metabolism, chromatin and DNA repair, effector-like domains, trehalose, disorder |
+| [Gene structure](07_gene_structure.qmd) | gene, CDS and protein length, gene density, coding fraction, exons, introns, intergenic distance |
+| [Composition](08_composition.qmd) | codon usage, RSCU, GC3, amino-acid composition |
+| [Comparisons](09_comparisons.qmd) | all-genome scatter plots, regressions, group tests (no phylogenetic control, no multiple-testing correction) |
+| [Ordination](10_ordination.qmd) | PCoA of codon, amino-acid and gene-structure matrices (one genome per genus) with PERMANOVA |
+| [Gallery](11_gallery.qmd) | every figure in one filterable table with thumbnails, sorted by the signal ranking |
 | [Data and methods](06_data_notes.qmd) | sources, filters, definitions and limits |
 
 ::: {.callout-warning}
 ## Draft status
-Layout and figure types are a draft for discussion. The 57 Pfam accessions in the functional panels were checked against the names stored in the BFD data. The figures are descriptive: no statistical tests and no phylogenetic correction.
+Layout and figure types are a draft for discussion. The 57 Pfam accessions in the functional panels were checked against the names stored in the BFD data. The figures are descriptive, with group tests and regressions on the Gene structure and Comparisons pages. Those tests are uncorrected for multiple testing and do not control for phylogeny. The ordination uses PCoA on genus representatives.
 :::

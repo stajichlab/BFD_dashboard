@@ -1,0 +1,221 @@
+---
+title: "Explore genomes"
+format:
+  html:
+    toc: false
+---
+
+This is an early (phase B) interactive view. Each point is one genome. Nothing here is controlled for phylogeny, so related genomes are not independent and the correlations below are descriptive only. The default shows all genomes. Use the toggle to restrict to representative genomes (one per species). The level pages use one representative per species, and the all-genome scatter plots on the Comparisons page use all genomes. Counts differ between these views.
+
+```{ojs}
+//| echo: false
+//| output: false
+raw = {
+  try {
+    return await FileAttachment("data/genomes.json").json();
+  } catch (e) {
+    return null;
+  }
+}
+```
+
+```{ojs}
+//| echo: false
+loadError = raw === null
+  ? html`<div style="border:2px solid #b00020;padding:0.75em;border-radius:4px">The data file <code>data/genomes.json</code> could not be loaded, so the explorer is not available. Reload the page or use the static pages from the navigation bar.</div>`
+  : html``
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+genomes = raw === null ? [] : raw.rows.map(r => Object.fromEntries(raw.fields.map((f, i) => [f, r[i]])))
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+numFields = raw === null ? [] : Object.keys(raw.columns)
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+label = f => `${raw.columns[f].label} (${raw.columns[f].unit})`
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+phylaAll = ["All"].concat(Array.from(new Set(genomes.map(d => d.phylum))).sort())
+```
+
+
+```{ojs}
+//| echo: false
+//| output: false
+logDefault = new Set(["genome_mb", "n50_bp", "median_intron_len_bp", "median_intergenic_bp", "n_genes"])
+```
+
+```{ojs}
+//| echo: false
+viewof xvar = Inputs.select(numFields, {label: "x axis", value: "genome_mb", format: label})
+```
+
+```{ojs}
+//| echo: false
+viewof yvar = Inputs.select(numFields, {label: "y axis", value: "busco_complete", format: label})
+```
+
+```{ojs}
+//| echo: false
+viewof level = Inputs.select(raw === null ? [] : raw.levels, {label: "Colour by", value: "phylum"})
+```
+
+```{ojs}
+//| echo: false
+viewof phylum = Inputs.select(phylaAll, {label: "Phylum filter", value: "All"})
+```
+
+```{ojs}
+//| echo: false
+viewof repsOnly = Inputs.radio(["All genomes", "Representatives only"], {label: "Genomes", value: "All genomes"})
+```
+
+```{ojs}
+//| echo: false
+viewof logx = Inputs.toggle({label: "Log x", value: logDefault.has(xvar)})
+```
+
+```{ojs}
+//| echo: false
+viewof logy = Inputs.toggle({label: "Log y", value: logDefault.has(yvar)})
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+pts = genomes.filter(d =>
+  d[xvar] != null && d[yvar] != null &&
+  (phylum === "All" || d.phylum === phylum) &&
+  (repsOnly === "All genomes" || d.is_representative === true) &&
+  (!logx || d[xvar] > 0) && (!logy || d[yvar] > 0))
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+function pearson(a, b) {
+  const n = a.length;
+  if (n < 3) return NaN;
+  const ma = d3.mean(a), mb = d3.mean(b);
+  let sab = 0, saa = 0, sbb = 0;
+  for (let i = 0; i < n; i++) {
+    const da = a[i] - ma, db = b[i] - mb;
+    sab += da * db; saa += da * da; sbb += db * db;
+  }
+  return sab / Math.sqrt(saa * sbb);
+}
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+function ranks(v) {
+  const idx = d3.range(v.length).sort((i, j) => v[i] - v[j]);
+  const r = new Array(v.length);
+  let i = 0;
+  while (i < idx.length) {
+    let j = i;
+    while (j + 1 < idx.length && v[idx[j + 1]] === v[idx[i]]) j++;
+    const avg = (i + j) / 2 + 1;
+    for (let k = i; k <= j; k++) r[idx[k]] = avg;
+    i = j + 1;
+  }
+  return r;
+}
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+fmt = x => Number.isFinite(x) ? x.toFixed(3) : "not defined"
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+stats = {
+  const a = pts.map(d => d[xvar]), b = pts.map(d => d[yvar]);
+  const la = logx ? a.map(Math.log10) : a, lb = logy ? b.map(Math.log10) : b;
+  return {n: pts.length, pearson: pearson(la, lb), spearman: pearson(ranks(a), ranks(b))};
+}
+```
+
+```{ojs}
+//| echo: false
+html`<p><strong>${stats.n.toLocaleString()}</strong> genomes shown. Pearson r${(logx || logy) ? " (log10)" : ""} = <strong>${fmt(stats.pearson)}</strong>. Spearman r = <strong>${fmt(stats.spearman)}</strong>. Both use the displayed points and ignore phylogeny.${(logx || logy) ? " Pearson r is computed on log10 of each logged axis, as in the static figures. Spearman r is rank-based and does not depend on the log scale." : ""}</p>`
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+colorMap = raw === null ? {} : raw.colors[level]
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+groupsShown = {
+  const n = d3.rollup(pts, v => v.length, d => d[level]);
+  return Array.from(n.keys()).sort((a, b) => n.get(b) - n.get(a));
+}
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+legendGroups = groupsShown.slice(0, 20)
+```
+
+```{ojs}
+//| echo: false
+{
+ const desc = `Scatter plot of ${label(xvar)} against ${label(yvar)}, coloured by ${level}, ${pts.length.toLocaleString()} genomes`;
+ const fig = Plot.plot({
+  width: Math.min(width, 900),
+  height: Math.min(520, Math.max(300, width * 0.7)),
+  marginLeft: 55,
+  caption: desc,
+  x: {type: logx ? "log" : "linear", label: label(xvar), grid: true},
+  y: {type: logy ? "log" : "linear", label: label(yvar), grid: true},
+  color: {domain: groupsShown, range: groupsShown.map(g => colorMap[g] || "#9a9a9a")},
+  marks: [
+    Plot.dot(pts, {x: xvar, y: yvar, fill: level, r: 2.5, fillOpacity: 0.55,
+      title: d => `${d.id}\n${d.phylum} / ${d.class}\n${d.genus}`, tip: true})
+  ]
+})
+ const svg = fig.tagName.toLowerCase() === "svg" ? fig : fig.querySelector("svg");
+ svg.setAttribute("aria-label", desc);
+ svg.setAttribute("role", "img");
+ return fig;
+}
+```
+
+```{ojs}
+//| echo: false
+html`<div style="display:flex;flex-wrap:wrap;gap:0.4em 1em;font-size:0.85em">${legendGroups.map(g => html`<span style="white-space:nowrap"><span style="display:inline-block;width:0.9em;height:0.9em;background:${colorMap[g] || "#9a9a9a"};margin-right:0.3em;vertical-align:middle"></span>${g}</span>`)}${legendGroups.includes("Other (small groups)") ? html`<span>grey = pooled small groups</span>` : ""}${groupsShown.length > legendGroups.length ? html`<span>and ${groupsShown.length - legendGroups.length} more groups (not listed)</span>` : ""}</div>`
+```
+
+Top 10 displayed genomes by the y variable:
+
+```{ojs}
+//| echo: false
+Inputs.table(pts.slice().sort((a, b) => b[yvar] - a[yvar]).slice(0, 10), {
+  columns: ["id", "phylum", "class", xvar, yvar],
+  header: {[xvar]: raw && raw.columns[xvar].label, [yvar]: raw && raw.columns[yvar].label},
+  layout: "auto"
+})
+```
+
+Missing values (null in the data) are left out of a plot, so the count changes with the axes. BUSCO values come from the assembly, not from the prediction.
