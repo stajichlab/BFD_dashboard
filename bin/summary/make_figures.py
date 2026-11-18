@@ -699,6 +699,19 @@ def run_level(level, core0, tables, out, phylum_order=None):
         print(f"{level}: codon_genome/aa_genome.parquet absent, skipping composition page", flush=True)
     else:
         page_composition(core, levels, colors, codon, aa, o)
+    try:
+        tf_fam, tf_summ = rd("tf_family_genome"), rd("tf_summary_genome")
+    except FileNotFoundError:
+        if not RUN_STATUS.get("tf_note"):   # one note per run, not one per level
+            print("TF landscape skipped: tf_family_genome/tf_summary_genome.parquet absent", flush=True)
+            RUN_STATUS["tf_note"] = True
+    else:
+        from figs_tf import page_tf_landscape
+        try:
+            genome_all = rd("genome_all")
+        except FileNotFoundError:
+            genome_all = None
+        page_tf_landscape(core, levels, colors, tf_fam, tf_summ, o, genome_all=genome_all)
     print(f"{level}: {len(levels)} groups, {len(o.made)} outputs", flush=True)
     return o.made
 
@@ -720,6 +733,7 @@ def main(data, out, levels=LEVELS, suppress=None):
     dropped = set()
     RUN_STATUS["failed"] = []
     RUN_STATUS["skipped"] = []
+    RUN_STATUS["tf_note"] = False
     data = Path(data)
     cache = {}
 

@@ -38,7 +38,7 @@ def _all_positive(v):
     return len(v) > 0 and bool((v > 0).all())
 
 
-def scatter_all(df, x, y, colors_by_phylum, o, name, logx=False, logy=False, xlabel=None, ylabel=None):
+def scatter_all(df, x, y, colors_by_phylum, o, name, logx=False, logy=False, xlabel=None, ylabel=None, topic=None):
     """Every genome in df as a small, transparent, rasterized point coloured by phylum (colors_by_phylum is the
     site-wide map; phyla not in it are grey and drawn first). Records n, Pearson r and Spearman r (on the plotted scale) in the Made entry's
     .stats, with scope all_genomes. Returns True when saved, False when skipped (missing column, no data)."""
@@ -86,7 +86,7 @@ def scatter_all(df, x, y, colors_by_phylum, o, name, logx=False, logy=False, xla
         if handles:
             ax.legend(handles=handles, fontsize=6.5, frameon=False, loc="best", title="Phylum", title_fontsize=6.5)
         return fig
-    return safe(o, name, TOPIC_ALL, build)
+    return safe(o, name, topic or TOPIC_ALL, build)
 
 
 def page_all_genomes(genome_all, out, porder=None):
