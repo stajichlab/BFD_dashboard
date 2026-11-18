@@ -46,9 +46,12 @@ def test_load_duplicates_ok(tmp_path):
     assert len(load_suppress(p)) == 2
 
 
+IDS3 = ["FCF75579", "F5C00A22", "F5CD90C7"]
+
+
 def test_default_path_works_from_any_cwd(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
-    assert list(load_suppress()["species_prefix"]) == ["FCF75579"]
+    assert list(load_suppress()["species_prefix"]) == IDS3
 
 
 def test_drop_suppressed_counts():
@@ -110,7 +113,7 @@ def test_main_a_figure_n_reduced(tmp_path):
 def test_main_default_reads_repo_file(tmp_path, capsys):
     data = _tables(tmp_path)
     mf.main(data, tmp_path / "o", ("phylum",))
-    assert "suppressed 0 genomes" in capsys.readouterr().out    # FCF75579 is not in the synthetic tables
+    assert "suppressed 0 genomes" in capsys.readouterr().out    # the 3 suppressed ids are not in the synthetic tables
 
 
 def test_run_cli_suppress_option(tmp_path, capsys):
@@ -153,12 +156,13 @@ def test_committed_config_and_docs_copy():
     doc = REPO / "docs" / "quarto_summary" / "data" / "summary_suppress.tsv"
     assert cfg.read_text() == doc.read_text()
     df = load_suppress(cfg)
-    assert list(df["species_prefix"]) == ["FCF75579"]
+    assert list(df["species_prefix"]) == IDS3
     assert df.loc[0, "species"] == "Massospora cicadina"
+    assert df.loc[2, "species"] == "Massospora platypediae"
 
 
 def test_committed_genomes_json_has_no_suppressed():
     j = json.loads((REPO / "docs" / "quarto_summary" / "data" / "genomes.json").read_text())
     ids = {r[j["fields"].index("id")] for r in j["rows"]}
-    assert "FCF75579" not in ids and len(j["rows"]) == 23679
-    assert j["meta"]["n_suppressed"] == 1
+    assert not (set(IDS3) & ids) and len(j["rows"]) == 23677
+    assert j["meta"]["n_suppressed"] == 3
