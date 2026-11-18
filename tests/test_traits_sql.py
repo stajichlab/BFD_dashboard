@@ -193,3 +193,12 @@ def test_check_script_tolerates_mismatch_in_duplicate_genus(tmp_path):
     r = _run_check(*_check_fixture(tmp_path, "parasite", dup_genus=True))
     assert r.returncode == 0, r.stdout + r.stderr
     assert "duplicate" in r.stdout.lower()
+
+
+def test_check_script_reports_but_tolerates_genome_set_difference(tmp_path):
+    db, atlas, ftcsv = _check_fixture(tmp_path, "saprotroph")
+    duckdb.execute(f"""COPY (SELECT * FROM (VALUES ('A1','f','saprotroph'),('A2','f','saprotroph'),('A9','f','x'))
+                        t(LOCUSTAG, growth_form, primary_lifestyle)) TO '{atlas}' (FORMAT parquet)""")
+    r = _run_check(db, atlas, ftcsv)
+    assert r.returncode == 0, r.stdout + r.stderr
+    assert "only in atlas 1" in r.stdout

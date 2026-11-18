@@ -6,7 +6,8 @@
 Compares growth_form and primary_lifestyle per LOCUSTAG. A genus listed twice in FungalTraits can legitimately
 differ (the atlas keeps an arbitrary row, the database keeps the first by jrk_template): those genomes are
 reported but do not fail the check. Also prints the genomes with NULL SUBPHYLUM, by CLASS.
-Exit 1 when any other genome differs, or when a genome is missing on one side.
+Genomes present on only one side are counted and reported but do not fail the check (the atlas is a snapshot).
+Exit 1 when any other genome differs in growth_form or primary_lifestyle.
 """
 import argparse
 import sys
@@ -36,7 +37,7 @@ def main(argv=None):
     only_atlas = con.execute("SELECT count(*) FROM atlas a ANTI JOIN v_genome_labels l USING (LOCUSTAG)").fetchone()[0]
     print(f"genomes: database {n_db:,}, atlas {n_atlas:,}; only in database {only_db:,}, only in atlas {only_atlas:,}")
 
-    bad = bool(only_db or only_atlas)
+    bad = False   # genome-set differences are reported only: the atlas is a snapshot and the live tables change
     for c in COLS:
         rows = con.execute(f"""
             SELECT l.LOCUSTAG, l.GENUS, l.{c}, a.{c}, (l.GENUS IN (SELECT GENUS FROM dup_genera)) AS dup
