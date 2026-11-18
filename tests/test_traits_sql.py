@@ -25,20 +25,27 @@ def ft(jrk, genus, life=None, growth=None):
     return [jrk, genus, life, None, None, None, None, growth]
 
 
-def load(tmp_path, species, ft_rows=(), ovr_rows=(), cls_rows=()):
-    """species: list of (LOCUSTAG, GENUS, CLASS, SUBPHYLUM). Returns a connection with the traits SQL applied."""
+def write_refs(tmp_path, ft_rows=(), ovr_rows=(), cls_rows=()):
     _write(tmp_path / "fungaltraits_1.2.utf8.csv", FT_COLS, ft_rows, ",")
     _write(tmp_path / "growth_form_overrides.tsv", ["GENUS", "growth_form", "source", "n_genomes", "CLASS"],
            ovr_rows, "\t")
     _write(tmp_path / "class_subphylum.tsv", ["CLASS", "SUBPHYLUM", "source", "note"], cls_rows, "\t")
+
+
+def apply_traits(con, tmp_path):
     sql = TRAITS_SQL.read_text()
     first = sql.splitlines()[0]
     assert first.startswith("-- REF_DIR="), "line 1 of bfd_traits.sql must be '-- REF_DIR=<path>'"
-    default = first[len("-- REF_DIR="):]
+    con.execute(sql.replace(first[len("-- REF_DIR="):], str(tmp_path)))
+
+
+def load(tmp_path, species, ft_rows=(), ovr_rows=(), cls_rows=()):
+    """species: list of (LOCUSTAG, GENUS, CLASS, SUBPHYLUM). Returns a connection with the traits SQL applied."""
+    write_refs(tmp_path, ft_rows, ovr_rows, cls_rows)
     con = duckdb.connect()
     con.execute("CREATE TABLE species (LOCUSTAG VARCHAR, GENUS VARCHAR, CLASS VARCHAR, SUBPHYLUM VARCHAR)")
     con.executemany("INSERT INTO species VALUES (?,?,?,?)", species)
-    con.execute(sql.replace(default, str(tmp_path)))
+    apply_traits(con, tmp_path)
     return con
 
 
@@ -100,3 +107,39 @@ def test_yeast_origin_matches_atlas_rules(tmp_path):
                                         ft("j3", "Gf", None, "filamentous_mycelium"), ft("j4", "Gn", None, "other_form")])
     got = {lt: one(con, lt)["yeast_origin"] for lt in ("A1", "A2", "A3", "A4")}
     assert got == {"A1": "Saccharomycotina", "A2": "Pezizomycotina-dimorphic", "A3": "filamentous", "A4": "other"}
+
+
+def _labels_statement():
+    sql = EXTRA_SQL.read_text()
+    start = sql.index("CREATE OR REPLACE VIEW v_genome_labels AS")
+    return sql[start:sql.index(";\n", start) + 1]
+
+
+def test_v_genome_labels_one_row_per_genome_with_traits(tmp_path):
+    write_refs(tmp_path,
+               ft_rows=[ft("jrk2", "Mucor", "wrong", "x"), ft("jrk1", "Mucor", "saprotroph", "filamentous_mycelium")],
+               cls_rows=[("Mucoromycetes", "Mucoromycotina", "proposed", "")])
+    con = duckdb.connect()
+    con.execute("""CREATE TABLE species (LOCUSTAG VARCHAR, ASMID VARCHAR, PHYLUM VARCHAR, CLASS VARCHAR, "ORDER" VARCHAR,
+                   FAMILY VARCHAR, GENUS VARCHAR, SPECIES VARCHAR, STRAIN VARCHAR, NCBI_TAXONID VARCHAR, SUBPHYLUM VARCHAR)""")
+    con.executemany("INSERT INTO species VALUES (?,?,?,?,?,?,?,?,?,?,?)", [
+        ("A1", "G1", "Mucoromycota", "Mucoromycetes", "Mucorales", "Mucoraceae", "Mucor", "Mucor a", "s1", "1", None),
+        ("A2", "G2", "Mucoromycota", "Mucoromycetes", "Mucorales", "Mucoraceae", "Mucor", "Mucor b", "s2", "2", None),
+        ("A3", "G3", None, None, None, None, None, None, None, None, None)])
+    con.execute("CREATE TABLE samples (LOCUSTAG VARCHAR, TRANSL_TABLE INTEGER)")
+    con.execute("INSERT INTO samples VALUES ('A1',1),('A2',1),('A3',1)")
+    con.execute("""CREATE TABLE asm_stats (ASMID VARCHAR, annotation_status VARCHAR, TOTAL_LENGTH BIGINT, contig_count INTEGER,
+                   N50_bp BIGINT, GC_PERCENT DOUBLE, masked_pct DOUBLE)""")
+    con.execute("INSERT INTO asm_stats VALUES ('G1','annotated',1,1,60000,50,1),('G2','annotated',1,1,60000,50,1),('G3','annotated',1,1,1,50,1)")
+    con.execute("""CREATE TABLE busco_genome (ASMID VARCHAR, complete_pct DOUBLE, single_pct DOUBLE, duplicated_pct DOUBLE,
+                   fragmented_pct DOUBLE, missing_pct DOUBLE)""")
+    con.execute("INSERT INTO busco_genome VALUES ('G1',90,89,1,5,5),('G2',80,79,1,10,10),('G3',50,50,0,25,25)")
+    apply_traits(con, tmp_path)
+    con.execute(_labels_statement())
+    assert con.execute("SELECT count(*) FROM v_genome_labels").fetchone()[0] == 3
+    assert con.execute("SELECT count(DISTINCT LOCUSTAG) FROM v_genome_labels").fetchone()[0] == 3
+    r = con.execute("""SELECT primary_lifestyle, growth_form, in_fungaltraits, SUBPHYLUM, subphylum_source
+                       FROM v_genome_labels WHERE LOCUSTAG = 'A1'""").fetchone()
+    assert r == ("saprotroph", "filamentous_mycelium", True, "Mucoromycotina", "class_table")
+    r3 = con.execute("SELECT primary_lifestyle, in_fungaltraits, SUBPHYLUM FROM v_genome_labels WHERE LOCUSTAG = 'A3'").fetchone()
+    assert r3 == (None, False, None)
