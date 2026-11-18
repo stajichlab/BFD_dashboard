@@ -9,11 +9,12 @@ Targets: WC-2 (GATA and exactly one merged PAS region), WC-1 (GATA and two or mo
 (C2H2 >= 4), bZip5 (bZIP_1). WC-1 and WC-2 share one candidate set (all GATA proteins) and one search; each candidate is
 assigned to its best seed (highest bit score) over the WC-1 and WC-2 seeds. A candidate whose architecture does not agree
 with the rule of its best seed is not counted and is reported in the disagreement column.
-Coverage: MMseqs2 --cov-mode 2 (>= min_cov of the SEED sequence inside the alignment). Mode 0 (both sequences) kept only
-proteins of the seed length (ZAP1 880 aa: 53 genera). Mode 5 (shorter sequence) was tried and rejected: it lets any
-candidate that contains a short seed-like stretch pass, so 10610 of 14301 GATA proteins and 29799 of 45364 C2H2 proteins hit.
-Mode 2 needs half of the seed to align, so a short or truncated candidate can pass and a long candidate is not penalised.
-It still admits paralogs (C2H2 repeats); the architecture rule and the tree limit that.
+Coverage mode per target (COV_MODES):
+  WC-2, WC-1, bZip5: --cov-mode 2 (>= min_cov of the SEED inside the alignment). Distant orthologs differ in length. For WC-1
+    and WC-2 the pass counts barely change between modes 0, 2 and 5, which supports mode 2.
+  Zap1-like: --cov-mode 0 (>= min_cov of BOTH sequences) is the headline. Looser modes let C2H2 repeats alone match Znf1
+    (mode 2: 2536 proteins / 1352 genera pass, 2282 fail the rule; mode 5 is worse). The Zap1-like count is therefore a count
+    of C2H2 homologs with >= 4 fingers, not of Zap1 orthologs. Mode 2 is kept as a labelled sensitivity run (T20_ortho_zap1_loose).
 Order of the rules: candidates carry the target Pfam only. The search (identity and coverage thresholds) runs on all of
 them. The architecture rule (for example GATA plus PAS) is applied to the hits AFTER the search. A genus
 representative without the target domain is kept in the candidate table as an absent row, not dropped.
@@ -42,6 +43,8 @@ JGI_FASTA = (Path("/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard/resourc
 MIN_PIDENT = 30.0
 MIN_COV = 0.5
 COV_MODE = 2
+COV_MODES = {"WC-2": 2, "WC-1": 2, "Zap1-like": 0, "bZip5": 2}
+LOOSE_MODE = 2     # sensitivity run of Zap1-like
 SLUG = {"WC-2": "wc2", "WC-1": "wc1", "Zap1-like": "zap1", "bZip5": "bzip5"}
 GROUP = {"WC-2": "wc", "WC-1": "wc", "Zap1-like": "zap1", "bZip5": "bzip5"}      # targets that share candidates and search
 PAS_ACCS = sd.PAS_ACCS
@@ -53,6 +56,20 @@ HIT_COLS = jm.HIT_COLS
 
 
 # ---------------------------------------------------------------- rules
+def cov_mode_for(target):
+    return COV_MODES[target]
+
+
+def variants(group):
+    """Search variants of a group: [(file suffix, cov mode)]. The first is the headline. Zap1-like also gets a loose
+    sensitivity variant."""
+    first = next(t for t in GROUP if GROUP[t] == group)
+    out = [("", cov_mode_for(first))]
+    if group == "zap1":
+        out.append(("_loose", LOOSE_MODE))
+    return out
+
+
 def _cmp(k, op, n):
     return k == n if op == "==" else k >= n
 
@@ -206,7 +223,7 @@ def config_hash(seed_config: Path, code_files, **thresholds) -> str:
     h = hashlib.sha256()
     for f in [Path(seed_config)] + [Path(c) for c in code_files]:
         h.update(f.read_bytes() if f.exists() else b"<absent>")
-    th = dict(min_pident=MIN_PIDENT, min_cov=MIN_COV, cov_mode=COV_MODE, pas=",".join(PAS_ACCS))
+    th = dict(min_pident=MIN_PIDENT, min_cov=MIN_COV, cov_mode=sorted(COV_MODES.items()), pas=",".join(PAS_ACCS))
     th.update(thresholds)
     h.update(repr(sorted(th.items())).encode())
     return h.hexdigest()
@@ -461,44 +478,46 @@ def step_candidates(stage: Path, root: Path, tables_dir: Path, scratch: Path):
         allfa.unlink()
 
 
-def step_search(stage: Path, root: Path, scratch: Path, min_pident=MIN_PIDENT, min_cov=MIN_COV, cov_mode=COV_MODE):
+def step_search(stage: Path, root: Path, scratch: Path, min_pident=MIN_PIDENT, min_cov=MIN_COV):
     cfg = load_cfg(root)
     sdf = pd.read_csv(stage / "seeds.tsv", sep="\t", keep_default_na=False)
     counts = []
     for grp in sorted(set(GROUP.values())):
         tg = [t for t in GROUP if GROUP[t] == grp]
-        hp, ap = stage / f"hits_{grp}.tsv", stage / f"assigned_{grp}.tsv"
         cand = pd.read_csv(stage / f"cand_{grp}.tsv.gz", sep="\t", keep_default_na=True)
         cand["present"] = cand["present"].astype(bool)
         rules = {t: sd.rules_for_target(cfg, t)[1] for t in tg}
-        params = {"min_pident": min_pident, "min_cov": min_cov, "cov_mode": cov_mode}
-        if ap.exists() and hp.exists():
-            hits = pd.read_csv(hp, sep="\t", comment="#")
-            asg = pd.read_csv(ap, sep="\t", comment="#")
-        else:
-            hits = search(stage / f"seeds_{grp}.faa", stage / f"cand_{grp}.faa.gz", hp, scratch / grp, min_pident, min_cov,
-                          cov_mode=cov_mode)
-            st = dict(zip(sdf["seed_id"], sdf["target"]))
-            asg = assign_best_seed(hits, cand, st, rules)
-            write_commented(asg, ap, dict(params, rules="; ".join(f"{t}: {'&'.join(r) or 'none'}" for t, r in rules.items())))
-        for t in tg:
-            slug = SLUG[t]
-            ph = pass_for_target(asg, t)
-            write_commented(ph, stage / f"pass_{slug}.tsv", dict(params, architecture_rule="&".join(rules[t]) or "none"))
-            sub = sdf[sdf["target"] == t]
-            mine = asg[asg["seed_target"] == t]
-            counts.append({"target": t, "n_seeds": len(sub), "n_seeds_ok": int((sub.status == "ok").sum()),
-                           "n_candidate_proteins": int(cand["protein_id"].notna().sum()),
-                           "n_candidate_genera": int(cand.loc[cand.present, "species_prefix"].nunique()),
-                           "n_reps": int(cand["species_prefix"].nunique()),
-                           "n_hit_proteins": int(hits["target"].nunique()) if len(hits) else 0,
-                           "n_best_seed_of_target": len(mine),
-                           "n_arch_pass_proteins": len(ph), "n_arch_pass_genera": int(ph["species_prefix"].nunique()) if len(ph) else 0,
-                           "n_disagree": count_disagreements(asg, t),
-                           "n_disagree_other_type": int(((mine["rule_ok"] == False) & (mine["arch_type"] != "")).sum()) if len(mine) else 0,  # noqa: E712
-                           "min_pident": min_pident, "min_cov": min_cov, "cov_mode": cov_mode,
-                           "architecture_rule": "&".join(rules[t]) or "none"})
-            print(counts[-1], flush=True)
+        for suf, mode in variants(grp):
+            hp, ap = stage / f"hits_{grp}{suf}.tsv", stage / f"assigned_{grp}{suf}.tsv"
+            params = {"min_pident": min_pident, "min_cov": min_cov, "cov_mode": mode}
+            if ap.exists() and hp.exists():
+                hits = pd.read_csv(hp, sep="\t", comment="#")
+                asg = pd.read_csv(ap, sep="\t", comment="#")
+            else:
+                hits = search(stage / f"seeds_{grp}.faa", stage / f"cand_{grp}.faa.gz", hp, scratch / f"{grp}{suf}", min_pident,
+                              min_cov, cov_mode=mode)
+                st = dict(zip(sdf["seed_id"], sdf["target"]))
+                asg = assign_best_seed(hits, cand, st, rules)
+                write_commented(asg, ap, dict(params, rules="; ".join(f"{t}: {'&'.join(r) or 'none'}" for t, r in rules.items())))
+            for t in tg:
+                slug = SLUG[t] + suf
+                ph = pass_for_target(asg, t)
+                write_commented(ph, stage / f"pass_{slug}.tsv", dict(params, architecture_rule="&".join(rules[t]) or "none"))
+                sub = sdf[sdf["target"] == t]
+                mine = asg[asg["seed_target"] == t]
+                counts.append({"target": t if not suf else f"{t} (loose sensitivity)", "n_seeds": len(sub),
+                               "n_seeds_ok": int((sub.status == "ok").sum()),
+                               "n_candidate_proteins": int(cand["protein_id"].notna().sum()),
+                               "n_candidate_genera": int(cand.loc[cand.present, "species_prefix"].nunique()),
+                               "n_reps": int(cand["species_prefix"].nunique()),
+                               "n_hit_proteins": int(hits["target"].nunique()) if len(hits) else 0,
+                               "n_best_seed_of_target": len(mine),
+                               "n_arch_pass_proteins": len(ph), "n_arch_pass_genera": int(ph["species_prefix"].nunique()) if len(ph) else 0,
+                               "n_disagree": count_disagreements(asg, t),
+                               "n_disagree_other_type": int(((mine["rule_ok"] == False) & (mine["arch_type"] != "")).sum()) if len(mine) else 0,  # noqa: E712
+                               "min_pident": min_pident, "min_cov": min_cov, "cov_mode": mode,
+                               "architecture_rule": "&".join(rules[t]) or "none"})
+                print(counts[-1], flush=True)
     pd.DataFrame(counts).to_csv(stage / "counts.tsv", sep="\t", index=False)
 
 

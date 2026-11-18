@@ -437,3 +437,21 @@ def test_gap_check_overlap_with_gene_models():
     out = gc.overlap_genes(hits, genes)
     assert out["gene_id"].tolist() == ["g1", "", "g3", ""]            # in model g1; between models; 1 aa overlap with g3; other scaffold
     assert out["protein_id"].tolist() == ["g1-T1", "", "g3-T1", ""]
+
+
+def test_cov_mode_per_target_zap1_strict_others_seed_coverage():
+    assert ors.cov_mode_for("Zap1-like") == 0              # both-sequence coverage: C2H2 repeats alone must not pass
+    assert ors.cov_mode_for("WC-2") == 2 and ors.cov_mode_for("WC-1") == 2 and ors.cov_mode_for("bZip5") == 2
+    assert ors.LOOSE_MODE == 2                              # sensitivity run only
+    assert ors.variants("zap1") == [("", 0), ("_loose", 2)]
+    assert ors.variants("wc") == [("", 2)] and ors.variants("bzip5") == [("", 2)]
+
+
+def test_loose_zap1_table_has_note_and_no_figure_slug(tmp_path):
+    hits = pd.DataFrame({"species_prefix": ["AAA"], "protein_id": ["AAA_1-T1"], "architecture": ["PF00096>PF00096>PF00096>PF00096"]})
+    p = tmp_path / "T20_ortho_zap1_loose.tsv"
+    orp.write_loose_table(hits, REPS, p, cov_mode=2)
+    first = p.read_text().splitlines()[0]
+    assert first.startswith("# ") and "cov_mode=2" in first and "C2H2 repeat" in first and "sensitivity" in first
+    t = pd.read_csv(p, sep="\t", comment="#")
+    assert list(t.columns) == orp.SUMMARY_COLS and t.loc[t.lineage == "Ascomycota", "n_with_ortholog"].iloc[0] == 1

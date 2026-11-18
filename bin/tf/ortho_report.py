@@ -65,6 +65,14 @@ def summarise(hits: pd.DataFrame, genus_reps: pd.DataFrame, target=None) -> pd.D
     return pd.DataFrame(rows, columns=SUMMARY_COLS)
 
 
+def write_loose_table(hits, genus_reps, path, cov_mode, target="Zap1-like"):
+    """Sensitivity table of the Zap1-like search with a looser coverage rule (no figure). First line: note and mode."""
+    summ = summarise(hits, genus_reps, target=target)
+    write_commented(summ, path, {"sensitivity_only": "yes", "cov_mode": cov_mode,
+                                 "note": "C2H2 repeat matches dominate this table; it counts C2H2 homologs with >=4 fingers, not Zap1 orthologs"})
+    return summ
+
+
 # ---------------------------------------------------------------- figures
 def fig_presence(summ: pd.DataFrame, colors: dict, porder, target, min_genera=3):
     """Orders (at least `min_genera` representatives) grouped by phylum: prevalence and median copies."""
@@ -123,7 +131,7 @@ def phylum_colors(summary_dir):
 def build_seed_table(stage: Path, counts: pd.DataFrame):
     s = pd.read_csv(stage / "seeds.tsv", sep="\t", keep_default_na=False)
     s["length"] = s["sequence"].str.len()
-    thr = counts.set_index("target")
+    thr = counts[~counts["target"].str.contains("loose")].set_index("target")
     s["min_pident"] = s["target"].map(thr["min_pident"])
     s["min_cov"] = s["target"].map(thr["min_cov"])
     s["cov_mode"] = s["target"].map(thr["cov_mode"])
@@ -178,13 +186,20 @@ def step_report(stage: Path, summary_dir: Path, out_root=None):
         else:
             print(f"tree for {slug} not found: figure skipped", flush=True)
             o.skip(f"T20_ortho_{slug}_tree", "tf")
+    lp = stage / "pass_zap1_loose.tsv"
+    if lp.exists():
+        lm = int(counts.loc[counts["target"] == "Zap1-like (loose sensitivity)", "cov_mode"].iloc[0])
+        write_loose_table(pd.read_csv(lp, sep="\t", comment="#"), reps, o.tab / "T20_ortho_zap1_loose.tsv", lm)
+        o.made.append(_mk("T20_ortho_zap1_loose", o))
     seeds = build_seed_table(stage, counts)
     seeds.to_csv(o.tab / "T20_ortho_seeds.tsv", sep="\t", index=False)
     thr = counts.copy()
     thr["tree"] = ("mafft --auto; columns with >50% gaps removed; FastTree -lg; one best hit per genus plus seeds; "
                    "figure shows seeds, anchor species and one tip per order (max 150)")
-    thr["search"] = ("MMseqs2 easy-search seeds vs candidates; identity as given; coverage of the SEED (cov mode 2) "
-                     "because distant orthologs differ in length (both-sequence coverage keeps only seed-length proteins); each candidate goes to its best seed over all seeds of the group")
+    thr["search"] = ("MMseqs2 easy-search seeds vs candidates; identity as given; cov_mode per target (column): 2 = coverage of the "
+                     "SEED for WC-1, WC-2 and bZip5 (their counts barely change between modes 0, 2 and 5); 0 = both sequences for "
+                     "Zap1-like, the headline, which counts C2H2 homologs with >=4 fingers and not Zap1 orthologs (the loose row, mode 2, "
+                     "is a sensitivity run: C2H2 repeats alone match Znf1); each candidate goes to its best seed over all seeds of the group")
     thr["note"] = ("Candidates carry the target Pfam only. The architecture rule is applied after the search "
                    "(PAS regions = PAS-family hits merged by coordinates). Copies count passing proteins, not orthologs. "
                    "Evidence for orthology, not proof.")
