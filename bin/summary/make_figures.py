@@ -739,7 +739,8 @@ def tf_extra_dirs(data, option=None):
 def import_tf_extra(out, dirs):
     """Copy figures/ (PNG, SVG, JSON sidecars), tables/ and tables_tf/ of each prebuilt directory into the out tree, so
     one tree is packaged and figures_index.tsv (built from the PNGs and sidecars on disk) lists them. A directory that
-    does not exist is skipped; one note covers all missing directories. Returns Made records for the copied PNGs."""
+    does not exist is skipped; one note covers all missing directories. Symlinks are not copied. An existing destination
+    file with different bytes is overwritten with a warning that names it; nothing is removed. Returns Made records for the copied PNGs."""
     out = Path(out)
     made, missing = [], []
     for d in dirs:
@@ -752,11 +753,13 @@ def import_tf_extra(out, dirs):
             if not src.is_dir():
                 continue
             for f in sorted(src.rglob("*")):
-                if not f.is_file():
+                if f.is_symlink() or not f.is_file():     # a symlink could point outside the prebuilt tree: skip it
                     continue
                 rel = f.relative_to(src)
                 dst = out / (Path(dst_rel) / rel if dst_rel else Path(src_name) / rel)
                 dst.parent.mkdir(parents=True, exist_ok=True)
+                if dst.exists() and not dst.is_symlink() and dst.read_bytes() != f.read_bytes():
+                    print(f"WARNING {dst} exists and differs from {f}: overwritten", flush=True)
                 shutil.copy2(f, dst)
                 if src_name == "figures" and f.suffix == ".png":
                     try:

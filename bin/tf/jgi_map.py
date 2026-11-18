@@ -161,12 +161,12 @@ def threads_default():
 
 
 def easy_search(query: Path, target: Path, out_tsv: Path, tmp: Path, min_pident, min_cov, threads=None,
-                split_memory_limit=None, max_seqs=50):
+                split_memory_limit=None, max_seqs=50, cov_mode=0):
     """MMseqs2 easy-search; writes a table with the columns in FORMAT. pident is 0-100, qcov/tcov are 0-1."""
     exe = need_mmseqs()
     tmp.mkdir(parents=True, exist_ok=True)
     cmd = [exe, "easy-search", str(query), str(target), str(out_tsv), str(tmp / "mm_tmp"),
-           "--min-seq-id", str(min_pident / 100.0), "-c", str(min_cov), "--cov-mode", "0",
+           "--min-seq-id", str(min_pident / 100.0), "-c", str(min_cov), "--cov-mode", str(cov_mode),
            "--format-output", FORMAT, "--threads", str(threads or threads_default()), "--max-seqs", str(max_seqs),
            "-v", "1"]
     if split_memory_limit:

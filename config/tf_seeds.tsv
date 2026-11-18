@@ -1,10 +1,17 @@
 target	seed_name	source	key	taxon_id	target_pfam	required_pfam	note
-WC-2	WC-2C (GATA_Znf10)	paper	1921537		PF00320	PF00989|PF08447|PF13426	Lax et al. 2025 name WC-2C = GATA_Znf10; JGI Rhimi59_2 protein 1921537 (MOESM6); full length from the JGI protein file
-WC-2	N. crassa wc-2	uniprot	wc-2	367110	PF00320	PF00989|PF08447|PF13426	literature seed; locus NCU00902
-WC-2	R. microsporus ATCC 11559 GATA+PAS	bfd	FBF4BF29|pfam:GATA+PAS		PF00320	PF00989|PF08447|PF13426	BFD candidates by domain
-WC-2	M. lusitanicus GATA+PAS	bfd	F750FE6D|pfam:GATA+PAS		PF00320	PF00989|PF08447|PF13426	BFD candidates by domain
-WC-2	P. blakesleeanus GATA+PAS	bfd	F43EADC6|pfam:GATA+PAS		PF00320	PF00989|PF08447|PF13426	BFD candidates by domain
+WC-2	WC-2C (GATA_Znf10)	paper	1921537		PF00320	PAS_regions==1	Lax et al. 2025 name WC-2C = GATA_Znf10; JGI Rhimi59_2 protein 1921537 (MOESM6); full length from the JGI protein file
+WC-2	N. crassa wc-2	uniprot	wc-2	367110	PF00320	PAS_regions==1	literature seed; locus NCU00902; UniProt P78714
+WC-2	R. microsporus ATCC 11559 GATA+1 PAS region	bfd	FBF4BF29|pfam:GATA+PAS_regions==1		PF00320	PAS_regions==1	BFD proteins with GATA and one merged PAS region
+WC-2	M. lusitanicus GATA+1 PAS region	bfd	F750FE6D|pfam:GATA+PAS_regions==1		PF00320	PAS_regions==1	BFD proteins with GATA and one merged PAS region
+WC-2	P. blakesleeanus GATA+1 PAS region	bfd	F43EADC6|pfam:GATA+PAS_regions==1		PF00320	PAS_regions==1	BFD proteins with GATA and one merged PAS region
+WC-1	N. crassa wc-1	uniprot	wc-1	367110	PF00320	PAS_regions>=2	literature seed; UniProt Q01371 (WC1_NEUCR), live query 2026-11-18
+WC-1	C. neoformans H99 White collar 1 protein	uniprot	CNAG_05181	235443	PF00320	PAS_regions>=2	basidiomycete WC-1 seed; UniProt J9VLZ8 (unreviewed, named White collar 1 protein by annotation; live query 2026-11-18)
+WC-1	R. microsporus ATCC 11559 GATA+2 or more PAS regions	bfd	FBF4BF29|pfam:GATA+PAS_regions>=2		PF00320	PAS_regions>=2	BFD proteins with GATA and two or more merged PAS regions
+WC-1	M. lusitanicus GATA+2 or more PAS regions	bfd	F750FE6D|pfam:GATA+PAS_regions>=2		PF00320	PAS_regions>=2	BFD proteins with GATA and two or more merged PAS regions
+WC-1	P. blakesleeanus GATA+2 or more PAS regions	bfd	F43EADC6|pfam:GATA+PAS_regions>=2		PF00320	PAS_regions>=2	BFD proteins with GATA and two or more merged PAS regions
 Zap1-like	Znf1	paper	1799646		PF00096	PF00096>=4	Lax et al. 2025 name Znf1; JGI Rhimi59_2 protein 1799646; rule: 4 or more C2H2 domains
-Zap1-like	S. cerevisiae ZAP1	uniprot	ZAP1	559292	PF00096	PF00096>=4	literature seed
+Zap1-like	S. cerevisiae ZAP1	uniprot	ZAP1	559292	PF00096	PF00096>=4	literature seed; UniProt P47043
+Zap1-like	F. oxysporum ZAFA	uniprot	ZAFA	426428	PF00096	PF00096>=4	ascomycete (Sordariomycetes) seed; UniProt A0A0J9U5N0 (ZAFA_FUSO4, reviewed); live query 2026-11-18
+Zap1-like	A. fumigatus zafA	uniprot	zafA	746128	PF00096	PF00096>=4	ascomycete (Eurotiomycetes) seed; UniProt A3QX02 (unreviewed); live query 2026-11-18. No basidiomycete Zap1-like seed was found by a live query (gene ZAP1 / loz1 / zafA in taxa 5476, 4896, 5207 returned nothing)
 bZip5	bZip5	paper	1909793		PF00170		Lax et al. 2025 name bZip5; JGI Rhimi59_2 protein 1909793
 bZip5	S. cerevisiae CAD1 (Yap2)	uniprot	CAD1	559292	PF00170		literature bZIP seed; CAD1 is a bZIP protein, so it is listed under bZip5 and not under Zap1-like

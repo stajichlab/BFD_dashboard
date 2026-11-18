@@ -25,6 +25,7 @@ import seeds as sd  # noqa: E402
 SEED_CFG = HERE.parents[1] / "config" / "tf_seeds.tsv"
 PFAM_NAMES = "/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/analysis/summary_tables/pfam_names.parquet"
 PAS = "PF00989|PF08447|PF13426"
+PAS_ALL = ["PF00989", "PF08447", "PF13426", "PF08446", "PF14598", "PF08448", "PF08348", "PF07310", "PF12860", "PF13188"]
 
 
 # ---------------------------------------------------------------- seeds
@@ -64,14 +65,37 @@ def test_seed_config_accessions_exist_in_pfam_names():
     for _, r in cfg.iterrows():
         for a in sd.rule_accessions(r["target_pfam"], r["required_pfam"]):
             assert a in have, a
-    assert set(cfg["target"]) == {"WC-2", "Zap1-like", "bZip5"}
+    for a in ors.PAS_ACCS:
+        assert a in have, a
+    assert set(cfg["target"]) == {"WC-2", "WC-1", "Zap1-like", "bZip5"}
     assert set(cfg.loc[cfg.source == "paper", "key"]) == {"1799646", "1921537", "1909793"}
+    wc1 = cfg[cfg.target == "WC-1"]
+    assert "wc-1" in set(wc1.key) and (wc1.required_pfam == "PAS_regions>=2").all()
+    assert (cfg[cfg.target == "WC-2"].required_pfam == "PAS_regions==1").all()
+    bfd = cfg[cfg.source == "bfd"]
+    assert len(bfd) and not bfd.key.str.contains(r"GATA\+PAS$").any()      # the new region rule, not 'GATA+PAS'
 
 
-def test_bfd_seed_selector_gata_plus_pas():
-    pf = pd.DataFrame({"protein_id": ["G_1-T1", "G_1-T1", "G_2-T1", "G_3-T1", "G_3-T1"],
-                       "pfam_acc": ["PF00320.25", "PF08447.14", "PF00320.25", "PF00989.30", "PF00320.25"]})
-    assert sd.bfd_selector_proteins("G", "pfam:GATA+PAS", pf) == ["G_1-T1", "G_3-T1"]
+def test_bfd_seed_selector_uses_pas_regions():
+    pf = pd.DataFrame({
+        "protein_id": ["G_1-T1"] * 2 + ["G_2-T1"] * 4 + ["G_3-T1"] * 2 + ["G_4-T1"],
+        "pfam_acc": ["PF00320.25", "PF00989.30"] + ["PF00320.25", "PF00989.30", "PF13426.12", "PF13426.12"]
+                    + ["PF00320.25", "PF08447.14"] + ["PF00989.30"],
+        "ali_from": [300, 10, 700, 10, 20, 400, 300, 10, 10],
+        "ali_to": [350, 120, 750, 120, 130, 520, 350, 120, 120]})
+    # G_1: GATA + 1 PAS. G_2: GATA + PAS/PAS_9 overlapping (one region) + a second PAS_9 (two regions). G_3: 1 region.
+    assert sd.bfd_selector_proteins("G", "pfam:GATA+PAS_regions==1", pf) == ["G_1-T1", "G_3-T1"]
+    assert sd.bfd_selector_proteins("G", "pfam:GATA+PAS_regions>=2", pf) == ["G_2-T1"]
+
+
+def test_rule_parser_one_place():
+    assert sd.parse_rule("PF00096>=4") == ("count", {"PF00096"}, ">=", 4)
+    assert sd.parse_rule("PF00989|PF08447") == ("any", {"PF00989", "PF08447"})
+    assert sd.parse_rule("PAS_regions==1") == ("pas", "==", 1)
+    assert sd.parse_rule("PAS_regions>=2") == ("pas", ">=", 2)
+    assert sd.rule_accessions("PF00320", "PAS_regions==1") == ["PF00320"]
+    with pytest.raises(ValueError):
+        sd.parse_rule("PAS_regions<3")
 
 
 def test_resolve_paper_seeds_names_and_architecture_warning(tmp_path):
@@ -104,6 +128,25 @@ def test_architecture_ok_rules():
     assert ors.architecture_ok(">".join(["PF00096"] * 4), ["PF00096>=4"])
     assert not ors.architecture_ok(">".join(["PF00096"] * 3), ["PF00096>=4"])
     assert not ors.architecture_ok("", ["PF00096>=4"])
+    assert ors.architecture_ok("PF00320>PF00989", ["PAS_regions==1"], n_pas=1)
+    assert not ors.architecture_ok("PF00320>PF00989", ["PAS_regions==1"], n_pas=3)
+    assert ors.architecture_ok("PF00320", ["PAS_regions>=2"], n_pas=2)
+    assert not ors.architecture_ok("PF00320", ["PAS_regions>=2"])      # no region count given: fails
+
+
+def _dom(rows):
+    return pd.DataFrame(rows, columns=["pfam_acc", "ali_from", "ali_to"])
+
+
+def test_pas_regions_merges_overlapping_family_hits():
+    one = _dom([("PF00989.30", 10, 100), ("PF08447.14", 20, 110), ("PF13426.12", 95, 200), ("PF00320.25", 400, 450)])
+    assert ors.pas_regions(one, ors.PAS_ACCS) == [(10, 200)]
+    three = _dom([("PF00989.30", 10, 100), ("PF08447.14", 20, 110), ("PF13426.12", 300, 400), ("PF14598.5", 385, 410),
+                  ("PF13426.12", 600, 700), ("PF00320.25", 800, 850)])
+    assert ors.pas_regions(three, ors.PAS_ACCS) == [(10, 110), (300, 410), (600, 700)]
+    touching = _dom([("PF00989.30", 10, 100), ("PF08447.14", 95, 180)])      # overlap 6 aa < 10: two regions
+    assert len(ors.pas_regions(touching, ors.PAS_ACCS)) == 2
+    assert ors.pas_regions(_dom([("PF00320.25", 1, 50)]), ors.PAS_ACCS) == []
 
 
 REPS = pd.DataFrame({"species_prefix": ["AAA", "BBB", "CCC"], "PHYLUM": ["Ascomycota", "Ascomycota", "Mucoromycota"],
@@ -111,9 +154,10 @@ REPS = pd.DataFrame({"species_prefix": ["AAA", "BBB", "CCC"], "PHYLUM": ["Ascomy
 
 
 def _pf():
-    rows = [("AAA_1-T1", "PF00320.25", 10), ("AAA_1-T1", "PF00989.30", 100), ("AAA_2-T1", "PF00320.25", 5),
-            ("BBB_1-T1", "PF00096.30", 1), ("CCC_1-T1", "PF00320.25", 1), ("CCC_1-T1", "PF08447.14", 90)]
-    return pd.DataFrame(rows, columns=["protein_id", "pfam_acc", "ali_from"]).assign(pfam_id="x")
+    rows = [("AAA_1-T1", "PF00320.25", 10, 60), ("AAA_1-T1", "PF00989.30", 100, 200), ("AAA_2-T1", "PF00320.25", 5, 55),
+            ("BBB_1-T1", "PF00096.30", 1, 30), ("CCC_1-T1", "PF00320.25", 1, 50), ("CCC_1-T1", "PF08447.14", 90, 190),
+            ("CCC_1-T1", "PF13426.12", 400, 500)]
+    return pd.DataFrame(rows, columns=["protein_id", "pfam_acc", "ali_from", "ali_to"]).assign(pfam_id="x")
 
 
 def test_select_candidates_includes_genera_without_hits_as_absent():
@@ -122,6 +166,10 @@ def test_select_candidates_includes_genera_without_hits_as_absent():
     prot = c[c.protein_id.notna()]
     assert sorted(prot.protein_id) == ["AAA_1-T1", "AAA_2-T1", "CCC_1-T1"]
     assert prot.set_index("protein_id").loc["AAA_1-T1", "architecture"] == "PF00320>PF00989"
+    ps = prot.set_index("protein_id")
+    assert ps.loc["AAA_1-T1", "n_pas_regions"] == 1 and ps.loc["AAA_2-T1", "n_pas_regions"] == 0
+    assert ps.loc["CCC_1-T1", "n_pas_regions"] == 2
+    assert ps.loc["AAA_1-T1", "gata_rel_pos"] == pytest.approx(10 / 200)
     bbb = c[c.species_prefix == "BBB"]
     assert len(bbb) == 1 and not bool(bbb.iloc[0]["present"]) and pd.isna(bbb.iloc[0]["protein_id"])
     assert c[c.species_prefix == "AAA"]["present"].all()
@@ -149,12 +197,71 @@ def test_thresholds_recorded_in_output(tmp_path):
 
 def test_pass_hits_applies_architecture_after_search():
     cand = pd.DataFrame({"species_prefix": ["AAA", "AAA", "CCC"], "protein_id": ["AAA_1-T1", "AAA_2-T1", "CCC_1-T1"],
-                         "architecture": ["PF00320>PF00989", "PF00320", "PF00320>PF08447"], "present": True})
+                         "architecture": ["PF00320>PF00989", "PF00320", "PF00320>PF08447"], "present": True,
+                         "n_pas_regions": [1, 0, 1]})
     hits = pd.DataFrame({"query": ["s", "s", "s"], "target": cand.protein_id, "pident": [60.0, 55.0, 40.0],
                          "qcov": 0.9, "tcov": 0.9, "evalue": 1e-9, "bits": [300.0, 250.0, 120.0]})
     out = ors.pass_hits(hits, cand, [PAS])
     assert sorted(out.protein_id) == ["AAA_1-T1", "CCC_1-T1"]      # AAA_2 hit the seed but has no PAS domain
     assert out.set_index("protein_id").loc["AAA_1-T1", "seed"] == "s"
+
+
+def test_assign_best_seed_reports_disagreement_instead_of_dropping():
+    cand = pd.DataFrame({"species_prefix": ["A", "A", "B", "B"], "protein_id": ["A_1-T1", "A_2-T1", "B_1-T1", "B_2-T1"],
+                         "architecture": "PF00320>PF00989", "present": True, "n_pas_regions": [1, 3, 1, 3]})
+    hits = pd.DataFrame({"query": ["wc2seed", "wc2seed", "wc1seed", "wc2seed", "wc1seed"],
+                         "target": ["A_1-T1", "A_2-T1", "A_2-T1", "B_1-T1", "B_1-T1"],
+                         "pident": 50.0, "qcov": 0.9, "tcov": 0.9, "evalue": 1e-9, "bits": [300.0, 200.0, 250.0, 100.0, 400.0]})
+    rules = {"WC-2": ["PAS_regions==1"], "WC-1": ["PAS_regions>=2"]}
+    st = {"wc2seed": "WC-2", "wc1seed": "WC-1"}
+    a = ors.assign_best_seed(hits, cand, st, rules).set_index("protein_id")
+    assert a.loc["A_1-T1", "seed_target"] == "WC-2" and a.loc["A_1-T1", "rule_ok"]
+    assert a.loc["A_2-T1", "seed_target"] == "WC-1" and a.loc["A_2-T1", "rule_ok"]          # best seed is WC-1 (250 > 200)
+    assert a.loc["B_1-T1", "seed_target"] == "WC-1" and not a.loc["B_1-T1", "rule_ok"]      # WC-1 seed but one PAS region
+    assert a.loc["B_1-T1", "arch_type"] == "WC-2" and a.loc["B_1-T1", "disagree"]
+    assert "B_2-T1" not in a.index                                                          # no hit: not assigned
+    sel = ors.pass_for_target(a.reset_index(), "WC-1")
+    assert sorted(sel.protein_id) == ["A_2-T1"]
+    assert ors.count_disagreements(a.reset_index(), "WC-1") == 1
+
+
+def test_stamp_changes_with_config_and_invalidates_outputs(tmp_path):
+    root = tmp_path / "root"
+    (root / "config").mkdir(parents=True)
+    cfg = root / "config" / "tf_seeds.tsv"
+    cfg.write_text("a\n")
+    stage = tmp_path / "stage"
+    stage.mkdir()
+    assert ors.invalidate_if_changed(stage, root, code_files=[]) is True        # first run: no stamp yet
+    for n in ("seeds.tsv", "pass_wc2.tsv", "hits_wc.tsv", "tree_wc2.nwk", "counts.tsv", "pfam_candidates.parquet"):
+        (stage / n).write_text("x")
+    assert ors.invalidate_if_changed(stage, root, code_files=[]) is False       # same config: outputs stay
+    assert (stage / "seeds.tsv").exists()
+    cfg.write_text("b\n")
+    assert ors.invalidate_if_changed(stage, root, code_files=[]) is True
+    assert not (stage / "seeds.tsv").exists() and not (stage / "pass_wc2.tsv").exists() and not (stage / "tree_wc2.nwk").exists()
+    assert (stage / "pfam_candidates.parquet").exists()                          # the Pfam cache is not an output of the config
+    assert ors.invalidate_if_changed(stage, root, code_files=[]) is False
+
+
+def test_stamp_includes_code_and_thresholds(tmp_path):
+    f = tmp_path / "code.py"
+    f.write_text("x=1")
+    h1 = ors.config_hash(tmp_path / "none.tsv", [f])
+    f.write_text("x=2")
+    assert ors.config_hash(tmp_path / "none.tsv", [f]) != h1
+    assert ors.config_hash(tmp_path / "none.tsv", [f], min_cov=0.6) != ors.config_hash(tmp_path / "none.tsv", [f])
+
+
+def test_link_reuse_replaces_dangling_symlink(tmp_path):
+    real = tmp_path / "real.tsv"
+    real.write_text("r")
+    link = tmp_path / "link.tsv"
+    link.symlink_to(tmp_path / "gone.tsv")
+    assert link.is_symlink() and not link.exists()
+    ors.link_reuse(link, real)
+    assert link.read_text() == "r"
+    ors.link_reuse(link, real)          # second call: no error
 
 
 # ---------------------------------------------------------------- report
@@ -193,6 +300,21 @@ def test_trim_columns_drops_gappy_columns():
     aln = {"a": "AC-GT", "b": "AC-GT", "c": "A--GA", "d": "A--G-"}
     out = ort.trim_gappy(aln, max_gap=0.5)
     assert out == {"a": "ACGT", "b": "ACGT", "c": "A-GA", "d": "A-G-"}   # the all-gap column goes; 50% gaps stays
+
+
+def test_sample_tips_one_per_order_plus_seeds_and_anchors():
+    rows = [{"tip": f"p{i}", "phylum": "Ascomycota", "order": f"O{i % 40}", "anchor": i == 7, "is_seed": False, "bits": float(i)}
+            for i in range(300)]
+    rows += [{"tip": "S1", "phylum": "Ascomycota", "order": "", "anchor": False, "is_seed": True, "bits": float("inf")}]
+    m = ort.sample_tips(pd.DataFrame(rows), max_tips=150)
+    fig = m[m.in_figure]
+    assert len(m) == 301 and len(fig) == 42            # 40 order representatives + the seed + the anchor tip p7
+    assert "S1" in set(fig.tip) and "p7" in set(fig.tip)                      # seeds and anchors always drawn
+    non_fixed = fig[~fig.is_seed & (fig.tip != "p7")]
+    assert non_fixed["order"].is_unique                                         # one tip per order
+    assert fig[fig["order"] == "O3"].tip.tolist() == ["p283"]                   # the highest bit score of the order
+    small = ort.sample_tips(pd.DataFrame(rows), max_tips=20)
+    assert small.in_figure.sum() == 20
 
 
 def _toy_fasta(path, n=12, seed=1):
@@ -284,3 +406,34 @@ def test_seed_config_columns_and_workflow_script():
     for m in ("MMseqs2/17-b804f", "mafft/7.505", "fasttree/2.1.11"):
         assert f"module load {m}\n" in txt
     assert os.access(sh, os.X_OK)
+
+
+def test_hook_skips_symlinks_and_warns_on_differing_clash(tmp_path, capsys):
+    import make_figures as mf
+    pre = tmp_path / "pre"
+    _prebuilt(pre)
+    outside = tmp_path / "secret.txt"
+    outside.write_text("secret")
+    (pre / "tables" / "tf" / "link.tsv").symlink_to(outside)
+    out = tmp_path / "out"
+    (out / "tables" / "tf").mkdir(parents=True)
+    (out / "tables" / "tf" / "T20_ortho_wc2.tsv").write_text("old bytes\n")       # clash with different content
+    (out / "tables" / "tf" / "extra_keep.tsv").write_text("keep")
+    mf.import_tf_extra(out, [pre])
+    msg = capsys.readouterr().out
+    assert not (out / "tables" / "tf" / "link.tsv").exists()                       # symlink not copied
+    assert "T20_ortho_wc2.tsv" in msg and "differs" in msg                          # clash warning names the file
+    assert (out / "tables" / "tf" / "T20_ortho_wc2.tsv").read_text() == "a\tb\n1\t2\n"   # overwritten with the new bytes
+    assert (out / "tables" / "tf" / "extra_keep.tsv").read_text() == "keep"        # nothing removed
+    mf.import_tf_extra(out, [pre])                                                  # identical bytes: no new warning
+    assert "differs" not in capsys.readouterr().out
+
+
+def test_gap_check_overlap_with_gene_models():
+    import ortho_gap_check as gc
+    genes = pd.DataFrame({"scaffold": ["s1", "s1", "s2"], "start": [100, 1000, 50], "end": [500, 1500, 90],
+                          "gene_id": ["g1", "g2", "g3"], "protein_id": ["g1-T1", "g2-T1", "g3-T1"]})
+    hits = pd.DataFrame({"target": ["s1", "s1", "s2", "s3"], "tstart": [450, 700, 90, 10], "tend": [300, 800, 120, 40]})
+    out = gc.overlap_genes(hits, genes)
+    assert out["gene_id"].tolist() == ["g1", "", "g3", ""]            # in model g1; between models; 1 aa overlap with g3; other scaffold
+    assert out["protein_id"].tolist() == ["g1-T1", "", "g3-T1", ""]

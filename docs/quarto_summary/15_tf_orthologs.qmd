@@ -22,10 +22,10 @@ This page follows three TFs across fungi: WC-2 (white-collar complex), a Zap1-li
 
 ## Method
 
-1. **Seeds.** Two sources are used. (a) The paper's own sequences (supplementary file MOESM6, from JGI). They are searched against the BFD *Rhizopus microsporus* ATCC 11559 proteome to find the matching BFD protein, and are named from the paper's Supplementary Table 1. (b) Literature seeds from UniProt: *Neurospora crassa* WC-2, *Saccharomyces cerevisiae* Zap1 and Cad1/Yap2.
+1. **Seeds.** Two sources are used. (a) The paper's own sequences (supplementary file MOESM6, from JGI). They are searched against the BFD *Rhizopus microsporus* ATCC 11559 proteome to find the matching BFD protein, and are named from the paper's Supplementary Table 1. (b) Literature seeds from UniProt: *Neurospora crassa* WC-2 and WC-1, *Cryptococcus neoformans* White collar 1 protein, *Saccharomyces cerevisiae* Zap1 and Cad1/Yap2, *Fusarium oxysporum* ZAFA and *Aspergillus fumigatus* zafA.
 2. **Candidates.** All proteins of the genus representatives that carry the TF Pfam domain of the target.
-3. **Search.** MMseqs2 search of each seed against the candidates. Thresholds: E-value <= 1e-5 and query coverage >= 0.5. The thresholds that a run actually used are written as a `#` line at the top of its tables and are shown above the table.
-4. **Architecture rule.** The domain architecture is checked after the search, not before it. WC-2 needs a GATA domain and a PAS domain. The architecture counts are in the tables.
+3. **Search.** MMseqs2 search of each seed against the candidates. Thresholds: identity >= 30%, coverage >= 0.5 of the seed sequence (MMseqs2 cov mode 2, because distant orthologs differ in length; coverage of both sequences keeps only seed-length proteins). The thresholds that a run actually used are written as a `#` line at the top of its tables and in `T20_ortho_thresholds`. Each candidate goes to its best seed (highest bit score) among the seeds of its group (WC-1 and WC-2 share one candidate set).
+4. **Architecture rule.** The architecture rule is applied after the search, not before it. Pfam rules: WC-2 = GATA and exactly one merged PAS region; WC-1 = GATA and two or more merged PAS regions; Zap1-like = C2H2 (PF00096) >= 4; bZip5 = bZIP_1 (PF00170). PAS regions are PAS-family Pfam hits merged by alignment coordinates (overlap >= 10 aa). A protein whose architecture disagrees with the rule of its best seed is not counted and is reported in the counts. The `copies` columns count passing proteins (paralogs included), not orthologs.
 5. **Tree.** MAFFT alignment, trimming of gap-rich columns, FastTree. The tree tips use the phylum colours of the other pages. The anchor species (*Rhizopus microsporus*, *Mucor lusitanicus* and *Phycomyces*) are marked.
 6. **DAP-seq targets.** The JGI protein IDs of the tested TFs and their targets are mapped to BFD proteins of *R. microsporus* by reciprocal best hit (MMseqs2; identity >= 90% and coverage >= 0.8, with a looser sensitivity run at 70% and 0.7). The mapping rate is reported. The conservation search uses E-value <= 1e-5 and query coverage >= 0.5. Each target is searched against the genus-representative proteomes. The page reports the number of phyla and orders with a hit and compares the targets of each TF with all genes of the genome. These are hypotheses about the targets, not about regulation in other species.
 
@@ -35,7 +35,7 @@ FIGS = HERE / "figures" / "tf"
 
 
 # Task 5 (the ortholog workflow) is not built yet: recheck these slugs and the T20_ortho_<slug>_* names when it lands.
-NAMES = {"wc2": "WC-2 (GATA and PAS)", "zap1": "Zap1-like C2H2 (Znf1)", "bzip5": "bZip5"}
+NAMES = {"wc2": "WC-2 (GATA and one PAS region)", "wc1": "WC-1 (GATA and two or more PAS regions)", "zap1": "Zap1-like C2H2 (Znf1)", "bzip5": "bZip5"}
 
 
 def found_targets():
@@ -62,6 +62,7 @@ else:
     for p in seed_files:
         say(f"**{p.stem}**")
         say(pd.read_csv(p, sep="\t").round(3).to_markdown(index=False))
+    flat_table("T20_ortho_thresholds", "tf")
 ```
 
 ## Orthologs by target

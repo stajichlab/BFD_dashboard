@@ -3,9 +3,11 @@
     python bin/tf/ortho_report.py report --stage DIR [--summary-dir DIR]
 
 Writes, through the Out class (level 'tf') under DIR/tables/tf and DIR/figures/tf:
-    T20_ortho_<slug>.tsv            slug wc2, zap1, bzip5; first line '# thresholds'; rows for phyla and orders
+    T20_ortho_<slug>.tsv            slug wc2, wc1, zap1, bzip5; first line '# thresholds'; rows for phyla and orders
     T20_ortho_<slug>_presence       figure: orders by prevalence, with median copies
-    T20_ortho_<slug>_tree           figure: gene tree (when the tree exists)
+    T20_ortho_<slug>_tree           figure: gene tree, at most ~150 tips (one representative per order plus seeds and anchor
+                                    species); the full tree is kept as tables/tf/T20_ortho_<slug>_tree.nwk and the tip list
+                                    (with in_figure) as T20_ortho_<slug>_tree_tips.tsv
     T20_ortho_seeds.tsv             seed list, source, status, best BFD match and its architecture, sanity-check warning
     T20_ortho_thresholds.tsv        thresholds, rules, counts per target and tree settings
 A genus representative without an ortholog that passes the thresholds and the architecture rule counts as absent.
@@ -90,9 +92,11 @@ def fig_presence(summ: pd.DataFrame, colors: dict, porder, target, min_genera=3)
     for tl, p in zip(a1.get_yticklabels(), od["parent"]):
         tl.set_color(colors.get(p, "#555555"))
     mc = od["median_copies"].to_numpy(dtype=float)
-    a2.imshow(np.nan_to_num(mc, nan=0.0)[:, None], aspect="auto", cmap="Greys", vmin=0, vmax=max(2.0, np.nanmax(mc) if np.isfinite(mc).any() else 2.0))
+    vmax = max(4.0, np.nanmax(mc) if np.isfinite(mc).any() else 4.0)
+    a2.imshow(np.nan_to_num(mc, nan=0.0)[:, None], aspect="auto", cmap="Greys", vmin=0, vmax=vmax)
     for i, v in enumerate(mc):
-        a2.text(0, i, "" if np.isnan(v) else f"{v:g}", ha="center", va="center", fontsize=6)
+        a2.text(0, i, "" if np.isnan(v) else f"{v:g}", ha="center", va="center", fontsize=6,
+                color="white" if (not np.isnan(v) and v > 0.55 * vmax) else "black")
     a2.set_xticks([0])
     a2.set_xticklabels(["median copies"], fontsize=7)
     a2.tick_params(left=False)
@@ -122,11 +126,12 @@ def build_seed_table(stage: Path, counts: pd.DataFrame):
     thr = counts.set_index("target")
     s["min_pident"] = s["target"].map(thr["min_pident"])
     s["min_cov"] = s["target"].map(thr["min_cov"])
+    s["cov_mode"] = s["target"].map(thr["cov_mode"])
     s["architecture_rule"] = s["target"].map(thr["architecture_rule"])
-    cols = ["target", "label", "source", "key", "seed_id", "status", "length", "bfd_match", "bfd_pident", "bfd_min_cov",
-            "bfd_architecture_names", "warning", "min_pident", "min_cov", "architecture_rule"]
+    cols = ["target", "label", "source", "key", "seed_id", "status", "length", "bfd_match", "bfd_pident", "bfd_seed_cov",
+            "bfd_architecture_names", "bfd_n_pas_regions", "warning", "min_pident", "min_cov", "cov_mode", "architecture_rule"]
     out = s[cols].rename(columns={"label": "seed", "seed_id": "accession"})
-    return out.rename(columns={"bfd_match": "bfd_match_FBF4BF29", "bfd_min_cov": "bfd_coverage",
+    return out.rename(columns={"bfd_match": "bfd_match_FBF4BF29", "bfd_seed_cov": "bfd_coverage_of_seed",
                                "bfd_architecture_names": "bfd_architecture"})
 
 
@@ -146,8 +151,9 @@ def step_report(stage: Path, summary_dir: Path, out_root=None):
         summ = summarise(ph, reps, target=target)
         summaries[slug] = summ
         c = counts[counts["target"] == target].iloc[0]
-        params = {"min_pident": c["min_pident"], "min_cov": c["min_cov"], "cov_mode": 0,
-                  "architecture_rule": c["architecture_rule"], "n_genera": c["n_reps"]}
+        params = {"min_pident": c["min_pident"], "min_cov": c["min_cov"], "cov_mode": int(c["cov_mode"]),
+                  "architecture_rule": c["architecture_rule"], "n_genera": c["n_reps"],
+                  "copies": "passing proteins per genus (paralogs included), not orthologs"}
         write_commented(summ, o.tab / f"T20_ortho_{slug}.tsv", params)
         o.made.append(_mk(f"T20_ortho_{slug}", o))
         ng = int(c["n_arch_pass_genera"])
@@ -157,19 +163,31 @@ def step_report(stage: Path, summary_dir: Path, out_root=None):
         nwk = stage / f"tree_{slug}.nwk"
         tips = stage / f"tree_{slug}_tips.tsv"
         if nwk.exists() and tips.exists():
-            meta = pd.read_csv(tips, sep="\t")
+            meta = ort.sample_tips(pd.read_csv(tips, sep="\t", keep_default_na=False))
+            import shutil
+            shutil.copy2(nwk, o.tab / f"T20_ortho_{slug}_tree.nwk")
+            write_commented(meta, o.tab / f"T20_ortho_{slug}_tree_tips.tsv",
+                            {"figure_rule": "seeds + anchor species + one tip per order (highest bit score), max 150",
+                             "tips_full_tree": len(meta), "tips_in_figure": int(meta["in_figure"].sum())})
+            keep = set(meta.loc[meta["in_figure"], "tip"])
             o.meta[f"T20_ortho_{slug}_tree"] = {"signal": len(meta), "signal_kind": "n_tree_tips", "n": len(meta)}
+            title = (f"{target}: {len(keep)} of {len(meta)} tips drawn (seeds, anchor species, one tip per order; "
+                     f"best hit per genus in the full tree)")
             safe(o, f"T20_ortho_{slug}_tree", "tf",
-                 lambda n=nwk, m=meta, t=target: ort.tree_figure(n, m, colors, title=f"{t}: {len(m)} tips (best hit per genus plus seeds)"))
+                 lambda n=nwk, m=meta, t=title, k=keep: ort.tree_figure(n, m, colors, title=t, keep=k))
         else:
             print(f"tree for {slug} not found: figure skipped", flush=True)
             o.skip(f"T20_ortho_{slug}_tree", "tf")
     seeds = build_seed_table(stage, counts)
     seeds.to_csv(o.tab / "T20_ortho_seeds.tsv", sep="\t", index=False)
     thr = counts.copy()
-    thr["tree"] = "mafft --auto; columns with >50% gaps removed; FastTree -lg; one best hit per genus plus seeds"
-    thr["search"] = "MMseqs2 easy-search seeds vs candidates; identity and coverage as given; coverage of both sequences"
-    thr["note"] = "Candidates carry the target Pfam only. The architecture rule is applied after the search. Evidence for orthology, not proof."
+    thr["tree"] = ("mafft --auto; columns with >50% gaps removed; FastTree -lg; one best hit per genus plus seeds; "
+                   "figure shows seeds, anchor species and one tip per order (max 150)")
+    thr["search"] = ("MMseqs2 easy-search seeds vs candidates; identity as given; coverage of the SEED (cov mode 2) "
+                     "because distant orthologs differ in length (both-sequence coverage keeps only seed-length proteins); each candidate goes to its best seed over all seeds of the group")
+    thr["note"] = ("Candidates carry the target Pfam only. The architecture rule is applied after the search "
+                   "(PAS regions = PAS-family hits merged by coordinates). Copies count passing proteins, not orthologs. "
+                   "Evidence for orthology, not proof.")
     thr.to_csv(o.tab / "T20_ortho_thresholds.tsv", sep="\t", index=False)
     return o.made
 

@@ -21,7 +21,9 @@ sys.path.insert(0, str(HERE.parents[1] / "bin" / "summary"))
 
 MAX_GAP = 0.5
 MAX_TIPS = 2500
-SLUG = {"WC-2": "wc2", "Zap1-like": "zap1", "bZip5": "bzip5"}
+SLUG = {"WC-2": "wc2", "WC-1": "wc1", "Zap1-like": "zap1", "bZip5": "bzip5"}
+GROUP = {"WC-2": "wc", "WC-1": "wc", "Zap1-like": "zap1", "bZip5": "bzip5"}
+FIG_TIPS = 150
 
 
 def read_alignment(path):
@@ -75,10 +77,27 @@ def _threads():
     return int(os.environ.get("SLURM_CPUS_PER_TASK", "4"))
 
 
-def tree_figure(newick: Path, meta: pd.DataFrame, colors: dict, title=None):
-    """Figure of a rectangular tree. meta columns: tip, phylum, anchor (bool, optional), is_seed (bool, optional).
-    Tips are points coloured by phylum (grey when the phylum is not in `colors`); anchor tips get a black ring;
-    seeds get a star. The tree is midpoint-rooted for display."""
+def sample_tips(meta: pd.DataFrame, max_tips=FIG_TIPS) -> pd.DataFrame:
+    """Tips drawn in the figure: every seed and anchor-species tip, plus one representative per order (the tip with the
+    highest bit score). If that is more than max_tips, the order representatives with the lowest scores are left out.
+    Returns meta with a boolean column in_figure."""
+    m = meta.copy()
+    if "order" not in m.columns:
+        m["order"] = "Unknown"
+    if "bits" not in m.columns:
+        m["bits"] = 0.0
+    fixed = m["is_seed"].astype(bool) | m["anchor"].astype(bool)
+    rest = m[~fixed].sort_values("bits", ascending=False).drop_duplicates("order")
+    rest = rest.head(max(max_tips - int(fixed.sum()), 0))
+    m["in_figure"] = fixed | m["tip"].isin(set(rest["tip"]))
+    return m
+
+
+def tree_figure(newick: Path, meta: pd.DataFrame, colors: dict, title=None, keep=None):
+    """Figure of a rectangular tree. meta columns: tip, phylum, anchor (bool, optional), is_seed (bool, optional), order
+    (optional, used as tip label). `keep` = set of tip names to draw (the others are pruned; None draws all). Tips are
+    points coloured by phylum (grey when not in `colors`); anchor tips get a black ring; seeds a star. Midpoint-rooted.
+    The largest root-to-tip distance of the FULL tree is written on the figure: deep nodes are not reliable."""
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -90,12 +109,15 @@ def tree_figure(newick: Path, meta: pd.DataFrame, colors: dict, title=None):
         tree.root_at_midpoint()
     except Exception:
         pass
+    full_depth = max(tree.depths().values()) if tree.count_terminals() else 0.0
+    if keep is not None:
+        for t in [t for t in tree.get_terminals() if t.name not in keep]:
+            tree.prune(t)
     tips = tree.get_terminals()
     ypos = {t: i for i, t in enumerate(tips)}
     xpos = tree.depths()
     if not any(xpos.values()):
         xpos = tree.depths(unit_branch_lengths=True)
-
     for c in reversed(list(tree.find_clades(order="level"))):      # children before parents, no recursion
         if not c.is_terminal():
             ys = [ypos[k] for k in c.clades]
@@ -106,8 +128,8 @@ def tree_figure(newick: Path, meta: pd.DataFrame, colors: dict, title=None):
             segs.append([(xpos[c], ypos[c]), (xpos[c], ypos[k])])    # vertical
             segs.append([(xpos[c], ypos[k]), (xpos[k], ypos[k])])    # horizontal
     n = len(tips)
-    fig, ax = plt.subplots(figsize=(7.5, min(max(4.0, n * 0.012 + 2.5), 18)))
-    ax.add_collection(LineCollection(segs, colors="#555555", linewidths=0.4))
+    fig, ax = plt.subplots(figsize=(10.5, min(max(5.0, n * 0.085 + 2.5), 20)))
+    ax.add_collection(LineCollection(segs, colors="#555555", linewidths=0.5))
     m = meta.set_index("tip")
     x = np.array([xpos[t] for t in tips])
     y = np.array([ypos[t] for t in tips])
@@ -116,17 +138,24 @@ def tree_figure(newick: Path, meta: pd.DataFrame, colors: dict, title=None):
     cols = [colors.get(p, "#9a9a9a") for p in phy]
     anchor = np.array([bool(m.loc[nm, "anchor"]) if nm in m.index and "anchor" in m.columns else False for nm in names])
     seed = np.array([bool(m.loc[nm, "is_seed"]) if nm in m.index and "is_seed" in m.columns else False for nm in names])
-    ax.scatter(x[~seed], y[~seed], s=6, c=[c for c, s in zip(cols, seed) if not s], linewidths=0, zorder=3)
+    ax.scatter(x[~seed], y[~seed], s=14, c=[c for c, s in zip(cols, seed) if not s], linewidths=0, zorder=3)
     if anchor.any():
-        ax.scatter(x[anchor], y[anchor], s=26, facecolors="none", edgecolors="black", linewidths=0.8, zorder=4)
+        ax.scatter(x[anchor], y[anchor], s=40, facecolors="none", edgecolors="black", linewidths=0.9, zorder=4)
     if seed.any():
-        ax.scatter(x[seed], y[seed], s=48, marker="*", c=[c for c, s in zip(cols, seed) if s], edgecolors="black",
+        ax.scatter(x[seed], y[seed], s=60, marker="*", c=[c for c, s in zip(cols, seed) if s], edgecolors="black",
                    linewidths=0.5, zorder=5)
+    xmax = max(x.max(), 1e-6)
+    for nm, xi, yi, sd_ in zip(names, x, y, seed):
+        lab = nm if sd_ else (str(m.loc[nm, "order"]) if nm in m.index and "order" in m.columns else "")
+        if lab and lab != "nan":
+            ax.text(xi + xmax * 0.012, yi, lab, fontsize=4.5, va="center", ha="left", color="#222222")
     ax.set_ylim(n, -1)
-    ax.set_xlim(0, max(x.max() * 1.05, 1e-6))
+    ax.set_xlim(0, xmax * 1.3)
     ax.set_yticks([])
     ax.set_xlabel("substitutions per site")
     ax.spines["left"].set_visible(False)
+    ax.text(0.01, 0.01, f"Largest root-to-tip distance in the full tree: {full_depth:.1f} substitutions per site. "
+            "Deep nodes are not reliable.", transform=ax.transAxes, fontsize=6, va="bottom", color="#444444")
     present = [p for p in colors if p in set(phy)]
     handles = [Line2D([], [], marker="o", ls="", color=colors[p], label=p, markersize=5) for p in present]
     if "Unknown" in phy or any(p not in colors for p in phy):
@@ -135,8 +164,8 @@ def tree_figure(newick: Path, meta: pd.DataFrame, colors: dict, title=None):
         handles.append(Line2D([], [], marker="o", ls="", mfc="none", mec="black", label="anchor species", markersize=7))
     if seed.any():
         handles.append(Line2D([], [], marker="*", ls="", color="#777777", mec="black", label="seed", markersize=9))
-    ax.legend(handles=handles, fontsize=7, loc="lower right", frameon=False)
-    ax.set_title(title or f"{n} tips")
+    ax.legend(handles=handles, fontsize=7, loc="upper right", frameon=False)
+    ax.set_title(title or f"{n} tips", fontsize=9)
     return fig
 
 
@@ -149,31 +178,31 @@ def draw_tree(newick: Path, meta: pd.DataFrame, colors: dict, out_png: Path):
 
 def tree_inputs(stage: Path, slug: str, target: str, max_tips=MAX_TIPS):
     """Tree FASTA and metadata: the best hit of each genus (highest bit score) that passed the thresholds and the
-    architecture rule, plus the seeds with a sequence. More than max_tips tips: keep the highest bit scores.
-    Returns (fasta text, meta DataFrame)."""
+    architecture rule for `target`, plus the seeds of the target with a sequence. More than max_tips tips: keep the
+    highest bit scores. Meta columns: tip, phylum, order, anchor, is_seed, bits. Returns (fasta text, meta)."""
     import ortho_search as ors
     ph = pd.read_csv(stage / f"pass_{slug}.tsv", sep="\t", comment="#")
     reps = pd.read_csv(stage / "genus_reps.tsv", sep="\t")
     ph = ph.sort_values("bits", ascending=False).drop_duplicates("species_prefix").head(max_tips)
     seeds = pd.read_csv(stage / "seeds.tsv", sep="\t", keep_default_na=False)
     seeds = seeds[(seeds["target"] == target) & (seeds["status"] == "ok")]
-    prot = {}
-    for r in _read_fa(stage / f"cand_{slug}.faa.gz").items():
-        prot[r[0]] = r[1]
+    prot = _read_fa(stage / f"cand_{GROUP[target]}.faa.gz")
     ph = ph[ph["protein_id"].isin(prot)]
     phy = reps.set_index("species_prefix")["PHYLUM"].to_dict()
+    odr = reps.set_index("species_prefix")["ORDER"].to_dict()
     rows, fa = [], []
     for r in ph.itertuples():
         fa.append(f">{r.protein_id}\n{prot[r.protein_id]}\n")
-        rows.append({"tip": r.protein_id, "phylum": phy.get(r.species_prefix, "Unknown"),
-                     "anchor": r.species_prefix in ors.ANCHORS, "is_seed": False})
+        rows.append({"tip": r.protein_id, "phylum": phy.get(r.species_prefix, "Unknown"), "order": odr.get(r.species_prefix, "Unknown"),
+                     "anchor": r.species_prefix in ors.ANCHORS, "is_seed": False, "bits": float(r.bits)})
     have = {x["tip"] for x in rows}
     for r in seeds.itertuples():
         if r.seed_id in have or not r.sequence:
             continue
         fa.append(f">{r.seed_id}\n{r.sequence}\n")
         have.add(r.seed_id)
-        rows.append({"tip": r.seed_id, "phylum": r.phylum or "Unknown", "anchor": bool(r.genome in ors.ANCHORS), "is_seed": True})
+        rows.append({"tip": r.seed_id, "phylum": r.phylum or "Unknown", "order": "", "anchor": bool(r.genome in ors.ANCHORS),
+                     "is_seed": True, "bits": float("inf")})
     return "".join(fa), pd.DataFrame(rows)
 
 

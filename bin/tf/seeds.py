@@ -5,8 +5,11 @@ Config: config/tf_seeds.tsv, columns target, seed_name, source, key, taxon_id, t
     source uniprot  key = gene symbol, taxon_id = organism; fetched from UniProt REST, cached by key
     source bfd      key = <species_prefix>|pfam:<DOMAINS joined by +>, e.g. FBF4BF29|pfam:GATA+PAS
 
-Rule syntax in required_pfam: accessions joined by | are alternatives (any one satisfies); an entry
-`PF00096>=4` needs at least 4 domains of that accession. See ortho_search.architecture_ok.
+Rule syntax in required_pfam (entries separated by ';', all must hold; parsed only in parse_rule):
+    A|B          at least one domain of any listed accession
+    A>=N, A==N   at least / exactly N domains of A (A may be A|B)
+    PAS_regions==N, PAS_regions>=N   number of merged PAS regions (all PAS-family hits merged by coordinates)
+See ortho_search.architecture_ok.
 """
 import re
 import sys
@@ -24,14 +27,17 @@ CONFIG_COLS = ["target", "seed_name", "source", "key", "taxon_id", "target_pfam"
 UNIPROT_URL = "https://rest.uniprot.org/uniprotkb/search?query=gene_exact:{key}+AND+organism_id:{taxon}&format=fasta&size=1"
 PAPER_PREFIX = "Rhimi59_2_"
 # Short names of the domain groups usable in a bfd selector.
-SELECTOR_GROUPS = {"GATA": ["PF00320"], "PAS": ["PF00989", "PF08447", "PF13426"], "C2H2": ["PF00096"], "BZIP": ["PF00170"]}
+# PAS-family Pfams (Pfam has no LOV family): PAS, PAS_3, PAS_9, PAS_2, PAS_11, PAS_4, PAS_6, PAS_5, PAS_7, PAS_8.
+PAS_ACCS = ["PF00989", "PF08447", "PF13426", "PF08446", "PF14598", "PF08448", "PF08348", "PF07310", "PF12860", "PF13188"]
+SELECTOR_GROUPS = {"GATA": ["PF00320"], "PAS": PAS_ACCS, "C2H2": ["PF00096"], "BZIP": ["PF00170"]}
 # Sanity rules for the named TFs of the paper: name -> (rule list, text for the warning).
 NAMED_RULES = {
     "Znf1": (["PF00096"], "no C2H2 (PF00096) domain"),
-    "GATA_Znf10": (["PF00320", "PF00989|PF08447|PF13426"], "needs a GATA domain (PF00320) and a PAS domain (PF00989, PF08447 or PF13426)"),
+    "GATA_Znf10": (["PF00320", "|".join(PAS_ACCS)], "needs a GATA domain (PF00320) and a PAS-family domain"),
     "bZip5": (["PF00170"], "no bZIP_1 (PF00170) domain"),
 }
-TAXON_PHYLUM = {"559292": "Ascomycota", "367110": "Ascomycota"}
+TAXON_PHYLUM = {"559292": "Ascomycota", "367110": "Ascomycota", "426428": "Ascomycota", "746128": "Ascomycota",
+                "235443": "Basidiomycota"}
 
 
 def read_seed_config(path):
@@ -46,15 +52,45 @@ def strip_version(acc):
     return re.sub(r"\.\d+$", "", str(acc))
 
 
+def parse_rule(entry):
+    """Parse one rule entry. Returns ('any', {acc}), ('count', {acc}, op, n) or ('pas', op, n); op is '==' or '>='.
+    ValueError for anything else. This is the only place that knows the syntax."""
+    entry = entry.strip()
+    m = re.fullmatch(r"PAS_regions(==|>=)(\d+)", entry)
+    if m:
+        return ("pas", m.group(1), int(m.group(2)))
+    m = re.fullmatch(r"([A-Za-z0-9_|]+)(==|>=)(\d+)", entry)
+    if m:
+        return ("count", set(m.group(1).split("|")), m.group(2), int(m.group(3)))
+    if re.fullmatch(r"[A-Za-z0-9_]+(\|[A-Za-z0-9_]+)*", entry):
+        return ("any", set(entry.split("|")))
+    raise ValueError(f"bad architecture rule entry: {entry!r}")
+
+
 def rule_accessions(target_pfam, required_pfam):
-    """Every Pfam accession named in a rule row (target Pfam and required entries), without '>=N' counts."""
+    """Every Pfam accession named in a rule row (target Pfam and required entries); PAS_regions entries name none."""
     out = [a for a in re.split(r"[|;,]", str(target_pfam)) if a]
     for entry in str(required_pfam).split(";"):
-        for a in entry.split("|"):
-            a = a.split(">=")[0].strip()
-            if a:
-                out.append(a)
+        if entry.strip():
+            r = parse_rule(entry)
+            if r[0] in ("any", "count"):
+                out += sorted(r[1])
     return out
+
+
+def pas_regions(domain_rows, pas_accs=None, min_overlap=10):
+    """Merge the PAS-family domain hits of ONE protein into regions by alignment coordinates. Two hits join one region
+    when they overlap by at least `min_overlap` residues (transitive). domain_rows has pfam_acc, ali_from, ali_to.
+    Returns the sorted list of (start, end) regions."""
+    pas = set(pas_accs or PAS_ACCS)
+    d = domain_rows[domain_rows["pfam_acc"].map(strip_version).isin(pas)].sort_values(["ali_from", "ali_to"])
+    regions = []
+    for a, b in zip(d["ali_from"], d["ali_to"]):
+        if regions and regions[-1][1] - a + 1 >= min_overlap:
+            regions[-1] = (regions[-1][0], max(regions[-1][1], int(b)))
+        else:
+            regions.append((int(a), int(b)))
+    return regions
 
 
 def rules_for_target(cfg, target):
@@ -169,17 +205,31 @@ def resolve_paper_seeds(paper_seqs, bfd_proteome_fasta, names_tsv, arch, tmp, mi
 
 # ---------------------------------------------------------------- BFD seeds
 def bfd_selector_proteins(species_prefix, selector, pfam_hits: pd.DataFrame):
-    """Proteins of one genome with every domain group of a selector 'pfam:GATA+PAS' (a group matches when the protein
-    has any accession of it). pfam_hits has columns protein_id, pfam_acc (versions allowed)."""
+    """Proteins of one genome that satisfy a selector 'pfam:GATA+PAS_regions==1'. Tokens joined by '+': a domain group
+    name (GATA, PAS, C2H2, BZIP; the protein needs any accession of it) or a PAS_regions rule (merged PAS regions,
+    see pas_regions). pfam_hits has protein_id, pfam_acc (versions allowed) and, for PAS_regions, ali_from, ali_to."""
     tokens = selector.split(":", 1)[1].split("+")
-    groups = []
+    groups, region_rules = [], []
     for t in tokens:
-        if t.upper() not in SELECTOR_GROUPS:
+        if t.startswith("PAS_regions"):
+            region_rules.append(parse_rule(t))
+        elif t.upper() in SELECTOR_GROUPS:
+            groups.append(set(SELECTOR_GROUPS[t.upper()]))
+        else:
             raise ValueError(f"unknown domain group {t!r} in selector {selector!r}")
-        groups.append(set(SELECTOR_GROUPS[t.upper()]))
     ph = pfam_hits[pfam_hits["protein_id"].astype(str).str.split("_").str[0] == species_prefix]
-    have = ph.assign(acc=ph["pfam_acc"].map(strip_version)).groupby("protein_id")["acc"].agg(set)
-    return sorted(p for p, accs in have.items() if all(accs & g for g in groups))
+    out = []
+    for pid, g in ph.groupby("protein_id"):
+        accs = set(g["pfam_acc"].map(strip_version))
+        if not all(accs & grp for grp in groups):
+            continue
+        ok = True
+        for _, op, n in region_rules:
+            k = len(pas_regions(g))
+            ok = ok and (k == n if op == "==" else k >= n)
+        if ok:
+            out.append(pid)
+    return sorted(out)
 
 
 def read_fasta_dict(path):
