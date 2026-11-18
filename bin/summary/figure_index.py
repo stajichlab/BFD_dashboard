@@ -12,6 +12,7 @@ signal / signal_kind give a second, coarser ranking for figures that have no ANO
     epsilon2      the T_anova effect_size itself (figures that have one)
     spearman_r    |Spearman r| of an A or R scatter figure
     permanova_R2  PERMANOVA R^2 by phylum for an ordination matrix
+    n_flagged_cells  number of flagged cells (T11 heat map) or panels (T12) of the TF expansion page
 Signals of different kinds are NOT comparable (a correlation, a rank-based effect size and a variance fraction
 measure different things): use them to order figures within one kind. Sort order: score descending (scored rows
 first), then signal descending, then level, then name.

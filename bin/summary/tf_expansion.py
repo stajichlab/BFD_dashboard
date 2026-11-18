@@ -5,20 +5,28 @@ distinct proteins per genome, so no protein is counted twice). Families that BFD
 tf_claims.MIN_NONZERO_GENERA genera) are left out.
 
 Method:
-1. Scaling model per family: log1p(count) ~ log(n_proteins_total), ordinary least squares (numpy.polyfit) over all genera
-   with a proteome size. The residual of a genus is its count relative to what its proteome size predicts.
-2. Lineage test per ORDER (and CLASS) with at least 5 genera: residuals of the lineage against the other genera of the
-   SAME phylum (Mann-Whitney U; effect = rank-biserial, positive = lineage above the rest; direction = sign of the effect).
-   Benjamini-Hochberg over ALL family-by-lineage tests of the run. A hit is flagged when p_adj < 0.05, |effect| >= 0.5 and at
-   least 3 genera of the lineage lie on the side of the effect of the median of the rest of the phylum (n_agree). The brief
-   said 'sign of the lineage median'; the fit is global, so a whole phylum can sit above 0 and that rule gave a direction
-   opposite to the effect.
-   Extra guard (raw_agree): the mean raw count of the lineage must lie on the side of the direction (above the rest for
-   'expanded', below for 'contracted'). Without it, a rare family (zero in most genera) looks 'expanded' in a lineage with a
-   small proteome, because the residual of a zero rises as the fitted value falls (log1p floor). `flagged_brief` is the flag
-   without this guard.
-3. Presence flags: a family is 'lost' in a lineage when it is present in >= 80% of all genera and in <= 20% of the lineage;
-   'gained' for the reverse (global <= 20%, lineage >= 80%).
+1. Scaling model per family: log1p(count) ~ log(n_proteins_total), ordinary least squares (numpy.polyfit). Default
+   scaling="phylum": one fit per phylum, so an order is compared with the rest of its phylum on the same footing. A phylum
+   with fewer than MIN_FIT_GENERA (30) eligible genera uses the global fit (all phyla) instead; the table column `scaling`
+   and attrs['fallback_phyla'] record this. scaling="global" fits all genera together. The residual of a genus is its count
+   relative to what its proteome size predicts. A family that is constant within a phylum has no residual there (NaN).
+2. Lineage test per ORDER (and CLASS) with at least 5 genera and at least 5 other genera in the phylum: residuals of the
+   lineage against the other genera of the SAME phylum (Mann-Whitney U; effect = rank-biserial, positive = lineage above the
+   rest; direction = sign of the effect, empty for an effect of exactly 0). Benjamini-Hochberg is applied PER LEVEL (ORDER,
+   CLASS) and PER FILTER (BUSCO>=80, none), over all family-by-lineage tests of that level and filter (the levels are nested
+   and dependent, so pooling them adds little). Column bh_scope says so.
+3. `flagged` = p_adj < 0.05 AND |effect| >= 0.5 AND at least 3 genera of the lineage lie on the side of the effect of the
+   median of the rest of the phylum (n_agree) AND raw_agree (the mean raw count of the lineage lies on the side of the
+   direction: above the rest for 'expanded', below for 'contracted'). raw_agree removes a log1p-floor artefact: for a rare
+   family (zero in most genera) a lineage with a small proteome looks 'expanded' although its count is 0.
+   `flagged_brief` is the same without raw_agree (the thresholds of the brief, direction against the rest of the phylum). The
+   literal rule of the brief (n_agree counted against the sign of the LINEAGE median) is not reproducible: with a global fit
+   a whole phylum can sit above or below 0, so that sign could contradict the effect.
+4. `lineage_wide`: the lineage is flagged for MORE THAN HALF (LINEAGE_WIDE_FRACTION = 0.5, a judgment, not a tested value) of the
+   families tested for it (and at least LINEAGE_WIDE_MIN_FAMILIES = 4 were tested). That pattern suggests a proteome-size or annotation effect, not a family-specific change.
+5. Presence flags: a family is 'lost' in a lineage when it is present in >= 80% of all genera and in <= 20% of the lineage;
+   'gained' for the reverse (global <= 20%, lineage >= 80%). A phylum with <= 2 lineages in the table gets the note
+   'phylum-level statement'.
 
 Limits: genera of one lineage are related, and no phylogenetic correction is made, so p-values overstate the evidence.
 Annotation gaps (fragmented or low-BUSCO assemblies, missed Pfam hits) look like contractions. The sensitivity table uses
@@ -35,18 +43,27 @@ PF_PREFIX = "pf_"
 FAM_PREFIX = "fam_"
 MIN_GENERA = 5
 MIN_AGREE = 3
+MIN_FIT_GENERA = 30          # a phylum with fewer eligible genera uses the global scaling fit
+LINEAGE_WIDE_FRACTION = 0.5  # lineage_wide when flagged for MORE THAN this share of its families (a judgment)
+LINEAGE_WIDE_MIN_FAMILIES = 4   # a share of fewer tested families means nothing (1 of 1 is 100%): never lineage-wide (a judgment)
+SCALINGS = ("phylum", "global")
 P_FLAG = 0.05
 EFFECT_FLAG = 0.5
 PREV_HIGH = 0.8
 PREV_LOW = 0.2
 MAX_BOX_HITS = 12
 TEST_COLS = ["family", "lineage", "parent", "n_genera", "n_rest", "median_resid", "effect", "p", "p_adj", "direction",
-             "n_agree", "flagged", "mean_count", "mean_count_rest", "raw_agree", "flagged_brief"]
-PRES_COLS = ["family", "lineage", "parent", "global_prevalence", "lineage_prevalence", "flag"]
+             "n_agree", "flagged", "mean_count", "mean_count_rest", "raw_agree", "flagged_brief", "lineage_wide", "scaling"]
+PRES_COLS = ["family", "lineage", "parent", "global_prevalence", "lineage_prevalence", "flag", "n_genera", "n_orders_in_phylum",
+             "note"]
 LEVEL_COL = {"ORDER": "ORDER", "CLASS": "CLASS"}
-HYP = "hypothesis; genus values; no phylogenetic control"
 SENS_NOTE = "sensitivity only; low-BUSCO genomes have incomplete annotation"
-SIGNAL_KIND = "rank_biserial_max_flagged"
+SIGNAL_KIND = "n_flagged_cells"
+BH_SCOPE = "per level and filter"
+FLAG_DEF = ("flagged = p_adj < 0.05 and |effect| >= 0.5 and >= 3 genera on the effect side of the rest-of-phylum median and "
+            "mean raw count on the side of the direction")
+HYP = "hypothesis; genus values; no phylogenetic control; " + FLAG_DEF
+WIDE_NOTE = "lineage-wide shift: likely a proteome-size or annotation effect, not family-specific"
 
 
 def label(col):
@@ -67,11 +84,30 @@ def comparable_families(genus_df, min_nonzero=MIN_NONZERO_GENERA):
     return out
 
 
-def fit_scaling(genus_df, family):
-    """Copy of genus_df with `resid`: residual of log1p(count) regressed on log(n_proteins_total), fitted over the genera
-    with a count and a proteome size > 0. NaN where either is missing, and NaN everywhere (slope NaN) when the family is
-    constant or fewer than 3 genera can be fitted. attrs: slope, intercept, n_fit, n_dropped_no_size (genera with no usable
-    proteome size)."""
+def direction_of(effect):
+    """'expanded' for an effect > 0, 'contracted' for < 0, '' for exactly 0 or NaN."""
+    if not np.isfinite(effect) or effect == 0:
+        return ""
+    return "expanded" if effect > 0 else "contracted"
+
+
+def _ols(x, y):
+    """(slope, intercept) of y on x, or None when there are fewer than 3 points or x or y is constant."""
+    if len(x) < 3 or np.ptp(y) == 0 or np.ptp(x) == 0:
+        return None
+    sl, ic = np.polyfit(x, y, 1)
+    return float(sl), float(ic)
+
+
+def fit_scaling(genus_df, family, scaling="phylum", min_fit=MIN_FIT_GENERA):
+    """Copy of genus_df with `resid`: residual of log1p(count) regressed on log(n_proteins_total) over the genera with a count
+    and a proteome size > 0. NaN where either is missing. scaling='phylum' (default): one fit per phylum; a phylum with fewer
+    than min_fit eligible genera uses the global fit; a phylum whose family is constant has NaN residuals. scaling='global':
+    one fit over all genera. The whole family is NaN (slope NaN) when the global fit is impossible (constant family or fewer
+    than 3 genera). attrs: slope, intercept (global fit), n_fit, n_dropped_no_size (genera with no usable proteome size),
+    scaling, fallback_phyla (sorted list), n_fallback_phyla, phylum_scaling ({phylum: 'phylum' | 'global (fallback: ...)'})."""
+    if scaling not in SCALINGS:
+        raise ValueError(f"scaling must be one of {SCALINGS}, not {scaling!r}")
     d = genus_df.copy()
     n = pd.to_numeric(d["n_proteins_total"], errors="coerce").to_numpy(dtype=float)
     cnt = pd.to_numeric(d[family], errors="coerce").to_numpy(dtype=float)
@@ -81,13 +117,30 @@ def fit_scaling(genus_df, family):
         y = np.where(np.isfinite(cnt) & (cnt >= 0), np.log1p(np.where(np.isfinite(cnt), cnt, 0.0)), np.nan)
     ok = np.isfinite(x) & np.isfinite(y)
     resid = np.full(len(d), np.nan)
-    slope = intercept = np.nan
-    if ok.sum() >= 3 and np.ptp(y[ok]) > 0 and np.ptp(x[ok]) > 0:
-        slope, intercept = np.polyfit(x[ok], y[ok], 1)
-        resid[ok] = y[ok] - (intercept + slope * x[ok])
+    gfit = _ols(x[ok], y[ok])
+    fallback, how = [], {}
+    if gfit is not None:
+        if scaling == "global":
+            resid[ok] = y[ok] - (gfit[1] + gfit[0] * x[ok])
+        else:
+            ph = d["PHYLUM"].to_numpy()
+            for p in pd.unique(pd.Series(ph).dropna()):
+                m = ok & (ph == p)
+                if m.sum() < min_fit:
+                    fallback.append(str(p))
+                    how[str(p)] = f"global (fallback: fewer than {min_fit} genera)"
+                    resid[m] = y[m] - (gfit[1] + gfit[0] * x[m])
+                    continue
+                how[str(p)] = "phylum"
+                f = _ols(x[m], y[m])
+                if f is not None:
+                    resid[m] = y[m] - (f[1] + f[0] * x[m])
+    if scaling == "global":
+        how = {str(p): "global" for p in pd.unique(d["PHYLUM"].dropna())}
     d["resid"] = resid
-    d.attrs.update({"slope": float(slope), "intercept": float(intercept), "n_fit": int(ok.sum()),
-                    "n_dropped_no_size": int((~size_ok).sum())})
+    d.attrs.update({"slope": gfit[0] if gfit else np.nan, "intercept": gfit[1] if gfit else np.nan, "n_fit": int(ok.sum()),
+                    "n_dropped_no_size": int((~size_ok).sum()), "scaling": scaling, "fallback_phyla": sorted(fallback),
+                    "n_fallback_phyla": len(fallback), "phylum_scaling": how})
     return d
 
 
@@ -107,20 +160,23 @@ def _skipped(genus_df, col, min_genera):
     return pd.DataFrame(rows, columns=["lineage", "parent", "n_genera", "note"])
 
 
-def lineage_tests(genus_df, families, level="ORDER", min_genera=MIN_GENERA, min_agree=MIN_AGREE):
+def lineage_tests(genus_df, families, level="ORDER", min_genera=MIN_GENERA, min_agree=MIN_AGREE, scaling="phylum"):
     """One row per family-by-lineage test (see the module docstring). families: table columns (pf_<name>); the family
     column of the result is the name without prefix. Lineages with fewer than min_genera genera (or a phylum rest with fewer)
     are not tested: they are in attrs['skipped'] with a note. Constant families give no rows and are named in
-    attrs['skipped_families']. Sorted by p_adj, family, lineage. attrs: n_tests, n_dropped_no_size."""
+    attrs['skipped_families']. BH is over all tests of this call (one level, one table). Sorted by p_adj, family, lineage.
+    attrs: skipped, skipped_families, n_tests, n_dropped_no_size, scaling, n_fallback_phyla, fallback_phyla."""
     col = LEVEL_COL[level]
     rows, skipped_fams = [], []
-    n_drop = 0
+    n_drop, fb = 0, set()
     for fam in families:
-        d = fit_scaling(genus_df, fam)
+        d = fit_scaling(genus_df, fam, scaling=scaling)
         n_drop = d.attrs["n_dropped_no_size"]
+        fb |= set(d.attrs["fallback_phyla"])
         if not np.isfinite(d.attrs["slope"]):
             skipped_fams.append(f"{label(fam)}: constant or too few genera, no scaling fit")
             continue
+        how = d.attrs["phylum_scaling"]
         d = d[d["resid"].notna() & d["PHYLUM"].notna()]
         for ph, gp in d.groupby("PHYLUM"):
             for lin, g in gp[gp[col].notna()].groupby(col):
@@ -133,27 +189,37 @@ def lineage_tests(genus_df, families, level="ORDER", min_genera=MIN_GENERA, min_
                 eff = 2 * float(res.statistic) / (len(a) * len(b)) - 1
                 med = float(np.median(a))
                 # direction = sign of the effect; agreement = genera on that side of the median of the rest of the phylum
-                # (the fit is global, so the residuals of a whole phylum can sit above or below 0)
                 side = np.sign(eff)
                 agree = int((np.sign(a - np.median(b)) == side).sum()) if side != 0 else 0
                 ca, cb = float(g[fam].astype(float).mean()), float(rest[fam].astype(float).mean())
-                raw = bool(ca > cb) if eff > 0 else bool(ca < cb)     # the raw mean must not contradict the direction
-                rows.append((label(fam), lin, ph, len(a), len(b), med, eff, float(res.pvalue), np.nan,
-                             "expanded" if eff > 0 else "contracted", agree, False, ca, cb, raw, False))
+                direction = direction_of(eff)
+                raw = (ca > cb) if direction == "expanded" else (ca < cb) if direction == "contracted" else False
+                rows.append((label(fam), lin, ph, len(a), len(b), med, eff, float(res.pvalue), np.nan, direction, agree, False,
+                             ca, cb, bool(raw), False, False, how.get(str(ph), scaling)))
     t = pd.DataFrame(rows, columns=TEST_COLS)
     t["p_adj"] = bh_adjust(t["p"].to_numpy(dtype=float))
     t["flagged_brief"] = ((t["p_adj"] < P_FLAG) & (t["effect"].abs() >= EFFECT_FLAG) & (t["n_agree"] >= min_agree)).astype(bool)
     t["flagged"] = (t["flagged_brief"] & t["raw_agree"]).astype(bool)
+    if len(t):
+        g = t.groupby(["parent", "lineage"])["flagged"]
+        t["lineage_wide"] = ((g.transform("mean") > LINEAGE_WIDE_FRACTION) & (g.transform("size") >= LINEAGE_WIDE_MIN_FAMILIES)
+                             ).astype(bool)
+    t["lineage_wide"] = t["lineage_wide"].astype(bool)
     t = t.sort_values(["p_adj", "family", "lineage", "parent"], kind="stable").reset_index(drop=True)
     t.attrs.update({"skipped": _skipped(genus_df, col, min_genera), "skipped_families": skipped_fams,
-                    "n_tests": int(len(t)), "n_dropped_no_size": int(n_drop)})
+                    "n_tests": int(len(t)), "n_dropped_no_size": int(n_drop), "scaling": scaling,
+                    "fallback_phyla": sorted(fb), "n_fallback_phyla": len(fb)})
     return t
 
 
 def presence_flags(genus_df, families, level="ORDER", min_genera=MIN_GENERA):
     """Presence (count > 0) prevalence per family and lineage with at least min_genera genera, against the prevalence over all
-    genera. flag: 'lost' (global >= 0.8, lineage <= 0.2), 'gained' (global <= 0.2, lineage >= 0.8), else ''."""
+    genera. flag: 'lost' (global >= 0.8, lineage <= 0.2), 'gained' (global <= 0.2, lineage >= 0.8), else ''. n_genera =
+    genera of the lineage; n_orders_in_phylum = lineages (of this level) with at least one genus in that phylum in the table;
+    note = 'phylum-level statement (the phylum has k order(s))' when k <= 2."""
     col = LEVEL_COL[level]
+    word = "order(s)" if level == "ORDER" else "class(es)"
+    n_lin = genus_df.dropna(subset=["PHYLUM", col]).groupby("PHYLUM")[col].nunique().to_dict()
     rows = []
     for fam in families:
         cnt = pd.to_numeric(genus_df[fam], errors="coerce")
@@ -166,7 +232,9 @@ def presence_flags(genus_df, families, level="ORDER", min_genera=MIN_GENERA):
             lp = float(g["p"].mean())
             flag = "lost" if (glob >= PREV_HIGH and lp <= PREV_LOW) else \
                    "gained" if (glob <= PREV_LOW and lp >= PREV_HIGH) else ""
-            rows.append((label(fam), lin, ph, glob, lp, flag))
+            k = int(n_lin.get(ph, 0))
+            note = f"phylum-level statement (the phylum has {k} {word})" if k <= 2 else ""
+            rows.append((label(fam), lin, ph, glob, lp, flag, len(g), k, note))
     t = pd.DataFrame(rows, columns=PRES_COLS)
     return t.sort_values(["family", "parent", "lineage"], kind="stable").reset_index(drop=True)
 
@@ -179,7 +247,7 @@ def _phylum_colors(porder, phyla):
     return {p: cm.get(p, GREY) for p in phyla}, order
 
 
-def _heatmap(tests, porder, n_boot_note=""):
+def _heatmap(tests, porder):
     import matplotlib as mpl
     import matplotlib.pyplot as plt
     from matplotlib.lines import Line2D
@@ -191,6 +259,7 @@ def _heatmap(tests, porder, n_boot_note=""):
     lin = tests[["parent", "lineage"]].drop_duplicates()
     lin = lin.assign(r=lin["parent"].map(lambda p: rank.get(p, len(rank)))).sort_values(["r", "parent", "lineage"])
     cols = list(zip(lin["parent"], lin["lineage"]))
+    wide = set(zip(tests.loc[tests["lineage_wide"], "parent"], tests.loc[tests["lineage_wide"], "lineage"]))
     fams = sorted(tests["family"].unique())
     eff = tests.pivot_table(index="family", columns=["parent", "lineage"], values="effect", aggfunc="first")
     eff = eff.reindex(index=fams, columns=pd.MultiIndex.from_tuples(cols))
@@ -207,6 +276,9 @@ def _heatmap(tests, porder, n_boot_note=""):
     ax.set_xticklabels([c[1] for c in cols], rotation=70, ha="right", fontsize=6)
     for tl, (ph, _) in zip(ax.get_xticklabels(), cols):
         tl.set_color(tuple(v * 0.6 for v in mpl.colors.to_rgb(colors[ph])))
+    for j, c in enumerate(cols):
+        if c in wide:      # lineage-wide shift: grey hatched column; the colours stay faintly visible below it
+            ax.add_patch(Rectangle((j - 0.5, -0.5), 1, len(fams), facecolor="#d0d0d0", alpha=0.72, hatch="////", ec="#8a8a8a", lw=0))
     for i in range(len(fams)):
         for j in range(len(cols)):
             if flg.iat[i, j]:
@@ -220,19 +292,23 @@ def _heatmap(tests, porder, n_boot_note=""):
     ax0.set_axis_off()
     hs = [Patch(color=colors[p], label=p) for p in order if p in colors]
     hs.append(Line2D([], [], marker="s", mfc="none", mec="black", ls="", mew=1.6,
-                     label="flagged: p_adj < 0.05, |effect| >= 0.5, >= 3 genera agree"))
-    hs.append(Patch(color="#bdbdbd", label="not tested (< 5 genera)"))
-    ax.legend(handles=hs, fontsize=6, ncol=min(4, len(hs)), loc="upper center", bbox_to_anchor=(0.5, -0.42 if len(cols) < 25 else -0.3),
-              frameon=False)
+                     label="flagged: p_adj < 0.05, |effect| >= 0.5, >= 3 genera on the effect side of the rest-of-phylum median, "
+                           "mean raw count on the side of the direction"))
+    hs.append(Patch(facecolor="#d0d0d0", hatch="////", edgecolor="#8a8a8a",
+                    label="lineage-wide shift (flagged in > half of its families; likely proteome-size or annotation effect)"))
+    hs.append(Patch(color="#bdbdbd", label="not tested (< 5 genera, or family constant in the phylum)"))
+    fig.legend(handles=hs, fontsize=6, ncol=2, loc="outside lower center", frameon=False)
     ax0.set_title("Hypothesis: TF family expansions (red) and contractions (blue) by lineage. Residual of log1p(count) on log(proteome "
-                  "size), genus values,\nlineage vs other genera of the same phylum, BH over all tests. No phylogenetic control; "
-                  "annotation gaps can look like contractions.", fontsize=8)
+                  "size), genus values,\nlineage vs other genera of the same phylum, BH over all tests of the level. No phylogenetic "
+                  "control; annotation gaps can look like contractions.", fontsize=8)
     return fig
 
 
-def _hit_boxes(g80, tests, porder, max_hits=MAX_BOX_HITS):
+def _hit_boxes(g80, tests, porder, max_hits=MAX_BOX_HITS, scaling="phylum"):
+    """Up to max_hits flagged hits that are not lineage-wide (best p_adj first; lineage-wide hits are skipped and the next
+    hits fill the panels). The jitter of the points uses a fixed seed (1), so the figure is the same on every run."""
     import matplotlib.pyplot as plt
-    fl = tests[tests["flagged"]].copy()
+    fl = tests[tests["flagged"] & ~tests["lineage_wide"]].copy()
     if fl.empty:
         return None
     fl["_abs"] = -fl["effect"].abs()
@@ -242,12 +318,12 @@ def _hit_boxes(g80, tests, porder, max_hits=MAX_BOX_HITS):
     n = len(fl)
     ncol = 4 if n > 6 else 3 if n > 3 else n
     nrow = int(np.ceil(n / ncol))
-    fig, axes = plt.subplots(nrow, ncol, figsize=(2.9 * ncol, 2.6 * nrow + 0.8), squeeze=False, layout="constrained")
+    fig, axes = plt.subplots(nrow, ncol, figsize=(2.9 * ncol, 2.6 * nrow + 1.0), squeeze=False, layout="constrained")
     rng = np.random.default_rng(1)
     cache = {}
     for ax, (_, r) in zip(axes.ravel(), fl.iterrows()):
         if r["family"] not in cache:
-            cache[r["family"]] = fit_scaling(g80, cols_of[r["family"]])
+            cache[r["family"]] = fit_scaling(g80, cols_of[r["family"]], scaling=scaling)
         d = cache[r["family"]]
         d = d[d["resid"].notna() & (d["PHYLUM"] == r["parent"])]
         col = LEVEL_COL.get(r.get("level", "ORDER"), "ORDER")
@@ -267,8 +343,10 @@ def _hit_boxes(g80, tests, porder, max_hits=MAX_BOX_HITS):
     for ax in axes.ravel()[n:]:
         ax.set_axis_off()
     fig.supylabel("Scaling residual (log1p count vs log proteome size)", fontsize=7)
-    fig.suptitle("Hypothesis: top flagged TF family hits (residuals, lineage vs the rest of its phylum; genus values, no "
-                 "phylogenetic control)", fontsize=8)
+    short = f" Only {n} flagged hits are not lineage-wide." if n < max_hits else ""
+    fig.suptitle("Hypothesis: top flagged TF family hits that are not lineage-wide (residuals, lineage vs the rest of its phylum; "
+                 "genus values, no phylogenetic control)." + short + "\nflagged = p_adj < 0.05, |effect| >= 0.5, >= 3 genera on the "
+                 "effect side of the rest-of-phylum median, mean raw count on the side of the direction.", fontsize=7)
     return fig
 
 
@@ -277,28 +355,36 @@ def _labelled(t, filter_label, note):
     t = t.copy()
     t.attrs = {}     # attrs hold DataFrames; pandas compares them (and fails) when it concatenates
     t.insert(0, "filter", filter_label)
-    t["note"] = note
+    t["bh_scope"] = BH_SCOPE
+    base = pd.Series(note, index=t.index)
+    if "note" in t.columns:     # a note already on the rows (presence flags) goes first
+        base = t["note"].where(t["note"].astype(str) == "", t["note"].astype(str) + "; ") + note
+    if "lineage_wide" in t.columns:
+        base = base.where(~t["lineage_wide"], base + "; " + WIDE_NOTE)
+    t["note"] = base
     return t
 
 
-def page_tf_expansion(genus_df_busco, genus_df_all, o, families=None, porder=None, levels=("ORDER", "CLASS")):
+def page_tf_expansion(genus_df_busco, genus_df_all, o, families=None, porder=None, levels=("ORDER", "CLASS"), scaling="phylum"):
     """Tables T11_tf_expansion_hits (genus_df_busco: BUSCO >= 80; every tested family-by-lineage row, flagged column),
     T11_tf_expansion_nofilter (genus_df_all, no BUSCO filter: sensitivity only), T11_tf_expansion_skipped (lineages not
     tested), T11_tf_presence_flags (flagged rows only), and figures T11_tf_effect_heatmap, T12_tf_hit_boxes. o: an Out for 'tf'.
     families: table columns; default = comparable pf_ columns of genus_df_all. levels: lineage levels tested (rows carry a
-    `level` column; the heat map and boxes use ORDER rows). Returns the BUSCO>=80 test table."""
+    `level` column; the heat map and boxes use ORDER rows). BH is per level and per filter (column bh_scope). The sidecar signal
+    of the heat map is the number of flagged ORDER cells, of the boxes the number of panels (signal_kind n_flagged_cells; only
+    comparable with itself). Returns the BUSCO>=80 test table."""
     from figs_common import safe
     fams = list(families) if families is not None else comparable_families(genus_df_all)
     o.scope = "genus_reps"
     main, nof, skip, pres = [], [], [], []
     for lv in levels:
-        t = lineage_tests(genus_df_busco, fams, level=lv)
+        t = lineage_tests(genus_df_busco, fams, level=lv, scaling=scaling)
         t.insert(0, "level", lv)
         s = t.attrs["skipped"].copy()
         s.insert(0, "level", lv)
         skip.append(s)
         main.append(_labelled(t, "BUSCO>=80", HYP))
-        n = lineage_tests(genus_df_all, fams, level=lv)
+        n = lineage_tests(genus_df_all, fams, level=lv, scaling=scaling)
         n.insert(0, "level", lv)
         nof.append(_labelled(n, "none", f"{HYP}; {SENS_NOTE}"))
         p = presence_flags(genus_df_busco, fams, level=lv)
@@ -314,13 +400,14 @@ def page_tf_expansion(genus_df_busco, genus_df_all, o, families=None, porder=Non
     o.table(pd.concat(pres, ignore_index=True), "T11_tf_presence_flags")
     order_tests = hits[hits["level"] == "ORDER"] if "ORDER" in levels else hits.iloc[0:0]
     o.info = {"n_genomes": int(len(genus_df_busco)), "n_groups": int(order_tests["lineage"].nunique()), "pooled_share": 0.0}
-    fl = order_tests[order_tests["flagged"]]
-    # The heat map has no single effect size; its signal is the largest |effect| among flagged cells (rank-biserial), used
-    # only as the second sort key of figures_index.tsv. A run with no flagged cell is left unscored.
-    if len(fl):
-        sig = {"signal": float(fl["effect"].abs().max()), "signal_kind": SIGNAL_KIND}
-        o.meta["T11_tf_effect_heatmap"] = dict(sig)
-        o.meta["T12_tf_hit_boxes"] = dict(sig)
+    n_cells = int(order_tests["flagged"].sum())
+    n_panels = int((order_tests["flagged"] & ~order_tests["lineage_wide"]).sum())
+    # The heat map has no single effect size; its signal is the number of flagged cells (the box figure: its panels), used only
+    # as the second sort key of figures_index.tsv. A figure with none is left unscored.
+    if n_cells:
+        o.meta["T11_tf_effect_heatmap"] = {"signal": n_cells, "signal_kind": SIGNAL_KIND}
+    if n_panels:
+        o.meta["T12_tf_hit_boxes"] = {"signal": min(n_panels, MAX_BOX_HITS), "signal_kind": SIGNAL_KIND}
     safe(o, "T11_tf_effect_heatmap", "tf", lambda: _heatmap(order_tests, porder))
-    safe(o, "T12_tf_hit_boxes", "tf", lambda: _hit_boxes(genus_df_busco, order_tests, porder))
+    safe(o, "T12_tf_hit_boxes", "tf", lambda: _hit_boxes(genus_df_busco, order_tests, porder, scaling=scaling))
     return hits
