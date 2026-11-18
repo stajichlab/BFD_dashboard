@@ -1,6 +1,8 @@
 # *Antarctolithica obscura* (Ascomycota sp., NCBI taxid 3698444) compared with the Ascomycota in BFD
 
 > **Provenance.** Written by a Fable agent on 2026-11-10 (analysis C in [../../FUNCTIONAL_ANALYSES.md](../../FUNCTIONAL_ANALYSES.md)). Figures are in `figs/`, result CSVs and trees in `results/`, and the scripts in `scripts/` (paths set by `AO_BASE`). HPCC was in maintenance, so everything ran locally, including a reduced phylogenomic analysis in place of nf_phyling. The 7.6 GB working directory (data, alignments, venv) was not committed. Only 6 of the 8 MAGs have annotations. Citations marked "citation to verify" have not been checked.
+>
+> **HPCC rerun (2026-11-16).** The whole pipeline now runs on the UCR HPCC from the shared BFD data (`run_hpcc.sh`, section 2.8) and was rerun there end to end. Every number in this report was reproduced; the only differences are the grouped-CV balanced accuracies of the random forest, which depend on how the genus folds fall (section 2.8). The text below is the 2026-11-10 laptop analysis; the HPCC outputs are in the bench folder named in section 2.8.
 
 Analysis date 2026-11-10. Data: BFD parquet snapshot (species table built 2026-11-06), atlas intermediates, MotherDuck `bfd`. All statistics were run on the local workstation because SLURM on the HPCC was under a maintenance reservation for the whole session. Scripts are in `scripts/`, result tables in `results/` (both next to this file).
 
@@ -122,6 +124,44 @@ TargetP (125 genomes) and Infernal/Rfam (14 genomes) were excluded for coverage.
 ### 2.7 Phylogenomic placement
 
 SLURM on the HPCC was under a maintenance reservation for the whole session (jobs stay pending with "ReqNodeNotAvail, Reserved for maintenance"), so `workflows/run_phyling.sh` (nf_phyling) could not be launched and no heavy work was run on the login node. A reduced version of the same pipeline was run on the local workstation: 159 proteomes (6 MAGs; all 25 Taphrinomycotina species; 22 unplaced Ascomycota; representatives of every Pezizomycotina and Saccharomycotina class, with extra rock-inhabiting Dothideomycetes and Chaetothyriales; 7 Basidiomycota; 2 Mucoromycota as root). `hmmsearch` (HMMER 3.3.2; Eddy 2011) with the 758 BUSCO fungi_odb10 profiles and the BUSCO score cutoffs (Simão et al. 2015; Manni et al. 2021); best hit per marker; a marker is dropped for a taxon if a second hit scores >= 85 % of the best. Markers single-copy in >= 85 % of taxa and in >= 3 of the 4 high-quality MAGs (up to 300, by occupancy) were aligned with MAFFT --auto (Katoh & Standley 2013), trimmed with trimAl -gappyout (Capella-Gutiérrez et al. 2009) and concatenated, and a tree was inferred with FastTree 2 under LG+Gamma (Price et al. 2010; Le & Gascuel 2008). Support values are FastTree SH-like local supports, which are less conservative than bootstraps.
+
+### 2.8 Rerunning on the UCR HPCC
+
+The pipeline runs on the HPCC from the shared BFD tree as four chained SLURM jobs (partitions `epyc,intel`). From a checkout of the repo:
+
+```bash
+cd docs/analyses/antarctolithica && pixi install && cd -        # one time: Python env (pixi.toml / pixi.lock)
+AO_BASE=~/projects/BFD_dashboard/bench/antarctolithica_C/work docs/analyses/antarctolithica/run_hpcc.sh
+```
+
+- **Environment variables.** `AO_BASE` is the working directory (data/, phylo/, mag/, report/, results/, figures, logs/). `BFD_DATA` is the shared BFD root (default `/bigdata/stajichlab/shared/projects/BFD`), read only; `AO_ATLAS`, `AO_TABLES`, `AO_ANNOT` and `AO_ODB10` override its parts. `AO_PHYLO_TAXA` fixes the tree taxa (default: the committed `results/taxa.tsv`, the 159-taxon design). `NCPU` is taken from `SLURM_CPUS_PER_TASK`.
+- **Jobs** (`run_hpcc.sbatch <stage>`): `prep` (scripts 00-02b, 04, 05, 07, 08, 08b, 09, 12) -> `rf` (06) and `phylo` (03, 11, 13, 14, 14b) in parallel -> `report` (10, 15, 16, 17, 18). HMMER 3.3.2, MAFFT 7.505, trimAl 1.4.1, FastTree 2.1.11 (double-precision `FastTree.dp`) and DIAMOND 2.1.12 are HPCC modules; Python packages come from the pixi environment (pandas 2.3, scikit-learn 1.9.1, DuckDB 2.0). Decompressed proteomes for the marker search go to `$SCRATCH`.
+- **Data sources** (staged by `00_prep_data.py` as symlinks): atlas intermediates `BFD_dashboard/atlas_data/{A2,A4,A5,A7,labels}`; raw tables `Fungi_BFD_runs/tables/{codon_freq,aa_freq,telomere_summary,wgd.ks.summary,swissprot_best,swissprot_subject}.parquet`; MAG scaffolds and GFF3 from `Fungi_BFD_runs/genome_annotation/*Antarctolithica*/predict_results` (Mars-19.38 and Mars-9.1 have no `predict_results`: annotation skipped as too small); proteomes via `atlas_data/phylo/locustag_to_pep.tsv`; BUSCO fungi_odb10 HMMs and score cutoffs from `atlas_data/phylo/phyling_db/fungi_odb10`.
+- **Steps that were manual on the laptop are now scripts:** `01b_swissprot_extract.py` (SwissProt organism profile per genome; `pid_cov` = mean identity of hits covering >= 80 % of query and subject, which reproduces the laptop values exactly; organism-code map with the synonym genera in `fungal_genus_extra.txt`), `08b_mag_aai.py` (DIAMOND AAI of each MAG against Mars-82.9), `02b_taxa_proteomes.py` (`results/taxa_proteomes_hpcc.tsv`: LOCUSTAG, tip label and HPCC protein FASTA path of the 159 tree taxa, including the 6 MAGs), `18_compare_runs.py` (rerun against the committed results). No MotherDuck access is needed. `results/loss_check_blastx.csv` (section 7.3) was not rerun; it is carried forward. `odb10_marker_counts.csv` and `odb10_missing_all6.csv` have no script.
+- **Tests:** `pixi run --manifest-path docs/analyses/antarctolithica/pixi.toml pytest docs/analyses/antarctolithica/tests` (fixture tests of the staging, SwissProt aggregation, taxa table and AAI summary).
+
+**Rerun of 2026-11-16** (commit `e8774ef` and later; jobs 32115796 prep, 32115797 rf, 32116821 phylo (32115798 failed in FastTree, see below), 32116822 report; outputs in `~/projects/BFD_dashboard/bench/antarctolithica_C/work/`, comparison in `work/results/rerun_vs_reference.csv` and `rerun_vs_reference_files.csv`, copied with the HPCC `rf_performance.csv` to `results/hpcc_rerun_2026-11-16/`):
+
+| quantity | laptop (2026-11-10) | HPCC (2026-11-16) |
+|---|---|---|
+| comparison set | 1,911 genomes (1,806 classified Ascomycota, 22 unplaced, 77 Basidiomycota, 6 MAGs); 994 ordination units; 1,779 RF training species in 16 classes | identical |
+| phylogeny taxa | 159 | 159; the sampling in `02_phylo_taxa.py` re-derives exactly the same set |
+| PERMANOVA R2 by class (struct, codon, aa, trna, pfam_pa, pfam_ab, cell) | 0.518, 0.548, 0.744, 0.349, 0.715, 0.711, 0.626 | identical (differences < 1e-14) |
+| PCoA coordinates, nearest class centroids, nearest genera, consistency | | identical (two axes sign-flipped, `cell` and `struct_all`; < 1e-10 otherwise) |
+| univariate: genes/Mb, coding fraction, median intergenic, median intron (percentile in Ascomycota) | 555 (99.8), 0.744 (98.3), 178.5 bp (0.45), 34.5 bp (0.22) | identical |
+| RF class probabilities of *A. obscura* (4 HQ MAGs), all blocks | Trigonopsidomycetes 0.32, Taphrinomycetes 0.19, Dipodascomycetes 0.08; subphylum Sacch. 0.51 / Pez. 0.27 / Taph. 0.22 | 0.32, 0.19, 0.08; 0.51 / 0.28 / 0.21 |
+| RF struct block, top class | Taphrinomycetes 0.70 | Taphrinomycetes 0.72 |
+| RF leave-one-class-out (all): median class maxprob; *A. obscura* maxprob | 0.33; 0.29 | 0.33; 0.30 |
+| RF grouped-CV balanced accuracy, class: all / pfam_ab / all_nonpfam / struct / codon | 0.875 / 0.887 / 0.849 / 0.619 / 0.671 | 0.955 / 0.950 / 0.907 / 0.638 / 0.681 |
+| SwissProt profile (frac S. pombe, pid S. pombe, pid_cov S. pombe) | 0.365, 44.16, 45.90 | identical |
+| contamination: flagged % bp per MAG; contigs flagged | 0.13-4.40 %; 1,575 contigs | identical (`mag_contigs.csv` byte-identical) |
+| AAI vs Mars-82.9 (median; identical-protein share) | 99.2-99.7; 15-38 % | 99.2-99.7; 15-38 % (pair counts differ by 2-7, DIAMOND version) |
+| tree: concatenation; placement of the 6 MAGs | 300 markers, 169,466 columns; sister to Saccharomycotina + Pezizomycotina, SH 1.0; nearest tip *Saitoella* 1.337 | `concat.fasttree.nwk` byte-identical; all 7 robustness trees give the same placement and supports |
+| telomere features (`telomere_tracts`, `telomere_scaffolds`) | | reference medians change slightly (`telomere_summary.parquet` was rebuilt on 2026-11-14); *A. obscura* values unchanged |
+
+- **Data snapshot.** The atlas intermediates (built 2026-11-08) and the raw tables used here are the ones the laptop run read, except `telomere_summary.parquet` (rebuilt 2026-11-14), which explains the only data-driven differences (the two telomere rows). MAG Mars-19.38 and Mars-9.1 are still unannotated.
+- **RF cross-validation.** The OOF predictions differ because the genus folds differ: with the same data, row order and `random_state`, scikit-learn 1.9.1 assigns genera to folds differently from the laptop's installation (its version was not recorded). The balanced accuracy is driven by the smallest classes: in the `all` block Trigonopsidomycetes recall is 0.31 on the laptop and 1.00 here, Geoglossomycetes 0.44 and 0.89; the large classes agree, and 99 % of OOF predictions are the same. Over 10 fold seeds with scikit-learn 1.9.1 the `all` block gives 0.951-0.963 and `struct` 0.638-0.673 (`scratch_notes/prelim/cv_seed_spread.csv` in the bench folder). The laptop value for `all` (0.875) is therefore low, and the statement in section 8 that the classifier is accurate on known classes holds more strongly. The *A. obscura* probabilities come from models fitted on all species and are unaffected, as is the leave-one-class-out calibration.
+- **Tool change.** The single-precision `FastTreeMP` of the HPCC module aborts on this matrix (`PairLogLk: Assertion lkAB > 0`); the double-precision `FastTree.dp` gives a tree byte-identical to the laptop's. Runtime: prep 8 min, rf 13 min, phylo 90 min (hmmsearch 24 min, main tree 57 min, single-threaded), report 5 min.
 
 ## 3. Genome size, gene density and gene structure
 
@@ -926,10 +966,10 @@ Number of the 3,745 Pfam families found in >= 95 % of Pezizomycotina genera that
 ## 13. Files
 
 - Figures: `fable_C_ao_fig1_mag_qc.png`, `fable_C_ao_fig2_pcoa_blocks.png`, `fable_C_ao_fig3_compaction.png`, `fable_C_ao_fig4_percentiles.png`, `fable_C_ao_fig5_rf_probabilities.png`, `fable_C_ao_fig6_rf_importance_loco.png`, `fable_C_ao_fig7_swissprot.png`, `fable_C_ao_fig8_phylogeny.png`.
-- Scripts (run order): `scripts/01_build_set.py`, `02_phylo_taxa.py`, `03_phylo_search.sh`, `04_build_features.py`, `05_ordination.py`, `06_rf.py`, `07_univariate.py`, `08_swissprot_contam.py`, `09_gene_content.py`, `10_figures.py`, `11_phylo_build.py`, `12_composition.py`, `13_phylo_fig.py`, `14_phylo_jackknife.py`, `14b_phylo_jk_eval.py`, `15_rf_fig.py`, `16_report_tables.py`, `17_assemble_report.py`, with `common.py` and `mdtab.py`. They expect the working directory `ao/` in the scratchpad (data, virtualenv and phylogeny files are there).
+- Scripts (run order): `scripts/01_build_set.py`, `02_phylo_taxa.py`, `03_phylo_search.sh`, `04_build_features.py`, `05_ordination.py`, `06_rf.py`, `07_univariate.py`, `08_swissprot_contam.py`, `09_gene_content.py`, `10_figures.py`, `11_phylo_build.py`, `12_composition.py`, `13_phylo_fig.py`, `14_phylo_jackknife.py`, `14b_phylo_jk_eval.py`, `15_rf_fig.py`, `16_report_tables.py`, `17_assemble_report.py`, with `common.py` and `mdtab.py`. They run from the working directory `AO_BASE`. On the HPCC the order is `00_prep_data.py`, `01_build_set.py`, `01b_swissprot_extract.py`, `02_phylo_taxa.py`, `02b_taxa_proteomes.py`, then as above with `08b_mag_aai.py` after 08 and `18_compare_runs.py` last; `run_hpcc.sh` / `run_hpcc.sbatch` run them (section 2.8). Environment: `pixi.toml`; tests: `tests/`.
 - Result tables: `results/*.csv`; tree `results/concat.fasttree.nwk`.
 - **bfd_scratch tables created: none.** The comparison-set aggregation was done locally from the atlas intermediates; MotherDuck was used read-only (table comments, per-MAG protein md5 comparison, Pfam hits of the *Saitoella* reference).
-- HPCC: only `~/antarctolithica/desc.py` (a schema-listing helper). No SLURM job was submitted; the cluster went offline for the shutdown before the scripts could be copied to `~/antarctolithica/`, so the scratchpad copy is the only one.
+- HPCC (2026-11-16 rerun): working directory `~/projects/BFD_dashboard/bench/antarctolithica_C/work/` (data links, phylo/ alignments and trees, results/, figures, `fable_C_antarctolithica.md`, logs/); one-off diagnostics in `bench/antarctolithica_C/scratch_notes/`. `results/taxa_proteomes_hpcc.tsv` (committed here) lists the HPCC protein FASTA of every tree taxon. On 2026-11-10 the only HPCC file was `~/antarctolithica/desc.py` (a schema-listing helper).
 
 ## 14. References
 

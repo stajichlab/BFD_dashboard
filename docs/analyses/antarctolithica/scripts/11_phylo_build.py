@@ -3,7 +3,8 @@ Single-copy rule: best-scoring hit per marker if score >= BUSCO cutoff; marker d
 import os, glob, subprocess, sys, pandas as pd, numpy as np
 from concurrent.futures import ThreadPoolExecutor
 os.chdir('phylo'); os.makedirs('aln', exist_ok=True); os.makedirs('mk', exist_ok=True)
-BIN = '../phyenv/bin/'
+BIN = os.environ.get('PHYBIN', '')   # directory holding mafft/trimal/FastTree; '' = use PATH (HPCC modules)
+NCPU = int(os.environ.get('NCPU', '12'))
 T = pd.read_csv('taxa.tsv', sep='\t'); T['base'] = T.pep.str.replace(r'.*/', '', regex=True).str.replace('.proteins.fa.gz', '')
 cut = pd.read_csv('db/scores_cutoff', sep='\t', header=None, index_col=0)[1]
 best = {}; pres = {}
@@ -36,7 +37,7 @@ def run(m):
     with open(f'mk/{m}.fa', 'w') as o:
         for l, s in seqs[m].items(): o.write(f'>{l}\n{s}\n')
     subprocess.run(f'{BIN}mafft --auto --thread 1 --quiet mk/{m}.fa > aln/{m}.aln.fa && {BIN}trimal -in aln/{m}.aln.fa -out aln/{m}.trim.fa -gappyout', shell=True, check=True)
-with ThreadPoolExecutor(12) as ex: list(ex.map(run, sel))
+with ThreadPoolExecutor(NCPU) as ex: list(ex.map(run, sel))
 cat = {l: [] for l in best}; parts = []
 for m in sel:
     a = {}; name = None
@@ -51,6 +52,6 @@ with open('concat.fa', 'w') as o:
 tot = sum(L for _, L in parts); print('concatenated columns:', tot, 'markers:', len(parts))
 gapf = {l: ''.join(p).count('-') / tot for l, p in cat.items()}; print('gap fraction AO:', {l[-8:]: round(gapf[l], 3) for l in ao})
 pd.Series(gapf).to_csv('concat_gapfrac.csv')
-env = dict(os.environ, OMP_NUM_THREADS='12')
-subprocess.run(f'{BIN}FastTree -lg -gamma -quiet concat.fa > concat.fasttree.nwk 2> fasttree.log', shell=True, check=True, env=env)
+env = dict(os.environ, OMP_NUM_THREADS=str(NCPU))
+subprocess.run(f'{BIN}{os.environ.get("FASTTREE", "FastTree")} -lg -gamma -quiet concat.fa > concat.fasttree.nwk 2> fasttree.log', shell=True, check=True, env=env)
 print('tree done')
