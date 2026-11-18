@@ -3,6 +3,7 @@
 -- repeats in the BFD_dashboard analyses (evidence: REPORT.md section 4).
 -- Run after build_BFD_duckDB.sh AND after compat_views.sql (v_genome_labels reads the `samples` view):
 --     duckdb BFD.duckdb < compat_views.sql
+--     duckdb BFD.duckdb < bfd_traits.sql     (v_genome_labels reads v_genome_traits)
 --     duckdb BFD.duckdb < extra_views.sql
 -- No statement in this file reads a parquet path directly, so the TABLES_DIR line is informative only.
 -- All statements are idempotent. Nothing is materialized. No view reads swissprot_hits.
@@ -37,8 +38,8 @@ CREATE OR REPLACE MACRO in_genome(id, locustag) AS (id >= locustag || '_' AND id
 --   q_ann = annotated; q_dup = busco_duplicated <= 10; q_n50 = N50_bp >= 50000
 --   q_busco_rel = busco_complete >= 25th percentile of its CLASS (classes with >= 20 annotated genomes), else of its PHYLUM
 -- Column names follow atlas_data/labels/genome_labels.parquet (ORDER_, total_length_bp, gc_pct, busco_*).
--- Not included: growth_form, lifestyle and the other FungalTraits columns (they need a file outside tables/;
--- see extra_views_atlas.sql).
+-- FungalTraits columns (growth_form, primary_lifestyle, ...) and SUBPHYLUM come from v_genome_traits, which
+-- sql/bfd_traits.sql defines; apply that file BEFORE this one.
 CREATE OR REPLACE VIEW v_genome_labels AS
 WITH base AS (
   SELECT s.LOCUSTAG, s.ASMID, s.PHYLUM, s.CLASS, s."ORDER" AS ORDER_, s.FAMILY, s.GENUS, s.SPECIES, s.STRAIN,
@@ -46,8 +47,10 @@ WITH base AS (
          a.annotation_status, a.TOTAL_LENGTH AS total_length_bp, a.contig_count, a.N50_bp,
          a.GC_PERCENT AS gc_pct, a.masked_pct,
          b.complete_pct AS busco_complete, b.single_pct AS busco_single, b.duplicated_pct AS busco_duplicated,
-         b.fragmented_pct AS busco_fragmented, b.missing_pct AS busco_missing
+         b.fragmented_pct AS busco_fragmented, b.missing_pct AS busco_missing,
+         t.* EXCLUDE (LOCUSTAG)
   FROM species s
+  LEFT JOIN v_genome_traits t ON s.LOCUSTAG = t.LOCUSTAG
   LEFT JOIN samples sa ON s.LOCUSTAG = sa.LOCUSTAG
   LEFT JOIN asm_stats a ON s.ASMID = a.ASMID
   LEFT JOIN busco_genome b ON s.ASMID = b.ASMID
@@ -81,7 +84,7 @@ SELECT f.*,
         row_number() OVER (PARTITION BY f.GENUS, f.is_representative
                            ORDER BY f.busco_complete DESC NULLS LAST, f.N50_bp DESC NULLS LAST, f.LOCUSTAG) = 1) AS is_genus_rep
 FROM flagged f;
-COMMENT ON VIEW v_genome_labels IS 'One row per genome: taxonomy (ORDER_ has a trailing underscore), assembly and BUSCO values, quality flags q_ann, q_busco_rel, q_busco_rel50, q_dup, q_n50, and is_representative (one genome per SPECIES) and is_genus_rep (one per GENUS). Same rules and column names as atlas genome_labels.parquet (bin/atlas/build_labels.py); the FungalTraits columns (growth_form, lifestyle) are not included. Use WHERE is_representative before counting genomes per clade, or strains are counted as species. Key LOCUSTAG.';
+COMMENT ON VIEW v_genome_labels IS 'One row per genome: taxonomy (ORDER_ has a trailing underscore), assembly and BUSCO values, quality flags q_ann, q_busco_rel, q_busco_rel50, q_dup, q_n50, and is_representative (one genome per SPECIES) and is_genus_rep (one per GENUS). Same rules and column names as atlas genome_labels.parquet (bin/atlas/build_labels.py); FungalTraits columns (growth_form, growth_form_source, primary_lifestyle, secondary_lifestyle, plant_pathogenic_capacity, decay_substrate, animal_biotrophic_capacity, in_fungaltraits, yeast_origin) are a GENUS-level label from FungalTraits 1.2 (in_fungaltraits false = genus not listed); SUBPHYLUM is NULL when the class has no entry in ref_class_subphylum (subphylum_source says where it came from). Use WHERE is_representative before counting genomes per clade, or strains are counted as species. Key LOCUSTAG.';
 
 -- ---------------------------------------------------------------------------
 -- v_genome_coverage: which result tables have rows for each genome

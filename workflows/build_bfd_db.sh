@@ -27,6 +27,7 @@ PIPELINE="${PIPELINE:-/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD}"
 TABLES="${TABLES:-/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/tables}"
 OUT="${OUT:-/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard/db/BFD.duckdb}"
 REPO="${REPO:-/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard}"
+REF_DIR="${REF_DIR:-$REPO/config/refs}"      # FungalTraits, growth-form overrides, class-to-subphylum (sql/bfd_traits.sql)
 BUILDER="$PIPELINE/nextflow/bin/build_BFD_duckDB.sh"
 SCHEMA="$PIPELINE/sql/table_schema.json"
 BIN_DIR="$PIPELINE/nextflow/bin"
@@ -36,6 +37,10 @@ for f in "$BUILDER" "$SCHEMA"; do
   [ -e "$f" ] || { echo "ERROR: missing $f" >&2; exit 1; }
 done
 [ -d "$TABLES" ] || { echo "ERROR: tables dir $TABLES not found" >&2; exit 1; }
+for f in fungaltraits_1.2.utf8.csv growth_form_overrides.tsv class_subphylum.tsv phylum_subphylum.tsv; do
+  [ -e "$REF_DIR/$f" ] || { echo "ERROR: missing $REF_DIR/$f (set REF_DIR or REPO)" >&2; exit 1; }
+done
+REF_DIR="$(cd "$REF_DIR" && pwd)"
 TABLES="$(cd "$TABLES" && pwd)"   # the builder writes this absolute path into every view
 
 OUT_DIR="$(dirname "$OUT")"
@@ -54,14 +59,18 @@ TABLES="$TABLES" DBDIR="$STAGE" BIN_DIR="$BIN_DIR" SCHEMA="$SCHEMA" \
 
 # ---- MotherDuck-compatibility and helper views ------------------------------
 # sql/bfd_compat_views.sql: MotherDuck table names that the pipeline builder lacks, plus comments.
+# sql/bfd_traits.sql      : ref_fungaltraits, ref_growth_form_override, ref_class_subphylum (small tables copied into
+#                           the database from $REF_DIR) and v_genome_traits; must run before bfd_extra_views.sql.
 # sql/bfd_extra_views.sql : helper views and the in_genome() macro (see docs/BFD_VIEW_REVIEW.md).
-# Both files carry the tables path on their first line; replace it with the real $TABLES.
-# Both are idempotent and read only parquet, so nothing is copied into the database.
+# Each file carries a path on its first line (TABLES_DIR=, or REF_DIR= for bfd_traits.sql); replace it with the real one.
+# All are idempotent. The compat and extra views read only parquet; only the three ref_* tables hold data.
 SQLDIR="$REPO/sql"
-for f in bfd_compat_views.sql bfd_extra_views.sql; do
+for f in bfd_compat_views.sql bfd_traits.sql bfd_extra_views.sql; do
   [ -e "$SQLDIR/$f" ] || { echo "ERROR: missing $SQLDIR/$f" >&2; exit 1; }
-  DEFAULT_T="$(sed -n '1s/^-- TABLES_DIR=//p' "$SQLDIR/$f")"
-  sed "s#${DEFAULT_T:-/nonexistent}#$TABLES#g" "$SQLDIR/$f" > "$STAGE/$f"
+  if [ "$f" = bfd_traits.sql ]; then KEY=REF_DIR; NEWPATH="$REF_DIR"; else KEY=TABLES_DIR; NEWPATH="$TABLES"; fi
+  DEFAULT_T="$(sed -n "1s/^-- ${KEY}=//p" "$SQLDIR/$f")"
+  [ -n "$DEFAULT_T" ] || { echo "ERROR: $f line 1 must be '-- ${KEY}=<path>'" >&2; exit 1; }
+  sed "s#${DEFAULT_T}#${NEWPATH}#g" "$SQLDIR/$f" > "$STAGE/$f"
   echo "Applying $f"
   duckdb "$STAGE/BFD.duckdb" < "$STAGE/$f"
 done
@@ -103,9 +112,29 @@ for name in MD_NAMES:
         con.sql(f'SELECT * FROM "{name}" LIMIT 0')
     except Exception as e:
         problems.append(f"MotherDuck name {name} does not resolve: {str(e)[:120]}")
-for name in ["v_genome_labels", "v_genome_secretome"]:
+for name in ["v_genome_labels", "v_genome_secretome", "v_genome_traits"]:
     if name not in views:
         problems.append(f"helper view {name} missing")
+
+# trait tables and the v_genome_labels join: one row per genome, nothing multiplied or lost
+for name in ["ref_fungaltraits", "ref_growth_form_override", "ref_class_subphylum", "ref_phylum_subphylum"]:
+    try:
+        n = con.sql(f"SELECT count(*) FROM {name}").fetchone()[0]
+    except Exception as e:
+        problems.append(f"table {name} missing: {str(e)[:120]}")
+        continue
+    print(f"  {name:26s} {n:,d} rows")
+    if n == 0:
+        problems.append(f"table {name} is empty")
+try:
+    n_sp = con.sql("SELECT count(*) FROM species").fetchone()[0]
+    n_lab, n_key = con.sql("SELECT count(*), count(DISTINCT LOCUSTAG) FROM v_genome_labels").fetchone()
+    n_nosub = con.sql("SELECT count(*) FROM v_genome_labels WHERE SUBPHYLUM IS NULL").fetchone()[0]
+    print(f"  v_genome_labels rows={n_lab:,d} distinct LOCUSTAG={n_key:,d} species={n_sp:,d}; SUBPHYLUM NULL for {n_nosub:,d}")
+    if not (n_lab == n_key == n_sp):
+        problems.append(f"v_genome_labels rows {n_lab}, distinct LOCUSTAG {n_key}, species rows {n_sp} must be equal")
+except Exception as e:
+    problems.append(f"v_genome_labels check failed: {str(e)[:160]}")
 
 if Path(old_db).exists():
     old = duckdb.connect(old_db, read_only=True)
