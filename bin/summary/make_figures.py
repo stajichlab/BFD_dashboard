@@ -22,6 +22,8 @@ The .qmd pages state the unit for every figure.
 """
 import colorsys
 import json
+import os
+import shutil
 import sys
 from pathlib import Path
 
@@ -723,7 +725,53 @@ def _resolve_suppress(suppress):
     return suppress if isinstance(suppress, pd.DataFrame) else load_suppress(suppress)
 
 
-def main(data, out, levels=LEVELS, suppress=None):
+def tf_extra_dirs(data, option=None):
+    """Directories with prebuilt TF outputs (target conservation, orthologs) to copy into the run's out tree.
+    Order of precedence: `option` (CLI; 'none' disables), environment BFD_TF_EXTRA_DIRS (os.pathsep list), then the
+    default <data dir's parent>/tf_targets and <data dir's parent>/tf_orthologs."""
+    val = option if option is not None else os.environ.get("BFD_TF_EXTRA_DIRS")
+    if val is not None:
+        return [Path(p) for p in val.split(os.pathsep) if p and p != "none"]
+    base = Path(data).resolve().parent
+    return [base / "tf_targets", base / "tf_orthologs"]
+
+
+def import_tf_extra(out, dirs):
+    """Copy figures/ (PNG, SVG, JSON sidecars), tables/ and tables_tf/ of each prebuilt directory into the out tree, so
+    one tree is packaged and figures_index.tsv (built from the PNGs and sidecars on disk) lists them. A directory that
+    does not exist is skipped; one note covers all missing directories. Returns Made records for the copied PNGs."""
+    out = Path(out)
+    made, missing = [], []
+    for d in dirs:
+        d = Path(d)
+        if not d.is_dir():
+            missing.append(str(d))
+            continue
+        for src_name, dst_rel in (("figures", None), ("tables", None), ("tables_tf", "tables/tf")):
+            src = d / src_name
+            if not src.is_dir():
+                continue
+            for f in sorted(src.rglob("*")):
+                if not f.is_file():
+                    continue
+                rel = f.relative_to(src)
+                dst = out / (Path(dst_rel) / rel if dst_rel else Path(src_name) / rel)
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(f, dst)
+                if src_name == "figures" and f.suffix == ".png":
+                    try:
+                        side = json.loads(f.with_suffix(".json").read_text())
+                    except (OSError, ValueError):
+                        side = {}
+                    made.append(Made(f.stem, side.get("topic"), "figure", side.get("scope") or "representatives"))
+    if missing:
+        print(f"TF prebuilt outputs not found (skipped): {', '.join(missing)}", flush=True)
+    elif made:
+        print(f"copied {len(made)} prebuilt TF figures into {out}", flush=True)
+    return made
+
+
+def main(data, out, levels=LEVELS, suppress=None, tf_extra=None):
     from suppress import drop_suppressed
     sup = _resolve_suppress(suppress)
     dropped = set()
@@ -810,6 +858,15 @@ def main(data, out, levels=LEVELS, suppress=None):
                 traceback.print_exc(file=sys.stderr)
                 print(f"ordination failed: {type(e).__name__}: {e}", flush=True)
                 RUN_STATUS["failed"].append(f"ordination ({type(e).__name__}: {e})")
+    try:     # prebuilt TF target/ortholog outputs: copied in before the index is built; a failure must not stop the run
+        extra = import_tf_extra(out, tf_extra_dirs(data, tf_extra))
+        if extra:
+            made["tf_prebuilt"] = extra
+    except Exception as e:
+        import traceback
+        traceback.print_exc(file=sys.stderr)
+        print(f"TF prebuilt copy failed: {type(e).__name__}: {e}", flush=True)
+        RUN_STATUS["failed"].append(f"TF prebuilt copy ({type(e).__name__}: {e})")
     try:
         from figure_index import build_index
         idx = build_index(Path(out))
@@ -835,8 +892,13 @@ def run_cli(argv):
         val = argv[i + 1]
         suppress = pd.DataFrame({"species_prefix": []}) if val == "none" else val
         del argv[i:i + 2]
+    tf_extra = None
+    if "--tf-extra" in argv:
+        i = argv.index("--tf-extra")
+        tf_extra = argv[i + 1]
+        del argv[i:i + 2]
     levels = tuple(argv[3].split(",")) if len(argv) > 3 else LEVELS
-    main(argv[1], argv[2], levels, suppress=suppress)
+    main(argv[1], argv[2], levels, suppress=suppress, tf_extra=tf_extra)
     skipped = RUN_STATUS["skipped"]
     print(f"skipped figures: {len(skipped)}" + (" (" + ", ".join(skipped) + ")" if skipped else ""), flush=True)
     if RUN_STATUS["failed"]:
