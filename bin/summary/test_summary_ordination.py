@@ -352,3 +352,65 @@ def test_r2_adj_in_permanova_table(tmp_path):
     t = pd.read_csv(tmp_path / "tables" / "ordination" / "codon_permanova.tsv", sep="\t")
     r = t[t.grouping == "PHYLUM"].iloc[0]
     assert r.R2_adj == pytest.approx(1 - (1 - r.R2) * (r.n_genera - 1) / (r.n_genera - r.n_groups))
+
+
+# ---- ordination legend placement ----
+def _scatter_fixture(n_phyla=6):
+    import matplotlib
+    matplotlib.use("Agg")
+    rng = np.random.default_rng(3)
+    n = 60
+    coords = pd.DataFrame({"PCo1": rng.normal(size=n), "PCo2": rng.normal(size=n)})
+    phyla = [f"Phylum{i % n_phyla}" for i in range(n)]
+    groups = pd.Series(phyla)
+    names = list(dict.fromkeys(phyla))
+    colors = {p: f"C{i}" for i, p in enumerate(names)}
+    src = pd.DataFrame({"x": [0]})
+    src.attrs["parent_colors"] = {**colors, "Other": "#999999"}
+    return coords, groups, colors, src
+
+
+def test_ordination_legend_outside_right_two_columns_small_font():
+    coords, groups, colors, src = _scatter_fixture()
+    fig = so._scatter(coords, groups, colors, [10.0, 5.0], src, "t")
+    ax = fig.axes[0]
+    leg = ax.get_legend()
+    assert leg is not None
+    fig.canvas.draw()
+    assert leg.get_window_extent().x0 >= ax.get_window_extent().x1
+    assert leg._ncols == 2
+    sizes = {t.get_fontsize() for t in leg.get_texts()}
+    assert max(sizes) <= 6.5 and min(sizes) >= 5.5
+    assert leg.get_title().get_fontsize() <= 6.5
+    # the legend must lie inside the figure canvas
+    fb = fig.bbox
+    ext = leg.get_window_extent()
+    assert ext.x1 <= fb.x1 and ext.x0 >= fb.x0
+
+
+def test_default_parent_legend_unchanged():
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    _, _, _, src = _scatter_fixture()
+    fig, ax = plt.subplots()
+    mf.parent_legend(ax, src)
+    fig.canvas.draw()
+    leg = ax.get_legend()
+    assert leg._ncols == 1
+    assert {t.get_fontsize() for t in leg.get_texts()} == {7}
+    ext, axe = leg.get_window_extent(), ax.get_window_extent()
+    assert ext.x1 <= axe.x1 + 1 and ext.x0 >= axe.x0
+    plt.close(fig)
+
+
+def test_saved_png_does_not_cut_off_the_legend(tmp_path):
+    import matplotlib.pyplot as plt
+    coords, groups, colors, src = _scatter_fixture(n_phyla=8)
+    fig = so._scatter(coords, groups, colors, [10.0, 5.0], src, "t")
+    o = mf.Out(tmp_path, "ordination")
+    o.save(fig, "ord_test")
+    img = plt.imread(next(tmp_path.rglob("ord_test.png")))[..., :3]
+    nonwhite = np.where((img < 0.95).any(axis=2).any(axis=0))[0]
+    assert nonwhite.size
+    assert nonwhite.max() < img.shape[1] - 3   # margin right of the last drawn pixel
