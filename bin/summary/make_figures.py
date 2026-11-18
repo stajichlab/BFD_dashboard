@@ -777,6 +777,23 @@ def main(data, out, levels=LEVELS, suppress=None):
                 traceback.print_exc(file=sys.stderr)
                 print(f"TF claims page failed: {type(e).__name__}: {e}", flush=True)
                 RUN_STATUS["failed"].append(f"TF claims ({type(e).__name__}: {e})")
+            try:     # expansions and contractions: hypotheses; after the claims page; a failure must not stop the run
+                from tf_data import genus_table
+                from tf_expansion import page_tf_expansion
+                pf_tab = rd("tf_paper_family_genome")     # FileNotFoundError: one note below, no page
+                tf_fam_all = rd("tf_family_genome")
+                oe = Out(out, "tf")
+                g80 = genus_table(genome_all, tf_fam_all, tf_summ_all, busco_min=80, paper_fam=pf_tab)
+                g0 = genus_table(genome_all, tf_fam_all, tf_summ_all, paper_fam=pf_tab)
+                page_tf_expansion(g80, g0, oe, porder=porder)
+                made["tf"] = list(made.get("tf", [])) + list(oe.made)
+            except FileNotFoundError as e:
+                print(f"TF expansion page skipped: table absent ({e})", flush=True)
+            except Exception as e:
+                import traceback
+                traceback.print_exc(file=sys.stderr)
+                print(f"TF expansion page failed: {type(e).__name__}: {e}", flush=True)
+                RUN_STATUS["failed"].append(f"TF expansion ({type(e).__name__}: {e})")
         from summary_ordination import pick_complete_reps, run_ordination   # runs once, not per level
         mats = {}
         for key, tname in (("codon", "codon_genome"), ("aa", "aa_genome"), ("structure", "gene_structure_genome")):
