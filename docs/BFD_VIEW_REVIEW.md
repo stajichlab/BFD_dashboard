@@ -330,6 +330,8 @@ I ran the joined example as written for F77FFF1D: 15,550 introns (12 fewer than 
 
 Answer to your question on the label file: representatives, quality flags, growth form and lifestyle are in `BFD_dashboard/atlas_data/labels/genome_labels.parquet` (42 columns, 23,680 rows, written 2026-11-08 by `bin/atlas/build_labels.py`). It **can** be exposed as a view over parquet, and the view works (tested). Two facts limit it. The file is outside `tables/`, so the build script needs a second path. The file is built by a dashboard job from `tables/` plus the FungalTraits CSV, so it can be older than `tables/`. `v_genome_labels` avoids both limits for every column except the FungalTraits ones, because it is computed from `tables/` at query time and it matches the file exactly today.
 
+> Update 2026-11-18: `v_genome_labels` now includes the FungalTraits columns and `SUBPHYLUM` (from `sql/bfd_traits.sql`, reference files in `config/refs/`; see `docs/superpowers/specs/2026-11-18-bfd-traits-subphylum-design.md`). The statements above that the database lacks growth form and lifestyle describe the 2026-11-17 state.
+
 ---
 
 ## 5. Rejected or not done

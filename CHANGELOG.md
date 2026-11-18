@@ -9,6 +9,12 @@ reaches a stable 1.0, minor version bumps mean "something was added or changed".
 ## [Unreleased]
 
 ### Added
+- `v_genome_labels` carries FungalTraits 1.2 columns (`growth_form`, `growth_form_source`, `primary_lifestyle`,
+  `secondary_lifestyle`, `plant_pathogenic_capacity`, `decay_substrate`, `animal_biotrophic_capacity`,
+  `in_fungaltraits`, `yeast_origin`) and `SUBPHYLUM` / `subphylum_source`. `sql/bfd_traits.sql` loads the reference
+  files in `config/refs/` into three `ref_*` tables and defines `v_genome_traits`; `workflows/build_bfd_db.sh` applies it
+  and checks the result before publishing. `bin/check_traits_vs_atlas.py` compares the DB with the atlas parquet.
+  `SUBPHYLUM` is NULL when the class has no entry in `config/refs/class_subphylum.tsv` (rows marked `proposed` are unchecked).
 - `pyproject.toml` (PEP 621) describing the project and dependencies: core
   (`duckdb`, `numpy`, `pandas`, `scipy`, `PyYAML`) plus `phylogeny`
   (`biopython`) and `alt-ordinations` (`scikit-learn`, `umap-learn`) extras.

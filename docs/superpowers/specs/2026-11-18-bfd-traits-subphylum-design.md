@@ -35,7 +35,7 @@ ecology without reading files outside the database.
 
 ## Design
 - Reference files in `config/refs/`: `fungaltraits_1.2.utf8.csv` (UTF-8 copy of the DeltaGain_Fungi file), `growth_form_overrides.tsv` (copy of the atlas file), `class_subphylum.tsv` (seeded from `taxonomy.py`, one row per class, with a `source` column).
-- New file `sql/bfd_traits.sql`: creates the `ref_*` tables from the files and replaces `v_genome_labels` to join them. Repo file paths are substituted at build time the same way `TABLES` is.
+- New file `sql/bfd_traits.sql`: creates the `ref_*` tables from the files and defines `v_genome_traits` (one row per genome); `v_genome_labels` in `bfd_extra_views.sql` left-joins it. (Changed from "replaces `v_genome_labels`" during planning so the view is edited, not copied.) Repo file paths are substituted at build time the same way `TABLES` is.
 - `workflows/build_bfd_db.sh` applies it after `bfd_extra_views.sql` and extends the verify block: `v_genome_labels` count equals `species` count; no duplicate `LOCUSTAG`; the three ref tables are non-empty; print unmapped-class genome count.
 - Test, outside the build: compare `growth_form` and `primary_lifestyle` per genome with the atlas parquet.
 - FungalTraits is cited as Polme et al. 2020, Fungal Diversity 105:1-16 (verify before publication).
