@@ -2,6 +2,7 @@
 
 Run on the HPCC:  python3.12 -m pytest -q -W error::UserWarning bin/summary/test_figs_tf.py
 """
+import json
 import re
 import sys
 from pathlib import Path
@@ -13,7 +14,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import make_figures as mf  # noqa: E402
 import tf_data  # noqa: E402
-from figs_tf import FIGURES, RARE_ACCESSIONS, page_tf_landscape  # noqa: E402
+from figs_tf import FIGURES, RARE_ACCESSIONS, page_tf_all, page_tf_landscape  # noqa: E402
 from test_make_figures import synth  # noqa: E402
 
 NAMES = ["T01_tf_fraction", "T02_tf_composition", "T03_tf_family_heatmap", "T04_tf_rare_presence", "T05_tf_shannon",
@@ -65,26 +66,75 @@ def _fig(out, level, name, ext="png"):
 
 
 NO_SUPPRESS = pd.DataFrame({"species_prefix": []})
+LEVEL_NAMES = NAMES[:5]
+ALL_NAME = NAMES[5]
 
 
-def test_all_tf_figures_written(data, tmp_path):
+def run_pages(root, out, levels, suppress=NO_SUPPRESS):
+    """The TF pages without main(): the level pages (page_tf_landscape) and the all-genome page, read the way
+    main reads the tables (suppress list applied at read time)."""
+    from suppress import drop_suppressed
+    cache = {}
+
+    def rd(n):
+        if n not in cache:
+            cache[n] = drop_suppressed(pd.read_parquet(Path(root) / f"{n}.parquet"), suppress)[0]
+        return cache[n]
+    core0 = rd("genome_core")
+    core0 = core0[core0["n_genes"].notna()]
+    porder = mf.phylum_order(rd("genome_all"))
+    made = {}
+    for level in levels:
+        core, lv, colors = mf.assign_groups(core0, level, phylum_order=porder)
+        o = mf.Out(out, level)
+        o.set_groups(core, lv)
+        page_tf_landscape(core, lv, colors, rd("tf_family_genome"), rd("tf_summary_genome"), o)
+        made[level] = o.made
+    made["all"] = page_tf_all(rd("genome_all"), rd("tf_summary_genome"), out, porder)
+    return made
+
+
+@pytest.fixture(scope="module")
+def pages(data, tmp_path_factory):
     root, _, _ = data
-    made = mf.main(root, tmp_path / "out", ("phylum", "order"), suppress=NO_SUPPRESS)
+    out = tmp_path_factory.mktemp("pages")
+    made = run_pages(root, out, ("phylum", "order"))
+    return out, made
+
+
+def test_all_tf_figures_written(pages):
+    out, made = pages
     for level in ("phylum", "order"):
-        for name in NAMES:
+        for name in LEVEL_NAMES:
             for ext in ("png", "svg"):
-                assert _fig(tmp_path / "out", level, name, ext).stat().st_size > 1000, (level, name, ext)
+                assert _fig(out, level, name, ext).stat().st_size > 1000, (level, name, ext)
         by = {m: m for m in made[level]}
-        assert {by[n].topic for n in NAMES} == {"tf"}
-        assert by["T06_tf_vs_proteome"].scope == "all_genomes"
+        assert {by[n].topic for n in LEVEL_NAMES} == {"tf"}
         assert by["T01_tf_fraction"].scope == "representatives"
         assert not any(getattr(m, "kind", "") == "skipped" for m in made[level])
-    idx = pd.read_csv(tmp_path / "out" / "figures_index.tsv", sep="\t")
-    assert set(NAMES) <= set(idx["name"])
-    assert set(idx.loc[idx["name"].isin(NAMES), "topic"]) == {"tf"}
-    assert FIGURES == NAMES
-    for p in (tmp_path / "out" / "figures").rglob("*.*"):
+        assert not _fig(out, level, ALL_NAME).exists() and not _fig(out, level, ALL_NAME, "svg").exists()
+        assert ALL_NAME not in made[level]
+    for ext in ("png", "svg"):
+        assert _fig(out, "all", ALL_NAME, ext).stat().st_size > 1000
+    t06 = {m: m for m in made["all"]}[ALL_NAME]
+    assert t06.scope == "all_genomes" and t06.topic == "tf"
+    assert FIGURES == LEVEL_NAMES
+    for p in (out / "figures").rglob("*.*"):
         assert re.fullmatch(r"[A-Za-z0-9_]+\.(png|svg|json)", p.name), p
+
+
+def test_index_has_effect_sizes_for_t01_t05(pages):
+    from figure_index import build_index
+    out, _ = pages
+    idx = build_index(out).set_index(["level", "name"])
+    for level in ("phylum", "order"):
+        for n in ("T01_tf_fraction", "T05_tf_shannon"):
+            r = idx.loc[(level, n)]
+            assert np.isfinite(r["effect_size"]) and r["signal_kind"] == "epsilon2", (level, n)
+        assert idx.loc[(level, "T02_tf_composition")]["topic"] == "tf"
+    r = idx.loc[("all", ALL_NAME)]
+    assert r["topic"] == "tf" and r["scope"] == "all_genomes"
+    assert not any(n == ALL_NAME for lv, n in idx.index if lv != "all")
 
 
 def test_main_skips_without_tf_tables(tmp_path, capsys):
@@ -95,7 +145,7 @@ def test_main_skips_without_tf_tables(tmp_path, capsys):
     out = capsys.readouterr().out
     assert out.count("TF landscape skipped") == 1
     assert "F01_genomes_by_group" in made["phylum"]
-    assert not any(m in NAMES or m == "T_tf_groups" for lv in ("phylum", "order") for m in made[lv])
+    assert not any(m in NAMES or m == "T_tf_groups" for lv in made for m in made[lv])
 
 
 def _ga(rows):
@@ -162,31 +212,31 @@ LONG1 = "Fungal-specific transcription factor domain (C-terminal to Zn_clus)"
 LONG2 = "Fungal-specific transcription factor domain 2 (Fungal_trans_2)"
 
 
-def _handmade(tmp_path, n_single=True, shannon_nan=False):
-    """Direct call of the page: one phylum with a one-genome group, a zero-TF and an empty-proteome genome."""
-    ids = [f"S{i:02d}" for i in range(13)]
-    grp = ["Big"] * 10 + ["Single", "Unknown", "Unknown"]
+def _handmade(tmp_path, shannon_nan=False):
+    """Direct call of the page: a one-genome group, a zero-TF and an empty-proteome genome, two big groups."""
+    ids = [f"S{i:02d}" for i in range(17)]
+    grp = ["Big"] * 10 + ["Mid"] * 4 + ["Single"] + ["Unknown"] * 2
     core = pd.DataFrame({"species_prefix": ids, "grp": grp, "PHYLUM": "Ascomycota", "gc_pct": 50.0})
-    levels = ["Big", "Single", "Unknown"]
-    colors = {"Big": "#0072B2", "Single": "#0072B2", "Unknown": "#d4d4d4"}
+    levels = ["Big", "Mid", "Single", "Unknown"]
+    colors = {"Big": "#0072B2", "Mid": "#009E73", "Single": "#0072B2", "Unknown": "#d4d4d4"}
     rng = np.random.default_rng(3)
-    fam = pd.DataFrame([(i, f, int(rng.integers(1, 40))) for i in ids[:11] for f in ["Zn(II)2Cys6 zinc cluster", "WRKY", LONG1, LONG2]],
+    fam = pd.DataFrame([(i, f, int(rng.integers(1, 40))) for i in ids[:15]
+                        for f in ["Zn(II)2Cys6 zinc cluster", "WRKY", LONG1, LONG2]],
                        columns=["species_prefix", "family", "n_proteins"])
-    summ = pd.DataFrame({"species_prefix": ids, "n_proteins_total": [900] * 11 + [0, 500],
-                         "n_tf_proteins": [20] * 11 + [0, 0], "tf_fraction": [0.02] * 11 + [np.nan, 0.0],
-                         "n_families": [2] * 11 + [0, 0],
-                         "shannon": ([np.nan] * 13 if shannon_nan else [0.5] * 11 + [np.nan, np.nan])})
-    ga = pd.DataFrame({"species_prefix": ids, "PHYLUM": "Ascomycota"})
+    summ = pd.DataFrame({"species_prefix": ids, "n_proteins_total": [900] * 15 + [0, 500],
+                         "n_tf_proteins": [20] * 15 + [0, 0], "tf_fraction": [0.02] * 15 + [np.nan, 0.0],
+                         "n_families": [2] * 15 + [0, 0],
+                         "shannon": ([np.nan] * 17 if shannon_nan else [0.5] * 15 + [np.nan, np.nan])})
     o = mf.Out(tmp_path, "phylum")
     o.set_groups(core, levels)
-    page_tf_landscape(core, levels, colors, fam, summ, o, genome_all=ga)
+    page_tf_landscape(core, levels, colors, fam, summ, o)
     return o
 
 
 def test_nan_and_empty_groups_do_not_crash(tmp_path):
     o = _handmade(tmp_path)
     kinds = {m: m.kind for m in o.made}
-    for n in NAMES:
+    for n in LEVEL_NAMES:
         assert kinds[n] == "figure", (n, kinds)
     # a rare family absent everywhere (E2F_TDP) is a zero row, not an error
     assert (tmp_path / "figures" / "phylum" / "T04_tf_rare_presence.png").stat().st_size > 1000
@@ -223,31 +273,47 @@ def test_rare_families_resolved_from_map_by_accession():
     assert len(labels) == len(set(labels)) == 6
 
 
-def test_suppressed_genome_absent_from_tf_outputs(data, tmp_path):
+def test_suppressed_genome_absent_from_tf_outputs(data, tmp_path, monkeypatch):
+    import figs_tf
     root, _, summ = data
-    gone = pd.read_parquet(root / "genome_core.parquet")["species_prefix"].iloc[5]
-    sup = pd.DataFrame({"species_prefix": [gone]})
-    mf.main(root, tmp_path / "out", ("phylum",), suppress=sup)
-    mf.main(root, tmp_path / "base", ("phylum",), suppress=NO_SUPPRESS)
+    core = pd.read_parquet(root / "genome_core.parquet")
+    has_tf = summ[(summ["n_proteins_total"] > 0) & (summ["n_tf_proteins"] > 0)]["species_prefix"]
+    gone = core[core["species_prefix"].isin(set(has_tf))]["species_prefix"].iloc[5]
+    base = run_pages(root, tmp_path / "base", ("phylum",))
+    seen = []     # the source frames (d, fam) of every TF level figure
+
+    def spy(fn):
+        def wrapper(d, *a, **k):
+            seen.append(d)
+            seen.extend(x for x in a if isinstance(x, pd.DataFrame) and "family" in x.columns)
+            return fn(d, *a, **k)
+        return wrapper
+    for name in ("_box", "_composition", "_family_heat", "_rare_heat"):
+        monkeypatch.setattr(figs_tf, name, spy(getattr(figs_tf, name)))
+    mf.main(root, tmp_path / "out", ("phylum",), suppress=pd.DataFrame({"species_prefix": [gone]}))
+    assert len(seen) >= 5
+    for fr in seen:
+        assert gone not in set(fr["species_prefix"])
     t = pd.read_csv(tmp_path / "out" / "tables" / "phylum" / "T_tf_groups.tsv", sep="\t")
     b = pd.read_csv(tmp_path / "base" / "tables" / "phylum" / "T_tf_groups.tsv", sep="\t")
     assert t["n_genomes"].sum() == b["n_genomes"].sum() - 1
-    # the all-genome scatter drops it as well
-    s = pd.read_json(tmp_path / "out" / "figures" / "phylum" / "T06_tf_vs_proteome.json", typ="series")
-    sb = pd.read_json(tmp_path / "base" / "figures" / "phylum" / "T06_tf_vs_proteome.json", typ="series")
-    assert s["name"] == sb["name"]
+    # T06 sits once under figures/all/ and plots exactly one genome less
+    n_out = json.loads((tmp_path / "out" / "figures" / "all" / f"{ALL_NAME}.json").read_text())["n_genomes"]
+    n_base = json.loads((tmp_path / "base" / "figures" / "all" / f"{ALL_NAME}.json").read_text())["n_genomes"]
+    assert n_out == n_base - 1
+    assert not _fig(tmp_path / "out", "phylum", ALL_NAME).exists()
+    assert _fig(tmp_path / "out", "all", ALL_NAME).stat().st_size > 1000
 
 
-def test_deterministic_output(data, tmp_path):
+def test_deterministic_output(data, pages, tmp_path):
     root, _, _ = data
-    mf.main(root, tmp_path / "a", ("order",), suppress=NO_SUPPRESS)
-    mf.main(root, tmp_path / "b", ("order",), suppress=NO_SUPPRESS)
-    for n in NAMES:
-        a = _fig(tmp_path / "a", "order", n).read_bytes()
-        b = _fig(tmp_path / "b", "order", n).read_bytes()
-        assert a == b, n
-    ta = (tmp_path / "a" / "tables" / "order" / "T_tf_groups.tsv").read_bytes()
-    assert ta == (tmp_path / "b" / "tables" / "order" / "T_tf_groups.tsv").read_bytes()
+    out, _ = pages
+    run_pages(root, tmp_path / "b", ("order",))
+    for n in LEVEL_NAMES:
+        assert _fig(out, "order", n).read_bytes() == _fig(tmp_path / "b", "order", n).read_bytes(), n
+    assert _fig(out, "all", ALL_NAME).read_bytes() == _fig(tmp_path / "b", "all", ALL_NAME).read_bytes()
+    for t in ("T_tf_groups", "T_anova_tf"):
+        assert (out / "tables" / "order" / f"{t}.tsv").read_bytes() == (tmp_path / "b" / "tables" / "order" / f"{t}.tsv").read_bytes()
 
 
 def test_short_labels_stay_unique():
@@ -259,14 +325,43 @@ def test_short_labels_stay_unique():
     assert len(set(sm.values())) == 2 and all(len(v) <= 44 for v in sm.values())
 
 
+def _zframe():
+    """3 groups: A (50 genomes), B (48), C (2). Family X in all, family R in 2 of 100 genomes (2%)."""
+    ids = [f"g{i:03d}" for i in range(100)]
+    grp = ["A"] * 50 + ["B"] * 48 + ["C"] * 2
+    d = pd.DataFrame({"species_prefix": ids, "grp": grp, "n_proteins_total": 1000})
+    x = [10] * 50 + [30] * 48 + [500] * 2
+    fam = pd.DataFrame({"species_prefix": ids, "family": "X", "n_proteins": x})
+    r = pd.DataFrame({"species_prefix": ids[:2], "family": "R", "n_proteins": 3})
+    return d, pd.concat([fam, r], ignore_index=True)
+
+
+def test_family_z_rare_family_not_a_row_and_small_group_masked():
+    from figs_tf import family_z
+    d, fam = _zframe()
+    z = family_z(d, fam, ["A", "B", "C"])
+    assert list(z.index) == ["X"]                       # R is in 2% of the genomes: left out
+    assert np.isnan(z.loc["X", "C"])                    # 2 genomes: masked
+    assert z.loc["X", "A"] < 0 < z.loc["X", "B"]        # and it does not set the z-scale (C has the largest mean)
+    assert abs(z.loc["X", "A"]) == pytest.approx(abs(z.loc["X", "B"]))
+    z1 = family_z(d, fam, ["A", "B", "C"], min_prevalence=0.0, min_genomes=1)
+    assert set(z1.index) == {"X", "R"} and np.isfinite(z1.loc["X", "C"])
+
+
 def test_family_z_values():
     from figs_tf import family_z
     d = pd.DataFrame({"species_prefix": ["a", "b", "c", "d", "e"], "grp": ["G1", "G1", "G2", "G2", "G3"],
                       "n_proteins_total": [100, 100, 100, 100, 0]})
     fam = pd.DataFrame({"species_prefix": ["a", "b", "c", "d", "a", "b", "c", "d"],
                         "family": ["X"] * 4 + ["Y"] * 4, "n_proteins": [10, 10, 30, 30, 5, 5, 5, 5]})
-    z = family_z(d, fam, ["G1", "G2", "G3"])
+    z = family_z(d, fam, ["G1", "G2", "G3"], min_genomes=1)
     assert list(z.index) == ["X", "Y"]
     assert z.loc["X", "G1"] < 0 < z.loc["X", "G2"] and np.isnan(z.loc["X", "G3"])   # real contrast, empty group NaN
     assert (z.loc["Y", ["G1", "G2"]] == 0).all()                                      # same in every group: 0
     assert z.loc["X"].abs().max() > 0.5
+
+
+def test_tick_labels_darker_than_group_colour():
+    from figs_tf import _dark
+    r, g, b = _dark("#0072B2")
+    assert r == pytest.approx(0) and g == pytest.approx(0.447 * 0.6, abs=0.01) and b == pytest.approx(0.698 * 0.6, abs=0.01)

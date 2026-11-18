@@ -1,7 +1,7 @@
 """TF landscape figures (topic 'tf'), T01-T06, from tf_family_genome and tf_summary_genome.
 
 Unit: one representative genome per species (the level pages). Group values are means or medians over genomes.
-T06 is the exception: it plots every genome (scope all_genomes). Family counts are counts of proteins per
+T06 (page_tf_all, written once under figures/all/) is the exception: it plots every genome (scope all_genomes). Family counts are counts of proteins per
 family; a protein with domains of two families counts once in each, so the family counts of a genome can add up
 to more than its n_tf_proteins. No figure here says anything about regulation or binding.
 """
@@ -13,19 +13,43 @@ import pandas as pd
 
 from figs_common import safe
 from figs_scatter import scatter_all
-from make_figures import GREY, box_by_group, group_mean, heat, parent_legend, per_genome_fraction, phylum_color_map, \
+from matplotlib.colors import to_rgb
+import matplotlib as mpl
+from stats import group_tests
+from make_figures import GREY, Out, box_by_group, group_mean, heat, parent_legend, per_genome_fraction, phylum_color_map, \
     phylum_order, stacked_by_group, width
 from tf_data import rare_family_labels
 
 TOPIC = "tf"
-FIGURES = ["T01_tf_fraction", "T02_tf_composition", "T03_tf_family_heatmap", "T04_tf_rare_presence", "T05_tf_shannon",
-           "T06_tf_vs_proteome"]
+FIGURES = ["T01_tf_fraction", "T02_tf_composition", "T03_tf_family_heatmap", "T04_tf_rare_presence", "T05_tf_shannon"]
+ALL_FIGURE = "T06_tf_vs_proteome"     # written once under figures/all/, not per level
+MIN_PREVALENCE = 0.05      # T03 leaves out families present in fewer than this share of the genomes
+MIN_GROUP_GENOMES = 3      # T03 masks the cells of groups with fewer genomes (with a proteome) than this
+TICK_DARKEN = 0.4          # tick label colour = group colour 40% toward black
+WIDE_FROM = 25             # T02-T04: extra width per group above this many groups
+WIDE_PER_GROUP = 0.35
+MASK_NOTE = f"cells of groups with fewer than {MIN_GROUP_GENOMES} genomes are masked (grey)"
 # E2F_TDP, Tub, RFX_DNA_binding, WRKY, CP2, STAT (three Pfams, one label). Labels come from config/tf_family_map.tsv.
 RARE_ACCESSIONS = ["PF02319", "PF01167", "PF02257", "PF03106", "PF04516", "PF01017", "PF02864", "PF21354"]
 TOP_FAMILIES = 12
 OTHER_FAMILIES = "Other TF families"
 LABEL_MAX = 44
 CAT = [plt.get_cmap("tab20")(i) for i in (0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 1, 3)]
+
+
+def _dark(c):
+    return tuple(v * (1 - TICK_DARKEN) for v in to_rgb(c))
+
+
+def _dark_ticks(ax, levels, colors):
+    """Tick labels darker than the group colour (this page only: the shared scheme is not changed)."""
+    for t, g in zip(ax.get_xticklabels(), levels):
+        t.set_color(_dark(colors.get(g, "black")))
+
+
+def _wide(levels, base):
+    """Figure width for T02-T04: width() plus a little per group above WIDE_FROM groups."""
+    return width(levels, base) + WIDE_PER_GROUP * max(0, len(levels) - WIDE_FROM)
 
 
 def _short(s):
@@ -57,6 +81,7 @@ def _box(d, col, ylabel, title, levels, colors, core):
         return None
     fig, ax = plt.subplots(figsize=(width(levels), 3.8), layout="constrained")
     box_by_group(ax, d, col, levels, colors, ylabel=ylabel)
+    _dark_ticks(ax, levels, colors)
     ax.set_title(title, fontsize=9)
     parent_legend(ax, core, loc="upper left")
     if ax.get_legend() is not None:     # outside the axes: inside, it covers the boxes of the upper-right groups
@@ -78,42 +103,60 @@ def _composition(d, fam, levels, colors):
     cmap = {c: CAT[i] for i, c in enumerate(top)}
     if rest:
         cmap[OTHER_FAMILIES] = GREY
-    fig, ax = plt.subplots(figsize=(width(levels) + 3.2, 4.2), layout="constrained")
+    fig, ax = plt.subplots(figsize=(_wide(levels, 6.8) + 3.2, 4.2), layout="constrained")
     sm = _short_unique(list(gm.columns))
     stacked_by_group(ax, gm.rename(columns=sm), {sm[k]: v for k, v in cmap.items()}, levels,
                      "Share of TF family counts (genome mean)", colors)
+    _dark_ticks(ax, levels, colors)
     ax.set_title("TF family composition: share of TF protein counts per family, genomes with at least one TF protein",
                  fontsize=9)
     return fig
 
 
-def family_z(d, fam, levels):
+def family_z(d, fam, levels, min_prevalence=MIN_PREVALENCE, min_genomes=MIN_GROUP_GENOMES):
     """Families (rows) x groups (columns): group mean of n_proteins / n_proteins_total per genome, z-scored per family
-    across groups. A genome with an empty proteome is left out of the means. A family with the same mean in every
-    group is 0; a group with no genome with a proteome stays NaN. None when there is no family data."""
+    across groups. A genome with an empty proteome is left out of the means. Families present in fewer than
+    min_prevalence of the genomes with a proteome are left out (T04 shows the rare families). Groups with fewer than
+    min_genomes genomes with a proteome are NaN (masked) and do not enter the z-score. A family with the same mean in
+    every kept group is 0. None when there is no family data or fewer than 2 groups are kept."""
     f = fam[fam["species_prefix"].isin(set(d["species_prefix"]))]
     if f.empty:
         return None
-    wide = f.pivot_table(index="species_prefix", columns="family", values="n_proteins", aggfunc="sum", fill_value=0)
     tot = d.set_index("species_prefix")["n_proteins_total"]
+    grp = d.set_index("species_prefix")["grp"]
+    wide = f.pivot_table(index="species_prefix", columns="family", values="n_proteins", aggfunc="sum", fill_value=0)
     wide = wide.reindex(tot.index).fillna(0)
-    frac = wide.div(tot.where(tot > 0), axis=0)
-    m = frac.groupby(d.set_index("species_prefix")["grp"]).mean().reindex(levels)
+    has = tot > 0
+    prev = (wide[has] >= 1).mean() if has.any() else pd.Series(dtype=float)
+    wide = wide[prev[prev >= min_prevalence].index]
+    if wide.shape[1] == 0:
+        return None
+    frac = wide.div(tot.where(has), axis=0)
+    m = frac.groupby(grp).mean().reindex(levels)
+    n_ok = has.groupby(grp).sum().reindex(levels).fillna(0)
+    m.loc[n_ok < min_genomes] = np.nan
+    if (n_ok >= min_genomes).sum() < 2:
+        return None
     m = m[m.mean().sort_values(ascending=False).index]
     sd = m.std(ddof=0)
     z = (m - m.mean()) / sd.replace(0, np.nan)
     return z.mask(m.notna() & sd.eq(0), 0.0).T      # & aligns sd (indexed by family) with the columns of m
 
 
-def _family_heat(d, fam, levels, colors):
+def _family_heat(d, fam, levels, colors, o=None, name=None):
     z = family_z(d, fam, levels)
     if z is None:
         return None
     sm = _short_unique(list(z.index))
     z.index = [sm[i] for i in z.index]
-    fig, ax = plt.subplots(figsize=(width(levels, 4.5), 1.6 + 0.22 * len(z)), layout="constrained")
-    heat(ax, z, cmap="RdBu_r", vmin=-2.5, vmax=2.5, label="z-score across groups", colors=colors)
-    ax.set_title("TF family proteins / all proteins, group mean, z-score per family", fontsize=9)
+    cmap = mpl.colormaps["RdBu_r"].with_extremes(bad="#bdbdbd")
+    fig, ax = plt.subplots(figsize=(_wide(levels, 4.5), 1.9 + 0.22 * len(z)), layout="constrained")
+    heat(ax, z, cmap=cmap, vmin=-2.5, vmax=2.5, label="z-score across groups", colors=colors)
+    _dark_ticks(ax, levels, colors)
+    ax.set_title("TF family proteins / all proteins, group mean, z-score per family\n"
+                 f"families in at least {MIN_PREVALENCE:.0%} of genomes; {MASK_NOTE}", fontsize=9)
+    if o is not None:
+        o.meta[name] = {"families": int(len(z)), "n_masked_groups": int(z.isna().all(axis=0).sum()), "note": MASK_NOTE}
     return fig
 
 
@@ -130,8 +173,9 @@ def _rare_heat(d, fam, levels, colors):
         ids = has.get(lab, set())
         rows[lab] = (grp.index.isin(ids)).astype(float)
     pres = pd.DataFrame(rows, index=grp.index).groupby(grp).mean().reindex(levels).T
-    fig, ax = plt.subplots(figsize=(width(levels, 4.0), 1.8 + 0.3 * len(pres)), layout="constrained")
+    fig, ax = plt.subplots(figsize=(_wide(levels, 4.0), 1.8 + 0.3 * len(pres)), layout="constrained")
     heat(ax, pres, cmap="magma", vmin=0, vmax=1, label="Fraction of genomes with at least one protein", colors=colors)
+    _dark_ticks(ax, levels, colors)
     if len(levels) <= 16:
         for i in range(pres.shape[0]):
             for j in range(pres.shape[1]):
@@ -143,39 +187,35 @@ def _rare_heat(d, fam, levels, colors):
     return fig
 
 
-def _scatter_all_genomes(o, genome_all, summ, name):
-    """T06: every genome with a proteome and at least one TF protein, coloured by the site-wide phylum map."""
+def page_tf_all(genome_all, summ, out, porder=None):
+    """T06 once under figures/all/: every genome with a proteome and at least one TF protein (x = proteome size,
+    y = proteins with a TF domain, both log), coloured by the site-wide phylum map. Returns the Made list."""
+    o = Out(out, "all")
     d = genome_all[["species_prefix", "PHYLUM"]].merge(summ[["species_prefix", "n_proteins_total", "n_tf_proteins"]],
                                                         on="species_prefix", how="inner")
     d = d[(d["n_proteins_total"] > 0) & (d["n_tf_proteins"] > 0)]
-    colors = phylum_color_map(phylum_order(genome_all))
-    scope, info = o.scope, o.info
-    o.scope, o.info = "all_genomes", {"n_genomes": None, "n_groups": None, "pooled_share": None}
-    try:    # this figure is not a level figure: the sidecar must not carry the level's genome and group counts
-        return scatter_all(d, "n_proteins_total", "n_tf_proteins", colors, o, name, logx=True, logy=True,
-                           xlabel="Proteome size (proteins, log scale); genomes with no TF protein not shown",
-                           ylabel="Proteins with a TF domain (log scale)", topic=TOPIC)
-    finally:
-        o.scope, o.info = scope, info
+    colors = phylum_color_map(porder if porder is not None else phylum_order(genome_all))
+    scatter_all(d, "n_proteins_total", "n_tf_proteins", colors, o, ALL_FIGURE, logx=True, logy=True,
+                xlabel="Proteome size (proteins, log scale); genomes with no TF protein not shown",
+                ylabel="Proteins with a TF domain (log scale)", topic=TOPIC)
+    return o.made
 
 
-def page_tf_landscape(core, levels, colors, fam, summ, o, genome_all=None):
-    """T01-T06 and the table T_tf_groups. core: representatives with 'grp' (assign_groups); fam: tf_family_genome;
-    summ: tf_summary_genome; genome_all: every genome with PHYLUM (for T06; None skips T06)."""
+def page_tf_landscape(core, levels, colors, fam, summ, o):
+    """T01-T05 and the tables T_tf_groups and T_anova_tf. core: representatives with 'grp' (assign_groups);
+    fam: tf_family_genome; summ: tf_summary_genome. T06 is page_tf_all (all genomes, figures/all/)."""
     d = core[["species_prefix", "grp"]].merge(summ, on="species_prefix", how="inner")
     o.table(_group_table(d, levels), "T_tf_groups")
+    # effect sizes for the index; n_tf_proteins and n_families are left out (confounded with proteome size)
+    o.table(group_tests(d, ["tf_fraction", "shannon"], "grp"), "T_anova_tf")
     o.stat_of["T01_tf_fraction"] = "tf_fraction"
     o.stat_of["T05_tf_shannon"] = "shannon"
     safe(o, FIGURES[0], TOPIC, lambda: _box(d, "tf_fraction", "Proteins with a TF domain / all proteins",
                                             "TF fraction: proteins with a TF domain / all proteins (genome values)",
                                             levels, colors, core))
     safe(o, FIGURES[1], TOPIC, lambda: _composition(d, fam, levels, colors))
-    safe(o, FIGURES[2], TOPIC, lambda: _family_heat(d, fam, levels, colors))
+    safe(o, FIGURES[2], TOPIC, lambda: _family_heat(d, fam, levels, colors, o, FIGURES[2]))
     safe(o, FIGURES[3], TOPIC, lambda: _rare_heat(d, fam, levels, colors))
     safe(o, FIGURES[4], TOPIC, lambda: _box(d, "shannon", "Shannon index of TF family counts (nats)",
                                             "TF family diversity per genome (0 = one family; genomes with no TF omitted)",
                                             levels, colors, core))
-    if genome_all is None:
-        o.skip(FIGURES[5], TOPIC)
-    else:
-        _scatter_all_genomes(o, genome_all, summ, FIGURES[5])

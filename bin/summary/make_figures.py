@@ -707,11 +707,7 @@ def run_level(level, core0, tables, out, phylum_order=None):
             RUN_STATUS["tf_note"] = True
     else:
         from figs_tf import page_tf_landscape
-        try:
-            genome_all = rd("genome_all")
-        except FileNotFoundError:
-            genome_all = None
-        page_tf_landscape(core, levels, colors, tf_fam, tf_summ, o, genome_all=genome_all)
+        page_tf_landscape(core, levels, colors, tf_fam, tf_summ, o)
     print(f"{level}: {len(levels)} groups, {len(o.made)} outputs", flush=True)
     return o.made
 
@@ -762,6 +758,13 @@ def main(data, out, levels=LEVELS, suppress=None):
     else:
         from figs_scatter import page_all_genomes
         made["all"] = page_all_genomes(genome_all, out, porder)   # phylum-independent: one set under figures/all/
+        try:
+            tf_summ_all = rd("tf_summary_genome")
+        except FileNotFoundError:
+            pass     # run_level already printed the one TF note
+        else:
+            from figs_tf import page_tf_all
+            made["all"] = list(made["all"]) + list(page_tf_all(genome_all, tf_summ_all, out, porder))
         from summary_ordination import pick_complete_reps, run_ordination   # runs once, not per level
         mats = {}
         for key, tname in (("codon", "codon_genome"), ("aa", "aa_genome"), ("structure", "gene_structure_genome")):
