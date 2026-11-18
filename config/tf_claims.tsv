@@ -1,0 +1,25 @@
+# TF claims of Lax et al. 2025 (Nature Communications 16:10277), Results, 'The fungal TF landscape', as tests on genus values. Group sets: Dikarya = Ascomycota + Basidiomycota; EDF = all phyla except Ascomycota, Basidiomycota and Microsporidia (the controller's reading of the paper, not a definition given by the paper); ALL = every phylum; 'X-Y' = set X without phylum Y.
+# family = paper family (row name of MOESM3 'TF count', equal to paper_family in tf_family_map.tsv); BFD families are added through that map. metric: fraction (family proteins / all proteins), count, prevalence (share of genera with at least 1 protein), shannon (family is empty).
+# The paper names the lineage but often not the comparison group. The comparison groups here (for example Dikarya for the lineage expansions) are the controller's choice and are in group_b. paper_direction: a>b, a<b, or absent_in_a (a expected below b).
+claim_id	text	family	metric	level	group_a	group_b	paper_direction
+zn_dikarya_vs_edf	Zn cluster TFs are expanded in Dikarya compared with early-diverging fungi	Zn cluster	fraction	genus	Dikarya	EDF	a>b
+zn_asco_vs_basidio	Zn cluster TFs are expanded in Dikarya, especially Ascomycota (Ascomycota above Basidiomycota)	Zn cluster	fraction	genus	Ascomycota	Basidiomycota	a>b
+zn_entomophthoromycota	Zn cluster TFs are abundant in Entomophthoromycota (compared with the other EDF)	Zn cluster	fraction	genus	Entomophthoromycota	EDF-Entomophthoromycota	a>b
+hth_edf_vs_asco	HTH/Homeodomain-like TFs are more expanded in EDF than in Ascomycota	HTH/Homeodomain-like	fraction	genus	EDF	Ascomycota	a>b
+c2h2_monoblepharomycota	C2H2/CCHC/CCCH/C5HC2 zinc fingers are expanded in Monoblepharomycota (compared with Dikarya)	C2H2/CCHC/CCCH/C5HC2	fraction	genus	Monoblepharomycota	Dikarya	a>b
+c2h2_neocallimastigomycota	C2H2/CCHC/CCCH/C5HC2 zinc fingers are expanded in Neocallimastigomycota (compared with Dikarya)	C2H2/CCHC/CCCH/C5HC2	fraction	genus	Neocallimastigomycota	Dikarya	a>b
+c2h2_chytridiomycota	C2H2/CCHC/CCCH/C5HC2 zinc fingers are expanded in Chytridiomycota (compared with Dikarya)	C2H2/CCHC/CCCH/C5HC2	fraction	genus	Chytridiomycota	Dikarya	a>b
+hmg_glomeromycota	HMG-box TFs are expanded in Glomeromycota (compared with Dikarya)	HMG-Box	fraction	genus	Glomeromycota	Dikarya	a>b
+hlh_mucoromycota	HLH TFs are expanded in Mucoromycota (compared with Dikarya)	HLH, helix-loop-helix	fraction	genus	Mucoromycota	Dikarya	a>b
+hlh_mortierellomycota	HLH TFs are expanded in Mortierellomycota (compared with Dikarya)	HLH, helix-loop-helix	fraction	genus	Mortierellomycota	Dikarya	a>b
+hlh_chytridiomycota	HLH TFs are expanded in some Chytridiomycota (compared with Dikarya)	HLH, helix-loop-helix	fraction	genus	Chytridiomycota	Dikarya	a>b
+gata_mucoromycota	GATA TFs are expanded in Mucoromycota (compared with Dikarya)	GATA Zn finger	fraction	genus	Mucoromycota	Dikarya	a>b
+gata_mortierellomycota	GATA TFs are expanded in Mortierellomycota (compared with Dikarya)	GATA Zn finger	fraction	genus	Mortierellomycota	Dikarya	a>b
+gata_chytridiomycota	GATA TFs are expanded in some Chytridiomycota (compared with Dikarya)	GATA Zn finger	fraction	genus	Chytridiomycota	Dikarya	a>b
+e2f_absent_dikarya	E2F is absent in Dikarya (prevalence in Dikarya below EDF)	E2F_TDP	prevalence	genus	Dikarya	EDF	absent_in_a
+tubby_absent_dikarya	Tubby is absent in Dikarya (prevalence in Dikarya below EDF)	Tubby TF	prevalence	genus	Dikarya	EDF	absent_in_a
+rfx_dikarya_vs_edf	RFX is present in Dikarya but absent or rare in EDF	RFX_DNA_binding	prevalence	genus	Dikarya	EDF	a>b
+stat_dikarya_vs_edf	STAT is present in Dikarya but absent or rare in EDF	STAT	prevalence	genus	Dikarya	EDF	a>b
+wrky_mucoromycota	WRKY is almost exclusive to Mucoromycota (prevalence in Mucoromycota above all other phyla)	DNA-binding WRKY	prevalence	genus	Mucoromycota	ALL-Mucoromycota	a>b
+e2f_mucoromycota	E2F is almost exclusive to Mucoromycota (prevalence in Mucoromycota above all other phyla)	E2F_TDP	prevalence	genus	Mucoromycota	ALL-Mucoromycota	a>b
+shannon_mucoromycota	Mucoromycota has the highest TF diversity by Shannon index (tested against all other phyla pooled, not against each)		shannon	genus	Mucoromycota	ALL-Mucoromycota	a>b
