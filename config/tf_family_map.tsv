@@ -23,7 +23,7 @@ PF00250	Forkhead / winged-helix domain	Fork head TF	Forkhead.	Forkhead
 PF00505	High mobility group box	HMG-Box	HMG box.	HMG_box
 PF00249	Myb-like DNA-binding domain	Myb	Myb-like.	Myb_DNA-binding
 PF13921	Myb-like DNA-binding domain variant	Myb	Myb-like variant HMM.	Myb_DNA-bind_6
-PF00105	Nuclear hormone receptor C4 zinc finger		Nuclear hormone receptor. No paper family.	zf-C4
+PF00105	Nuclear hormone receptor C4 zinc finger		Family label from the source CSV. Pfam 38.2 names PF00105 zf-C4, 'Double treble clef zinc finger, C4 type'. Label kept so counts match (4 genomes, 10 proteins). No paper family.	zf-C4
 PF00157	POU-specific domain		POU. No paper family.	Pou
 			excluded: BFD's source CSV lists PF08880 as 'Rrn7-type RNA Pol I TF'; in Pfam 38.2 it is QLQ (SWI/SNF-related domain), not a TF DNA-binding domain; not counted	
 PF00642	CCCH zinc finger	C2H2/CCHC/CCCH/C5HC2	CCCH finger. Paper family merges C2H2/CCHC/CCCH/C5HC2.	zf-CCCH

@@ -223,3 +223,42 @@ def test_committed_map_excludes_pf08880():
     row = fm[fm["note"].str.contains("PF08880")]
     assert len(row) == 1 and row.iloc[0]["pfam_acc"] == "" and row.iloc[0]["pfam_id"] == ""
     assert row.iloc[0]["note"].startswith("excluded")
+
+
+def cli_setup(con, tmp_path):
+    inv = [("G1", "G1_000001-T1", "PF00172", "Zn_clus", "Zn", 1e-10, 50.0)]
+    tdir, sdir = make_tables(con, tmp_path, inv, [], genes_for("G1", 2), ["G1"])
+    pd.DataFrame({"pfam_acc": ["PF00172.24"], "pfam_id": ["Zn_clus"], "n_genomes": [1]}).to_parquet(sdir / "pfam_names.parquet")
+    mp = write_map(tmp_path, "PF00172\tZn\tZn cluster\t\tZn_clus\n")
+    return tdir, sdir, mp
+
+
+def run_cli(tdir, sdir, mp, tmp_path, dat):
+    t.main([str(tdir), str(sdir), str(tmp_path / "cli_out"), "--map", str(mp), "--pfam-dat", str(dat), "--tmp", str(tmp_path)])
+
+
+def test_cli_explicit_missing_pfam_dat_fails(con, tmp_path, capsys):
+    tdir, sdir, mp = cli_setup(con, tmp_path)
+    with pytest.raises(SystemExit) as e:
+        run_cli(tdir, sdir, mp, tmp_path, tmp_path / "typo.dat")
+    assert e.value.code not in (0, None)
+    assert "typo.dat" in str(e.value.code) or "typo.dat" in capsys.readouterr().err
+
+
+def test_cli_default_dat_absent_notes_and_continues(con, tmp_path, capsys, monkeypatch):
+    tdir, sdir, mp = cli_setup(con, tmp_path)
+    missing = str(tmp_path / "absent_default.dat")
+    monkeypatch.setattr(t, "DEFAULT_DAT", missing)
+    t.main([str(tdir), str(sdir), str(tmp_path / "cli_out"), "--map", str(mp), "--tmp", str(tmp_path)])
+    assert f"pfam_id check: skipped (dat file not found: {missing})" in capsys.readouterr().err
+    assert (tmp_path / "cli_out" / "tf_summary_genome.parquet").exists()
+
+
+def test_cli_none_disables_and_ok_reports(con, tmp_path, capsys):
+    tdir, sdir, mp = cli_setup(con, tmp_path)
+    run_cli(tdir, sdir, mp, tmp_path, "none")
+    assert "pfam_id check: disabled" in capsys.readouterr().err
+    dat = tmp_path / "Pfam-A.hmm.dat"
+    dat.write_text(DAT)
+    run_cli(tdir, sdir, mp, tmp_path, dat)
+    assert "pfam_id check: ok (1 accessions)" in capsys.readouterr().err

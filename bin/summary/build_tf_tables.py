@@ -188,14 +188,30 @@ def _accessions_with_hits(con, tables_dir, m):
     return {r[0] for r in a} | {r[0] for r in b}
 
 
+def check_dat(fmap, pfam_dat):
+    """Run the pfam_id guard as the CLI does. Exit with a message on a mismatch or on a missing explicit path."""
+    if str(pfam_dat).lower() == "none":
+        print("pfam_id check: disabled", file=sys.stderr)
+    elif not Path(pfam_dat).exists():
+        if str(pfam_dat) == str(DEFAULT_DAT):
+            print(f"pfam_id check: skipped (dat file not found: {pfam_dat})", file=sys.stderr)
+        else:
+            sys.exit(f"--pfam-dat file not found: {pfam_dat} (use --pfam-dat none to disable the check)")
+    else:
+        msgs = check_pfam_ids(fmap, pfam_dat)
+        if msgs:
+            sys.exit("family map does not match the Pfam release:\n" + "\n".join(msgs))
+        print(f"pfam_id check: ok ({int((fmap['pfam_acc'] != '').sum())} accessions)", file=sys.stderr)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("tables_dir", help="dir with tf_inventory, pfam, gene_proteins parquet")
     ap.add_argument("summary_dir", help="dir with genome_all.parquet and pfam_names.parquet")
     ap.add_argument("out_dir")
     ap.add_argument("--map", default=str(DEFAULT_MAP))
-    ap.add_argument("--pfam-dat", default=DEFAULT_DAT,
-                    help="Pfam-A.hmm.dat to check pfam_id against ('none' disables; skipped if the file is absent)")
+    ap.add_argument("--pfam-dat", default=str(DEFAULT_DAT),
+                    help="Pfam-A.hmm.dat to check pfam_id against ('none' disables; the default path is skipped with a note if absent; an explicit missing path is an error)")
     ap.add_argument("--threads", type=int, default=4)
     ap.add_argument("--memory", default="24GB")
     ap.add_argument("--tmp", default=os.environ.get("SCRATCH"), help="DuckDB temp dir (default $SCRATCH)")
@@ -203,10 +219,7 @@ def main(argv=None):
     fmap = load_family_map(a.map)
     names = pd.read_parquet(Path(a.summary_dir) / "pfam_names.parquet")
     validate_accessions(fmap, names)
-    if a.pfam_dat.lower() != "none" and Path(a.pfam_dat).exists():
-        msgs = check_pfam_ids(fmap, a.pfam_dat)
-        if msgs:
-            sys.exit("family map does not match the Pfam release:\n" + "\n".join(msgs))
+    check_dat(fmap, a.pfam_dat)
     out = Path(a.out_dir)
     out.mkdir(parents=True, exist_ok=True)
     con = duckdb.connect()
