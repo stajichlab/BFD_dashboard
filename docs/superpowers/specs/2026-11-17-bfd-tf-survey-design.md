@@ -28,12 +28,14 @@ User scope: A (landscape and the paper's contrasts), B (ortholog tracking), C (b
 - The paper's anchor species are in BFD: *R. microsporus* (ATCC 11559 is `FBF4BF29`, plus several other strains), *Mucor lusitanicus*, *Phycomyces blakesleeanus*.
 - Supplementary material, added by the user on 2026-11-17 in `resources/s41467-025-65177-1_suppl/`:
   - `MOESM3` (xlsx): sheet `TF count` = the paper's TF counts, 51 family rows plus totals, for 62 species (R. microsporus: 605 TFs of 10,700 genes); sheet `Genomes` = the 62 species with their sources (63 JGI MycoCosm, 3 NCBI). This gives the paper's exact family names and a direct way to calibrate BFD's Pfam-based counts.
-  - `MOESM4` (xlsx): 57 sheets, one per TF (for example `Znf1`, `GATA Znf10`, `bZip5`), each with the JGI gene IDs of its DAP-seq targets. BFD does not carry JGI gene IDs, so these lists cannot be mapped to BFD genes unless BFD keeps the old IDs (to check).
+  - `MOESM4` (xlsx): 57 sheets, one per TF (for example `Znf1`, `GATA Znf10`, `bZip5`), each with the JGI protein IDs of its DAP-seq targets (21,313 rows, 8,290 unique IDs).
   - `MOESM5` (pdf, 5 pages): supplementary figures (bZip target overlap and similar).
   - `MOESM6` (xlsx): 96 protein sequences of the tested TFs, IDs `Rhimi59_2_<JGI id>` (some are DNA-binding-domain fragments with `a`/`b` suffixes).
   - `MOESM7` (xlsx): primers and crRNAs. Not used.
   - Still missing: `MOESM1` (Supplementary Information, which should hold Supplementary Table 1 with the TF names and IDs). Without it, TF names cannot be tied to the `MOESM6` IDs. The paper says `Znf1` is the only C2H2 TF in the tested set, so it can be found by domain. WC-2C can be found as the GATA protein with a PAS domain. `bZip5` among five bZip TFs cannot be told apart without the table.
-- Binding sites and motifs are experimental and cannot be extended from BFD data.
+- JGI download, added by the user in `resources/jgi_atcc_11559/` (JGI MycoCosm `Rhimi59_2`, *R. microsporus* ATCC 11559 v2.0): all protein models (`Rhimi59_2_all_proteins_20220409.aa.fasta.gz`, 258,092 models, headers `jgi|Rhimi59_2|<proteinId>|<name>`) and the gene catalog of the filtered best models (GFF3 and GFF, with `product_name` and `proteinId`). All 92 unique tested-TF IDs from `MOESM6` and all 8,290 unique target IDs from `MOESM4` are in the protein file. So the full-length sequences of the tested TFs and of all targets are available.
+- BFD's `FBF4BF29` is a different assembly of the same strain (`GCA_002083735.1_Rhimi_ATCC11559_1`, funannotate, 10,256 proteins; JGI reports about 10,700 genes). Coordinates do not transfer. JGI and BFD proteins are mapped by sequence (reciprocal best hit).
+- Binding sites and motifs are experimental. They are not extended to other genomes. What can be extended is the gene sets: the targets mapped into BFD and checked for conservation across fungi.
 
 ## Goals
 
@@ -77,6 +79,7 @@ User scope: A (landscape and the paper's contrasts), B (ortholog tracking), C (b
 2. Search: the proteins carrying the relevant TF Pfam domain in genus representatives (one genome per genus, best BUSCO). Seed-vs-candidates with MMseqs2 or DIAMOND (whichever module exists on HPCC; the builder checks), keep hits with coverage and identity thresholds stated in the output; verify domain architecture with the existing Pfam hits (for example WC-2 needs GATA plus PAS).
 3. Align (MAFFT), trim, build a tree (FastTree; IQ-TREE only for the final small trees). Report: presence and copy number by order, architecture counts, the tree with phylum colours, and the R. microsporus / M. lusitanicus / Phycomyces members marked.
 4. Caveat on every page: sequence similarity and tree position are evidence for orthology, not proof; function is not inferred.
+5. Target sets and their conservation: map the JGI protein IDs (the 92 tested TFs and the 8,290 targets) to BFD `FBF4BF29` proteins by reciprocal best hit (MMseqs2; thresholds and the mapping rate are reported). For each TF's target set in BFD, search the targets against the genus-representative proteomes and report, per target, the number of phyla and orders with a hit; compare each TF's targets with all genes of the genome (are targets more conserved or more lineage-specific than the genome average?). Add the Pfam and SwissProt profile of each target set from the BFD tables. These are hypotheses about what the targets are, not about regulation in other species.
 
 ### C. Expansions and contractions
 
@@ -111,5 +114,6 @@ New pages after Explore: TF landscape, TF contrasts, TF orthologs, TF expansions
 
 ## Open items
 
-- `MOESM1` (Supplementary Information with Supplementary Table 1) would tie TF names to the `MOESM6` IDs. The work does not wait for it. Ask whether BFD keeps JGI gene IDs for the R. microsporus genome; if it does, the `MOESM4` target lists can be mapped.
+- `MOESM1` (Supplementary Information with Supplementary Table 1) would tie TF names to the `MOESM6` IDs. The work does not wait for it. The JGI download resolves the other open item: IDs map by sequence, not by coordinates.
+- The JGI protein file holds 258,092 models, filtered and not. The "best" filtered models (about 10,700) come from the GFF3. The mapping uses the filtered set as the reference and reports how many tested TFs and targets fall outside it.
 - Paper family names that have no Pfam equivalent in the extended set (for example STAT, if no accession exists in `pfam_names`) are reported as unmapped.
