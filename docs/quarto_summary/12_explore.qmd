@@ -5,7 +5,7 @@ format:
     toc: false
 ---
 
-This is an early (phase B) interactive view. Each point is one genome. Nothing here is controlled for phylogeny, so related genomes are not independent and the correlations below are descriptive only. The default shows all genomes. Use the toggle to restrict to representative genomes (one per species). The level pages use one representative per species, and the all-genome scatter plots on the Comparisons page use all genomes. Counts differ between these views.
+This is an early (phase B) interactive view. Each point is one genome. The hover label and the table show the species name and the strain. The Palette input has three modes: Site hues (the site-wide phylum colours), Distinct colours (up to 24 groups of the displayed set get separate colours, the rest are grey), and Auto (Distinct colours when one phylum is chosen and the colour level is not phylum). The page reads the URL parameters x, y, level, phylum, reps (0 or 1), logx, logy and palette (auto, site or distinct), for example `12_explore.html?level=order&phylum=Ascomycota`. Values that are not valid are ignored. Nothing here is controlled for phylogeny, so related genomes are not independent and the correlations below are descriptive only. The default shows all genomes. Use the toggle to restrict to representative genomes (one per species). The level pages use one representative per species, and the all-genome scatter plots on the Comparisons page use all genomes. Counts differ between these views.
 
 ```{ojs}
 //| echo: false
@@ -59,37 +59,72 @@ logDefault = new Set(["genome_mb", "n50_bp", "median_intron_len_bp", "median_int
 
 ```{ojs}
 //| echo: false
-viewof xvar = Inputs.select(numFields, {label: "x axis", value: "genome_mb", format: label})
+//| output: false
+// BEGIN parseExploreParams
+function parseExploreParams(search, ctx) {
+  // Read the query string. A value that is missing or not valid is left undefined (the page then uses its default).
+  const q = new URLSearchParams(search || "");
+  const out = {};
+  const x = q.get("x"), y = q.get("y"), lv = q.get("level"), ph = q.get("phylum");
+  if (x !== null && ctx.numFields.includes(x)) out.x = x;
+  if (y !== null && ctx.numFields.includes(y)) out.y = y;
+  if (lv !== null && ctx.levels.includes(lv)) out.level = lv;
+  if (ph !== null && ctx.phyla.includes(ph)) out.phylum = ph;
+  for (const [k, name] of [["reps", "reps"], ["logx", "logx"], ["logy", "logy"]]) {
+    const v = q.get(k);
+    if (v === "0" || v === "1") out[name] = v === "1";
+  }
+  const pal = q.get("palette");
+  if (pal === "auto" || pal === "site" || pal === "distinct") out.palette = pal;
+  return out;
+}
+// END parseExploreParams
 ```
 
 ```{ojs}
 //| echo: false
-viewof yvar = Inputs.select(numFields, {label: "y axis", value: "busco_complete", format: label})
+//| output: false
+urlParams = parseExploreParams(window.location.search, {numFields, levels: raw === null ? [] : raw.levels, phyla: phylaAll})
 ```
 
 ```{ojs}
 //| echo: false
-viewof level = Inputs.select(raw === null ? [] : raw.levels, {label: "Colour by", value: "phylum"})
+viewof xvar = Inputs.select(numFields, {label: "x axis", value: urlParams.x ?? "genome_mb", format: label})
 ```
 
 ```{ojs}
 //| echo: false
-viewof phylum = Inputs.select(phylaAll, {label: "Phylum filter", value: "All"})
+viewof yvar = Inputs.select(numFields, {label: "y axis", value: urlParams.y ?? "busco_complete", format: label})
 ```
 
 ```{ojs}
 //| echo: false
-viewof repsOnly = Inputs.radio(["All genomes", "Representatives only"], {label: "Genomes", value: "All genomes"})
+viewof level = Inputs.select(raw === null ? [] : raw.levels, {label: "Colour by", value: urlParams.level ?? "phylum"})
 ```
 
 ```{ojs}
 //| echo: false
-viewof logx = Inputs.toggle({label: "Log x", value: logDefault.has(xvar)})
+viewof phylum = Inputs.select(phylaAll, {label: "Phylum filter", value: urlParams.phylum ?? "All"})
 ```
 
 ```{ojs}
 //| echo: false
-viewof logy = Inputs.toggle({label: "Log y", value: logDefault.has(yvar)})
+viewof repsOnly = Inputs.radio(["All genomes", "Representatives only"], {label: "Genomes", value: urlParams.reps === true ? "Representatives only" : "All genomes"})
+```
+
+```{ojs}
+//| echo: false
+viewof paletteMode = Inputs.select(["Auto", "Site hues", "Distinct colours"], {label: "Palette", value: {auto: "Auto", site: "Site hues", distinct: "Distinct colours"}[urlParams.palette] ?? "Auto"})
+```
+
+```{ojs}
+//| echo: false
+viewof logx = Inputs.toggle({label: "Log x", value: (urlParams.logx !== undefined && xvar === (urlParams.x ?? "genome_mb")) ? urlParams.logx : logDefault.has(xvar)})
+```
+
+```{ojs}
+//| echo: false
+viewof logy = Inputs.toggle({label: "Log y", value: (urlParams.logy !== undefined && yvar === (urlParams.y ?? "busco_complete")) ? urlParams.logy : logDefault.has(yvar)})
 ```
 
 ```{ojs}
@@ -175,7 +210,54 @@ groupsShown = {
 ```{ojs}
 //| echo: false
 //| output: false
-legendGroups = groupsShown.slice(0, 20)
+// BEGIN distinctPalette
+function distinctPalette(groups, counts, palette, grey = "#9a9a9a") {
+  // Map group -> colour. Groups are ranked by count (largest first), ties by name. The first palette.length
+  // groups get palette colours in rank order. All other groups get the grey.
+  const rank = Array.from(groups).sort((a, b) => (counts.get(b) - counts.get(a)) || (a < b ? -1 : a > b ? 1 : 0));
+  const m = new Map();
+  rank.forEach((g, i) => m.set(g, i < palette.length ? palette[i] : grey));
+  return m;
+}
+// END distinctPalette
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+distinctColours = ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f", "#edc948", "#b07aa1", "#ff9da7", "#9c755f",
+  "#17becf", "#bcbd22", "#6a3d9a", "#33a02c", "#ff7f00", "#a6cee3", "#fb9a99", "#b2df8a", "#fdbf6f", "#cab2d6",
+  "#800000", "#008080", "#000075", "#333333", "#8c564b"]
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+useDistinct = paletteMode === "Distinct colours" || (paletteMode === "Auto" && phylum !== "All" && level !== "phylum")
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+groupCounts = d3.rollup(pts, v => v.length, d => d[level])
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+distinctMap = distinctPalette(groupsShown, groupCounts, distinctColours)
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+colorOf = g => useDistinct ? distinctMap.get(g) : (colorMap[g] || "#9a9a9a")
+```
+
+```{ojs}
+//| echo: false
+//| output: false
+legendGroups = useDistinct ? groupsShown.filter(g => distinctMap.get(g) !== "#9a9a9a") : groupsShown.slice(0, 20)
 ```
 
 ```{ojs}
@@ -189,10 +271,10 @@ legendGroups = groupsShown.slice(0, 20)
   caption: desc,
   x: {type: logx ? "log" : "linear", label: label(xvar), grid: true},
   y: {type: logy ? "log" : "linear", label: label(yvar), grid: true},
-  color: {domain: groupsShown, range: groupsShown.map(g => colorMap[g] || "#9a9a9a")},
+  color: {domain: groupsShown, range: groupsShown.map(colorOf)},
   marks: [
     Plot.dot(pts, {x: xvar, y: yvar, fill: level, r: 2.5, fillOpacity: 0.55,
-      title: d => `${d.id}\n${d.phylum} / ${d.class}\n${d.genus}`, tip: true})
+      title: d => [d.species ?? d.id, d.strain, `${d.phylum} / ${d.class}`].filter(x => x).join("\n"), tip: true})
   ]
 })
  const svg = fig.tagName.toLowerCase() === "svg" ? fig : fig.querySelector("svg");
@@ -204,16 +286,18 @@ legendGroups = groupsShown.slice(0, 20)
 
 ```{ojs}
 //| echo: false
-html`<div style="display:flex;flex-wrap:wrap;gap:0.4em 1em;font-size:0.85em">${legendGroups.map(g => html`<span style="white-space:nowrap"><span style="display:inline-block;width:0.9em;height:0.9em;background:${colorMap[g] || "#9a9a9a"};margin-right:0.3em;vertical-align:middle"></span>${g}</span>`)}${legendGroups.includes("Other (small groups)") ? html`<span>grey = pooled small groups</span>` : ""}${groupsShown.length > legendGroups.length ? html`<span>and ${groupsShown.length - legendGroups.length} more groups (not listed)</span>` : ""}</div>`
+useDistinct
+  ? html`<div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(13em,1fr));gap:0.3em 1em;font-size:0.8em">${legendGroups.map(g => html`<span><span style="display:inline-block;width:0.9em;height:0.9em;background:${colorOf(g)};margin-right:0.3em;vertical-align:middle"></span>${g} (${groupCounts.get(g).toLocaleString()})</span>`)}${groupsShown.length > legendGroups.length ? html`<span><span style="display:inline-block;width:0.9em;height:0.9em;background:#9a9a9a;margin-right:0.3em;vertical-align:middle"></span>Other (${groupsShown.length - legendGroups.length} groups)</span>` : ""}</div><div style="font-size:0.8em;margin-top:0.4em">Colours are assigned within the displayed set. They differ from the site-wide phylum colours.</div></div>`
+  : html`<div style="display:flex;flex-wrap:wrap;gap:0.4em 1em;font-size:0.85em">${legendGroups.map(g => html`<span style="white-space:nowrap"><span style="display:inline-block;width:0.9em;height:0.9em;background:${colorOf(g)};margin-right:0.3em;vertical-align:middle"></span>${g}</span>`)}${legendGroups.includes("Other (small groups)") ? html`<span>grey = pooled small groups</span>` : ""}${groupsShown.length > legendGroups.length ? html`<span>and ${groupsShown.length - legendGroups.length} more groups (not listed)</span>` : ""}</div>`
 ```
 
 Top 10 displayed genomes by the y variable:
 
 ```{ojs}
 //| echo: false
-Inputs.table(pts.slice().sort((a, b) => b[yvar] - a[yvar]).slice(0, 10), {
-  columns: ["id", "phylum", "class", xvar, yvar],
-  header: {[xvar]: raw && raw.columns[xvar].label, [yvar]: raw && raw.columns[yvar].label},
+Inputs.table(pts.slice().sort((a, b) => b[yvar] - a[yvar]).slice(0, 10).map(d => ({...d, species: d.species ?? d.id})), {
+  columns: ["species", "strain", "phylum", "class", xvar, yvar],
+  header: {species: "Species", strain: "Strain", phylum: "Phylum", class: "Class", [xvar]: raw && raw.columns[xvar].label, [yvar]: raw && raw.columns[yvar].label},
   layout: "auto"
 })
 ```

@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """Export the per-genome table as plain JSON for the Explore page (Observable JS).
 
-    python3 export_clade_json.py TABLES_DIR OUT_JSON [--suppress PATH|none]
+    python3 export_clade_json.py TABLES_DIR OUT_JSON [--suppress PATH|none] [--species-table PATH|none]
+
+--species-table (default Fungi_BFD_runs/tables/species.parquet) supplies STRAIN, joined on LOCUSTAG = species_prefix.
+A missing file prints a note to stderr and gives empty strains. "none" disables it.
 
 Genomes in config/summary_suppress.tsv are left out (see suppress.py). --suppress none keeps all genomes.
 
@@ -15,7 +18,10 @@ Regenerate the committed file (from the repository root):
 TABLES_DIR holds genome_all.parquet (one row per genome) and gene_structure_genome.parquet.
 Output: {"meta", "levels", "columns", "colors", "fields", "rows"}. "rows" is a list of arrays, one per genome,
 in the order of "fields" (this keeps the file under 5 MB; the page turns each row into an object). Floats are rounded to 3 decimals,
-NaN becomes null, missing taxonomy becomes "Unknown". Colours come from make_figures.assign_groups.
+NaN becomes null, missing taxonomy becomes "Unknown".
+"species" is the full name from genome_all SPECIES ("<GENUS> sp." when missing, "Unknown" when the genus is missing too).
+"strain" is a string, empty when not known. "id" (species_prefix) stays as the unique key but the page does not show it.
+The labels of "species" and "strain" are in "label_columns", not in "columns" (the page lists "columns" as axis choices). Colours come from make_figures.assign_groups.
 """
 import json
 import sys
@@ -28,6 +34,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from make_figures import OTHER, assign_groups, phylum_order  # noqa: E402
 from suppress import drop_suppressed, load_suppress  # noqa: E402
 
+DEFAULT_SPECIES_TABLE = "/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/tables/species.parquet"
 LEVELS = ("phylum", "subphylum", "class", "order")
 # field -> (label, unit)
 COLUMNS = {
@@ -42,6 +49,11 @@ COLUMNS = {
     "n50_bp": ("Assembly N50", "bp"),
     "median_protein_len_aa": ("Median protein length", "aa"),
 }
+# label fields (not numeric axes)
+LABEL_COLUMNS = {
+    "species": {"label": "Species", "unit": ""},
+    "strain": {"label": "Strain", "unit": ""},
+}
 
 
 def _num(s):
@@ -54,10 +66,12 @@ REQUIRED = ["species_prefix", "PHYLUM", "CLASS", "ORDER", "GENUS", "is_represent
 
 
 def export_clade_json(core: pd.DataFrame, structure: pd.DataFrame, out: Path,
-                      generated_from: str = "summary_tables/genome_all.parquet", suppress=None) -> Path:
+                      generated_from: str = "summary_tables/genome_all.parquet", suppress=None,
+                      strains: pd.DataFrame | None = None) -> Path:
     """Write the genome records and the colour map; return the path.
     suppress: None = the repo list, a path, or a DataFrame (an empty one disables). Suppressed genomes are dropped
-    from core and structure, and listed in meta."""
+    from core and structure, and listed in meta.
+    strains: optional DataFrame with columns species_prefix, STRAIN; None = no strains (empty strings)."""
     out = Path(out)
     sup = suppress if isinstance(suppress, pd.DataFrame) else load_suppress(suppress)
     if "species_prefix" in core.columns:
@@ -85,11 +99,21 @@ def export_clade_json(core: pd.DataFrame, structure: pd.DataFrame, out: Path,
                       for v, grp in zip(raw.astype(str), g["grp"])}
     prot = structure.drop_duplicates("species_prefix").set_index("species_prefix")["median_protein_len_aa"]
     n = len(d)
+    genus = d["GENUS"].fillna("").astype(str).str.strip()
+    sp = (d["SPECIES"] if "SPECIES" in d.columns else pd.Series([None] * n, index=d.index)).fillna("").astype(str).str.strip()
+    species = sp.where(sp != "", np.where(genus != "", genus + " sp.", "Unknown"))
+    if strains is not None and len(strains):
+        sm = strains.dropna(subset=["STRAIN"]).drop_duplicates("species_prefix")
+        sm = sm.assign(species_prefix=sm["species_prefix"].astype(str)).set_index("species_prefix")["STRAIN"].astype(str).str.strip()
+        strain = d["species_prefix"].astype(str).map(sm).fillna("")
+    else:
+        strain = pd.Series([""] * n, index=d.index)
     rec = pd.DataFrame({
         "id": d["species_prefix"].astype(str),
         "phylum": cols_by_level["phylum"], "subphylum": cols_by_level["subphylum"],
         "class": cols_by_level["class"], "order": cols_by_level["order"],
         "genus": d["GENUS"].fillna("Unknown").astype(str),
+        "species": species.astype(str), "strain": strain.astype(str),
         "genome_mb": _num(d["total_length_bp"] / 1e6),
         "n_genes": _num(d["n_genes"]), "gc": _num(d["gc_pct"]), "genes_per_mb": _num(d["genes_per_mb"]),
         "median_intron_len_bp": _num(d["median_intron_len_bp"]),
@@ -117,6 +141,7 @@ def export_clade_json(core: pd.DataFrame, structure: pd.DataFrame, out: Path,
                  "floats": "rounded to 3 decimals; null = missing"},
         "levels": list(LEVELS),
         "columns": {k: {"label": l, "unit": u} for k, (l, u) in COLUMNS.items()},
+        "label_columns": LABEL_COLUMNS,
         "colors": colors,
         "fields": fields,
         "rows": rows,
@@ -134,12 +159,24 @@ def main(argv):
         val = argv[i + 1] if i + 1 < len(argv) else sys.exit(__doc__)
         suppress = pd.DataFrame({"species_prefix": []}) if val == "none" else val
         del argv[i:i + 2]
+    sptab = DEFAULT_SPECIES_TABLE
+    if "--species-table" in argv:
+        i = argv.index("--species-table")
+        sptab = argv[i + 1] if i + 1 < len(argv) else sys.exit(__doc__)
+        del argv[i:i + 2]
     if len(argv) != 3:
         sys.exit(__doc__)
     t = Path(argv[1])
     core = pd.read_parquet(t / "genome_all.parquet")
     st = pd.read_parquet(t / "gene_structure_genome.parquet", columns=["species_prefix", "median_protein_len_aa"])
-    p = export_clade_json(core, st, Path(argv[2]), suppress=suppress)
+    strains = None
+    if sptab != "none":
+        if Path(sptab).exists():
+            sd = pd.read_parquet(sptab, columns=["LOCUSTAG", "STRAIN"]).rename(columns={"LOCUSTAG": "species_prefix"})
+            strains = sd
+        else:
+            print(f"note: species table {sptab} not found; strains are left empty", file=sys.stderr)
+    p = export_clade_json(core, st, Path(argv[2]), suppress=suppress, strains=strains)
     n = json.loads(p.read_text())["meta"]
     print(f"{p}: {p.stat().st_size} bytes, {n['n_genomes']} records, {n['n_suppressed']} suppressed")
 

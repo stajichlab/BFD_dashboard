@@ -180,13 +180,24 @@ def test_committed_genomes_json():
     assert len(j["rows"]) == j["meta"]["n_genomes"]
     assert p.stat().st_size < 5_000_000
     assert "NaN" not in p.read_text()
+    assert j["meta"]["n_suppressed"] == 3
+    assert "species" in j["fields"] and "strain" in j["fields"] and "id" in j["fields"]
+    i = j["fields"].index("species")
+    assert all(r[i] for r in j["rows"])
+
+
+def test_explore_shows_species_not_id():
+    page = _read("12_explore.qmd")
+    assert 'columns: ["species", "strain"' in page
+    assert "${d.id}" not in page
+    assert "d.species" in page and "d.strain" in page
 
 
 def test_explore_log10_and_defaults():
     page = _read("12_explore.qmd")
     assert "Math.log10" in page and "(log10)" in page
     assert "untransformed" not in page
-    assert "logDefault" in page and "viewof logx = Inputs.toggle({label: \"Log x\", value: logDefault" in page
+    assert "logDefault" in page and "viewof logx = Inputs.toggle({label: \"Log x\"" in page and ": logDefault.has(xvar)" in page
     assert "genome_mb" in page.split("logDefault =")[1].split("```")[0]
     assert "pooled small groups" in page and "aria-label" in page
     notes = _read("06_data_notes.qmd")

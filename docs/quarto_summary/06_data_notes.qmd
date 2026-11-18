@@ -78,7 +78,7 @@ The Explore page reads `data/genomes.json` (one row per genome, all genomes in `
 python3.12 bin/summary/export_clade_json.py <tables_dir> docs/quarto_summary/data/genomes.json
 ```
 
-`<tables_dir>` is `Fungi_BFD_runs/analysis/summary_tables`, written by `workflows/summary_tables.sh` (`build_summary_tables.py`). The JSON `meta` records the genome count, the source, and the suppressed genomes (`n_suppressed`, `suppressed`).
+`<tables_dir>` is `Fungi_BFD_runs/analysis/summary_tables`, written by `workflows/summary_tables.sh` (`build_summary_tables.py`). Each record has `id` (the locus tag prefix, the unique key), `species` (genus and species; "Genus sp." when the species is missing) and `strain` (empty when not known). The strain comes from `Fungi_BFD_runs/tables/species.parquet` (option `--species-table`). The Explore page shows `species` and `strain`, not `id`. The JSON `meta` records the genome count, the source, and the suppressed genomes (`n_suppressed`, `suppressed`).
 
 ```{python}
 #| echo: false

@@ -123,3 +123,99 @@ def test_meta_matches_real_table():
     meta = json.loads(g.read_text())["meta"]
     # genome_all.parquet keeps the suppressed genomes (suppression is applied at read time), the JSON drops them.
     assert meta["n_genomes"] == len(pd.read_parquet(p)) - meta["n_suppressed"]
+
+
+# ---- species and strain labels ----
+def _strains(core, skip=(3,)):
+    ids = [x for i, x in enumerate(core.species_prefix) if i not in skip]
+    return pd.DataFrame({"species_prefix": ids, "STRAIN": [f"ST{i}" for i in range(len(ids))]})
+
+
+def test_species_and_strain_fields(tmp_path):
+    core, st = _frames()
+    core["SPECIES"] = [f"G{i} sp{i}" for i in range(len(core))]
+    core.loc[2, "SPECIES"] = np.nan
+    core.loc[3, "SPECIES"] = ""
+    core.loc[4, ["SPECIES", "GENUS"]] = np.nan
+    j = json.loads(export_clade_json(core, st, tmp_path / "g.json", strains=_strains(core)).read_text())
+    assert "species" in j["fields"] and "strain" in j["fields"] and "id" in j["fields"]
+    r = _records(j)
+    assert r[5]["species"] == "G5 sp5"
+    assert r[2]["species"] == f"{core.GENUS[2]} sp."
+    assert r[3]["species"] == f"{core.GENUS[3]} sp."
+    assert r[4]["species"] == "Unknown"
+    assert r[0]["species"] != ""
+    assert r[5]["strain"].startswith("ST")
+    assert r[3]["strain"] == ""
+    assert len({x["id"] for x in r}) == len(r)
+    assert all(x["species"] for x in r)
+
+
+def test_strains_none_gives_empty_strain(tmp_path):
+    _, _, j = _run(tmp_path)
+    assert all(x["strain"] == "" for x in _records(j))
+
+
+def test_strain_null_is_empty_string_not_null(tmp_path):
+    core, st = _frames()
+    sd = _strains(core)
+    sd.loc[0, "STRAIN"] = None
+    j = json.loads(export_clade_json(core, st, tmp_path / "g.json", strains=sd).read_text())
+    assert all(isinstance(x["strain"], str) for x in _records(j))
+
+
+def test_label_fields_not_numeric_columns(tmp_path):
+    _, _, j = _run(tmp_path)
+    assert "species" not in j["columns"] and "strain" not in j["columns"]
+    assert j["label_columns"]["species"]["label"] and j["label_columns"]["strain"]["label"]
+
+
+def test_no_nan_with_species(tmp_path):
+    core, st = _frames()
+    core.loc[2, "SPECIES"] = np.nan
+    t = export_clade_json(core, st, tmp_path / "g.json", strains=_strains(core)).read_text()
+    assert "NaN" not in t and "None" not in t
+
+
+def test_size_under_5mb_with_species(tmp_path):
+    core, st = _frames(23680)
+    core["SPECIES"] = [f"Genus{i % 3000} species{i % 7000}" for i in range(len(core))]
+    out = export_clade_json(core, st, tmp_path / "g.json", strains=_strains(core))
+    assert out.stat().st_size < 5_000_000
+
+
+def _cli_tables(tmp_path):
+    core, st = _frames(20)
+    t = tmp_path / "t"
+    t.mkdir()
+    core.to_parquet(t / "genome_all.parquet")
+    st.to_parquet(t / "gene_structure_genome.parquet")
+    return t
+
+
+def test_cli_species_table_none_and_missing(tmp_path):
+    import subprocess
+    t = _cli_tables(tmp_path)
+    script = Path(__file__).resolve().parent / "export_clade_json.py"
+    for val in ("none", str(tmp_path / "nope.parquet")):
+        out = tmp_path / "o.json"
+        r = subprocess.run([sys.executable, str(script), str(t), str(out), "--species-table", val],
+                           capture_output=True, text=True)
+        assert r.returncode == 0, r.stderr
+        j = json.loads(out.read_text())
+        assert all(x["strain"] == "" for x in _records(j))
+        if val != "none":
+            assert "nope.parquet" in r.stderr
+
+
+def test_cli_species_table_reads_strains(tmp_path):
+    import subprocess
+    t = _cli_tables(tmp_path)
+    core = pd.read_parquet(t / "genome_all.parquet")
+    pd.DataFrame({"LOCUSTAG": core.species_prefix, "SPECIES": "x", "STRAIN": "S1"}).to_parquet(tmp_path / "sp.parquet")
+    script = Path(__file__).resolve().parent / "export_clade_json.py"
+    out = tmp_path / "o.json"
+    r = subprocess.run([sys.executable, str(script), str(t), str(out), "--species-table", str(tmp_path / "sp.parquet")],
+                       capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr
+    assert all(x["strain"] == "S1" for x in _records(json.loads(out.read_text())))
