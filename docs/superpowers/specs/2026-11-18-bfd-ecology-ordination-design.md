@@ -15,7 +15,7 @@ The summary site has PCoA ordinations of codon usage, amino-acid composition and
 ## Goals
 1. Global ordinations (same genus reps, same distances, same PCoA as `run_ordination`) coloured by `primary_lifestyle` and by `growth_form`, for each of codon, aa and structure.
 2. A PERMANOVA of lifestyle on the whole tree, unrestricted and with lifestyle labels permuted only within order.
-3. For every clade at phylum, class and order level that passes the threshold: its own PCoA (recomputed on that clade's genera), a scatter coloured by lifestyle, and a lifestyle PERMANOVA, for each feature set. Benjamini-Hochberg correction across clades within each level and feature set.
+3. For every clade at phylum, class and order level that passes the threshold: its own PCoA (recomputed on that clade's genera), a scatter coloured by lifestyle, and two lifestyle PERMANOVAs (unrestricted and stratified; see the calls below), for each feature set. Benjamini-Hochberg correction across clades within each level, feature set and test.
 4. One new Quarto page, `17_ecology.qmd`, with the global figures, the test tables and the clade table.
 5. Counts always reconcile: genera coloured + genera without a label = genera in the ordination.
 
@@ -42,6 +42,14 @@ The summary site has PCoA ordinations of codon usage, amino-acid composition and
   - `tables/ecology/ecology_traits_coverage.tsv`, `ecology_permanova_global.tsv`, `ecology_permanova_clades.tsv` (level, clade, matrix, n_genera, n_labeled, n_groups, pseudo_F, R2, p, q_BH, caveat), `ecology_clades_skipped.tsv` (clade, reason).
 - **Page:** `docs/quarto_summary/17_ecology.qmd`, using the existing `_helpers.py`. Navbar entry is added after `bfd-build`'s PR #24 merges.
 - **Dependencies:** needs the trait columns in the DB that the step reads. Development uses `db/BFD_traits_dev.duckdb`; the final run waits for the held production build (job 32195607) or the DB the user chooses.
+
+## Calls made after the builder check (mine, not the user's; the user can overrule)
+1. **Clade tests report two results.** Each clade row has an unrestricted lifestyle test and a stratified one (labels permuted within the next finer rank: ORDER for phylum and class clades, FAMILY for order clades). The stratified result is NA with a reason when fewer than 2 strata have at least 2 genera each. The two columns have separate p and q values. Reason: an unrestricted test inside a class mostly detects order-level structure that tracks lifestyle; the stratified one controls for it.
+2. **NULL stratum.** Genera with a NULL ORDER (or FAMILY) are left out of the stratified test only, and counted in the table. They stay in the unrestricted test. Measured on the scratch build: of 1,669 genus reps, 68 labeled reps have a NULL ORDER and 87 have a NULL FAMILY.
+3. **Stratified permutation is implemented in `summary_ecology.py`.** `lib/ordination.py` and `summary_ordination.py` are not changed. The pseudo-F and R2 formulas follow `_permanova`, and a test checks that an unstratified call reproduces `_permanova` exactly. The unique-permutation caveat is computed for the stratified case.
+4. **Threshold population.** The 30-genus and 2-lifestyles-with-5 rule is applied to the ordination reps (those from `pick_complete_reps`), counting labeled genera only. `pick_complete_reps` is called once with all three matrices, so one rep set and one clade list serve codon, aa and structure.
+5. **Same matrices as the site.** The global step builds the matrices exactly as `make_figures.py` does (`codon_genome`, `aa_genome`, `gene_structure_genome`; a missing file skips that matrix). Coordinates are compared with `tables/ordination/<matrix>_coords.tsv` per axis up to sign, to 1e-9.
+6. **Clades reuse the global reps.** Reps are not re-picked per clade. The clade's feature matrix and structure z-scoring are recomputed on those genera only.
 
 ## Acceptance
 - The global PCoA coordinates equal `tables/ordination/<matrix>_coords.tsv` to 1e-9.
