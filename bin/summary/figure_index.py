@@ -4,7 +4,7 @@
 
 Each PNG may have a sidecar JSON (written by make_figures.Out.save) with topic, stat, kind, scope, n_genomes,
 n_groups and pooled_share. A PNG without a sidecar still gets a row, with those fields empty.
-effect_size is the epsilon^2 of tables/<level>/T_anova.tsv for the figure's stat. score = effect_size * (1 - pooled_share):
+effect_size is the epsilon^2 of tables/<level>/T_anova.tsv (and T_anova_tf.tsv) for the figure's stat. score = effect_size * (1 - pooled_share):
 a figure that mostly shows the pooled 'Other' group scores lower. Scored rows sort first, by score descending;
 unscored rows follow.
 
@@ -12,6 +12,7 @@ signal / signal_kind give a second, coarser ranking for figures that have no ANO
     epsilon2      the T_anova effect_size itself (figures that have one)
     spearman_r    |Spearman r| of an A or R scatter figure
     permanova_R2  PERMANOVA R^2 by phylum for an ordination matrix
+    n_flagged_cells  number of flagged cells (T11 heat map) or panels (T12) of the TF expansion page
 Signals of different kinds are NOT comparable (a correlation, a rank-based effect size and a variance fraction
 measure different things): use them to order figures within one kind. Sort order: score descending (scored rows
 first), then signal descending, then level, then name.
@@ -35,14 +36,18 @@ def _sidecar(png):
 
 
 def _effects(root, level):
-    """stat -> finite effect size from tables/<level>/T_anova.tsv ({} when absent or unreadable)."""
-    f = Path(root) / "tables" / level / "T_anova.tsv"
-    try:
-        t = pd.read_csv(f, sep="\t")
-        s = pd.to_numeric(t["effect_size"], errors="coerce")
-        return {k: float(v) for k, v in zip(t["stat"], s) if np.isfinite(v)}
-    except (OSError, KeyError, ValueError, pd.errors.EmptyDataError):
-        return {}
+    """stat -> finite effect size from tables/<level>/T_anova.tsv and T_anova_tf.tsv (each may be absent or
+    unreadable; a stat in both keeps the value of T_anova.tsv)."""
+    out = {}
+    for name in ("T_anova_tf.tsv", "T_anova.tsv"):    # T_anova.tsv last: it wins on a duplicate stat
+        f = Path(root) / "tables" / level / name
+        try:
+            t = pd.read_csv(f, sep="\t")
+            s = pd.to_numeric(t["effect_size"], errors="coerce")
+            out.update({k: float(v) for k, v in zip(t["stat"], s) if np.isfinite(v)})
+        except (OSError, KeyError, ValueError, pd.errors.EmptyDataError):
+            continue
+    return out
 
 
 def _num(v):

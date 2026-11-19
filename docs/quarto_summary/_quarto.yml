@@ -32,6 +32,14 @@ website:
         text: Gallery
       - href: 12_explore.qmd
         text: Explore
+      - href: 13_tf_landscape.qmd
+        text: TF landscape
+      - href: 14_tf_contrasts.qmd
+        text: TF claims
+      - href: 15_tf_orthologs.qmd
+        text: TF orthologs
+      - href: 16_tf_expansions.qmd
+        text: TF expansions
       - href: 06_data_notes.qmd
         text: Data and methods
 format:

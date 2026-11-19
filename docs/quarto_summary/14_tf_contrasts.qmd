@@ -1,0 +1,122 @@
+---
+title: "TF claims"
+---
+
+```{python}
+import sys
+sys.path.insert(0, ".")
+import pandas as pd
+from _helpers import fig, table, single, flat_table, read_flat, say
+```
+
+This page tests the lineage claims about TF families in Lax et al. 2025, Nature Communications 16:10277, on the BFD genomes. The paper used InterPro-based TF families in 62 species. BFD has many more genomes and uses Pfam. The page asks whether each claim has the same direction at BFD scale.
+
+::: {.callout-warning}
+## How to read this page
+- **Unit.** Each test uses one value per genus: the genome of the genus with the best BUSCO score (then N50, then lowest id). The BFD rows use genera whose representative has BUSCO >= 80.
+- **Multiple testing.** p-values are Benjamini-Hochberg adjusted over the claims.
+- **Phylogeny.** Note that phylogeny is not otherwise controlled. Genera of one lineage are related. The p-values and bootstrap intervals describe the sample.
+- **"agrees with the paper" only compares the sign.** It means the BFD effect has the direction the paper reports. It does not test whether the size of the effect matches.
+- **Definitions differ.** The paper's families come from InterPro. BFD families come from Pfam. The calibration section below compares the two on the species that both sets share.
+- **Counts are distinct proteins.** Paper-family counts are distinct proteins per genome and family (a protein is counted once per family).
+:::
+
+## Claims at BFD scale
+
+```{python}
+single("T10_tf_claims_forest", "Effect of each claim with a 95% bootstrap interval. BFD rows use genus values with BUSCO >= 80. The agreement mark compares only the sign with the paper.", "tf", width="95%")
+```
+
+### Claims table: BFD and paper side by side
+
+Each row is one claim. The BFD columns use genera with BUSCO >= 80. The paper columns apply the same test to the paper's own table, with one value per species.
+
+```{python}
+t = read_flat("T10_tf_claims", "tf")
+if t is None:
+    say("*Table `T10_tf_claims` has not been built (tables/tf/).*")
+else:
+    b = t[t["source"] == "BFD"][["claim_id", "n_genera_a", "n_genera_b", "effect", "ci_lo", "ci_hi", "p_adj",
+                                 "observed_direction", "agrees"]]
+    p = t[t["source"] == "paper"][["claim_id", "n_genera_a", "n_genera_b", "effect", "p_adj", "agrees"]]
+    p = p.rename(columns={"n_genera_a": "paper_n_a", "n_genera_b": "paper_n_b", "effect": "paper_effect",
+                          "p_adj": "paper_p_adj", "agrees": "paper_agrees"})
+    m = b.rename(columns={"n_genera_a": "bfd_n_a", "n_genera_b": "bfd_n_b", "effect": "bfd_effect", "ci_lo": "bfd_ci_lo",
+                          "ci_hi": "bfd_ci_hi", "p_adj": "bfd_p_adj", "observed_direction": "bfd_direction",
+                          "agrees": "bfd_agrees"}).merge(p, on="claim_id", how="left")
+    say(f"{len(b)} claims. Claim texts, families and groups are in the forest figure and in `T10_tf_claims.tsv`. In the paper columns, n is the number of species; an empty paper cell means the paper side was not computed. "
+        f"BFD: {int((b['agrees']=='yes').sum())} agree, {int((b['agrees']=='mixed').sum())} mixed, "
+        f"{int((b['agrees']=='no').sum())} do not agree, {int((b['agrees']=='not tested').sum())} not tested, "
+        f"{int((b['agrees']=='not comparable').sum())} not comparable. These counts come from the table.")
+    say('<div style="overflow-x:auto">\n\n' + m.round(3).to_markdown(index=False) + "\n\n</div>")
+```
+
+### Families that are not comparable (the STAT case)
+
+A claim is marked "not comparable" when the BFD Pfam definition does not detect the family in enough genera. The clearest case is STAT.
+
+```{python}
+import re
+cal = read_flat("T09_tf_calibration", "tf")
+k = None
+if cal is not None:
+    note = " ".join(cal.loc[cal["paper_family"] == "STAT", "note"].astype(str))
+    m = re.search(r"non-zero in (\d+) genus|non-zero in (\d+) genera", note)
+    k = int(next(g for g in m.groups() if g)) if m else None
+hit = f"hit {k} BFD genus (genus table, BUSCO >= 80)" if k is not None else "hit very few BFD genera (the count is read from the calibration table, which is not built yet)"
+say(f"The Pfam STAT models {hit}. The paper's table has STAT in 18 of 62 species and in 13 of 19 Dikarya species (the paper's numbers). "
+    "The two definitions do not describe the same set of proteins. This is a definition mismatch, not a result about fungi. "
+    "The claim is marked not comparable and no sign is compared.")
+```
+
+## Calibration against the paper's counts
+
+For the species that appear in both data sets, the page compares the BFD count of a family with the paper's count. The paper's counts were made with InterPro. The BFD counts use Pfam.
+
+```{python}
+sm = None
+try:
+    sm = pd.read_csv("data/paper_species_map.tsv", sep="\t", comment="#", dtype=str, keep_default_na=False)
+except (OSError, ValueError):
+    pass
+if sm is None:
+    say("*The species map `data/paper_species_map.tsv` could not be read.*")
+else:
+    c = sm["match"].value_counts()
+    say(f"The paper lists {len(sm)} species in its genome sheet (the paper states 62 species in its analysis). "
+        f"{int((sm['species_prefix'] != '').sum())} are matched to a BFD genome: {int(c.get('exact', 0))} by genus and epithet, "
+        f"{int(c.get('alias', 0))} through a hand-written alias (typo, renamed taxon or synonym) and "
+        f"{int(c.get('none', 0))} with no match. The match takes the genome with the best BUSCO score, then N50, then lowest id. "
+        "The counts are read from `data/paper_species_map.tsv`, a copy of `config/paper_species_map.tsv`.")
+```
+
+```{python}
+single("T09_tf_calibration", "BFD (Pfam) count against the paper (InterPro) count for each family, one point per matched species. The line is identity.", "tf", width="95%")
+```
+
+```{python}
+flat_table("T09_tf_calibration", "tf", digits=3)
+```
+
+The columns `spearman`, `pearson_log` and `median_ratio` are NaN for a family that is "not comparable". A median ratio below 1 means BFD finds fewer proteins than the paper. A ratio above 1 means more.
+
+## Sensitivity: no BUSCO filter
+
+::: {.callout-important}
+## Sensitivity only
+The table below uses the representative of every genus, with no BUSCO filter. A result in the no-filter table is sensitivity only. It is not a finding. Low annotation completeness is a confound, not a tested cause: genomes with a fragmented or incomplete annotation have fewer TF proteins, and this can create or hide a difference. The page did not test this explanation.
+:::
+
+```{python}
+t0 = read_flat("T10_tf_claims_nofilter", "tf")
+if t0 is None:
+    say("*Table `T10_tf_claims_nofilter` has not been built (tables/tf/).*")
+else:
+    cols = ["claim_id", "n_genera_a", "n_genera_b", "effect", "ci_lo", "ci_hi", "p_adj", "observed_direction", "paper_direction", "agrees", "filter"]
+    say('<div style="overflow-x:auto">\n\n' + t0[[c for c in cols if c in t0.columns]].round(3).to_markdown(index=False) + "\n\n</div>")
+```
+
+## Sources
+
+- Lax et al. 2025, Nature Communications 16:10277: families, species table (MOESM3) and claims.
+- The BFD family list: see the TF landscape page.

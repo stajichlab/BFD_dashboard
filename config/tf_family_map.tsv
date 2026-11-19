@@ -1,0 +1,74 @@
+# TF family map. Columns: pfam_acc, family, paper_family, note, pfam_id.
+# pfam_id = Pfam short name (#=GF ID) from Pfam release 38.2, /srv/projects/db/pfam/current/Pfam-A.hmm.dat. check_pfam_ids() in build_tf_tables.py verifies it.
+# family = BFD family label (the tf_family text of nextflow/assets/fungal_tf_pfam_domains.csv for the existing Pfams; short names for the added ones).
+# paper_family = row name in Lax et al. 2025 MOESM3 sheet 'TF count' (trailing spaces in the sheet removed).
+# Rows with an empty pfam_acc are not counted. They list what is unmapped: paper families without a Pfam here, and listed Pfams that have no hits and no entry in pfam_names.
+# Counting source: Pfams in tf_inventory come from tf_inventory; the added ones come from pfam.parquet. Domain gate: see bin/summary/build_tf_tables.py.
+pfam_acc	family	paper_family	note	pfam_id
+PF00172	Zn(II)2Cys6 zinc cluster	Zn cluster	Zn(II)2Cys6 cluster. Paper family "Zn cluster".	Zn_clus
+PF04082	Fungal-specific transcription factor domain (C-terminal to Zn_clus)	Zn cluster	Fungal TF domain, usually next to Zn_clus. Paper counts it under "Zn cluster" (assumption: same protein class).	Fungal_trans
+PF00096	C2H2 zinc finger	C2H2/CCHC/CCCH/C5HC2	C2H2 finger. Paper family is a merged class.	zf-C2H2
+PF13465	C2H2 zinc finger variant	C2H2/CCHC/CCCH/C5HC2	C2H2 variant HMM.	zf-H2C2_2
+PF13894	C2H2 zinc finger variant	C2H2/CCHC/CCCH/C5HC2	C2H2 variant HMM.	zf-C2H2_4
+PF00170	Basic leucine zipper	bZIP	bZIP.	bZIP_1
+PF07716	Basic leucine zipper variant	bZIP	bZIP variant HMM.	bZIP_2
+PF00010	Basic helix-loop-helix	HLH, helix-loop-helix	bHLH.	HLH
+PF00320	GATA zinc finger	GATA Zn finger	GATA.	GATA
+PF00046	Homeodomain	HTH/Homeodomain-like	Homeodomain. Paper family "HTH/Homeodomain-like" is wider than Pfam Homeodomain.	Homeodomain
+PF05920	Homeobox KN domain	HTH/Homeodomain-like	Homeobox KN. Mapped to the same paper family as Homeodomain.	Homeobox_KN
+PF00447	Heat shock factor DNA-binding domain	Heat shock factor (HSF)-type	HSF.	HSF_DNA-bind
+PF00319	MADS-box (SRF-type)	MADS-box/SRF	MADS-box.	SRF-TF
+PF11951	Fungal-specific transcription factor domain 2 (Fungal_trans_2)		BFD source CSV labels PF11951 "C6H2-type zinc finger". In Pfam 38.2 it is Fungal_trans_2. The proteins still count as TF proteins (they carry a fungal-specific TF domain), but this family is not a zinc finger. No paper family.	Fungal_trans_2
+PF00250	Forkhead / winged-helix domain	Fork head TF	Forkhead.	Forkhead
+PF00505	High mobility group box	HMG-Box	HMG box.	HMG_box
+PF00249	Myb-like DNA-binding domain	Myb	Myb-like.	Myb_DNA-binding
+PF13921	Myb-like DNA-binding domain variant	Myb	Myb-like variant HMM.	Myb_DNA-bind_6
+PF00105	Nuclear hormone receptor C4 zinc finger		Family label from the source CSV. Pfam 38.2 names PF00105 zf-C4, 'Double treble clef zinc finger, C4 type'. Label kept so counts match (4 genomes, 10 proteins). No paper family.	zf-C4
+PF00157	POU-specific domain		POU. No paper family.	Pou
+			excluded: BFD's source CSV lists PF08880 as 'Rrn7-type RNA Pol I TF'; in Pfam 38.2 it is QLQ (SWI/SNF-related domain), not a TF DNA-binding domain; not counted	
+PF00642	CCCH zinc finger	C2H2/CCHC/CCCH/C5HC2	CCCH finger. Paper family merges C2H2/CCHC/CCCH/C5HC2.	zf-CCCH
+PF02319	E2F_TDP	E2F_TDP	Added. Pfam 38.2 name is WHD_E2F_TDP; the family label E2F_TDP is kept.	WHD_E2F_TDP
+PF01167	Tub	Tubby TF	Added. Pfam Tub.	Tub
+PF02257	RFX_DNA_binding	RFX_DNA_binding	Added.	RFX_DNA_binding
+PF03106	WRKY	DNA-binding WRKY	Added.	WRKY
+PF04516	CP2	CP2	Added.	CP2
+PF00808	CBFD_NFYB_HMF	CBF/NF-Y/archaeal histone	Added. Histone-fold domain; also present in histone-fold proteins that are not CBF/NF-Y TFs. Genome counts are high (23,334 genomes), so read it as an upper bound.	CBFD_NFYB_HMF
+PF00649	Copper-fist	Copper fist	Added.	Copper-fist
+PF01285	TEA	TEA/ATTS	Added.	TEA
+PF04383	KilA-N / APSES	APSES	Added. KilA-N is the Pfam domain of APSES proteins (Mbp1, Swi4, Xbp1, Efg1, Phd1). The existing BFD Pfam PF04844 (DNA_binding_1, APSES-type) has no hits and no entry in pfam_names, so no APSES family exists twice. The label "KilA-N / APSES" keeps both names.	KilA-N
+PF01017	STAT	STAT	Added. STAT_alpha. Found in 1 genome in pfam_names.	STAT_alpha
+PF02864	STAT	STAT	Added. STAT_bind. Found in 1 genome in pfam_names.	STAT_bind
+PF21354	STAT	STAT	Added. STAT_linker. Found in 1 genome in pfam_names. SH2 (PF00017) is not added: it is not specific to STAT.	STAT_linker
+			unmapped. SBP is PF03110 in Pfam 38.2 and has 0 BFD hits (plant-type domain). The PF00446 in fungal_tf_pfam_domains.csv is GnRH in Pfam 38.2, not SBP. Not counted.	
+			unmapped. Pfam 38.2 has no WOPR model. The PF11955 in fungal_tf_pfam_domains.csv is PORR in Pfam 38.2, not WOPR. Not counted.	
+			unmapped. The PF04844 in fungal_tf_pfam_domains.csv is Ovate (a plant family) in Pfam 38.2, not APSES. APSES is covered by PF04383 KilA-N. Not counted.	
+		Bacterial regulatory protein, ArsR	not fungal	
+		Bacterial regulatory protein, Crp	not fungal	
+		Bacterial regulatory protein, DeoR	not fungal	
+		Bacterial regulatory protein, LacI	not fungal	
+		Bacterial regulatory protein, LuxR	not fungal	
+		Bacterial regulatory protein, MarR	not fungal	
+		Bacterial regulatory protein, MerR	not fungal	
+		CCAAT-BindingTF	unmapped. No Pfam for this paper family in the map.	
+		CCR4	unmapped. No Pfam for this paper family in the map.	
+		Cold-shock DBD	unmapped. No Pfam for this paper family in the map.	
+		Ets	unmapped. No Pfam for this paper family in the map.	
+		GCN5L1	unmapped. No Pfam for this paper family in the map.	
+		MAT	unmapped. No Pfam for this paper family in the map.	
+		p53	unmapped. No Pfam for this paper family in the map.	
+		SAND-like	unmapped. No Pfam for this paper family in the map.	
+		SART-1	unmapped. No Pfam for this paper family in the map.	
+		SGT1	unmapped. No Pfam for this paper family in the map.	
+		TATA box	unmapped. No Pfam for this paper family in the map.	
+		TFIID	unmapped. No Pfam for this paper family in the map.	
+		Trp repressor/replication initiator	unmapped. No Pfam for this paper family in the map.	
+		YL1	unmapped. No Pfam for this paper family in the map.	
+		zf-A20	unmapped. No Pfam for this paper family in the map.	
+		zf-BED	unmapped. No Pfam for this paper family in the map.	
+		zf-GRF	unmapped. No Pfam for this paper family in the map.	
+		zf-MIZ	unmapped. No Pfam for this paper family in the map.	
+		zf-TAZ	unmapped. No Pfam for this paper family in the map.	
+		Zn-finger, NF-X1 type	unmapped. No Pfam for this paper family in the map.	
+		NDT80/PhoG	unmapped. No Pfam for this paper family in the map.	
+		STE-like	unmapped. No Pfam for this paper family in the map.	
+		Zn finger, PHD-type	unmapped. No Pfam for this paper family in the map.	

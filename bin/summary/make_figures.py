@@ -22,6 +22,8 @@ The .qmd pages state the unit for every figure.
 """
 import colorsys
 import json
+import os
+import shutil
 import sys
 from pathlib import Path
 
@@ -699,6 +701,15 @@ def run_level(level, core0, tables, out, phylum_order=None):
         print(f"{level}: codon_genome/aa_genome.parquet absent, skipping composition page", flush=True)
     else:
         page_composition(core, levels, colors, codon, aa, o)
+    try:
+        tf_fam, tf_summ = rd("tf_family_genome"), rd("tf_summary_genome")
+    except FileNotFoundError:
+        if not RUN_STATUS.get("tf_note"):   # one note per run, not one per level
+            print("TF landscape skipped: tf_family_genome/tf_summary_genome.parquet absent", flush=True)
+            RUN_STATUS["tf_note"] = True
+    else:
+        from figs_tf import page_tf_landscape
+        page_tf_landscape(core, levels, colors, tf_fam, tf_summ, o)
     print(f"{level}: {len(levels)} groups, {len(o.made)} outputs", flush=True)
     return o.made
 
@@ -714,12 +725,62 @@ def _resolve_suppress(suppress):
     return suppress if isinstance(suppress, pd.DataFrame) else load_suppress(suppress)
 
 
-def main(data, out, levels=LEVELS, suppress=None):
+def tf_extra_dirs(data, option=None):
+    """Directories with prebuilt TF outputs (target conservation, orthologs) to copy into the run's out tree.
+    Order of precedence: `option` (CLI; 'none' disables), environment BFD_TF_EXTRA_DIRS (os.pathsep list), then the
+    default <data dir's parent>/tf_targets and <data dir's parent>/tf_orthologs."""
+    val = option if option is not None else os.environ.get("BFD_TF_EXTRA_DIRS")
+    if val is not None:
+        return [Path(p) for p in val.split(os.pathsep) if p and p != "none"]
+    base = Path(data).resolve().parent
+    return [base / "tf_targets", base / "tf_orthologs"]
+
+
+def import_tf_extra(out, dirs):
+    """Copy figures/ (PNG, SVG, JSON sidecars), tables/ and tables_tf/ of each prebuilt directory into the out tree, so
+    one tree is packaged and figures_index.tsv (built from the PNGs and sidecars on disk) lists them. A directory that
+    does not exist is skipped; one note covers all missing directories. Symlinks are not copied. An existing destination
+    file with different bytes is overwritten with a warning that names it; nothing is removed. Returns Made records for the copied PNGs."""
+    out = Path(out)
+    made, missing = [], []
+    for d in dirs:
+        d = Path(d)
+        if not d.is_dir():
+            missing.append(str(d))
+            continue
+        for src_name, dst_rel in (("figures", None), ("tables", None), ("tables_tf", "tables/tf")):
+            src = d / src_name
+            if not src.is_dir():
+                continue
+            for f in sorted(src.rglob("*")):
+                if f.is_symlink() or not f.is_file():     # a symlink could point outside the prebuilt tree: skip it
+                    continue
+                rel = f.relative_to(src)
+                dst = out / (Path(dst_rel) / rel if dst_rel else Path(src_name) / rel)
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                if dst.exists() and not dst.is_symlink() and dst.read_bytes() != f.read_bytes():
+                    print(f"WARNING {dst} exists and differs from {f}: overwritten", flush=True)
+                shutil.copy2(f, dst)
+                if src_name == "figures" and f.suffix == ".png":
+                    try:
+                        side = json.loads(f.with_suffix(".json").read_text())
+                    except (OSError, ValueError):
+                        side = {}
+                    made.append(Made(f.stem, side.get("topic"), "figure", side.get("scope") or "representatives"))
+    if missing:
+        print(f"TF prebuilt outputs not found (skipped): {', '.join(missing)}", flush=True)
+    elif made:
+        print(f"copied {len(made)} prebuilt TF figures into {out}", flush=True)
+    return made
+
+
+def main(data, out, levels=LEVELS, suppress=None, tf_extra=None):
     from suppress import drop_suppressed
     sup = _resolve_suppress(suppress)
     dropped = set()
     RUN_STATUS["failed"] = []
     RUN_STATUS["skipped"] = []
+    RUN_STATUS["tf_note"] = False
     data = Path(data)
     cache = {}
 
@@ -748,6 +809,42 @@ def main(data, out, levels=LEVELS, suppress=None):
     else:
         from figs_scatter import page_all_genomes
         made["all"] = page_all_genomes(genome_all, out, porder)   # phylum-independent: one set under figures/all/
+        try:
+            tf_summ_all = rd("tf_summary_genome")
+        except FileNotFoundError:
+            pass     # run_level already printed the one TF note
+        else:
+            from figs_tf import page_tf_all
+            made["all"] = list(made["all"]) + list(page_tf_all(genome_all, tf_summ_all, out, porder))
+            try:     # the paper's claims and the calibration: after the landscape pages; a failure must not stop the run
+                from tf_paper import run_tf_claims
+                try:
+                    pf_tab = rd("tf_paper_family_genome")
+                except FileNotFoundError:
+                    pf_tab = None     # run_tf_claims prints the warning and notes the rows
+                made["tf"] = run_tf_claims(genome_all, rd("tf_family_genome"), tf_summ_all, out, paper_fam=pf_tab)
+            except Exception as e:
+                import traceback
+                traceback.print_exc(file=sys.stderr)
+                print(f"TF claims page failed: {type(e).__name__}: {e}", flush=True)
+                RUN_STATUS["failed"].append(f"TF claims ({type(e).__name__}: {e})")
+            try:     # expansions and contractions: hypotheses; after the claims page; a failure must not stop the run
+                from tf_data import genus_table
+                from tf_expansion import page_tf_expansion
+                pf_tab = rd("tf_paper_family_genome")     # FileNotFoundError: one note below, no page
+                tf_fam_all = rd("tf_family_genome")
+                oe = Out(out, "tf")
+                g80 = genus_table(genome_all, tf_fam_all, tf_summ_all, busco_min=80, paper_fam=pf_tab)
+                g0 = genus_table(genome_all, tf_fam_all, tf_summ_all, paper_fam=pf_tab)
+                page_tf_expansion(g80, g0, oe, porder=porder)
+                made["tf"] = list(made.get("tf", [])) + list(oe.made)
+            except FileNotFoundError as e:
+                print(f"TF expansion page skipped: table absent ({e})", flush=True)
+            except Exception as e:
+                import traceback
+                traceback.print_exc(file=sys.stderr)
+                print(f"TF expansion page failed: {type(e).__name__}: {e}", flush=True)
+                RUN_STATUS["failed"].append(f"TF expansion ({type(e).__name__}: {e})")
         from summary_ordination import pick_complete_reps, run_ordination   # runs once, not per level
         mats = {}
         for key, tname in (("codon", "codon_genome"), ("aa", "aa_genome"), ("structure", "gene_structure_genome")):
@@ -764,6 +861,15 @@ def main(data, out, levels=LEVELS, suppress=None):
                 traceback.print_exc(file=sys.stderr)
                 print(f"ordination failed: {type(e).__name__}: {e}", flush=True)
                 RUN_STATUS["failed"].append(f"ordination ({type(e).__name__}: {e})")
+    try:     # prebuilt TF target/ortholog outputs: copied in before the index is built; a failure must not stop the run
+        extra = import_tf_extra(out, tf_extra_dirs(data, tf_extra))
+        if extra:
+            made["tf_prebuilt"] = extra
+    except Exception as e:
+        import traceback
+        traceback.print_exc(file=sys.stderr)
+        print(f"TF prebuilt copy failed: {type(e).__name__}: {e}", flush=True)
+        RUN_STATUS["failed"].append(f"TF prebuilt copy ({type(e).__name__}: {e})")
     try:
         from figure_index import build_index
         idx = build_index(Path(out))
@@ -789,8 +895,13 @@ def run_cli(argv):
         val = argv[i + 1]
         suppress = pd.DataFrame({"species_prefix": []}) if val == "none" else val
         del argv[i:i + 2]
+    tf_extra = None
+    if "--tf-extra" in argv:
+        i = argv.index("--tf-extra")
+        tf_extra = argv[i + 1]
+        del argv[i:i + 2]
     levels = tuple(argv[3].split(",")) if len(argv) > 3 else LEVELS
-    main(argv[1], argv[2], levels, suppress=suppress)
+    main(argv[1], argv[2], levels, suppress=suppress, tf_extra=tf_extra)
     skipped = RUN_STATUS["skipped"]
     print(f"skipped figures: {len(skipped)}" + (" (" + ", ".join(skipped) + ")" if skipped else ""), flush=True)
     if RUN_STATUS["failed"]:

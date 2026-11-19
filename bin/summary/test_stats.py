@@ -84,3 +84,18 @@ def test_regression_small_n_returns_nan_row_with_n():
     r = pair_regressions(d, [("x", "y")])
     assert len(r) == 1 and r.iloc[0]["n"] == 2
     assert r[["slope", "intercept", "r2", "p_value"]].isna().all(axis=None)
+
+
+def test_bh_adjustment_known_answer():
+    from stats import bh_adjust
+    # p = [0.01, 0.04, 0.03], m = 3. Sorted 0.01, 0.03, 0.04 -> raw 0.03, 0.045, 0.04; running min from the top: 0.03, 0.04, 0.04.
+    assert np.allclose(bh_adjust([0.01, 0.04, 0.03]), [0.03, 0.04, 0.04])
+
+
+def test_bh_adjust_nan_safe_capped_and_order_preserving():
+    from stats import bh_adjust
+    r = bh_adjust(np.array([0.01, np.nan, 0.04]))     # m = 2: 0.01*2/1 = 0.02 and 0.04*2/2 = 0.04
+    assert np.allclose(r[[0, 2]], [0.02, 0.04]) and np.isnan(r[1])
+    assert np.allclose(bh_adjust([0.9, 0.8]), [0.9, 0.9])    # never above 1, monotone
+    assert bh_adjust([]).shape == (0,)
+    assert np.isnan(bh_adjust([np.nan])).all()

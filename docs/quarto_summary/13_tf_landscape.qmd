@@ -1,0 +1,150 @@
+---
+title: "TF landscape"
+---
+
+```{python}
+import sys
+sys.path.insert(0, ".")
+import pandas as pd
+from _helpers import fig, table, single, flat_table, read_flat, read_family_map, say
+```
+
+This page counts transcription factors (TFs) in the BFD genomes. A TF here is a protein with at least one DNA-binding domain from a fixed list of Pfam families. The list is the family map shown at the end of this page.
+
+::: {.callout-warning}
+## Definition and limits
+- **Pfam-based.** A protein is a TF when it has a hit to a listed Pfam model. This is a domain call, not proof of function. A protein can have a TF domain and not act as a TF.
+- **distinct proteins.** All counts are distinct proteins. A protein with two TF domains is counted once for the genome and once for each family it belongs to. The unit is the protein-coding gene products of a genome (protein-coding genes with a proteome).
+- **TF fraction** = proteins with a TF domain divided by all proteins of the genome.
+- Genomes with no proteome are not plotted. Genomes with no TF protein have no composition and no Shannon index (NaN, not 0).
+- The group tests have no phylogenetic control. Read the effect sizes as descriptions of the sample.
+:::
+
+## Scope
+
+```{python}
+t = read_flat("T_tf_groups", "phylum")
+if t is None:
+    say("*The TF group table has not been built yet, so the counts for this page are not shown.*")
+else:
+    n, nproteome, ntf = int(t["n_genomes"].sum()), int(t["n_with_proteome"].sum()), int(t["n_with_tf"].sum())
+    say(f"One representative genome per species. The phylum table lists {n:,} representative genomes in {len(t)} groups. "
+        f"{nproteome:,} have a proteome and {ntf:,} have at least one TF protein. "
+        "The counts are read from the tables of this build when the page renders.")
+```
+
+## TF fraction
+
+```{python}
+fig("T01_tf_fraction", "Fraction of proteins with a TF domain, one point per representative genome, by group.")
+```
+
+```{python}
+single("T06_tf_vs_proteome", "Proteins with a TF domain against proteome size, all genomes with a proteome and at least one TF protein (log scales). Genomes of one lineage are not independent.", "all")
+```
+
+## Family composition
+
+```{python}
+fig("T02_tf_composition", "Share of each TF family among the TF proteins of a genome, mean by group. Families beyond the top ones are pooled.")
+```
+
+```{python}
+fig("T03_tf_family_heatmap", "TF family size (distinct proteins per genome) by group, as a heat map.")
+```
+
+## Rare families
+
+```{python}
+fig("T04_tf_rare_presence", "Share of genomes of each group in which a rare TF family is present.")
+```
+
+## Diversity
+
+```{python}
+fig("T05_tf_shannon", "Shannon index of the TF family counts of a genome (nats). 0 means one family. Genomes with no TF are omitted.")
+```
+
+## Group summaries
+
+The group table gives, for each group, the genome count, the count with a proteome, the count with a TF protein and the group medians.
+
+```{python}
+table("T_tf_groups", digits=4)
+```
+
+The tests compare the groups of each level for the TF fraction and the Shannon index. The columns are the effect size and the adjusted p-value of the group test. There is no phylogenetic control.
+
+```{python}
+table("T_anova_tf", digits=4)
+```
+
+## The TF family map
+
+The map links each Pfam accession to a BFD family label and to a row of the family table of Lax et al. 2025 (Nature Communications 16:10277; the paper's families come from InterPro, not from Pfam). The page reads the map from `data/tf_family_map.tsv`. This file is a copy of `config/tf_family_map.tsv`. A test checks that the two files are the same.
+
+```{python}
+fm = read_family_map()
+if fm is None:
+    say("*The family map `data/tf_family_map.tsv` could not be read, so the counts and tables of this section are not shown.*")
+else:
+    counted = fm[fm["pfam_acc"] != ""]
+    bfd_fam = counted["family"].nunique()
+    paper_mapped = counted.loc[counted["paper_family"] != "", "paper_family"].nunique()
+    unmapped = fm[(fm["pfam_acc"] == "") & (fm["paper_family"] != "") & fm["note"].str.startswith("unmapped")]
+    bact = fm[(fm["pfam_acc"] == "") & fm["note"].str.startswith("not fungal")]
+    say(f"The map has {len(counted)} Pfam accessions. They give {bfd_fam} distinct BFD family labels and cover "
+        f"{paper_mapped} paper family rows. The map lists {len(unmapped)} further paper families with no Pfam in the map "
+        f"(unmapped) and {len(bact)} bacterial paper families (not fungal). These numbers are read from the map.")
+```
+
+### Caveats
+
+- **STAT is not detectable.** The Pfam STAT models (PF01017, PF02864, PF21354) hit very few BFD genomes (the map notes give the count). The paper's table has STAT in many more species. This is a difference in definition, not a result. The claims page shows it as "not comparable".
+- **Paper families with no Pfam in the map are not counted.** The list is the table of unmapped paper families below. The pipeline's old Pfam rows for SBP and WOPR are also not counted (see the corrections table).
+- **The paper's counts are InterPro-based.** BFD counts come from Pfam. The calibration on the claims page compares them for the species that both sets share.
+- **Some paper families are wider than the Pfam that maps to them.** For example, HTH/Homeodomain-like is wider than Pfam Homeodomain.
+- **The histone-fold family (CBFD_NFYB_HMF) is an upper bound.** The domain is also in histone-fold proteins that are not CBF/NF-Y TFs.
+- **Pfam release.** The map was checked against Pfam 38.2.
+
+### Corrections to the pipeline's TF Pfam list
+
+Five rows of the TF Pfam CSV that the pipeline used (`nextflow/assets/fungal_tf_pfam_domains.csv`) disagree with Pfam 38.2. The BFD list in the map corrects them.
+
+| Accession in the CSV | CSV label | Name in Pfam 38.2 | Treatment in the BFD list |
+|---|---|---|---|
+| PF00446 | SBP | GnRH | not counted; SBP is PF03110 (a plant-type domain; the map notes give its BFD hit count) |
+| PF11955 | WOPR | PORR | not counted; Pfam 38.2 has no WOPR model |
+| PF04844 | APSES | Ovate (a plant family) | not counted; APSES is covered by PF04383 (KilA-N) |
+| PF11951 | C6H2-type zinc finger | Fungal_trans_2 | counted as Fungal_trans_2, not as a zinc finger |
+| PF08880 | Rrn7-type RNA Pol I TF | QLQ | excluded; QLQ is not a TF DNA-binding domain |
+
+### Pfam families and their paper family
+
+```{python}
+if fm is None:
+    say("*Family map not available.*")
+else:
+    cols = ["pfam_acc", "pfam_id", "family", "paper_family"]
+    say(counted[cols].to_markdown(index=False))
+```
+
+### Paper families with no Pfam in the map (unmapped)
+
+```{python}
+if fm is None:
+    say("*Family map not available.*")
+else:
+    u = unmapped[["paper_family", "note"]]
+    say(u.to_markdown(index=False) if len(u) else "No unmapped paper families are listed.")
+```
+
+### Notes on the rows that are not counted
+
+```{python}
+if fm is None:
+    say("*Family map not available.*")
+else:
+    other = fm[(fm["pfam_acc"] == "") & (fm["paper_family"] == "")][["note"]]
+    say(other.to_markdown(index=False) if len(other) else "No such rows.")
+```

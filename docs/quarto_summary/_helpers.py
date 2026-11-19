@@ -101,24 +101,64 @@ def single(name, caption, folder, width="85%"):
                      f"([SVG](figures/{folder}/{name}.svg))"))
 
 
-def flat_table(name, folder, digits=3, max_rows=None, columns=None):
-    """Show tables/<folder>/<name>.tsv (folder = ordination); says so when the table is absent."""
+def _read_commented(path):
+    """(DataFrame, comment lines): leading lines that start with '#' are returned as text (without '#') and skipped."""
+    comments = []
+    with open(path) as fh:
+        for line in fh:
+            if not line.startswith("#"):
+                break
+            comments.append(line[1:].strip())
+    return pd.read_csv(path, sep="\t", skiprows=len(comments)), comments
+
+
+def read_comments(name, folder):
+    """Leading '#' lines of tables/<folder>/<name>.tsv (thresholds written by the workflows), or [] when absent."""
+    path = HERE / "tables" / folder / f"{name}.tsv"
+    return _read_commented(path)[1] if path.exists() else []
+
+
+def flat_table(name, folder, digits=3, max_rows=None, columns=None, where=None):
+    """Show tables/<folder>/<name>.tsv (folder = ordination or tf); says so when the table is absent.
+    Leading '#' lines are shown as a note above the table. where = optional function DataFrame -> DataFrame (row filter);
+    an empty result prints a short note. The table sits in a scrollable div."""
     path = HERE / "tables" / folder / f"{name}.tsv"
     if not path.exists():
         display(Markdown(f"*Table `{name}` has not been built (tables/{folder}/).*"))
         return
-    df = pd.read_csv(path, sep="\t")
+    df, comments = _read_commented(path)
+    if where is not None:
+        df = where(df)
+    if not len(df):
+        display(Markdown(f"*Table `{name}` has no rows that match this view.*"))
+        return
     if columns:
         df = df[[c for c in columns if c in df.columns]]
     if max_rows:
         df = df.head(max_rows)
-    display(Markdown(df.round(digits).to_markdown(index=False)))
+    note = "".join(f"*{html.escape(c)}*\n\n" for c in comments)
+    display(Markdown(note + '<div style="overflow-x:auto">\n\n' + df.round(digits).to_markdown(index=False) + "\n\n</div>"))
 
 
 def read_flat(name, folder):
-    """DataFrame of tables/<folder>/<name>.tsv, or None when absent."""
+    """DataFrame of tables/<folder>/<name>.tsv (leading '#' lines skipped), or None when absent."""
     path = HERE / "tables" / folder / f"{name}.tsv"
-    return pd.read_csv(path, sep="\t") if path.exists() else None
+    return _read_commented(path)[0] if path.exists() else None
+
+
+def read_family_map(path=None):
+    """data/tf_family_map.tsv (a copy of config/tf_family_map.tsv; lines that start with # are comments) as a DataFrame of
+    strings, or None when the file cannot be read."""
+    try:
+        return pd.read_csv(Path(path) if path else HERE / "data" / "tf_family_map.tsv", sep="\t", comment="#", dtype=str,
+                           keep_default_na=False)
+    except (OSError, ValueError):
+        return None
+
+
+def say(text):
+    """Show one Markdown paragraph."""
+    display(Markdown(text))
 
 
 INDEX_COLS = ["name", "level", "topic", "kind", "scope", "n_genomes", "n_groups", "pooled_share", "effect_size",

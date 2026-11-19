@@ -70,6 +70,32 @@ except (OSError, ValueError):
     print("The suppress list `data/summary_suppress.tsv` could not be read, so the table is not shown.")
 ```
 
+## Transcription-factor tables
+
+The TF pages (TF landscape, TF claims, TF orthologs, TF expansions) need three per-genome tables in `analysis/summary_tables`: `tf_family_genome`, `tf_summary_genome` and `tf_paper_family_genome`. Build them in this order, from the repository root:
+
+1. `sbatch workflows/tf_tables.sh` writes the three tables (`bin/summary/build_tf_tables.py`).
+2. `sbatch workflows/summary_figures.sh` runs `make_figures.py`. It makes the TF figures and tables when the TF tables are present, and prints a note when they are not.
+3. The ortholog and DAP-seq target pages (`T20_*`, `T21_*`) come from a separate workflow, `workflows/tf_orthologs.sh` and `workflows/tf_targets.sh`. Until those have run, these sections show "not built yet" notes.
+
+The family map is `config/tf_family_map.tsv`. A committed copy for the pages is `data/tf_family_map.tsv`, read when the TF landscape page renders. A test checks that the copy is identical to the config file. The same holds for `data/paper_species_map.tsv` (the species of the paper matched to BFD genomes) and `config/paper_species_map.tsv`. To change the map, edit the config file and copy it over the file in `docs/quarto_summary/data/`.
+
+The map was checked against Pfam release 38.2. The TF Pfam CSV of the pipeline had five rows that disagree with that release. The TF landscape page lists them and their treatment. The map also lists the paper families that have no Pfam in the map (unmapped); they are not counted.
+
+```{python}
+#| echo: false
+import sys
+sys.path.insert(0, ".")
+from _helpers import read_family_map, say
+fm = read_family_map()
+if fm is None:
+    say("The family map `data/tf_family_map.tsv` could not be read, so its summary is not shown.")
+else:
+    c = fm[fm["pfam_acc"] != ""]
+    un = fm[(fm["pfam_acc"] == "") & (fm["paper_family"] != "") & fm["note"].str.startswith("unmapped")]
+    say(f"The map has {len(c)} Pfam accessions in {c['family'].nunique()} BFD families, and {len(un)} unmapped paper families.")
+```
+
 ## Explore page data
 
 The Explore page reads `data/genomes.json` (one row per genome, all genomes in `genome_all` except the suppressed genomes). Regenerate it from the repository root with:

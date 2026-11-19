@@ -1,0 +1,64 @@
+# Paper species (MOESM3 'Genomes' sheet, typos kept) -> best-BUSCO BFD genome with the same genus and epithet. match: exact, alias (hand-curated name change or typo, see ALIASES in bin/summary/tf_paper.py; alias_reason = typo, renamed taxon or synonym), none. n_candidates = BFD genomes with that name. Built from genome_all.parquet of 2026-11-17 and reviewed by hand.
+paper_species	species	species_prefix	strain	match	n_candidates	bfd_species	busco_complete	alias_reason
+Ashbya(Eremothecium) gossypii	A. gossypii	F0168B3C		exact	2	Eremothecium gossypii	76.2	
+Aspergillus nidulans	A. nidulans	FC188624		exact	19	Aspergillus nidulans	99.2	
+Botrytis cinerea	B. cinerea	FE5EDC34		exact	62	Botrytis cinerea	99.8	
+Candida albicans	C. albicans	F22F00F8		exact	134	Candida albicans	80.8	
+Coccidioides immitis	C. immitis	FCEA440F		exact	6	Coccidioides immitis	99.3	
+Cordyceps militaris	C. militaris	F510FCE8		exact	8	Cordyceps militaris	99.9	
+Fusarium fujikuroi	F. fujikuroi	F13D847E		exact	29	Fusarium fujikuroi	99.7	
+Kluyveromyces lactis	K. lactis	F0B9AD34		exact	24	Kluyveromyces lactis	76.8	
+Neurospora crassa	N. crassa	FC69C3D3		exact	6	Neurospora crassa	99.8	
+Saccharomyces cerevisiae	S. cerevisiae	F7F61EE9		exact	1364	Saccharomyces cerevisiae x Saccharomyces eubayanus x Saccharomyces kudriavzevii x Saccharomyces uvarum	76.7	
+Schizosaccharomyces pombe	S. pombe	FFECC5E4		exact	59	Schizosaccharomyces pombe	84.0	
+Amanita muscaria	A. muscaria	F220C7FA		exact	2	Amanita muscaria	98.8	
+Coprinopsis cinerea	C. cinerea	F1F5452B		exact	3	Coprinopsis cinerea	99.4	
+Cryptococcus neoformans	C. neoformans	F56E78F8		exact	192	Cryptococcus neoformans	97.4	
+Malasseizia sympodialis	M. sympodialis	FFEB81FE		alias	8	Malassezia sympodialis	90.9	typo
+Puccinia striiformis	P. striiformis	F8C5F9E0		exact	26	Puccinia striiformis	94.4	
+Suillus brevipes	S. brevipes	F0739509		exact	1	Suillus brevipes	99.4	
+Tremella mesenterica	T. mesenterica	FD4B8247		exact	2	Tremella mesenterica	96.5	
+Ustilago maydis	U. maydis	F5551264		alias	37	Mycosarcoma maydis	97.2	renamed taxon
+Mucor lusitanicus	M. lusitanicus	F750FE6D		exact	2	Mucor lusitanicus	98.2	
+Phycomyces blakesleeanus	P. blakesleeanus	F888095F		exact	3	Phycomyces blakesleeanus	98.3	
+Rhizopus microsporus	R. microsporus	F19C9321		exact	24	Rhizopus microsporus	98.7	
+Lichtheimia corymbifera	L. corymbifera	F6CA7A1E		exact	5	Lichtheimia corymbifera	98.3	
+Absidia repens	A. repens	FEBF3DD9		exact	1	Absidia repens	97.9	
+Blakeslea trispora	B. trispora	F3B4DB5C		exact	1	Blakeslea trispora	95.8	
+Saksenea vasiformis	S. vasiformis	F5914C48		alias	1	Saksenaea vasiformis	97.5	typo
+Hesseltinella vesiculosa	H. vesiculosa	F6FD6BCA		exact	1	Hesseltinella vesiculosa	96.9	
+Pilobolus umbonatus	P. umbonatus	F068107F		exact	1	Pilobolus umbonatus	97.5	
+Sporodiniella umbellata	S. umbellata	F315D669		exact	1	Sporodiniella umbellata	95.2	
+Syncephalastrum racemosum	S. racemosum	F00A5B1D		exact	2	Syncephalastrum racemosum	97.7	
+Gongronella butleri	G. butleri	FA81F55E		exact	1	Gongronella butleri	95.8	
+Mortierella alpina	M. alpina	F942E519		exact	13	Mortierella alpina	96.1	
+Mortierella elongata	M. elongata	F77A1D79		alias	10	Linnemannia elongata	96.0	renamed taxon
+Podila epigama	P. epigama	F2D8D6CD		exact	1	Podila epigama	89.7	
+Rhizophagus irregularis	R. irregularis	FDB574B3		exact	23	Rhizophagus irregularis	92.5	
+Gigaspora margarita	G. margarita	FA186146		exact	2	Gigaspora margarita	91.6	
+Geosiphon pyriformis	G. pyriformis	FC303ED2		exact	1	Geosiphon pyriformis	90.1	
+Basidiobolus meristosporus	B. meristosporus	F9147518		exact	2	Basidiobolus meristosporus	96.3	
+Conidiobolus coronatus	C. coronatus	F0AFF821		exact	2	Conidiobolus coronatus	79.5	
+Entomophaga maimaiga	E. maimaiga			none	0			
+Zoophthora radicans	Z. radicans			none	0			
+Coemansia reversa	C. reversa	F35EFF3E		exact	1	Coemansia reversa	90.7	
+Kickxella alabastrina	K. alabastrina	F9F51274		exact	3	Kickxella alabastrina	89.6	
+Linderina pennispora	L. pennispora	F43C8248		exact	2	Linderina pennispora	91.1	
+Synchephalis fuscata	S. fuscata	FB5167BD		alias	1	Syncephalis fuscata	86.1	typo
+Piptocephalis cylindrospora	P. cylindrospora	F1942C05		exact	1	Piptocephalis cylindrospora	43.2	
+Olpidium bornovanus	O. bornovanus	F7EF265E		exact	1	Olpidium bornovanus	25.4	
+Gonapodya prolifera	G. prolifera	FC8B8027		exact	1	Gonapodya prolifera	81.2	
+Orpinomyces	Orpinomyces			none	0			
+Anaeromyces robustus	A. robustus	F76F2617		exact	1	Anaeromyces robustus	72.9	
+Piromyces finnis	P. finnis	F18B6B82		exact	1	Piromyces finnis	74.8	
+Catenaria anguillulae	C. anguillulae	FA566070		exact	2	Catenaria anguillulae	76.0	
+Allomyces macrogynus	A. macrogynus	F5BE82F7		exact	1	Allomyces macrogynus	81.6	
+Spizellomyces punctatus	S. punctatus	F931F230		exact	1	Spizellomyces punctatus	97.9	
+Batrachochytrium dendrobatidis	B. dendrobatidis	F591A93A		exact	7	Batrachochytrium dendrobatidis	89.8	
+Caulochytrium protostelioides	C. protostelioides	F3F252DC		exact	1	Caulochytrium protostelioides	74.1	
+Entophlyctis helioformis	E. helioformis	F277D783		exact	1	Entophlyctis helioformis	88.2	
+Geranomyces variabilis	G. variabilis	F3C69CF2		exact	5	Geranomyces variabilis	97.5	
+Polychytrium aggregatum	P. aggregatum	F7609CBB		exact	1	Polychytrium aggregatum	98.5	
+Ttriparticalar arcticum	T. arcticum			none	0			
+Rozella allomycis	R. allomyces	F17255EC		exact	1	Rozella allomycis	58.5	
+Antonospora locustae	A. locustae	F11FA1E0		exact	1	Antonospora locustae	10.2	

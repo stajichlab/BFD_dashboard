@@ -1,0 +1,3164 @@
+# Source: Lax et al. 2025, Nature Communications 16:10277, Supplementary Data (MOESM3), sheet 'TF count' (counts) and sheet 'Genomes' (full species names, paired by column order). Whitespace in names stripped.
+species	species_full	paper_family	count
+A. gossypii	Ashbya(Eremothecium) gossypii	APSES	3
+A. nidulans	Aspergillus nidulans	APSES	4
+B. cinerea	Botrytis cinerea	APSES	3
+C. albicans	Candida albicans	APSES	4
+C. immitis	Coccidioides immitis	APSES	4
+C. militaris	Cordyceps militaris	APSES	2
+F. fujikuroi	Fusarium fujikuroi	APSES	3
+K. lactis	Kluyveromyces lactis	APSES	3
+N. crassa	Neurospora crassa	APSES	4
+S. cerevisiae	Saccharomyces cerevisiae	APSES	4
+S. pombe	Schizosaccharomyces pombe	APSES	4
+A. muscaria	Amanita muscaria	APSES	2
+C. cinerea	Coprinopsis cinerea	APSES	2
+C. neoformans	Cryptococcus neoformans	APSES	2
+M. sympodialis	Malasseizia sympodialis	APSES	3
+P. striiformis	Puccinia striiformis	APSES	2
+S. brevipes	Suillus brevipes	APSES	2
+T. mesenterica	Tremella mesenterica	APSES	2
+U. maydis	Ustilago maydis	APSES	2
+M. lusitanicus	Mucor lusitanicus	APSES	11
+P. blakesleeanus	Phycomyces blakesleeanus	APSES	10
+R. microsporus	Rhizopus microsporus	APSES	7
+L. corymbifera	Lichtheimia corymbifera	APSES	13
+A. repens	Absidia repens	APSES	9
+B. trispora	Blakeslea trispora	APSES	4
+S. vasiformis	Saksenea vasiformis	APSES	2
+H. vesiculosa	Hesseltinella vesiculosa	APSES	5
+P. umbonatus	Pilobolus umbonatus	APSES	4
+S. umbellata	Sporodiniella umbellata	APSES	8
+S. racemosum	Syncephalastrum racemosum	APSES	9
+G. butleri	Gongronella butleri	APSES	7
+M. alpina	Mortierella alpina	APSES	3
+M. elongata	Mortierella elongata	APSES	1
+P. epigama	Podila epigama	APSES	0
+R. irregularis	Rhizophagus irregularis	APSES	4
+G. margarita	Gigaspora margarita	APSES	1
+G. pyriformis	Geosiphon pyriformis	APSES	2
+B. meristosporus	Basidiobolus meristosporus	APSES	9
+C. coronatus	Conidiobolus coronatus	APSES	3
+E. maimaiga	Entomophaga maimaiga	APSES	4
+Z. radicans	Zoophthora radicans	APSES	8
+C. reversa	Coemansia reversa	APSES	3
+K. alabastrina	Kickxella alabastrina	APSES	3
+L. pennispora	Linderina pennispora	APSES	1
+S. fuscata	Synchephalis fuscata	APSES	1
+P. cylindrospora	Piptocephalis cylindrospora	APSES	2
+O. bornovanus	Olpidium bornovanus	APSES	3
+G. prolifera	Gonapodya prolifera	APSES	2
+Orpinomyces	Orpinomyces	APSES	3
+A. robustus	Anaeromyces robustus	APSES	1
+P. finnis	Piromyces finnis	APSES	1
+C. anguillulae	Catenaria anguillulae	APSES	4
+A. macrogynus	Allomyces macrogynus	APSES	0
+S. punctatus	Spizellomyces punctatus	APSES	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	APSES	0
+C. protostelioides	Caulochytrium protostelioides	APSES	0
+E. helioformis	Entophlyctis helioformis	APSES	4
+G. variabilis	Geranomyces variabilis	APSES	4
+P. aggregatum	Polychytrium aggregatum	APSES	3
+T. arcticum	Ttriparticalar arcticum	APSES	3
+R. allomyces	Rozella allomycis	APSES	0
+A. locustae	Antonospora locustae	APSES	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Bacterial regulatory protein, ArsR	0
+A. nidulans	Aspergillus nidulans	Bacterial regulatory protein, ArsR	0
+B. cinerea	Botrytis cinerea	Bacterial regulatory protein, ArsR	0
+C. albicans	Candida albicans	Bacterial regulatory protein, ArsR	0
+C. immitis	Coccidioides immitis	Bacterial regulatory protein, ArsR	0
+C. militaris	Cordyceps militaris	Bacterial regulatory protein, ArsR	0
+F. fujikuroi	Fusarium fujikuroi	Bacterial regulatory protein, ArsR	0
+K. lactis	Kluyveromyces lactis	Bacterial regulatory protein, ArsR	0
+N. crassa	Neurospora crassa	Bacterial regulatory protein, ArsR	0
+S. cerevisiae	Saccharomyces cerevisiae	Bacterial regulatory protein, ArsR	0
+S. pombe	Schizosaccharomyces pombe	Bacterial regulatory protein, ArsR	0
+A. muscaria	Amanita muscaria	Bacterial regulatory protein, ArsR	0
+C. cinerea	Coprinopsis cinerea	Bacterial regulatory protein, ArsR	1
+C. neoformans	Cryptococcus neoformans	Bacterial regulatory protein, ArsR	0
+M. sympodialis	Malasseizia sympodialis	Bacterial regulatory protein, ArsR	0
+P. striiformis	Puccinia striiformis	Bacterial regulatory protein, ArsR	0
+S. brevipes	Suillus brevipes	Bacterial regulatory protein, ArsR	0
+T. mesenterica	Tremella mesenterica	Bacterial regulatory protein, ArsR	0
+U. maydis	Ustilago maydis	Bacterial regulatory protein, ArsR	0
+M. lusitanicus	Mucor lusitanicus	Bacterial regulatory protein, ArsR	0
+P. blakesleeanus	Phycomyces blakesleeanus	Bacterial regulatory protein, ArsR	0
+R. microsporus	Rhizopus microsporus	Bacterial regulatory protein, ArsR	0
+L. corymbifera	Lichtheimia corymbifera	Bacterial regulatory protein, ArsR	0
+A. repens	Absidia repens	Bacterial regulatory protein, ArsR	0
+B. trispora	Blakeslea trispora	Bacterial regulatory protein, ArsR	0
+S. vasiformis	Saksenea vasiformis	Bacterial regulatory protein, ArsR	0
+H. vesiculosa	Hesseltinella vesiculosa	Bacterial regulatory protein, ArsR	0
+P. umbonatus	Pilobolus umbonatus	Bacterial regulatory protein, ArsR	0
+S. umbellata	Sporodiniella umbellata	Bacterial regulatory protein, ArsR	0
+S. racemosum	Syncephalastrum racemosum	Bacterial regulatory protein, ArsR	0
+G. butleri	Gongronella butleri	Bacterial regulatory protein, ArsR	0
+M. alpina	Mortierella alpina	Bacterial regulatory protein, ArsR	0
+M. elongata	Mortierella elongata	Bacterial regulatory protein, ArsR	0
+P. epigama	Podila epigama	Bacterial regulatory protein, ArsR	0
+R. irregularis	Rhizophagus irregularis	Bacterial regulatory protein, ArsR	0
+G. margarita	Gigaspora margarita	Bacterial regulatory protein, ArsR	0
+G. pyriformis	Geosiphon pyriformis	Bacterial regulatory protein, ArsR	0
+B. meristosporus	Basidiobolus meristosporus	Bacterial regulatory protein, ArsR	0
+C. coronatus	Conidiobolus coronatus	Bacterial regulatory protein, ArsR	0
+E. maimaiga	Entomophaga maimaiga	Bacterial regulatory protein, ArsR	0
+Z. radicans	Zoophthora radicans	Bacterial regulatory protein, ArsR	0
+C. reversa	Coemansia reversa	Bacterial regulatory protein, ArsR	0
+K. alabastrina	Kickxella alabastrina	Bacterial regulatory protein, ArsR	0
+L. pennispora	Linderina pennispora	Bacterial regulatory protein, ArsR	0
+S. fuscata	Synchephalis fuscata	Bacterial regulatory protein, ArsR	0
+P. cylindrospora	Piptocephalis cylindrospora	Bacterial regulatory protein, ArsR	0
+O. bornovanus	Olpidium bornovanus	Bacterial regulatory protein, ArsR	0
+G. prolifera	Gonapodya prolifera	Bacterial regulatory protein, ArsR	0
+Orpinomyces	Orpinomyces	Bacterial regulatory protein, ArsR	0
+A. robustus	Anaeromyces robustus	Bacterial regulatory protein, ArsR	0
+P. finnis	Piromyces finnis	Bacterial regulatory protein, ArsR	0
+C. anguillulae	Catenaria anguillulae	Bacterial regulatory protein, ArsR	0
+A. macrogynus	Allomyces macrogynus	Bacterial regulatory protein, ArsR	0
+S. punctatus	Spizellomyces punctatus	Bacterial regulatory protein, ArsR	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	Bacterial regulatory protein, ArsR	0
+C. protostelioides	Caulochytrium protostelioides	Bacterial regulatory protein, ArsR	0
+E. helioformis	Entophlyctis helioformis	Bacterial regulatory protein, ArsR	0
+G. variabilis	Geranomyces variabilis	Bacterial regulatory protein, ArsR	0
+P. aggregatum	Polychytrium aggregatum	Bacterial regulatory protein, ArsR	0
+T. arcticum	Ttriparticalar arcticum	Bacterial regulatory protein, ArsR	0
+R. allomyces	Rozella allomycis	Bacterial regulatory protein, ArsR	0
+A. locustae	Antonospora locustae	Bacterial regulatory protein, ArsR	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Bacterial regulatory protein, Crp	0
+A. nidulans	Aspergillus nidulans	Bacterial regulatory protein, Crp	0
+B. cinerea	Botrytis cinerea	Bacterial regulatory protein, Crp	0
+C. albicans	Candida albicans	Bacterial regulatory protein, Crp	0
+C. immitis	Coccidioides immitis	Bacterial regulatory protein, Crp	0
+C. militaris	Cordyceps militaris	Bacterial regulatory protein, Crp	0
+F. fujikuroi	Fusarium fujikuroi	Bacterial regulatory protein, Crp	0
+K. lactis	Kluyveromyces lactis	Bacterial regulatory protein, Crp	0
+N. crassa	Neurospora crassa	Bacterial regulatory protein, Crp	0
+S. cerevisiae	Saccharomyces cerevisiae	Bacterial regulatory protein, Crp	0
+S. pombe	Schizosaccharomyces pombe	Bacterial regulatory protein, Crp	0
+A. muscaria	Amanita muscaria	Bacterial regulatory protein, Crp	0
+C. cinerea	Coprinopsis cinerea	Bacterial regulatory protein, Crp	1
+C. neoformans	Cryptococcus neoformans	Bacterial regulatory protein, Crp	0
+M. sympodialis	Malasseizia sympodialis	Bacterial regulatory protein, Crp	0
+P. striiformis	Puccinia striiformis	Bacterial regulatory protein, Crp	0
+S. brevipes	Suillus brevipes	Bacterial regulatory protein, Crp	0
+T. mesenterica	Tremella mesenterica	Bacterial regulatory protein, Crp	0
+U. maydis	Ustilago maydis	Bacterial regulatory protein, Crp	0
+M. lusitanicus	Mucor lusitanicus	Bacterial regulatory protein, Crp	0
+P. blakesleeanus	Phycomyces blakesleeanus	Bacterial regulatory protein, Crp	0
+R. microsporus	Rhizopus microsporus	Bacterial regulatory protein, Crp	0
+L. corymbifera	Lichtheimia corymbifera	Bacterial regulatory protein, Crp	0
+A. repens	Absidia repens	Bacterial regulatory protein, Crp	0
+B. trispora	Blakeslea trispora	Bacterial regulatory protein, Crp	0
+S. vasiformis	Saksenea vasiformis	Bacterial regulatory protein, Crp	0
+H. vesiculosa	Hesseltinella vesiculosa	Bacterial regulatory protein, Crp	0
+P. umbonatus	Pilobolus umbonatus	Bacterial regulatory protein, Crp	0
+S. umbellata	Sporodiniella umbellata	Bacterial regulatory protein, Crp	0
+S. racemosum	Syncephalastrum racemosum	Bacterial regulatory protein, Crp	0
+G. butleri	Gongronella butleri	Bacterial regulatory protein, Crp	0
+M. alpina	Mortierella alpina	Bacterial regulatory protein, Crp	0
+M. elongata	Mortierella elongata	Bacterial regulatory protein, Crp	0
+P. epigama	Podila epigama	Bacterial regulatory protein, Crp	0
+R. irregularis	Rhizophagus irregularis	Bacterial regulatory protein, Crp	0
+G. margarita	Gigaspora margarita	Bacterial regulatory protein, Crp	0
+G. pyriformis	Geosiphon pyriformis	Bacterial regulatory protein, Crp	0
+B. meristosporus	Basidiobolus meristosporus	Bacterial regulatory protein, Crp	0
+C. coronatus	Conidiobolus coronatus	Bacterial regulatory protein, Crp	1
+E. maimaiga	Entomophaga maimaiga	Bacterial regulatory protein, Crp	0
+Z. radicans	Zoophthora radicans	Bacterial regulatory protein, Crp	0
+C. reversa	Coemansia reversa	Bacterial regulatory protein, Crp	0
+K. alabastrina	Kickxella alabastrina	Bacterial regulatory protein, Crp	0
+L. pennispora	Linderina pennispora	Bacterial regulatory protein, Crp	0
+S. fuscata	Synchephalis fuscata	Bacterial regulatory protein, Crp	0
+P. cylindrospora	Piptocephalis cylindrospora	Bacterial regulatory protein, Crp	0
+O. bornovanus	Olpidium bornovanus	Bacterial regulatory protein, Crp	0
+G. prolifera	Gonapodya prolifera	Bacterial regulatory protein, Crp	0
+Orpinomyces	Orpinomyces	Bacterial regulatory protein, Crp	0
+A. robustus	Anaeromyces robustus	Bacterial regulatory protein, Crp	0
+P. finnis	Piromyces finnis	Bacterial regulatory protein, Crp	0
+C. anguillulae	Catenaria anguillulae	Bacterial regulatory protein, Crp	0
+A. macrogynus	Allomyces macrogynus	Bacterial regulatory protein, Crp	0
+S. punctatus	Spizellomyces punctatus	Bacterial regulatory protein, Crp	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	Bacterial regulatory protein, Crp	0
+C. protostelioides	Caulochytrium protostelioides	Bacterial regulatory protein, Crp	0
+E. helioformis	Entophlyctis helioformis	Bacterial regulatory protein, Crp	0
+G. variabilis	Geranomyces variabilis	Bacterial regulatory protein, Crp	0
+P. aggregatum	Polychytrium aggregatum	Bacterial regulatory protein, Crp	0
+T. arcticum	Ttriparticalar arcticum	Bacterial regulatory protein, Crp	0
+R. allomyces	Rozella allomycis	Bacterial regulatory protein, Crp	0
+A. locustae	Antonospora locustae	Bacterial regulatory protein, Crp	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Bacterial regulatory protein, DeoR	0
+A. nidulans	Aspergillus nidulans	Bacterial regulatory protein, DeoR	0
+B. cinerea	Botrytis cinerea	Bacterial regulatory protein, DeoR	0
+C. albicans	Candida albicans	Bacterial regulatory protein, DeoR	0
+C. immitis	Coccidioides immitis	Bacterial regulatory protein, DeoR	0
+C. militaris	Cordyceps militaris	Bacterial regulatory protein, DeoR	0
+F. fujikuroi	Fusarium fujikuroi	Bacterial regulatory protein, DeoR	0
+K. lactis	Kluyveromyces lactis	Bacterial regulatory protein, DeoR	0
+N. crassa	Neurospora crassa	Bacterial regulatory protein, DeoR	0
+S. cerevisiae	Saccharomyces cerevisiae	Bacterial regulatory protein, DeoR	0
+S. pombe	Schizosaccharomyces pombe	Bacterial regulatory protein, DeoR	0
+A. muscaria	Amanita muscaria	Bacterial regulatory protein, DeoR	0
+C. cinerea	Coprinopsis cinerea	Bacterial regulatory protein, DeoR	0
+C. neoformans	Cryptococcus neoformans	Bacterial regulatory protein, DeoR	0
+M. sympodialis	Malasseizia sympodialis	Bacterial regulatory protein, DeoR	0
+P. striiformis	Puccinia striiformis	Bacterial regulatory protein, DeoR	0
+S. brevipes	Suillus brevipes	Bacterial regulatory protein, DeoR	0
+T. mesenterica	Tremella mesenterica	Bacterial regulatory protein, DeoR	0
+U. maydis	Ustilago maydis	Bacterial regulatory protein, DeoR	0
+M. lusitanicus	Mucor lusitanicus	Bacterial regulatory protein, DeoR	0
+P. blakesleeanus	Phycomyces blakesleeanus	Bacterial regulatory protein, DeoR	0
+R. microsporus	Rhizopus microsporus	Bacterial regulatory protein, DeoR	0
+L. corymbifera	Lichtheimia corymbifera	Bacterial regulatory protein, DeoR	0
+A. repens	Absidia repens	Bacterial regulatory protein, DeoR	0
+B. trispora	Blakeslea trispora	Bacterial regulatory protein, DeoR	0
+S. vasiformis	Saksenea vasiformis	Bacterial regulatory protein, DeoR	0
+H. vesiculosa	Hesseltinella vesiculosa	Bacterial regulatory protein, DeoR	0
+P. umbonatus	Pilobolus umbonatus	Bacterial regulatory protein, DeoR	0
+S. umbellata	Sporodiniella umbellata	Bacterial regulatory protein, DeoR	0
+S. racemosum	Syncephalastrum racemosum	Bacterial regulatory protein, DeoR	0
+G. butleri	Gongronella butleri	Bacterial regulatory protein, DeoR	0
+M. alpina	Mortierella alpina	Bacterial regulatory protein, DeoR	0
+M. elongata	Mortierella elongata	Bacterial regulatory protein, DeoR	0
+P. epigama	Podila epigama	Bacterial regulatory protein, DeoR	0
+R. irregularis	Rhizophagus irregularis	Bacterial regulatory protein, DeoR	0
+G. margarita	Gigaspora margarita	Bacterial regulatory protein, DeoR	0
+G. pyriformis	Geosiphon pyriformis	Bacterial regulatory protein, DeoR	0
+B. meristosporus	Basidiobolus meristosporus	Bacterial regulatory protein, DeoR	0
+C. coronatus	Conidiobolus coronatus	Bacterial regulatory protein, DeoR	0
+E. maimaiga	Entomophaga maimaiga	Bacterial regulatory protein, DeoR	0
+Z. radicans	Zoophthora radicans	Bacterial regulatory protein, DeoR	0
+C. reversa	Coemansia reversa	Bacterial regulatory protein, DeoR	0
+K. alabastrina	Kickxella alabastrina	Bacterial regulatory protein, DeoR	0
+L. pennispora	Linderina pennispora	Bacterial regulatory protein, DeoR	0
+S. fuscata	Synchephalis fuscata	Bacterial regulatory protein, DeoR	0
+P. cylindrospora	Piptocephalis cylindrospora	Bacterial regulatory protein, DeoR	0
+O. bornovanus	Olpidium bornovanus	Bacterial regulatory protein, DeoR	0
+G. prolifera	Gonapodya prolifera	Bacterial regulatory protein, DeoR	0
+Orpinomyces	Orpinomyces	Bacterial regulatory protein, DeoR	0
+A. robustus	Anaeromyces robustus	Bacterial regulatory protein, DeoR	0
+P. finnis	Piromyces finnis	Bacterial regulatory protein, DeoR	0
+C. anguillulae	Catenaria anguillulae	Bacterial regulatory protein, DeoR	0
+A. macrogynus	Allomyces macrogynus	Bacterial regulatory protein, DeoR	0
+S. punctatus	Spizellomyces punctatus	Bacterial regulatory protein, DeoR	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	Bacterial regulatory protein, DeoR	2
+C. protostelioides	Caulochytrium protostelioides	Bacterial regulatory protein, DeoR	0
+E. helioformis	Entophlyctis helioformis	Bacterial regulatory protein, DeoR	0
+G. variabilis	Geranomyces variabilis	Bacterial regulatory protein, DeoR	0
+P. aggregatum	Polychytrium aggregatum	Bacterial regulatory protein, DeoR	0
+T. arcticum	Ttriparticalar arcticum	Bacterial regulatory protein, DeoR	0
+R. allomyces	Rozella allomycis	Bacterial regulatory protein, DeoR	0
+A. locustae	Antonospora locustae	Bacterial regulatory protein, DeoR	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Bacterial regulatory protein, LacI	0
+A. nidulans	Aspergillus nidulans	Bacterial regulatory protein, LacI	1
+B. cinerea	Botrytis cinerea	Bacterial regulatory protein, LacI	0
+C. albicans	Candida albicans	Bacterial regulatory protein, LacI	0
+C. immitis	Coccidioides immitis	Bacterial regulatory protein, LacI	1
+C. militaris	Cordyceps militaris	Bacterial regulatory protein, LacI	0
+F. fujikuroi	Fusarium fujikuroi	Bacterial regulatory protein, LacI	2
+K. lactis	Kluyveromyces lactis	Bacterial regulatory protein, LacI	0
+N. crassa	Neurospora crassa	Bacterial regulatory protein, LacI	0
+S. cerevisiae	Saccharomyces cerevisiae	Bacterial regulatory protein, LacI	0
+S. pombe	Schizosaccharomyces pombe	Bacterial regulatory protein, LacI	0
+A. muscaria	Amanita muscaria	Bacterial regulatory protein, LacI	0
+C. cinerea	Coprinopsis cinerea	Bacterial regulatory protein, LacI	0
+C. neoformans	Cryptococcus neoformans	Bacterial regulatory protein, LacI	0
+M. sympodialis	Malasseizia sympodialis	Bacterial regulatory protein, LacI	0
+P. striiformis	Puccinia striiformis	Bacterial regulatory protein, LacI	0
+S. brevipes	Suillus brevipes	Bacterial regulatory protein, LacI	0
+T. mesenterica	Tremella mesenterica	Bacterial regulatory protein, LacI	0
+U. maydis	Ustilago maydis	Bacterial regulatory protein, LacI	0
+M. lusitanicus	Mucor lusitanicus	Bacterial regulatory protein, LacI	0
+P. blakesleeanus	Phycomyces blakesleeanus	Bacterial regulatory protein, LacI	0
+R. microsporus	Rhizopus microsporus	Bacterial regulatory protein, LacI	0
+L. corymbifera	Lichtheimia corymbifera	Bacterial regulatory protein, LacI	0
+A. repens	Absidia repens	Bacterial regulatory protein, LacI	0
+B. trispora	Blakeslea trispora	Bacterial regulatory protein, LacI	0
+S. vasiformis	Saksenea vasiformis	Bacterial regulatory protein, LacI	0
+H. vesiculosa	Hesseltinella vesiculosa	Bacterial regulatory protein, LacI	0
+P. umbonatus	Pilobolus umbonatus	Bacterial regulatory protein, LacI	0
+S. umbellata	Sporodiniella umbellata	Bacterial regulatory protein, LacI	0
+S. racemosum	Syncephalastrum racemosum	Bacterial regulatory protein, LacI	0
+G. butleri	Gongronella butleri	Bacterial regulatory protein, LacI	0
+M. alpina	Mortierella alpina	Bacterial regulatory protein, LacI	0
+M. elongata	Mortierella elongata	Bacterial regulatory protein, LacI	0
+P. epigama	Podila epigama	Bacterial regulatory protein, LacI	0
+R. irregularis	Rhizophagus irregularis	Bacterial regulatory protein, LacI	1
+G. margarita	Gigaspora margarita	Bacterial regulatory protein, LacI	0
+G. pyriformis	Geosiphon pyriformis	Bacterial regulatory protein, LacI	0
+B. meristosporus	Basidiobolus meristosporus	Bacterial regulatory protein, LacI	0
+C. coronatus	Conidiobolus coronatus	Bacterial regulatory protein, LacI	3
+E. maimaiga	Entomophaga maimaiga	Bacterial regulatory protein, LacI	0
+Z. radicans	Zoophthora radicans	Bacterial regulatory protein, LacI	0
+C. reversa	Coemansia reversa	Bacterial regulatory protein, LacI	0
+K. alabastrina	Kickxella alabastrina	Bacterial regulatory protein, LacI	0
+L. pennispora	Linderina pennispora	Bacterial regulatory protein, LacI	0
+S. fuscata	Synchephalis fuscata	Bacterial regulatory protein, LacI	0
+P. cylindrospora	Piptocephalis cylindrospora	Bacterial regulatory protein, LacI	0
+O. bornovanus	Olpidium bornovanus	Bacterial regulatory protein, LacI	0
+G. prolifera	Gonapodya prolifera	Bacterial regulatory protein, LacI	0
+Orpinomyces	Orpinomyces	Bacterial regulatory protein, LacI	0
+A. robustus	Anaeromyces robustus	Bacterial regulatory protein, LacI	0
+P. finnis	Piromyces finnis	Bacterial regulatory protein, LacI	0
+C. anguillulae	Catenaria anguillulae	Bacterial regulatory protein, LacI	0
+A. macrogynus	Allomyces macrogynus	Bacterial regulatory protein, LacI	0
+S. punctatus	Spizellomyces punctatus	Bacterial regulatory protein, LacI	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	Bacterial regulatory protein, LacI	1
+C. protostelioides	Caulochytrium protostelioides	Bacterial regulatory protein, LacI	0
+E. helioformis	Entophlyctis helioformis	Bacterial regulatory protein, LacI	0
+G. variabilis	Geranomyces variabilis	Bacterial regulatory protein, LacI	0
+P. aggregatum	Polychytrium aggregatum	Bacterial regulatory protein, LacI	0
+T. arcticum	Ttriparticalar arcticum	Bacterial regulatory protein, LacI	0
+R. allomyces	Rozella allomycis	Bacterial regulatory protein, LacI	0
+A. locustae	Antonospora locustae	Bacterial regulatory protein, LacI	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Bacterial regulatory protein, LuxR	0
+A. nidulans	Aspergillus nidulans	Bacterial regulatory protein, LuxR	7
+B. cinerea	Botrytis cinerea	Bacterial regulatory protein, LuxR	1
+C. albicans	Candida albicans	Bacterial regulatory protein, LuxR	0
+C. immitis	Coccidioides immitis	Bacterial regulatory protein, LuxR	1
+C. militaris	Cordyceps militaris	Bacterial regulatory protein, LuxR	2
+F. fujikuroi	Fusarium fujikuroi	Bacterial regulatory protein, LuxR	0
+K. lactis	Kluyveromyces lactis	Bacterial regulatory protein, LuxR	0
+N. crassa	Neurospora crassa	Bacterial regulatory protein, LuxR	0
+S. cerevisiae	Saccharomyces cerevisiae	Bacterial regulatory protein, LuxR	0
+S. pombe	Schizosaccharomyces pombe	Bacterial regulatory protein, LuxR	0
+A. muscaria	Amanita muscaria	Bacterial regulatory protein, LuxR	1
+C. cinerea	Coprinopsis cinerea	Bacterial regulatory protein, LuxR	1
+C. neoformans	Cryptococcus neoformans	Bacterial regulatory protein, LuxR	0
+M. sympodialis	Malasseizia sympodialis	Bacterial regulatory protein, LuxR	0
+P. striiformis	Puccinia striiformis	Bacterial regulatory protein, LuxR	1
+S. brevipes	Suillus brevipes	Bacterial regulatory protein, LuxR	2
+T. mesenterica	Tremella mesenterica	Bacterial regulatory protein, LuxR	0
+U. maydis	Ustilago maydis	Bacterial regulatory protein, LuxR	0
+M. lusitanicus	Mucor lusitanicus	Bacterial regulatory protein, LuxR	0
+P. blakesleeanus	Phycomyces blakesleeanus	Bacterial regulatory protein, LuxR	1
+R. microsporus	Rhizopus microsporus	Bacterial regulatory protein, LuxR	0
+L. corymbifera	Lichtheimia corymbifera	Bacterial regulatory protein, LuxR	1
+A. repens	Absidia repens	Bacterial regulatory protein, LuxR	0
+B. trispora	Blakeslea trispora	Bacterial regulatory protein, LuxR	0
+S. vasiformis	Saksenea vasiformis	Bacterial regulatory protein, LuxR	0
+H. vesiculosa	Hesseltinella vesiculosa	Bacterial regulatory protein, LuxR	0
+P. umbonatus	Pilobolus umbonatus	Bacterial regulatory protein, LuxR	0
+S. umbellata	Sporodiniella umbellata	Bacterial regulatory protein, LuxR	0
+S. racemosum	Syncephalastrum racemosum	Bacterial regulatory protein, LuxR	0
+G. butleri	Gongronella butleri	Bacterial regulatory protein, LuxR	0
+M. alpina	Mortierella alpina	Bacterial regulatory protein, LuxR	0
+M. elongata	Mortierella elongata	Bacterial regulatory protein, LuxR	0
+P. epigama	Podila epigama	Bacterial regulatory protein, LuxR	0
+R. irregularis	Rhizophagus irregularis	Bacterial regulatory protein, LuxR	1
+G. margarita	Gigaspora margarita	Bacterial regulatory protein, LuxR	0
+G. pyriformis	Geosiphon pyriformis	Bacterial regulatory protein, LuxR	0
+B. meristosporus	Basidiobolus meristosporus	Bacterial regulatory protein, LuxR	0
+C. coronatus	Conidiobolus coronatus	Bacterial regulatory protein, LuxR	0
+E. maimaiga	Entomophaga maimaiga	Bacterial regulatory protein, LuxR	15
+Z. radicans	Zoophthora radicans	Bacterial regulatory protein, LuxR	0
+C. reversa	Coemansia reversa	Bacterial regulatory protein, LuxR	0
+K. alabastrina	Kickxella alabastrina	Bacterial regulatory protein, LuxR	0
+L. pennispora	Linderina pennispora	Bacterial regulatory protein, LuxR	0
+S. fuscata	Synchephalis fuscata	Bacterial regulatory protein, LuxR	0
+P. cylindrospora	Piptocephalis cylindrospora	Bacterial regulatory protein, LuxR	0
+O. bornovanus	Olpidium bornovanus	Bacterial regulatory protein, LuxR	0
+G. prolifera	Gonapodya prolifera	Bacterial regulatory protein, LuxR	0
+Orpinomyces	Orpinomyces	Bacterial regulatory protein, LuxR	0
+A. robustus	Anaeromyces robustus	Bacterial regulatory protein, LuxR	0
+P. finnis	Piromyces finnis	Bacterial regulatory protein, LuxR	0
+C. anguillulae	Catenaria anguillulae	Bacterial regulatory protein, LuxR	0
+A. macrogynus	Allomyces macrogynus	Bacterial regulatory protein, LuxR	0
+S. punctatus	Spizellomyces punctatus	Bacterial regulatory protein, LuxR	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	Bacterial regulatory protein, LuxR	1
+C. protostelioides	Caulochytrium protostelioides	Bacterial regulatory protein, LuxR	0
+E. helioformis	Entophlyctis helioformis	Bacterial regulatory protein, LuxR	0
+G. variabilis	Geranomyces variabilis	Bacterial regulatory protein, LuxR	0
+P. aggregatum	Polychytrium aggregatum	Bacterial regulatory protein, LuxR	0
+T. arcticum	Ttriparticalar arcticum	Bacterial regulatory protein, LuxR	0
+R. allomyces	Rozella allomycis	Bacterial regulatory protein, LuxR	0
+A. locustae	Antonospora locustae	Bacterial regulatory protein, LuxR	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Bacterial regulatory protein, MarR	0
+A. nidulans	Aspergillus nidulans	Bacterial regulatory protein, MarR	0
+B. cinerea	Botrytis cinerea	Bacterial regulatory protein, MarR	0
+C. albicans	Candida albicans	Bacterial regulatory protein, MarR	0
+C. immitis	Coccidioides immitis	Bacterial regulatory protein, MarR	0
+C. militaris	Cordyceps militaris	Bacterial regulatory protein, MarR	0
+F. fujikuroi	Fusarium fujikuroi	Bacterial regulatory protein, MarR	0
+K. lactis	Kluyveromyces lactis	Bacterial regulatory protein, MarR	0
+N. crassa	Neurospora crassa	Bacterial regulatory protein, MarR	0
+S. cerevisiae	Saccharomyces cerevisiae	Bacterial regulatory protein, MarR	0
+S. pombe	Schizosaccharomyces pombe	Bacterial regulatory protein, MarR	0
+A. muscaria	Amanita muscaria	Bacterial regulatory protein, MarR	0
+C. cinerea	Coprinopsis cinerea	Bacterial regulatory protein, MarR	0
+C. neoformans	Cryptococcus neoformans	Bacterial regulatory protein, MarR	0
+M. sympodialis	Malasseizia sympodialis	Bacterial regulatory protein, MarR	0
+P. striiformis	Puccinia striiformis	Bacterial regulatory protein, MarR	0
+S. brevipes	Suillus brevipes	Bacterial regulatory protein, MarR	0
+T. mesenterica	Tremella mesenterica	Bacterial regulatory protein, MarR	0
+U. maydis	Ustilago maydis	Bacterial regulatory protein, MarR	0
+M. lusitanicus	Mucor lusitanicus	Bacterial regulatory protein, MarR	1
+P. blakesleeanus	Phycomyces blakesleeanus	Bacterial regulatory protein, MarR	0
+R. microsporus	Rhizopus microsporus	Bacterial regulatory protein, MarR	0
+L. corymbifera	Lichtheimia corymbifera	Bacterial regulatory protein, MarR	0
+A. repens	Absidia repens	Bacterial regulatory protein, MarR	0
+B. trispora	Blakeslea trispora	Bacterial regulatory protein, MarR	0
+S. vasiformis	Saksenea vasiformis	Bacterial regulatory protein, MarR	0
+H. vesiculosa	Hesseltinella vesiculosa	Bacterial regulatory protein, MarR	0
+P. umbonatus	Pilobolus umbonatus	Bacterial regulatory protein, MarR	0
+S. umbellata	Sporodiniella umbellata	Bacterial regulatory protein, MarR	0
+S. racemosum	Syncephalastrum racemosum	Bacterial regulatory protein, MarR	0
+G. butleri	Gongronella butleri	Bacterial regulatory protein, MarR	0
+M. alpina	Mortierella alpina	Bacterial regulatory protein, MarR	0
+M. elongata	Mortierella elongata	Bacterial regulatory protein, MarR	0
+P. epigama	Podila epigama	Bacterial regulatory protein, MarR	0
+R. irregularis	Rhizophagus irregularis	Bacterial regulatory protein, MarR	0
+G. margarita	Gigaspora margarita	Bacterial regulatory protein, MarR	0
+G. pyriformis	Geosiphon pyriformis	Bacterial regulatory protein, MarR	0
+B. meristosporus	Basidiobolus meristosporus	Bacterial regulatory protein, MarR	0
+C. coronatus	Conidiobolus coronatus	Bacterial regulatory protein, MarR	0
+E. maimaiga	Entomophaga maimaiga	Bacterial regulatory protein, MarR	0
+Z. radicans	Zoophthora radicans	Bacterial regulatory protein, MarR	0
+C. reversa	Coemansia reversa	Bacterial regulatory protein, MarR	0
+K. alabastrina	Kickxella alabastrina	Bacterial regulatory protein, MarR	0
+L. pennispora	Linderina pennispora	Bacterial regulatory protein, MarR	0
+S. fuscata	Synchephalis fuscata	Bacterial regulatory protein, MarR	0
+P. cylindrospora	Piptocephalis cylindrospora	Bacterial regulatory protein, MarR	0
+O. bornovanus	Olpidium bornovanus	Bacterial regulatory protein, MarR	0
+G. prolifera	Gonapodya prolifera	Bacterial regulatory protein, MarR	0
+Orpinomyces	Orpinomyces	Bacterial regulatory protein, MarR	0
+A. robustus	Anaeromyces robustus	Bacterial regulatory protein, MarR	0
+P. finnis	Piromyces finnis	Bacterial regulatory protein, MarR	0
+C. anguillulae	Catenaria anguillulae	Bacterial regulatory protein, MarR	0
+A. macrogynus	Allomyces macrogynus	Bacterial regulatory protein, MarR	0
+S. punctatus	Spizellomyces punctatus	Bacterial regulatory protein, MarR	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	Bacterial regulatory protein, MarR	1
+C. protostelioides	Caulochytrium protostelioides	Bacterial regulatory protein, MarR	0
+E. helioformis	Entophlyctis helioformis	Bacterial regulatory protein, MarR	0
+G. variabilis	Geranomyces variabilis	Bacterial regulatory protein, MarR	0
+P. aggregatum	Polychytrium aggregatum	Bacterial regulatory protein, MarR	0
+T. arcticum	Ttriparticalar arcticum	Bacterial regulatory protein, MarR	0
+R. allomyces	Rozella allomycis	Bacterial regulatory protein, MarR	0
+A. locustae	Antonospora locustae	Bacterial regulatory protein, MarR	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Bacterial regulatory protein, MerR	0
+A. nidulans	Aspergillus nidulans	Bacterial regulatory protein, MerR	0
+B. cinerea	Botrytis cinerea	Bacterial regulatory protein, MerR	0
+C. albicans	Candida albicans	Bacterial regulatory protein, MerR	0
+C. immitis	Coccidioides immitis	Bacterial regulatory protein, MerR	0
+C. militaris	Cordyceps militaris	Bacterial regulatory protein, MerR	0
+F. fujikuroi	Fusarium fujikuroi	Bacterial regulatory protein, MerR	0
+K. lactis	Kluyveromyces lactis	Bacterial regulatory protein, MerR	0
+N. crassa	Neurospora crassa	Bacterial regulatory protein, MerR	0
+S. cerevisiae	Saccharomyces cerevisiae	Bacterial regulatory protein, MerR	0
+S. pombe	Schizosaccharomyces pombe	Bacterial regulatory protein, MerR	0
+A. muscaria	Amanita muscaria	Bacterial regulatory protein, MerR	0
+C. cinerea	Coprinopsis cinerea	Bacterial regulatory protein, MerR	0
+C. neoformans	Cryptococcus neoformans	Bacterial regulatory protein, MerR	0
+M. sympodialis	Malasseizia sympodialis	Bacterial regulatory protein, MerR	0
+P. striiformis	Puccinia striiformis	Bacterial regulatory protein, MerR	0
+S. brevipes	Suillus brevipes	Bacterial regulatory protein, MerR	0
+T. mesenterica	Tremella mesenterica	Bacterial regulatory protein, MerR	0
+U. maydis	Ustilago maydis	Bacterial regulatory protein, MerR	0
+M. lusitanicus	Mucor lusitanicus	Bacterial regulatory protein, MerR	0
+P. blakesleeanus	Phycomyces blakesleeanus	Bacterial regulatory protein, MerR	0
+R. microsporus	Rhizopus microsporus	Bacterial regulatory protein, MerR	0
+L. corymbifera	Lichtheimia corymbifera	Bacterial regulatory protein, MerR	0
+A. repens	Absidia repens	Bacterial regulatory protein, MerR	0
+B. trispora	Blakeslea trispora	Bacterial regulatory protein, MerR	0
+S. vasiformis	Saksenea vasiformis	Bacterial regulatory protein, MerR	0
+H. vesiculosa	Hesseltinella vesiculosa	Bacterial regulatory protein, MerR	0
+P. umbonatus	Pilobolus umbonatus	Bacterial regulatory protein, MerR	0
+S. umbellata	Sporodiniella umbellata	Bacterial regulatory protein, MerR	0
+S. racemosum	Syncephalastrum racemosum	Bacterial regulatory protein, MerR	0
+G. butleri	Gongronella butleri	Bacterial regulatory protein, MerR	0
+M. alpina	Mortierella alpina	Bacterial regulatory protein, MerR	0
+M. elongata	Mortierella elongata	Bacterial regulatory protein, MerR	0
+P. epigama	Podila epigama	Bacterial regulatory protein, MerR	0
+R. irregularis	Rhizophagus irregularis	Bacterial regulatory protein, MerR	0
+G. margarita	Gigaspora margarita	Bacterial regulatory protein, MerR	0
+G. pyriformis	Geosiphon pyriformis	Bacterial regulatory protein, MerR	0
+B. meristosporus	Basidiobolus meristosporus	Bacterial regulatory protein, MerR	0
+C. coronatus	Conidiobolus coronatus	Bacterial regulatory protein, MerR	0
+E. maimaiga	Entomophaga maimaiga	Bacterial regulatory protein, MerR	0
+Z. radicans	Zoophthora radicans	Bacterial regulatory protein, MerR	0
+C. reversa	Coemansia reversa	Bacterial regulatory protein, MerR	0
+K. alabastrina	Kickxella alabastrina	Bacterial regulatory protein, MerR	0
+L. pennispora	Linderina pennispora	Bacterial regulatory protein, MerR	0
+S. fuscata	Synchephalis fuscata	Bacterial regulatory protein, MerR	0
+P. cylindrospora	Piptocephalis cylindrospora	Bacterial regulatory protein, MerR	0
+O. bornovanus	Olpidium bornovanus	Bacterial regulatory protein, MerR	0
+G. prolifera	Gonapodya prolifera	Bacterial regulatory protein, MerR	0
+Orpinomyces	Orpinomyces	Bacterial regulatory protein, MerR	0
+A. robustus	Anaeromyces robustus	Bacterial regulatory protein, MerR	0
+P. finnis	Piromyces finnis	Bacterial regulatory protein, MerR	0
+C. anguillulae	Catenaria anguillulae	Bacterial regulatory protein, MerR	0
+A. macrogynus	Allomyces macrogynus	Bacterial regulatory protein, MerR	0
+S. punctatus	Spizellomyces punctatus	Bacterial regulatory protein, MerR	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	Bacterial regulatory protein, MerR	2
+C. protostelioides	Caulochytrium protostelioides	Bacterial regulatory protein, MerR	0
+E. helioformis	Entophlyctis helioformis	Bacterial regulatory protein, MerR	0
+G. variabilis	Geranomyces variabilis	Bacterial regulatory protein, MerR	0
+P. aggregatum	Polychytrium aggregatum	Bacterial regulatory protein, MerR	0
+T. arcticum	Ttriparticalar arcticum	Bacterial regulatory protein, MerR	0
+R. allomyces	Rozella allomycis	Bacterial regulatory protein, MerR	0
+A. locustae	Antonospora locustae	Bacterial regulatory protein, MerR	0
+A. gossypii	Ashbya(Eremothecium) gossypii	bZIP	8
+A. nidulans	Aspergillus nidulans	bZIP	21
+B. cinerea	Botrytis cinerea	bZIP	20
+C. albicans	Candida albicans	bZIP	6
+C. immitis	Coccidioides immitis	bZIP	20
+C. militaris	Cordyceps militaris	bZIP	20
+F. fujikuroi	Fusarium fujikuroi	bZIP	32
+K. lactis	Kluyveromyces lactis	bZIP	9
+N. crassa	Neurospora crassa	bZIP	28
+S. cerevisiae	Saccharomyces cerevisiae	bZIP	13
+S. pombe	Schizosaccharomyces pombe	bZIP	7
+A. muscaria	Amanita muscaria	bZIP	16
+C. cinerea	Coprinopsis cinerea	bZIP	19
+C. neoformans	Cryptococcus neoformans	bZIP	20
+M. sympodialis	Malasseizia sympodialis	bZIP	4
+P. striiformis	Puccinia striiformis	bZIP	17
+S. brevipes	Suillus brevipes	bZIP	16
+T. mesenterica	Tremella mesenterica	bZIP	16
+U. maydis	Ustilago maydis	bZIP	12
+M. lusitanicus	Mucor lusitanicus	bZIP	54
+P. blakesleeanus	Phycomyces blakesleeanus	bZIP	47
+R. microsporus	Rhizopus microsporus	bZIP	32
+L. corymbifera	Lichtheimia corymbifera	bZIP	57
+A. repens	Absidia repens	bZIP	38
+B. trispora	Blakeslea trispora	bZIP	31
+S. vasiformis	Saksenea vasiformis	bZIP	27
+H. vesiculosa	Hesseltinella vesiculosa	bZIP	17
+P. umbonatus	Pilobolus umbonatus	bZIP	28
+S. umbellata	Sporodiniella umbellata	bZIP	32
+S. racemosum	Syncephalastrum racemosum	bZIP	40
+G. butleri	Gongronella butleri	bZIP	26
+M. alpina	Mortierella alpina	bZIP	24
+M. elongata	Mortierella elongata	bZIP	15
+P. epigama	Podila epigama	bZIP	20
+R. irregularis	Rhizophagus irregularis	bZIP	24
+G. margarita	Gigaspora margarita	bZIP	10
+G. pyriformis	Geosiphon pyriformis	bZIP	13
+B. meristosporus	Basidiobolus meristosporus	bZIP	22
+C. coronatus	Conidiobolus coronatus	bZIP	16
+E. maimaiga	Entomophaga maimaiga	bZIP	13
+Z. radicans	Zoophthora radicans	bZIP	17
+C. reversa	Coemansia reversa	bZIP	19
+K. alabastrina	Kickxella alabastrina	bZIP	9
+L. pennispora	Linderina pennispora	bZIP	6
+S. fuscata	Synchephalis fuscata	bZIP	6
+P. cylindrospora	Piptocephalis cylindrospora	bZIP	3
+O. bornovanus	Olpidium bornovanus	bZIP	4
+G. prolifera	Gonapodya prolifera	bZIP	16
+Orpinomyces	Orpinomyces	bZIP	8
+A. robustus	Anaeromyces robustus	bZIP	9
+P. finnis	Piromyces finnis	bZIP	7
+C. anguillulae	Catenaria anguillulae	bZIP	17
+A. macrogynus	Allomyces macrogynus	bZIP	25
+S. punctatus	Spizellomyces punctatus	bZIP	14
+B. dendrobatidis	Batrachochytrium dendrobatidis	bZIP	5
+C. protostelioides	Caulochytrium protostelioides	bZIP	6
+E. helioformis	Entophlyctis helioformis	bZIP	7
+G. variabilis	Geranomyces variabilis	bZIP	12
+P. aggregatum	Polychytrium aggregatum	bZIP	11
+T. arcticum	Ttriparticalar arcticum	bZIP	15
+R. allomyces	Rozella allomycis	bZIP	2
+A. locustae	Antonospora locustae	bZIP	1
+A. gossypii	Ashbya(Eremothecium) gossypii	C2H2/CCHC/CCCH/C5HC2	50
+A. nidulans	Aspergillus nidulans	C2H2/CCHC/CCCH/C5HC2	99
+B. cinerea	Botrytis cinerea	C2H2/CCHC/CCCH/C5HC2	128
+C. albicans	Candida albicans	C2H2/CCHC/CCCH/C5HC2	27
+C. immitis	Coccidioides immitis	C2H2/CCHC/CCCH/C5HC2	103
+C. militaris	Cordyceps militaris	C2H2/CCHC/CCCH/C5HC2	89
+F. fujikuroi	Fusarium fujikuroi	C2H2/CCHC/CCCH/C5HC2	143
+K. lactis	Kluyveromyces lactis	C2H2/CCHC/CCCH/C5HC2	50
+N. crassa	Neurospora crassa	C2H2/CCHC/CCCH/C5HC2	131
+S. cerevisiae	Saccharomyces cerevisiae	C2H2/CCHC/CCCH/C5HC2	66
+S. pombe	Schizosaccharomyces pombe	C2H2/CCHC/CCCH/C5HC2	52
+A. muscaria	Amanita muscaria	C2H2/CCHC/CCCH/C5HC2	198
+C. cinerea	Coprinopsis cinerea	C2H2/CCHC/CCCH/C5HC2	129
+C. neoformans	Cryptococcus neoformans	C2H2/CCHC/CCCH/C5HC2	69
+M. sympodialis	Malasseizia sympodialis	C2H2/CCHC/CCCH/C5HC2	34
+P. striiformis	Puccinia striiformis	C2H2/CCHC/CCCH/C5HC2	133
+S. brevipes	Suillus brevipes	C2H2/CCHC/CCCH/C5HC2	177
+T. mesenterica	Tremella mesenterica	C2H2/CCHC/CCCH/C5HC2	217
+U. maydis	Ustilago maydis	C2H2/CCHC/CCCH/C5HC2	70
+M. lusitanicus	Mucor lusitanicus	C2H2/CCHC/CCCH/C5HC2	255
+P. blakesleeanus	Phycomyces blakesleeanus	C2H2/CCHC/CCCH/C5HC2	365
+R. microsporus	Rhizopus microsporus	C2H2/CCHC/CCCH/C5HC2	88
+L. corymbifera	Lichtheimia corymbifera	C2H2/CCHC/CCCH/C5HC2	215
+A. repens	Absidia repens	C2H2/CCHC/CCCH/C5HC2	115
+B. trispora	Blakeslea trispora	C2H2/CCHC/CCCH/C5HC2	93
+S. vasiformis	Saksenea vasiformis	C2H2/CCHC/CCCH/C5HC2	76
+H. vesiculosa	Hesseltinella vesiculosa	C2H2/CCHC/CCCH/C5HC2	193
+P. umbonatus	Pilobolus umbonatus	C2H2/CCHC/CCCH/C5HC2	92
+S. umbellata	Sporodiniella umbellata	C2H2/CCHC/CCCH/C5HC2	87
+S. racemosum	Syncephalastrum racemosum	C2H2/CCHC/CCCH/C5HC2	174
+G. butleri	Gongronella butleri	C2H2/CCHC/CCCH/C5HC2	89
+M. alpina	Mortierella alpina	C2H2/CCHC/CCCH/C5HC2	106
+M. elongata	Mortierella elongata	C2H2/CCHC/CCCH/C5HC2	197
+P. epigama	Podila epigama	C2H2/CCHC/CCCH/C5HC2	76
+R. irregularis	Rhizophagus irregularis	C2H2/CCHC/CCCH/C5HC2	167
+G. margarita	Gigaspora margarita	C2H2/CCHC/CCCH/C5HC2	80
+G. pyriformis	Geosiphon pyriformis	C2H2/CCHC/CCCH/C5HC2	59
+B. meristosporus	Basidiobolus meristosporus	C2H2/CCHC/CCCH/C5HC2	341
+C. coronatus	Conidiobolus coronatus	C2H2/CCHC/CCCH/C5HC2	118
+E. maimaiga	Entomophaga maimaiga	C2H2/CCHC/CCCH/C5HC2	104
+Z. radicans	Zoophthora radicans	C2H2/CCHC/CCCH/C5HC2	107
+C. reversa	Coemansia reversa	C2H2/CCHC/CCCH/C5HC2	84
+K. alabastrina	Kickxella alabastrina	C2H2/CCHC/CCCH/C5HC2	53
+L. pennispora	Linderina pennispora	C2H2/CCHC/CCCH/C5HC2	104
+S. fuscata	Synchephalis fuscata	C2H2/CCHC/CCCH/C5HC2	40
+P. cylindrospora	Piptocephalis cylindrospora	C2H2/CCHC/CCCH/C5HC2	22
+O. bornovanus	Olpidium bornovanus	C2H2/CCHC/CCCH/C5HC2	29
+G. prolifera	Gonapodya prolifera	C2H2/CCHC/CCCH/C5HC2	234
+Orpinomyces	Orpinomyces	C2H2/CCHC/CCCH/C5HC2	162
+A. robustus	Anaeromyces robustus	C2H2/CCHC/CCCH/C5HC2	141
+P. finnis	Piromyces finnis	C2H2/CCHC/CCCH/C5HC2	146
+C. anguillulae	Catenaria anguillulae	C2H2/CCHC/CCCH/C5HC2	105
+A. macrogynus	Allomyces macrogynus	C2H2/CCHC/CCCH/C5HC2	217
+S. punctatus	Spizellomyces punctatus	C2H2/CCHC/CCCH/C5HC2	183
+B. dendrobatidis	Batrachochytrium dendrobatidis	C2H2/CCHC/CCCH/C5HC2	102
+C. protostelioides	Caulochytrium protostelioides	C2H2/CCHC/CCCH/C5HC2	83
+E. helioformis	Entophlyctis helioformis	C2H2/CCHC/CCCH/C5HC2	44
+G. variabilis	Geranomyces variabilis	C2H2/CCHC/CCCH/C5HC2	69
+P. aggregatum	Polychytrium aggregatum	C2H2/CCHC/CCCH/C5HC2	95
+T. arcticum	Ttriparticalar arcticum	C2H2/CCHC/CCCH/C5HC2	98
+R. allomyces	Rozella allomycis	C2H2/CCHC/CCCH/C5HC2	53
+A. locustae	Antonospora locustae	C2H2/CCHC/CCCH/C5HC2	24
+A. gossypii	Ashbya(Eremothecium) gossypii	CBF/NF-Y/archaeal histone	3
+A. nidulans	Aspergillus nidulans	CBF/NF-Y/archaeal histone	5
+B. cinerea	Botrytis cinerea	CBF/NF-Y/archaeal histone	6
+C. albicans	Candida albicans	CBF/NF-Y/archaeal histone	7
+C. immitis	Coccidioides immitis	CBF/NF-Y/archaeal histone	6
+C. militaris	Cordyceps militaris	CBF/NF-Y/archaeal histone	5
+F. fujikuroi	Fusarium fujikuroi	CBF/NF-Y/archaeal histone	6
+K. lactis	Kluyveromyces lactis	CBF/NF-Y/archaeal histone	4
+N. crassa	Neurospora crassa	CBF/NF-Y/archaeal histone	9
+S. cerevisiae	Saccharomyces cerevisiae	CBF/NF-Y/archaeal histone	4
+S. pombe	Schizosaccharomyces pombe	CBF/NF-Y/archaeal histone	6
+A. muscaria	Amanita muscaria	CBF/NF-Y/archaeal histone	5
+C. cinerea	Coprinopsis cinerea	CBF/NF-Y/archaeal histone	6
+C. neoformans	Cryptococcus neoformans	CBF/NF-Y/archaeal histone	5
+M. sympodialis	Malasseizia sympodialis	CBF/NF-Y/archaeal histone	5
+P. striiformis	Puccinia striiformis	CBF/NF-Y/archaeal histone	6
+S. brevipes	Suillus brevipes	CBF/NF-Y/archaeal histone	7
+T. mesenterica	Tremella mesenterica	CBF/NF-Y/archaeal histone	3
+U. maydis	Ustilago maydis	CBF/NF-Y/archaeal histone	7
+M. lusitanicus	Mucor lusitanicus	CBF/NF-Y/archaeal histone	6
+P. blakesleeanus	Phycomyces blakesleeanus	CBF/NF-Y/archaeal histone	6
+R. microsporus	Rhizopus microsporus	CBF/NF-Y/archaeal histone	7
+L. corymbifera	Lichtheimia corymbifera	CBF/NF-Y/archaeal histone	7
+A. repens	Absidia repens	CBF/NF-Y/archaeal histone	8
+B. trispora	Blakeslea trispora	CBF/NF-Y/archaeal histone	5
+S. vasiformis	Saksenea vasiformis	CBF/NF-Y/archaeal histone	7
+H. vesiculosa	Hesseltinella vesiculosa	CBF/NF-Y/archaeal histone	6
+P. umbonatus	Pilobolus umbonatus	CBF/NF-Y/archaeal histone	6
+S. umbellata	Sporodiniella umbellata	CBF/NF-Y/archaeal histone	6
+S. racemosum	Syncephalastrum racemosum	CBF/NF-Y/archaeal histone	6
+G. butleri	Gongronella butleri	CBF/NF-Y/archaeal histone	5
+M. alpina	Mortierella alpina	CBF/NF-Y/archaeal histone	9
+M. elongata	Mortierella elongata	CBF/NF-Y/archaeal histone	9
+P. epigama	Podila epigama	CBF/NF-Y/archaeal histone	9
+R. irregularis	Rhizophagus irregularis	CBF/NF-Y/archaeal histone	8
+G. margarita	Gigaspora margarita	CBF/NF-Y/archaeal histone	10
+G. pyriformis	Geosiphon pyriformis	CBF/NF-Y/archaeal histone	4
+B. meristosporus	Basidiobolus meristosporus	CBF/NF-Y/archaeal histone	13
+C. coronatus	Conidiobolus coronatus	CBF/NF-Y/archaeal histone	5
+E. maimaiga	Entomophaga maimaiga	CBF/NF-Y/archaeal histone	8
+Z. radicans	Zoophthora radicans	CBF/NF-Y/archaeal histone	8
+C. reversa	Coemansia reversa	CBF/NF-Y/archaeal histone	6
+K. alabastrina	Kickxella alabastrina	CBF/NF-Y/archaeal histone	7
+L. pennispora	Linderina pennispora	CBF/NF-Y/archaeal histone	6
+S. fuscata	Synchephalis fuscata	CBF/NF-Y/archaeal histone	6
+P. cylindrospora	Piptocephalis cylindrospora	CBF/NF-Y/archaeal histone	3
+O. bornovanus	Olpidium bornovanus	CBF/NF-Y/archaeal histone	2
+G. prolifera	Gonapodya prolifera	CBF/NF-Y/archaeal histone	7
+Orpinomyces	Orpinomyces	CBF/NF-Y/archaeal histone	2
+A. robustus	Anaeromyces robustus	CBF/NF-Y/archaeal histone	5
+P. finnis	Piromyces finnis	CBF/NF-Y/archaeal histone	6
+C. anguillulae	Catenaria anguillulae	CBF/NF-Y/archaeal histone	7
+A. macrogynus	Allomyces macrogynus	CBF/NF-Y/archaeal histone	11
+S. punctatus	Spizellomyces punctatus	CBF/NF-Y/archaeal histone	7
+B. dendrobatidis	Batrachochytrium dendrobatidis	CBF/NF-Y/archaeal histone	5
+C. protostelioides	Caulochytrium protostelioides	CBF/NF-Y/archaeal histone	3
+E. helioformis	Entophlyctis helioformis	CBF/NF-Y/archaeal histone	6
+G. variabilis	Geranomyces variabilis	CBF/NF-Y/archaeal histone	7
+P. aggregatum	Polychytrium aggregatum	CBF/NF-Y/archaeal histone	6
+T. arcticum	Ttriparticalar arcticum	CBF/NF-Y/archaeal histone	6
+R. allomyces	Rozella allomycis	CBF/NF-Y/archaeal histone	5
+A. locustae	Antonospora locustae	CBF/NF-Y/archaeal histone	4
+A. gossypii	Ashbya(Eremothecium) gossypii	CCAAT-BindingTF	1
+A. nidulans	Aspergillus nidulans	CCAAT-BindingTF	1
+B. cinerea	Botrytis cinerea	CCAAT-BindingTF	1
+C. albicans	Candida albicans	CCAAT-BindingTF	1
+C. immitis	Coccidioides immitis	CCAAT-BindingTF	1
+C. militaris	Cordyceps militaris	CCAAT-BindingTF	1
+F. fujikuroi	Fusarium fujikuroi	CCAAT-BindingTF	1
+K. lactis	Kluyveromyces lactis	CCAAT-BindingTF	1
+N. crassa	Neurospora crassa	CCAAT-BindingTF	1
+S. cerevisiae	Saccharomyces cerevisiae	CCAAT-BindingTF	1
+S. pombe	Schizosaccharomyces pombe	CCAAT-BindingTF	1
+A. muscaria	Amanita muscaria	CCAAT-BindingTF	1
+C. cinerea	Coprinopsis cinerea	CCAAT-BindingTF	1
+C. neoformans	Cryptococcus neoformans	CCAAT-BindingTF	1
+M. sympodialis	Malasseizia sympodialis	CCAAT-BindingTF	1
+P. striiformis	Puccinia striiformis	CCAAT-BindingTF	1
+S. brevipes	Suillus brevipes	CCAAT-BindingTF	1
+T. mesenterica	Tremella mesenterica	CCAAT-BindingTF	1
+U. maydis	Ustilago maydis	CCAAT-BindingTF	1
+M. lusitanicus	Mucor lusitanicus	CCAAT-BindingTF	2
+P. blakesleeanus	Phycomyces blakesleeanus	CCAAT-BindingTF	2
+R. microsporus	Rhizopus microsporus	CCAAT-BindingTF	2
+L. corymbifera	Lichtheimia corymbifera	CCAAT-BindingTF	3
+A. repens	Absidia repens	CCAAT-BindingTF	3
+B. trispora	Blakeslea trispora	CCAAT-BindingTF	2
+S. vasiformis	Saksenea vasiformis	CCAAT-BindingTF	2
+H. vesiculosa	Hesseltinella vesiculosa	CCAAT-BindingTF	3
+P. umbonatus	Pilobolus umbonatus	CCAAT-BindingTF	2
+S. umbellata	Sporodiniella umbellata	CCAAT-BindingTF	3
+S. racemosum	Syncephalastrum racemosum	CCAAT-BindingTF	3
+G. butleri	Gongronella butleri	CCAAT-BindingTF	3
+M. alpina	Mortierella alpina	CCAAT-BindingTF	4
+M. elongata	Mortierella elongata	CCAAT-BindingTF	4
+P. epigama	Podila epigama	CCAAT-BindingTF	2
+R. irregularis	Rhizophagus irregularis	CCAAT-BindingTF	3
+G. margarita	Gigaspora margarita	CCAAT-BindingTF	1
+G. pyriformis	Geosiphon pyriformis	CCAAT-BindingTF	2
+B. meristosporus	Basidiobolus meristosporus	CCAAT-BindingTF	5
+C. coronatus	Conidiobolus coronatus	CCAAT-BindingTF	1
+E. maimaiga	Entomophaga maimaiga	CCAAT-BindingTF	1
+Z. radicans	Zoophthora radicans	CCAAT-BindingTF	1
+C. reversa	Coemansia reversa	CCAAT-BindingTF	2
+K. alabastrina	Kickxella alabastrina	CCAAT-BindingTF	2
+L. pennispora	Linderina pennispora	CCAAT-BindingTF	2
+S. fuscata	Synchephalis fuscata	CCAAT-BindingTF	1
+P. cylindrospora	Piptocephalis cylindrospora	CCAAT-BindingTF	1
+O. bornovanus	Olpidium bornovanus	CCAAT-BindingTF	0
+G. prolifera	Gonapodya prolifera	CCAAT-BindingTF	1
+Orpinomyces	Orpinomyces	CCAAT-BindingTF	0
+A. robustus	Anaeromyces robustus	CCAAT-BindingTF	1
+P. finnis	Piromyces finnis	CCAAT-BindingTF	1
+C. anguillulae	Catenaria anguillulae	CCAAT-BindingTF	2
+A. macrogynus	Allomyces macrogynus	CCAAT-BindingTF	2
+S. punctatus	Spizellomyces punctatus	CCAAT-BindingTF	1
+B. dendrobatidis	Batrachochytrium dendrobatidis	CCAAT-BindingTF	1
+C. protostelioides	Caulochytrium protostelioides	CCAAT-BindingTF	0
+E. helioformis	Entophlyctis helioformis	CCAAT-BindingTF	0
+G. variabilis	Geranomyces variabilis	CCAAT-BindingTF	1
+P. aggregatum	Polychytrium aggregatum	CCAAT-BindingTF	1
+T. arcticum	Ttriparticalar arcticum	CCAAT-BindingTF	1
+R. allomyces	Rozella allomycis	CCAAT-BindingTF	1
+A. locustae	Antonospora locustae	CCAAT-BindingTF	1
+A. gossypii	Ashbya(Eremothecium) gossypii	CCR4	1
+A. nidulans	Aspergillus nidulans	CCR4	1
+B. cinerea	Botrytis cinerea	CCR4	1
+C. albicans	Candida albicans	CCR4	1
+C. immitis	Coccidioides immitis	CCR4	1
+C. militaris	Cordyceps militaris	CCR4	1
+F. fujikuroi	Fusarium fujikuroi	CCR4	1
+K. lactis	Kluyveromyces lactis	CCR4	1
+N. crassa	Neurospora crassa	CCR4	1
+S. cerevisiae	Saccharomyces cerevisiae	CCR4	1
+S. pombe	Schizosaccharomyces pombe	CCR4	1
+A. muscaria	Amanita muscaria	CCR4	1
+C. cinerea	Coprinopsis cinerea	CCR4	1
+C. neoformans	Cryptococcus neoformans	CCR4	1
+M. sympodialis	Malasseizia sympodialis	CCR4	1
+P. striiformis	Puccinia striiformis	CCR4	1
+S. brevipes	Suillus brevipes	CCR4	2
+T. mesenterica	Tremella mesenterica	CCR4	1
+U. maydis	Ustilago maydis	CCR4	1
+M. lusitanicus	Mucor lusitanicus	CCR4	4
+P. blakesleeanus	Phycomyces blakesleeanus	CCR4	3
+R. microsporus	Rhizopus microsporus	CCR4	3
+L. corymbifera	Lichtheimia corymbifera	CCR4	4
+A. repens	Absidia repens	CCR4	4
+B. trispora	Blakeslea trispora	CCR4	4
+S. vasiformis	Saksenea vasiformis	CCR4	3
+H. vesiculosa	Hesseltinella vesiculosa	CCR4	3
+P. umbonatus	Pilobolus umbonatus	CCR4	4
+S. umbellata	Sporodiniella umbellata	CCR4	4
+S. racemosum	Syncephalastrum racemosum	CCR4	4
+G. butleri	Gongronella butleri	CCR4	4
+M. alpina	Mortierella alpina	CCR4	2
+M. elongata	Mortierella elongata	CCR4	1
+P. epigama	Podila epigama	CCR4	1
+R. irregularis	Rhizophagus irregularis	CCR4	1
+G. margarita	Gigaspora margarita	CCR4	3
+G. pyriformis	Geosiphon pyriformis	CCR4	1
+B. meristosporus	Basidiobolus meristosporus	CCR4	1
+C. coronatus	Conidiobolus coronatus	CCR4	1
+E. maimaiga	Entomophaga maimaiga	CCR4	1
+Z. radicans	Zoophthora radicans	CCR4	1
+C. reversa	Coemansia reversa	CCR4	1
+K. alabastrina	Kickxella alabastrina	CCR4	1
+L. pennispora	Linderina pennispora	CCR4	1
+S. fuscata	Synchephalis fuscata	CCR4	1
+P. cylindrospora	Piptocephalis cylindrospora	CCR4	0
+O. bornovanus	Olpidium bornovanus	CCR4	0
+G. prolifera	Gonapodya prolifera	CCR4	1
+Orpinomyces	Orpinomyces	CCR4	3
+A. robustus	Anaeromyces robustus	CCR4	2
+P. finnis	Piromyces finnis	CCR4	3
+C. anguillulae	Catenaria anguillulae	CCR4	1
+A. macrogynus	Allomyces macrogynus	CCR4	2
+S. punctatus	Spizellomyces punctatus	CCR4	1
+B. dendrobatidis	Batrachochytrium dendrobatidis	CCR4	1
+C. protostelioides	Caulochytrium protostelioides	CCR4	1
+E. helioformis	Entophlyctis helioformis	CCR4	1
+G. variabilis	Geranomyces variabilis	CCR4	1
+P. aggregatum	Polychytrium aggregatum	CCR4	2
+T. arcticum	Ttriparticalar arcticum	CCR4	1
+R. allomyces	Rozella allomycis	CCR4	1
+A. locustae	Antonospora locustae	CCR4	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Cold-shock DBD	0
+A. nidulans	Aspergillus nidulans	Cold-shock DBD	1
+B. cinerea	Botrytis cinerea	Cold-shock DBD	0
+C. albicans	Candida albicans	Cold-shock DBD	0
+C. immitis	Coccidioides immitis	Cold-shock DBD	0
+C. militaris	Cordyceps militaris	Cold-shock DBD	0
+F. fujikuroi	Fusarium fujikuroi	Cold-shock DBD	0
+K. lactis	Kluyveromyces lactis	Cold-shock DBD	0
+N. crassa	Neurospora crassa	Cold-shock DBD	0
+S. cerevisiae	Saccharomyces cerevisiae	Cold-shock DBD	0
+S. pombe	Schizosaccharomyces pombe	Cold-shock DBD	0
+A. muscaria	Amanita muscaria	Cold-shock DBD	0
+C. cinerea	Coprinopsis cinerea	Cold-shock DBD	0
+C. neoformans	Cryptococcus neoformans	Cold-shock DBD	0
+M. sympodialis	Malasseizia sympodialis	Cold-shock DBD	0
+P. striiformis	Puccinia striiformis	Cold-shock DBD	2
+S. brevipes	Suillus brevipes	Cold-shock DBD	0
+T. mesenterica	Tremella mesenterica	Cold-shock DBD	0
+U. maydis	Ustilago maydis	Cold-shock DBD	0
+M. lusitanicus	Mucor lusitanicus	Cold-shock DBD	2
+P. blakesleeanus	Phycomyces blakesleeanus	Cold-shock DBD	2
+R. microsporus	Rhizopus microsporus	Cold-shock DBD	1
+L. corymbifera	Lichtheimia corymbifera	Cold-shock DBD	3
+A. repens	Absidia repens	Cold-shock DBD	4
+B. trispora	Blakeslea trispora	Cold-shock DBD	1
+S. vasiformis	Saksenea vasiformis	Cold-shock DBD	2
+H. vesiculosa	Hesseltinella vesiculosa	Cold-shock DBD	1
+P. umbonatus	Pilobolus umbonatus	Cold-shock DBD	0
+S. umbellata	Sporodiniella umbellata	Cold-shock DBD	0
+S. racemosum	Syncephalastrum racemosum	Cold-shock DBD	2
+G. butleri	Gongronella butleri	Cold-shock DBD	2
+M. alpina	Mortierella alpina	Cold-shock DBD	1
+M. elongata	Mortierella elongata	Cold-shock DBD	4
+P. epigama	Podila epigama	Cold-shock DBD	1
+R. irregularis	Rhizophagus irregularis	Cold-shock DBD	6
+G. margarita	Gigaspora margarita	Cold-shock DBD	2
+G. pyriformis	Geosiphon pyriformis	Cold-shock DBD	1
+B. meristosporus	Basidiobolus meristosporus	Cold-shock DBD	2
+C. coronatus	Conidiobolus coronatus	Cold-shock DBD	0
+E. maimaiga	Entomophaga maimaiga	Cold-shock DBD	0
+Z. radicans	Zoophthora radicans	Cold-shock DBD	0
+C. reversa	Coemansia reversa	Cold-shock DBD	1
+K. alabastrina	Kickxella alabastrina	Cold-shock DBD	1
+L. pennispora	Linderina pennispora	Cold-shock DBD	1
+S. fuscata	Synchephalis fuscata	Cold-shock DBD	1
+P. cylindrospora	Piptocephalis cylindrospora	Cold-shock DBD	0
+O. bornovanus	Olpidium bornovanus	Cold-shock DBD	1
+G. prolifera	Gonapodya prolifera	Cold-shock DBD	1
+Orpinomyces	Orpinomyces	Cold-shock DBD	0
+A. robustus	Anaeromyces robustus	Cold-shock DBD	2
+P. finnis	Piromyces finnis	Cold-shock DBD	2
+C. anguillulae	Catenaria anguillulae	Cold-shock DBD	2
+A. macrogynus	Allomyces macrogynus	Cold-shock DBD	4
+S. punctatus	Spizellomyces punctatus	Cold-shock DBD	1
+B. dendrobatidis	Batrachochytrium dendrobatidis	Cold-shock DBD	0
+C. protostelioides	Caulochytrium protostelioides	Cold-shock DBD	1
+E. helioformis	Entophlyctis helioformis	Cold-shock DBD	0
+G. variabilis	Geranomyces variabilis	Cold-shock DBD	0
+P. aggregatum	Polychytrium aggregatum	Cold-shock DBD	1
+T. arcticum	Ttriparticalar arcticum	Cold-shock DBD	1
+R. allomyces	Rozella allomycis	Cold-shock DBD	0
+A. locustae	Antonospora locustae	Cold-shock DBD	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Copper fist	2
+A. nidulans	Aspergillus nidulans	Copper fist	2
+B. cinerea	Botrytis cinerea	Copper fist	2
+C. albicans	Candida albicans	Copper fist	2
+C. immitis	Coccidioides immitis	Copper fist	2
+C. militaris	Cordyceps militaris	Copper fist	3
+F. fujikuroi	Fusarium fujikuroi	Copper fist	4
+K. lactis	Kluyveromyces lactis	Copper fist	2
+N. crassa	Neurospora crassa	Copper fist	2
+S. cerevisiae	Saccharomyces cerevisiae	Copper fist	3
+S. pombe	Schizosaccharomyces pombe	Copper fist	2
+A. muscaria	Amanita muscaria	Copper fist	2
+C. cinerea	Coprinopsis cinerea	Copper fist	2
+C. neoformans	Cryptococcus neoformans	Copper fist	1
+M. sympodialis	Malasseizia sympodialis	Copper fist	0
+P. striiformis	Puccinia striiformis	Copper fist	1
+S. brevipes	Suillus brevipes	Copper fist	2
+T. mesenterica	Tremella mesenterica	Copper fist	1
+U. maydis	Ustilago maydis	Copper fist	1
+M. lusitanicus	Mucor lusitanicus	Copper fist	6
+P. blakesleeanus	Phycomyces blakesleeanus	Copper fist	7
+R. microsporus	Rhizopus microsporus	Copper fist	6
+L. corymbifera	Lichtheimia corymbifera	Copper fist	6
+A. repens	Absidia repens	Copper fist	7
+B. trispora	Blakeslea trispora	Copper fist	6
+S. vasiformis	Saksenea vasiformis	Copper fist	3
+H. vesiculosa	Hesseltinella vesiculosa	Copper fist	5
+P. umbonatus	Pilobolus umbonatus	Copper fist	6
+S. umbellata	Sporodiniella umbellata	Copper fist	6
+S. racemosum	Syncephalastrum racemosum	Copper fist	6
+G. butleri	Gongronella butleri	Copper fist	6
+M. alpina	Mortierella alpina	Copper fist	2
+M. elongata	Mortierella elongata	Copper fist	2
+P. epigama	Podila epigama	Copper fist	1
+R. irregularis	Rhizophagus irregularis	Copper fist	1
+G. margarita	Gigaspora margarita	Copper fist	1
+G. pyriformis	Geosiphon pyriformis	Copper fist	1
+B. meristosporus	Basidiobolus meristosporus	Copper fist	3
+C. coronatus	Conidiobolus coronatus	Copper fist	1
+E. maimaiga	Entomophaga maimaiga	Copper fist	1
+Z. radicans	Zoophthora radicans	Copper fist	2
+C. reversa	Coemansia reversa	Copper fist	2
+K. alabastrina	Kickxella alabastrina	Copper fist	2
+L. pennispora	Linderina pennispora	Copper fist	1
+S. fuscata	Synchephalis fuscata	Copper fist	1
+P. cylindrospora	Piptocephalis cylindrospora	Copper fist	1
+O. bornovanus	Olpidium bornovanus	Copper fist	1
+G. prolifera	Gonapodya prolifera	Copper fist	1
+Orpinomyces	Orpinomyces	Copper fist	0
+A. robustus	Anaeromyces robustus	Copper fist	0
+P. finnis	Piromyces finnis	Copper fist	0
+C. anguillulae	Catenaria anguillulae	Copper fist	1
+A. macrogynus	Allomyces macrogynus	Copper fist	2
+S. punctatus	Spizellomyces punctatus	Copper fist	1
+B. dendrobatidis	Batrachochytrium dendrobatidis	Copper fist	1
+C. protostelioides	Caulochytrium protostelioides	Copper fist	0
+E. helioformis	Entophlyctis helioformis	Copper fist	1
+G. variabilis	Geranomyces variabilis	Copper fist	1
+P. aggregatum	Polychytrium aggregatum	Copper fist	1
+T. arcticum	Ttriparticalar arcticum	Copper fist	1
+R. allomyces	Rozella allomycis	Copper fist	0
+A. locustae	Antonospora locustae	Copper fist	0
+A. gossypii	Ashbya(Eremothecium) gossypii	DNA-binding WRKY	0
+A. nidulans	Aspergillus nidulans	DNA-binding WRKY	0
+B. cinerea	Botrytis cinerea	DNA-binding WRKY	0
+C. albicans	Candida albicans	DNA-binding WRKY	0
+C. immitis	Coccidioides immitis	DNA-binding WRKY	0
+C. militaris	Cordyceps militaris	DNA-binding WRKY	0
+F. fujikuroi	Fusarium fujikuroi	DNA-binding WRKY	0
+K. lactis	Kluyveromyces lactis	DNA-binding WRKY	0
+N. crassa	Neurospora crassa	DNA-binding WRKY	0
+S. cerevisiae	Saccharomyces cerevisiae	DNA-binding WRKY	0
+S. pombe	Schizosaccharomyces pombe	DNA-binding WRKY	0
+A. muscaria	Amanita muscaria	DNA-binding WRKY	0
+C. cinerea	Coprinopsis cinerea	DNA-binding WRKY	0
+C. neoformans	Cryptococcus neoformans	DNA-binding WRKY	0
+M. sympodialis	Malasseizia sympodialis	DNA-binding WRKY	0
+P. striiformis	Puccinia striiformis	DNA-binding WRKY	0
+S. brevipes	Suillus brevipes	DNA-binding WRKY	0
+T. mesenterica	Tremella mesenterica	DNA-binding WRKY	0
+U. maydis	Ustilago maydis	DNA-binding WRKY	0
+M. lusitanicus	Mucor lusitanicus	DNA-binding WRKY	4
+P. blakesleeanus	Phycomyces blakesleeanus	DNA-binding WRKY	4
+R. microsporus	Rhizopus microsporus	DNA-binding WRKY	5
+L. corymbifera	Lichtheimia corymbifera	DNA-binding WRKY	7
+A. repens	Absidia repens	DNA-binding WRKY	8
+B. trispora	Blakeslea trispora	DNA-binding WRKY	3
+S. vasiformis	Saksenea vasiformis	DNA-binding WRKY	5
+H. vesiculosa	Hesseltinella vesiculosa	DNA-binding WRKY	1
+P. umbonatus	Pilobolus umbonatus	DNA-binding WRKY	2
+S. umbellata	Sporodiniella umbellata	DNA-binding WRKY	6
+S. racemosum	Syncephalastrum racemosum	DNA-binding WRKY	4
+G. butleri	Gongronella butleri	DNA-binding WRKY	6
+M. alpina	Mortierella alpina	DNA-binding WRKY	0
+M. elongata	Mortierella elongata	DNA-binding WRKY	0
+P. epigama	Podila epigama	DNA-binding WRKY	1
+R. irregularis	Rhizophagus irregularis	DNA-binding WRKY	1
+G. margarita	Gigaspora margarita	DNA-binding WRKY	0
+G. pyriformis	Geosiphon pyriformis	DNA-binding WRKY	0
+B. meristosporus	Basidiobolus meristosporus	DNA-binding WRKY	0
+C. coronatus	Conidiobolus coronatus	DNA-binding WRKY	0
+E. maimaiga	Entomophaga maimaiga	DNA-binding WRKY	0
+Z. radicans	Zoophthora radicans	DNA-binding WRKY	0
+C. reversa	Coemansia reversa	DNA-binding WRKY	0
+K. alabastrina	Kickxella alabastrina	DNA-binding WRKY	0
+L. pennispora	Linderina pennispora	DNA-binding WRKY	0
+S. fuscata	Synchephalis fuscata	DNA-binding WRKY	0
+P. cylindrospora	Piptocephalis cylindrospora	DNA-binding WRKY	0
+O. bornovanus	Olpidium bornovanus	DNA-binding WRKY	0
+G. prolifera	Gonapodya prolifera	DNA-binding WRKY	0
+Orpinomyces	Orpinomyces	DNA-binding WRKY	0
+A. robustus	Anaeromyces robustus	DNA-binding WRKY	0
+P. finnis	Piromyces finnis	DNA-binding WRKY	0
+C. anguillulae	Catenaria anguillulae	DNA-binding WRKY	0
+A. macrogynus	Allomyces macrogynus	DNA-binding WRKY	0
+S. punctatus	Spizellomyces punctatus	DNA-binding WRKY	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	DNA-binding WRKY	0
+C. protostelioides	Caulochytrium protostelioides	DNA-binding WRKY	0
+E. helioformis	Entophlyctis helioformis	DNA-binding WRKY	0
+G. variabilis	Geranomyces variabilis	DNA-binding WRKY	0
+P. aggregatum	Polychytrium aggregatum	DNA-binding WRKY	0
+T. arcticum	Ttriparticalar arcticum	DNA-binding WRKY	0
+R. allomyces	Rozella allomycis	DNA-binding WRKY	0
+A. locustae	Antonospora locustae	DNA-binding WRKY	0
+A. gossypii	Ashbya(Eremothecium) gossypii	E2F_TDP	0
+A. nidulans	Aspergillus nidulans	E2F_TDP	0
+B. cinerea	Botrytis cinerea	E2F_TDP	0
+C. albicans	Candida albicans	E2F_TDP	0
+C. immitis	Coccidioides immitis	E2F_TDP	0
+C. militaris	Cordyceps militaris	E2F_TDP	0
+F. fujikuroi	Fusarium fujikuroi	E2F_TDP	0
+K. lactis	Kluyveromyces lactis	E2F_TDP	0
+N. crassa	Neurospora crassa	E2F_TDP	0
+S. cerevisiae	Saccharomyces cerevisiae	E2F_TDP	0
+S. pombe	Schizosaccharomyces pombe	E2F_TDP	0
+A. muscaria	Amanita muscaria	E2F_TDP	0
+C. cinerea	Coprinopsis cinerea	E2F_TDP	0
+C. neoformans	Cryptococcus neoformans	E2F_TDP	0
+M. sympodialis	Malasseizia sympodialis	E2F_TDP	0
+P. striiformis	Puccinia striiformis	E2F_TDP	0
+S. brevipes	Suillus brevipes	E2F_TDP	0
+T. mesenterica	Tremella mesenterica	E2F_TDP	0
+U. maydis	Ustilago maydis	E2F_TDP	0
+M. lusitanicus	Mucor lusitanicus	E2F_TDP	3
+P. blakesleeanus	Phycomyces blakesleeanus	E2F_TDP	4
+R. microsporus	Rhizopus microsporus	E2F_TDP	2
+L. corymbifera	Lichtheimia corymbifera	E2F_TDP	5
+A. repens	Absidia repens	E2F_TDP	7
+B. trispora	Blakeslea trispora	E2F_TDP	3
+S. vasiformis	Saksenea vasiformis	E2F_TDP	4
+H. vesiculosa	Hesseltinella vesiculosa	E2F_TDP	3
+P. umbonatus	Pilobolus umbonatus	E2F_TDP	2
+S. umbellata	Sporodiniella umbellata	E2F_TDP	2
+S. racemosum	Syncephalastrum racemosum	E2F_TDP	3
+G. butleri	Gongronella butleri	E2F_TDP	4
+M. alpina	Mortierella alpina	E2F_TDP	3
+M. elongata	Mortierella elongata	E2F_TDP	3
+P. epigama	Podila epigama	E2F_TDP	3
+R. irregularis	Rhizophagus irregularis	E2F_TDP	2
+G. margarita	Gigaspora margarita	E2F_TDP	3
+G. pyriformis	Geosiphon pyriformis	E2F_TDP	3
+B. meristosporus	Basidiobolus meristosporus	E2F_TDP	0
+C. coronatus	Conidiobolus coronatus	E2F_TDP	0
+E. maimaiga	Entomophaga maimaiga	E2F_TDP	0
+Z. radicans	Zoophthora radicans	E2F_TDP	0
+C. reversa	Coemansia reversa	E2F_TDP	0
+K. alabastrina	Kickxella alabastrina	E2F_TDP	0
+L. pennispora	Linderina pennispora	E2F_TDP	0
+S. fuscata	Synchephalis fuscata	E2F_TDP	0
+P. cylindrospora	Piptocephalis cylindrospora	E2F_TDP	0
+O. bornovanus	Olpidium bornovanus	E2F_TDP	1
+G. prolifera	Gonapodya prolifera	E2F_TDP	0
+Orpinomyces	Orpinomyces	E2F_TDP	0
+A. robustus	Anaeromyces robustus	E2F_TDP	0
+P. finnis	Piromyces finnis	E2F_TDP	0
+C. anguillulae	Catenaria anguillulae	E2F_TDP	0
+A. macrogynus	Allomyces macrogynus	E2F_TDP	0
+S. punctatus	Spizellomyces punctatus	E2F_TDP	3
+B. dendrobatidis	Batrachochytrium dendrobatidis	E2F_TDP	0
+C. protostelioides	Caulochytrium protostelioides	E2F_TDP	0
+E. helioformis	Entophlyctis helioformis	E2F_TDP	0
+G. variabilis	Geranomyces variabilis	E2F_TDP	2
+P. aggregatum	Polychytrium aggregatum	E2F_TDP	2
+T. arcticum	Ttriparticalar arcticum	E2F_TDP	2
+R. allomyces	Rozella allomycis	E2F_TDP	2
+A. locustae	Antonospora locustae	E2F_TDP	2
+A. gossypii	Ashbya(Eremothecium) gossypii	Ets	0
+A. nidulans	Aspergillus nidulans	Ets	0
+B. cinerea	Botrytis cinerea	Ets	0
+C. albicans	Candida albicans	Ets	0
+C. immitis	Coccidioides immitis	Ets	1
+C. militaris	Cordyceps militaris	Ets	0
+F. fujikuroi	Fusarium fujikuroi	Ets	0
+K. lactis	Kluyveromyces lactis	Ets	0
+N. crassa	Neurospora crassa	Ets	0
+S. cerevisiae	Saccharomyces cerevisiae	Ets	0
+S. pombe	Schizosaccharomyces pombe	Ets	0
+A. muscaria	Amanita muscaria	Ets	0
+C. cinerea	Coprinopsis cinerea	Ets	0
+C. neoformans	Cryptococcus neoformans	Ets	0
+M. sympodialis	Malasseizia sympodialis	Ets	0
+P. striiformis	Puccinia striiformis	Ets	1
+S. brevipes	Suillus brevipes	Ets	0
+T. mesenterica	Tremella mesenterica	Ets	1
+U. maydis	Ustilago maydis	Ets	0
+M. lusitanicus	Mucor lusitanicus	Ets	1
+P. blakesleeanus	Phycomyces blakesleeanus	Ets	0
+R. microsporus	Rhizopus microsporus	Ets	0
+L. corymbifera	Lichtheimia corymbifera	Ets	0
+A. repens	Absidia repens	Ets	0
+B. trispora	Blakeslea trispora	Ets	0
+S. vasiformis	Saksenea vasiformis	Ets	0
+H. vesiculosa	Hesseltinella vesiculosa	Ets	0
+P. umbonatus	Pilobolus umbonatus	Ets	0
+S. umbellata	Sporodiniella umbellata	Ets	0
+S. racemosum	Syncephalastrum racemosum	Ets	0
+G. butleri	Gongronella butleri	Ets	0
+M. alpina	Mortierella alpina	Ets	0
+M. elongata	Mortierella elongata	Ets	4
+P. epigama	Podila epigama	Ets	0
+R. irregularis	Rhizophagus irregularis	Ets	1
+G. margarita	Gigaspora margarita	Ets	0
+G. pyriformis	Geosiphon pyriformis	Ets	0
+B. meristosporus	Basidiobolus meristosporus	Ets	0
+C. coronatus	Conidiobolus coronatus	Ets	1
+E. maimaiga	Entomophaga maimaiga	Ets	0
+Z. radicans	Zoophthora radicans	Ets	0
+C. reversa	Coemansia reversa	Ets	0
+K. alabastrina	Kickxella alabastrina	Ets	0
+L. pennispora	Linderina pennispora	Ets	0
+S. fuscata	Synchephalis fuscata	Ets	0
+P. cylindrospora	Piptocephalis cylindrospora	Ets	0
+O. bornovanus	Olpidium bornovanus	Ets	0
+G. prolifera	Gonapodya prolifera	Ets	1
+Orpinomyces	Orpinomyces	Ets	0
+A. robustus	Anaeromyces robustus	Ets	0
+P. finnis	Piromyces finnis	Ets	0
+C. anguillulae	Catenaria anguillulae	Ets	0
+A. macrogynus	Allomyces macrogynus	Ets	2
+S. punctatus	Spizellomyces punctatus	Ets	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	Ets	0
+C. protostelioides	Caulochytrium protostelioides	Ets	0
+E. helioformis	Entophlyctis helioformis	Ets	0
+G. variabilis	Geranomyces variabilis	Ets	0
+P. aggregatum	Polychytrium aggregatum	Ets	0
+T. arcticum	Ttriparticalar arcticum	Ets	0
+R. allomyces	Rozella allomycis	Ets	0
+A. locustae	Antonospora locustae	Ets	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Fork head TF	3
+A. nidulans	Aspergillus nidulans	Fork head TF	8
+B. cinerea	Botrytis cinerea	Fork head TF	4
+C. albicans	Candida albicans	Fork head TF	3
+C. immitis	Coccidioides immitis	Fork head TF	4
+C. militaris	Cordyceps militaris	Fork head TF	4
+F. fujikuroi	Fusarium fujikuroi	Fork head TF	5
+K. lactis	Kluyveromyces lactis	Fork head TF	3
+N. crassa	Neurospora crassa	Fork head TF	4
+S. cerevisiae	Saccharomyces cerevisiae	Fork head TF	4
+S. pombe	Schizosaccharomyces pombe	Fork head TF	4
+A. muscaria	Amanita muscaria	Fork head TF	5
+C. cinerea	Coprinopsis cinerea	Fork head TF	5
+C. neoformans	Cryptococcus neoformans	Fork head TF	5
+M. sympodialis	Malasseizia sympodialis	Fork head TF	2
+P. striiformis	Puccinia striiformis	Fork head TF	3
+S. brevipes	Suillus brevipes	Fork head TF	5
+T. mesenterica	Tremella mesenterica	Fork head TF	4
+U. maydis	Ustilago maydis	Fork head TF	5
+M. lusitanicus	Mucor lusitanicus	Fork head TF	10
+P. blakesleeanus	Phycomyces blakesleeanus	Fork head TF	10
+R. microsporus	Rhizopus microsporus	Fork head TF	7
+L. corymbifera	Lichtheimia corymbifera	Fork head TF	10
+A. repens	Absidia repens	Fork head TF	12
+B. trispora	Blakeslea trispora	Fork head TF	10
+S. vasiformis	Saksenea vasiformis	Fork head TF	8
+H. vesiculosa	Hesseltinella vesiculosa	Fork head TF	10
+P. umbonatus	Pilobolus umbonatus	Fork head TF	7
+S. umbellata	Sporodiniella umbellata	Fork head TF	10
+S. racemosum	Syncephalastrum racemosum	Fork head TF	7
+G. butleri	Gongronella butleri	Fork head TF	10
+M. alpina	Mortierella alpina	Fork head TF	7
+M. elongata	Mortierella elongata	Fork head TF	7
+P. epigama	Podila epigama	Fork head TF	4
+R. irregularis	Rhizophagus irregularis	Fork head TF	5
+G. margarita	Gigaspora margarita	Fork head TF	4
+G. pyriformis	Geosiphon pyriformis	Fork head TF	6
+B. meristosporus	Basidiobolus meristosporus	Fork head TF	18
+C. coronatus	Conidiobolus coronatus	Fork head TF	3
+E. maimaiga	Entomophaga maimaiga	Fork head TF	2
+Z. radicans	Zoophthora radicans	Fork head TF	3
+C. reversa	Coemansia reversa	Fork head TF	4
+K. alabastrina	Kickxella alabastrina	Fork head TF	4
+L. pennispora	Linderina pennispora	Fork head TF	5
+S. fuscata	Synchephalis fuscata	Fork head TF	3
+P. cylindrospora	Piptocephalis cylindrospora	Fork head TF	1
+O. bornovanus	Olpidium bornovanus	Fork head TF	4
+G. prolifera	Gonapodya prolifera	Fork head TF	4
+Orpinomyces	Orpinomyces	Fork head TF	1
+A. robustus	Anaeromyces robustus	Fork head TF	4
+P. finnis	Piromyces finnis	Fork head TF	4
+C. anguillulae	Catenaria anguillulae	Fork head TF	5
+A. macrogynus	Allomyces macrogynus	Fork head TF	9
+S. punctatus	Spizellomyces punctatus	Fork head TF	3
+B. dendrobatidis	Batrachochytrium dendrobatidis	Fork head TF	2
+C. protostelioides	Caulochytrium protostelioides	Fork head TF	1
+E. helioformis	Entophlyctis helioformis	Fork head TF	2
+G. variabilis	Geranomyces variabilis	Fork head TF	1
+P. aggregatum	Polychytrium aggregatum	Fork head TF	2
+T. arcticum	Ttriparticalar arcticum	Fork head TF	3
+R. allomyces	Rozella allomycis	Fork head TF	4
+A. locustae	Antonospora locustae	Fork head TF	1
+A. gossypii	Ashbya(Eremothecium) gossypii	GATA Zn finger	5
+A. nidulans	Aspergillus nidulans	GATA Zn finger	7
+B. cinerea	Botrytis cinerea	GATA Zn finger	8
+C. albicans	Candida albicans	GATA Zn finger	8
+C. immitis	Coccidioides immitis	GATA Zn finger	5
+C. militaris	Cordyceps militaris	GATA Zn finger	9
+F. fujikuroi	Fusarium fujikuroi	GATA Zn finger	10
+K. lactis	Kluyveromyces lactis	GATA Zn finger	7
+N. crassa	Neurospora crassa	GATA Zn finger	10
+S. cerevisiae	Saccharomyces cerevisiae	GATA Zn finger	10
+S. pombe	Schizosaccharomyces pombe	GATA Zn finger	5
+A. muscaria	Amanita muscaria	GATA Zn finger	11
+C. cinerea	Coprinopsis cinerea	GATA Zn finger	10
+C. neoformans	Cryptococcus neoformans	GATA Zn finger	9
+M. sympodialis	Malasseizia sympodialis	GATA Zn finger	3
+P. striiformis	Puccinia striiformis	GATA Zn finger	7
+S. brevipes	Suillus brevipes	GATA Zn finger	12
+T. mesenterica	Tremella mesenterica	GATA Zn finger	10
+U. maydis	Ustilago maydis	GATA Zn finger	9
+M. lusitanicus	Mucor lusitanicus	GATA Zn finger	37
+P. blakesleeanus	Phycomyces blakesleeanus	GATA Zn finger	36
+R. microsporus	Rhizopus microsporus	GATA Zn finger	40
+L. corymbifera	Lichtheimia corymbifera	GATA Zn finger	43
+A. repens	Absidia repens	GATA Zn finger	52
+B. trispora	Blakeslea trispora	GATA Zn finger	40
+S. vasiformis	Saksenea vasiformis	GATA Zn finger	32
+H. vesiculosa	Hesseltinella vesiculosa	GATA Zn finger	30
+P. umbonatus	Pilobolus umbonatus	GATA Zn finger	39
+S. umbellata	Sporodiniella umbellata	GATA Zn finger	47
+S. racemosum	Syncephalastrum racemosum	GATA Zn finger	34
+G. butleri	Gongronella butleri	GATA Zn finger	30
+M. alpina	Mortierella alpina	GATA Zn finger	26
+M. elongata	Mortierella elongata	GATA Zn finger	24
+P. epigama	Podila epigama	GATA Zn finger	20
+R. irregularis	Rhizophagus irregularis	GATA Zn finger	25
+G. margarita	Gigaspora margarita	GATA Zn finger	30
+G. pyriformis	Geosiphon pyriformis	GATA Zn finger	20
+B. meristosporus	Basidiobolus meristosporus	GATA Zn finger	52
+C. coronatus	Conidiobolus coronatus	GATA Zn finger	21
+E. maimaiga	Entomophaga maimaiga	GATA Zn finger	11
+Z. radicans	Zoophthora radicans	GATA Zn finger	14
+C. reversa	Coemansia reversa	GATA Zn finger	14
+K. alabastrina	Kickxella alabastrina	GATA Zn finger	12
+L. pennispora	Linderina pennispora	GATA Zn finger	18
+S. fuscata	Synchephalis fuscata	GATA Zn finger	11
+P. cylindrospora	Piptocephalis cylindrospora	GATA Zn finger	4
+O. bornovanus	Olpidium bornovanus	GATA Zn finger	5
+G. prolifera	Gonapodya prolifera	GATA Zn finger	17
+Orpinomyces	Orpinomyces	GATA Zn finger	7
+A. robustus	Anaeromyces robustus	GATA Zn finger	14
+P. finnis	Piromyces finnis	GATA Zn finger	14
+C. anguillulae	Catenaria anguillulae	GATA Zn finger	16
+A. macrogynus	Allomyces macrogynus	GATA Zn finger	41
+S. punctatus	Spizellomyces punctatus	GATA Zn finger	23
+B. dendrobatidis	Batrachochytrium dendrobatidis	GATA Zn finger	7
+C. protostelioides	Caulochytrium protostelioides	GATA Zn finger	7
+E. helioformis	Entophlyctis helioformis	GATA Zn finger	12
+G. variabilis	Geranomyces variabilis	GATA Zn finger	11
+P. aggregatum	Polychytrium aggregatum	GATA Zn finger	15
+T. arcticum	Ttriparticalar arcticum	GATA Zn finger	17
+R. allomyces	Rozella allomycis	GATA Zn finger	5
+A. locustae	Antonospora locustae	GATA Zn finger	2
+A. gossypii	Ashbya(Eremothecium) gossypii	GCN5L1	0
+A. nidulans	Aspergillus nidulans	GCN5L1	0
+B. cinerea	Botrytis cinerea	GCN5L1	0
+C. albicans	Candida albicans	GCN5L1	0
+C. immitis	Coccidioides immitis	GCN5L1	0
+C. militaris	Cordyceps militaris	GCN5L1	0
+F. fujikuroi	Fusarium fujikuroi	GCN5L1	0
+K. lactis	Kluyveromyces lactis	GCN5L1	0
+N. crassa	Neurospora crassa	GCN5L1	0
+S. cerevisiae	Saccharomyces cerevisiae	GCN5L1	0
+S. pombe	Schizosaccharomyces pombe	GCN5L1	0
+A. muscaria	Amanita muscaria	GCN5L1	0
+C. cinerea	Coprinopsis cinerea	GCN5L1	0
+C. neoformans	Cryptococcus neoformans	GCN5L1	0
+M. sympodialis	Malasseizia sympodialis	GCN5L1	0
+P. striiformis	Puccinia striiformis	GCN5L1	0
+S. brevipes	Suillus brevipes	GCN5L1	0
+T. mesenterica	Tremella mesenterica	GCN5L1	0
+U. maydis	Ustilago maydis	GCN5L1	0
+M. lusitanicus	Mucor lusitanicus	GCN5L1	1
+P. blakesleeanus	Phycomyces blakesleeanus	GCN5L1	1
+R. microsporus	Rhizopus microsporus	GCN5L1	1
+L. corymbifera	Lichtheimia corymbifera	GCN5L1	1
+A. repens	Absidia repens	GCN5L1	1
+B. trispora	Blakeslea trispora	GCN5L1	1
+S. vasiformis	Saksenea vasiformis	GCN5L1	1
+H. vesiculosa	Hesseltinella vesiculosa	GCN5L1	1
+P. umbonatus	Pilobolus umbonatus	GCN5L1	1
+S. umbellata	Sporodiniella umbellata	GCN5L1	1
+S. racemosum	Syncephalastrum racemosum	GCN5L1	1
+G. butleri	Gongronella butleri	GCN5L1	1
+M. alpina	Mortierella alpina	GCN5L1	1
+M. elongata	Mortierella elongata	GCN5L1	0
+P. epigama	Podila epigama	GCN5L1	0
+R. irregularis	Rhizophagus irregularis	GCN5L1	1
+G. margarita	Gigaspora margarita	GCN5L1	1
+G. pyriformis	Geosiphon pyriformis	GCN5L1	1
+B. meristosporus	Basidiobolus meristosporus	GCN5L1	1
+C. coronatus	Conidiobolus coronatus	GCN5L1	1
+E. maimaiga	Entomophaga maimaiga	GCN5L1	1
+Z. radicans	Zoophthora radicans	GCN5L1	1
+C. reversa	Coemansia reversa	GCN5L1	1
+K. alabastrina	Kickxella alabastrina	GCN5L1	1
+L. pennispora	Linderina pennispora	GCN5L1	1
+S. fuscata	Synchephalis fuscata	GCN5L1	1
+P. cylindrospora	Piptocephalis cylindrospora	GCN5L1	0
+O. bornovanus	Olpidium bornovanus	GCN5L1	1
+G. prolifera	Gonapodya prolifera	GCN5L1	1
+Orpinomyces	Orpinomyces	GCN5L1	0
+A. robustus	Anaeromyces robustus	GCN5L1	1
+P. finnis	Piromyces finnis	GCN5L1	1
+C. anguillulae	Catenaria anguillulae	GCN5L1	2
+A. macrogynus	Allomyces macrogynus	GCN5L1	0
+S. punctatus	Spizellomyces punctatus	GCN5L1	1
+B. dendrobatidis	Batrachochytrium dendrobatidis	GCN5L1	1
+C. protostelioides	Caulochytrium protostelioides	GCN5L1	0
+E. helioformis	Entophlyctis helioformis	GCN5L1	1
+G. variabilis	Geranomyces variabilis	GCN5L1	1
+P. aggregatum	Polychytrium aggregatum	GCN5L1	1
+T. arcticum	Ttriparticalar arcticum	GCN5L1	1
+R. allomyces	Rozella allomycis	GCN5L1	0
+A. locustae	Antonospora locustae	GCN5L1	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Heat shock factor (HSF)-type	5
+A. nidulans	Aspergillus nidulans	Heat shock factor (HSF)-type	3
+B. cinerea	Botrytis cinerea	Heat shock factor (HSF)-type	3
+C. albicans	Candida albicans	Heat shock factor (HSF)-type	4
+C. immitis	Coccidioides immitis	Heat shock factor (HSF)-type	3
+C. militaris	Cordyceps militaris	Heat shock factor (HSF)-type	2
+F. fujikuroi	Fusarium fujikuroi	Heat shock factor (HSF)-type	3
+K. lactis	Kluyveromyces lactis	Heat shock factor (HSF)-type	4
+N. crassa	Neurospora crassa	Heat shock factor (HSF)-type	3
+S. cerevisiae	Saccharomyces cerevisiae	Heat shock factor (HSF)-type	5
+S. pombe	Schizosaccharomyces pombe	Heat shock factor (HSF)-type	2
+A. muscaria	Amanita muscaria	Heat shock factor (HSF)-type	10
+C. cinerea	Coprinopsis cinerea	Heat shock factor (HSF)-type	3
+C. neoformans	Cryptococcus neoformans	Heat shock factor (HSF)-type	4
+M. sympodialis	Malasseizia sympodialis	Heat shock factor (HSF)-type	2
+P. striiformis	Puccinia striiformis	Heat shock factor (HSF)-type	4
+S. brevipes	Suillus brevipes	Heat shock factor (HSF)-type	5
+T. mesenterica	Tremella mesenterica	Heat shock factor (HSF)-type	6
+U. maydis	Ustilago maydis	Heat shock factor (HSF)-type	4
+M. lusitanicus	Mucor lusitanicus	Heat shock factor (HSF)-type	20
+P. blakesleeanus	Phycomyces blakesleeanus	Heat shock factor (HSF)-type	14
+R. microsporus	Rhizopus microsporus	Heat shock factor (HSF)-type	15
+L. corymbifera	Lichtheimia corymbifera	Heat shock factor (HSF)-type	24
+A. repens	Absidia repens	Heat shock factor (HSF)-type	26
+B. trispora	Blakeslea trispora	Heat shock factor (HSF)-type	18
+S. vasiformis	Saksenea vasiformis	Heat shock factor (HSF)-type	10
+H. vesiculosa	Hesseltinella vesiculosa	Heat shock factor (HSF)-type	12
+P. umbonatus	Pilobolus umbonatus	Heat shock factor (HSF)-type	17
+S. umbellata	Sporodiniella umbellata	Heat shock factor (HSF)-type	22
+S. racemosum	Syncephalastrum racemosum	Heat shock factor (HSF)-type	19
+G. butleri	Gongronella butleri	Heat shock factor (HSF)-type	14
+M. alpina	Mortierella alpina	Heat shock factor (HSF)-type	6
+M. elongata	Mortierella elongata	Heat shock factor (HSF)-type	7
+P. epigama	Podila epigama	Heat shock factor (HSF)-type	7
+R. irregularis	Rhizophagus irregularis	Heat shock factor (HSF)-type	6
+G. margarita	Gigaspora margarita	Heat shock factor (HSF)-type	10
+G. pyriformis	Geosiphon pyriformis	Heat shock factor (HSF)-type	6
+B. meristosporus	Basidiobolus meristosporus	Heat shock factor (HSF)-type	19
+C. coronatus	Conidiobolus coronatus	Heat shock factor (HSF)-type	18
+E. maimaiga	Entomophaga maimaiga	Heat shock factor (HSF)-type	31
+Z. radicans	Zoophthora radicans	Heat shock factor (HSF)-type	31
+C. reversa	Coemansia reversa	Heat shock factor (HSF)-type	8
+K. alabastrina	Kickxella alabastrina	Heat shock factor (HSF)-type	7
+L. pennispora	Linderina pennispora	Heat shock factor (HSF)-type	7
+S. fuscata	Synchephalis fuscata	Heat shock factor (HSF)-type	4
+P. cylindrospora	Piptocephalis cylindrospora	Heat shock factor (HSF)-type	3
+O. bornovanus	Olpidium bornovanus	Heat shock factor (HSF)-type	2
+G. prolifera	Gonapodya prolifera	Heat shock factor (HSF)-type	3
+Orpinomyces	Orpinomyces	Heat shock factor (HSF)-type	6
+A. robustus	Anaeromyces robustus	Heat shock factor (HSF)-type	8
+P. finnis	Piromyces finnis	Heat shock factor (HSF)-type	5
+C. anguillulae	Catenaria anguillulae	Heat shock factor (HSF)-type	6
+A. macrogynus	Allomyces macrogynus	Heat shock factor (HSF)-type	15
+S. punctatus	Spizellomyces punctatus	Heat shock factor (HSF)-type	6
+B. dendrobatidis	Batrachochytrium dendrobatidis	Heat shock factor (HSF)-type	1
+C. protostelioides	Caulochytrium protostelioides	Heat shock factor (HSF)-type	6
+E. helioformis	Entophlyctis helioformis	Heat shock factor (HSF)-type	2
+G. variabilis	Geranomyces variabilis	Heat shock factor (HSF)-type	5
+P. aggregatum	Polychytrium aggregatum	Heat shock factor (HSF)-type	3
+T. arcticum	Ttriparticalar arcticum	Heat shock factor (HSF)-type	6
+R. allomyces	Rozella allomycis	Heat shock factor (HSF)-type	2
+A. locustae	Antonospora locustae	Heat shock factor (HSF)-type	3
+A. gossypii	Ashbya(Eremothecium) gossypii	HLH, helix-loop-helix	5
+A. nidulans	Aspergillus nidulans	HLH, helix-loop-helix	15
+B. cinerea	Botrytis cinerea	HLH, helix-loop-helix	9
+C. albicans	Candida albicans	HLH, helix-loop-helix	9
+C. immitis	Coccidioides immitis	HLH, helix-loop-helix	8
+C. militaris	Cordyceps militaris	HLH, helix-loop-helix	11
+F. fujikuroi	Fusarium fujikuroi	HLH, helix-loop-helix	16
+K. lactis	Kluyveromyces lactis	HLH, helix-loop-helix	9
+N. crassa	Neurospora crassa	HLH, helix-loop-helix	21
+S. cerevisiae	Saccharomyces cerevisiae	HLH, helix-loop-helix	8
+S. pombe	Schizosaccharomyces pombe	HLH, helix-loop-helix	4
+A. muscaria	Amanita muscaria	HLH, helix-loop-helix	16
+C. cinerea	Coprinopsis cinerea	HLH, helix-loop-helix	11
+C. neoformans	Cryptococcus neoformans	HLH, helix-loop-helix	9
+M. sympodialis	Malasseizia sympodialis	HLH, helix-loop-helix	6
+P. striiformis	Puccinia striiformis	HLH, helix-loop-helix	10
+S. brevipes	Suillus brevipes	HLH, helix-loop-helix	18
+T. mesenterica	Tremella mesenterica	HLH, helix-loop-helix	9
+U. maydis	Ustilago maydis	HLH, helix-loop-helix	12
+M. lusitanicus	Mucor lusitanicus	HLH, helix-loop-helix	37
+P. blakesleeanus	Phycomyces blakesleeanus	HLH, helix-loop-helix	35
+R. microsporus	Rhizopus microsporus	HLH, helix-loop-helix	42
+L. corymbifera	Lichtheimia corymbifera	HLH, helix-loop-helix	52
+A. repens	Absidia repens	HLH, helix-loop-helix	70
+B. trispora	Blakeslea trispora	HLH, helix-loop-helix	40
+S. vasiformis	Saksenea vasiformis	HLH, helix-loop-helix	38
+H. vesiculosa	Hesseltinella vesiculosa	HLH, helix-loop-helix	31
+P. umbonatus	Pilobolus umbonatus	HLH, helix-loop-helix	38
+S. umbellata	Sporodiniella umbellata	HLH, helix-loop-helix	46
+S. racemosum	Syncephalastrum racemosum	HLH, helix-loop-helix	33
+G. butleri	Gongronella butleri	HLH, helix-loop-helix	37
+M. alpina	Mortierella alpina	HLH, helix-loop-helix	24
+M. elongata	Mortierella elongata	HLH, helix-loop-helix	26
+P. epigama	Podila epigama	HLH, helix-loop-helix	23
+R. irregularis	Rhizophagus irregularis	HLH, helix-loop-helix	11
+G. margarita	Gigaspora margarita	HLH, helix-loop-helix	25
+G. pyriformis	Geosiphon pyriformis	HLH, helix-loop-helix	15
+B. meristosporus	Basidiobolus meristosporus	HLH, helix-loop-helix	40
+C. coronatus	Conidiobolus coronatus	HLH, helix-loop-helix	13
+E. maimaiga	Entomophaga maimaiga	HLH, helix-loop-helix	12
+Z. radicans	Zoophthora radicans	HLH, helix-loop-helix	16
+C. reversa	Coemansia reversa	HLH, helix-loop-helix	14
+K. alabastrina	Kickxella alabastrina	HLH, helix-loop-helix	11
+L. pennispora	Linderina pennispora	HLH, helix-loop-helix	11
+S. fuscata	Synchephalis fuscata	HLH, helix-loop-helix	11
+P. cylindrospora	Piptocephalis cylindrospora	HLH, helix-loop-helix	5
+O. bornovanus	Olpidium bornovanus	HLH, helix-loop-helix	5
+G. prolifera	Gonapodya prolifera	HLH, helix-loop-helix	6
+Orpinomyces	Orpinomyces	HLH, helix-loop-helix	5
+A. robustus	Anaeromyces robustus	HLH, helix-loop-helix	7
+P. finnis	Piromyces finnis	HLH, helix-loop-helix	8
+C. anguillulae	Catenaria anguillulae	HLH, helix-loop-helix	12
+A. macrogynus	Allomyces macrogynus	HLH, helix-loop-helix	29
+S. punctatus	Spizellomyces punctatus	HLH, helix-loop-helix	12
+B. dendrobatidis	Batrachochytrium dendrobatidis	HLH, helix-loop-helix	9
+C. protostelioides	Caulochytrium protostelioides	HLH, helix-loop-helix	6
+E. helioformis	Entophlyctis helioformis	HLH, helix-loop-helix	5
+G. variabilis	Geranomyces variabilis	HLH, helix-loop-helix	11
+P. aggregatum	Polychytrium aggregatum	HLH, helix-loop-helix	15
+T. arcticum	Ttriparticalar arcticum	HLH, helix-loop-helix	11
+R. allomyces	Rozella allomycis	HLH, helix-loop-helix	8
+A. locustae	Antonospora locustae	HLH, helix-loop-helix	0
+A. gossypii	Ashbya(Eremothecium) gossypii	HTH/Homeodomain-like	31
+A. nidulans	Aspergillus nidulans	HTH/Homeodomain-like	75
+B. cinerea	Botrytis cinerea	HTH/Homeodomain-like	53
+C. albicans	Candida albicans	HTH/Homeodomain-like	32
+C. immitis	Coccidioides immitis	HTH/Homeodomain-like	51
+C. militaris	Cordyceps militaris	HTH/Homeodomain-like	44
+F. fujikuroi	Fusarium fujikuroi	HTH/Homeodomain-like	61
+K. lactis	Kluyveromyces lactis	HTH/Homeodomain-like	32
+N. crassa	Neurospora crassa	HTH/Homeodomain-like	54
+S. cerevisiae	Saccharomyces cerevisiae	HTH/Homeodomain-like	34
+S. pombe	Schizosaccharomyces pombe	HTH/Homeodomain-like	29
+A. muscaria	Amanita muscaria	HTH/Homeodomain-like	63
+C. cinerea	Coprinopsis cinerea	HTH/Homeodomain-like	50
+C. neoformans	Cryptococcus neoformans	HTH/Homeodomain-like	27
+M. sympodialis	Malasseizia sympodialis	HTH/Homeodomain-like	25
+P. striiformis	Puccinia striiformis	HTH/Homeodomain-like	110
+S. brevipes	Suillus brevipes	HTH/Homeodomain-like	77
+T. mesenterica	Tremella mesenterica	HTH/Homeodomain-like	48
+U. maydis	Ustilago maydis	HTH/Homeodomain-like	35
+M. lusitanicus	Mucor lusitanicus	HTH/Homeodomain-like	84
+P. blakesleeanus	Phycomyces blakesleeanus	HTH/Homeodomain-like	225
+R. microsporus	Rhizopus microsporus	HTH/Homeodomain-like	169
+L. corymbifera	Lichtheimia corymbifera	HTH/Homeodomain-like	110
+A. repens	Absidia repens	HTH/Homeodomain-like	114
+B. trispora	Blakeslea trispora	HTH/Homeodomain-like	82
+S. vasiformis	Saksenea vasiformis	HTH/Homeodomain-like	158
+H. vesiculosa	Hesseltinella vesiculosa	HTH/Homeodomain-like	100
+P. umbonatus	Pilobolus umbonatus	HTH/Homeodomain-like	84
+S. umbellata	Sporodiniella umbellata	HTH/Homeodomain-like	98
+S. racemosum	Syncephalastrum racemosum	HTH/Homeodomain-like	78
+G. butleri	Gongronella butleri	HTH/Homeodomain-like	78
+M. alpina	Mortierella alpina	HTH/Homeodomain-like	56
+M. elongata	Mortierella elongata	HTH/Homeodomain-like	98
+P. epigama	Podila epigama	HTH/Homeodomain-like	59
+R. irregularis	Rhizophagus irregularis	HTH/Homeodomain-like	137
+G. margarita	Gigaspora margarita	HTH/Homeodomain-like	100
+G. pyriformis	Geosiphon pyriformis	HTH/Homeodomain-like	141
+B. meristosporus	Basidiobolus meristosporus	HTH/Homeodomain-like	113
+C. coronatus	Conidiobolus coronatus	HTH/Homeodomain-like	85
+E. maimaiga	Entomophaga maimaiga	HTH/Homeodomain-like	250
+Z. radicans	Zoophthora radicans	HTH/Homeodomain-like	112
+C. reversa	Coemansia reversa	HTH/Homeodomain-like	56
+K. alabastrina	Kickxella alabastrina	HTH/Homeodomain-like	41
+L. pennispora	Linderina pennispora	HTH/Homeodomain-like	39
+S. fuscata	Synchephalis fuscata	HTH/Homeodomain-like	26
+P. cylindrospora	Piptocephalis cylindrospora	HTH/Homeodomain-like	13
+O. bornovanus	Olpidium bornovanus	HTH/Homeodomain-like	21
+G. prolifera	Gonapodya prolifera	HTH/Homeodomain-like	44
+Orpinomyces	Orpinomyces	HTH/Homeodomain-like	41
+A. robustus	Anaeromyces robustus	HTH/Homeodomain-like	50
+P. finnis	Piromyces finnis	HTH/Homeodomain-like	63
+C. anguillulae	Catenaria anguillulae	HTH/Homeodomain-like	30
+A. macrogynus	Allomyces macrogynus	HTH/Homeodomain-like	2
+S. punctatus	Spizellomyces punctatus	HTH/Homeodomain-like	58
+B. dendrobatidis	Batrachochytrium dendrobatidis	HTH/Homeodomain-like	2
+C. protostelioides	Caulochytrium protostelioides	HTH/Homeodomain-like	26
+E. helioformis	Entophlyctis helioformis	HTH/Homeodomain-like	27
+G. variabilis	Geranomyces variabilis	HTH/Homeodomain-like	40
+P. aggregatum	Polychytrium aggregatum	HTH/Homeodomain-like	41
+T. arcticum	Ttriparticalar arcticum	HTH/Homeodomain-like	45
+R. allomyces	Rozella allomycis	HTH/Homeodomain-like	32
+A. locustae	Antonospora locustae	HTH/Homeodomain-like	23
+A. gossypii	Ashbya(Eremothecium) gossypii	MADS-box/SRF	2
+A. nidulans	Aspergillus nidulans	MADS-box/SRF	2
+B. cinerea	Botrytis cinerea	MADS-box/SRF	1
+C. albicans	Candida albicans	MADS-box/SRF	2
+C. immitis	Coccidioides immitis	MADS-box/SRF	4
+C. militaris	Cordyceps militaris	MADS-box/SRF	2
+F. fujikuroi	Fusarium fujikuroi	MADS-box/SRF	2
+K. lactis	Kluyveromyces lactis	MADS-box/SRF	2
+N. crassa	Neurospora crassa	MADS-box/SRF	2
+S. cerevisiae	Saccharomyces cerevisiae	MADS-box/SRF	4
+S. pombe	Schizosaccharomyces pombe	MADS-box/SRF	3
+A. muscaria	Amanita muscaria	MADS-box/SRF	2
+C. cinerea	Coprinopsis cinerea	MADS-box/SRF	1
+C. neoformans	Cryptococcus neoformans	MADS-box/SRF	2
+M. sympodialis	Malasseizia sympodialis	MADS-box/SRF	2
+P. striiformis	Puccinia striiformis	MADS-box/SRF	2
+S. brevipes	Suillus brevipes	MADS-box/SRF	2
+T. mesenterica	Tremella mesenterica	MADS-box/SRF	2
+U. maydis	Ustilago maydis	MADS-box/SRF	2
+M. lusitanicus	Mucor lusitanicus	MADS-box/SRF	10
+P. blakesleeanus	Phycomyces blakesleeanus	MADS-box/SRF	7
+R. microsporus	Rhizopus microsporus	MADS-box/SRF	9
+L. corymbifera	Lichtheimia corymbifera	MADS-box/SRF	13
+A. repens	Absidia repens	MADS-box/SRF	15
+B. trispora	Blakeslea trispora	MADS-box/SRF	10
+S. vasiformis	Saksenea vasiformis	MADS-box/SRF	5
+H. vesiculosa	Hesseltinella vesiculosa	MADS-box/SRF	8
+P. umbonatus	Pilobolus umbonatus	MADS-box/SRF	9
+S. umbellata	Sporodiniella umbellata	MADS-box/SRF	13
+S. racemosum	Syncephalastrum racemosum	MADS-box/SRF	6
+G. butleri	Gongronella butleri	MADS-box/SRF	10
+M. alpina	Mortierella alpina	MADS-box/SRF	6
+M. elongata	Mortierella elongata	MADS-box/SRF	6
+P. epigama	Podila epigama	MADS-box/SRF	4
+R. irregularis	Rhizophagus irregularis	MADS-box/SRF	4
+G. margarita	Gigaspora margarita	MADS-box/SRF	10
+G. pyriformis	Geosiphon pyriformis	MADS-box/SRF	3
+B. meristosporus	Basidiobolus meristosporus	MADS-box/SRF	14
+C. coronatus	Conidiobolus coronatus	MADS-box/SRF	3
+E. maimaiga	Entomophaga maimaiga	MADS-box/SRF	4
+Z. radicans	Zoophthora radicans	MADS-box/SRF	8
+C. reversa	Coemansia reversa	MADS-box/SRF	3
+K. alabastrina	Kickxella alabastrina	MADS-box/SRF	4
+L. pennispora	Linderina pennispora	MADS-box/SRF	6
+S. fuscata	Synchephalis fuscata	MADS-box/SRF	3
+P. cylindrospora	Piptocephalis cylindrospora	MADS-box/SRF	1
+O. bornovanus	Olpidium bornovanus	MADS-box/SRF	3
+G. prolifera	Gonapodya prolifera	MADS-box/SRF	2
+Orpinomyces	Orpinomyces	MADS-box/SRF	2
+A. robustus	Anaeromyces robustus	MADS-box/SRF	8
+P. finnis	Piromyces finnis	MADS-box/SRF	9
+C. anguillulae	Catenaria anguillulae	MADS-box/SRF	8
+A. macrogynus	Allomyces macrogynus	MADS-box/SRF	11
+S. punctatus	Spizellomyces punctatus	MADS-box/SRF	4
+B. dendrobatidis	Batrachochytrium dendrobatidis	MADS-box/SRF	2
+C. protostelioides	Caulochytrium protostelioides	MADS-box/SRF	2
+E. helioformis	Entophlyctis helioformis	MADS-box/SRF	4
+G. variabilis	Geranomyces variabilis	MADS-box/SRF	3
+P. aggregatum	Polychytrium aggregatum	MADS-box/SRF	3
+T. arcticum	Ttriparticalar arcticum	MADS-box/SRF	5
+R. allomyces	Rozella allomycis	MADS-box/SRF	2
+A. locustae	Antonospora locustae	MADS-box/SRF	0
+A. gossypii	Ashbya(Eremothecium) gossypii	MAT	0
+A. nidulans	Aspergillus nidulans	MAT	1
+B. cinerea	Botrytis cinerea	MAT	1
+C. albicans	Candida albicans	MAT	0
+C. immitis	Coccidioides immitis	MAT	0
+C. militaris	Cordyceps militaris	MAT	1
+F. fujikuroi	Fusarium fujikuroi	MAT	0
+K. lactis	Kluyveromyces lactis	MAT	1
+N. crassa	Neurospora crassa	MAT	2
+S. cerevisiae	Saccharomyces cerevisiae	MAT	2
+S. pombe	Schizosaccharomyces pombe	MAT	0
+A. muscaria	Amanita muscaria	MAT	0
+C. cinerea	Coprinopsis cinerea	MAT	0
+C. neoformans	Cryptococcus neoformans	MAT	0
+M. sympodialis	Malasseizia sympodialis	MAT	0
+P. striiformis	Puccinia striiformis	MAT	0
+S. brevipes	Suillus brevipes	MAT	0
+T. mesenterica	Tremella mesenterica	MAT	0
+U. maydis	Ustilago maydis	MAT	0
+M. lusitanicus	Mucor lusitanicus	MAT	0
+P. blakesleeanus	Phycomyces blakesleeanus	MAT	0
+R. microsporus	Rhizopus microsporus	MAT	0
+L. corymbifera	Lichtheimia corymbifera	MAT	0
+A. repens	Absidia repens	MAT	0
+B. trispora	Blakeslea trispora	MAT	0
+S. vasiformis	Saksenea vasiformis	MAT	0
+H. vesiculosa	Hesseltinella vesiculosa	MAT	0
+P. umbonatus	Pilobolus umbonatus	MAT	1
+S. umbellata	Sporodiniella umbellata	MAT	0
+S. racemosum	Syncephalastrum racemosum	MAT	0
+G. butleri	Gongronella butleri	MAT	0
+M. alpina	Mortierella alpina	MAT	0
+M. elongata	Mortierella elongata	MAT	0
+P. epigama	Podila epigama	MAT	0
+R. irregularis	Rhizophagus irregularis	MAT	0
+G. margarita	Gigaspora margarita	MAT	0
+G. pyriformis	Geosiphon pyriformis	MAT	0
+B. meristosporus	Basidiobolus meristosporus	MAT	0
+C. coronatus	Conidiobolus coronatus	MAT	0
+E. maimaiga	Entomophaga maimaiga	MAT	0
+Z. radicans	Zoophthora radicans	MAT	0
+C. reversa	Coemansia reversa	MAT	0
+K. alabastrina	Kickxella alabastrina	MAT	0
+L. pennispora	Linderina pennispora	MAT	0
+S. fuscata	Synchephalis fuscata	MAT	0
+P. cylindrospora	Piptocephalis cylindrospora	MAT	0
+O. bornovanus	Olpidium bornovanus	MAT	0
+G. prolifera	Gonapodya prolifera	MAT	0
+Orpinomyces	Orpinomyces	MAT	0
+A. robustus	Anaeromyces robustus	MAT	0
+P. finnis	Piromyces finnis	MAT	0
+C. anguillulae	Catenaria anguillulae	MAT	0
+A. macrogynus	Allomyces macrogynus	MAT	0
+S. punctatus	Spizellomyces punctatus	MAT	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	MAT	0
+C. protostelioides	Caulochytrium protostelioides	MAT	0
+E. helioformis	Entophlyctis helioformis	MAT	0
+G. variabilis	Geranomyces variabilis	MAT	0
+P. aggregatum	Polychytrium aggregatum	MAT	0
+T. arcticum	Ttriparticalar arcticum	MAT	0
+R. allomyces	Rozella allomycis	MAT	0
+A. locustae	Antonospora locustae	MAT	0
+A. gossypii	Ashbya(Eremothecium) gossypii	p53	1
+A. nidulans	Aspergillus nidulans	p53	2
+B. cinerea	Botrytis cinerea	p53	3
+C. albicans	Candida albicans	p53	3
+C. immitis	Coccidioides immitis	p53	2
+C. militaris	Cordyceps militaris	p53	4
+F. fujikuroi	Fusarium fujikuroi	p53	3
+K. lactis	Kluyveromyces lactis	p53	2
+N. crassa	Neurospora crassa	p53	7
+S. cerevisiae	Saccharomyces cerevisiae	p53	2
+S. pombe	Schizosaccharomyces pombe	p53	3
+A. muscaria	Amanita muscaria	p53	2
+C. cinerea	Coprinopsis cinerea	p53	2
+C. neoformans	Cryptococcus neoformans	p53	2
+M. sympodialis	Malasseizia sympodialis	p53	1
+P. striiformis	Puccinia striiformis	p53	3
+S. brevipes	Suillus brevipes	p53	2
+T. mesenterica	Tremella mesenterica	p53	2
+U. maydis	Ustilago maydis	p53	3
+M. lusitanicus	Mucor lusitanicus	p53	11
+P. blakesleeanus	Phycomyces blakesleeanus	p53	9
+R. microsporus	Rhizopus microsporus	p53	11
+L. corymbifera	Lichtheimia corymbifera	p53	18
+A. repens	Absidia repens	p53	11
+B. trispora	Blakeslea trispora	p53	12
+S. vasiformis	Saksenea vasiformis	p53	10
+H. vesiculosa	Hesseltinella vesiculosa	p53	11
+P. umbonatus	Pilobolus umbonatus	p53	11
+S. umbellata	Sporodiniella umbellata	p53	14
+S. racemosum	Syncephalastrum racemosum	p53	12
+G. butleri	Gongronella butleri	p53	11
+M. alpina	Mortierella alpina	p53	9
+M. elongata	Mortierella elongata	p53	9
+P. epigama	Podila epigama	p53	6
+R. irregularis	Rhizophagus irregularis	p53	6
+G. margarita	Gigaspora margarita	p53	12
+G. pyriformis	Geosiphon pyriformis	p53	5
+B. meristosporus	Basidiobolus meristosporus	p53	19
+C. coronatus	Conidiobolus coronatus	p53	3
+E. maimaiga	Entomophaga maimaiga	p53	2
+Z. radicans	Zoophthora radicans	p53	2
+C. reversa	Coemansia reversa	p53	3
+K. alabastrina	Kickxella alabastrina	p53	3
+L. pennispora	Linderina pennispora	p53	1
+S. fuscata	Synchephalis fuscata	p53	3
+P. cylindrospora	Piptocephalis cylindrospora	p53	1
+O. bornovanus	Olpidium bornovanus	p53	1
+G. prolifera	Gonapodya prolifera	p53	2
+Orpinomyces	Orpinomyces	p53	5
+A. robustus	Anaeromyces robustus	p53	7
+P. finnis	Piromyces finnis	p53	6
+C. anguillulae	Catenaria anguillulae	p53	6
+A. macrogynus	Allomyces macrogynus	p53	4
+S. punctatus	Spizellomyces punctatus	p53	4
+B. dendrobatidis	Batrachochytrium dendrobatidis	p53	0
+C. protostelioides	Caulochytrium protostelioides	p53	5
+E. helioformis	Entophlyctis helioformis	p53	2
+G. variabilis	Geranomyces variabilis	p53	3
+P. aggregatum	Polychytrium aggregatum	p53	2
+T. arcticum	Ttriparticalar arcticum	p53	3
+R. allomyces	Rozella allomycis	p53	2
+A. locustae	Antonospora locustae	p53	0
+A. gossypii	Ashbya(Eremothecium) gossypii	RFX_DNA_binding	1
+A. nidulans	Aspergillus nidulans	RFX_DNA_binding	1
+B. cinerea	Botrytis cinerea	RFX_DNA_binding	0
+C. albicans	Candida albicans	RFX_DNA_binding	2
+C. immitis	Coccidioides immitis	RFX_DNA_binding	1
+C. militaris	Cordyceps militaris	RFX_DNA_binding	1
+F. fujikuroi	Fusarium fujikuroi	RFX_DNA_binding	1
+K. lactis	Kluyveromyces lactis	RFX_DNA_binding	1
+N. crassa	Neurospora crassa	RFX_DNA_binding	1
+S. cerevisiae	Saccharomyces cerevisiae	RFX_DNA_binding	1
+S. pombe	Schizosaccharomyces pombe	RFX_DNA_binding	1
+A. muscaria	Amanita muscaria	RFX_DNA_binding	1
+C. cinerea	Coprinopsis cinerea	RFX_DNA_binding	1
+C. neoformans	Cryptococcus neoformans	RFX_DNA_binding	0
+M. sympodialis	Malasseizia sympodialis	RFX_DNA_binding	0
+P. striiformis	Puccinia striiformis	RFX_DNA_binding	1
+S. brevipes	Suillus brevipes	RFX_DNA_binding	1
+T. mesenterica	Tremella mesenterica	RFX_DNA_binding	1
+U. maydis	Ustilago maydis	RFX_DNA_binding	1
+M. lusitanicus	Mucor lusitanicus	RFX_DNA_binding	1
+P. blakesleeanus	Phycomyces blakesleeanus	RFX_DNA_binding	1
+R. microsporus	Rhizopus microsporus	RFX_DNA_binding	1
+L. corymbifera	Lichtheimia corymbifera	RFX_DNA_binding	1
+A. repens	Absidia repens	RFX_DNA_binding	2
+B. trispora	Blakeslea trispora	RFX_DNA_binding	1
+S. vasiformis	Saksenea vasiformis	RFX_DNA_binding	1
+H. vesiculosa	Hesseltinella vesiculosa	RFX_DNA_binding	1
+P. umbonatus	Pilobolus umbonatus	RFX_DNA_binding	1
+S. umbellata	Sporodiniella umbellata	RFX_DNA_binding	0
+S. racemosum	Syncephalastrum racemosum	RFX_DNA_binding	2
+G. butleri	Gongronella butleri	RFX_DNA_binding	1
+M. alpina	Mortierella alpina	RFX_DNA_binding	0
+M. elongata	Mortierella elongata	RFX_DNA_binding	0
+P. epigama	Podila epigama	RFX_DNA_binding	0
+R. irregularis	Rhizophagus irregularis	RFX_DNA_binding	0
+G. margarita	Gigaspora margarita	RFX_DNA_binding	0
+G. pyriformis	Geosiphon pyriformis	RFX_DNA_binding	0
+B. meristosporus	Basidiobolus meristosporus	RFX_DNA_binding	1
+C. coronatus	Conidiobolus coronatus	RFX_DNA_binding	0
+E. maimaiga	Entomophaga maimaiga	RFX_DNA_binding	0
+Z. radicans	Zoophthora radicans	RFX_DNA_binding	0
+C. reversa	Coemansia reversa	RFX_DNA_binding	0
+K. alabastrina	Kickxella alabastrina	RFX_DNA_binding	0
+L. pennispora	Linderina pennispora	RFX_DNA_binding	0
+S. fuscata	Synchephalis fuscata	RFX_DNA_binding	2
+P. cylindrospora	Piptocephalis cylindrospora	RFX_DNA_binding	0
+O. bornovanus	Olpidium bornovanus	RFX_DNA_binding	2
+G. prolifera	Gonapodya prolifera	RFX_DNA_binding	0
+Orpinomyces	Orpinomyces	RFX_DNA_binding	0
+A. robustus	Anaeromyces robustus	RFX_DNA_binding	0
+P. finnis	Piromyces finnis	RFX_DNA_binding	0
+C. anguillulae	Catenaria anguillulae	RFX_DNA_binding	1
+A. macrogynus	Allomyces macrogynus	RFX_DNA_binding	2
+S. punctatus	Spizellomyces punctatus	RFX_DNA_binding	2
+B. dendrobatidis	Batrachochytrium dendrobatidis	RFX_DNA_binding	0
+C. protostelioides	Caulochytrium protostelioides	RFX_DNA_binding	1
+E. helioformis	Entophlyctis helioformis	RFX_DNA_binding	3
+G. variabilis	Geranomyces variabilis	RFX_DNA_binding	1
+P. aggregatum	Polychytrium aggregatum	RFX_DNA_binding	0
+T. arcticum	Ttriparticalar arcticum	RFX_DNA_binding	1
+R. allomyces	Rozella allomycis	RFX_DNA_binding	1
+A. locustae	Antonospora locustae	RFX_DNA_binding	0
+A. gossypii	Ashbya(Eremothecium) gossypii	SAND-like	0
+A. nidulans	Aspergillus nidulans	SAND-like	0
+B. cinerea	Botrytis cinerea	SAND-like	0
+C. albicans	Candida albicans	SAND-like	0
+C. immitis	Coccidioides immitis	SAND-like	0
+C. militaris	Cordyceps militaris	SAND-like	0
+F. fujikuroi	Fusarium fujikuroi	SAND-like	1
+K. lactis	Kluyveromyces lactis	SAND-like	0
+N. crassa	Neurospora crassa	SAND-like	0
+S. cerevisiae	Saccharomyces cerevisiae	SAND-like	0
+S. pombe	Schizosaccharomyces pombe	SAND-like	0
+A. muscaria	Amanita muscaria	SAND-like	0
+C. cinerea	Coprinopsis cinerea	SAND-like	0
+C. neoformans	Cryptococcus neoformans	SAND-like	0
+M. sympodialis	Malasseizia sympodialis	SAND-like	0
+P. striiformis	Puccinia striiformis	SAND-like	0
+S. brevipes	Suillus brevipes	SAND-like	0
+T. mesenterica	Tremella mesenterica	SAND-like	0
+U. maydis	Ustilago maydis	SAND-like	0
+M. lusitanicus	Mucor lusitanicus	SAND-like	0
+P. blakesleeanus	Phycomyces blakesleeanus	SAND-like	1
+R. microsporus	Rhizopus microsporus	SAND-like	0
+L. corymbifera	Lichtheimia corymbifera	SAND-like	0
+A. repens	Absidia repens	SAND-like	0
+B. trispora	Blakeslea trispora	SAND-like	0
+S. vasiformis	Saksenea vasiformis	SAND-like	0
+H. vesiculosa	Hesseltinella vesiculosa	SAND-like	0
+P. umbonatus	Pilobolus umbonatus	SAND-like	0
+S. umbellata	Sporodiniella umbellata	SAND-like	0
+S. racemosum	Syncephalastrum racemosum	SAND-like	0
+G. butleri	Gongronella butleri	SAND-like	1
+M. alpina	Mortierella alpina	SAND-like	1
+M. elongata	Mortierella elongata	SAND-like	1
+P. epigama	Podila epigama	SAND-like	0
+R. irregularis	Rhizophagus irregularis	SAND-like	0
+G. margarita	Gigaspora margarita	SAND-like	0
+G. pyriformis	Geosiphon pyriformis	SAND-like	0
+B. meristosporus	Basidiobolus meristosporus	SAND-like	0
+C. coronatus	Conidiobolus coronatus	SAND-like	0
+E. maimaiga	Entomophaga maimaiga	SAND-like	0
+Z. radicans	Zoophthora radicans	SAND-like	0
+C. reversa	Coemansia reversa	SAND-like	0
+K. alabastrina	Kickxella alabastrina	SAND-like	0
+L. pennispora	Linderina pennispora	SAND-like	0
+S. fuscata	Synchephalis fuscata	SAND-like	0
+P. cylindrospora	Piptocephalis cylindrospora	SAND-like	9
+O. bornovanus	Olpidium bornovanus	SAND-like	0
+G. prolifera	Gonapodya prolifera	SAND-like	0
+Orpinomyces	Orpinomyces	SAND-like	0
+A. robustus	Anaeromyces robustus	SAND-like	0
+P. finnis	Piromyces finnis	SAND-like	0
+C. anguillulae	Catenaria anguillulae	SAND-like	0
+A. macrogynus	Allomyces macrogynus	SAND-like	0
+S. punctatus	Spizellomyces punctatus	SAND-like	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	SAND-like	0
+C. protostelioides	Caulochytrium protostelioides	SAND-like	0
+E. helioformis	Entophlyctis helioformis	SAND-like	0
+G. variabilis	Geranomyces variabilis	SAND-like	1
+P. aggregatum	Polychytrium aggregatum	SAND-like	1
+T. arcticum	Ttriparticalar arcticum	SAND-like	0
+R. allomyces	Rozella allomycis	SAND-like	0
+A. locustae	Antonospora locustae	SAND-like	0
+A. gossypii	Ashbya(Eremothecium) gossypii	SART-1	1
+A. nidulans	Aspergillus nidulans	SART-1	1
+B. cinerea	Botrytis cinerea	SART-1	1
+C. albicans	Candida albicans	SART-1	1
+C. immitis	Coccidioides immitis	SART-1	1
+C. militaris	Cordyceps militaris	SART-1	1
+F. fujikuroi	Fusarium fujikuroi	SART-1	1
+K. lactis	Kluyveromyces lactis	SART-1	1
+N. crassa	Neurospora crassa	SART-1	1
+S. cerevisiae	Saccharomyces cerevisiae	SART-1	1
+S. pombe	Schizosaccharomyces pombe	SART-1	1
+A. muscaria	Amanita muscaria	SART-1	1
+C. cinerea	Coprinopsis cinerea	SART-1	1
+C. neoformans	Cryptococcus neoformans	SART-1	2
+M. sympodialis	Malasseizia sympodialis	SART-1	1
+P. striiformis	Puccinia striiformis	SART-1	1
+S. brevipes	Suillus brevipes	SART-1	1
+T. mesenterica	Tremella mesenterica	SART-1	1
+U. maydis	Ustilago maydis	SART-1	1
+M. lusitanicus	Mucor lusitanicus	SART-1	0
+P. blakesleeanus	Phycomyces blakesleeanus	SART-1	0
+R. microsporus	Rhizopus microsporus	SART-1	1
+L. corymbifera	Lichtheimia corymbifera	SART-1	1
+A. repens	Absidia repens	SART-1	1
+B. trispora	Blakeslea trispora	SART-1	1
+S. vasiformis	Saksenea vasiformis	SART-1	1
+H. vesiculosa	Hesseltinella vesiculosa	SART-1	1
+P. umbonatus	Pilobolus umbonatus	SART-1	1
+S. umbellata	Sporodiniella umbellata	SART-1	1
+S. racemosum	Syncephalastrum racemosum	SART-1	1
+G. butleri	Gongronella butleri	SART-1	1
+M. alpina	Mortierella alpina	SART-1	1
+M. elongata	Mortierella elongata	SART-1	1
+P. epigama	Podila epigama	SART-1	1
+R. irregularis	Rhizophagus irregularis	SART-1	1
+G. margarita	Gigaspora margarita	SART-1	1
+G. pyriformis	Geosiphon pyriformis	SART-1	1
+B. meristosporus	Basidiobolus meristosporus	SART-1	1
+C. coronatus	Conidiobolus coronatus	SART-1	1
+E. maimaiga	Entomophaga maimaiga	SART-1	1
+Z. radicans	Zoophthora radicans	SART-1	1
+C. reversa	Coemansia reversa	SART-1	1
+K. alabastrina	Kickxella alabastrina	SART-1	1
+L. pennispora	Linderina pennispora	SART-1	1
+S. fuscata	Synchephalis fuscata	SART-1	1
+P. cylindrospora	Piptocephalis cylindrospora	SART-1	0
+O. bornovanus	Olpidium bornovanus	SART-1	1
+G. prolifera	Gonapodya prolifera	SART-1	2
+Orpinomyces	Orpinomyces	SART-1	0
+A. robustus	Anaeromyces robustus	SART-1	1
+P. finnis	Piromyces finnis	SART-1	1
+C. anguillulae	Catenaria anguillulae	SART-1	1
+A. macrogynus	Allomyces macrogynus	SART-1	4
+S. punctatus	Spizellomyces punctatus	SART-1	2
+B. dendrobatidis	Batrachochytrium dendrobatidis	SART-1	1
+C. protostelioides	Caulochytrium protostelioides	SART-1	1
+E. helioformis	Entophlyctis helioformis	SART-1	1
+G. variabilis	Geranomyces variabilis	SART-1	2
+P. aggregatum	Polychytrium aggregatum	SART-1	1
+T. arcticum	Ttriparticalar arcticum	SART-1	1
+R. allomyces	Rozella allomycis	SART-1	2
+A. locustae	Antonospora locustae	SART-1	0
+A. gossypii	Ashbya(Eremothecium) gossypii	SGT1	0
+A. nidulans	Aspergillus nidulans	SGT1	1
+B. cinerea	Botrytis cinerea	SGT1	1
+C. albicans	Candida albicans	SGT1	1
+C. immitis	Coccidioides immitis	SGT1	1
+C. militaris	Cordyceps militaris	SGT1	1
+F. fujikuroi	Fusarium fujikuroi	SGT1	1
+K. lactis	Kluyveromyces lactis	SGT1	0
+N. crassa	Neurospora crassa	SGT1	1
+S. cerevisiae	Saccharomyces cerevisiae	SGT1	0
+S. pombe	Schizosaccharomyces pombe	SGT1	1
+A. muscaria	Amanita muscaria	SGT1	1
+C. cinerea	Coprinopsis cinerea	SGT1	1
+C. neoformans	Cryptococcus neoformans	SGT1	1
+M. sympodialis	Malasseizia sympodialis	SGT1	1
+P. striiformis	Puccinia striiformis	SGT1	1
+S. brevipes	Suillus brevipes	SGT1	1
+T. mesenterica	Tremella mesenterica	SGT1	1
+U. maydis	Ustilago maydis	SGT1	1
+M. lusitanicus	Mucor lusitanicus	SGT1	1
+P. blakesleeanus	Phycomyces blakesleeanus	SGT1	1
+R. microsporus	Rhizopus microsporus	SGT1	1
+L. corymbifera	Lichtheimia corymbifera	SGT1	1
+A. repens	Absidia repens	SGT1	1
+B. trispora	Blakeslea trispora	SGT1	1
+S. vasiformis	Saksenea vasiformis	SGT1	0
+H. vesiculosa	Hesseltinella vesiculosa	SGT1	1
+P. umbonatus	Pilobolus umbonatus	SGT1	1
+S. umbellata	Sporodiniella umbellata	SGT1	1
+S. racemosum	Syncephalastrum racemosum	SGT1	1
+G. butleri	Gongronella butleri	SGT1	1
+M. alpina	Mortierella alpina	SGT1	1
+M. elongata	Mortierella elongata	SGT1	1
+P. epigama	Podila epigama	SGT1	1
+R. irregularis	Rhizophagus irregularis	SGT1	2
+G. margarita	Gigaspora margarita	SGT1	3
+G. pyriformis	Geosiphon pyriformis	SGT1	1
+B. meristosporus	Basidiobolus meristosporus	SGT1	1
+C. coronatus	Conidiobolus coronatus	SGT1	0
+E. maimaiga	Entomophaga maimaiga	SGT1	1
+Z. radicans	Zoophthora radicans	SGT1	1
+C. reversa	Coemansia reversa	SGT1	1
+K. alabastrina	Kickxella alabastrina	SGT1	2
+L. pennispora	Linderina pennispora	SGT1	1
+S. fuscata	Synchephalis fuscata	SGT1	1
+P. cylindrospora	Piptocephalis cylindrospora	SGT1	0
+O. bornovanus	Olpidium bornovanus	SGT1	2
+G. prolifera	Gonapodya prolifera	SGT1	1
+Orpinomyces	Orpinomyces	SGT1	2
+A. robustus	Anaeromyces robustus	SGT1	1
+P. finnis	Piromyces finnis	SGT1	1
+C. anguillulae	Catenaria anguillulae	SGT1	2
+A. macrogynus	Allomyces macrogynus	SGT1	2
+S. punctatus	Spizellomyces punctatus	SGT1	1
+B. dendrobatidis	Batrachochytrium dendrobatidis	SGT1	1
+C. protostelioides	Caulochytrium protostelioides	SGT1	0
+E. helioformis	Entophlyctis helioformis	SGT1	1
+G. variabilis	Geranomyces variabilis	SGT1	1
+P. aggregatum	Polychytrium aggregatum	SGT1	1
+T. arcticum	Ttriparticalar arcticum	SGT1	1
+R. allomyces	Rozella allomycis	SGT1	1
+A. locustae	Antonospora locustae	SGT1	0
+A. gossypii	Ashbya(Eremothecium) gossypii	STAT	4
+A. nidulans	Aspergillus nidulans	STAT	1
+B. cinerea	Botrytis cinerea	STAT	1
+C. albicans	Candida albicans	STAT	0
+C. immitis	Coccidioides immitis	STAT	1
+C. militaris	Cordyceps militaris	STAT	1
+F. fujikuroi	Fusarium fujikuroi	STAT	3
+K. lactis	Kluyveromyces lactis	STAT	4
+N. crassa	Neurospora crassa	STAT	1
+S. cerevisiae	Saccharomyces cerevisiae	STAT	0
+S. pombe	Schizosaccharomyces pombe	STAT	1
+A. muscaria	Amanita muscaria	STAT	6
+C. cinerea	Coprinopsis cinerea	STAT	1
+C. neoformans	Cryptococcus neoformans	STAT	0
+M. sympodialis	Malasseizia sympodialis	STAT	0
+P. striiformis	Puccinia striiformis	STAT	1
+S. brevipes	Suillus brevipes	STAT	0
+T. mesenterica	Tremella mesenterica	STAT	1
+U. maydis	Ustilago maydis	STAT	0
+M. lusitanicus	Mucor lusitanicus	STAT	1
+P. blakesleeanus	Phycomyces blakesleeanus	STAT	1
+R. microsporus	Rhizopus microsporus	STAT	0
+L. corymbifera	Lichtheimia corymbifera	STAT	0
+A. repens	Absidia repens	STAT	0
+B. trispora	Blakeslea trispora	STAT	0
+S. vasiformis	Saksenea vasiformis	STAT	0
+H. vesiculosa	Hesseltinella vesiculosa	STAT	0
+P. umbonatus	Pilobolus umbonatus	STAT	0
+S. umbellata	Sporodiniella umbellata	STAT	0
+S. racemosum	Syncephalastrum racemosum	STAT	0
+G. butleri	Gongronella butleri	STAT	0
+M. alpina	Mortierella alpina	STAT	0
+M. elongata	Mortierella elongata	STAT	0
+P. epigama	Podila epigama	STAT	0
+R. irregularis	Rhizophagus irregularis	STAT	3
+G. margarita	Gigaspora margarita	STAT	0
+G. pyriformis	Geosiphon pyriformis	STAT	0
+B. meristosporus	Basidiobolus meristosporus	STAT	0
+C. coronatus	Conidiobolus coronatus	STAT	1
+E. maimaiga	Entomophaga maimaiga	STAT	0
+Z. radicans	Zoophthora radicans	STAT	0
+C. reversa	Coemansia reversa	STAT	0
+K. alabastrina	Kickxella alabastrina	STAT	0
+L. pennispora	Linderina pennispora	STAT	0
+S. fuscata	Synchephalis fuscata	STAT	0
+P. cylindrospora	Piptocephalis cylindrospora	STAT	0
+O. bornovanus	Olpidium bornovanus	STAT	0
+G. prolifera	Gonapodya prolifera	STAT	0
+Orpinomyces	Orpinomyces	STAT	9
+A. robustus	Anaeromyces robustus	STAT	0
+P. finnis	Piromyces finnis	STAT	0
+C. anguillulae	Catenaria anguillulae	STAT	0
+A. macrogynus	Allomyces macrogynus	STAT	0
+S. punctatus	Spizellomyces punctatus	STAT	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	STAT	0
+C. protostelioides	Caulochytrium protostelioides	STAT	0
+E. helioformis	Entophlyctis helioformis	STAT	0
+G. variabilis	Geranomyces variabilis	STAT	0
+P. aggregatum	Polychytrium aggregatum	STAT	0
+T. arcticum	Ttriparticalar arcticum	STAT	0
+R. allomyces	Rozella allomycis	STAT	0
+A. locustae	Antonospora locustae	STAT	0
+A. gossypii	Ashbya(Eremothecium) gossypii	TATA box	1
+A. nidulans	Aspergillus nidulans	TATA box	2
+B. cinerea	Botrytis cinerea	TATA box	2
+C. albicans	Candida albicans	TATA box	1
+C. immitis	Coccidioides immitis	TATA box	2
+C. militaris	Cordyceps militaris	TATA box	1
+F. fujikuroi	Fusarium fujikuroi	TATA box	3
+K. lactis	Kluyveromyces lactis	TATA box	1
+N. crassa	Neurospora crassa	TATA box	3
+S. cerevisiae	Saccharomyces cerevisiae	TATA box	1
+S. pombe	Schizosaccharomyces pombe	TATA box	1
+A. muscaria	Amanita muscaria	TATA box	2
+C. cinerea	Coprinopsis cinerea	TATA box	1
+C. neoformans	Cryptococcus neoformans	TATA box	1
+M. sympodialis	Malasseizia sympodialis	TATA box	1
+P. striiformis	Puccinia striiformis	TATA box	2
+S. brevipes	Suillus brevipes	TATA box	1
+T. mesenterica	Tremella mesenterica	TATA box	1
+U. maydis	Ustilago maydis	TATA box	1
+M. lusitanicus	Mucor lusitanicus	TATA box	1
+P. blakesleeanus	Phycomyces blakesleeanus	TATA box	2
+R. microsporus	Rhizopus microsporus	TATA box	1
+L. corymbifera	Lichtheimia corymbifera	TATA box	1
+A. repens	Absidia repens	TATA box	2
+B. trispora	Blakeslea trispora	TATA box	1
+S. vasiformis	Saksenea vasiformis	TATA box	1
+H. vesiculosa	Hesseltinella vesiculosa	TATA box	1
+P. umbonatus	Pilobolus umbonatus	TATA box	1
+S. umbellata	Sporodiniella umbellata	TATA box	2
+S. racemosum	Syncephalastrum racemosum	TATA box	1
+G. butleri	Gongronella butleri	TATA box	1
+M. alpina	Mortierella alpina	TATA box	1
+M. elongata	Mortierella elongata	TATA box	1
+P. epigama	Podila epigama	TATA box	1
+R. irregularis	Rhizophagus irregularis	TATA box	1
+G. margarita	Gigaspora margarita	TATA box	1
+G. pyriformis	Geosiphon pyriformis	TATA box	1
+B. meristosporus	Basidiobolus meristosporus	TATA box	1
+C. coronatus	Conidiobolus coronatus	TATA box	1
+E. maimaiga	Entomophaga maimaiga	TATA box	1
+Z. radicans	Zoophthora radicans	TATA box	2
+C. reversa	Coemansia reversa	TATA box	1
+K. alabastrina	Kickxella alabastrina	TATA box	1
+L. pennispora	Linderina pennispora	TATA box	1
+S. fuscata	Synchephalis fuscata	TATA box	1
+P. cylindrospora	Piptocephalis cylindrospora	TATA box	0
+O. bornovanus	Olpidium bornovanus	TATA box	1
+G. prolifera	Gonapodya prolifera	TATA box	1
+Orpinomyces	Orpinomyces	TATA box	1
+A. robustus	Anaeromyces robustus	TATA box	2
+P. finnis	Piromyces finnis	TATA box	2
+C. anguillulae	Catenaria anguillulae	TATA box	1
+A. macrogynus	Allomyces macrogynus	TATA box	2
+S. punctatus	Spizellomyces punctatus	TATA box	1
+B. dendrobatidis	Batrachochytrium dendrobatidis	TATA box	1
+C. protostelioides	Caulochytrium protostelioides	TATA box	1
+E. helioformis	Entophlyctis helioformis	TATA box	1
+G. variabilis	Geranomyces variabilis	TATA box	1
+P. aggregatum	Polychytrium aggregatum	TATA box	1
+T. arcticum	Ttriparticalar arcticum	TATA box	1
+R. allomyces	Rozella allomycis	TATA box	1
+A. locustae	Antonospora locustae	TATA box	1
+A. gossypii	Ashbya(Eremothecium) gossypii	TEA/ATTS	1
+A. nidulans	Aspergillus nidulans	TEA/ATTS	1
+B. cinerea	Botrytis cinerea	TEA/ATTS	0
+C. albicans	Candida albicans	TEA/ATTS	1
+C. immitis	Coccidioides immitis	TEA/ATTS	0
+C. militaris	Cordyceps militaris	TEA/ATTS	1
+F. fujikuroi	Fusarium fujikuroi	TEA/ATTS	1
+K. lactis	Kluyveromyces lactis	TEA/ATTS	1
+N. crassa	Neurospora crassa	TEA/ATTS	1
+S. cerevisiae	Saccharomyces cerevisiae	TEA/ATTS	1
+S. pombe	Schizosaccharomyces pombe	TEA/ATTS	0
+A. muscaria	Amanita muscaria	TEA/ATTS	3
+C. cinerea	Coprinopsis cinerea	TEA/ATTS	5
+C. neoformans	Cryptococcus neoformans	TEA/ATTS	1
+M. sympodialis	Malasseizia sympodialis	TEA/ATTS	1
+P. striiformis	Puccinia striiformis	TEA/ATTS	1
+S. brevipes	Suillus brevipes	TEA/ATTS	3
+T. mesenterica	Tremella mesenterica	TEA/ATTS	0
+U. maydis	Ustilago maydis	TEA/ATTS	1
+M. lusitanicus	Mucor lusitanicus	TEA/ATTS	2
+P. blakesleeanus	Phycomyces blakesleeanus	TEA/ATTS	1
+R. microsporus	Rhizopus microsporus	TEA/ATTS	2
+L. corymbifera	Lichtheimia corymbifera	TEA/ATTS	2
+A. repens	Absidia repens	TEA/ATTS	3
+B. trispora	Blakeslea trispora	TEA/ATTS	1
+S. vasiformis	Saksenea vasiformis	TEA/ATTS	1
+H. vesiculosa	Hesseltinella vesiculosa	TEA/ATTS	2
+P. umbonatus	Pilobolus umbonatus	TEA/ATTS	2
+S. umbellata	Sporodiniella umbellata	TEA/ATTS	3
+S. racemosum	Syncephalastrum racemosum	TEA/ATTS	2
+G. butleri	Gongronella butleri	TEA/ATTS	2
+M. alpina	Mortierella alpina	TEA/ATTS	2
+M. elongata	Mortierella elongata	TEA/ATTS	1
+P. epigama	Podila epigama	TEA/ATTS	3
+R. irregularis	Rhizophagus irregularis	TEA/ATTS	0
+G. margarita	Gigaspora margarita	TEA/ATTS	0
+G. pyriformis	Geosiphon pyriformis	TEA/ATTS	1
+B. meristosporus	Basidiobolus meristosporus	TEA/ATTS	0
+C. coronatus	Conidiobolus coronatus	TEA/ATTS	0
+E. maimaiga	Entomophaga maimaiga	TEA/ATTS	0
+Z. radicans	Zoophthora radicans	TEA/ATTS	0
+C. reversa	Coemansia reversa	TEA/ATTS	1
+K. alabastrina	Kickxella alabastrina	TEA/ATTS	1
+L. pennispora	Linderina pennispora	TEA/ATTS	1
+S. fuscata	Synchephalis fuscata	TEA/ATTS	0
+P. cylindrospora	Piptocephalis cylindrospora	TEA/ATTS	0
+O. bornovanus	Olpidium bornovanus	TEA/ATTS	0
+G. prolifera	Gonapodya prolifera	TEA/ATTS	1
+Orpinomyces	Orpinomyces	TEA/ATTS	0
+A. robustus	Anaeromyces robustus	TEA/ATTS	0
+P. finnis	Piromyces finnis	TEA/ATTS	0
+C. anguillulae	Catenaria anguillulae	TEA/ATTS	0
+A. macrogynus	Allomyces macrogynus	TEA/ATTS	0
+S. punctatus	Spizellomyces punctatus	TEA/ATTS	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	TEA/ATTS	1
+C. protostelioides	Caulochytrium protostelioides	TEA/ATTS	0
+E. helioformis	Entophlyctis helioformis	TEA/ATTS	0
+G. variabilis	Geranomyces variabilis	TEA/ATTS	0
+P. aggregatum	Polychytrium aggregatum	TEA/ATTS	1
+T. arcticum	Ttriparticalar arcticum	TEA/ATTS	0
+R. allomyces	Rozella allomycis	TEA/ATTS	1
+A. locustae	Antonospora locustae	TEA/ATTS	0
+A. gossypii	Ashbya(Eremothecium) gossypii	TFIID	2
+A. nidulans	Aspergillus nidulans	TFIID	2
+B. cinerea	Botrytis cinerea	TFIID	2
+C. albicans	Candida albicans	TFIID	2
+C. immitis	Coccidioides immitis	TFIID	2
+C. militaris	Cordyceps militaris	TFIID	2
+F. fujikuroi	Fusarium fujikuroi	TFIID	3
+K. lactis	Kluyveromyces lactis	TFIID	2
+N. crassa	Neurospora crassa	TFIID	2
+S. cerevisiae	Saccharomyces cerevisiae	TFIID	2
+S. pombe	Schizosaccharomyces pombe	TFIID	1
+A. muscaria	Amanita muscaria	TFIID	2
+C. cinerea	Coprinopsis cinerea	TFIID	2
+C. neoformans	Cryptococcus neoformans	TFIID	2
+M. sympodialis	Malasseizia sympodialis	TFIID	2
+P. striiformis	Puccinia striiformis	TFIID	3
+S. brevipes	Suillus brevipes	TFIID	4
+T. mesenterica	Tremella mesenterica	TFIID	2
+U. maydis	Ustilago maydis	TFIID	2
+M. lusitanicus	Mucor lusitanicus	TFIID	3
+P. blakesleeanus	Phycomyces blakesleeanus	TFIID	3
+R. microsporus	Rhizopus microsporus	TFIID	1
+L. corymbifera	Lichtheimia corymbifera	TFIID	4
+A. repens	Absidia repens	TFIID	2
+B. trispora	Blakeslea trispora	TFIID	1
+S. vasiformis	Saksenea vasiformis	TFIID	1
+H. vesiculosa	Hesseltinella vesiculosa	TFIID	1
+P. umbonatus	Pilobolus umbonatus	TFIID	1
+S. umbellata	Sporodiniella umbellata	TFIID	1
+S. racemosum	Syncephalastrum racemosum	TFIID	1
+G. butleri	Gongronella butleri	TFIID	1
+M. alpina	Mortierella alpina	TFIID	1
+M. elongata	Mortierella elongata	TFIID	1
+P. epigama	Podila epigama	TFIID	1
+R. irregularis	Rhizophagus irregularis	TFIID	2
+G. margarita	Gigaspora margarita	TFIID	1
+G. pyriformis	Geosiphon pyriformis	TFIID	1
+B. meristosporus	Basidiobolus meristosporus	TFIID	2
+C. coronatus	Conidiobolus coronatus	TFIID	2
+E. maimaiga	Entomophaga maimaiga	TFIID	1
+Z. radicans	Zoophthora radicans	TFIID	1
+C. reversa	Coemansia reversa	TFIID	2
+K. alabastrina	Kickxella alabastrina	TFIID	1
+L. pennispora	Linderina pennispora	TFIID	1
+S. fuscata	Synchephalis fuscata	TFIID	1
+P. cylindrospora	Piptocephalis cylindrospora	TFIID	1
+O. bornovanus	Olpidium bornovanus	TFIID	3
+G. prolifera	Gonapodya prolifera	TFIID	1
+Orpinomyces	Orpinomyces	TFIID	5
+A. robustus	Anaeromyces robustus	TFIID	2
+P. finnis	Piromyces finnis	TFIID	2
+C. anguillulae	Catenaria anguillulae	TFIID	1
+A. macrogynus	Allomyces macrogynus	TFIID	2
+S. punctatus	Spizellomyces punctatus	TFIID	2
+B. dendrobatidis	Batrachochytrium dendrobatidis	TFIID	1
+C. protostelioides	Caulochytrium protostelioides	TFIID	2
+E. helioformis	Entophlyctis helioformis	TFIID	3
+G. variabilis	Geranomyces variabilis	TFIID	2
+P. aggregatum	Polychytrium aggregatum	TFIID	2
+T. arcticum	Ttriparticalar arcticum	TFIID	2
+R. allomyces	Rozella allomycis	TFIID	1
+A. locustae	Antonospora locustae	TFIID	2
+A. gossypii	Ashbya(Eremothecium) gossypii	Trp repressor/replication initiator	0
+A. nidulans	Aspergillus nidulans	Trp repressor/replication initiator	0
+B. cinerea	Botrytis cinerea	Trp repressor/replication initiator	0
+C. albicans	Candida albicans	Trp repressor/replication initiator	0
+C. immitis	Coccidioides immitis	Trp repressor/replication initiator	0
+C. militaris	Cordyceps militaris	Trp repressor/replication initiator	0
+F. fujikuroi	Fusarium fujikuroi	Trp repressor/replication initiator	0
+K. lactis	Kluyveromyces lactis	Trp repressor/replication initiator	0
+N. crassa	Neurospora crassa	Trp repressor/replication initiator	0
+S. cerevisiae	Saccharomyces cerevisiae	Trp repressor/replication initiator	0
+S. pombe	Schizosaccharomyces pombe	Trp repressor/replication initiator	0
+A. muscaria	Amanita muscaria	Trp repressor/replication initiator	1
+C. cinerea	Coprinopsis cinerea	Trp repressor/replication initiator	1
+C. neoformans	Cryptococcus neoformans	Trp repressor/replication initiator	0
+M. sympodialis	Malasseizia sympodialis	Trp repressor/replication initiator	0
+P. striiformis	Puccinia striiformis	Trp repressor/replication initiator	0
+S. brevipes	Suillus brevipes	Trp repressor/replication initiator	0
+T. mesenterica	Tremella mesenterica	Trp repressor/replication initiator	0
+U. maydis	Ustilago maydis	Trp repressor/replication initiator	0
+M. lusitanicus	Mucor lusitanicus	Trp repressor/replication initiator	0
+P. blakesleeanus	Phycomyces blakesleeanus	Trp repressor/replication initiator	0
+R. microsporus	Rhizopus microsporus	Trp repressor/replication initiator	0
+L. corymbifera	Lichtheimia corymbifera	Trp repressor/replication initiator	0
+A. repens	Absidia repens	Trp repressor/replication initiator	0
+B. trispora	Blakeslea trispora	Trp repressor/replication initiator	0
+S. vasiformis	Saksenea vasiformis	Trp repressor/replication initiator	0
+H. vesiculosa	Hesseltinella vesiculosa	Trp repressor/replication initiator	0
+P. umbonatus	Pilobolus umbonatus	Trp repressor/replication initiator	0
+S. umbellata	Sporodiniella umbellata	Trp repressor/replication initiator	0
+S. racemosum	Syncephalastrum racemosum	Trp repressor/replication initiator	0
+G. butleri	Gongronella butleri	Trp repressor/replication initiator	0
+M. alpina	Mortierella alpina	Trp repressor/replication initiator	0
+M. elongata	Mortierella elongata	Trp repressor/replication initiator	0
+P. epigama	Podila epigama	Trp repressor/replication initiator	0
+R. irregularis	Rhizophagus irregularis	Trp repressor/replication initiator	0
+G. margarita	Gigaspora margarita	Trp repressor/replication initiator	0
+G. pyriformis	Geosiphon pyriformis	Trp repressor/replication initiator	0
+B. meristosporus	Basidiobolus meristosporus	Trp repressor/replication initiator	0
+C. coronatus	Conidiobolus coronatus	Trp repressor/replication initiator	0
+E. maimaiga	Entomophaga maimaiga	Trp repressor/replication initiator	0
+Z. radicans	Zoophthora radicans	Trp repressor/replication initiator	0
+C. reversa	Coemansia reversa	Trp repressor/replication initiator	0
+K. alabastrina	Kickxella alabastrina	Trp repressor/replication initiator	0
+L. pennispora	Linderina pennispora	Trp repressor/replication initiator	0
+S. fuscata	Synchephalis fuscata	Trp repressor/replication initiator	0
+P. cylindrospora	Piptocephalis cylindrospora	Trp repressor/replication initiator	0
+O. bornovanus	Olpidium bornovanus	Trp repressor/replication initiator	0
+G. prolifera	Gonapodya prolifera	Trp repressor/replication initiator	0
+Orpinomyces	Orpinomyces	Trp repressor/replication initiator	0
+A. robustus	Anaeromyces robustus	Trp repressor/replication initiator	0
+P. finnis	Piromyces finnis	Trp repressor/replication initiator	0
+C. anguillulae	Catenaria anguillulae	Trp repressor/replication initiator	0
+A. macrogynus	Allomyces macrogynus	Trp repressor/replication initiator	0
+S. punctatus	Spizellomyces punctatus	Trp repressor/replication initiator	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	Trp repressor/replication initiator	0
+C. protostelioides	Caulochytrium protostelioides	Trp repressor/replication initiator	0
+E. helioformis	Entophlyctis helioformis	Trp repressor/replication initiator	0
+G. variabilis	Geranomyces variabilis	Trp repressor/replication initiator	0
+P. aggregatum	Polychytrium aggregatum	Trp repressor/replication initiator	0
+T. arcticum	Ttriparticalar arcticum	Trp repressor/replication initiator	0
+R. allomyces	Rozella allomycis	Trp repressor/replication initiator	0
+A. locustae	Antonospora locustae	Trp repressor/replication initiator	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Tubby TF	0
+A. nidulans	Aspergillus nidulans	Tubby TF	0
+B. cinerea	Botrytis cinerea	Tubby TF	0
+C. albicans	Candida albicans	Tubby TF	0
+C. immitis	Coccidioides immitis	Tubby TF	0
+C. militaris	Cordyceps militaris	Tubby TF	0
+F. fujikuroi	Fusarium fujikuroi	Tubby TF	0
+K. lactis	Kluyveromyces lactis	Tubby TF	0
+N. crassa	Neurospora crassa	Tubby TF	0
+S. cerevisiae	Saccharomyces cerevisiae	Tubby TF	0
+S. pombe	Schizosaccharomyces pombe	Tubby TF	0
+A. muscaria	Amanita muscaria	Tubby TF	0
+C. cinerea	Coprinopsis cinerea	Tubby TF	0
+C. neoformans	Cryptococcus neoformans	Tubby TF	0
+M. sympodialis	Malasseizia sympodialis	Tubby TF	0
+P. striiformis	Puccinia striiformis	Tubby TF	0
+S. brevipes	Suillus brevipes	Tubby TF	0
+T. mesenterica	Tremella mesenterica	Tubby TF	0
+U. maydis	Ustilago maydis	Tubby TF	0
+M. lusitanicus	Mucor lusitanicus	Tubby TF	1
+P. blakesleeanus	Phycomyces blakesleeanus	Tubby TF	1
+R. microsporus	Rhizopus microsporus	Tubby TF	1
+L. corymbifera	Lichtheimia corymbifera	Tubby TF	1
+A. repens	Absidia repens	Tubby TF	1
+B. trispora	Blakeslea trispora	Tubby TF	1
+S. vasiformis	Saksenea vasiformis	Tubby TF	0
+H. vesiculosa	Hesseltinella vesiculosa	Tubby TF	1
+P. umbonatus	Pilobolus umbonatus	Tubby TF	1
+S. umbellata	Sporodiniella umbellata	Tubby TF	1
+S. racemosum	Syncephalastrum racemosum	Tubby TF	2
+G. butleri	Gongronella butleri	Tubby TF	1
+M. alpina	Mortierella alpina	Tubby TF	1
+M. elongata	Mortierella elongata	Tubby TF	2
+P. epigama	Podila epigama	Tubby TF	1
+R. irregularis	Rhizophagus irregularis	Tubby TF	1
+G. margarita	Gigaspora margarita	Tubby TF	3
+G. pyriformis	Geosiphon pyriformis	Tubby TF	1
+B. meristosporus	Basidiobolus meristosporus	Tubby TF	1
+C. coronatus	Conidiobolus coronatus	Tubby TF	1
+E. maimaiga	Entomophaga maimaiga	Tubby TF	1
+Z. radicans	Zoophthora radicans	Tubby TF	1
+C. reversa	Coemansia reversa	Tubby TF	0
+K. alabastrina	Kickxella alabastrina	Tubby TF	1
+L. pennispora	Linderina pennispora	Tubby TF	1
+S. fuscata	Synchephalis fuscata	Tubby TF	1
+P. cylindrospora	Piptocephalis cylindrospora	Tubby TF	1
+O. bornovanus	Olpidium bornovanus	Tubby TF	2
+G. prolifera	Gonapodya prolifera	Tubby TF	1
+Orpinomyces	Orpinomyces	Tubby TF	2
+A. robustus	Anaeromyces robustus	Tubby TF	2
+P. finnis	Piromyces finnis	Tubby TF	2
+C. anguillulae	Catenaria anguillulae	Tubby TF	2
+A. macrogynus	Allomyces macrogynus	Tubby TF	4
+S. punctatus	Spizellomyces punctatus	Tubby TF	2
+B. dendrobatidis	Batrachochytrium dendrobatidis	Tubby TF	3
+C. protostelioides	Caulochytrium protostelioides	Tubby TF	2
+E. helioformis	Entophlyctis helioformis	Tubby TF	2
+G. variabilis	Geranomyces variabilis	Tubby TF	2
+P. aggregatum	Polychytrium aggregatum	Tubby TF	2
+T. arcticum	Ttriparticalar arcticum	Tubby TF	2
+R. allomyces	Rozella allomycis	Tubby TF	1
+A. locustae	Antonospora locustae	Tubby TF	2
+A. gossypii	Ashbya(Eremothecium) gossypii	YL1	0
+A. nidulans	Aspergillus nidulans	YL1	1
+B. cinerea	Botrytis cinerea	YL1	1
+C. albicans	Candida albicans	YL1	1
+C. immitis	Coccidioides immitis	YL1	1
+C. militaris	Cordyceps militaris	YL1	1
+F. fujikuroi	Fusarium fujikuroi	YL1	1
+K. lactis	Kluyveromyces lactis	YL1	1
+N. crassa	Neurospora crassa	YL1	1
+S. cerevisiae	Saccharomyces cerevisiae	YL1	1
+S. pombe	Schizosaccharomyces pombe	YL1	1
+A. muscaria	Amanita muscaria	YL1	1
+C. cinerea	Coprinopsis cinerea	YL1	1
+C. neoformans	Cryptococcus neoformans	YL1	1
+M. sympodialis	Malasseizia sympodialis	YL1	1
+P. striiformis	Puccinia striiformis	YL1	0
+S. brevipes	Suillus brevipes	YL1	1
+T. mesenterica	Tremella mesenterica	YL1	1
+U. maydis	Ustilago maydis	YL1	1
+M. lusitanicus	Mucor lusitanicus	YL1	1
+P. blakesleeanus	Phycomyces blakesleeanus	YL1	0
+R. microsporus	Rhizopus microsporus	YL1	1
+L. corymbifera	Lichtheimia corymbifera	YL1	1
+A. repens	Absidia repens	YL1	1
+B. trispora	Blakeslea trispora	YL1	1
+S. vasiformis	Saksenea vasiformis	YL1	1
+H. vesiculosa	Hesseltinella vesiculosa	YL1	1
+P. umbonatus	Pilobolus umbonatus	YL1	1
+S. umbellata	Sporodiniella umbellata	YL1	1
+S. racemosum	Syncephalastrum racemosum	YL1	1
+G. butleri	Gongronella butleri	YL1	1
+M. alpina	Mortierella alpina	YL1	1
+M. elongata	Mortierella elongata	YL1	1
+P. epigama	Podila epigama	YL1	1
+R. irregularis	Rhizophagus irregularis	YL1	2
+G. margarita	Gigaspora margarita	YL1	2
+G. pyriformis	Geosiphon pyriformis	YL1	1
+B. meristosporus	Basidiobolus meristosporus	YL1	0
+C. coronatus	Conidiobolus coronatus	YL1	0
+E. maimaiga	Entomophaga maimaiga	YL1	0
+Z. radicans	Zoophthora radicans	YL1	0
+C. reversa	Coemansia reversa	YL1	1
+K. alabastrina	Kickxella alabastrina	YL1	0
+L. pennispora	Linderina pennispora	YL1	1
+S. fuscata	Synchephalis fuscata	YL1	1
+P. cylindrospora	Piptocephalis cylindrospora	YL1	1
+O. bornovanus	Olpidium bornovanus	YL1	0
+G. prolifera	Gonapodya prolifera	YL1	0
+Orpinomyces	Orpinomyces	YL1	0
+A. robustus	Anaeromyces robustus	YL1	0
+P. finnis	Piromyces finnis	YL1	0
+C. anguillulae	Catenaria anguillulae	YL1	0
+A. macrogynus	Allomyces macrogynus	YL1	0
+S. punctatus	Spizellomyces punctatus	YL1	1
+B. dendrobatidis	Batrachochytrium dendrobatidis	YL1	0
+C. protostelioides	Caulochytrium protostelioides	YL1	0
+E. helioformis	Entophlyctis helioformis	YL1	0
+G. variabilis	Geranomyces variabilis	YL1	1
+P. aggregatum	Polychytrium aggregatum	YL1	0
+T. arcticum	Ttriparticalar arcticum	YL1	1
+R. allomyces	Rozella allomycis	YL1	0
+A. locustae	Antonospora locustae	YL1	0
+A. gossypii	Ashbya(Eremothecium) gossypii	zf-A20	0
+A. nidulans	Aspergillus nidulans	zf-A20	0
+B. cinerea	Botrytis cinerea	zf-A20	0
+C. albicans	Candida albicans	zf-A20	0
+C. immitis	Coccidioides immitis	zf-A20	0
+C. militaris	Cordyceps militaris	zf-A20	0
+F. fujikuroi	Fusarium fujikuroi	zf-A20	0
+K. lactis	Kluyveromyces lactis	zf-A20	0
+N. crassa	Neurospora crassa	zf-A20	0
+S. cerevisiae	Saccharomyces cerevisiae	zf-A20	0
+S. pombe	Schizosaccharomyces pombe	zf-A20	0
+A. muscaria	Amanita muscaria	zf-A20	0
+C. cinerea	Coprinopsis cinerea	zf-A20	0
+C. neoformans	Cryptococcus neoformans	zf-A20	0
+M. sympodialis	Malasseizia sympodialis	zf-A20	0
+P. striiformis	Puccinia striiformis	zf-A20	0
+S. brevipes	Suillus brevipes	zf-A20	0
+T. mesenterica	Tremella mesenterica	zf-A20	0
+U. maydis	Ustilago maydis	zf-A20	0
+M. lusitanicus	Mucor lusitanicus	zf-A20	2
+P. blakesleeanus	Phycomyces blakesleeanus	zf-A20	3
+R. microsporus	Rhizopus microsporus	zf-A20	0
+L. corymbifera	Lichtheimia corymbifera	zf-A20	1
+A. repens	Absidia repens	zf-A20	0
+B. trispora	Blakeslea trispora	zf-A20	0
+S. vasiformis	Saksenea vasiformis	zf-A20	0
+H. vesiculosa	Hesseltinella vesiculosa	zf-A20	0
+P. umbonatus	Pilobolus umbonatus	zf-A20	0
+S. umbellata	Sporodiniella umbellata	zf-A20	0
+S. racemosum	Syncephalastrum racemosum	zf-A20	2
+G. butleri	Gongronella butleri	zf-A20	0
+M. alpina	Mortierella alpina	zf-A20	0
+M. elongata	Mortierella elongata	zf-A20	0
+P. epigama	Podila epigama	zf-A20	0
+R. irregularis	Rhizophagus irregularis	zf-A20	1
+G. margarita	Gigaspora margarita	zf-A20	0
+G. pyriformis	Geosiphon pyriformis	zf-A20	1
+B. meristosporus	Basidiobolus meristosporus	zf-A20	0
+C. coronatus	Conidiobolus coronatus	zf-A20	1
+E. maimaiga	Entomophaga maimaiga	zf-A20	3
+Z. radicans	Zoophthora radicans	zf-A20	2
+C. reversa	Coemansia reversa	zf-A20	1
+K. alabastrina	Kickxella alabastrina	zf-A20	0
+L. pennispora	Linderina pennispora	zf-A20	0
+S. fuscata	Synchephalis fuscata	zf-A20	0
+P. cylindrospora	Piptocephalis cylindrospora	zf-A20	0
+O. bornovanus	Olpidium bornovanus	zf-A20	1
+G. prolifera	Gonapodya prolifera	zf-A20	0
+Orpinomyces	Orpinomyces	zf-A20	0
+A. robustus	Anaeromyces robustus	zf-A20	0
+P. finnis	Piromyces finnis	zf-A20	0
+C. anguillulae	Catenaria anguillulae	zf-A20	0
+A. macrogynus	Allomyces macrogynus	zf-A20	0
+S. punctatus	Spizellomyces punctatus	zf-A20	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	zf-A20	0
+C. protostelioides	Caulochytrium protostelioides	zf-A20	0
+E. helioformis	Entophlyctis helioformis	zf-A20	0
+G. variabilis	Geranomyces variabilis	zf-A20	0
+P. aggregatum	Polychytrium aggregatum	zf-A20	0
+T. arcticum	Ttriparticalar arcticum	zf-A20	0
+R. allomyces	Rozella allomycis	zf-A20	0
+A. locustae	Antonospora locustae	zf-A20	0
+A. gossypii	Ashbya(Eremothecium) gossypii	zf-BED	1
+A. nidulans	Aspergillus nidulans	zf-BED	0
+B. cinerea	Botrytis cinerea	zf-BED	0
+C. albicans	Candida albicans	zf-BED	0
+C. immitis	Coccidioides immitis	zf-BED	0
+C. militaris	Cordyceps militaris	zf-BED	0
+F. fujikuroi	Fusarium fujikuroi	zf-BED	0
+K. lactis	Kluyveromyces lactis	zf-BED	0
+N. crassa	Neurospora crassa	zf-BED	0
+S. cerevisiae	Saccharomyces cerevisiae	zf-BED	2
+S. pombe	Schizosaccharomyces pombe	zf-BED	0
+A. muscaria	Amanita muscaria	zf-BED	1
+C. cinerea	Coprinopsis cinerea	zf-BED	1
+C. neoformans	Cryptococcus neoformans	zf-BED	0
+M. sympodialis	Malasseizia sympodialis	zf-BED	0
+P. striiformis	Puccinia striiformis	zf-BED	11
+S. brevipes	Suillus brevipes	zf-BED	0
+T. mesenterica	Tremella mesenterica	zf-BED	0
+U. maydis	Ustilago maydis	zf-BED	0
+M. lusitanicus	Mucor lusitanicus	zf-BED	1
+P. blakesleeanus	Phycomyces blakesleeanus	zf-BED	0
+R. microsporus	Rhizopus microsporus	zf-BED	0
+L. corymbifera	Lichtheimia corymbifera	zf-BED	0
+A. repens	Absidia repens	zf-BED	0
+B. trispora	Blakeslea trispora	zf-BED	0
+S. vasiformis	Saksenea vasiformis	zf-BED	0
+H. vesiculosa	Hesseltinella vesiculosa	zf-BED	0
+P. umbonatus	Pilobolus umbonatus	zf-BED	0
+S. umbellata	Sporodiniella umbellata	zf-BED	0
+S. racemosum	Syncephalastrum racemosum	zf-BED	1
+G. butleri	Gongronella butleri	zf-BED	0
+M. alpina	Mortierella alpina	zf-BED	0
+M. elongata	Mortierella elongata	zf-BED	0
+P. epigama	Podila epigama	zf-BED	0
+R. irregularis	Rhizophagus irregularis	zf-BED	32
+G. margarita	Gigaspora margarita	zf-BED	29
+G. pyriformis	Geosiphon pyriformis	zf-BED	1
+B. meristosporus	Basidiobolus meristosporus	zf-BED	0
+C. coronatus	Conidiobolus coronatus	zf-BED	4
+E. maimaiga	Entomophaga maimaiga	zf-BED	1
+Z. radicans	Zoophthora radicans	zf-BED	1
+C. reversa	Coemansia reversa	zf-BED	3
+K. alabastrina	Kickxella alabastrina	zf-BED	0
+L. pennispora	Linderina pennispora	zf-BED	0
+S. fuscata	Synchephalis fuscata	zf-BED	0
+P. cylindrospora	Piptocephalis cylindrospora	zf-BED	0
+O. bornovanus	Olpidium bornovanus	zf-BED	0
+G. prolifera	Gonapodya prolifera	zf-BED	0
+Orpinomyces	Orpinomyces	zf-BED	0
+A. robustus	Anaeromyces robustus	zf-BED	0
+P. finnis	Piromyces finnis	zf-BED	0
+C. anguillulae	Catenaria anguillulae	zf-BED	0
+A. macrogynus	Allomyces macrogynus	zf-BED	0
+S. punctatus	Spizellomyces punctatus	zf-BED	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	zf-BED	0
+C. protostelioides	Caulochytrium protostelioides	zf-BED	0
+E. helioformis	Entophlyctis helioformis	zf-BED	0
+G. variabilis	Geranomyces variabilis	zf-BED	0
+P. aggregatum	Polychytrium aggregatum	zf-BED	0
+T. arcticum	Ttriparticalar arcticum	zf-BED	0
+R. allomyces	Rozella allomycis	zf-BED	1
+A. locustae	Antonospora locustae	zf-BED	0
+A. gossypii	Ashbya(Eremothecium) gossypii	zf-GRF	1
+A. nidulans	Aspergillus nidulans	zf-GRF	0
+B. cinerea	Botrytis cinerea	zf-GRF	2
+C. albicans	Candida albicans	zf-GRF	0
+C. immitis	Coccidioides immitis	zf-GRF	2
+C. militaris	Cordyceps militaris	zf-GRF	1
+F. fujikuroi	Fusarium fujikuroi	zf-GRF	2
+K. lactis	Kluyveromyces lactis	zf-GRF	1
+N. crassa	Neurospora crassa	zf-GRF	3
+S. cerevisiae	Saccharomyces cerevisiae	zf-GRF	1
+S. pombe	Schizosaccharomyces pombe	zf-GRF	0
+A. muscaria	Amanita muscaria	zf-GRF	1
+C. cinerea	Coprinopsis cinerea	zf-GRF	0
+C. neoformans	Cryptococcus neoformans	zf-GRF	0
+M. sympodialis	Malasseizia sympodialis	zf-GRF	0
+P. striiformis	Puccinia striiformis	zf-GRF	0
+S. brevipes	Suillus brevipes	zf-GRF	1
+T. mesenterica	Tremella mesenterica	zf-GRF	1
+U. maydis	Ustilago maydis	zf-GRF	0
+M. lusitanicus	Mucor lusitanicus	zf-GRF	1
+P. blakesleeanus	Phycomyces blakesleeanus	zf-GRF	1
+R. microsporus	Rhizopus microsporus	zf-GRF	0
+L. corymbifera	Lichtheimia corymbifera	zf-GRF	2
+A. repens	Absidia repens	zf-GRF	0
+B. trispora	Blakeslea trispora	zf-GRF	0
+S. vasiformis	Saksenea vasiformis	zf-GRF	0
+H. vesiculosa	Hesseltinella vesiculosa	zf-GRF	0
+P. umbonatus	Pilobolus umbonatus	zf-GRF	0
+S. umbellata	Sporodiniella umbellata	zf-GRF	0
+S. racemosum	Syncephalastrum racemosum	zf-GRF	2
+G. butleri	Gongronella butleri	zf-GRF	0
+M. alpina	Mortierella alpina	zf-GRF	0
+M. elongata	Mortierella elongata	zf-GRF	0
+P. epigama	Podila epigama	zf-GRF	0
+R. irregularis	Rhizophagus irregularis	zf-GRF	4
+G. margarita	Gigaspora margarita	zf-GRF	0
+G. pyriformis	Geosiphon pyriformis	zf-GRF	11
+B. meristosporus	Basidiobolus meristosporus	zf-GRF	2
+C. coronatus	Conidiobolus coronatus	zf-GRF	0
+E. maimaiga	Entomophaga maimaiga	zf-GRF	1
+Z. radicans	Zoophthora radicans	zf-GRF	2
+C. reversa	Coemansia reversa	zf-GRF	0
+K. alabastrina	Kickxella alabastrina	zf-GRF	0
+L. pennispora	Linderina pennispora	zf-GRF	1
+S. fuscata	Synchephalis fuscata	zf-GRF	2
+P. cylindrospora	Piptocephalis cylindrospora	zf-GRF	0
+O. bornovanus	Olpidium bornovanus	zf-GRF	0
+G. prolifera	Gonapodya prolifera	zf-GRF	2
+Orpinomyces	Orpinomyces	zf-GRF	0
+A. robustus	Anaeromyces robustus	zf-GRF	2
+P. finnis	Piromyces finnis	zf-GRF	1
+C. anguillulae	Catenaria anguillulae	zf-GRF	2
+A. macrogynus	Allomyces macrogynus	zf-GRF	3
+S. punctatus	Spizellomyces punctatus	zf-GRF	5
+B. dendrobatidis	Batrachochytrium dendrobatidis	zf-GRF	0
+C. protostelioides	Caulochytrium protostelioides	zf-GRF	0
+E. helioformis	Entophlyctis helioformis	zf-GRF	1
+G. variabilis	Geranomyces variabilis	zf-GRF	2
+P. aggregatum	Polychytrium aggregatum	zf-GRF	2
+T. arcticum	Ttriparticalar arcticum	zf-GRF	2
+R. allomyces	Rozella allomycis	zf-GRF	1
+A. locustae	Antonospora locustae	zf-GRF	0
+A. gossypii	Ashbya(Eremothecium) gossypii	zf-MIZ	1
+A. nidulans	Aspergillus nidulans	zf-MIZ	3
+B. cinerea	Botrytis cinerea	zf-MIZ	3
+C. albicans	Candida albicans	zf-MIZ	2
+C. immitis	Coccidioides immitis	zf-MIZ	3
+C. militaris	Cordyceps militaris	zf-MIZ	3
+F. fujikuroi	Fusarium fujikuroi	zf-MIZ	3
+K. lactis	Kluyveromyces lactis	zf-MIZ	2
+N. crassa	Neurospora crassa	zf-MIZ	4
+S. cerevisiae	Saccharomyces cerevisiae	zf-MIZ	4
+S. pombe	Schizosaccharomyces pombe	zf-MIZ	2
+A. muscaria	Amanita muscaria	zf-MIZ	1
+C. cinerea	Coprinopsis cinerea	zf-MIZ	1
+C. neoformans	Cryptococcus neoformans	zf-MIZ	1
+M. sympodialis	Malasseizia sympodialis	zf-MIZ	1
+P. striiformis	Puccinia striiformis	zf-MIZ	1
+S. brevipes	Suillus brevipes	zf-MIZ	2
+T. mesenterica	Tremella mesenterica	zf-MIZ	0
+U. maydis	Ustilago maydis	zf-MIZ	1
+M. lusitanicus	Mucor lusitanicus	zf-MIZ	3
+P. blakesleeanus	Phycomyces blakesleeanus	zf-MIZ	3
+R. microsporus	Rhizopus microsporus	zf-MIZ	4
+L. corymbifera	Lichtheimia corymbifera	zf-MIZ	4
+A. repens	Absidia repens	zf-MIZ	3
+B. trispora	Blakeslea trispora	zf-MIZ	3
+S. vasiformis	Saksenea vasiformis	zf-MIZ	2
+H. vesiculosa	Hesseltinella vesiculosa	zf-MIZ	3
+P. umbonatus	Pilobolus umbonatus	zf-MIZ	2
+S. umbellata	Sporodiniella umbellata	zf-MIZ	5
+S. racemosum	Syncephalastrum racemosum	zf-MIZ	4
+G. butleri	Gongronella butleri	zf-MIZ	3
+M. alpina	Mortierella alpina	zf-MIZ	1
+M. elongata	Mortierella elongata	zf-MIZ	2
+P. epigama	Podila epigama	zf-MIZ	1
+R. irregularis	Rhizophagus irregularis	zf-MIZ	2
+G. margarita	Gigaspora margarita	zf-MIZ	5
+G. pyriformis	Geosiphon pyriformis	zf-MIZ	2
+B. meristosporus	Basidiobolus meristosporus	zf-MIZ	6
+C. coronatus	Conidiobolus coronatus	zf-MIZ	2
+E. maimaiga	Entomophaga maimaiga	zf-MIZ	2
+Z. radicans	Zoophthora radicans	zf-MIZ	1
+C. reversa	Coemansia reversa	zf-MIZ	2
+K. alabastrina	Kickxella alabastrina	zf-MIZ	1
+L. pennispora	Linderina pennispora	zf-MIZ	2
+S. fuscata	Synchephalis fuscata	zf-MIZ	1
+P. cylindrospora	Piptocephalis cylindrospora	zf-MIZ	4
+O. bornovanus	Olpidium bornovanus	zf-MIZ	1
+G. prolifera	Gonapodya prolifera	zf-MIZ	6
+Orpinomyces	Orpinomyces	zf-MIZ	5
+A. robustus	Anaeromyces robustus	zf-MIZ	4
+P. finnis	Piromyces finnis	zf-MIZ	4
+C. anguillulae	Catenaria anguillulae	zf-MIZ	3
+A. macrogynus	Allomyces macrogynus	zf-MIZ	5
+S. punctatus	Spizellomyces punctatus	zf-MIZ	6
+B. dendrobatidis	Batrachochytrium dendrobatidis	zf-MIZ	2
+C. protostelioides	Caulochytrium protostelioides	zf-MIZ	2
+E. helioformis	Entophlyctis helioformis	zf-MIZ	3
+G. variabilis	Geranomyces variabilis	zf-MIZ	2
+P. aggregatum	Polychytrium aggregatum	zf-MIZ	3
+T. arcticum	Ttriparticalar arcticum	zf-MIZ	4
+R. allomyces	Rozella allomycis	zf-MIZ	2
+A. locustae	Antonospora locustae	zf-MIZ	0
+A. gossypii	Ashbya(Eremothecium) gossypii	zf-TAZ	0
+A. nidulans	Aspergillus nidulans	zf-TAZ	0
+B. cinerea	Botrytis cinerea	zf-TAZ	0
+C. albicans	Candida albicans	zf-TAZ	0
+C. immitis	Coccidioides immitis	zf-TAZ	0
+C. militaris	Cordyceps militaris	zf-TAZ	0
+F. fujikuroi	Fusarium fujikuroi	zf-TAZ	0
+K. lactis	Kluyveromyces lactis	zf-TAZ	0
+N. crassa	Neurospora crassa	zf-TAZ	0
+S. cerevisiae	Saccharomyces cerevisiae	zf-TAZ	0
+S. pombe	Schizosaccharomyces pombe	zf-TAZ	0
+A. muscaria	Amanita muscaria	zf-TAZ	1
+C. cinerea	Coprinopsis cinerea	zf-TAZ	0
+C. neoformans	Cryptococcus neoformans	zf-TAZ	0
+M. sympodialis	Malasseizia sympodialis	zf-TAZ	0
+P. striiformis	Puccinia striiformis	zf-TAZ	0
+S. brevipes	Suillus brevipes	zf-TAZ	0
+T. mesenterica	Tremella mesenterica	zf-TAZ	0
+U. maydis	Ustilago maydis	zf-TAZ	0
+M. lusitanicus	Mucor lusitanicus	zf-TAZ	0
+P. blakesleeanus	Phycomyces blakesleeanus	zf-TAZ	0
+R. microsporus	Rhizopus microsporus	zf-TAZ	0
+L. corymbifera	Lichtheimia corymbifera	zf-TAZ	0
+A. repens	Absidia repens	zf-TAZ	0
+B. trispora	Blakeslea trispora	zf-TAZ	0
+S. vasiformis	Saksenea vasiformis	zf-TAZ	0
+H. vesiculosa	Hesseltinella vesiculosa	zf-TAZ	0
+P. umbonatus	Pilobolus umbonatus	zf-TAZ	0
+S. umbellata	Sporodiniella umbellata	zf-TAZ	0
+S. racemosum	Syncephalastrum racemosum	zf-TAZ	0
+G. butleri	Gongronella butleri	zf-TAZ	0
+M. alpina	Mortierella alpina	zf-TAZ	0
+M. elongata	Mortierella elongata	zf-TAZ	0
+P. epigama	Podila epigama	zf-TAZ	0
+R. irregularis	Rhizophagus irregularis	zf-TAZ	0
+G. margarita	Gigaspora margarita	zf-TAZ	0
+G. pyriformis	Geosiphon pyriformis	zf-TAZ	1
+B. meristosporus	Basidiobolus meristosporus	zf-TAZ	4
+C. coronatus	Conidiobolus coronatus	zf-TAZ	0
+E. maimaiga	Entomophaga maimaiga	zf-TAZ	0
+Z. radicans	Zoophthora radicans	zf-TAZ	0
+C. reversa	Coemansia reversa	zf-TAZ	0
+K. alabastrina	Kickxella alabastrina	zf-TAZ	0
+L. pennispora	Linderina pennispora	zf-TAZ	4
+S. fuscata	Synchephalis fuscata	zf-TAZ	0
+P. cylindrospora	Piptocephalis cylindrospora	zf-TAZ	0
+O. bornovanus	Olpidium bornovanus	zf-TAZ	0
+G. prolifera	Gonapodya prolifera	zf-TAZ	15
+Orpinomyces	Orpinomyces	zf-TAZ	0
+A. robustus	Anaeromyces robustus	zf-TAZ	0
+P. finnis	Piromyces finnis	zf-TAZ	1
+C. anguillulae	Catenaria anguillulae	zf-TAZ	0
+A. macrogynus	Allomyces macrogynus	zf-TAZ	20
+S. punctatus	Spizellomyces punctatus	zf-TAZ	2
+B. dendrobatidis	Batrachochytrium dendrobatidis	zf-TAZ	2
+C. protostelioides	Caulochytrium protostelioides	zf-TAZ	3
+E. helioformis	Entophlyctis helioformis	zf-TAZ	0
+G. variabilis	Geranomyces variabilis	zf-TAZ	0
+P. aggregatum	Polychytrium aggregatum	zf-TAZ	1
+T. arcticum	Ttriparticalar arcticum	zf-TAZ	0
+R. allomyces	Rozella allomycis	zf-TAZ	0
+A. locustae	Antonospora locustae	zf-TAZ	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Zn cluster	37
+A. nidulans	Aspergillus nidulans	Zn cluster	323
+B. cinerea	Botrytis cinerea	Zn cluster	141
+C. albicans	Candida albicans	Zn cluster	78
+C. immitis	Coccidioides immitis	Zn cluster	113
+C. militaris	Cordyceps militaris	Zn cluster	201
+F. fujikuroi	Fusarium fujikuroi	Zn cluster	532
+K. lactis	Kluyveromyces lactis	Zn cluster	59
+N. crassa	Neurospora crassa	Zn cluster	154
+S. cerevisiae	Saccharomyces cerevisiae	Zn cluster	56
+S. pombe	Schizosaccharomyces pombe	Zn cluster	32
+A. muscaria	Amanita muscaria	Zn cluster	66
+C. cinerea	Coprinopsis cinerea	Zn cluster	58
+C. neoformans	Cryptococcus neoformans	Zn cluster	81
+M. sympodialis	Malasseizia sympodialis	Zn cluster	6
+P. striiformis	Puccinia striiformis	Zn cluster	24
+S. brevipes	Suillus brevipes	Zn cluster	95
+T. mesenterica	Tremella mesenterica	Zn cluster	65
+U. maydis	Ustilago maydis	Zn cluster	87
+M. lusitanicus	Mucor lusitanicus	Zn cluster	52
+P. blakesleeanus	Phycomyces blakesleeanus	Zn cluster	54
+R. microsporus	Rhizopus microsporus	Zn cluster	51
+L. corymbifera	Lichtheimia corymbifera	Zn cluster	81
+A. repens	Absidia repens	Zn cluster	88
+B. trispora	Blakeslea trispora	Zn cluster	43
+S. vasiformis	Saksenea vasiformis	Zn cluster	37
+H. vesiculosa	Hesseltinella vesiculosa	Zn cluster	58
+P. umbonatus	Pilobolus umbonatus	Zn cluster	35
+S. umbellata	Sporodiniella umbellata	Zn cluster	41
+S. racemosum	Syncephalastrum racemosum	Zn cluster	67
+G. butleri	Gongronella butleri	Zn cluster	53
+M. alpina	Mortierella alpina	Zn cluster	31
+M. elongata	Mortierella elongata	Zn cluster	40
+P. epigama	Podila epigama	Zn cluster	17
+R. irregularis	Rhizophagus irregularis	Zn cluster	33
+G. margarita	Gigaspora margarita	Zn cluster	158
+G. pyriformis	Geosiphon pyriformis	Zn cluster	16
+B. meristosporus	Basidiobolus meristosporus	Zn cluster	52
+C. coronatus	Conidiobolus coronatus	Zn cluster	121
+E. maimaiga	Entomophaga maimaiga	Zn cluster	103
+Z. radicans	Zoophthora radicans	Zn cluster	141
+C. reversa	Coemansia reversa	Zn cluster	24
+K. alabastrina	Kickxella alabastrina	Zn cluster	19
+L. pennispora	Linderina pennispora	Zn cluster	25
+S. fuscata	Synchephalis fuscata	Zn cluster	9
+P. cylindrospora	Piptocephalis cylindrospora	Zn cluster	2
+O. bornovanus	Olpidium bornovanus	Zn cluster	1
+G. prolifera	Gonapodya prolifera	Zn cluster	68
+Orpinomyces	Orpinomyces	Zn cluster	17
+A. robustus	Anaeromyces robustus	Zn cluster	18
+P. finnis	Piromyces finnis	Zn cluster	17
+C. anguillulae	Catenaria anguillulae	Zn cluster	8
+A. macrogynus	Allomyces macrogynus	Zn cluster	30
+S. punctatus	Spizellomyces punctatus	Zn cluster	25
+B. dendrobatidis	Batrachochytrium dendrobatidis	Zn cluster	15
+C. protostelioides	Caulochytrium protostelioides	Zn cluster	12
+E. helioformis	Entophlyctis helioformis	Zn cluster	21
+G. variabilis	Geranomyces variabilis	Zn cluster	17
+P. aggregatum	Polychytrium aggregatum	Zn cluster	15
+T. arcticum	Ttriparticalar arcticum	Zn cluster	17
+R. allomyces	Rozella allomycis	Zn cluster	1
+A. locustae	Antonospora locustae	Zn cluster	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Zn-finger, NF-X1 type	0
+A. nidulans	Aspergillus nidulans	Zn-finger, NF-X1 type	1
+B. cinerea	Botrytis cinerea	Zn-finger, NF-X1 type	1
+C. albicans	Candida albicans	Zn-finger, NF-X1 type	0
+C. immitis	Coccidioides immitis	Zn-finger, NF-X1 type	1
+C. militaris	Cordyceps militaris	Zn-finger, NF-X1 type	1
+F. fujikuroi	Fusarium fujikuroi	Zn-finger, NF-X1 type	1
+K. lactis	Kluyveromyces lactis	Zn-finger, NF-X1 type	1
+N. crassa	Neurospora crassa	Zn-finger, NF-X1 type	1
+S. cerevisiae	Saccharomyces cerevisiae	Zn-finger, NF-X1 type	1
+S. pombe	Schizosaccharomyces pombe	Zn-finger, NF-X1 type	1
+A. muscaria	Amanita muscaria	Zn-finger, NF-X1 type	1
+C. cinerea	Coprinopsis cinerea	Zn-finger, NF-X1 type	1
+C. neoformans	Cryptococcus neoformans	Zn-finger, NF-X1 type	1
+M. sympodialis	Malasseizia sympodialis	Zn-finger, NF-X1 type	0
+P. striiformis	Puccinia striiformis	Zn-finger, NF-X1 type	2
+S. brevipes	Suillus brevipes	Zn-finger, NF-X1 type	2
+T. mesenterica	Tremella mesenterica	Zn-finger, NF-X1 type	1
+U. maydis	Ustilago maydis	Zn-finger, NF-X1 type	0
+M. lusitanicus	Mucor lusitanicus	Zn-finger, NF-X1 type	1
+P. blakesleeanus	Phycomyces blakesleeanus	Zn-finger, NF-X1 type	1
+R. microsporus	Rhizopus microsporus	Zn-finger, NF-X1 type	1
+L. corymbifera	Lichtheimia corymbifera	Zn-finger, NF-X1 type	2
+A. repens	Absidia repens	Zn-finger, NF-X1 type	0
+B. trispora	Blakeslea trispora	Zn-finger, NF-X1 type	1
+S. vasiformis	Saksenea vasiformis	Zn-finger, NF-X1 type	1
+H. vesiculosa	Hesseltinella vesiculosa	Zn-finger, NF-X1 type	1
+P. umbonatus	Pilobolus umbonatus	Zn-finger, NF-X1 type	0
+S. umbellata	Sporodiniella umbellata	Zn-finger, NF-X1 type	0
+S. racemosum	Syncephalastrum racemosum	Zn-finger, NF-X1 type	2
+G. butleri	Gongronella butleri	Zn-finger, NF-X1 type	1
+M. alpina	Mortierella alpina	Zn-finger, NF-X1 type	1
+M. elongata	Mortierella elongata	Zn-finger, NF-X1 type	4
+P. epigama	Podila epigama	Zn-finger, NF-X1 type	0
+R. irregularis	Rhizophagus irregularis	Zn-finger, NF-X1 type	17
+G. margarita	Gigaspora margarita	Zn-finger, NF-X1 type	0
+G. pyriformis	Geosiphon pyriformis	Zn-finger, NF-X1 type	0
+B. meristosporus	Basidiobolus meristosporus	Zn-finger, NF-X1 type	0
+C. coronatus	Conidiobolus coronatus	Zn-finger, NF-X1 type	1
+E. maimaiga	Entomophaga maimaiga	Zn-finger, NF-X1 type	0
+Z. radicans	Zoophthora radicans	Zn-finger, NF-X1 type	1
+C. reversa	Coemansia reversa	Zn-finger, NF-X1 type	1
+K. alabastrina	Kickxella alabastrina	Zn-finger, NF-X1 type	0
+L. pennispora	Linderina pennispora	Zn-finger, NF-X1 type	1
+S. fuscata	Synchephalis fuscata	Zn-finger, NF-X1 type	0
+P. cylindrospora	Piptocephalis cylindrospora	Zn-finger, NF-X1 type	0
+O. bornovanus	Olpidium bornovanus	Zn-finger, NF-X1 type	0
+G. prolifera	Gonapodya prolifera	Zn-finger, NF-X1 type	3
+Orpinomyces	Orpinomyces	Zn-finger, NF-X1 type	2
+A. robustus	Anaeromyces robustus	Zn-finger, NF-X1 type	2
+P. finnis	Piromyces finnis	Zn-finger, NF-X1 type	2
+C. anguillulae	Catenaria anguillulae	Zn-finger, NF-X1 type	1
+A. macrogynus	Allomyces macrogynus	Zn-finger, NF-X1 type	4
+S. punctatus	Spizellomyces punctatus	Zn-finger, NF-X1 type	2
+B. dendrobatidis	Batrachochytrium dendrobatidis	Zn-finger, NF-X1 type	1
+C. protostelioides	Caulochytrium protostelioides	Zn-finger, NF-X1 type	1
+E. helioformis	Entophlyctis helioformis	Zn-finger, NF-X1 type	2
+G. variabilis	Geranomyces variabilis	Zn-finger, NF-X1 type	0
+P. aggregatum	Polychytrium aggregatum	Zn-finger, NF-X1 type	0
+T. arcticum	Ttriparticalar arcticum	Zn-finger, NF-X1 type	1
+R. allomyces	Rozella allomycis	Zn-finger, NF-X1 type	1
+A. locustae	Antonospora locustae	Zn-finger, NF-X1 type	0
+A. gossypii	Ashbya(Eremothecium) gossypii	CP2	0
+A. nidulans	Aspergillus nidulans	CP2	1
+B. cinerea	Botrytis cinerea	CP2	1
+C. albicans	Candida albicans	CP2	0
+C. immitis	Coccidioides immitis	CP2	1
+C. militaris	Cordyceps militaris	CP2	1
+F. fujikuroi	Fusarium fujikuroi	CP2	1
+K. lactis	Kluyveromyces lactis	CP2	0
+N. crassa	Neurospora crassa	CP2	1
+S. cerevisiae	Saccharomyces cerevisiae	CP2	0
+S. pombe	Schizosaccharomyces pombe	CP2	0
+A. muscaria	Amanita muscaria	CP2	0
+C. cinerea	Coprinopsis cinerea	CP2	0
+C. neoformans	Cryptococcus neoformans	CP2	0
+M. sympodialis	Malasseizia sympodialis	CP2	0
+P. striiformis	Puccinia striiformis	CP2	0
+S. brevipes	Suillus brevipes	CP2	0
+T. mesenterica	Tremella mesenterica	CP2	0
+U. maydis	Ustilago maydis	CP2	0
+M. lusitanicus	Mucor lusitanicus	CP2	3
+P. blakesleeanus	Phycomyces blakesleeanus	CP2	1
+R. microsporus	Rhizopus microsporus	CP2	3
+L. corymbifera	Lichtheimia corymbifera	CP2	8
+A. repens	Absidia repens	CP2	4
+B. trispora	Blakeslea trispora	CP2	3
+S. vasiformis	Saksenea vasiformis	CP2	4
+H. vesiculosa	Hesseltinella vesiculosa	CP2	3
+P. umbonatus	Pilobolus umbonatus	CP2	4
+S. umbellata	Sporodiniella umbellata	CP2	5
+S. racemosum	Syncephalastrum racemosum	CP2	4
+G. butleri	Gongronella butleri	CP2	3
+M. alpina	Mortierella alpina	CP2	2
+M. elongata	Mortierella elongata	CP2	2
+P. epigama	Podila epigama	CP2	1
+R. irregularis	Rhizophagus irregularis	CP2	2
+G. margarita	Gigaspora margarita	CP2	2
+G. pyriformis	Geosiphon pyriformis	CP2	1
+B. meristosporus	Basidiobolus meristosporus	CP2	4
+C. coronatus	Conidiobolus coronatus	CP2	1
+E. maimaiga	Entomophaga maimaiga	CP2	1
+Z. radicans	Zoophthora radicans	CP2	2
+C. reversa	Coemansia reversa	CP2	1
+K. alabastrina	Kickxella alabastrina	CP2	1
+L. pennispora	Linderina pennispora	CP2	1
+S. fuscata	Synchephalis fuscata	CP2	1
+P. cylindrospora	Piptocephalis cylindrospora	CP2	0
+O. bornovanus	Olpidium bornovanus	CP2	0
+G. prolifera	Gonapodya prolifera	CP2	0
+Orpinomyces	Orpinomyces	CP2	0
+A. robustus	Anaeromyces robustus	CP2	0
+P. finnis	Piromyces finnis	CP2	0
+C. anguillulae	Catenaria anguillulae	CP2	0
+A. macrogynus	Allomyces macrogynus	CP2	0
+S. punctatus	Spizellomyces punctatus	CP2	0
+B. dendrobatidis	Batrachochytrium dendrobatidis	CP2	0
+C. protostelioides	Caulochytrium protostelioides	CP2	0
+E. helioformis	Entophlyctis helioformis	CP2	0
+G. variabilis	Geranomyces variabilis	CP2	0
+P. aggregatum	Polychytrium aggregatum	CP2	0
+T. arcticum	Ttriparticalar arcticum	CP2	0
+R. allomyces	Rozella allomycis	CP2	0
+A. locustae	Antonospora locustae	CP2	0
+A. gossypii	Ashbya(Eremothecium) gossypii	HMG-Box	8
+A. nidulans	Aspergillus nidulans	HMG-Box	11
+B. cinerea	Botrytis cinerea	HMG-Box	11
+C. albicans	Candida albicans	HMG-Box	4
+C. immitis	Coccidioides immitis	HMG-Box	11
+C. militaris	Cordyceps militaris	HMG-Box	11
+F. fujikuroi	Fusarium fujikuroi	HMG-Box	9
+K. lactis	Kluyveromyces lactis	HMG-Box	8
+N. crassa	Neurospora crassa	HMG-Box	20
+S. cerevisiae	Saccharomyces cerevisiae	HMG-Box	42
+S. pombe	Schizosaccharomyces pombe	HMG-Box	10
+A. muscaria	Amanita muscaria	HMG-Box	22
+C. cinerea	Coprinopsis cinerea	HMG-Box	29
+C. neoformans	Cryptococcus neoformans	HMG-Box	7
+M. sympodialis	Malasseizia sympodialis	HMG-Box	2
+P. striiformis	Puccinia striiformis	HMG-Box	8
+S. brevipes	Suillus brevipes	HMG-Box	22
+T. mesenterica	Tremella mesenterica	HMG-Box	8
+U. maydis	Ustilago maydis	HMG-Box	8
+M. lusitanicus	Mucor lusitanicus	HMG-Box	25
+P. blakesleeanus	Phycomyces blakesleeanus	HMG-Box	28
+R. microsporus	Rhizopus microsporus	HMG-Box	21
+L. corymbifera	Lichtheimia corymbifera	HMG-Box	29
+A. repens	Absidia repens	HMG-Box	25
+B. trispora	Blakeslea trispora	HMG-Box	21
+S. vasiformis	Saksenea vasiformis	HMG-Box	14
+H. vesiculosa	Hesseltinella vesiculosa	HMG-Box	13
+P. umbonatus	Pilobolus umbonatus	HMG-Box	18
+S. umbellata	Sporodiniella umbellata	HMG-Box	28
+S. racemosum	Syncephalastrum racemosum	HMG-Box	24
+G. butleri	Gongronella butleri	HMG-Box	16
+M. alpina	Mortierella alpina	HMG-Box	16
+M. elongata	Mortierella elongata	HMG-Box	13
+P. epigama	Podila epigama	HMG-Box	12
+R. irregularis	Rhizophagus irregularis	HMG-Box	192
+G. margarita	Gigaspora margarita	HMG-Box	179
+G. pyriformis	Geosiphon pyriformis	HMG-Box	103
+B. meristosporus	Basidiobolus meristosporus	HMG-Box	36
+C. coronatus	Conidiobolus coronatus	HMG-Box	6
+E. maimaiga	Entomophaga maimaiga	HMG-Box	31
+Z. radicans	Zoophthora radicans	HMG-Box	32
+C. reversa	Coemansia reversa	HMG-Box	9
+K. alabastrina	Kickxella alabastrina	HMG-Box	23
+L. pennispora	Linderina pennispora	HMG-Box	21
+S. fuscata	Synchephalis fuscata	HMG-Box	10
+P. cylindrospora	Piptocephalis cylindrospora	HMG-Box	7
+O. bornovanus	Olpidium bornovanus	HMG-Box	8
+G. prolifera	Gonapodya prolifera	HMG-Box	20
+Orpinomyces	Orpinomyces	HMG-Box	20
+A. robustus	Anaeromyces robustus	HMG-Box	8
+P. finnis	Piromyces finnis	HMG-Box	11
+C. anguillulae	Catenaria anguillulae	HMG-Box	8
+A. macrogynus	Allomyces macrogynus	HMG-Box	21
+S. punctatus	Spizellomyces punctatus	HMG-Box	12
+B. dendrobatidis	Batrachochytrium dendrobatidis	HMG-Box	7
+C. protostelioides	Caulochytrium protostelioides	HMG-Box	9
+E. helioformis	Entophlyctis helioformis	HMG-Box	8
+G. variabilis	Geranomyces variabilis	HMG-Box	10
+P. aggregatum	Polychytrium aggregatum	HMG-Box	0
+T. arcticum	Ttriparticalar arcticum	HMG-Box	9
+R. allomyces	Rozella allomycis	HMG-Box	5
+A. locustae	Antonospora locustae	HMG-Box	1
+A. gossypii	Ashbya(Eremothecium) gossypii	NDT80/PhoG	1
+A. nidulans	Aspergillus nidulans	NDT80/PhoG	2
+B. cinerea	Botrytis cinerea	NDT80/PhoG	3
+C. albicans	Candida albicans	NDT80/PhoG	3
+C. immitis	Coccidioides immitis	NDT80/PhoG	2
+C. militaris	Cordyceps militaris	NDT80/PhoG	3
+F. fujikuroi	Fusarium fujikuroi	NDT80/PhoG	3
+K. lactis	Kluyveromyces lactis	NDT80/PhoG	1
+N. crassa	Neurospora crassa	NDT80/PhoG	20
+S. cerevisiae	Saccharomyces cerevisiae	NDT80/PhoG	23
+S. pombe	Schizosaccharomyces pombe	NDT80/PhoG	0
+A. muscaria	Amanita muscaria	NDT80/PhoG	0
+C. cinerea	Coprinopsis cinerea	NDT80/PhoG	0
+C. neoformans	Cryptococcus neoformans	NDT80/PhoG	0
+M. sympodialis	Malasseizia sympodialis	NDT80/PhoG	0
+P. striiformis	Puccinia striiformis	NDT80/PhoG	0
+S. brevipes	Suillus brevipes	NDT80/PhoG	0
+T. mesenterica	Tremella mesenterica	NDT80/PhoG	0
+U. maydis	Ustilago maydis	NDT80/PhoG	1
+M. lusitanicus	Mucor lusitanicus	NDT80/PhoG	6
+P. blakesleeanus	Phycomyces blakesleeanus	NDT80/PhoG	4
+R. microsporus	Rhizopus microsporus	NDT80/PhoG	6
+L. corymbifera	Lichtheimia corymbifera	NDT80/PhoG	7
+A. repens	Absidia repens	NDT80/PhoG	7
+B. trispora	Blakeslea trispora	NDT80/PhoG	6
+S. vasiformis	Saksenea vasiformis	NDT80/PhoG	4
+H. vesiculosa	Hesseltinella vesiculosa	NDT80/PhoG	5
+P. umbonatus	Pilobolus umbonatus	NDT80/PhoG	6
+S. umbellata	Sporodiniella umbellata	NDT80/PhoG	7
+S. racemosum	Syncephalastrum racemosum	NDT80/PhoG	6
+G. butleri	Gongronella butleri	NDT80/PhoG	5
+M. alpina	Mortierella alpina	NDT80/PhoG	3
+M. elongata	Mortierella elongata	NDT80/PhoG	3
+P. epigama	Podila epigama	NDT80/PhoG	2
+R. irregularis	Rhizophagus irregularis	NDT80/PhoG	2
+G. margarita	Gigaspora margarita	NDT80/PhoG	8
+G. pyriformis	Geosiphon pyriformis	NDT80/PhoG	2
+B. meristosporus	Basidiobolus meristosporus	NDT80/PhoG	3
+C. coronatus	Conidiobolus coronatus	NDT80/PhoG	1
+E. maimaiga	Entomophaga maimaiga	NDT80/PhoG	1
+Z. radicans	Zoophthora radicans	NDT80/PhoG	1
+C. reversa	Coemansia reversa	NDT80/PhoG	1
+K. alabastrina	Kickxella alabastrina	NDT80/PhoG	1
+L. pennispora	Linderina pennispora	NDT80/PhoG	1
+S. fuscata	Synchephalis fuscata	NDT80/PhoG	1
+P. cylindrospora	Piptocephalis cylindrospora	NDT80/PhoG	1
+O. bornovanus	Olpidium bornovanus	NDT80/PhoG	1
+G. prolifera	Gonapodya prolifera	NDT80/PhoG	0
+Orpinomyces	Orpinomyces	NDT80/PhoG	2
+A. robustus	Anaeromyces robustus	NDT80/PhoG	4
+P. finnis	Piromyces finnis	NDT80/PhoG	4
+C. anguillulae	Catenaria anguillulae	NDT80/PhoG	4
+A. macrogynus	Allomyces macrogynus	NDT80/PhoG	2
+S. punctatus	Spizellomyces punctatus	NDT80/PhoG	2
+B. dendrobatidis	Batrachochytrium dendrobatidis	NDT80/PhoG	1
+C. protostelioides	Caulochytrium protostelioides	NDT80/PhoG	2
+E. helioformis	Entophlyctis helioformis	NDT80/PhoG	2
+G. variabilis	Geranomyces variabilis	NDT80/PhoG	2
+P. aggregatum	Polychytrium aggregatum	NDT80/PhoG	2
+T. arcticum	Ttriparticalar arcticum	NDT80/PhoG	1
+R. allomyces	Rozella allomycis	NDT80/PhoG	0
+A. locustae	Antonospora locustae	NDT80/PhoG	0
+A. gossypii	Ashbya(Eremothecium) gossypii	STE-like	1
+A. nidulans	Aspergillus nidulans	STE-like	1
+B. cinerea	Botrytis cinerea	STE-like	1
+C. albicans	Candida albicans	STE-like	1
+C. immitis	Coccidioides immitis	STE-like	1
+C. militaris	Cordyceps militaris	STE-like	1
+F. fujikuroi	Fusarium fujikuroi	STE-like	1
+K. lactis	Kluyveromyces lactis	STE-like	1
+N. crassa	Neurospora crassa	STE-like	1
+S. cerevisiae	Saccharomyces cerevisiae	STE-like	25
+S. pombe	Schizosaccharomyces pombe	STE-like	0
+A. muscaria	Amanita muscaria	STE-like	1
+C. cinerea	Coprinopsis cinerea	STE-like	1
+C. neoformans	Cryptococcus neoformans	STE-like	1
+M. sympodialis	Malasseizia sympodialis	STE-like	0
+P. striiformis	Puccinia striiformis	STE-like	2
+S. brevipes	Suillus brevipes	STE-like	2
+T. mesenterica	Tremella mesenterica	STE-like	1
+U. maydis	Ustilago maydis	STE-like	0
+M. lusitanicus	Mucor lusitanicus	STE-like	7
+P. blakesleeanus	Phycomyces blakesleeanus	STE-like	3
+R. microsporus	Rhizopus microsporus	STE-like	2
+L. corymbifera	Lichtheimia corymbifera	STE-like	4
+A. repens	Absidia repens	STE-like	5
+B. trispora	Blakeslea trispora	STE-like	3
+S. vasiformis	Saksenea vasiformis	STE-like	2
+H. vesiculosa	Hesseltinella vesiculosa	STE-like	3
+P. umbonatus	Pilobolus umbonatus	STE-like	2
+S. umbellata	Sporodiniella umbellata	STE-like	4
+S. racemosum	Syncephalastrum racemosum	STE-like	3
+G. butleri	Gongronella butleri	STE-like	3
+M. alpina	Mortierella alpina	STE-like	1
+M. elongata	Mortierella elongata	STE-like	1
+P. epigama	Podila epigama	STE-like	1
+R. irregularis	Rhizophagus irregularis	STE-like	1
+G. margarita	Gigaspora margarita	STE-like	2
+G. pyriformis	Geosiphon pyriformis	STE-like	1
+B. meristosporus	Basidiobolus meristosporus	STE-like	4
+C. coronatus	Conidiobolus coronatus	STE-like	3
+E. maimaiga	Entomophaga maimaiga	STE-like	3
+Z. radicans	Zoophthora radicans	STE-like	3
+C. reversa	Coemansia reversa	STE-like	3
+K. alabastrina	Kickxella alabastrina	STE-like	1
+L. pennispora	Linderina pennispora	STE-like	1
+S. fuscata	Synchephalis fuscata	STE-like	1
+P. cylindrospora	Piptocephalis cylindrospora	STE-like	0
+O. bornovanus	Olpidium bornovanus	STE-like	1
+G. prolifera	Gonapodya prolifera	STE-like	0
+Orpinomyces	Orpinomyces	STE-like	3
+A. robustus	Anaeromyces robustus	STE-like	2
+P. finnis	Piromyces finnis	STE-like	2
+C. anguillulae	Catenaria anguillulae	STE-like	1
+A. macrogynus	Allomyces macrogynus	STE-like	2
+S. punctatus	Spizellomyces punctatus	STE-like	1
+B. dendrobatidis	Batrachochytrium dendrobatidis	STE-like	1
+C. protostelioides	Caulochytrium protostelioides	STE-like	1
+E. helioformis	Entophlyctis helioformis	STE-like	1
+G. variabilis	Geranomyces variabilis	STE-like	1
+P. aggregatum	Polychytrium aggregatum	STE-like	1
+T. arcticum	Ttriparticalar arcticum	STE-like	1
+R. allomyces	Rozella allomycis	STE-like	3
+A. locustae	Antonospora locustae	STE-like	0
+A. gossypii	Ashbya(Eremothecium) gossypii	Myb	18
+A. nidulans	Aspergillus nidulans	Myb	20
+B. cinerea	Botrytis cinerea	Myb	33
+C. albicans	Candida albicans	Myb	12
+C. immitis	Coccidioides immitis	Myb	17
+C. militaris	Cordyceps militaris	Myb	38
+F. fujikuroi	Fusarium fujikuroi	Myb	20
+K. lactis	Kluyveromyces lactis	Myb	17
+N. crassa	Neurospora crassa	Myb	119
+S. cerevisiae	Saccharomyces cerevisiae	Myb	59
+S. pombe	Schizosaccharomyces pombe	Myb	15
+A. muscaria	Amanita muscaria	Myb	26
+C. cinerea	Coprinopsis cinerea	Myb	39
+C. neoformans	Cryptococcus neoformans	Myb	24
+M. sympodialis	Malasseizia sympodialis	Myb	0
+P. striiformis	Puccinia striiformis	Myb	0
+S. brevipes	Suillus brevipes	Myb	27
+T. mesenterica	Tremella mesenterica	Myb	1
+U. maydis	Ustilago maydis	Myb	12
+M. lusitanicus	Mucor lusitanicus	Myb	29
+P. blakesleeanus	Phycomyces blakesleeanus	Myb	46
+R. microsporus	Rhizopus microsporus	Myb	31
+L. corymbifera	Lichtheimia corymbifera	Myb	27
+A. repens	Absidia repens	Myb	49
+B. trispora	Blakeslea trispora	Myb	35
+S. vasiformis	Saksenea vasiformis	Myb	32
+H. vesiculosa	Hesseltinella vesiculosa	Myb	31
+P. umbonatus	Pilobolus umbonatus	Myb	34
+S. umbellata	Sporodiniella umbellata	Myb	43
+S. racemosum	Syncephalastrum racemosum	Myb	25
+G. butleri	Gongronella butleri	Myb	30
+M. alpina	Mortierella alpina	Myb	38
+M. elongata	Mortierella elongata	Myb	38
+P. epigama	Podila epigama	Myb	40
+R. irregularis	Rhizophagus irregularis	Myb	83
+G. margarita	Gigaspora margarita	Myb	80
+G. pyriformis	Geosiphon pyriformis	Myb	123
+B. meristosporus	Basidiobolus meristosporus	Myb	46
+C. coronatus	Conidiobolus coronatus	Myb	19
+E. maimaiga	Entomophaga maimaiga	Myb	150
+Z. radicans	Zoophthora radicans	Myb	36
+C. reversa	Coemansia reversa	Myb	22
+K. alabastrina	Kickxella alabastrina	Myb	21
+L. pennispora	Linderina pennispora	Myb	21
+S. fuscata	Synchephalis fuscata	Myb	12
+P. cylindrospora	Piptocephalis cylindrospora	Myb	7
+O. bornovanus	Olpidium bornovanus	Myb	7
+G. prolifera	Gonapodya prolifera	Myb	13
+Orpinomyces	Orpinomyces	Myb	45
+A. robustus	Anaeromyces robustus	Myb	22
+P. finnis	Piromyces finnis	Myb	20
+C. anguillulae	Catenaria anguillulae	Myb	9
+A. macrogynus	Allomyces macrogynus	Myb	26
+S. punctatus	Spizellomyces punctatus	Myb	21
+B. dendrobatidis	Batrachochytrium dendrobatidis	Myb	16
+C. protostelioides	Caulochytrium protostelioides	Myb	7
+E. helioformis	Entophlyctis helioformis	Myb	14
+G. variabilis	Geranomyces variabilis	Myb	15
+P. aggregatum	Polychytrium aggregatum	Myb	13
+T. arcticum	Ttriparticalar arcticum	Myb	17
+R. allomyces	Rozella allomycis	Myb	11
+A. locustae	Antonospora locustae	Myb	10
+A. gossypii	Ashbya(Eremothecium) gossypii	Zn finger, PHD-type	14
+A. nidulans	Aspergillus nidulans	Zn finger, PHD-type	28
+B. cinerea	Botrytis cinerea	Zn finger, PHD-type	32
+C. albicans	Candida albicans	Zn finger, PHD-type	16
+C. immitis	Coccidioides immitis	Zn finger, PHD-type	25
+C. militaris	Cordyceps militaris	Zn finger, PHD-type	27
+F. fujikuroi	Fusarium fujikuroi	Zn finger, PHD-type	28
+K. lactis	Kluyveromyces lactis	Zn finger, PHD-type	13
+N. crassa	Neurospora crassa	Zn finger, PHD-type	31
+S. cerevisiae	Saccharomyces cerevisiae	Zn finger, PHD-type	46
+S. pombe	Schizosaccharomyces pombe	Zn finger, PHD-type	22
+A. muscaria	Amanita muscaria	Zn finger, PHD-type	30
+C. cinerea	Coprinopsis cinerea	Zn finger, PHD-type	48
+C. neoformans	Cryptococcus neoformans	Zn finger, PHD-type	37
+M. sympodialis	Malasseizia sympodialis	Zn finger, PHD-type	14
+P. striiformis	Puccinia striiformis	Zn finger, PHD-type	21
+S. brevipes	Suillus brevipes	Zn finger, PHD-type	33
+T. mesenterica	Tremella mesenterica	Zn finger, PHD-type	31
+U. maydis	Ustilago maydis	Zn finger, PHD-type	18
+M. lusitanicus	Mucor lusitanicus	Zn finger, PHD-type	36
+P. blakesleeanus	Phycomyces blakesleeanus	Zn finger, PHD-type	40
+R. microsporus	Rhizopus microsporus	Zn finger, PHD-type	30
+L. corymbifera	Lichtheimia corymbifera	Zn finger, PHD-type	37
+A. repens	Absidia repens	Zn finger, PHD-type	32
+B. trispora	Blakeslea trispora	Zn finger, PHD-type	28
+S. vasiformis	Saksenea vasiformis	Zn finger, PHD-type	32
+H. vesiculosa	Hesseltinella vesiculosa	Zn finger, PHD-type	25
+P. umbonatus	Pilobolus umbonatus	Zn finger, PHD-type	32
+S. umbellata	Sporodiniella umbellata	Zn finger, PHD-type	33
+S. racemosum	Syncephalastrum racemosum	Zn finger, PHD-type	30
+G. butleri	Gongronella butleri	Zn finger, PHD-type	28
+M. alpina	Mortierella alpina	Zn finger, PHD-type	34
+M. elongata	Mortierella elongata	Zn finger, PHD-type	23
+P. epigama	Podila epigama	Zn finger, PHD-type	20
+R. irregularis	Rhizophagus irregularis	Zn finger, PHD-type	22
+G. margarita	Gigaspora margarita	Zn finger, PHD-type	29
+G. pyriformis	Geosiphon pyriformis	Zn finger, PHD-type	20
+B. meristosporus	Basidiobolus meristosporus	Zn finger, PHD-type	24
+C. coronatus	Conidiobolus coronatus	Zn finger, PHD-type	26
+E. maimaiga	Entomophaga maimaiga	Zn finger, PHD-type	24
+Z. radicans	Zoophthora radicans	Zn finger, PHD-type	22
+C. reversa	Coemansia reversa	Zn finger, PHD-type	24
+K. alabastrina	Kickxella alabastrina	Zn finger, PHD-type	14
+L. pennispora	Linderina pennispora	Zn finger, PHD-type	15
+S. fuscata	Synchephalis fuscata	Zn finger, PHD-type	14
+P. cylindrospora	Piptocephalis cylindrospora	Zn finger, PHD-type	10
+O. bornovanus	Olpidium bornovanus	Zn finger, PHD-type	3
+G. prolifera	Gonapodya prolifera	Zn finger, PHD-type	19
+Orpinomyces	Orpinomyces	Zn finger, PHD-type	27
+A. robustus	Anaeromyces robustus	Zn finger, PHD-type	18
+P. finnis	Piromyces finnis	Zn finger, PHD-type	16
+C. anguillulae	Catenaria anguillulae	Zn finger, PHD-type	16
+A. macrogynus	Allomyces macrogynus	Zn finger, PHD-type	31
+S. punctatus	Spizellomyces punctatus	Zn finger, PHD-type	31
+B. dendrobatidis	Batrachochytrium dendrobatidis	Zn finger, PHD-type	11
+C. protostelioides	Caulochytrium protostelioides	Zn finger, PHD-type	15
+E. helioformis	Entophlyctis helioformis	Zn finger, PHD-type	18
+G. variabilis	Geranomyces variabilis	Zn finger, PHD-type	28
+P. aggregatum	Polychytrium aggregatum	Zn finger, PHD-type	17
+T. arcticum	Ttriparticalar arcticum	Zn finger, PHD-type	22
+R. allomyces	Rozella allomycis	Zn finger, PHD-type	9
+A. locustae	Antonospora locustae	Zn finger, PHD-type	5
