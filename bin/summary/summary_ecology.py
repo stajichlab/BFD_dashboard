@@ -35,9 +35,22 @@ def permute_within(labels: np.ndarray, strata: np.ndarray, rng: np.random.Genera
     return out
 
 
+def _log10_unique(lab: np.ndarray, strata) -> float:
+    """log10 of the number of distinct label assignments: n!/prod(count!) inside each stratum (the whole set if none),
+    summed over strata as a product."""
+    from math import lgamma, log
+    parts = [lab] if strata is None else [lab[strata == s] for s in np.unique(strata)]
+    total = 0.0
+    for part in parts:
+        _, counts = np.unique(part, return_counts=True)
+        total += lgamma(len(part) + 1) - sum(lgamma(c + 1) for c in counts)
+    return total / log(10)
+
+
 def _na(n, k, caveat, n_strata=0, n_drop=0):
     return {"F": np.nan, "R2": np.nan, "R2_adj": np.nan, "p": np.nan, "n": int(n), "n_groups": int(k),
-            "n_strata_used": int(n_strata), "n_dropped_no_stratum": int(n_drop), "n_permutations_run": 0, "caveat": caveat}
+            "n_strata_used": int(n_strata), "n_dropped_no_stratum": int(n_drop), "n_permutations_run": 0,
+            "n_unique_permutations_log10": 0.0, "caveat": caveat}
 
 
 def stratified_permanova(dist: pd.DataFrame, groups: pd.Series, strata: pd.Series | None = None,
@@ -68,6 +81,9 @@ def stratified_permanova(dist: pd.DataFrame, groups: pd.Series, strata: pd.Serie
             return _na(n, k, "not tested: fewer than 2 strata with at least 2 genera", n_used, n_drop)
     d = dist.loc[keep, keep].to_numpy()
     f = float(so.lib_ordination._pseudo_f(d, lab))
+    if not np.isfinite(f):
+        return _na(n, k, "not tested: pseudo-F is not finite (no within-group variation)", n_used, n_drop)
+    log_u = _log10_unique(lab, sv)
     rng = np.random.default_rng(seed)
     ge = 0
     for _ in range(n_permutations):
@@ -77,10 +93,10 @@ def stratified_permanova(dist: pd.DataFrame, groups: pd.Series, strata: pd.Serie
     p = (1 + ge) / (1 + n_permutations)
     r2 = f * (k - 1) / (f * (k - 1) + (n - k)) if np.isfinite(f) and n > k else np.nan
     caveat = ""
-    if np.isinf(f):
-        caveat = "pseudo-F is infinite: no within-group variation"
+    if log_u <= np.log10(n_permutations) + 1e-9:
+        caveat = f"only about {10 ** log_u:.0f} distinct label permutations exist; p is coarse, {n_permutations} draws overstate precision"
     return {"F": f, "R2": float(r2), "R2_adj": so._r2_adj(r2, n, k), "p": float(p), "n": n, "n_groups": k,
-            "n_strata_used": n_used, "n_dropped_no_stratum": n_drop, "n_permutations_run": n_permutations, "caveat": caveat}
+            "n_strata_used": n_used, "n_dropped_no_stratum": n_drop, "n_permutations_run": n_permutations, "n_unique_permutations_log10": float(log_u), "caveat": caveat}
 
 
 def bh_adjust(p: pd.Series) -> pd.Series:
@@ -223,7 +239,7 @@ def _test_rows(name, trait, dist, labels, strata, min_group):
         r = stratified_permanova(dist, lab, st)
         rows.append({"matrix": name, "trait": trait, "test": test, "n_genera": r["n"], "n_groups": r["n_groups"],
                      "n_dropped_rare_group": int(rare.sum()), "n_dropped_no_stratum": r["n_dropped_no_stratum"],
-                     "n_strata_used": r["n_strata_used"], "pseudo_F": r["F"], "R2": r["R2"], "R2_adj": r["R2_adj"],
+                     "n_strata_used": r["n_strata_used"], "n_unique_permutations_log10": r["n_unique_permutations_log10"], "pseudo_F": r["F"], "R2": r["R2"], "R2_adj": r["R2_adj"],
                      "p_value": r["p"], "caveat": r["caveat"]})
     return rows
 
@@ -271,7 +287,7 @@ def run_global(reps: pd.DataFrame, mats: dict, traits: pd.DataFrame, out: Path, 
             safe(o, stem, TOPIC, lambda lab=lab, col=col, title=title, coords=coords, pct=pct:
                  scatter_labels(coords, lab.rename(col), palettes[col], pct, title))
     o.table(pd.DataFrame(rows, columns=["matrix", "trait", "test", "n_genera", "n_groups", "n_dropped_rare_group",
-                                        "n_dropped_no_stratum", "n_strata_used", "pseudo_F", "R2", "R2_adj", "p_value", "caveat"]),
+                                        "n_dropped_no_stratum", "n_strata_used", "n_unique_permutations_log10", "pseudo_F", "R2", "R2_adj", "p_value", "caveat"]),
             "ecology_permanova_global")
     print(f"ecology global: {len(coords_by)} matrices, {len(o.made)} outputs", flush=True)
     return coords_by
@@ -291,7 +307,7 @@ def clade_matrix(name: str, table: pd.DataFrame, reps: pd.DataFrame) -> pd.DataF
 
 
 CLADE_COLUMNS = ["level", "clade", "matrix", "test", "n_genera", "n_labeled", "n_groups", "n_dropped_rare_group",
-                 "n_dropped_no_stratum", "n_strata_used", "pseudo_F", "R2", "R2_adj", "p_value", "q_BH", "caveat"]
+                 "n_dropped_no_stratum", "n_strata_used", "n_unique_permutations_log10", "pseudo_F", "R2", "R2_adj", "p_value", "q_BH", "caveat"]
 
 
 def run_clades(reps: pd.DataFrame, mats: dict, traits: pd.DataFrame, clades: list, skipped: pd.DataFrame,
@@ -333,7 +349,7 @@ def run_clades(reps: pd.DataFrame, mats: dict, traits: pd.DataFrame, clades: lis
                 rows.append({"level": c.level, "clade": c.name, "matrix": name, "test": test, "n_genera": r["n"],
                              "n_labeled": n_lab, "n_groups": r["n_groups"], "n_dropped_rare_group": int(rare.sum()),
                              "n_dropped_no_stratum": r["n_dropped_no_stratum"], "n_strata_used": r["n_strata_used"],
-                             "pseudo_F": r["F"], "R2": r["R2"], "R2_adj": r["R2_adj"], "p_value": r["p"], "q_BH": np.nan,
+                             "n_unique_permutations_log10": r["n_unique_permutations_log10"], "pseudo_F": r["F"], "R2": r["R2"], "R2_adj": r["R2_adj"], "p_value": r["p"], "q_BH": np.nan,
                              "caveat": r["caveat"]})
             pooled = pool_groups(lab, min_group)
             pal = lifestyle_palette([g for g in pooled.dropna().unique() if not str(g).startswith("other (")])

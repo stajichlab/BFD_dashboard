@@ -201,7 +201,7 @@ def test_global_permanova_has_both_tests(tmp_path):
     se.run_global(reps, {"codon": codon}, traits, tmp_path)
     t = pd.read_csv(tmp_path / "tables" / "ecology" / "ecology_permanova_global.tsv", sep="\t")
     assert list(t.columns) == ["matrix", "trait", "test", "n_genera", "n_groups", "n_dropped_rare_group", "n_dropped_no_stratum",
-                               "n_strata_used", "pseudo_F", "R2", "R2_adj", "p_value", "caveat"]
+                               "n_strata_used", "n_unique_permutations_log10", "pseudo_F", "R2", "R2_adj", "p_value", "caveat"]
     life = t[t["trait"] == "primary_lifestyle"]
     assert set(life["test"]) == {"unrestricted", "within_order"}
     assert (life["n_genera"] == 34).all()
@@ -291,7 +291,7 @@ def test_clade_with_separated_lifestyles_is_significant(tmp_path):
     assert u["p_value"] < 0.01 and u["q_BH"] >= u["p_value"]
     assert set(t["test"]) == {"unrestricted", "stratified"}
     assert list(t.columns) == ["level", "clade", "matrix", "test", "n_genera", "n_labeled", "n_groups", "n_dropped_rare_group",
-                               "n_dropped_no_stratum", "n_strata_used", "pseudo_F", "R2", "R2_adj", "p_value", "q_BH", "caveat"]
+                               "n_dropped_no_stratum", "n_strata_used", "n_unique_permutations_log10", "pseudo_F", "R2", "R2_adj", "p_value", "q_BH", "caveat"]
 
 
 def test_confounded_clade_stratified_p_is_one(tmp_path):
@@ -406,3 +406,29 @@ def test_page_mentions_every_output_table():
     txt = (REPO / "docs" / "quarto_summary" / "17_ecology.qmd").read_text()
     for n in se.GLOBAL_TABLES + se.CLADE_TABLES:
         assert n in txt, n
+
+
+# ---- final-review fixes ----
+def test_few_unique_permutations_carry_a_caveat():
+    d = two_cluster_dist(6)
+    groups = pd.Series(["x", "x", "x", "y", "y", "y"], index=d.index)
+    r = se.stratified_permanova(d, groups)
+    assert r["n_unique_permutations_log10"] == pytest.approx(np.log10(20))
+    assert "distinct" in r["caveat"]
+    strata = pd.Series(["a", "a", "b", "b", "c", "c"], index=d.index)
+    g2 = pd.Series(["x", "y", "x", "y", "x", "y"], index=d.index)
+    r2 = se.stratified_permanova(d, g2, strata=strata)
+    assert r2["n_unique_permutations_log10"] == pytest.approx(np.log10(8)) and "distinct" in r2["caveat"]
+
+
+def test_many_unique_permutations_no_caveat():
+    d = two_cluster_dist()
+    groups = pd.Series(["x"] * 20 + ["y"] * 20, index=d.index)
+    r = se.stratified_permanova(d, groups)
+    assert r["caveat"] == "" and r["n_unique_permutations_log10"] > 3
+
+
+def test_infinite_pseudo_f_gives_na_p():
+    d = pd.DataFrame(np.array([[0, 0, 1, 1], [0, 0, 1, 1], [1, 1, 0, 0], [1, 1, 0, 0]], float), index=list("abcd"), columns=list("abcd"))
+    r = se.stratified_permanova(d, pd.Series(["x", "x", "y", "y"], index=d.index))
+    assert np.isnan(r["p"]) and "not finite" in r["caveat"]
