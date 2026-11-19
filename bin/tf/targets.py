@@ -25,6 +25,10 @@ from stats import bh_adjust  # noqa: E402
 
 BFD_GENOME = "FBF4BF29"
 MIN_TARGETS = 20
+HI_ORDERS = 100          # "widely conserved" cut for the fraction columns and the figure
+N_BINS = 5               # protein-length strata
+MIN_STRATUM = 5          # targets needed in a stratum to report its own effect
+MAX_SEQS = 3000
 MIN_COV = 0.5
 EVALUE = 1e-5
 RUNS = Path("/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs")
@@ -93,17 +97,20 @@ def extract_fasta(src, ids, dst):
 
 
 def search_genus_reps(query_fasta, db, hits_tsv, tmp, min_cov=MIN_COV, evalue=EVALUE, threads=None,
-                      split_memory_limit="30G", max_seqs=3000, sensitivity=4.0):
+                      split_memory_limit="30G", max_seqs=MAX_SEQS, sensitivity=4.0):
     """MMseqs2 search of query_fasta against the genus-representative database. Query coverage is
     --cov-mode 2. max_seqs caps the hits per query; sensitivity is below the default 5.7 to fit the time limit."""
     exe = jm.need_mmseqs()
     tmp = Path(tmp)
     tmp.mkdir(parents=True, exist_ok=True)
-    cmd = [exe, "easy-search", str(query_fasta), str(db), str(hits_tsv), str(tmp / "mm_tmp"),
+    hits_tsv = Path(hits_tsv)
+    part = hits_tsv.with_name(hits_tsv.name + ".part")     # a killed run leaves .part, never a complete-looking file
+    cmd = [exe, "easy-search", str(query_fasta), str(db), str(part), str(tmp / "mm_tmp"),
            "-e", str(evalue), "-c", str(min_cov), "--cov-mode", "2", "-s", str(sensitivity),
            "--max-seqs", str(max_seqs), "--format-output", "query,target,evalue,qcov,bits",
            "--threads", str(threads or jm.threads_default()), "--split-memory-limit", str(split_memory_limit), "-v", "1"]
     subprocess.run(cmd, check=True)
+    part.replace(hits_tsv)
 
 
 def read_conservation_hits(path):
@@ -151,7 +158,9 @@ def compare_to_background(conservation_df: pd.DataFrame, tf_targets: pd.DataFram
         mapped = sorted(set(g.loc[g["bfd_protein_id"].fillna("") != "", "bfd_protein_id"]))
         vals = cons.reindex(mapped).dropna().to_numpy(float)
         row = {"tf_name": tf, "n_targets_bfd": len(mapped), "median_n_orders": float(np.median(vals)) if len(vals) else np.nan,
-               "background_median_n_orders": float(np.median(bg)), "effect": np.nan, "p": np.nan, "reason": ""}
+               "background_median_n_orders": float(np.median(bg)), "effect": np.nan, "p": np.nan, "reason": "",
+               "frac_n_orders_ge_100": float(np.mean(vals >= HI_ORDERS)) if len(vals) else np.nan,
+               "background_frac_n_orders_ge_100": float(np.mean(bg >= HI_ORDERS))}
         if len(vals) < MIN_TARGETS:
             row["reason"] = f"fewer than {MIN_TARGETS} mapped targets"
         else:
@@ -159,10 +168,115 @@ def compare_to_background(conservation_df: pd.DataFrame, tf_targets: pd.DataFram
             row["effect"] = float(2 * u / (len(vals) * len(bg)) - 1)
             row["p"] = float(p)
         rows.append(row)
-    out = pd.DataFrame(rows, columns=["tf_name", "n_targets_bfd", "median_n_orders", "background_median_n_orders",
-                                      "effect", "p", "reason"])
+    out = pd.DataFrame(rows)
     out["p_adj"] = bh_adjust(out["p"].to_numpy())
-    return out[["tf_name", "n_targets_bfd", "median_n_orders", "background_median_n_orders", "effect", "p", "p_adj", "reason"]]
+    return out[["tf_name", "n_targets_bfd", "median_n_orders", "background_median_n_orders", "effect", "p", "p_adj", "reason",
+                "frac_n_orders_ge_100", "background_frac_n_orders_ge_100"]]
+
+
+def length_bins(lengths, bg_ids, n_bins=N_BINS):
+    """Stratum 1..n_bins of each protein. Edges are the quantiles of the background (all FBF4BF29) lengths."""
+    bg_len = np.asarray([lengths[i] for i in bg_ids], float)
+    edges = np.quantile(bg_len, np.arange(1, n_bins) / n_bins)
+    return lambda ids: np.searchsorted(edges, np.asarray([lengths[i] for i in ids], float), side="right") + 1, edges
+
+
+def _van_elteren(groups):
+    """Stratified Wilcoxon rank-sum (van Elteren). groups: list of (targets, background) value arrays per stratum.
+    Stratum weight 1/(N+1). Returns (z, two-sided p); z > 0 when targets rank higher. Tie-corrected variance."""
+    num = var = 0.0
+    for x, y in groups:
+        n1, n2 = len(x), len(y)
+        if n1 == 0 or n2 == 0:
+            continue
+        N = n1 + n2
+        allv = np.concatenate([x, y])
+        ranks = st.rankdata(allv)
+        w = 1.0 / (N + 1)
+        _, cnt = np.unique(allv, return_counts=True)
+        tie = float(np.sum(cnt ** 3 - cnt)) / (N * (N - 1)) if N > 1 else 0.0
+        v = n1 * n2 / 12.0 * ((N + 1) - tie)
+        num += w * (ranks[:n1].sum() - n1 * (N + 1) / 2.0)
+        var += w * w * v
+    if var <= 0:
+        return np.nan, np.nan
+    z = num / np.sqrt(var)
+    return float(z), float(2 * st.norm.sf(abs(z)))
+
+
+def _weighted_median(values, weights):
+    o = np.argsort(values, kind="stable")
+    v, w = np.asarray(values, float)[o], np.asarray(weights, float)[o]
+    c = np.cumsum(w)
+    return float(v[np.searchsorted(c, 0.5 * c[-1])])
+
+
+def stratified_tests(conservation_df: pd.DataFrame, tf_targets: pd.DataFrame, background_ids, lengths, n_bins=N_BINS):
+    """Length-stratified comparison of each TF's mapped targets with the background (all FBF4BF29 proteins).
+    Strata: quintiles of the background protein length. Per stratum: rank-biserial effect (2U/(n1 n2) - 1), reported
+    when the stratum holds >= 5 targets. Pooled effect_strat = mean of the per-stratum effects over strata with >= 5
+    targets, weighted by the number of targets in the stratum. p_strat = van Elteren stratified rank-sum test (weights
+    1/(N+1)), two-sided. BH over the tested TFs (>= 20 mapped targets). expected_median_n_orders: weighted median of
+    the background where each background protein is weighted by (targets in its stratum / background in its stratum),
+    that is the median expected if the targets had the background's n_orders at their own length profile.
+    Returns (tests, strata): tests has one row per TF; strata has one row per TF and stratum."""
+    cons = conservation_df.set_index("bfd_protein_id")["n_orders"]
+    bg_ids = [i for i in dict.fromkeys(background_ids) if i in cons.index and i in lengths.index]
+    bin_of, edges = length_bins(lengths, bg_ids, n_bins)
+    bg_vals = cons.reindex(bg_ids).to_numpy(float)
+    bg_bin = bin_of(bg_ids)
+    rows, srows = [], []
+    for tf, g in tf_targets.groupby("tf_name", sort=False):
+        mapped = [i for i in sorted(set(g.loc[g["bfd_protein_id"].fillna("") != "", "bfd_protein_id"])) if i in cons.index and i in lengths.index]
+        vals = cons.reindex(mapped).to_numpy(float)
+        tb = bin_of(mapped) if mapped else np.array([], int)
+        row = {"tf_name": tf, "n_targets_bfd": len(mapped), "effect_strat": np.nan, "z_strat": np.nan, "p_strat": np.nan,
+               "expected_median_n_orders": np.nan, "reason": ""}
+        groups, effs, wts = [], [], []
+        for k in range(1, n_bins + 1):
+            x, y = vals[tb == k], bg_vals[bg_bin == k]
+            eff = np.nan
+            if len(x) >= MIN_STRATUM and len(y):
+                u, _ = st.mannwhitneyu(x, y, alternative="two-sided")
+                eff = float(2 * u / (len(x) * len(y)) - 1)
+                effs.append(eff)
+                wts.append(len(x))
+            groups.append((x, y))
+            srows.append({"tf_name": tf, "stratum": k, "length_min": float(edges[k - 2]) if k > 1 else np.nan,
+                          "length_max": float(edges[k - 1]) if k < n_bins else np.nan, "n_targets": int(len(x)),
+                          "n_background": int(len(y)), "median_targets": float(np.median(x)) if len(x) else np.nan,
+                          "median_background": float(np.median(y)) if len(y) else np.nan, "effect": eff})
+        if len(mapped) < MIN_TARGETS:
+            row["reason"] = f"fewer than {MIN_TARGETS} mapped targets"
+        else:
+            if effs:
+                row["effect_strat"] = float(np.average(effs, weights=wts))
+            row["z_strat"], row["p_strat"] = _van_elteren(groups)
+            nt = np.bincount(tb, minlength=n_bins + 1)[1:]
+            nb = np.bincount(bg_bin, minlength=n_bins + 1)[1:]
+            w = (nt / np.maximum(nb, 1))[bg_bin - 1]
+            row["expected_median_n_orders"] = _weighted_median(bg_vals, w)
+        rows.append(row)
+    out = pd.DataFrame(rows)
+    out["p_adj_strat"] = bh_adjust(out["p_strat"].to_numpy())
+    cols = ["tf_name", "n_targets_bfd", "effect_strat", "z_strat", "p_strat", "p_adj_strat", "expected_median_n_orders", "reason"]
+    return out[cols], pd.DataFrame(srows)
+
+
+def fasta_lengths(path) -> pd.Series:
+    """Protein ID -> length from a FASTA (plain or .gz)."""
+    d, pid, n = {}, None, 0
+    with jm._open_text(path) as f:
+        for line in f:
+            if line.startswith(">"):
+                if pid is not None:
+                    d[pid] = n
+                pid, n = line[1:].split()[0], 0
+            else:
+                n += len(line.strip())
+    if pid is not None:
+        d[pid] = n
+    return pd.Series(d, dtype=float)
 
 
 # ---------------------------------------------------------------- profile
@@ -241,37 +355,60 @@ def proteome_paths(genomes_tsv):
 
 
 # ---------------------------------------------------------------- figures
+CAVEAT = ("Hypothesis only. n_orders counts orders with a homology hit (domains, paralogs), not orthologs. Targets overlap "
+          "across TFs, so the tests are not independent. The background (all genes) contains the targets.")
+
+
 def family_colors(families):
     import matplotlib.pyplot as plt
     pal = list(plt.get_cmap("tab20").colors) + list(plt.get_cmap("tab20b").colors)
     return {f: pal[i % len(pal)] for i, f in enumerate(sorted(set(families)))}
 
 
-def _fig_conservation(cons, tests):
+def _fig_conservation(tests, ecdf):
+    """Top: ECDF of n_orders (pooled mapped targets, pooled without Znf1, background). Bottom left: fraction of each TF's
+    targets with n_orders >= 100, dashed line = background fraction. Bottom right: length-stratified effect (filled when
+    BH p < 0.05 on the stratified test). n_orders is bimodal (many proteins with ~0 or ~190 orders), so no boxes."""
     import matplotlib.pyplot as plt
-    from matplotlib.patches import Patch
-    ok = tests[tests["reason"].fillna("") == ""].sort_values("median_n_orders")
+    from matplotlib.lines import Line2D
+    ok = tests[tests["reason"].fillna("") == ""].sort_values("frac_n_orders_ge_100").reset_index(drop=True)
     if ok.empty:
         return None
-    fam = cons.drop_duplicates("tf_name").set_index("tf_name")["tf_family"]
-    cm = family_colors(fam[ok["tf_name"]])
-    fig, ax = plt.subplots(figsize=(10.0, max(4.0, 0.2 * len(ok) + 1.6)))
-    data = [cons.loc[cons["tf_name"] == t, "n_orders"].to_numpy() for t in ok["tf_name"]]
-    bp = ax.boxplot(data, orientation="horizontal", patch_artist=True, widths=0.7, showfliers=False)
-    for patch, t in zip(bp["boxes"], ok["tf_name"]):
-        patch.set_facecolor(cm[fam[t]])
-        patch.set_alpha(0.9)
-    for med in bp["medians"]:
-        med.set_color("black")
-    bgm = float(ok["background_median_n_orders"].iloc[0])
-    ax.axvline(bgm, color="#c0392b", ls="--", lw=1.2)
-    ax.set_yticks(range(1, len(ok) + 1))
-    ax.set_yticklabels([f"{t} (n={n})" for t, n in zip(ok["tf_name"], ok["n_targets_bfd"])], fontsize=6)
-    ax.set_xlabel("Orders with a hit (genus representatives; e <= 1e-5, query coverage >= 0.5)")
-    ax.set_title(f"Conservation of DAP-seq targets (mapped, n >= 20); dashed line = median of all proteins ({bgm:g})", fontsize=8)
-    handles = [Patch(color=c, label=f) for f, c in cm.items()]
-    ax.legend(handles=handles, fontsize=5.5, title="paper TF family", title_fontsize=6.5, loc="center left", bbox_to_anchor=(1.01, 0.5), frameon=False)
-    fig.tight_layout()
+    cm = family_colors(ok["tf_family"].fillna("unknown"))
+    h = max(7.0, 0.19 * len(ok) + 4.6)
+    fig = plt.figure(figsize=(9.5, h))
+    gs = fig.add_gridspec(2, 2, height_ratios=[2.2, 0.19 * len(ok) + 1.0], hspace=0.28, wspace=0.06, left=0.17, right=0.78, top=0.96, bottom=0.07)
+    ae = fig.add_subplot(gs[0, :])
+    for col, lab, c, ls in (("ecdf_background", "all FBF4BF29 proteins", "#c0392b", "--"), ("ecdf_targets", "mapped targets (pooled, unique proteins)", "#1f4e79", "-"),
+                            ("ecdf_targets_no_Znf1", "mapped targets without Znf1", "#6fa8dc", "-")):
+        ae.step(ecdf["n_orders"], ecdf[col], where="post", color=c, ls=ls, lw=1.6, label=lab)
+    ae.axvline(HI_ORDERS, color="grey", lw=0.6, ls=":")
+    ae.set_xlabel("n_orders (orders with a hit among genus representatives)", fontsize=8)
+    ae.set_ylabel("cumulative fraction", fontsize=8)
+    ae.legend(fontsize=7, frameon=False, loc="upper left")
+    ae.set_title("Conservation of DAP-seq targets (TFs with >= 20 mapped targets)", fontsize=9)
+    ab = fig.add_subplot(gs[1, 0])
+    ac = fig.add_subplot(gs[1, 1], sharey=ab)
+    y = np.arange(len(ok))
+    cols = [cm[f] for f in ok["tf_family"].fillna("unknown")]
+    ab.scatter(ok["frac_n_orders_ge_100"], y, c=cols, s=18, zorder=3)
+    ab.axvline(float(ok["background_frac_n_orders_ge_100"].iloc[0]), color="#c0392b", ls="--", lw=1.2)
+    ab.set_yticks(y)
+    ab.set_yticklabels([f"{t} (n={n})" for t, n in zip(ok["tf_name"], ok["n_targets_bfd"])], fontsize=6)
+    ab.set_xlabel(f"fraction of targets with n_orders >= {HI_ORDERS}", fontsize=8)
+    ab.grid(axis="x", lw=0.3)
+    sig = (ok["p_adj_strat"] < 0.05).to_numpy()
+    ac.scatter(ok["effect_strat"][sig], y[sig], c=[c for c, s_ in zip(cols, sig) if s_], s=18, zorder=3)
+    ac.scatter(ok["effect_strat"][~sig], y[~sig], facecolors="none", edgecolors=[c for c, s_ in zip(cols, sig) if not s_], s=18, zorder=3)
+    ac.axvline(0, color="grey", lw=0.8)
+    ac.set_xlabel("length-stratified effect (rank-biserial)", fontsize=8)
+    ac.grid(axis="x", lw=0.3)
+    plt.setp(ac.get_yticklabels(), visible=False)
+    handles = [Line2D([0], [0], marker="o", ls="", color=c, label=f, markersize=5) for f, c in cm.items()]
+    handles += [Line2D([0], [0], marker="o", ls="", mfc="none", mec="k", label="open: stratified BH p >= 0.05", markersize=5),
+                Line2D([0], [0], marker="o", ls="", color="k", label="filled: stratified BH p < 0.05", markersize=5)]
+    fig.legend(handles=handles, fontsize=6, title="paper TF family", title_fontsize=7, loc="center left", bbox_to_anchor=(0.79, 0.4), frameon=False)
+    fig.text(0.01, 0.005, CAVEAT, fontsize=5.8, wrap=True, va="bottom")
     return fig
 
 
@@ -280,7 +417,7 @@ def _fig_sizes(sizes):
     s = sizes.sort_values("n_targets")
     fig, ax = plt.subplots(figsize=(7.5, max(4.0, 0.15 * len(s) + 1.6)))
     y = np.arange(len(s))
-    ax.barh(y, s["n_mapped"], color="#2a6f97", label="mapped to BFD (RBH)")
+    ax.barh(y, s["n_mapped"], color="#2a6f97", label="mapped to BFD (RBH, best models)")
     ax.barh(y, s["n_unmapped"], left=s["n_mapped"], color="#c9c9c9", label="no BFD partner")
     ax.set_yticks(y)
     ax.set_ylim(-0.7, len(s) - 0.3)
@@ -292,40 +429,60 @@ def _fig_sizes(sizes):
     return fig
 
 
+def read_commented(path, **kw):
+    return pd.read_csv(path, sep="\t", comment="#", keep_default_na=False, na_values=[""], **kw)
+
+
 def page_tf_targets(out_dir, tables_dir=None, o=None):
-    """Draw T21_target_conservation and T21_target_set_sizes from the T21 tables. tables_dir default:
-    <out_dir>/tables_tf. Figures go to <out_dir>/figures/tf (Out level 'tf'). Returns the list of Made records."""
+    """Draw T21_target_conservation and T21_target_set_sizes from the T21 tables (T21_target_background_tests,
+    T21_target_ecdf, T21_tf_set_sizes). tables_dir default: <out_dir>/tables_tf. Figures go to <out_dir>/figures/tf
+    (Out level 'tf'). Returns the list of Made records."""
     from figs_common import safe
     from make_figures import Out
     out_dir = Path(out_dir)
     td = Path(tables_dir) if tables_dir else out_dir / "tables_tf"
     o = o or Out(out_dir, "tf")
-    cons = pd.read_csv(td / "T21_target_conservation.tsv", sep="\t", comment="#")
-    tests = pd.read_csv(td / "T21_target_background_tests.tsv", sep="\t", keep_default_na=False, na_values=[""])
+    tests = read_commented(td / "T21_target_background_tests.tsv")
     tests["reason"] = tests["reason"].fillna("")
-    sizes = pd.read_csv(td / "T21_tf_set_sizes.tsv", sep="\t")
+    ecdf = read_commented(td / "T21_target_ecdf.tsv")
+    sizes = read_commented(td / "T21_tf_set_sizes.tsv")
     ntest = int((tests["reason"] == "").sum())
     o.info = {"n_genomes": None, "n_groups": ntest, "pooled_share": 0.0}
     o.meta["T21_target_conservation"] = {"signal": ntest, "signal_kind": "n_tfs_tested"}
-    safe(o, "T21_target_conservation", "tf", lambda: _fig_conservation(cons, tests))
+    safe(o, "T21_target_conservation", "tf", lambda: _fig_conservation(tests, ecdf))
     safe(o, "T21_target_set_sizes", "tf", lambda: _fig_sizes(sizes))
     return o.made
 
 
 # ---------------------------------------------------------------- pipeline steps
 def _gz_write(df, path):
-    with gzip.open(path, "wt") as f:
+    part = Path(str(path) + ".part")
+    with gzip.open(part, "wt") as f:
         df.to_csv(f, sep="\t", index=False)
+    part.replace(path)
 
 
-def step_prep(stage: Path):
-    """Write the FBF4BF29 proteome and the JGI protein FASTA (all models) with plain ID headers."""
+def _write_fasta_tmp(path: Path, records):
+    tmp = path.with_name(path.name + ".tmp")
+    opener = gzip.open if path.suffix == ".gz" else open
+    n = 0
+    with opener(tmp, "wt") as o:
+        for pid, seq in records:
+            o.write(f">{pid}\n{seq}\n")
+            n += 1
+    tmp.replace(path)
+    return n
+
+
+def step_prep(stage: Path, bfd_src=None, jgi_fasta=None, jgi_gff=None):
+    """Write the FBF4BF29 proteome, the best-model JGI proteins (the proteinIds of the filtered-models GFF3) and the
+    JGI proteins of all models (gz), all with plain ID headers. Each file is skipped when it exists."""
     stage.mkdir(parents=True, exist_ok=True)
     bfd = stage / "FBF4BF29.faa"
     if not bfd.exists():
-        src = proteome_paths(RUNS / "seqdb/genomes.tsv")[BFD_GENOME]
-        tmp = bfd.with_suffix(".tmp")
+        src = bfd_src or proteome_paths(RUNS / "seqdb/genomes.tsv")[BFD_GENOME]
         n = 0
+        tmp = bfd.with_suffix(".tmp")
         with jm._open_text(src) as f, open(tmp, "w") as o:
             for line in f:
                 if line.startswith(">"):
@@ -333,28 +490,41 @@ def step_prep(stage: Path):
                     n += 1
                 else:
                     o.write(line)
-        tmp.rename(bfd)
+        tmp.replace(bfd)
         print(f"wrote {bfd} ({n} proteins) from {src}", flush=True)
-    jf = stage / "Rhimi59_2_all_models.faa"
-    if not jf.exists():
-        prot = jm.read_jgi_proteins(JGI_FASTA)
-        tmp = jf.with_suffix(".tmp")
-        with open(tmp, "w") as o:
-            for pid, (_, seq) in prot.items():
-                o.write(f">{pid}\n{seq}\n")
-        tmp.rename(jf)
-        print(f"wrote {jf} ({len(prot)} proteins)", flush=True)
+    allf, bestf = stage / "Rhimi59_2_all_models.faa.gz", stage / "Rhimi59_2_best_models.faa"
+    if not (allf.exists() and bestf.exists()):
+        prot = jm.read_jgi_proteins(jgi_fasta or JGI_FASTA)
+        best = list(jm.read_jgi_catalog(jgi_gff or JGI_GFF)["protein_id"])
+        miss = [b for b in best if b not in prot]
+        if miss:
+            raise ValueError(f"{len(miss)} best-model protein IDs are not in the protein FASTA, e.g. {miss[:5]}")
+        if not allf.exists():
+            print(f"wrote {allf} ({_write_fasta_tmp(allf, ((k, v[1]) for k, v in prot.items()))} proteins)", flush=True)
+        if not bestf.exists():
+            print(f"wrote {bestf} ({_write_fasta_tmp(bestf, ((k, prot[k][1]) for k in best))} proteins)", flush=True)
+
+
+# tag -> (which JGI set, min_pident, min_cov). best = filtered best models on both sides (main). all = all 258,092 models.
+MAPS = {"best_p90_c0.8": ("best", 90.0, 0.8),      # main
+        "best_p70_c0.7": ("best", 70.0, 0.7),      # sensitivity
+        "best_p90_c0.5": ("best", 90.0, 0.5),      # sensitivity: identity kept, coverage relaxed
+        "all_p90_c0.8": ("all", 90.0, 0.8)}        # secondary: reverse search against all models
+MAIN_MAP = "best_p90_c0.8"
+
+
+def jgi_fasta_for(stage: Path, which):
+    return stage / ("Rhimi59_2_best_models.faa" if which == "best" else "Rhimi59_2_all_models.faa.gz")
 
 
 def step_map(stage: Path, scratch: Path):
-    """RBH map at 90/0.8 (default) and 70/0.7 (sensitivity); then the rate table."""
-    for tag, pid, cov in (("p90_c0.8", 90.0, 0.8), ("p70_c0.7", 70.0, 0.7)):
+    """RBH maps in MAPS. Raw forward and reverse hit tables are kept in <stage>/raw_hits as gz."""
+    for tag, (which, pid, cov) in MAPS.items():
         out = stage / f"jgi_to_bfd_{tag}.tsv"
         if out.exists():
             continue
-        tmp = out.with_suffix(".tmp")
-        jm.map_jgi_to_bfd(stage / "Rhimi59_2_all_models.faa", stage / "FBF4BF29.faa", tmp, scratch / f"map_{tag}", pid, cov)
-        tmp.rename(out)
+        jm.map_jgi_to_bfd(jgi_fasta_for(stage, which), stage / "FBF4BF29.faa", out, scratch / f"map_{tag}", pid, cov,
+                          raw_dir=stage / "raw_hits", tag=tag)
         print(f"wrote {out}", flush=True)
 
 
@@ -417,45 +587,143 @@ def step_tables(stage: Path, tables_tf: Path, scratch: Path, runs_tables: Path):
     names = jm.read_tf_names(HERE.parent.parent / "config" / "paper_tf_names.tsv")
     targets = jm.read_targets(MOESM4, names)
     tested = jm.read_tested_tfs(MOESM6)
-    catalog = jm.read_jgi_catalog(JGI_GFF)
-    best = set(catalog["protein_id"])
-    # map rates (default and sensitivity thresholds)
-    rates, maps = [], {}
-    uniq_targets = targets["jgi_protein_id"].unique()
-    tested_ids = tested["jgi_protein_id"].unique()
-    for tag in ("p90_c0.8", "p70_c0.7"):
-        m = jm.read_map(stage / f"jgi_to_bfd_{tag}.tsv")
-        maps[tag] = m
+    best = set(jm.read_jgi_catalog(JGI_GFF)["protein_id"])
+    maps = {tag: jm.read_map(stage / f"jgi_to_bfd_{tag}.tsv") for tag in MAPS}
+    uniq_targets, tested_ids = targets["jgi_protein_id"].unique(), tested["jgi_protein_id"].unique()
+    # ---- mapping rates: main map first; the all-models rows are labelled and never given a one-to-one rate
+    rates = []
+    for tag, (which, pid, cov) in MAPS.items():
+        m = maps[tag]
+        lab = "best_models_both_sides" if which == "best" else "all_models_reverse"
         for what, ids in (("tested_tfs", tested_ids), ("targets", uniq_targets)):
             r = jm.mapping_rate(m, ids, best_ids=best)
-            rates.append({"thresholds": tag, "set": what, **r})
-        r = jm.mapping_rate(m, list(m["jgi_protein_id"]), best_ids=best)
-        rates.append({"thresholds": tag, "set": "all_jgi_models", **r})
+            rates.append({"map": lab, "thresholds": f"p{pid:g}_c{cov:g}", "set": what, "n_ids": r["n_ids"], "n_mapped": r["n_mapped"],
+                          "rate": r["rate"], "n_distinct_bfd": r["n_distinct_bfd"], "main": tag == MAIN_MAP,
+                          "note": "" if which == "best" else "reverse search against all models: an alternate model can break reciprocity"})
+        r = jm.mapping_rate(m, list(m["jgi_protein_id"]))
+        rates.append({"map": lab, "thresholds": f"p{pid:g}_c{cov:g}", "set": "all_models_in_fasta" if which == "all" else "best_models_all",
+                      "n_ids": r["n_ids"], "n_mapped": r["n_mapped"], "rate": float("nan") if which == "all" else r["rate"],
+                      "n_distinct_bfd": r["n_distinct_bfd"], "main": False,
+                      "note": ("not a one-to-one rate: many JGI models map to the same BFD protein; use n_distinct_bfd" if which == "all" else "")})
     pd.DataFrame(rates).to_csv(tables_tf / "T21_jgi_map_rate.tsv", sep="\t", index=False)
-    ts = target_sets(targets, maps["p90_c0.8"])
-    ts = ts.merge(targets[["tf_name", "tf_family"]].drop_duplicates("tf_name"), on="tf_name", how="left")
+    # ---- target sets (main map) and set sizes
+    ts = target_sets(targets, maps[MAIN_MAP])
+    tinfo = targets.drop_duplicates("tf_name")[["tf_name", "tf_family", "tf_jgi_id"]].merge(
+        names[["jgi_id", "success_frip5_any"]], left_on="tf_jgi_id", right_on="jgi_id", how="left").drop(columns=["jgi_id"])
+    ts = ts.merge(tinfo[["tf_name", "tf_family"]], on="tf_name", how="left")
     ts["in_best_models"] = ts["jgi_protein_id"].isin(best)
     _gz_write(ts, tables_tf / "T21_target_sets.tsv.gz")
     ss = set_sizes(ts)
-    tinfo = targets.drop_duplicates("tf_name")[["tf_name", "tf_family", "tf_jgi_id"]].merge(
-        names[["jgi_id", "success_frip5_any"]], left_on="tf_jgi_id", right_on="jgi_id", how="left").drop(columns=["jgi_id"])
+    ss["n_bfd_distinct"] = ss["tf_name"].map(ts[ts["bfd_protein_id"] != ""].groupby("tf_name")["bfd_protein_id"].nunique()).fillna(0).astype(int)
+    for tag in ("best_p70_c0.7", "best_p90_c0.5"):
+        t2 = target_sets(targets, maps[tag])
+        ss[f"n_mapped_{tag}"] = ss["tf_name"].map(t2[t2["bfd_protein_id"] != ""].groupby("tf_name").size()).fillna(0).astype(int)
     ss = ss.merge(tinfo, on="tf_name", how="left")
-    key = tinfo
     ss.to_csv(tables_tf / "T21_tf_set_sizes.tsv", sep="\t", index=False)
-    # conservation
+    # ---- conservation of the targets and the background
     allc = pd.read_csv(stage / "T21_conservation_all_bfd.tsv", sep="\t", comment="#")
     bg = jm.fasta_ids(stage / "FBF4BF29.faa")
+    lengths = fasta_lengths(stage / "FBF4BF29.faa")
     mapped = ts[ts["bfd_protein_id"] != ""]
+    capped = _capped_queries(stage)
+    st_tests, strat = stratified_tests(allc, ts, bg, lengths)
+    tests = compare_to_background(allc, ts, bg).merge(st_tests.drop(columns=["n_targets_bfd", "reason"]), on="tf_name")
+    tests = tests.merge(tinfo[["tf_name", "tf_family", "tf_jgi_id"]], on="tf_name", how="left")
+    stats = caveat_stats(ts, tests, allc, capped)
+    lines = caveat_lines(stats)
     cl = mapped.merge(allc, on="bfd_protein_id", how="left")
-    with open(tables_tf / "T21_target_conservation.tsv", "w") as f:
-        f.write(f"# min_cov={MIN_COV} evalue={EVALUE} cov_mode=2 n_orders/n_phyla/n_genera of genus representatives; background = all {len(bg)} FBF4BF29 proteins\n")
-        cl[["tf_name", "tf_family", "jgi_protein_id", "bfd_protein_id", "n_phyla", "n_orders", "n_genera"]].to_csv(f, sep="\t", index=False)
-    tests = compare_to_background(allc, ts, bg)
-    tests.to_csv(tables_tf / "T21_target_background_tests.tsv", sep="\t", index=False)
-    # profile
+    _write_commented(tables_tf / "T21_target_conservation.tsv", lines + [
+        f"min_cov={MIN_COV} evalue={EVALUE} cov_mode=2 (query); n_orders/n_phyla/n_genera = distinct ORDER/PHYLUM/GENUS of genus representatives with a hit; "
+        "n_genera also equals the number of representative genomes with a hit (one genome per genus)",
+        f"background = all {len(bg)} FBF4BF29 proteins, search max-seqs {MAX_SEQS}"],
+        cl[["tf_name", "tf_family", "jgi_protein_id", "bfd_protein_id", "n_phyla", "n_orders", "n_genera"]])
+    _write_commented(tables_tf / "T21_target_background_tests.tsv", lines + [
+        "p, p_adj: two-sided Mann-Whitney U of the TF's mapped targets against all FBF4BF29 proteins (n_orders), BH over tested TFs. "
+        "effect: rank-biserial correlation, positive when targets are more widely conserved.",
+        "effect_strat, p_strat, p_adj_strat: length-stratified (quintiles of the background protein length): effect = mean of the per-stratum rank-biserial "
+        "effects over strata with >= 5 targets, weighted by the number of targets; p_strat = van Elteren stratified rank-sum test; BH over tested TFs. "
+        "expected_median_n_orders: length-matched expected median (background reweighted to the TF's length profile). Per-stratum values: T21_target_strata.tsv."],
+        tests)
+    _write_commented(tables_tf / "T21_target_strata.tsv", lines[:1], strat)
+    ecdf = _ecdf_table(allc, cl)
+    ecdf.to_csv(tables_tf / "T21_target_ecdf.tsv", sep="\t", index=False)
+    notes = notes_table(names, targets, ss, stats)
+    notes.to_csv(tables_tf / "T21_target_notes.tsv", sep="\t", index=False)
+    # ---- profile
     pf, sp = load_profile_sources(runs_tables, mapped["bfd_protein_id"].unique(), scratch)
     profile_targets(ts, pf, sp).to_csv(tables_tf / "T21_target_profile.tsv", sep="\t", index=False)
     print(f"tables in {tables_tf}", flush=True)
+
+
+def _write_commented(path, comments, df):
+    tmp = Path(str(path) + ".tmp")
+    with open(tmp, "w") as f:
+        for c in comments:
+            f.write(f"# {c}\n")
+        df.to_csv(f, sep="\t", index=False)
+    tmp.replace(path)
+
+
+def _capped_queries(stage: Path):
+    """Queries whose hit table reached max-seqs rows (a lower bound: MMseqs2 caps before the e-value and coverage filters)."""
+    gz = stage / "conservation_hits.tsv.gz"
+    if not gz.exists():
+        return None
+    q = pd.read_csv(gz, sep="\t", header=None, usecols=[0], dtype=str)[0]
+    c = q.value_counts()
+    return int((c >= MAX_SEQS).sum()), int(len(c))
+
+
+def _ecdf_table(allc, cl):
+    x = np.arange(0, int(max(allc["n_orders"].max(), cl["n_orders"].max())) + 1)
+    pooled = cl.drop_duplicates("bfd_protein_id")["n_orders"].to_numpy()
+    noz = cl[cl["tf_name"] != "Znf1"].drop_duplicates("bfd_protein_id")["n_orders"].to_numpy()
+
+    def ecdf(v):
+        return np.searchsorted(np.sort(v), x, side="right") / max(len(v), 1)
+    return pd.DataFrame({"n_orders": x, "ecdf_targets": ecdf(pooled), "ecdf_targets_no_Znf1": ecdf(noz),
+                         "ecdf_background": ecdf(allc["n_orders"].to_numpy())})
+
+
+def caveat_stats(ts, tests, allc, capped):
+    m = ts[ts["bfd_protein_id"] != ""].drop_duplicates(["tf_name", "bfd_protein_id"])
+    tested = tests[tests["reason"] == ""]
+    per_prot = m[m["tf_name"].isin(tested["tf_name"])].groupby("bfd_protein_id").size()
+    zn = m[m["tf_name"] == "Znf1"]["bfd_protein_id"].nunique()
+    return {"mean_tfs_per_protein": float(per_prot.mean()), "n_unique_proteins": int(len(per_prot)),
+            "znf1_share_rows": float((m["tf_name"] == "Znf1").sum() / max(len(m), 1)),
+            "znf1_share_unique": float(zn / max(m["bfd_protein_id"].nunique(), 1)), "n_tested": int(len(tested)),
+            "n_sig": int((tested["p_adj"] < 0.05).sum()), "n_sig_strat": int((tested["p_adj_strat"] < 0.05).sum()),
+            "capped": capped, "frac_zero_hit_bg": float((allc["n_orders"] == 0).mean())}
+
+
+def caveat_lines(s):
+    cap = "not computed" if s["capped"] is None else f"{s['capped'][0]} of {s['capped'][1]} queries ({s['capped'][0] / max(s['capped'][1], 1):.0%}) reached it (lower bound)"
+    return [
+        "HYPOTHESIS ONLY. n_orders = number of orders among the genus representatives with a homology hit (e <= 1e-5, query coverage >= 0.5). "
+        "It measures breadth of homology (domain and paralog hits), not ortholog conservation.",
+        f"The {s['n_tested']} tests are dependent: the mapped targets overlap across TFs (mean {s['mean_tfs_per_protein']:.1f} tested TFs per target protein, "
+        f"{s['n_unique_proteins']} unique proteins). {s['n_sig']} of {s['n_tested']} significant is not that many independent findings.",
+        f"Znf1 holds {s['znf1_share_rows']:.0%} of the TF-target rows and {s['znf1_share_unique']:.0%} of the unique mapped target proteins. "
+        "The background (all FBF4BF29 proteins) contains the targets.",
+        f"Search max-seqs is {MAX_SEQS} per query; {cap}. Capped queries can have too few hits and so too low n_orders.",
+        "Unmapped targets (different gene model or assembly) are not evidence of lineage-specific genes."]
+
+
+def notes_table(names, targets, ss, stats):
+    miss = names[(names["success_frip5_any"] == 1) & ~names["jgi_id"].isin(set(targets["tf_jgi_id"]))]
+    rows = [("missing_tf", f"{r['name']} (jgi_id {r['jgi_id']}) is a successful TF of the paper with no sheet in MOESM4: it has no target set here.") for _, r in miss.iterrows()]
+    d = ss[ss["n_mapped"] != ss["n_bfd_distinct"]]
+    for _, r in d.iterrows():
+        rows.append(("tie_collapse", f"{r['tf_name']}: {int(r['n_mapped'])} JGI targets map to {int(r['n_bfd_distinct'])} distinct BFD proteins "
+                                     "(several JGI models share one BFD partner), so n_mapped differs from n_targets_bfd in the tests table."))
+    rows += [("header_format", "T21_target_conservation.tsv, T21_target_background_tests.tsv and T21_target_strata.tsv start with lines that begin with '#' "
+                               "(thresholds and caveats); read them with comment='#'."),
+             ("header_format", "jgi_to_bfd_*.tsv (staging dir) start with one '#' line: min_pident, min_cov, cov_mode, tie rule."),
+             ("map_sets", "Main map: best models (filtered GFF3, 10,700) on both sides, 90% identity, 0.8 coverage. Sensitivities: 70/0.7 and 90/0.5. "
+                          "Secondary: reverse search against all 258,092 models (all_models_reverse); its rate is not one-to-one."),
+             ("stratified", "Length strata are quintiles of the background protein length; see the comment lines of T21_target_background_tests.tsv.")]
+    return pd.DataFrame(rows, columns=["topic", "note"])
 
 
 def main(argv):

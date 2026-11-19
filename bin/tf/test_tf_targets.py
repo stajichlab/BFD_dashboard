@@ -239,15 +239,134 @@ def test_map_jgi_to_bfd_rbh_and_one_way_hit(tmp_path):
 def test_page_tf_targets_draws_both_figures(tmp_path):
     td = tmp_path / "tables_tf"
     td.mkdir()
-    rows = [(t, "Fam" + t[-1], f"j{i}", f"B{i}", 1, o, 3) for t in ("TFa", "TFb") for i, o in enumerate(range(5, 30))]
-    pd.DataFrame(rows, columns=["tf_name", "tf_family", "jgi_protein_id", "bfd_protein_id", "n_phyla", "n_orders", "n_genera"]).to_csv(
-        td / "T21_target_conservation.tsv", sep="\t", index=False)
-    pd.DataFrame({"tf_name": ["TFa", "TFb"], "n_targets_bfd": [25, 25], "median_n_orders": [17, 17], "background_median_n_orders": [10, 10],
-                  "effect": [.1, .1], "p": [.01, .01], "p_adj": [.01, .01], "reason": ["", ""]}).to_csv(
-        td / "T21_target_background_tests.tsv", sep="\t", index=False)
+    tests = pd.DataFrame({"tf_name": ["TFa", "TFb"], "tf_family": ["FamA", "FamB"], "n_targets_bfd": [25, 25],
+                          "median_n_orders": [17, 17], "background_median_n_orders": [10, 10], "effect": [.1, .1],
+                          "p": [.01, .01], "p_adj": [.01, .01], "reason": ["", ""], "frac_n_orders_ge_100": [.2, .3],
+                          "background_frac_n_orders_ge_100": [.4, .4], "effect_strat": [.1, -.1], "p_strat": [.01, .5],
+                          "p_adj_strat": [.02, .5], "expected_median_n_orders": [12, 12]})
+    with open(td / "T21_target_background_tests.tsv", "w") as f:
+        f.write("# caveat line one\n# caveat line two\n")
+        tests.to_csv(f, sep="\t", index=False)
     pd.DataFrame({"tf_name": ["TFa", "TFb"], "n_targets": [40, 30], "n_mapped": [25, 25], "n_unmapped": [15, 5]}).to_csv(
         td / "T21_tf_set_sizes.tsv", sep="\t", index=False)
+    pd.DataFrame({"n_orders": [0, 50, 100, 192], "ecdf_targets": [.1, .5, .8, 1.], "ecdf_background": [.2, .6, .9, 1.],
+                  "ecdf_targets_no_Znf1": [.1, .4, .8, 1.]}).to_csv(td / "T21_target_ecdf.tsv", sep="\t", index=False)
     made = tg.page_tf_targets(tmp_path, td)
     assert [m.kind for m in made] == ["figure", "figure"]
     assert (tmp_path / "figures/tf/T21_target_conservation.png").exists()
     assert (tmp_path / "figures/tf/T21_target_set_sizes.png").exists()
+
+
+# ---------------------------------------------------------------- review fixes
+def test_rbh_ties_resolve_to_lowest_bfd_id():
+    fwd = pd.DataFrame({"query": ["j1", "j1"], "target": ["B9", "B2"], "pident": [100., 100.], "qcov": [1., 1.],
+                        "tcov": [1., 1.], "evalue": [0., 0.], "bits": [200., 200.]})
+    rev = pd.DataFrame({"query": ["B9", "B2"], "target": ["j1", "j1"], "pident": [100., 100.], "qcov": [1., 1.],
+                        "tcov": [1., 1.], "evalue": [0., 0.], "bits": [200., 200.]})
+    m = jm.rbh_table(["j1"], fwd, rev)
+    assert m.loc[0, "bfd_protein_id"] == "B2"
+    m2 = jm.rbh_table(["j1"], fwd.iloc[::-1], rev.iloc[::-1])     # input order must not matter
+    assert m2.loc[0, "bfd_protein_id"] == "B2"
+
+
+def test_mapping_rate_reports_distinct_bfd_proteins():
+    m = pd.DataFrame({"jgi_protein_id": ["1", "2", "3", "4"], "bfd_protein_id": ["B1", "B1", "B3", ""]})
+    r = jm.mapping_rate(m, ["1", "2", "3", "4"])
+    assert r["n_mapped"] == 3 and r["n_distinct_bfd"] == 2
+
+
+def _strat_tables(confounded):
+    rng = np.random.default_rng(5)
+    n = 3000
+    length = rng.integers(100, 1100, n)
+    bg_ids = [f"B{i}" for i in range(n)]
+    n_orders = np.clip((length / 6 + rng.normal(0, 15, n)).astype(int), 0, 192)   # n_orders grows with length
+    cons = pd.DataFrame({"bfd_protein_id": bg_ids, "n_phyla": 1, "n_genera": 1, "n_orders": n_orders})
+    lens = pd.Series(length, index=bg_ids)
+    if confounded:     # targets are drawn from the longest 20% of proteins; no effect beyond length
+        pick = rng.choice(np.argsort(-length)[:600], 150, replace=False)
+    else:              # targets are random in length but have +30 orders
+        pick = rng.choice(n, 150, replace=False)
+        cons.loc[pick, "n_orders"] = np.clip(cons.loc[pick, "n_orders"] + 30, 0, 192)
+    ts = pd.DataFrame({"tf_name": "TFx", "jgi_protein_id": [f"j{i}" for i in pick], "bfd_protein_id": [bg_ids[i] for i in pick]})
+    return cons, ts, bg_ids, lens
+
+
+def test_stratified_known_answer_real_shift():
+    cons, ts, bg, lens = _strat_tables(confounded=False)
+    t, strata = tg.stratified_tests(cons, ts, bg, lens)
+    r = t.set_index("tf_name").loc["TFx"]
+    assert r["p_strat"] < 0.001 and r["effect_strat"] > 0.3 and r["p_adj_strat"] < 0.001
+    assert len(strata) == 5 and set(strata["stratum"]) == {1, 2, 3, 4, 5}
+
+
+def test_stratified_removes_length_confounding():
+    cons, ts, bg, lens = _strat_tables(confounded=True)
+    plain = tg.compare_to_background(cons, ts, bg).set_index("tf_name").loc["TFx"]
+    t, _ = tg.stratified_tests(cons, ts, bg, lens)
+    r = t.set_index("tf_name").loc["TFx"]
+    assert plain["p"] < 1e-10                       # unstratified: looks very significant
+    assert r["p_strat"] > 0.01 and abs(r["effect_strat"]) < 0.3     # within the top length bin it is not
+    assert r["expected_median_n_orders"] > plain["background_median_n_orders"]   # length-matched expectation is higher
+
+
+def test_stratified_small_tf_not_tested():
+    cons, ts, bg, lens = _strat_tables(confounded=False)
+    t, _ = tg.stratified_tests(cons, ts.iloc[:10], bg, lens)
+    r = t.set_index("tf_name").loc["TFx"]
+    assert np.isnan(r["p_strat"]) and "fewer than 20" in r["reason"]
+
+
+def test_step_prep_writes_best_and_gz_and_is_idempotent(tmp_path):
+    jg = tmp_path / "all.aa.fasta.gz"
+    with gzip.open(jg, "wt") as f:
+        f.write(">jgi|Rhimi59_2|1|a\nMKV\n>jgi|Rhimi59_2|2|b\nLLL\n>jgi|Rhimi59_2|3|c\nAAA\n")
+    gff = tmp_path / "c.gff3.gz"
+    with gzip.open(gff, "wt") as f:
+        f.write("s1\tp\tgene\t1\t9\t0\t+\t.\tID=g1;proteinId=2;product_name=x\n"
+                "s1\tp\tmRNA\t1\t9\t.\t+\t.\tID=m1;Parent=g1;proteinId=2;track=FilteredModels1\n")
+    bfd = tmp_path / "bfd.faa"
+    bfd.write_text(">B1 desc\nMMM\n")
+    stage = tmp_path / "stage"
+    tg.step_prep(stage, bfd_src=bfd, jgi_fasta=jg, jgi_gff=gff)
+    assert (stage / "Rhimi59_2_best_models.faa").read_text() == ">2\nLLL\n"
+    assert jm.fasta_ids(stage / "Rhimi59_2_all_models.faa.gz") == ["1", "2", "3"]
+    assert not (stage / "Rhimi59_2_all_models.faa").exists()
+    mt = {p.name: p.stat().st_mtime_ns for p in stage.iterdir()}
+    tg.step_prep(stage, bfd_src=bfd, jgi_fasta=jg, jgi_gff=gff)
+    assert mt == {p.name: p.stat().st_mtime_ns for p in stage.iterdir()}
+
+
+def test_step_map_skips_existing_outputs(tmp_path, monkeypatch):
+    for tag in tg.MAPS:
+        (tmp_path / f"jgi_to_bfd_{tag}.tsv").write_text("# x\njgi_protein_id\tbfd_protein_id\n")
+
+    def boom(*a, **k):
+        raise AssertionError("map_jgi_to_bfd must not run when the output exists")
+    monkeypatch.setattr(jm, "map_jgi_to_bfd", boom)
+    tg.step_map(tmp_path, tmp_path / "scr")
+
+
+@pytest.mark.skipif(shutil.which("mmseqs") is None, reason="mmseqs is not on PATH (module load MMseqs2/17-b804f)")
+def test_best_model_only_reverse_search_keeps_best_model_target(tmp_path):
+    rng = random.Random(11)
+    x = _rand_prot(rng, 120)
+    others = {f"p{i}": _rand_prot(rng) for i in range(10)}
+    best = dict(others)
+    best["pBest"] = x[:100] + _rand_prot(rng, 20)           # best model: 100/120 aa shared with B0
+    allm = dict(best)
+    allm["pAlt"] = x                                         # alternate model at the same locus: identical to B0
+    bfd = {"B0": x, **{f"B{i + 1}": s for i, s in enumerate(others.values())}}
+    bf = tmp_path / "bfd.fa"
+    _write_fa(bf, bfd)
+    out = {}
+    for tag, recs in (("all", allm), ("best", best)):
+        jf = tmp_path / f"{tag}.fa"
+        _write_fa(jf, recs)
+        sc = tmp_path / f"scr_{tag}"
+        sc.mkdir()
+        raw = tmp_path / "raw"
+        out[tag] = jm.map_jgi_to_bfd(jf, bf, tmp_path / f"{tag}.tsv", sc, 90.0, 0.8, raw_dir=raw, tag=tag).set_index("jgi_protein_id")
+    assert out["all"].loc["pBest", "bfd_protein_id"] == ""         # the decoy wins the reverse search
+    assert out["best"].loc["pBest", "bfd_protein_id"] == "B0"      # best models on both sides: it maps
+    assert (tmp_path / "raw" / "best.fwd.tsv.gz").exists() and (tmp_path / "raw" / "best.rev.tsv.gz").exists()

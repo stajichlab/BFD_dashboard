@@ -86,21 +86,31 @@ The paper tested TFs of *R. microsporus* by DAP-seq. The tables below describe h
 
 ```{python}
 single("T21_target_set_sizes", "Mapped and unmapped DAP-seq targets for each tested TF.", "tf", width="90%")
-single("T21_target_conservation", "Number of orders with a hit for the targets of each TF, with the median of all genes of the genome as background. Hypothesis only.", "tf", width="95%")
+single("T21_target_conservation", "Conservation of the mapped targets. Top: cumulative distribution of the number of orders with a hit (pooled targets, pooled targets without Znf1, all genes of the genome). Bottom left: share of each TF's targets with a hit in 100 or more orders (dashed line: all genes). Bottom right: effect after matching for protein length (filled: significant after correction). Hypothesis only.", "tf", width="95%")
 ```
+
+The JGI protein IDs of the targets are mapped to BFD proteins of *R. microsporus* ATCC 11559 (a different assembly and gene annotation) by reciprocal best hits. The main map uses the filtered best models on both sides (90% identity, 0.8 coverage). The table also gives two looser settings and, as a secondary map, a reverse search against all JGI models. The all-models row is not a one-to-one rate: many models map to the same BFD protein, so use the number of distinct BFD proteins. A target without a BFD partner may come from a different gene model. It is not evidence of a lineage-specific gene.
 
 ```{python}
 flat_table("T21_jgi_map_rate", "tf")
 ```
 
 ```{python}
-flat_table("T21_target_conservation", "tf", digits=3)
+flat_table("T21_target_notes", "tf")
 ```
 
-Each TF's targets are compared with all proteins of the *R. microsporus* genome (Mann-Whitney, Benjamini-Hochberg over TFs). TFs with too few mapped targets are not tested; the table says so.
+```{python}
+flat_table("T21_target_conservation", "tf", digits=3, max_rows=60)
+```
+
+Each TF's targets are compared with all proteins of the *R. microsporus* genome (Mann-Whitney, Benjamini-Hochberg over TFs). The number of orders with a hit grows with protein length, so the table also gives a length-stratified test (quintiles of the background length, van Elteren test) and a length-matched expected median. TFs with too few mapped targets are not tested; the table says so. The tests are not independent, because targets overlap across TFs, and the number of orders measures breadth of homology (domains and paralogs), not ortholog conservation. The comment lines of each table repeat these caveats.
 
 ```{python}
 flat_table("T21_target_background_tests", "tf", digits=4)
+```
+
+```{python}
+flat_table("T21_target_strata", "tf", digits=3, max_rows=60)
 ```
 
 ```{python}

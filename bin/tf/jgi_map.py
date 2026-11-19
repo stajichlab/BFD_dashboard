@@ -165,13 +165,16 @@ def easy_search(query: Path, target: Path, out_tsv: Path, tmp: Path, min_pident,
     """MMseqs2 easy-search; writes a table with the columns in FORMAT. pident is 0-100, qcov/tcov are 0-1."""
     exe = need_mmseqs()
     tmp.mkdir(parents=True, exist_ok=True)
-    cmd = [exe, "easy-search", str(query), str(target), str(out_tsv), str(tmp / "mm_tmp"),
+    out_tsv = Path(out_tsv)
+    part = out_tsv.with_name(out_tsv.name + ".part")     # a killed run leaves .part, never a complete-looking file
+    cmd = [exe, "easy-search", str(query), str(target), str(part), str(tmp / "mm_tmp"),
            "--min-seq-id", str(min_pident / 100.0), "-c", str(min_cov), "--cov-mode", str(cov_mode),
            "--format-output", FORMAT, "--threads", str(threads or threads_default()), "--max-seqs", str(max_seqs),
            "-v", "1"]
     if split_memory_limit:
         cmd += ["--split-memory-limit", str(split_memory_limit)]
     subprocess.run(cmd, check=True)
+    part.replace(out_tsv)
     shutil.rmtree(tmp / "mm_tmp", ignore_errors=True)
     return read_hits(out_tsv)
 
@@ -216,17 +219,30 @@ def rbh_table(ids, fwd: pd.DataFrame, rev: pd.DataFrame) -> pd.DataFrame:
 
 
 def map_jgi_to_bfd(jgi_fasta: Path, bfd_fasta: Path, out_tsv: Path, scratch: Path, min_pident=MIN_PIDENT,
-                   min_cov=MIN_COV, threads=None) -> pd.DataFrame:
+                   min_cov=MIN_COV, threads=None, raw_dir: Path = None, tag: str = "map") -> pd.DataFrame:
     """MMseqs2 easy-search both ways and keep reciprocal best hits. Thresholds go to the first line of out_tsv.
-    All JGI proteins of the FASTA are in the result; those without an RBH have an empty bfd_protein_id."""
+    All JGI proteins of the FASTA are in the result; those without an RBH have an empty bfd_protein_id.
+    Ties at the top bit score are resolved to the lowest BFD protein ID. raw_dir: the raw forward and reverse hit
+    tables are kept there as <tag>.fwd.tsv.gz and <tag>.rev.tsv.gz. out_tsv is written through a .tmp file."""
     scratch = Path(scratch)
     f = easy_search(jgi_fasta, bfd_fasta, scratch / "fwd.tsv", scratch / "fwd", min_pident, min_cov, threads)
     r = easy_search(bfd_fasta, jgi_fasta, scratch / "rev.tsv", scratch / "rev", min_pident, min_cov, threads)
+    if raw_dir is not None:
+        raw_dir = Path(raw_dir)
+        raw_dir.mkdir(parents=True, exist_ok=True)
+        for name, df in (("fwd", f), ("rev", r)):
+            part = raw_dir / f"{tag}.{name}.tsv.gz.part"
+            with gzip.open(part, "wt") as fh:
+                df.to_csv(fh, sep="\t", index=False)
+            part.replace(raw_dir / f"{tag}.{name}.tsv.gz")
     df = rbh_table(fasta_ids(jgi_fasta), f, r)
     out_tsv = Path(out_tsv)
-    with open(out_tsv, "w") as fh:
-        fh.write(f"# min_pident={min_pident} min_cov={min_cov} cov_mode=0 (both sequences) rbh=best bit score, ties allowed\n")
+    tmp = out_tsv.with_name(out_tsv.name + ".tmp")
+    with open(tmp, "w") as fh:
+        fh.write(f"# min_pident={min_pident} min_cov={min_cov} cov_mode=0 (both sequences) rbh=best bit score, "
+                 "ties resolved to the lowest BFD protein ID\n")
         df.to_csv(fh, sep="\t", index=False)
+    tmp.replace(out_tsv)
     return df
 
 
@@ -244,7 +260,10 @@ def mapping_rate(map_df: pd.DataFrame, ids, best_ids=None) -> dict:
     ids = list(dict.fromkeys(str(i) for i in ids))
     n = len(ids)
     k = sum(i in mapped for i in ids)
-    out = {"n_ids": n, "n_mapped": k, "rate": k / n if n else float("nan")}
+    partner = map_df.loc[map_df["bfd_protein_id"].fillna("") != "", ["jgi_protein_id", "bfd_protein_id"]].astype(str)
+    partner = partner[partner["jgi_protein_id"].isin(set(ids))]
+    out = {"n_ids": n, "n_mapped": k, "rate": k / n if n else float("nan"),
+           "n_distinct_bfd": int(partner["bfd_protein_id"].nunique())}
     if best_ids is not None:
         bset = set(map(str, best_ids))
         b = [i for i in ids if i in bset]
