@@ -40,6 +40,8 @@ website:
         text: TF orthologs
       - href: 16_tf_expansions.qmd
         text: TF expansions
+      - href: 17_ecology.qmd
+        text: Ecology
       - href: 06_data_notes.qmd
         text: Data and methods
 format:
