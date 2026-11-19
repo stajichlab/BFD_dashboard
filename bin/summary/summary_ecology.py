@@ -350,3 +350,60 @@ def run_clades(reps: pd.DataFrame, mats: dict, traits: pd.DataFrame, clades: lis
     o.table(pd.DataFrame(skip, columns=["level", "clade", "n_labeled", "n_groups_ge_min", "reason"]), "ecology_clades_skipped")
     print(f"ecology clades: {len(clades)} clades, {len(t)} test rows, {len(skip)} skipped", flush=True)
     return t
+
+
+GLOBAL_TABLES = ("ecology_traits_coverage", "ecology_permanova_global")
+CLADE_TABLES = ("ecology_permanova_clades", "ecology_clades_skipped")
+MATRIX_FILES = (("codon", "codon_genome"), ("aa", "aa_genome"), ("structure", "gene_structure_genome"))
+
+
+def main(argv=None) -> int:
+    import argparse
+    import traceback
+    ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    ap.add_argument("--tables", required=True, help="directory with genome_all, codon_genome, aa_genome, gene_structure_genome parquet")
+    ap.add_argument("--db", required=True, help="BFD.duckdb with v_genome_labels trait columns")
+    ap.add_argument("--out", required=True)
+    ap.add_argument("--min-genera", type=int, default=30)
+    ap.add_argument("--min-group", type=int, default=5)
+    ap.add_argument("--levels", nargs="+", default=["phylum", "class", "order"], choices=list(LEVEL_COLUMN))
+    a = ap.parse_args(argv)
+    try:
+        from make_figures import _resolve_suppress
+        from suppress import drop_suppressed
+        sup = _resolve_suppress(None)
+        data = Path(a.tables)
+
+        def rd(n):
+            df = pd.read_parquet(data / f"{n}.parquet")
+            if "species_prefix" in df.columns and len(sup):
+                df, _ = drop_suppressed(df, sup)
+            return df
+        traits = load_traits(a.db)
+        genome_all = rd("genome_all")
+        mats = {}
+        for key, tname in MATRIX_FILES:
+            try:
+                mats[key] = rd(tname)
+            except FileNotFoundError:
+                print(f"{tname}.parquet absent, skipping its ordination", flush=True)
+        if not mats:
+            print("no feature matrices found in " + a.tables, file=sys.stderr)
+            return 1
+        reps = so.pick_complete_reps(genome_all, mats)
+        out = Path(a.out)
+        run_global(reps, mats, traits, out, min_group=a.min_group)
+        labels = traits.drop_duplicates("species_prefix").set_index("species_prefix")["primary_lifestyle"]
+        clades, skipped = select_clades(reps, labels, tuple(a.levels), a.min_genera, a.min_group)
+        print(f"ecology: {len(clades)} clades qualify (min {a.min_genera} labeled genera, "
+              f"2 lifestyles with at least {a.min_group}); {len(skipped)} do not", flush=True)
+        run_clades(reps, mats, traits, clades, skipped, out, min_group=a.min_group)
+        return 0
+    except Exception as e:
+        traceback.print_exc(file=sys.stderr)
+        print(f"ecology failed: {type(e).__name__}: {e}", file=sys.stderr)
+        return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

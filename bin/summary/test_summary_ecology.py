@@ -336,3 +336,73 @@ def test_structure_scaling_uses_clade_only():
     assert np.allclose(m.mean(), 0, atol=1e-9) and len(m) == 15
     whole = so._feature_matrix("structure", tab, pd.DataFrame({"species_prefix": tab["species_prefix"]}))[0].loc[m.index]
     assert not np.allclose(whole.mean(), 0, atol=1e-3)   # the global scaling would not centre the clade
+
+
+# ---- command line, script, page ----
+REPO = Path(__file__).resolve().parents[2]
+
+
+def _write_inputs(tmp_path, with_aa=False, db_cols="primary_lifestyle, growth_form"):
+    import duckdb
+    reps, codon, traits = global_fixture()
+    core = reps.assign(busco_complete=90.0, N50_bp=1, n_genes=100)
+    d = tmp_path / "tables"
+    d.mkdir()
+    core.to_parquet(d / "genome_all.parquet")
+    codon.to_parquet(d / "codon_genome.parquet")
+    if with_aa:
+        codon.rename(columns=lambda c: c.replace("codon_", "aa_")).to_parquet(d / "aa_genome.parquet")
+    db = tmp_path / "t.duckdb"
+    con = duckdb.connect(str(db))
+    t = traits.rename(columns={"species_prefix": "LOCUSTAG"})
+    if "primary_lifestyle" not in db_cols:
+        t = t.drop(columns="primary_lifestyle")
+    con.register("t_df", t)
+    con.sql("CREATE TABLE v_genome_labels AS SELECT * FROM t_df")
+    con.close()
+    return d, db
+
+
+def _run(tmp_path, d, db, extra=()):
+    return se.main(["--tables", str(d), "--db", str(db), "--out", str(tmp_path / "out"), "--min-genera", "10", *extra])
+
+
+def test_main_end_to_end_on_synthetic_inputs(tmp_path):
+    d, db = _write_inputs(tmp_path)
+    assert _run(tmp_path, d, db) == 0
+    for n in se.GLOBAL_TABLES + se.CLADE_TABLES:
+        assert (tmp_path / "out" / "tables" / "ecology" / f"{n}.tsv").exists(), n
+    figs = list((tmp_path / "out" / "figures" / "ecology").glob("*.png"))
+    assert any(f.name.startswith("E01_") for f in figs) and any(f.name.startswith("E03_") for f in figs)
+
+
+def test_main_missing_matrix_skips_it(tmp_path, capsys):
+    d, db = _write_inputs(tmp_path)
+    assert _run(tmp_path, d, db) == 0
+    assert "aa_genome" in capsys.readouterr().out
+    assert not list((tmp_path / "out" / "figures" / "ecology").glob("*_aa_*"))
+
+
+def test_main_old_db_exits_1_and_names_column(tmp_path, capsys):
+    d, db = _write_inputs(tmp_path, db_cols="growth_form")
+    assert _run(tmp_path, d, db) == 1
+    assert "primary_lifestyle" in capsys.readouterr().err
+
+
+def test_workflow_script_has_no_bash_source_and_parses():
+    import subprocess
+    p = REPO / "workflows" / "summary_ecology.sh"
+    assert subprocess.run(["bash", "-n", str(p)]).returncode == 0
+    txt = p.read_text()
+    assert "BASH_SOURCE" not in txt and "SCRATCH" in txt
+    for path in ("/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/analysis/summary_tables",
+                 "/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard/db/BFD.duckdb",
+                 "/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/analysis/summary_ecology",
+                 "atlas_env/venv/bin/python"):
+        assert path in txt
+
+
+def test_page_mentions_every_output_table():
+    txt = (REPO / "docs" / "quarto_summary" / "17_ecology.qmd").read_text()
+    for n in se.GLOBAL_TABLES + se.CLADE_TABLES:
+        assert n in txt, n

@@ -1,0 +1,55 @@
+---
+title: "Ecology and ordination"
+---
+
+```{python}
+import sys
+sys.path.insert(0, ".")
+from _helpers import fig, table, single, flat_table, read_flat, gallery
+```
+
+The ordinations on the previous page are coloured here by fungal ecology. The label is the primary lifestyle and the growth form of the genus, from FungalTraits 1.2. It is a genus-level label: every genome of a genus gets the same value. About one genus in ten has no label; those genera are drawn grey and are not part of any test. The coverage is in `ecology_traits_coverage`.
+
+Taxonomy explains more of the variation than ecology does, and lifestyle follows ancestry. A significant result is a pattern, not a cause. Two tests are given. The unrestricted test permutes the lifestyle labels over all genera. It cannot tell lifestyle from ancestry. The stratified test (`within_order` for the whole tree, `stratified` for a clade) permutes labels only inside an order (inside a family for an order clade), so it asks whether lifestyle explains the genome features after the ranks below are taken into account. Genera with no order or family are left out of the stratified test and counted in `n_dropped_no_stratum`. Lifestyles with fewer than five genera are left out of the tests and counted in `n_dropped_rare_group`; in the figures they are pooled as "other". PERMANOVA uses 999 permutations. Clade p values are corrected by Benjamini-Hochberg across the clades of one level, feature set and test (`q_BH`).
+
+## Coverage
+
+```{python}
+flat_table("ecology_traits_coverage", "ecology")
+```
+
+## Whole tree
+
+```{python}
+single("E01_codon_pcoa_lifestyle", "PCoA of codon frequencies, coloured by primary lifestyle.", "ecology", "75%")
+single("E02_codon_pcoa_growthform", "PCoA of codon frequencies, coloured by growth form.", "ecology", "75%")
+single("E01_aa_pcoa_lifestyle", "PCoA of amino-acid frequencies, coloured by primary lifestyle.", "ecology", "75%")
+single("E02_aa_pcoa_growthform", "PCoA of amino-acid frequencies, coloured by growth form.", "ecology", "75%")
+single("E01_structure_pcoa_lifestyle", "PCoA of gene-structure statistics, coloured by primary lifestyle.", "ecology", "75%")
+single("E02_structure_pcoa_growthform", "PCoA of gene-structure statistics, coloured by growth form.", "ecology", "75%")
+flat_table("ecology_permanova_global", "ecology", columns=["matrix", "trait", "test", "n_genera", "n_groups", "n_dropped_rare_group", "n_dropped_no_stratum", "n_strata_used", "pseudo_F", "R2", "R2_adj", "p_value", "caveat"])
+```
+
+## Clades
+
+Each clade has its own ordination, recomputed on the genera of that clade (gene-structure values are standardized within the clade). A clade is listed when it has at least 30 labeled genera and at least two lifestyles with at least five genera. The table lists the clades that were not analysed and why (`ecology_clades_skipped`).
+
+```{python}
+from IPython.display import Markdown, display
+from _helpers import HERE
+import re
+t = read_flat("ecology_permanova_clades", "ecology")
+if t is None:
+    display(Markdown("*Table `ecology_permanova_clades` has not been built (tables/ecology/).*"))
+else:
+    flat_table("ecology_permanova_clades", "ecology", columns=["level", "clade", "matrix", "test", "n_genera", "n_labeled", "n_groups", "R2_adj", "p_value", "q_BH", "caveat"])
+    slug = lambda lv, n: lv + "_" + re.sub(r"[^a-z0-9]+", "_", n.lower()).strip("_")
+    for (lv, cl), _ in t.groupby(["level", "clade"], sort=False):
+        display(Markdown(f"### {cl} ({lv})"))
+        for m in ("codon", "aa", "structure"):
+            single(f"E03_{slug(lv, cl)}_{m}_pcoa_lifestyle", f"{cl}: {m} PCoA, coloured by primary lifestyle.", "ecology", "60%")
+```
+
+```{python}
+flat_table("ecology_clades_skipped", "ecology")
+```
