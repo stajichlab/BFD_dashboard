@@ -893,7 +893,7 @@ Number of the 3,745 Pfam families found in >= 95 % of Pezizomycotina genera that
 - The tree recovers the accepted backbone (Taphrinomycotina, then Saccharomycotina and Pezizomycotina; Orbiliomycetes and Pezizomycetes at the base of Pezizomycotina; Lipomycetes at the base of Saccharomycotina), which is a check on the marker extraction.
 - Root-to-tip distance of *A. obscura* is 1.70 substitutions per site, shorter than Pezizomycotina (1.78-2.04), Saccharomycotina (2.08) and Taphrinomycotina (1.87). It is not a long branch, so attraction to the base of the tree by fast evolution is unlikely.
 - Nearest tips by patristic distance: *Saitoella* (1.34), then Pezizomycetes (1.37-1.41), Lipomycetes (1.42), Candelariomycetes (1.45); the rock-inhabiting Dothideomycetes and Chaetothyriales in the tree are farther (see `results/phylo_patristic.csv`).
-- Side observation: "Saccharomycotina sp. YJ-2025a" and "YJ-2025b" group with Basidiomycota (Microbotryomycetes) in this tree, so their BFD phylum assignment looks wrong.
+- Side observation: "Saccharomycotina sp. YJ-2025a" and "YJ-2025b" group with Basidiomycota in this tree, so their BFD phylum assignment looked wrong. Amino-acid identity later placed them in Pucciniomycotina: YJ-2025a in Cystobasidiomycetes (58 % to *Erythrobasidium*), YJ-2025b in Microbotryomycetes (59.5 % to *Leucosporidium*). BFD taxonomy now carries these values (Fungi_BFD `data/curation/overrides.csv`, PRs #77/#78; shared tables rebuilt 2026-11-18). Their NCBI names still say Saccharomycotina.
 
 **Robustness runs** (marker jackknife, alternative matrix, removal of long-branch yeasts):
 
@@ -961,7 +961,7 @@ Number of the 3,745 Pfam families found in >= 95 % of Pezizomycotina genera that
 5. **Pangenome of the 8 MAGs.** They are distinct genotypes; a union gene set would give a firmer presence/absence table, and SNP density would give population diversity.
 6. **Check single-gene absences by translated search** before reporting losses (the 11 unresolved families in section 7.3, tRNA-Val(UAC), Woronin-body HEX1, mating-type genes).
 7. **Test the HGT hypothesis for the arylsulfatase and PhyH expansions** with gene trees including bacterial and fungal homologues.
-8. **Fix BFD metadata.** The two annotation-skipped MAGs; the phylum of "Saccharomycotina sp. YJ-2025a/b".
+8. **Fix BFD metadata.** The two annotation-skipped MAGs; the phylum of "Saccharomycotina sp. YJ-2025a/b" (done 2026-11-18: Basidiomycota, Pucciniomycotina, see section 9).
 
 ## 13. Files
 
