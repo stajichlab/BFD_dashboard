@@ -54,7 +54,7 @@ def test_phylum_subphylum_file_and_class_rows():
     assert ph == {"Kickxellomycota": "Kickxellomycotina", "Mortierellomycota": "Mortierellomycotina",
                   "Glomeromycota": "Glomeromycotina", "Basidiobolomycota": "Basidiobolomycotina",
                   "Blastocladiomycota": "Blastocladiomycotina", "Microsporidia": "Microsporidia",
-                  "Rozellomycota": "Rozellomycotina"}
+                  "Rozellomycota": "Rozellomycotina", "Aphelidiomycota": "Aphelidiomycotina"}
     m = {r["CLASS"]: r["SUBPHYLUM"] for r in _rows("class_subphylum.tsv", "\t")}
     assert m["Mortierellomycetes"] == "Mortierellomycotina" and m["Glomeromycetes"] == "Glomeromycotina"
 

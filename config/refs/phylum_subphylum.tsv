@@ -6,3 +6,4 @@ Basidiobolomycota	Basidiobolomycotina	proposed	fallback for genomes with no NCBI
 Blastocladiomycota	Blastocladiomycotina	proposed	default for Blastocladiomycetes and Physodermatomycetes; added at the user's request 2026-11-19
 Microsporidia	Microsporidia	proposed	No NCBI subphylum; subphylum set to the phylum name; added at the user's request 2026-11-19
 Rozellomycota	Rozellomycotina	proposed	fallback for genomes with no CLASS; added at the user's request 2026-11-19
+Aphelidiomycota	Aphelidiomycotina	proposed	fallback for genomes with no NCBI subphylum (class Aphelidea); added at the user's request 2026-11-19
