@@ -9,11 +9,20 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-import numpy as np
-import pandas as pd
+import colorsys
+
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt  # noqa: E402
+import numpy as np  # noqa: E402
+import pandas as pd  # noqa: E402
+from matplotlib.lines import Line2D  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import summary_ordination as so  # noqa: E402
+from figs_common import safe  # noqa: E402
+from make_figures import Out  # noqa: E402
 
 
 def permute_within(labels: np.ndarray, strata: np.ndarray, rng: np.random.Generator) -> np.ndarray:
@@ -147,3 +156,122 @@ def select_clades(reps: pd.DataFrame, labels: pd.Series, levels: tuple = ("phylu
             skipped.append({"level": level, "clade": str(name), "n_labeled": n_lab, "n_groups_ge_min": n_ge, "reason": reason})
     cols = ["level", "clade", "n_labeled", "n_groups_ge_min", "reason"]
     return clades, pd.DataFrame(skipped, columns=cols)
+
+
+NO_LABEL = "#d0d0d0"
+OTHER_GREY = "#9a9a9a"
+TOPIC = "ecology"
+TRAITS = (("primary_lifestyle", "lifestyle", "primary lifestyle"), ("growth_form", "growthform", "growth form"))
+
+
+def lifestyle_palette(groups: list) -> dict:
+    """One distinct, non-grey colour per group. The two reserved greys are never used for a real group."""
+    cand = []
+    for name in ("tab20", "tab20b", "tab20c", "Set1", "Dark2"):
+        for c in plt.get_cmap(name).colors:
+            r, g, b = matplotlib.colors.to_rgb(c)
+            if colorsys.rgb_to_hsv(r, g, b)[1] >= 0.25:   # skip greys
+                hexc = matplotlib.colors.to_hex((r, g, b))
+                if hexc not in cand:
+                    cand.append(hexc)
+    n = len(groups)
+    while len(cand) < n:   # many groups: add evenly spaced hues
+        k = len(cand)
+        cand.append(matplotlib.colors.to_hex(colorsys.hsv_to_rgb((k * 0.618034) % 1, 0.65, 0.8)))
+    return {g: cand[i] for i, g in enumerate(groups)}
+
+
+def scatter_labels(coords: pd.DataFrame, labels: pd.Series, palette: dict, pct: list, title: str):
+    """PCo1 against PCo2 coloured by labels (indexed like coords). NULL labels draw in NO_LABEL and are listed as
+    'no label (n)'; groups named 'other (...)' draw in OTHER_GREY. Legend right of the axes, 2 columns, 6 pt."""
+    lab = labels.reindex(coords.index) if labels.index.equals(coords.index) is False and set(coords.index) <= set(labels.index) else labels
+    fig, ax = plt.subplots(figsize=(8.4, 5.2))
+    y = coords["PCo2"] if "PCo2" in coords else 0
+    un = lab.isna().to_numpy()
+    if un.any():
+        ax.scatter(coords["PCo1"][un], (y[un] if "PCo2" in coords else 0), s=9, c=NO_LABEL, alpha=0.85, linewidths=0, rasterized=True)
+    counts = lab.value_counts()
+    handles = []
+    for g in counts.index:
+        col = OTHER_GREY if str(g).startswith("other (") else palette.get(g, OTHER_GREY)
+        m = (lab == g).to_numpy()
+        ax.scatter(coords["PCo1"][m], (y[m] if "PCo2" in coords else 0), s=9, c=col, alpha=0.85, linewidths=0, rasterized=True)
+        handles.append(Line2D([], [], marker="o", ls="", color=col, markersize=4, label=f"{g} ({int(counts[g])})"))
+    if un.any():
+        handles.append(Line2D([], [], marker="o", ls="", color=NO_LABEL, markersize=4, label=f"no label ({int(un.sum())})"))
+    ax.set_xlabel(f"PCo1 ({pct[0]:.1f}%)")
+    ax.set_ylabel(f"PCo2 ({pct[1]:.1f}%)" if len(pct) > 1 else "PCo2")
+    ax.set_title(title)
+    leg = ax.legend(handles=handles, loc="upper left", bbox_to_anchor=(1.02, 1.0), ncol=2, fontsize=6,
+                    title=labels.name or None, title_fontsize=6.5, frameon=False, handletextpad=0.3, columnspacing=1.0)
+    fig.canvas.draw()
+    w_in = leg.get_window_extent().width / fig.dpi
+    right = 1 - (w_in + 0.05 * fig.get_figwidth() / 8.4 + 0.1) / fig.get_figwidth()
+    fig.subplots_adjust(right=max(0.5, right))
+    return fig
+
+
+def _test_rows(name, trait, dist, labels, strata, min_group):
+    """Unrestricted and within-stratum PERMANOVA rows for one matrix and trait. Labels with fewer than min_group
+    genera in the tested set are dropped from the test and counted."""
+    lab = labels.reindex(dist.index)
+    counts = lab.value_counts()
+    rare = lab.isin(counts[counts < min_group].index)
+    lab = lab.mask(rare)
+    rows = []
+    for test, st in (("unrestricted", None), ("within_order", strata.reindex(dist.index))):
+        r = stratified_permanova(dist, lab, st)
+        rows.append({"matrix": name, "trait": trait, "test": test, "n_genera": r["n"], "n_groups": r["n_groups"],
+                     "n_dropped_rare_group": int(rare.sum()), "n_dropped_no_stratum": r["n_dropped_no_stratum"],
+                     "n_strata_used": r["n_strata_used"], "pseudo_F": r["F"], "R2": r["R2"], "R2_adj": r["R2_adj"],
+                     "p_value": r["p"], "caveat": r["caveat"]})
+    return rows
+
+
+def run_global(reps: pd.DataFrame, mats: dict, traits: pd.DataFrame, out: Path, min_group: int = 5) -> dict:
+    """Global PCoA of the genus representatives (same matrices, distances and PCoA as so.run_ordination), coloured
+    by primary lifestyle and growth form, with lifestyle and growth-form PERMANOVA. Returns {matrix: coords}."""
+    o = Out(out, TOPIC)
+    o.scope = "genus_reps"
+    tr = traits.drop_duplicates("species_prefix").set_index("species_prefix")
+    ids = reps["species_prefix"]
+    strata = reps.set_index("species_prefix")["ORDER"]
+    cov, pooled, palettes = [], {}, {}
+    for col, _, _ in TRAITS:
+        lab = tr[col].reindex(ids.to_numpy()).rename(col)
+        n_lab = int(lab.notna().sum())
+        cov.append({"trait": col, "n_genera": len(lab), "n_labeled": n_lab, "n_unlabeled": len(lab) - n_lab})
+        pooled[col] = se_pool = pool_groups(lab, min_group)
+        palettes[col] = lifestyle_palette([g for g in se_pool.dropna().unique() if not str(g).startswith("other (")])
+    o.table(pd.DataFrame(cov), "ecology_traits_coverage")
+    coords_by, rows = {}, []
+    for name in ("codon", "aa", "structure"):
+        if name not in mats:
+            continue
+        mat, _, _ = so._feature_matrix(name, mats[name], reps)
+        if len(mat) < 3:
+            print(f"  {name}: {len(mat)} genera, too few for PCoA", flush=True)
+            continue
+        dist = so.lib_ordination.distance_matrix(mat, so.METRIC[name])
+        ord_ = so.lib_ordination.pcoa(dist, n_axes=so.N_AXES)
+        coords = ord_.coords.copy()
+        coords.index = mat.index
+        coords.index.name = "species_prefix"
+        coords_by[name] = coords
+        pct = [float(x) for x in ord_.pct_variance[:coords.shape[1]]]
+        for col, short, nice in TRAITS:
+            trows = _test_rows(name, col, dist, tr[col].reindex(mat.index).rename(col), strata, min_group)
+            rows += trows
+            lab = pooled[col].reindex(mat.index)
+            stem = f"E0{1 if col == 'primary_lifestyle' else 2}_{name}_pcoa_{short}"
+            r2 = trows[0]["R2"]
+            o.meta[stem] = {"n": int(len(mat)), "n_groups": int(lab.nunique()), "signal_kind": "permanova_R2",
+                            "signal": r2 if np.isfinite(r2) else None}
+            title = f"{name} PCoA of {len(mat):,} genus representatives, coloured by {nice}"
+            safe(o, stem, TOPIC, lambda lab=lab, col=col, title=title, coords=coords, pct=pct:
+                 scatter_labels(coords, lab.rename(col), palettes[col], pct, title))
+    o.table(pd.DataFrame(rows, columns=["matrix", "trait", "test", "n_genera", "n_groups", "n_dropped_rare_group",
+                                        "n_dropped_no_stratum", "n_strata_used", "pseudo_F", "R2", "R2_adj", "p_value", "caveat"]),
+            "ecology_permanova_global")
+    print(f"ecology global: {len(coords_by)} matrices, {len(o.made)} outputs", flush=True)
+    return coords_by
