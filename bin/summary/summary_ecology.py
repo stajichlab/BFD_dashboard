@@ -6,6 +6,7 @@ v_genome_labels, and writes figures and tables under its own output directory. I
 from __future__ import annotations
 
 import sys
+from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
@@ -98,3 +99,51 @@ def pool_groups(labels: pd.Series, min_group: int, other: str = "other") -> pd.S
         return labels.copy()
     name = f"{other} ({len(small)} groups)"
     return labels.where(~labels.isin(small), name)
+
+
+LEVEL_COLUMN = {"phylum": "PHYLUM", "class": "CLASS", "order": "ORDER"}
+STRATUM_COLUMN = {"phylum": "ORDER", "class": "ORDER", "order": "FAMILY"}
+
+
+def load_traits(db_path: str) -> pd.DataFrame:
+    """species_prefix, primary_lifestyle, growth_form from v_genome_labels, read-only."""
+    import duckdb
+    con = duckdb.connect(db_path, read_only=True)
+    try:
+        have = {r[0] for r in con.sql("SELECT column_name FROM information_schema.columns WHERE table_name = 'v_genome_labels'").fetchall()}
+        for col in ("primary_lifestyle", "growth_form"):
+            if col not in have:
+                raise RuntimeError(f"{db_path}: v_genome_labels has no column {col}; rebuild the database with workflows/build_bfd_db.sh")
+        return con.sql("SELECT LOCUSTAG AS species_prefix, primary_lifestyle, growth_form FROM v_genome_labels").df()
+    finally:
+        con.close()
+
+
+@dataclass
+class Clade:
+    level: str
+    name: str
+    ids: list
+
+
+def select_clades(reps: pd.DataFrame, labels: pd.Series, levels: tuple = ("phylum", "class", "order"),
+                  min_genera: int = 30, min_group: int = 5):
+    """Clades with at least min_genera labeled genera and at least 2 labels with at least min_group genera each.
+    Only labeled genera are counted. Clade.ids holds every genus of the clade, labeled or not."""
+    clades, skipped = [], []
+    for level in levels:
+        col = LEVEL_COLUMN[level]
+        for name, sub in reps[reps[col].notna()].groupby(col, sort=True):
+            lab = labels.reindex(sub["species_prefix"]).dropna()
+            n_lab = len(lab)
+            n_ge = int((lab.value_counts() >= min_group).sum())
+            if n_lab < min_genera:
+                reason = f"fewer than {min_genera} labeled genera"
+            elif n_ge < 2:
+                reason = f"fewer than 2 lifestyles with at least {min_group} genera"
+            else:
+                clades.append(Clade(level, str(name), sub["species_prefix"].tolist()))
+                continue
+            skipped.append({"level": level, "clade": str(name), "n_labeled": n_lab, "n_groups_ge_min": n_ge, "reason": reason})
+    cols = ["level", "clade", "n_labeled", "n_groups_ge_min", "reason"]
+    return clades, pd.DataFrame(skipped, columns=cols)

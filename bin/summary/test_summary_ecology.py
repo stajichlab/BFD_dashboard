@@ -90,3 +90,64 @@ def test_pool_groups():
     assert (out.iloc[:6] == "a").all()
     assert (out.iloc[6:12] == "other (2 groups)").all()
     assert pd.isna(out.iloc[12])
+
+
+def _reps_for_clades():
+    rows, lab = [], {}
+
+    def add(clade, n, styles):
+        for i in range(n):
+            sid = f"{clade}{i}"
+            rows.append({"species_prefix": sid, "PHYLUM": "P", "CLASS": clade, "ORDER": f"O{clade}", "FAMILY": f"F{clade}"})
+            if styles[i % len(styles)] is not None and not (clade == "D" and i >= 2):
+                lab[sid] = styles[i % len(styles)]
+    add("A", 40, ["x", "y"])
+    add("B", 29, ["x", "y"])
+    add("C", 40, ["x"])
+    add("D", 31, ["x", "y"])
+    rows.append({"species_prefix": "nul", "PHYLUM": "P", "CLASS": None, "ORDER": None, "FAMILY": None})
+    return pd.DataFrame(rows), pd.Series(lab)
+
+
+def test_select_clades_threshold_and_reasons():
+    reps, labels = _reps_for_clades()
+    clades, skipped = se.select_clades(reps, labels, levels=("class",))
+    assert [c.name for c in clades] == ["A"]
+    assert len(clades[0].ids) == 40 and clades[0].level == "class"
+    s = skipped.set_index("clade")
+    assert "genera" in s.loc["B", "reason"]
+    assert "lifestyles" in s.loc["C", "reason"]
+    assert s.loc["D", "n_labeled"] == 2 and "genera" in s.loc["D", "reason"]
+    assert list(skipped.columns) == ["level", "clade", "n_labeled", "n_groups_ge_min", "reason"]
+    assert None not in set(skipped["clade"]) and skipped["clade"].notna().all()
+
+
+def test_select_clades_drops_null_labels_before_counting():
+    reps, labels = _reps_for_clades()
+    labels = labels.copy()
+    labels.loc[[f"A{i}" for i in range(12)]] = np.nan   # 28 labeled left in A
+    clades, skipped = se.select_clades(reps, labels, levels=("class",))
+    assert clades == []
+    assert skipped.set_index("clade").loc["A", "n_labeled"] == 28
+
+
+def _make_db(tmp_path, cols):
+    import duckdb
+    p = str(tmp_path / "t.duckdb")
+    con = duckdb.connect(p)
+    con.sql(f"CREATE TABLE v_genome_labels AS SELECT 'g1' AS LOCUSTAG, {cols}")
+    con.close()
+    return p
+
+
+def test_load_traits_from_duckdb(tmp_path):
+    p = _make_db(tmp_path, "'plant_pathogen' AS primary_lifestyle, 'filamentous_mycelium' AS growth_form")
+    df = se.load_traits(p)
+    assert list(df.columns) == ["species_prefix", "primary_lifestyle", "growth_form"]
+    assert df.iloc[0].tolist() == ["g1", "plant_pathogen", "filamentous_mycelium"]
+
+
+def test_load_traits_names_missing_column(tmp_path):
+    p = _make_db(tmp_path, "'filamentous_mycelium' AS growth_form")
+    with pytest.raises(RuntimeError, match=r"primary_lifestyle.*build_bfd_db\.sh"):
+        se.load_traits(p)
