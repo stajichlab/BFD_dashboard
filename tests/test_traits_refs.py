@@ -53,7 +53,8 @@ def test_phylum_subphylum_file_and_class_rows():
     ph = {r["PHYLUM"]: r["SUBPHYLUM"] for r in _rows("phylum_subphylum.tsv", "\t")}
     assert ph == {"Kickxellomycota": "Kickxellomycotina", "Mortierellomycota": "Mortierellomycotina",
                   "Glomeromycota": "Glomeromycotina", "Basidiobolomycota": "Basidiobolomycotina",
-                  "Blastocladiomycota": "Blastocladiomycotina"}
+                  "Blastocladiomycota": "Blastocladiomycotina", "Microsporidia": "Microsporidia",
+                  "Rozellomycota": "Rozellomycotina"}
     m = {r["CLASS"]: r["SUBPHYLUM"] for r in _rows("class_subphylum.tsv", "\t")}
     assert m["Mortierellomycetes"] == "Mortierellomycotina" and m["Glomeromycetes"] == "Glomeromycotina"
 
@@ -67,3 +68,10 @@ def test_ncbi_classes_and_neocallimastigomycetes_are_mapped():
     for c, sub in want.items():
         assert rows[c]["SUBPHYLUM"] == sub and rows[c]["source"] == "ncbi", c
     assert rows["Neocallimastigomycetes"]["SUBPHYLUM"] == "Neocallimastigomycotina"
+
+
+def test_early_diverging_classes_have_their_own_subphylum():
+    m = {r["CLASS"]: r["SUBPHYLUM"] for r in _rows("class_subphylum.tsv", "\t")}
+    assert m["Sanchytriomycetes"] == "Sanchytriomycotina"
+    assert m["Monoblepharidomycetes"] == "Monoblepharidomycotina"
+    assert m["Hyaloraphidiomycetes"] == "Hyaloraphidiomycotina"
