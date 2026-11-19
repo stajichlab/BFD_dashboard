@@ -275,3 +275,78 @@ def run_global(reps: pd.DataFrame, mats: dict, traits: pd.DataFrame, out: Path, 
             "ecology_permanova_global")
     print(f"ecology global: {len(coords_by)} matrices, {len(o.made)} outputs", flush=True)
     return coords_by
+
+
+def clade_slug(level: str, name: str) -> str:
+    """Lower-case file-name stem: level, then the name with non-alphanumeric runs turned into one '_'."""
+    import re
+    import unicodedata
+    ascii_name = unicodedata.normalize("NFKD", str(name)).encode("ascii", "ignore").decode()
+    return f"{level}_{re.sub(r'[^a-z0-9]+', '_', ascii_name.lower()).strip('_')}"
+
+
+def clade_matrix(name: str, table: pd.DataFrame, reps: pd.DataFrame) -> pd.DataFrame:
+    """Feature matrix of one clade's genera. Structure z-scoring is done on these genera only."""
+    return so._feature_matrix(name, table, reps)[0]
+
+
+CLADE_COLUMNS = ["level", "clade", "matrix", "test", "n_genera", "n_labeled", "n_groups", "n_dropped_rare_group",
+                 "n_dropped_no_stratum", "n_strata_used", "pseudo_F", "R2", "R2_adj", "p_value", "q_BH", "caveat"]
+
+
+def run_clades(reps: pd.DataFrame, mats: dict, traits: pd.DataFrame, clades: list, skipped: pd.DataFrame,
+               out: Path, min_group: int = 5) -> pd.DataFrame:
+    """For each clade and matrix: PCoA on the clade's genera (reps are not re-picked), a scatter coloured by
+    lifestyle (E03_<slug>_<matrix>_pcoa_lifestyle), and unrestricted and stratified lifestyle PERMANOVA.
+    BH q values are computed within (level, matrix, test). Returns the clade table."""
+    o = Out(out, TOPIC)
+    o.scope = "genus_reps"
+    tr = traits.drop_duplicates("species_prefix").set_index("species_prefix")["primary_lifestyle"]
+    by_id = reps.set_index("species_prefix")
+    rows, skip = [], skipped.to_dict("records")
+    for c in clades:
+        sub = reps[reps["species_prefix"].isin(c.ids)]
+        strata = by_id[STRATUM_COLUMN[c.level]]
+        slug = clade_slug(c.level, c.name)
+        for name in ("codon", "aa", "structure"):
+            if name not in mats:
+                continue
+            mat = clade_matrix(name, mats[name], sub)
+            lab = tr.reindex(mat.index).rename("primary_lifestyle")
+            n_lab = int(lab.notna().sum())
+            if len(mat) < 3:
+                skip.append({"level": c.level, "clade": c.name, "n_labeled": n_lab, "n_groups_ge_min": 0,
+                             "reason": f"{name}: fewer than 3 genera with data"})
+                continue
+            dist = so.lib_ordination.distance_matrix(mat, so.METRIC[name])
+            ord_ = so.lib_ordination.pcoa(dist, n_axes=so.N_AXES)
+            coords = ord_.coords.copy()
+            coords.index = mat.index
+            pct = [float(x) for x in ord_.pct_variance[:coords.shape[1]]]
+            counts = lab.value_counts()
+            rare = lab.isin(counts[counts < min_group].index)
+            tested = lab.mask(rare)
+            first = None
+            for test, st in (("unrestricted", None), ("stratified", strata.reindex(mat.index))):
+                r = stratified_permanova(dist, tested, st)
+                first = first or r
+                rows.append({"level": c.level, "clade": c.name, "matrix": name, "test": test, "n_genera": r["n"],
+                             "n_labeled": n_lab, "n_groups": r["n_groups"], "n_dropped_rare_group": int(rare.sum()),
+                             "n_dropped_no_stratum": r["n_dropped_no_stratum"], "n_strata_used": r["n_strata_used"],
+                             "pseudo_F": r["F"], "R2": r["R2"], "R2_adj": r["R2_adj"], "p_value": r["p"], "q_BH": np.nan,
+                             "caveat": r["caveat"]})
+            pooled = pool_groups(lab, min_group)
+            pal = lifestyle_palette([g for g in pooled.dropna().unique() if not str(g).startswith("other (")])
+            stem = f"E03_{slug}_{name}_pcoa_lifestyle"
+            o.meta[stem] = {"n": int(len(mat)), "n_groups": int(pooled.nunique()), "signal_kind": "permanova_R2",
+                            "signal": first["R2"] if np.isfinite(first["R2"]) else None}
+            title = f"{c.name} ({c.level}): {name} PCoA of {len(mat):,} genera, coloured by primary lifestyle"
+            safe(o, stem, TOPIC, lambda coords=coords, pooled=pooled, pal=pal, pct=pct, title=title:
+                 scatter_labels(coords, pooled, pal, pct, title))
+    t = pd.DataFrame(rows, columns=CLADE_COLUMNS)
+    for _, idx in t.groupby(["level", "matrix", "test"]).groups.items():
+        t.loc[idx, "q_BH"] = bh_adjust(t.loc[idx, "p_value"]).to_numpy()
+    o.table(t, "ecology_permanova_clades")
+    o.table(pd.DataFrame(skip, columns=["level", "clade", "n_labeled", "n_groups_ge_min", "reason"]), "ecology_clades_skipped")
+    print(f"ecology clades: {len(clades)} clades, {len(t)} test rows, {len(skip)} skipped", flush=True)
+    return t

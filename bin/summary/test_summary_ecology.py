@@ -249,3 +249,90 @@ def test_missing_matrix_is_skipped(tmp_path):
     coords = se.run_global(reps, {"codon": codon}, traits, tmp_path)
     assert set(coords) == {"codon"}
     assert not list((tmp_path / "figures" / "ecology").glob("E01_aa_*"))
+
+
+# ---- clade zoom-ins ----
+def clade_fixture(confounded=False, n=40):
+    rng = np.random.default_rng(5)
+    rows, meta, tr = [], [], []
+    for i in range(n):
+        order = i % 4
+        style = ("x" if order < 2 else "y") if confounded else ("x" if i < n // 2 else "y")
+        k = 0 if style == "x" else 1
+        v = np.full(10, 1.0)
+        v[k * 5:(k + 1) * 5] = 10.0
+        v = v + rng.uniform(0, 0.5, 10)
+        sid = f"K_{i}"
+        rows.append(v / v.sum())
+        meta.append({"species_prefix": sid, "GENUS": f"Kg{i}", "PHYLUM": "P", "CLASS": "K", "ORDER": f"Ko{order}",
+                     "FAMILY": f"Kf{i % 8}"})
+        tr.append({"species_prefix": sid, "primary_lifestyle": style, "growth_form": "yeast"})
+    codon = pd.DataFrame(rows, columns=[f"codon_{j}" for j in range(10)]).assign(species_prefix=[m["species_prefix"] for m in meta])
+    return pd.DataFrame(meta), codon, pd.DataFrame(tr)
+
+
+def _clade(reps, level="class", name="K"):
+    return se.Clade(level, name, reps["species_prefix"].tolist())
+
+
+_NOSKIP = pd.DataFrame(columns=["level", "clade", "n_labeled", "n_groups_ge_min", "reason"])
+
+
+def test_clade_slug_safe_and_unique():
+    a, b, c = se.clade_slug("class", "Nectar/tap sp."), se.clade_slug("class", "Ünï"), se.clade_slug("order", "Ünï")
+    assert a == "class_nectar_tap_sp"
+    assert all(ch.isalnum() or ch == "_" for ch in a + b + c) and b != c and b.startswith("class_")
+
+
+def test_clade_with_separated_lifestyles_is_significant(tmp_path):
+    reps, codon, traits = clade_fixture()
+    t = se.run_clades(reps, {"codon": codon}, traits, [_clade(reps)], _NOSKIP, tmp_path)
+    u = t[t["test"] == "unrestricted"].iloc[0]
+    assert u["p_value"] < 0.01 and u["q_BH"] >= u["p_value"]
+    assert set(t["test"]) == {"unrestricted", "stratified"}
+    assert list(t.columns) == ["level", "clade", "matrix", "test", "n_genera", "n_labeled", "n_groups", "n_dropped_rare_group",
+                               "n_dropped_no_stratum", "n_strata_used", "pseudo_F", "R2", "R2_adj", "p_value", "q_BH", "caveat"]
+
+
+def test_confounded_clade_stratified_p_is_one(tmp_path):
+    reps, codon, traits = clade_fixture(confounded=True)
+    t = se.run_clades(reps, {"codon": codon}, traits, [_clade(reps)], _NOSKIP, tmp_path).set_index("test")
+    assert t.loc["unrestricted", "p_value"] < 0.05
+    assert t.loc["stratified", "p_value"] == 1.0
+
+
+def test_q_bh_is_per_level_matrix_test(tmp_path):
+    reps, codon, traits = clade_fixture()
+    # same data twice at two levels: q within a level equals p (one clade per level/test group)
+    clades = [_clade(reps, "class", "K"), _clade(reps, "phylum", "P")]
+    t = se.run_clades(reps, {"codon": codon}, traits, clades, _NOSKIP, tmp_path)
+    u = t[t["test"] == "unrestricted"]
+    assert len(u) == 2 and np.allclose(u["q_BH"], u["p_value"])
+
+
+def test_below_threshold_clade_in_skipped_table(tmp_path):
+    reps, codon, traits = clade_fixture()
+    skipped = pd.DataFrame([{"level": "class", "clade": "Tiny", "n_labeled": 3, "n_groups_ge_min": 0, "reason": "fewer than 30 labeled genera"}])
+    se.run_clades(reps, {"codon": codon}, traits, [_clade(reps)], skipped, tmp_path)
+    s = pd.read_csv(tmp_path / "tables" / "ecology" / "ecology_clades_skipped.tsv", sep="\t")
+    assert s["clade"].tolist() == ["Tiny"] and "genera" in s["reason"][0]
+
+
+def test_e03_files_exist_with_expected_names(tmp_path):
+    reps, codon, traits = clade_fixture()
+    se.run_clades(reps, {"codon": codon}, traits, [_clade(reps)], _NOSKIP, tmp_path)
+    d = tmp_path / "figures" / "ecology"
+    assert (d / "E03_class_k_codon_pcoa_lifestyle.png").exists() and (d / "E03_class_k_codon_pcoa_lifestyle.svg").exists()
+    assert (tmp_path / "tables" / "ecology" / "ecology_permanova_clades.tsv").exists()
+
+
+def test_structure_scaling_uses_clade_only():
+    rng = np.random.default_rng(2)
+    n = 30
+    tab = pd.DataFrame({"species_prefix": [f"s{i}" for i in range(n)], "a": rng.normal(size=n), "b": rng.normal(size=n)})
+    tab.loc[:14, "a"] += 5   # first half differs strongly
+    reps = pd.DataFrame({"species_prefix": tab["species_prefix"][:15]})
+    m = se.clade_matrix("structure", tab, reps)
+    assert np.allclose(m.mean(), 0, atol=1e-9) and len(m) == 15
+    whole = so._feature_matrix("structure", tab, pd.DataFrame({"species_prefix": tab["species_prefix"]}))[0].loc[m.index]
+    assert not np.allclose(whole.mean(), 0, atol=1e-3)   # the global scaling would not centre the clade
