@@ -1,0 +1,20 @@
+locustag	genus	species	stratum	n50_bp	TPS	TPP	Rad51	informative	outcome
+F741EBA0	Letrouitia	Letrouitia transgressa	lecan_primary	302837	none	none	full-length	True	candidate_loss
+F631E679	Letrouitia	Letrouitia transgressa	lecan_primary	212444	none	none	full-length	True	candidate_loss
+F2AC92A6	Gallowayella	Gallowayella cf. fulva	lecan_primary	128710	none	none	strong	True	candidate_loss
+FA787783	Pseudocyphellaria	Pseudocyphellaria aurata	lecan_primary	74990	none	none	full-length	True	candidate_loss
+F94AC2FC	Physciella	Physciella chloantha	lecan_primary	198594	none	none	strong	True	candidate_loss
+F34DEB74	Physcia	Physcia stellaris	lecan_primary	643737	none	none	full-length	True	candidate_loss
+F55DF0F5	Peltigera	Peltigera evansiana	lecan_primary	95171	none	none	full-length	True	candidate_loss
+FF9A2F21	Mobergia	Mobergia calculiformis	lecan_primary	107703	none	none	strong	True	candidate_loss
+FE576E6E	Solorina	Solorina crocea	lecan_primary	50471	none	none	full-length	True	candidate_loss
+FCE9DAA1	Heterodermia	Heterodermia speciosa	lecan_primary	255290	none	none	strong	True	candidate_loss
+F0000039	Scedosporium	Scedosporium aurantiacum	scedo	4772094	none	none	full-length	True	candidate_loss
+F38FD470	Lomentospora	Lomentospora prolificans	scedo	1953216	none	none	full-length	True	candidate_loss
+F571167B	Scedosporium	Scedosporium apiospermum	scedo	1622362	none	none	full-length	True	candidate_loss
+FF06588D	Scedosporium	Scedosporium boydii	scedo	3355078	none	none	full-length	True	candidate_loss
+F177A194	Scedosporium	Scedosporium dehoogii	scedo	169552	none	none	full-length	True	candidate_loss
+FB9D1802	Scopulariopsis	Scopulariopsis alboflavescens	other_loss	181288	none	none	full-length	True	candidate_loss
+FDF60022	Basipetospora	Basipetospora chlamydospora	other_loss	5489246	none	none	full-length	True	candidate_loss
+FB60EBFD	Cephalotrichum	Cephalotrichum gorgonifer	other_loss	2038231	none	none	full-length	True	candidate_loss
+FCA1EBEE	Pycnora	Pycnora praestabilis	other_loss	466469	none	none	full-length	True	candidate_loss
