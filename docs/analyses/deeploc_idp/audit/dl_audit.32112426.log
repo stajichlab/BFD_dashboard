@@ -1,0 +1,182 @@
+
+## deeploc: rows, species, proteins not in gene_proteins (anti-join)
+n_rows	n_species	n_rows_not_in_gp
+244812918	23412	0
+[62s]
+
+## idp_summary: rows, distinct proteins, distinct species, proteins not in gene_proteins
+n_rows	n_prot	n_species	n_rows_not_in_gp
+146433288	146433288	23412	0
+[74s]
+
+## wolfpsort: rows, species, proteins not in gene_proteins (anti-join)
+n_rows	n_species	n_rows_not_in_gp
+244790951	23410	0
+[89s]
+
+## tmhmm: rows, distinct proteins, distinct species, proteins not in gene_proteins
+n_rows	n_prot	n_species	n_rows_not_in_gp
+45707260	45707260	23409	0
+[98s]
+
+## targetp: rows, distinct proteins, distinct species, proteins not in gene_proteins
+n_rows	n_prot	n_species	n_rows_not_in_gp
+178535	178535	125	0
+[101s]
+
+## signalp: rows, distinct proteins, distinct species, proteins not in gene_proteins
+n_rows	n_prot	n_species	n_rows_not_in_gp
+18767284	18767284	23410	0
+[106s]
+
+## predgpi: rows, species, proteins not in gene_proteins (anti-join)
+n_rows	n_species	n_rows_not_in_gp
+227238177	23410	0
+[121s]
+
+## gene_proteins: rows, species
+count_star()	count(DISTINCT species_prefix)
+244812918	23412
+[122s]
+
+## species rows vs gene_proteins species
+species_rows	gp_species
+23680	23412
+[122s]
+
+## deeploc model values
+model	count_star()
+fast	244812918
+[140s]
+
+## deeploc duplicate keys
+count_star()
+0
+[164s]
+
+## deeploc proteins missing from gene_proteins side (gp not in deeploc)
+count_star()
+0
+[190s]
+
+## idp_summary: proteins in gp lacking a row, by length bin (is absence = no IDP?)
+lbin	n_gp	n_with_row	pct_with_row
+100-299	75105791	34470779	45.9
+300-999	141254718	93064443	65.9
+<100	11455258	3741647	32.7
+>=1000	16997151	15156419	89.2
+[198s]
+
+## idp_summary.length vs gene_proteins.length mismatches
+n	n_mismatch
+146433288	0
+[205s]
+
+## idp_summary stats
+count_star()	avg(IDP_fraction)	quantile_cont(IDP_fraction, main.list_value(0.1, 0.5, 0.9))
+146433288	0.4522496715664816	[0.1324, 0.3861, 0.9265999999999999]
+[221s]
+
+## idp segments vs summary: proteins with segments but no summary row
+count_star()
+0
+[238s]
+
+## idp segments: sum of lengths vs summary residues mismatches (sample of 5M proteins)
+n	n_mismatch
+9212309	7647418
+[240s]
+
+## species with zero rows per tool (vs gene_proteins species)
+tool	count_star()
+deeploc	0
+idp_summary	0
+wolfpsort	2
+tmhmm	3
+predgpi	2
+signalp	2
+targetp	23287
+[271s]
+
+## signalp columns
+column_name	column_type	null	key	default	extra
+species_prefix	VARCHAR	YES	None	None	None
+protein_id	VARCHAR	YES	None	None	None
+peptide_start	BIGINT	YES	None	None	None
+peptide_end	BIGINT	YES	None	None	None
+probability	DOUBLE	YES	None	None	None
+[271s]
+
+## predgpi feature values
+feature	source	count_star()
+Chain	PredGPI	223938474
+GPI-anchor	PredGPI	3299703
+[278s]
+
+## wolfpsort localization values
+localization	count_star()
+nucl	86484858
+mito	42411543
+cyto	41254636
+plas	30758021
+extr	25705577
+cyto_nucl	9127706
+cysk	6307186
+cyto_mito	812372
+pero	595189
+E.R.	536468
+mito_nucl	444695
+golg	200379
+cyto_pero	152261
+vacu	60
+[282s]
+
+## deeploc primary localization (first label)
+loc	count_star()
+Cytoplasm	123291065
+Nucleus	41624226
+Extracellular	19371343
+Mitochondrion	17073352
+Endoplasmic reticulum	16462824
+Cell membrane	14873100
+Lysosome/Vacuole	7385225
+Golgi apparatus	2598767
+Peroxisome	2019874
+Plastid	113142
+[300s]
+
+## CONTROL A: deeploc has_signal_peptide vs wolfpsort extr (confusion)
+has_signal_peptide	wolf_extr	n
+False	False	6014474
+False	True	251791
+True	False	845027
+True	True	563436
+[303s]
+
+## CONTROL B: deeploc Transmembrane signal vs tmhmm PredHel>=1 (tmhmm table holds only PredHel>0?)
+dl_tm	has_tmhmm_row	n
+False	False	6005745
+False	True	120455
+True	False	217870
+True	True	1330765
+[304s]
+
+## CONTROL C: mean IDP fraction by deeploc primary localization (nucleus expected > mitochondrion; sample)
+loc	n	mean_idp
+Nucleus	1111857	0.536
+Cytoplasm	2054422	0.466
+Mitochondrion	269519	0.405
+Extracellular	246441	0.401
+Cell membrane	360851	0.351
+Endoplasmic reticulum	276949	0.328
+Plastid	1820	0.321
+Lysosome/Vacuole	178803	0.313
+Golgi apparatus	59129	0.303
+Peroxisome	21062	0.223
+[305s]
+
+## CONTROL D: TF proteins (tf_inventory) IDP fraction and nuclear fraction vs all (sample)
+is_tf	n	mean_idp	frac_nuc
+True	203246	0.482	0.979
+False	4377607	0.448	0.404
+[308s]
