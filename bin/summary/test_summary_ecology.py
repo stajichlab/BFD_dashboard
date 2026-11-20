@@ -432,3 +432,88 @@ def test_infinite_pseudo_f_gives_na_p():
     d = pd.DataFrame(np.array([[0, 0, 1, 1], [0, 0, 1, 1], [1, 1, 0, 0], [1, 1, 0, 0]], float), index=list("abcd"), columns=list("abcd"))
     r = se.stratified_permanova(d, pd.Series(["x", "x", "y", "y"], index=d.index))
     assert np.isnan(r["p"]) and "not finite" in r["caveat"]
+
+
+# ---- ecology minors: slug collision, rare-group drop order, shared palette, scatter_labels alignment ----
+def test_colliding_clade_slugs_get_distinct_files(tmp_path):
+    reps, codon, traits = clade_fixture()
+    clades = [_clade(reps, "class", "A-b"), _clade(reps, "class", "A b")]
+    assert se.clade_slug("class", "A-b") == se.clade_slug("class", "A b")
+    t = se.run_clades(reps, {"codon": codon}, traits, clades, _NOSKIP, tmp_path)
+    pngs = sorted(p.name for p in (tmp_path / "figures" / "ecology").glob("E03_class_a_b*_codon_pcoa_lifestyle.png"))
+    assert len(pngs) == 2 and len(set(pngs)) == 2
+    assert set(t["clade"]) == {"A-b", "A b"}
+
+
+def test_rare_group_is_judged_after_null_stratum_rows_are_removed():
+    n = 30
+    dist = two_cluster_dist(n)
+    idx = list(dist.index)
+    labels = pd.Series(["x"] * 10 + ["y"] * 10 + ["r"] * 10, index=idx)
+    labels.iloc[25:] = None
+    labels.iloc[20:25] = "r"                      # r has 5 genera in total
+    strata = pd.Series([f"S{i % 2}" for i in range(n)], index=idx)
+    strata.iloc[22:25] = None                     # three of the five r genera have no stratum: 2 remain
+    rows = {r["test"]: r for r in se._test_rows("codon", "primary_lifestyle", dist, labels, strata, 5)}
+    assert rows["unrestricted"]["n_groups"] == 3
+    assert rows["within_order"]["n_groups"] == 2   # r has only 2 genera inside strata, below min_group
+    assert rows["within_order"]["n_dropped_rare_group"] == 5
+    assert rows["within_order"]["n_dropped_no_stratum"] == 0
+    assert rows["unrestricted"]["n_dropped_rare_group"] == 0
+
+
+def test_clade_stratified_test_drops_group_rare_inside_strata(tmp_path):
+    reps, codon, traits = clade_fixture()
+    traits = traits.copy()
+    reps = reps.copy()
+    traits.loc[traits.index[:5], "primary_lifestyle"] = "r"       # five genera carry r
+    reps.loc[reps.index[:3], "ORDER"] = None                      # three of them have no order
+    t = se.run_clades(reps, {"codon": codon}, traits, [_clade(reps)], _NOSKIP, tmp_path).set_index("test")
+    assert t.loc["unrestricted", "n_groups"] == 3
+    assert t.loc["stratified", "n_groups"] == 2
+
+
+def test_clade_palette_is_shared_across_clades(tmp_path, monkeypatch):
+    reps, codon, traits = clade_fixture()
+    seen = []
+    monkeypatch.setattr(se, "scatter_labels", lambda coords, labels, pal, pct, title: seen.append(dict(pal)) or se.plt.figure())
+    last = reps.iloc[20:]
+    clades = [_clade(reps, "class", "All"), se.Clade("class", "Half", last["species_prefix"].tolist())]
+    se.run_clades(reps, {"codon": codon}, traits, clades, _NOSKIP, tmp_path)
+    assert len(seen) == 2 and seen[0]["y"] == seen[1]["y"] and seen[0]["x"] != seen[0]["y"]
+
+
+def test_global_and_clade_palettes_agree_on_a_lifestyle():
+    s = pd.Series(["b", "a", None, "c", "a"])
+    pal = se.trait_palette(s)
+    assert set(pal) == {"a", "b", "c"} and pal == se.trait_palette(s.iloc[::-1])
+
+
+def test_scatter_labels_missing_ids_draw_as_no_label():
+    coords = pd.DataFrame({"PCo1": [0.0, 1.0, 2.0, 3.0], "PCo2": [0.0, 1.0, 0.0, 1.0]}, index=list("abcd"))
+    labels = pd.Series(["u", "u", "v"], index=list("abd"), name="lab")      # c is missing
+    fig = se.scatter_labels(coords, labels, {"u": "#e41a1c", "v": "#377eb8"}, [10.0, 5.0], "t")
+    texts = [t.get_text() for t in fig.axes[0].get_legend().get_texts()]
+    assert "no label (1)" in texts and "u (2)" in texts and "v (1)" in texts
+
+
+def test_scatter_labels_follows_ids_not_order():
+    coords = pd.DataFrame({"PCo1": [0.0, 1.0, 2.0, 3.0], "PCo2": [0.0, 1.0, 0.0, 1.0]}, index=list("abcd"))
+    labels = pd.Series(["v", "u", "u", "v"], index=list("dcba"), name="lab")
+    fig = se.scatter_labels(coords, labels, {"u": "#e41a1c", "v": "#377eb8"}, [10.0, 5.0], "t")
+    by_col = {}
+    for c in fig.axes[0].collections:
+        by_col[matplotlib_hex(c.get_facecolor()[0])] = sorted(c.get_offsets()[:, 0].tolist())
+    assert by_col["#e41a1c"] == [1.0, 2.0] and by_col["#377eb8"] == [0.0, 3.0]
+
+
+def matplotlib_hex(rgba):
+    import matplotlib.colors as mc
+    return mc.to_hex(rgba)
+
+
+def test_scatter_labels_duplicate_label_ids_raise():
+    coords = pd.DataFrame({"PCo1": [0.0, 1.0], "PCo2": [0.0, 1.0]}, index=["a", "b"])
+    labels = pd.Series(["u", "v", "w"], index=["a", "b", "a"])
+    with pytest.raises(ValueError, match="duplicate"):
+        se.scatter_labels(coords, labels, {}, [10.0, 5.0], "t")

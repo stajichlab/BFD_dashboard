@@ -197,10 +197,26 @@ def lifestyle_palette(groups: list) -> dict:
     return {g: cand[i] for i, g in enumerate(groups)}
 
 
+def trait_palette(values: pd.Series) -> dict:
+    """Palette over every non-null value in `values`, in sorted order, so a value keeps its colour in every figure."""
+    return lifestyle_palette(sorted(pd.unique(values.dropna())))
+
+
+def mask_rare(lab: pd.Series, strata: pd.Series | None, min_group: int):
+    """Set labels with fewer than min_group genera to NULL. With strata, genera are counted only among rows that
+    have a stratum, because those are the rows the within-stratum test uses. Returns (labels, rows dropped)."""
+    counted = lab if strata is None else lab[strata.reindex(lab.index).notna()]
+    counts = counted.value_counts()
+    rare = lab.isin(counts[counts < min_group].index)
+    return lab.mask(rare), int(rare.sum())
+
+
 def scatter_labels(coords: pd.DataFrame, labels: pd.Series, palette: dict, pct: list, title: str):
     """PCo1 against PCo2 coloured by labels (indexed like coords). NULL labels draw in NO_LABEL and are listed as
     'no label (n)'; groups named 'other (...)' draw in OTHER_GREY. Legend right of the axes, 2 columns, 6 pt."""
-    lab = labels.reindex(coords.index) if labels.index.equals(coords.index) is False and set(coords.index) <= set(labels.index) else labels
+    if labels.index.has_duplicates:
+        raise ValueError("scatter_labels: labels index has duplicate ids")
+    lab = labels.reindex(coords.index)   # by id; a coords id with no label draws as 'no label'
     fig, ax = plt.subplots(figsize=(8.4, 5.2))
     y = coords["PCo2"] if "PCo2" in coords else 0
     un = lab.isna().to_numpy()
@@ -230,15 +246,13 @@ def scatter_labels(coords: pd.DataFrame, labels: pd.Series, palette: dict, pct: 
 def _test_rows(name, trait, dist, labels, strata, min_group):
     """Unrestricted and within-stratum PERMANOVA rows for one matrix and trait. Labels with fewer than min_group
     genera in the tested set are dropped from the test and counted."""
-    lab = labels.reindex(dist.index)
-    counts = lab.value_counts()
-    rare = lab.isin(counts[counts < min_group].index)
-    lab = lab.mask(rare)
+    lab0 = labels.reindex(dist.index)
     rows = []
     for test, st in (("unrestricted", None), ("within_order", strata.reindex(dist.index))):
+        lab, n_rare = mask_rare(lab0, st, min_group)
         r = stratified_permanova(dist, lab, st)
         rows.append({"matrix": name, "trait": trait, "test": test, "n_genera": r["n"], "n_groups": r["n_groups"],
-                     "n_dropped_rare_group": int(rare.sum()), "n_dropped_no_stratum": r["n_dropped_no_stratum"],
+                     "n_dropped_rare_group": n_rare, "n_dropped_no_stratum": r["n_dropped_no_stratum"],
                      "n_strata_used": r["n_strata_used"], "n_unique_permutations_log10": r["n_unique_permutations_log10"], "pseudo_F": r["F"], "R2": r["R2"], "R2_adj": r["R2_adj"],
                      "p_value": r["p"], "caveat": r["caveat"]})
     return rows
@@ -258,7 +272,7 @@ def run_global(reps: pd.DataFrame, mats: dict, traits: pd.DataFrame, out: Path, 
         n_lab = int(lab.notna().sum())
         cov.append({"trait": col, "n_genera": len(lab), "n_labeled": n_lab, "n_unlabeled": len(lab) - n_lab})
         pooled[col] = se_pool = pool_groups(lab, min_group)
-        palettes[col] = lifestyle_palette([g for g in se_pool.dropna().unique() if not str(g).startswith("other (")])
+        palettes[col] = trait_palette(tr[col])
     o.table(pd.DataFrame(cov), "ecology_traits_coverage")
     coords_by, rows = {}, []
     for name in ("codon", "aa", "structure"):
@@ -320,10 +334,16 @@ def run_clades(reps: pd.DataFrame, mats: dict, traits: pd.DataFrame, clades: lis
     tr = traits.drop_duplicates("species_prefix").set_index("species_prefix")["primary_lifestyle"]
     by_id = reps.set_index("species_prefix")
     rows, skip = [], skipped.to_dict("records")
+    pal = trait_palette(tr)
+    used = set()
     for c in clades:
         sub = reps[reps["species_prefix"].isin(c.ids)]
         strata = by_id[STRATUM_COLUMN[c.level]]
-        slug = clade_slug(c.level, c.name)
+        slug = base = clade_slug(c.level, c.name)
+        k = 2
+        while slug in used:   # different names can give the same slug; keep every clade's files
+            slug, k = f"{base}_{k}", k + 1
+        used.add(slug)
         for name in ("codon", "aa", "structure"):
             if name not in mats:
                 continue
@@ -339,20 +359,17 @@ def run_clades(reps: pd.DataFrame, mats: dict, traits: pd.DataFrame, clades: lis
             coords = ord_.coords.copy()
             coords.index = mat.index
             pct = [float(x) for x in ord_.pct_variance[:coords.shape[1]]]
-            counts = lab.value_counts()
-            rare = lab.isin(counts[counts < min_group].index)
-            tested = lab.mask(rare)
             first = None
             for test, st in (("unrestricted", None), ("stratified", strata.reindex(mat.index))):
+                tested, n_rare = mask_rare(lab, st, min_group)
                 r = stratified_permanova(dist, tested, st)
                 first = first or r
                 rows.append({"level": c.level, "clade": c.name, "matrix": name, "test": test, "n_genera": r["n"],
-                             "n_labeled": n_lab, "n_groups": r["n_groups"], "n_dropped_rare_group": int(rare.sum()),
+                             "n_labeled": n_lab, "n_groups": r["n_groups"], "n_dropped_rare_group": n_rare,
                              "n_dropped_no_stratum": r["n_dropped_no_stratum"], "n_strata_used": r["n_strata_used"],
                              "n_unique_permutations_log10": r["n_unique_permutations_log10"], "pseudo_F": r["F"], "R2": r["R2"], "R2_adj": r["R2_adj"], "p_value": r["p"], "q_BH": np.nan,
                              "caveat": r["caveat"]})
             pooled = pool_groups(lab, min_group)
-            pal = lifestyle_palette([g for g in pooled.dropna().unique() if not str(g).startswith("other (")])
             stem = f"E03_{slug}_{name}_pcoa_lifestyle"
             o.meta[stem] = {"n": int(len(mat)), "n_groups": int(pooled.nunique()), "signal_kind": "permanova_R2",
                             "signal": first["R2"] if np.isfinite(first["R2"]) else None}
