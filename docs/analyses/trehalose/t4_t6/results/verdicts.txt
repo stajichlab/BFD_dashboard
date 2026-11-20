@@ -1,0 +1,15 @@
+T4 focal set: 27 Sordariomycetes genera with primary_lifestyle animal_parasite; reference 209 other labelled genera
+T4a TPS per 1,000: diff 0.105 (CI 0.079 to 0.170), delta 0.63 -> supported
+T4b ATH: 67% of focal genera carry >= 1 copy; per 1,000 diff 0.091, delta 0.44 -> mixed
+T4c trehalose transport: not tested (no specific family in the tables)
+positive control (S8 protease and GH18 chitinase higher in focal): passes
+T4 overall: mixed
+
+T6: 2780 near-universal families
+  R1 Kickxellales: NTH percentile 0.37 (ratio 0.64); proteome ratio 0.64; TPS percentile 0.17
+  R2 Microsporidia: NTH percentile 0.90 (ratio 0.78); proteome ratio 0.26; TPS percentile 0.77
+  R3 Saccharomycotina: NTH percentile 0.20 (ratio 0.77); proteome ratio 0.52; TPS percentile 0.88
+  R4 Malasseziomycetes: not evaluable
+  K1 Eurotiomycetes: NTH percentile 0.00 (ratio 0.48); proteome ratio 0.86; TPS percentile 0.99
+  K2 Dothideomycetes: NTH percentile 1.00 (ratio 1.89); proteome ratio 0.92; TPS percentile 0.73
+T6 overall: mixed
