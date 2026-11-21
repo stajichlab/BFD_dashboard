@@ -1,6 +1,6 @@
 # Carbon-storage family trees (one genome per genus)
 
-Status: **first-pass trees and the TP1 test done 2026-11-16; IQ-TREE trees for four families still queued** (see Results). The design and decision
+Status: **first-pass trees and the TP1 test done 2026-11-16; the four IQ-TREE trees added 2026-11-21** (see Results). The design and decision
 rules were written, and committed, before any tree was built.
 Parent: [`../README.md`](../README.md) (module definitions), [`../t5/`](../t5/) (the GH65 tree, same pipeline and settings).
 
@@ -66,8 +66,8 @@ The same index is reported for the other families and classes with at least 8 ge
 ## Files
 
 `01_extract_domains.py` (HPCC job 32132586, 10 min), `02_trees.sh` (FastTree array, job 32132838), `03_iqtree.sh` (IQ-TREE array, job 32132839,
-**queued, not yet run**), `04_paralog_index.py`, `test_carbon_trees.py` (5 fixture tests pass on the HPCC), `results/`, `trees/`
-(FastTree trees, logs). Alignments and the tip table (`tips.tsv`, 22,276 kept sequences from 24,356 domain hits) stay in
+all four tasks COMPLETED, the last on 2026-11-19), `04_paralog_index.py`, `test_carbon_trees.py` (5 fixture tests pass on the HPCC), `results/`, `trees/`
+(FastTree and IQ-TREE trees, logs; the IQ-TREE `.iqtree` reports and run logs are gzipped). Alignments and the tip table (`tips.tsv`, 22,276 kept sequences from 24,356 domain hits) stay in
 `bench/trehalose_carbon_trees/` on the HPCC.
 
 ---
@@ -92,7 +92,33 @@ result one **post hoc** statistic was added (closest within-genome pair, below) 
 
 Sequences dropped by the pre-set 60% length rule: TPS 284, TPP 110, NTH 999 (a quarter of the neutral-trehalase domain hits are much
 shorter than the median), UGP 148, GSY 97, GPH 191, GDB 222, GPD 29. trimAl kept every sequence of every family. The IQ-TREE trees for GSY, GPH,
-GDB and GPD are **not built yet**.
+GDB and GPD are below.
+
+### IQ-TREE maximum-likelihood trees (added 2026-11-21)
+
+IQ-TREE 3.0.1, `-m Q.PFAM+R8`, 1,000 ultrafast bootstrap and 1,000 SH-aLRT replicates, seed 20261116 (job 32132839, four array tasks,
+5 h 58 m to 2 d 10 h). Only these four families were run: the pre-set rule was families of at most 2,300 sequences, which excludes
+TPS (4,942) and TPP (3,529).
+
+| Family | Sequences | Columns | UFBoot >= 95 | SH-aLRT >= 80 | RF vs FastTree | normalised RF |
+|---|---|---|---|---|---|---|
+| GSY | 1,742 | 665 | 1,050 / 1,736 (60.5%) | 68.2% | 1,055 | 0.303 |
+| GPH | 1,551 | 736 | 1,055 / 1,547 (68.2%) | 70.3% | 817 | 0.264 |
+| GDB | 1,675 | 500 | 1,027 / 1,672 (61.4%) | 68.4% | 1,006 | 0.301 |
+| GPD | 2,233 | 190 | 1,245 / 2,227 (55.9%) | 60.8% | 1,779 | 0.399 |
+
+Two things to read off this, both of which argue against leaning on any one topology.
+
+**The ML and FastTree topologies disagree substantially.** Between a quarter and two fifths of the splits differ (normalised
+Robinson-Foulds 0.26 to 0.40). The first-pass FastTree trees are not a close approximation of the ML trees for these families.
+
+**Neither is well resolved.** Only 56% to 68% of nodes reach UFBoot >= 95 even in the ML trees. GPD is the weakest on both counts,
+which its alignment explains: 2,233 sequences over 190 trimmed columns, the least information per sequence of any family here.
+
+**TP1 is unaffected, for two independent reasons.** It is a distance test, not a topology test -- the paralog index is a ratio of
+median within-genome copy distance to between-genus distance, computed from branch lengths. And it is a test about TPS and TPP,
+neither of which has an ML tree, both being over the 2,300-sequence bound. Nothing in this section revises the TP1 verdict; the
+trees stand on their own as first-pass topologies for four carbon-storage families.
 
 ### TP1 (pre-registered): supported, by the rule
 
@@ -125,5 +151,5 @@ comparison was not run; gene-model errors (split or merged genes) can create clo
 
 ### Not done
 
-IQ-TREE trees (queued); rooting or outgroups; identification of the number of deep paralog groups per class; a copy-number-matched test of the
+Rooting or outgroups; identification of the number of deep paralog groups per class; a copy-number-matched test of the
 closest-pair statistic; trees for PGM; any claim about function or origin (citations to verify, none made).
