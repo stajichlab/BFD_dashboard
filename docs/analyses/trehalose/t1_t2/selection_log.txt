@@ -1,0 +1,6 @@
+lecan_primary: 10 genomes, 9 genera, N50 median 163,652
+lecan_fragmented: 4 genomes, 3 genera, N50 median 26,963
+scedo: 5 genomes, 2 genera, N50 median 1,953,216
+other_loss: 4 genomes, 4 genera, N50 median 1,252,350
+control_pos: 10 genomes, 10 genera, N50 median 633,612
+queries: 20 (10 UniProt, 10 BFD)
