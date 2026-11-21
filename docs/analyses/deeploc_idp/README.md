@@ -126,5 +126,53 @@ candidate list**: real effectors may be missed.
 
 ### Not done
 
-GC-adjusted H1 to H3; a two-sided test for H5; the cause of the C4 failure; any phylogenetic correction; any link to function
+A two-sided test for H5; ~~the cause of the C4 failure~~ and ~~GC-adjusted H1 to H3~~ (both done post hoc on 2026-11-21, see the next section); any phylogenetic correction; any link to function
 (literature claims about disorder and function are citations to verify and none is made).
+
+---
+## Post hoc checks (2026-11-21; NOT pre-registered; they do not change the verdicts above)
+
+Scripts `03_c4_diagnosis.py` (job 32358756, 1.5 min) and `04_gc_adjusted.py` (job 32358729, 43 s); tables in `results/posthoc/`;
+tests `test_gc_adjusted.py`. Both were chosen after the results were known.
+
+### Why C4 failed (29,062 proteins with CFEM, LysM, CAP or Chitin_bind_1 domains at e <= 1e-5)
+
+Each protein gets one reason, in the order no SignalP row, SignalP < 0.9, more than 1 TMHMM helix, GPI anchor, pass.
+
+| Family | proteins | pass strict | no SignalP row | SignalP < 0.9 | > 1 TM helix | GPI anchor |
+|---|---|---|---|---|---|---|
+| CFEM | 12,294 | 19.2% | 10.7% | 0.9% | 18.0% | **51.1%** |
+| CAP | 5,970 | 66.3% | 22.7% | 3.3% | 1.1% | 6.7% |
+| Chitin_bind_1 | 5,517 | 67.3% | 25.5% | 3.2% | 1.3% | 2.8% |
+| LysM | 5,281 | 47.9% | **47.2%** | 2.0% | 0.6% | 2.3% |
+| all | 29,062 | 43.2% | 22.6% | 2.0% | 8.2% | 23.9% |
+
+- CFEM is 42% of the control proteins, and 69% of them fail because of a predicted GPI anchor or more than one TM helix. The strict filter
+  removes GPI-anchored proteins by design, so for CFEM the control and the filter disagree by construction.
+- Without CFEM the pooled pass rate is 60.8%, still under 70%. The main loss there is "no SignalP row" (22.7% to 47.2%).
+- If GPI anchors and TM helices are allowed (SignalP >= 0.9 only), the pooled rate is 75.4%; with the GPI and TM-count rules of
+  `secreted_noTM` it is 67.2%.
+- DeepLoc calls 92.9% of these proteins extracellular or cell membrane (CAP 93.0%, CFEM 99.5%, Chitin_bind_1 99.2%, LysM 70.6%),
+  so the localization predictor and the signal-peptide filter disagree for a large share.
+- Not tested: whether the proteins without a SignalP row are real secreted proteins missed by SignalP, or intracellular proteins that
+  carry the domain (LysM and CAP occur in both). So the filter is shown to be too strict for GPI-anchored families, but it is not shown to miss
+  real effectors.
+- Consequence for H7 and the candidate list: the rule excludes GPI-anchored and multi-TM proteins and every protein without a
+  SignalP call. The candidate list is therefore a conservative subset. H7 was not re-run with a looser rule.
+
+### GC-adjusted H1 to H3 (classes with at least 8 genomes)
+
+The contrasts are already within genome, so a genome-level GC difference cannot create them directly. The check asks whether the size of
+the contrast depends on genome GC. Slopes use class-centred GC.
+
+| | as pre-registered: classes in direction, pooled median | GC-adjusted: classes in direction, pooled median | slope per GC point | Spearman rho (contrast, GC) | low-GC half / high-GC half median |
+|---|---|---|---|---|---|
+| H1 | 19 of 20, +0.118 | 19 of 20, +0.118 | -0.0003 | -0.03 | +0.120 / +0.116 |
+| H2 | 20 of 20, +0.163 | 20 of 20, +0.163 | +0.0017 | +0.17 | +0.159 / +0.166 |
+| H3 | 18 of 20, -0.140 | 18 of 20, -0.140 | -0.0012 | -0.09 | -0.139 / -0.142 |
+
+- The verdicts do not change; the adjusted and unadjusted medians agree to three decimals. The pooled medians differ slightly from the
+  table above (H1 +0.124) because this check keeps only genomes in classes with at least 8 valid contrasts.
+- The H2 contrast rises a little with GC (rho 0.17); the others do not depend on it.
+- This adjusts for genome GC only. It does not adjust for the amino-acid composition of each protein, because the cube holds no
+  per-protein composition. H4 (rho 0.19) therefore still leaves open that disorder predictions partly follow composition.
