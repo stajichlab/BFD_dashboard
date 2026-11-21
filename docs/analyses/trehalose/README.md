@@ -10,7 +10,11 @@ flagged in [FUNCTIONAL_ANALYSES.md](../../FUNCTIONAL_ANALYSES.md) (agenda A2/C4)
 because the trehalose genes are near-universal and their absences are clustered.
 
 **Status.** Observational first pass, one afternoon, MotherDuck only. No tree, no
-tblastn, no wet-lab validation. Nothing here should be quoted as a loss call yet.
+wet-lab validation. Nothing here should be quoted as a loss call yet.
+**Update 2026-11-21:** the tblastn check of the TPS/TPP absences (T1, T2) has now been run; see
+`t1_t2/README.md`. T1: candidate loss in 10 of 10 informative Lecanoromycetes and 5 of 5
+Scedosporium/Lomentospora (not proof of loss). T2: killed by its pre-registered rule. The text
+below is the 2026-11-13 state and is not rewritten.
 
 ## 0. Review corrections and the HPCC rebuild (2026-11-13)
 
@@ -45,7 +49,7 @@ inputs `scripts/th0_inputs.sql`, outputs in `data_j13/` and `figs_j13/`, slurm l
 **What stays and what does not (observed):**
 - *Stays:* the pathway is near-universal and the module correlations, the GH65 patchiness, the TPS-TPP co-absence in Lecanoromycetes (it survives the class-stratified null, obs/exp 32 with 50 observed against 1.55 expected) and the weak desiccation prediction.
 - *Does not stand as written:* "neutral trehalase is dropped" rested on its percentile in the allometry null (91 first, 85 now) and on a q-value that belonged to another row; the xerophile NTH result is not significant (q = 0.75). Of the other trehalose and glycogen genes none is co-absent with TPS beyond expectation once the q-values are correct.
-- *Unresolved:* the TPS-absent genomes are gap-prone (55 of 75 miss >= 5 universal families, against a median of 4), so even the surviving TPS-TPP co-absence in Lecanoromycetes is consistent with a lineage-wide annotation gap (metagenome-derived, fragmented assemblies, N50 about 38 kb) and remains a **candidate**; the tblastn check (T1, queue in `TODO.md`) has not been run.
+- *Unresolved:* the TPS-absent genomes are gap-prone (55 of 75 miss >= 5 universal families, against a median of 4), so even the surviving TPS-TPP co-absence in Lecanoromycetes is consistent with a lineage-wide annotation gap (metagenome-derived, fragmented assemblies, N50 about 38 kb) and remains a **candidate**; the tblastn check (T1) has since been run: see `t1_t2/README.md`.
 
 **Caveats of the rebuild.** (i) The allometry null and the near-universal set depend on analysis B's `kw_genus_pfam`, which has no saved SQL; it was rebuilt from the atlas A7 Pfam matrix and differs from the MotherDuck copy (Coemansia: 161 genomes and 145 with PF00982 now against 146 and 131 in the MotherDuck table, probably the newer snapshot; 1,458 universal families against 1,409; `data_j13/th_check_kw.csv`), so shifts in the allometry percentiles (TPS 53 to 77, glycerol 13 to 6) mix the effect of the rebuilt table with the effect of the code fixes and are not separated. (ii) p-values are rounded to six decimals in `th3`, so five q-values are exactly 0. (iii) The `mumm` word in the dry-habitat epithet list of `th1` is absent from `th2`/`th4` (not reconciled). (iv) The rebuild used the current BFD parquet snapshot on the HPCC; the first run used a 2026-11-06 MotherDuck copy. (v) Two log labels were not regenerated: `data_j13/run_log_th1_survey.txt` still says "BUSCO>=85" for the credible set (the values use class-relative BUSCO; the label is fixed in the script) and `run_log_th5_qc.txt` says "1,409 near-universal families" (the set is now 1,458). (vi) Everything else in the Limitations section (no tree, no tblastn, genus medians treated as independent) still applies.
 
@@ -254,7 +258,7 @@ I would bet on:
   mycobiont imports ribitol/glucose from the photobiont); for *Scedosporium* it is
   harder to rationalise, which is itself evidence against (c).
 
-**This is the decisive experiment, and it is cheap:** tblastn the TPS and TPP
+**This is the decisive experiment, and it is cheap** (run 2026-11-21, see `t1_t2/README.md`): tblastn the TPS and TPP
 proteins of the nearest non-lichen relative against ~10 Lecanoromycetes and ~5
 Scedosporium assemblies, plus a six-frame blastx of the same queries against the
 contigs. Full-length hits with introns = detection failure; no hits anywhere = a
