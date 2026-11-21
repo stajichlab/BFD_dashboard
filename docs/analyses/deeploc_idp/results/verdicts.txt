@@ -1,0 +1,15 @@
+CONTROLS
+C1: TF proteins DeepLoc nuclear: share of classes with median >= 0.90: 1.000 (criterion 0.9) -> pass
+C2: PF00153 proteins DeepLoc mitochondrion: 0.964 (criterion 0.7) -> pass
+C3: strict-secretome proteins DeepLoc extracellular or membrane: 0.909 (criterion 0.6) -> pass
+C4: effector-like families recovered by the secretion filter: 0.431 (criterion 0.7) -> FAIL
+C5: nuclear minus mitochondrial IDR_all0 positive: share of classes: 1.000 (criterion 0.9) -> pass
+
+HYPOTHESES
+H1: TF minus other nuclear IDR_all0: share of classes in predicted direction 0.950 (n=20, p=2e-05, q=3.5e-05) -> supported
+H2: unannotated minus annotated IDR_all0: share of classes in predicted direction 1.000 (n=20, p=9.5e-07, q=2.2e-06) -> supported
+H3: strict secretome minus other IDR_all0: share of classes in predicted direction 0.900 (n=20, p=0.0002, q=0.00028) -> supported
+H4: genome IDR_all0 vs GC, class-demeaned: Spearman rho 0.188 (n=1491, p=1.4e-13, q=9.6e-13) -> mixed
+H5: nuclear share vs log proteome size, class-demeaned: Spearman rho -0.228 (n=1491, p=1, q=1) -> killed
+H6: Microsporidia minus rest IDR_all0 (CI -0.201 to -0.178): median genome contrast -0.192 (n=30, p=1.9e-09, q=6.5e-09) -> supported
+H7: effector-like candidates per 1,000 proteins, plant pathogen minus saprotroph: share of classes in predicted direction 0.750 (n=4, p=0.31, q=0.36) -> supported

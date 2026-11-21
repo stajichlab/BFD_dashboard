@@ -1,0 +1,6 @@
+control	what	observed	criterion	passed
+C1	TF proteins DeepLoc nuclear: share of classes with median >= 0.90	1.0	0.9	True
+C2	PF00153 proteins DeepLoc mitochondrion	0.9639506252313437	0.7	True
+C3	strict-secretome proteins DeepLoc extracellular or membrane	0.9088676635427271	0.6	True
+C4	effector-like families recovered by the secretion filter	0.43076602975344175	0.7	False
+C5	nuclear minus mitochondrial IDR_all0 positive: share of classes	1.0	0.9	True
