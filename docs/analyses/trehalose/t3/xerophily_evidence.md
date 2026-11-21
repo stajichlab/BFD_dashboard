@@ -53,5 +53,5 @@ abstract, not from a table I could read.
 
 ## Files in this folder
 
-`t3_lib.py`, `t3_design.py`, `test_t3_lib.py`: the earlier name-pattern design (5 tests passed); its label is a species-name
-pattern and is **not** an evidence-based xerophily label, so it is kept only as a record.
+Only this file is kept. The earlier name-pattern code (`t3_lib.py`, `t3_design.py`, `test_t3_lib.py`) was removed on 2026-11-21:
+its label was a species-name pattern, not an evidence-based xerophily label. It remains in git history at commit c5f80ab.
