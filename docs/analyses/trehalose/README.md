@@ -401,6 +401,14 @@ curation task, not a query.
 | T5 | GH65 acid trehalase is a Dikarya-stem innovation with repeated losses (0 % in Mucoromycetes, 3 % in Agaricomycetes), not a single gain | gene tree from a curated seed alignment over all genera + a genus tree; also test the HGT alternative (bacterial GH65 sisters, near-identical GC to host) | GH65 proteins that are arbutinases/α-xylosidases rather than trehalases → family is mis-assigned |
 | T6 | Neutral trehalase is preferentially dropped from reduced genomes (91st percentile of the allometry null, and 0.46 AUC in xerophiles) because storage rather than scavenging matters in a stable niche | ortholog-matched retention rate as in analysis A table 4 for NTH vs TPS vs a housekeeping control | the same pattern in a lineage without genome reduction |
 
+**Status of T1 to T6 (2026-11-21).** The text above is the design as written; these lines give what has been run since. Each result is a pre-registered rule applied once; none is a function claim.
+- **T1** (`t1_t2/`): candidate loss supported. 10 of 10 informative Lecanoromycetes and 5 of 5 *Scedosporium*/*Lomentospora* have no TPS or TPP alignment at e-value 1e-3. A candidate loss is not proof of loss; independence of losses was not tested.
+- **T2** (`t1_t2/`): killed by its rule. 8 of the 19 candidate-loss genomes are in genera labelled free-living saprotroph by FungalTraits 1.2, all Microascales, so probably one loss rather than eight.
+- **T3** (`t3/xerophily_evidence.md`): not run. The literature review supports only a clade-level xerophily label (*Aspergillus* sections *Aspergillus* and *Restricti*), so a within-genus species-level test is not supportable from these sources; the earlier name-pattern code was removed.
+- **T4** (`t4_t6/`, PR #16): mixed. TPS is higher in 27 animal-parasite Sordariomycetes genera (difference +0.105 per 1,000 proteins, Cliff's delta 0.63), but ATH is present in only 18 of 27 (67%; the rule needs 75%). Trehalose transport was not tested.
+- **T5** (`t5/`): inconclusive. The pre-registered gate failed (UFBoot 22.1 against 90 required for the fungal reference clade), so R1, R2, R3 and R5 were not evaluated.
+- **T6** (`t4_t6/`, PR #16): mixed, leaning against the hypothesis. NTH is at or below the 10th percentile in 0 of 3 evaluable reduction contrasts; one contrast (Malasseziomycetes) is not evaluable.
+
 ## 8. Limitations
 
 - No phylogeny: every cross-clade p-value here is anticonservative; genus medians are
