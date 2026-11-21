@@ -1,6 +1,6 @@
 # Reference files for the DB build
 
-Loaded by `sql/bfd_traits.sql` into `ref_fungaltraits`, `ref_growth_form_override` and `ref_class_subphylum`.
+Loaded by `sql/bfd_traits.sql` into `ref_fungaltraits`, `ref_growth_form_override` and `ref_class_subphylum`, `ref_phylum_subphylum` and `ref_species_subphylum`.
 
 | File | Source | Notes |
 |---|---|---|
@@ -9,5 +9,7 @@ Loaded by `sql/bfd_traits.sql` into `ref_fungaltraits`, `ref_growth_form_overrid
 | `class_subphylum.tsv` | `taxonomy_py` rows from `bin/summary/taxonomy.py`; `atlas` rows from the class lists in `bin/atlas/build_labels.py`; `proposed` rows added 2026-11-18 and 2026-11-19; `ncbi` rows (8 classes) copied from the NCBI `species.SUBPHYLUM` values of 2026-11-18 | `proposed` rows are not yet checked against a cited classification. Classes in phyla without subphyla, and classes that could not be placed, are left out, so `SUBPHYLUM` stays NULL for them. |
 
 | `phylum_subphylum.tsv` | Added 2026-11-18 at the user's request | Fallback when the CLASS is missing or not in `class_subphylum.tsv`: Kickxellomycota, Mortierellomycota, Glomeromycota, Basidiobolomycota, Blastocladiomycota, Microsporidia, Rozellomycota, Aphelidiomycota (the last five added 2026-11-19). Phyla with several subphyla (Mucoromycota, Zoopagomycota) have no phylum entry. |
+
+| `species_subphylum.tsv` | Added 2026-11-21 at the user's request | Placeholder by SPECIES name, for genomes that have no CLASS. Order of use: NCBI `species.SUBPHYLUM`, this file, `class_subphylum.tsv`, `phylum_subphylum.tsv`. Now: `Ascomycota sp. Antarctolithica obscura` (8 genomes) to `Antarctolithicomycotina`. Remove the row when the taxonomy is fixed upstream. |
 
 `Pneumocystomycetes` is the spelling in the genome data. `taxonomy.py` has `Pneumocystidomycetes`, which matched no genome.

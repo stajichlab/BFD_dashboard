@@ -75,3 +75,12 @@ def test_early_diverging_classes_have_their_own_subphylum():
     assert m["Sanchytriomycetes"] == "Sanchytriomycotina"
     assert m["Monoblepharidomycetes"] == "Monoblepharidomycotina"
     assert m["Hyaloraphidiomycetes"] == "Hyaloraphidiomycotina"
+
+
+def test_species_subphylum_has_antarctolithica_placeholder():
+    rows = _rows("species_subphylum.tsv", "\t")
+    assert list(rows[0]) == ["SPECIES", "SUBPHYLUM", "source", "note"]
+    names = [r["SPECIES"] for r in rows]
+    assert len(names) == len(set(names))
+    r = {r["SPECIES"]: r for r in rows}["Ascomycota sp. Antarctolithica obscura"]
+    assert r["SUBPHYLUM"] == "Antarctolithicomycotina" and r["source"] == "proposed"
