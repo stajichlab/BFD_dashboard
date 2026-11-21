@@ -9,6 +9,7 @@ reaches a stable 1.0, minor version bumps mean "something was added or changed".
 ## [Unreleased]
 
 ### Added
+- config/refs/species_subphylum.tsv, `ref_species_subphylum` and the `species_table` value of `subphylum_source`: a SPECIES-name placeholder for genomes with no CLASS, used after the NCBI value and before the class and phylum tables. First row: `Ascomycota sp. Antarctolithica obscura` (8 genomes) to `Antarctolithicomycotina` (user's request 2026-11-21). On the live DB, genomes without a SUBPHYLUM should fall from 30 to 22 after the next `build_bfd_db.sh` run (not yet run). `build_bfd_db.sh` now requires the new file.
 - config/refs: SUBPHYLUM mappings added at the user's request 2026-11-19: eight NCBI classes (Chytridiomycetes, Entomophthoromycetes, Peribolosporomycetes, Novakomycetes, Xylobotryomycetes, Caulochytriomycetes, Olpidiomycetes, Calcarisporiellomycetes), Neocallimastigomycetes (class), Sanchytriomycetes, Monoblepharidomycetes and Hyaloraphidiomycetes (class), and Basidiobolomycota, Blastocladiomycota, Microsporidia (subphylum set to the phylum name) Rozellomycota and Aphelidiomycota (phylum fallback). On the live DB, genomes without a SUBPHYLUM fall from 267 to 30; no genome with an NCBI value changes. Takes effect at the next `build_bfd_db.sh` run.
 - `v_genome_labels` carries FungalTraits 1.2 columns (`growth_form`, `growth_form_source`, `primary_lifestyle`,
   `secondary_lifestyle`, `plant_pathogenic_capacity`, `decay_substrate`, `animal_biotrophic_capacity`,

@@ -2,7 +2,7 @@
 -- bfd_traits.sql: FungalTraits ecology columns and SUBPHYLUM for the local BFD.duckdb.
 -- Run after bfd_compat_views.sql (needs the `species` view) and BEFORE bfd_extra_views.sql
 -- (v_genome_labels joins v_genome_traits). Line 1 is replaced with the real config/refs path by
--- workflows/build_bfd_db.sh. Idempotent. The three ref_* tables are small (about 11,000 rows in total) and are stored
+-- workflows/build_bfd_db.sh. Idempotent. The ref_* tables are small (about 11,000 rows in total) and are stored
 -- in the database so a dumped copy does not depend on files elsewhere.
 -- Rules are those of bin/atlas/build_labels.py (growth_form, growth_form_source, in_fungaltraits, yeast_origin).
 -- FungalTraits is a GENUS-level label, not a genome trait. Cite: Polme et al. 2020, Fungal Diversity 105:1-16 (verify).
@@ -41,6 +41,13 @@ WHERE PHYLUM IS NOT NULL
 GROUP BY PHYLUM;
 COMMENT ON TABLE ref_phylum_subphylum IS 'PHYLUM to SUBPHYLUM fallback for genomes whose CLASS is missing or not in ref_class_subphylum (config/refs/phylum_subphylum.tsv).';
 
+CREATE OR REPLACE TABLE ref_species_subphylum AS
+SELECT SPECIES, min(SUBPHYLUM) AS SUBPHYLUM, min(source) AS source, min(note) AS note
+FROM read_csv('/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard/config/refs/species_subphylum.tsv', header=true, delim='\t', all_varchar=true)
+WHERE SPECIES IS NOT NULL
+GROUP BY SPECIES;
+COMMENT ON TABLE ref_species_subphylum IS 'SPECIES name to SUBPHYLUM for genomes with no usable CLASS (config/refs/species_subphylum.tsv). Placeholder names until the taxonomy is fixed upstream. Beats the class and phylum tables, not an NCBI value.';
+
 CREATE OR REPLACE VIEW v_genome_traits AS
 SELECT t.LOCUSTAG, t.growth_form, t.growth_form_source, t.primary_lifestyle, t.secondary_lifestyle,
        t.plant_pathogenic_capacity, t.decay_substrate, t.animal_biotrophic_capacity, t.in_fungaltraits,
@@ -64,14 +71,16 @@ FROM (
          f.primary_lifestyle, f.secondary_lifestyle, f.plant_pathogenic_capacity, f.decay_substrate,
          f.animal_biotrophic_capacity,
          (f.GENUS IS NOT NULL) AS in_fungaltraits,
-         coalesce(s.SUBPHYLUM, c.SUBPHYLUM, ph.SUBPHYLUM) AS SUBPHYLUM,
+         coalesce(s.SUBPHYLUM, sp.SUBPHYLUM, c.SUBPHYLUM, ph.SUBPHYLUM) AS SUBPHYLUM,
          CASE WHEN s.SUBPHYLUM IS NOT NULL THEN 'species'
+              WHEN sp.SUBPHYLUM IS NOT NULL THEN 'species_table'
               WHEN c.SUBPHYLUM IS NOT NULL THEN 'class_table'
               WHEN ph.SUBPHYLUM IS NOT NULL THEN 'phylum_table' END AS subphylum_source
   FROM species s
   LEFT JOIN ref_fungaltraits f ON s.GENUS = f.GENUS
   LEFT JOIN ref_growth_form_override o ON s.GENUS = o.GENUS
+  LEFT JOIN ref_species_subphylum sp ON s.SPECIES = sp.SPECIES
   LEFT JOIN ref_class_subphylum c ON s.CLASS = c.CLASS
   LEFT JOIN ref_phylum_subphylum ph ON s.PHYLUM = ph.PHYLUM
 ) t;
-COMMENT ON VIEW v_genome_traits IS 'One row per genome (key LOCUSTAG): FungalTraits growth form and lifestyle by GENUS (in_fungaltraits false = genus not in FungalTraits 1.2), yeast_origin, and SUBPHYLUM (species.SUBPHYLUM if filled, else the class table, else the phylum table; NULL when none). Same names and rules as atlas genome_labels.parquet.';
+COMMENT ON VIEW v_genome_traits IS 'One row per genome (key LOCUSTAG): FungalTraits growth form and lifestyle by GENUS (in_fungaltraits false = genus not in FungalTraits 1.2), yeast_origin, and SUBPHYLUM (species.SUBPHYLUM if filled, else the species-name table, else the class table, else the phylum table; NULL when none). Same names and rules as atlas genome_labels.parquet.';
