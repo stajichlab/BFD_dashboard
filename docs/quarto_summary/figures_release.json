@@ -1,13 +1,13 @@
 {
-  "tag": "site-figures-2026-11-20",
-  "asset": "site-figures-2026-11-20.tar.zst",
-  "sha256": "2698245dba241978b2838b20f1e0ef6575209212ee3ab747fce6bf146dcda39f",
-  "bytes": 79387256,
-  "created": "2026-11-20",
+  "tag": "site-figures-2026-11-21",
+  "asset": "site-figures-2026-11-21.tar.zst",
+  "sha256": "16b52d01fde5f92f637c5a938d7c2923961499936ef70a08d6d2a6a7b7c369fc",
+  "bytes": 79410785,
+  "created": "2026-11-21",
   "n_png": 354,
   "n_files": 1166,
   "source": {
     "summary_suppress_sha256": "6d9038f9bdda180a707e74e919b2395056b96f19c70bfddfed0ab35997a4bf60",
-    "branch_commit": "e7f384a"
+    "branch_commit": "1a411db"
   }
 }
