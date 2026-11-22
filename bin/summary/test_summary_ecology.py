@@ -402,10 +402,14 @@ def test_workflow_script_has_no_bash_source_and_parses():
         assert path in txt
 
 
-def test_page_mentions_every_output_table():
+def test_page_mentions_its_tables_and_figures():
+    """The page is test-based (docs/analyses/ecology_tests); the old per-clade tables and figures are no longer shown."""
     txt = (REPO / "docs" / "quarto_summary" / "17_ecology.qmd").read_text()
-    for n in se.GLOBAL_TABLES + se.CLADE_TABLES:
+    for n in ("ecology_traits_coverage", "ecology_variance_partition", "ecology_permanova_profiles", "ecology_matched_summary",
+              "ecology_matched_hits", "ecology_domain_scan_summary", "ET1_variance_partition", "ET2_mycorrhizal_vs_saprotroph",
+              "ET3_mycorrhizal_cazy_families", "E01_aa_pcoa_lifestyle", "E02_aa_pcoa_growthform"):
         assert n in txt, n
+    assert "E03_" not in txt
 
 
 # ---- final-review fixes ----

@@ -1,5 +1,5 @@
 ---
-title: "Ecology and ordination"
+title: "Ecology"
 ---
 
 ```{python}
@@ -8,48 +8,84 @@ sys.path.insert(0, ".")
 from _helpers import fig, table, single, flat_table, read_flat, gallery
 ```
 
-The ordinations on the previous page are coloured here by fungal ecology. The label is the primary lifestyle and the growth form of the genus, from FungalTraits 1.2. It is a genus-level label: every genome of a genus gets the same value. About one genus in ten has no label; those genera are drawn grey and are not part of any test. The coverage is in `ecology_traits_coverage`.
+Does the ecology of a genus explain what its genomes contain, once its taxonomy is taken into account? This page gives three tests and their results. The ordination figures that used to fill this page are reduced to two overview plots at the end.
 
-Taxonomy explains more of the variation than ecology does, and lifestyle follows ancestry. A significant result is a pattern, not a cause. Two tests are given. The unrestricted test permutes the lifestyle labels over all genera. It cannot tell lifestyle from ancestry. The stratified test (`within_order` for the whole tree, `stratified` for a clade) permutes labels only inside an order (inside a family for an order clade), so it asks whether lifestyle explains the genome features after the ranks below are taken into account. Genera with no order or family are left out of the stratified test and counted in `n_dropped_no_stratum`. Lifestyles with fewer than five genera are left out of the tests and counted in `n_dropped_rare_group`; in the figures they are pooled as "other". PERMANOVA uses 999 permutations. Clade p values are corrected by Benjamini-Hochberg across the clades of one level, feature set and test (`q_BH`).
-
-## Coverage
+The ecology label is the primary lifestyle and the growth form of the genus, from FungalTraits 1.2. It is a genus-level label: every genome of a genus gets the same value. About one genus in ten has no label; those genera are not part of any test. Each test uses one representative genome per genus. Genera are not independent (shared ancestry), and no phylogenetic correction is possible here. A significant result is a pattern, not a cause. The design, the decision rules and the code are in the repository ([`docs/analyses/ecology_tests`](https://github.com/stajichlab/BFD_dashboard/tree/main/docs/analyses/ecology_tests)); the rules were written before the tests were run.
 
 ```{python}
 flat_table("ecology_traits_coverage", "ecology")
 ```
 
-## Whole tree
+## 1. How much do taxonomy and ecology explain?
+
+Each genome property and each protein-content measure (per 1,000 genes) is split into a part explained by taxonomy only, a part shared with ecology, a part explained by ecology only (after taxonomy), and the rest. Taxonomy is the order (or the family). Ecology is a coarse lifestyle with six groups: saprotroph, plant pathogen, animal parasite, mycoparasite, mycorrhizal and lichenized. The test of the ecology-only part permutes lifestyle labels within each order. Ecology "explains" a measure when its unique part is at least 0.02 and q < 0.05.
 
 ```{python}
-single("E01_codon_pcoa_lifestyle", "PCoA of codon frequencies, coloured by primary lifestyle.", "ecology", "75%")
-single("E02_codon_pcoa_growthform", "PCoA of codon frequencies, coloured by growth form.", "ecology", "75%")
+single("ET1_variance_partition", "Variance in genome properties and protein content explained by order and by coarse lifestyle.", "ecology", "85%")
+```
+
+Taxonomy explains most of the variance. Most of what ecology explains alone is shared with taxonomy, because lifestyle follows ancestry. The unique part of ecology is small and becomes smaller when the finer rank (family) is used.
+
+**Order and coarse lifestyle**
+
+```{python}
+flat_table("ecology_variance_partition", "ecology", columns=["response", "kind", "n", "R2adj_taxonomy", "R2adj_ecology", "unique_ecology", "shared", "q_BH", "ecology_explains"],
+           where=lambda d: d[d.model == "order + coarse lifestyle"])
+```
+
+**Family and coarse lifestyle**
+
+```{python}
+flat_table("ecology_variance_partition", "ecology", columns=["response", "kind", "n", "R2adj_taxonomy", "R2adj_ecology", "unique_ecology", "shared", "q_BH", "ecology_explains"],
+           where=lambda d: d[d.model == "family + coarse lifestyle"])
+```
+
+Whole protein-domain profiles also differ by lifestyle. PERMANOVA on Bray-Curtis distances, with permutations within order (999 permutations, so p = 0.001 is the smallest value possible). The pseudo-F and R2 use all genera in both tests; only the permutations differ.
+
+```{python}
+flat_table("ecology_permanova_profiles", "ecology")
+```
+
+## 2. Closely related genera with different ecologies
+
+A matched contrast compares two ecologies inside the same clade and combines the clades. A clade qualifies when it holds at least 3 genera of each ecology; a contrast is evaluable with at least 4 qualifying clades. The pooled effect is the mean over clades of the difference of group means (weighted by the smaller group), tested by permuting labels within clade (19,999 permutations; q is Benjamini-Hochberg over the 18 measures of a contrast). A measure is *supported* when q < 0.05 and at least 75% of the clades agree in sign; *mixed* when q < 0.05 but fewer agree.
+
+```{python}
+flat_table("ecology_matched_summary", "ecology")
+```
+
+Within a family, closely related genera that differ in ecology are rare, so most contrasts cannot be evaluated at family level. Plant pathogen against saprotroph is the only family-level contrast with enough families (6): no measure reaches q < 0.05.
+
+The order-level rows were added after the family-level result was known (post hoc). Relatives are then further apart, and families inside an order are not controlled: ectomycorrhizal and saprotrophic genera often sit in different families of the same order. The order-level test is therefore less strict, and its results are hypotheses.
+
+```{python}
+flat_table("ecology_matched_hits", "ecology")
+```
+
+The clearest pattern is mycorrhizal against saprotrophic genera in the same order: fewer plant-cell-wall-degrading enzymes, a smaller secretome and fewer proteases, in each of the five orders that qualify.
+
+```{python}
+single("ET2_mycorrhizal_vs_saprotroph", "Difference between mycorrhizal and saprotrophic genera inside each order, four protein-content measures (per 1,000 genes).", "ecology", "95%")
+single("ET3_mycorrhizal_cazy_families", "CAZy families with the largest difference between mycorrhizal and saprotrophic genera.", "ecology", "70%")
+```
+
+## 3. Which families differ? (exploratory)
+
+The same test is applied to every protein domain, CAZy family and TF family present in at least 10% of the genera of a contrast (Benjamini-Hochberg over about 1,700 features). The lists are in the repository (`results/C_domain_scan_*.tsv`). They generate hypotheses; no mechanism is tested.
+
+```{python}
+flat_table("ecology_domain_scan_summary", "ecology")
+```
+
+## Overview ordinations
+
+PCoA of amino-acid frequencies of the genus representatives, coloured by lifestyle and by growth form. Taxonomy dominates both (see section 1).
+
+```{python}
 single("E01_aa_pcoa_lifestyle", "PCoA of amino-acid frequencies, coloured by primary lifestyle.", "ecology", "75%")
 single("E02_aa_pcoa_growthform", "PCoA of amino-acid frequencies, coloured by growth form.", "ecology", "75%")
-single("E01_structure_pcoa_lifestyle", "PCoA of gene-structure statistics, coloured by primary lifestyle.", "ecology", "75%")
-single("E02_structure_pcoa_growthform", "PCoA of gene-structure statistics, coloured by growth form.", "ecology", "75%")
-flat_table("ecology_permanova_global", "ecology", columns=["matrix", "trait", "test", "n_genera", "n_groups", "n_dropped_rare_group", "n_dropped_no_stratum", "n_strata_used", "pseudo_F", "R2", "R2_adj", "p_value", "caveat"])
 ```
 
-## Clades
+## Limits
 
-Each clade has its own ordination, recomputed on the genera of that clade (gene-structure values are standardized within the clade). A clade is listed when it has at least 30 labeled genera and at least two lifestyles with at least five genera. The table lists the clades that were not analysed and why (`ecology_clades_skipped`).
-
-```{python}
-from IPython.display import Markdown, display
-from _helpers import HERE
-import re
-t = read_flat("ecology_permanova_clades", "ecology")
-if t is None:
-    display(Markdown("*Table `ecology_permanova_clades` has not been built (tables/ecology/).*"))
-else:
-    flat_table("ecology_permanova_clades", "ecology", columns=["level", "clade", "matrix", "test", "n_genera", "n_labeled", "n_groups", "R2_adj", "p_value", "q_BH", "caveat"])
-    slug = lambda lv, n: lv + "_" + re.sub(r"[^a-z0-9]+", "_", n.lower()).strip("_")
-    for (lv, cl), _ in t.groupby(["level", "clade"], sort=False):
-        display(Markdown(f"### {cl} ({lv})"))
-        for m in ("codon", "aa", "structure"):
-            single(f"E03_{slug(lv, cl)}_{m}_pcoa_lifestyle", f"{cl}: {m} PCoA, coloured by primary lifestyle.", "ecology", "60%")
-```
-
-```{python}
-flat_table("ecology_clades_skipped", "ecology")
-```
+One label per genus (real species vary within a genus). Shared ancestry above the stratum is not modelled. The permutations are exchangeable only inside the stated clade, so the order-level matched tests do not separate ecology from family. Protein-content measures exist for function-annotated genomes only. The domain scan has no independent replication. Several contrasts could not be evaluated because too few clades hold both ecologies.
