@@ -10,12 +10,12 @@
 #
 # Submit from anywhere:   sbatch /bigdata/stajichlab/shared/projects/BFD/BFD_dashboard/workflows/build_labels_db.sh
 # Overrides (environment): SRC=/path/to/BFD.duckdb  OUT=/path/to/BFD_labels.duckdb  REPO=/path/to/BFD_dashboard
-#   Step 1 default SRC is the dashboard's own db/BFD.duckdb. After the switch, set SRC to
-#   Fungi_BFD_runs/BFD_function/db/BFD.duckdb (the pipeline copy) and change this default.
+#   Default SRC is the pipeline copy Fungi_BFD_runs/BFD_function/db/BFD.duckdb (switched from the dashboard's own
+#   db/BFD.duckdb on 2026-11-21).
 set -euo pipefail
 
 REPO="${REPO:-/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard}"
-SRC="${SRC:-$REPO/db/BFD.duckdb}"
+SRC="${SRC:-/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/BFD_function/db/BFD.duckdb}"
 OUT="${OUT:-$REPO/db/BFD_labels.duckdb}"
 REF_DIR="${REF_DIR:-$REPO/config/refs}"
 SQLFILE="$REPO/sql/dashboard_views.sql"

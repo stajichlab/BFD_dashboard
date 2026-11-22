@@ -13,14 +13,16 @@ Rules (see docs/BFD_SCRATCH.md):
     job its own scratch file with BFD_SCRATCH_DB or the ``scratch_db`` argument.
 
 Paths come from arguments, else the environment, else the defaults below:
-    BFD_DB          path to BFD.duckdb         (output of workflows/build_bfd_db.sh)
+    BFD_DB          path to BFD.duckdb         (default: the pipeline copy, Fungi_BFD_runs/BFD_function/db/BFD.duckdb)
     BFD_SCRATCH_DB  path to the scratch file   (created on first use)
-    BFD_LABELS_DB   path to BFD_labels.duckdb  (optional; built by workflows/build_labels_db.sh)
+    BFD_LABELS_DB   path to BFD_labels.duckdb  (built by workflows/build_labels_db.sh); set it to "" for no labels file
 
-The labels file holds the dashboard's analysis layer (v_genome_labels, v_genome_traits, ref_* tables). When given, it is
-attached READ_ONLY as ``labels`` and searched before ``bfd``, so unqualified ``v_genome_labels`` resolves to it.
-Without it nothing changes. The file records which pipeline database it was built from; connect() warns when
-that database is newer.
+The pipeline database holds build facts only. The labels file holds the dashboard's analysis layer (v_genome_labels,
+v_genome_traits, ref_* tables). It is attached READ_ONLY as ``labels`` and searched before ``bfd``, so unqualified
+``v_genome_labels`` resolves to it. When ``bfd_db`` and BFD_DB are not given (the default pipeline database is used) and
+db/BFD_labels.duckdb exists, it is attached automatically. When you name another database, no labels file is attached
+unless you also name one. The file records which pipeline database it was built from; connect() warns when that
+database is newer.
 
 Nothing runs at import time.
 """
@@ -34,7 +36,8 @@ from pathlib import Path
 import duckdb
 
 _ROOT = Path("/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard")
-DEFAULT_BFD_DB = _ROOT / "db" / "BFD.duckdb"
+DEFAULT_BFD_DB = Path("/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/BFD_function/db/BFD.duckdb")  # pipeline copy
+DEFAULT_LABELS_DB = _ROOT / "db" / "BFD_labels.duckdb"
 DEFAULT_SCRATCH_DB = _ROOT / "db" / "bfd_scratch.duckdb"
 
 _PREFIX_RE = re.compile(r"^[a-z][a-z0-9]{0,11}_")
@@ -58,11 +61,12 @@ def connect(
     labels_db               attach this labels file read-only as ``labels`` (else BFD_LABELS_DB, else none).
     threads / memory / tmp  set DuckDB limits. Use tmp on /bigdata or $SCRATCH inside a job.
     """
+    using_default_bfd = not (bfd_db or os.environ.get("BFD_DB"))
     bfd_path = Path(bfd_db or os.environ.get("BFD_DB") or DEFAULT_BFD_DB)
     if not bfd_path.exists():
         raise FileNotFoundError(
-            f"{bfd_path} not found. Build it with: sbatch workflows/build_bfd_db.sh "
-            "(or set BFD_DB to the pipeline copy under Fungi_BFD_runs/BFD_function/db/)."
+            f"{bfd_path} not found. It is the pipeline database: build it with "
+            "Fungi_BFD/scripts/rebuild_pipeline_duckdb.sh, or set BFD_DB."
         )
     con = duckdb.connect()  # in memory; the real data is in the attached files
     if threads:
@@ -82,7 +86,14 @@ def connect(
             sp.parent.mkdir(parents=True, exist_ok=True)
             con.execute(f"ATTACH '{sp}' AS bfd_scratch")
     con.execute("USE bfd")  # unqualified names (pfam, species) resolve to bfd, as before
-    labels = labels_db or os.environ.get("BFD_LABELS_DB")
+    if labels_db is not None:
+        labels = labels_db
+    elif "BFD_LABELS_DB" in os.environ:
+        labels = os.environ["BFD_LABELS_DB"]          # "" turns the labels file off
+    elif using_default_bfd and Path(DEFAULT_LABELS_DB).exists():
+        labels = DEFAULT_LABELS_DB
+    else:
+        labels = None
     if labels:
         lp = Path(labels)
         if not lp.exists():
