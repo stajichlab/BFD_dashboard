@@ -10,38 +10,48 @@ website:
     left:
       - href: index.qmd
         text: Overview
-      - href: 01_gene_content.qmd
-        text: Gene content
-      - href: 02_domains.qmd
-        text: Domains
-      - href: 03_localization.qmd
-        text: Localization
-      - href: 04_phylum_patterns.qmd
-        text: Phylum patterns
-      - href: 05_functional_domains.qmd
-        text: Functional areas
-      - href: 07_gene_structure.qmd
-        text: Gene structure
-      - href: 08_composition.qmd
-        text: Composition
-      - href: 09_comparisons.qmd
-        text: Comparisons
-      - href: 10_ordination.qmd
-        text: Ordination
-      - href: 11_gallery.qmd
-        text: Gallery
-      - href: 12_explore.qmd
-        text: Explore
-      - href: 13_tf_landscape.qmd
-        text: TF landscape
-      - href: 14_tf_contrasts.qmd
-        text: TF claims
-      - href: 15_tf_orthologs.qmd
-        text: TF orthologs
-      - href: 16_tf_expansions.qmd
-        text: TF expansions
+      - text: Genes and genomes
+        menu:
+          - href: 01_gene_content.qmd
+            text: Gene content
+          - href: 07_gene_structure.qmd
+            text: Gene structure
+          - href: 08_composition.qmd
+            text: Composition
+      - text: Protein function
+        menu:
+          - href: 02_domains.qmd
+            text: Domains
+          - href: 03_localization.qmd
+            text: Localization
+          - href: 05_functional_domains.qmd
+            text: Functional areas
+      - text: Clades
+        menu:
+          - href: 04_phylum_patterns.qmd
+            text: Phylum patterns
+          - href: 09_comparisons.qmd
+            text: Comparisons
+          - href: 10_ordination.qmd
+            text: Ordination
+      - text: Transcription factors
+        menu:
+          - href: 13_tf_landscape.qmd
+            text: TF landscape
+          - href: 14_tf_contrasts.qmd
+            text: TF claims
+          - href: 15_tf_orthologs.qmd
+            text: TF orthologs
+          - href: 16_tf_expansions.qmd
+            text: TF expansions
       - href: 17_ecology.qmd
         text: Ecology
+      - text: Browse
+        menu:
+          - href: 11_gallery.qmd
+            text: Gallery
+          - href: 12_explore.qmd
+            text: Explore
       - href: 06_data_notes.qmd
         text: Data and methods
 format:
