@@ -1,0 +1,109 @@
+clade_level	contrast	response	n_clades	n_a	n_b	pooled_effect	p	share_clades_same_sign	verdict	q_BH
+order	plant_pathogen vs saprotroph	total_length_bp	11	155	304	0.023827764424576528	0.0812	0.6363636363636364	no evidence	0.1319142857142857
+order	plant_pathogen vs saprotroph	n_genes	11	155	304	-0.024613879197804705	0.0262	0.45454545454545453	no evidence	0.05895
+order	plant_pathogen vs saprotroph	genes_per_mb	11	155	304	-0.04844164362238057	0.0001	0.6363636363636364	mixed	0.0012000000000000001
+order	plant_pathogen vs saprotroph	coding_fraction	11	155	304	-0.03518401171412373	0.00015	0.6363636363636364	mixed	0.0012000000000000001
+order	plant_pathogen vs saprotroph	gc_pct	11	155	304	-1.301893529405295	0.0002	0.6363636363636364	mixed	0.0012000000000000001
+order	plant_pathogen vs saprotroph	median_intron_len_bp	11	155	304	0.006350139592141186	0.0891	0.5454545454545454	no evidence	0.1319142857142857
+order	plant_pathogen vs saprotroph	median_exons_per_gene	11	155	304	-0.12308133958591631	0.0008	0.45454545454545453	mixed	0.0036000000000000003
+order	plant_pathogen vs saprotroph	intron_frac_genes_with_intron	11	155	304	-0.006629149168622423	0.0773	0.6363636363636364	no evidence	0.1319142857142857
+order	plant_pathogen vs saprotroph	median_protein_len_aa	11	155	304	-0.004404843153604815	0.3148	0.6363636363636364	no evidence	0.33331764705882355
+order	plant_pathogen vs saprotroph	cazy_GH_per1000	11	155	304	-1.0108263512084554	0.013	0.6363636363636364	mixed	0.033428571428571426
+order	plant_pathogen vs saprotroph	cazy_GT_per1000	11	155	304	0.30834781284410323	0.004	0.5454545454545454	mixed	0.012000000000000002
+order	plant_pathogen vs saprotroph	cazy_PL_per1000	11	155	304	0.12149921426963772	0.14375	0.6363636363636364	no evidence	0.1725
+order	plant_pathogen vs saprotroph	cazy_CE_per1000	11	155	304	-0.15340991002133295	0.09585	0.6363636363636364	no evidence	0.1319142857142857
+order	plant_pathogen vs saprotroph	cazy_AA_per1000	11	155	304	-0.8426288050776454	0.0015	0.5454545454545454	mixed	0.0054
+order	plant_pathogen vs saprotroph	cazy_CBM_per1000	11	155	304	-0.08445119266090424	0.1026	0.5454545454545454	no evidence	0.1319142857142857
+order	plant_pathogen vs saprotroph	secretome_per1000	11	155	304	-2.674981032762737	0.0629	0.5454545454545454	no evidence	0.1258
+order	plant_pathogen vs saprotroph	merops_per1000	11	155	304	0.005425750952184116	0.9863	0.45454545454545453	no evidence	0.9863
+order	plant_pathogen vs saprotroph	tf_per1000	11	155	304	-0.7654715540649227	0.22865	0.45454545454545453	no evidence	0.25723124999999997
+order	animal_parasite vs saprotroph	total_length_bp	4	42	89	-0.01312916405176201	0.59615	0.5	no evidence	0.6706687499999999
+order	animal_parasite vs saprotroph	n_genes	4	42	89	-0.030006056139201737	0.08395	0.5	no evidence	0.16569
+order	animal_parasite vs saprotroph	genes_per_mb	4	42	89	-0.016876892087439997	0.33615	0.5	no evidence	0.43219285714285716
+order	animal_parasite vs saprotroph	coding_fraction	4	42	89	-0.020370271700399692	0.143	0.5	no evidence	0.22665000000000002
+order	animal_parasite vs saprotroph	gc_pct	4	42	89	-0.18797916666666836	0.76465	0.5	no evidence	0.8096294117647059
+order	animal_parasite vs saprotroph	median_intron_len_bp	4	42	89	0.014055937102661897	0.09205	0.75	no evidence	0.16569
+order	animal_parasite vs saprotroph	median_exons_per_gene	4	42	89	-0.03072916666666673	0.54205	0.5	no evidence	0.65046
+order	animal_parasite vs saprotroph	intron_frac_genes_with_intron	4	42	89	-0.01018970703526204	0.1511	0.5	no evidence	0.22665000000000002
+order	animal_parasite vs saprotroph	median_protein_len_aa	4	42	89	-0.011617908508075009	0.014	0.5	mixed	0.036
+order	animal_parasite vs saprotroph	cazy_GH_per1000	4	42	89	-2.241006050526227	0.0246	0.25	no evidence	0.05535
+order	animal_parasite vs saprotroph	cazy_GT_per1000	4	42	89	0.20988286033685152	0.32905	0.5	no evidence	0.43219285714285716
+order	animal_parasite vs saprotroph	cazy_PL_per1000	4	42	89	-0.8785719854743922	5e-05	0.75	supported	0.0009000000000000001
+order	animal_parasite vs saprotroph	cazy_CE_per1000	4	42	89	-0.6478258651148059	0.00155	0.5	mixed	0.013949999999999999
+order	animal_parasite vs saprotroph	cazy_AA_per1000	4	42	89	-1.534630318627309	0.00805	0.5	mixed	0.036
+order	animal_parasite vs saprotroph	cazy_CBM_per1000	4	42	89	-0.29267725582776066	0.009	0.5	mixed	0.036
+order	animal_parasite vs saprotroph	secretome_per1000	4	42	89	0.5525209424997346	0.8682	0.5	no evidence	0.8682
+order	animal_parasite vs saprotroph	merops_per1000	4	42	89	2.2128460800809644	0.0113	0.75	supported	0.036
+order	animal_parasite vs saprotroph	tf_per1000	4	42	89	-3.1535236586742954	0.013	0.5	mixed	0.036
+order	mycorrhizal vs saprotroph	total_length_bp	5	89	125	0.08687825965732168	0.01935	1.0	supported	0.02322
+order	mycorrhizal vs saprotroph	n_genes	5	89	125	-0.015533453401936986	0.6015	0.6	no evidence	0.6015
+order	mycorrhizal vs saprotroph	genes_per_mb	5	89	125	-0.10241171305925881	0.00065	1.0	supported	0.0010636363636363636
+order	mycorrhizal vs saprotroph	coding_fraction	5	89	125	-0.08580464216982284	5e-05	1.0	supported	0.00015000000000000001
+order	mycorrhizal vs saprotroph	gc_pct	5	89	125	-1.7980416666666676	0.00405	0.8	supported	0.0056076923076923075
+order	mycorrhizal vs saprotroph	median_intron_len_bp	5	89	125	0.014030113222982817	0.1972	0.8	no evidence	0.20879999999999999
+order	mycorrhizal vs saprotroph	median_exons_per_gene	5	89	125	-0.49166666666666653	0.00015	1.0	supported	0.00033749999999999996
+order	mycorrhizal vs saprotroph	intron_frac_genes_with_intron	5	89	125	-0.038684748633455966	0.03505	1.0	supported	0.03943125
+order	mycorrhizal vs saprotroph	median_protein_len_aa	5	89	125	-0.07563592631227223	0.0001	1.0	supported	0.00025714285714285715
+order	mycorrhizal vs saprotroph	cazy_GH_per1000	5	89	125	-6.756867951453884	5e-05	1.0	supported	0.00015000000000000001
+order	mycorrhizal vs saprotroph	cazy_GT_per1000	5	89	125	-0.6334839501776214	0.0161	0.8	supported	0.0207
+order	mycorrhizal vs saprotroph	cazy_PL_per1000	5	89	125	-0.7571753881760681	5e-05	1.0	supported	0.00015000000000000001
+order	mycorrhizal vs saprotroph	cazy_CE_per1000	5	89	125	-1.2492805309165005	5e-05	1.0	supported	0.00015000000000000001
+order	mycorrhizal vs saprotroph	cazy_AA_per1000	5	89	125	-3.3923356626148564	5e-05	1.0	supported	0.00015000000000000001
+order	mycorrhizal vs saprotroph	cazy_CBM_per1000	5	89	125	-0.3291803348716225	0.00025	1.0	supported	0.0005
+order	mycorrhizal vs saprotroph	secretome_per1000	5	89	125	-22.711037645801785	5e-05	1.0	supported	0.00015000000000000001
+order	mycorrhizal vs saprotroph	merops_per1000	5	88	125	-3.95130955015115	0.00175	1.0	supported	0.002625
+order	mycorrhizal vs saprotroph	tf_per1000	5	88	125	-3.3213695077499454	0.00055	1.0	supported	0.00099
+order	lichenized vs saprotroph	total_length_bp	0	0	0				not evaluable	
+order	lichenized vs saprotroph	n_genes	0	0	0				not evaluable	
+order	lichenized vs saprotroph	genes_per_mb	0	0	0				not evaluable	
+order	lichenized vs saprotroph	coding_fraction	0	0	0				not evaluable	
+order	lichenized vs saprotroph	gc_pct	0	0	0				not evaluable	
+order	lichenized vs saprotroph	median_intron_len_bp	0	0	0				not evaluable	
+order	lichenized vs saprotroph	median_exons_per_gene	0	0	0				not evaluable	
+order	lichenized vs saprotroph	intron_frac_genes_with_intron	0	0	0				not evaluable	
+order	lichenized vs saprotroph	median_protein_len_aa	0	0	0				not evaluable	
+order	lichenized vs saprotroph	cazy_GH_per1000	0	0	0				not evaluable	
+order	lichenized vs saprotroph	cazy_GT_per1000	0	0	0				not evaluable	
+order	lichenized vs saprotroph	cazy_PL_per1000	0	0	0				not evaluable	
+order	lichenized vs saprotroph	cazy_CE_per1000	0	0	0				not evaluable	
+order	lichenized vs saprotroph	cazy_AA_per1000	0	0	0				not evaluable	
+order	lichenized vs saprotroph	cazy_CBM_per1000	0	0	0				not evaluable	
+order	lichenized vs saprotroph	secretome_per1000	0	0	0				not evaluable	
+order	lichenized vs saprotroph	merops_per1000	0	0	0				not evaluable	
+order	lichenized vs saprotroph	tf_per1000	0	0	0				not evaluable	
+order	mycoparasite vs saprotroph	total_length_bp	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	n_genes	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	genes_per_mb	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	coding_fraction	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	gc_pct	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	median_intron_len_bp	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	median_exons_per_gene	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	intron_frac_genes_with_intron	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	median_protein_len_aa	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	cazy_GH_per1000	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	cazy_GT_per1000	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	cazy_PL_per1000	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	cazy_CE_per1000	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	cazy_AA_per1000	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	cazy_CBM_per1000	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	secretome_per1000	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	merops_per1000	2	17	31				not evaluable	
+order	mycoparasite vs saprotroph	tf_per1000	2	17	31				not evaluable	
+order	yeast vs filamentous_mycelium	total_length_bp	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	n_genes	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	genes_per_mb	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	coding_fraction	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	gc_pct	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	median_intron_len_bp	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	median_exons_per_gene	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	intron_frac_genes_with_intron	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	median_protein_len_aa	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	cazy_GH_per1000	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	cazy_GT_per1000	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	cazy_PL_per1000	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	cazy_CE_per1000	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	cazy_AA_per1000	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	cazy_CBM_per1000	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	secretome_per1000	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	merops_per1000	0	0	0				not evaluable	
+order	yeast vs filamentous_mycelium	tf_per1000	0	0	0				not evaluable	
