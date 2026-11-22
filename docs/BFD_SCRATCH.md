@@ -7,10 +7,11 @@ database of the same name. The BFD data itself is never changed.
 
 | Catalog | File | Access | Content |
 |---|---|---|---|
-| `bfd` | `db/BFD.duckdb` | read-only | VIEWs over `Fungi_BFD_runs/tables/*.parquet` and the SwissProt macros |
+| `bfd` | `Fungi_BFD_runs/BFD_function/db/BFD.duckdb` (pipeline copy) | read-only | VIEWs over `Fungi_BFD_runs/tables/*.parquet` and the SwissProt macros |
+| `labels` | `db/BFD_labels.duckdb` | read-only | `v_genome_labels`, `v_genome_traits`, `ref_*` tables; searched before `bfd` |
 | `bfd_scratch` | `db/bfd_scratch.duckdb` | read-write | analysis tables, one prefix per analysis |
 
-Both files are ignored by git. `workflows/build_bfd_db.sh` makes `BFD.duckdb`.
+The scratch and labels files are ignored by git. The pipeline builds `BFD.duckdb` (`Fungi_BFD/scripts/rebuild_pipeline_duckdb.sh`); `workflows/build_labels_db.sh` builds the labels file after every pipeline build. `workflows/build_bfd_db.sh` and the old `db/BFD.duckdb` are legacy and no longer the default.
 `bin/bfd_scratch.py init` makes the scratch file.
 
 The catalog names match MotherDuck. SQL such as `CREATE TABLE bfd_scratch.kw_rep_genomes AS ...`

@@ -75,3 +75,33 @@ def test_fresh_labels_do_not_warn(tmp_path):
     with warnings.catch_warnings():
         warnings.simplefilter("error")
         bc.connect(bfd, scratch=False, labels_db=lab)
+
+
+def test_default_pipeline_db_attaches_default_labels(tmp_path, monkeypatch):
+    bfd, lab = _dbs(tmp_path)
+    monkeypatch.delenv("BFD_DB", raising=False)
+    monkeypatch.delenv("BFD_LABELS_DB", raising=False)
+    monkeypatch.setattr(bc, "DEFAULT_BFD_DB", bfd)
+    monkeypatch.setattr(bc, "DEFAULT_LABELS_DB", lab)
+    con = bc.connect(scratch=False)
+    assert con.execute("SELECT primary_lifestyle FROM v_genome_labels WHERE LOCUSTAG='A1'").fetchone()[0] == "x"
+
+
+def test_named_bfd_db_does_not_attach_default_labels(tmp_path, monkeypatch):
+    bfd, lab = _dbs(tmp_path)
+    monkeypatch.delenv("BFD_LABELS_DB", raising=False)
+    monkeypatch.setattr(bc, "DEFAULT_LABELS_DB", lab)
+    con = bc.connect(bfd, scratch=False)
+    with pytest.raises(duckdb.Error):
+        con.execute("SELECT * FROM v_genome_labels")
+
+
+def test_empty_env_turns_labels_off(tmp_path, monkeypatch):
+    bfd, lab = _dbs(tmp_path)
+    monkeypatch.delenv("BFD_DB", raising=False)
+    monkeypatch.setenv("BFD_LABELS_DB", "")
+    monkeypatch.setattr(bc, "DEFAULT_BFD_DB", bfd)
+    monkeypatch.setattr(bc, "DEFAULT_LABELS_DB", lab)
+    con = bc.connect(scratch=False)
+    with pytest.raises(duckdb.Error):
+        con.execute("SELECT * FROM v_genome_labels")
