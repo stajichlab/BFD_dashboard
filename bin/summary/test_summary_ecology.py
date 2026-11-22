@@ -149,8 +149,24 @@ def test_load_traits_from_duckdb(tmp_path):
 
 def test_load_traits_names_missing_column(tmp_path):
     p = _make_db(tmp_path, "'filamentous_mycelium' AS growth_form")
-    with pytest.raises(RuntimeError, match=r"primary_lifestyle.*build_bfd_db\.sh"):
+    with pytest.raises(RuntimeError, match=r"primary_lifestyle.*build_labels_db\.sh"):
         se.load_traits(p)
+
+
+def test_load_traits_from_a_separate_labels_file(tmp_path):
+    import duckdb
+    pipe = str(tmp_path / "pipe.duckdb")
+    c = duckdb.connect(pipe)
+    c.sql("CREATE TABLE species AS SELECT 'g1' AS LOCUSTAG")
+    c.close()
+    lab = str(tmp_path / "labels.duckdb")
+    c = duckdb.connect(lab)
+    c.sql("CREATE TABLE v_genome_labels AS SELECT 'g1' AS LOCUSTAG, 'saprotroph' AS primary_lifestyle, 'yeast' AS growth_form")
+    c.close()
+    df = se.load_traits(pipe, lab)
+    assert df.iloc[0].tolist() == ["g1", "saprotroph", "yeast"]
+    with pytest.raises(RuntimeError, match="--labels"):
+        se.load_traits(pipe)
 
 
 # ---- global figures and tables ----
@@ -396,7 +412,8 @@ def test_workflow_script_has_no_bash_source_and_parses():
     txt = p.read_text()
     assert "BASH_SOURCE" not in txt and "SCRATCH" in txt
     for path in ("/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/analysis/summary_tables",
-                 "/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard/db/BFD.duckdb",
+                 "/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/BFD_function/db/BFD.duckdb",
+                 "/bigdata/stajichlab/shared/projects/BFD/BFD_dashboard/db/BFD_labels.duckdb",
                  "/bigdata/stajichlab/shared/projects/BFD/Fungi_BFD_runs/analysis/summary_ecology",
                  "atlas_env/venv/bin/python"):
         assert path in txt
