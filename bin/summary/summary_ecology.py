@@ -130,16 +130,23 @@ LEVEL_COLUMN = {"phylum": "PHYLUM", "class": "CLASS", "order": "ORDER"}
 STRATUM_COLUMN = {"phylum": "ORDER", "class": "ORDER", "order": "FAMILY"}
 
 
-def load_traits(db_path: str) -> pd.DataFrame:
-    """species_prefix, primary_lifestyle, growth_form from v_genome_labels, read-only."""
+def load_traits(db_path: str, labels_db: str | None = None) -> pd.DataFrame:
+    """species_prefix, primary_lifestyle, growth_form from v_genome_labels, read-only.
+
+    With labels_db (db/BFD_labels.duckdb) the view is read from that file, next to the pipeline database in db_path."""
     import duckdb
     con = duckdb.connect(db_path, read_only=True)
     try:
+        view = "v_genome_labels"
+        if labels_db:
+            con.execute(f"ATTACH '{labels_db}' AS labels (READ_ONLY)")
+            view = "labels.main.v_genome_labels"
         have = {r[0] for r in con.sql("SELECT column_name FROM information_schema.columns WHERE table_name = 'v_genome_labels'").fetchall()}
         for col in ("primary_lifestyle", "growth_form"):
             if col not in have:
-                raise RuntimeError(f"{db_path}: v_genome_labels has no column {col}; rebuild the database with workflows/build_bfd_db.sh")
-        return con.sql("SELECT LOCUSTAG AS species_prefix, primary_lifestyle, growth_form FROM v_genome_labels").df()
+                raise RuntimeError(f"{db_path}: v_genome_labels has no column {col}; pass --labels (build it with workflows/build_labels_db.sh) "
+                                   "or use a database built with workflows/build_bfd_db.sh")
+        return con.sql(f"SELECT LOCUSTAG AS species_prefix, primary_lifestyle, growth_form FROM {view}").df()
     finally:
         con.close()
 
@@ -395,7 +402,8 @@ def main(argv=None) -> int:
     import traceback
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--tables", required=True, help="directory with genome_all, codon_genome, aa_genome, gene_structure_genome parquet")
-    ap.add_argument("--db", required=True, help="BFD.duckdb with v_genome_labels trait columns")
+    ap.add_argument("--db", required=True, help="BFD.duckdb (pipeline copy, or a database with v_genome_labels trait columns)")
+    ap.add_argument("--labels", default=None, help="BFD_labels.duckdb holding v_genome_labels (built by workflows/build_labels_db.sh)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--min-genera", type=int, default=30)
     ap.add_argument("--min-group", type=int, default=5)
@@ -412,7 +420,7 @@ def main(argv=None) -> int:
             if "species_prefix" in df.columns and len(sup):
                 df, _ = drop_suppressed(df, sup)
             return df
-        traits = load_traits(a.db)
+        traits = load_traits(a.db, a.labels)
         genome_all = rd("genome_all")
         mats = {}
         for key, tname in MATRIX_FILES:
